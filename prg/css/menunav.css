@@ -1,0 +1,99 @@
+.sidenav {
+    height: 100%; 
+    width: 130px; 
+    position: fixed;  
+    top: 0; 
+    left: 0;
+    background-color: #212121; 
+    padding-top: 20px; 
+    border-right: 1px solid #A9A9A9;
+
+}
+    
+.sidenav .a_accueil {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 20px;
+    padding-right: 15px;
+    text-decoration: none;
+    font-size: 14px;
+    display: block;
+    letter-spacing: 0.5px;
+    color: #E3E3E3;
+    
+    }
+.sidenav .a_programme {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 20px;
+    padding-right: 15px;
+    text-decoration: none;
+    font-size: 14px;
+    display: block;
+    letter-spacing: 0.5px;
+    color: #E3E3E3;
+    
+    }
+#prgmy{
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 20px;
+    padding-right: 15px;
+    text-decoration: none;
+    font-size: 12px;
+    display: block;
+    letter-spacing: 0.5px;
+    color: #E3E3E3;
+    background-color: #2F2F2F;
+    
+}
+#prgmy:hover{
+    background-color: #393939;
+}
+#prgchc{
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 20px;
+    padding-right: 15px;
+    text-decoration: none;
+    font-size: 12px;
+    display: block;
+    letter-spacing: 0.5px;
+    color: #E3E3E3;
+    background-color: #2F2F2F;
+    
+}
+#prgchc:hover{
+    background-color: #393939;
+}
+
+.sidenav .a_parametre {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 20px;
+    padding-right: 15px;
+    text-decoration: none;
+    font-size: 14px;
+    display: block;
+    letter-spacing: 0.5px;
+    color: #E3E3E3;
+    
+    }
+
+.sidenav .a_connecter {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 20px;
+    padding-right: 15px;
+    text-decoration: none;
+    font-size: 14px;
+    display: block;
+    letter-spacing: 0.5px;
+    color: #E3E3E3;
+    
+    }
+
+.sidenav a:hover {
+    background-color: #2B2B2B;
+    
+}

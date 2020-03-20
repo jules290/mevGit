@@ -1,0 +1,90 @@
+#cld{
+    background-color: #E3E3E3;
+    border-radius: 25px;
+    width: 608px;
+    height: 440px;
+    margin-top: 7px;
+}
+#cld_box{
+    height: auto;
+    width: auto;
+    margin: 15px;
+
+}
+
+.dt_box{
+    width: 80px;
+    height: 45px;
+    margin-right: -6px;
+    margin-bottom: -6px;
+    background-color: #E3E3E3;
+    display: inline-block;
+    text-align: center;
+    color: #2E2E2E;
+    border-radius: 10px;
+    margin: 0px;
+    
+}
+.dt_box:hover{
+    background-color: #2E2E2E;
+    color: #E3E3E3;
+    
+}
+.jr_box{
+    width: 80px;
+    height: 30px;
+    margin-right: -6px;
+    margin-bottom: -6px;
+    background-color: #E3E3E3;
+    display: inline-block;
+    color: #2E2E2E;
+    margin: 0px;
+}
+.jr_nb{
+    font-family: "Segoe UI";
+    font-size: 13.5px;
+    height: auto;
+}
+.dt_nb{
+    font-family: "Segoe UI";
+    font-size: 25px;
+    margin-top: 0px;
+    border-radius: 10px;
+    height: 45px;
+}
+#header_cld{
+    margin-bottom: 0px;
+    text-align: center;
+    color: #2E2E2E;
+}
+.btn_cld{
+    display: inline-block;
+}
+.btn_cld:hover{
+    cursor: pointer;
+}
+#up{
+    margin-right: 100px;
+}
+#down{
+    margin-left: 100px;
+}
+#titre_cld{
+    display: inline-block;
+    width: 300px;
+}
+.btn{
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-right: 5px;
+    padding-left: 5px;
+    background-color: #6C6C6C;
+    font-family: "Segoe UI";
+    color: #E3E3E3;
+    margin-top: 10px;
+    border: solid white 1px;
+    border-radius: 5px;
+}
+.btn:hover{
+    background-color: #5A5A5A;
+}

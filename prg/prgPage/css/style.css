@@ -1,0 +1,85 @@
+body {
+    background-color: #4E4F4F;
+    font-family: "Segoe UI";
+    color: #E3E3E3;
+}
+
+#main {
+    background-color: #6C6C6C;
+    padding: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 2px;
+    margin-left: 132px;
+    height: auto;
+    border-radius: 5px;
+    font-family: "Segoe UI";
+    color: #E3E3E3;
+    
+}
+
+#left{
+    display: inline-block;
+    width: 50%;
+    margin-top: -10px;
+    margin-left: -10px;
+}
+
+#right{
+    display: inline-table;
+    width: 40%;
+    margin-top: -100px;
+    margin-left: 50px;
+}
+
+.objectif_div{
+    display: block;
+    margin-bottom: 20px;
+}
+
+.objectif1{
+    display: inline-block;
+    margin-right: 10px;
+    width: 23%;
+}
+
+.objectifP{
+    padding: 0px;
+    font-size: 15px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+#prgJ{
+    width: 120px;
+}
+#prgJJ{
+    width: 325px;
+}
+
+#exo{
+    margin-top: 40px;
+}
+.exo{
+    background-color: #323232;
+    height: 100px;
+    margin-top: 15px;
+    border-radius: 10px;
+}
+.exoT{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 10px;
+    margin-right: 0px;  
+}
+.exoP{
+    margin-top: 10px;
+    margin-bottom: 0px;
+    margin-left: 10px;
+    margin-right: 0px;
+}
+.exoS{
+    color: rgb(0, 0, 0);
+    margin-left: 10px;
+    margin-top: 5px;
+}
