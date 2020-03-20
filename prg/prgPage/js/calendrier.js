@@ -23,12 +23,16 @@ $(document).ready(function() {
 })
 
 $("#up").click(function() {
-    sessionStorage.month ++;
+    if (sessionStorage.month < 12) {
+        sessionStorage.month ++;
+    }
     calendar();
 })
 
 $("#down").click(function() {
-    sessionStorage.month --;
+    if (sessionStorage.month > 1) {
+        sessionStorage.month --;
+    }
     calendar();
 })
 
