@@ -6,8 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/style.css" media="screen">
         <link rel="stylesheet" href="css/menunav.css" media="screen">
-         <link rel="stylesheet" href="css/header.css" media="screen">
+        <link rel="stylesheet" href="css/header.css" media="screen">
         <link rel="stylesheet" href="css/calendrier.css" media="screen">
+        <link rel="stylesheet" href="css/prgPage.css" media="screen">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="js/count-visits.js"></script>
     
@@ -15,10 +16,10 @@
     <body>
         
         <div id="mySidenav" class="sidenav">
-            <a class="a_accueil" id="accueil">accueil</a>
+            <a class="a_accueil" id="accueil" href="index.html">accueil</a>
             <a class="a_programme" id="prg">programme<br>d'entrainement</a>
-                <a id="prgmy">mon programme</a>
-                <a id="prgchc">choisir un programme</a>
+                <a id="prgmy" href="prgmy.html">mon programme</a>
+                <a id="prgchc" href="prgchc.html">choisir un programme</a>
             <!-- <a class="a_parametre">paramètre</a> -->
         </div>
         
@@ -27,7 +28,7 @@
         </div>
         
         <div id="main">
-          <div id="left">
+            <div id="left">
                     <div id="cld">
                         <div id="header_cld">
                             <button class="btn_cld" id="down">◀</button>
@@ -45,7 +46,7 @@
                                 <th class="jr_box"><h1 class="jr_nb">dimanche</h1></th>
                             </tr>
                             <tr id="semaine1" class="semaine">
-                                <td class="dt_box"><h1 class="dt_nb"></h1></td>
+                                <td class="dt_box"><h1 class="dt_nb" onClick={this.exo}></h1></td>
                                 <td class="dt_box"><h1 class="dt_nb"></h1></td>
                                 <td class="dt_box"><h1 class="dt_nb"></h1></td>
                                 <td class="dt_box"><h1 class="dt_nb"></h1></td>
@@ -849,7 +850,6 @@
                 </div>
         </div>
         <script src="js/calendrier.js"></script>
-        <script src="js/href.js"></script>
         <script src="js/language.js"></script>
         <script src="js/menunav_prg.js"></script>
     </body>
