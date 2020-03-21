@@ -11,6 +11,7 @@ $(document).ready(function() {
 })
 
 function prgGrimpeur() {
+    if(Number(localStorage.prg) == 1) {
     let monthA = new Array(12);
     monthA[1] = "janvier";
     monthA[2] = "fevrier";
@@ -1732,4 +1733,5 @@ if (nbPrgT == 4) {
         if(document.getElementById(nbObjectif - 2)) {document.getElementById(120054).innerText = "";}
         if(document.getElementById(nbObjectif - 1)) {document.getElementById(120055).innerText = "";}
     }
+}
 }
