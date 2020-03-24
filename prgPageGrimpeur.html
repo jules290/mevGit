@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html>
     <head>
+         <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161645631-2"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-161645631-2');
+        </script>
         <title>MON-ENTRAINEMENT-VELO</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -36,7 +45,7 @@
                     
                   <p class="objectifP">date de l'objectif</p>
                     <div class="select" id="nbd">
-                        <select class="">
+                        <select class="" id="nbdV">
                             <option value="" disabled selected>jour</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -72,7 +81,7 @@
                         </select>
                     </div>
                     <div class="select" id="mois">
-                        <select class="">
+                        <select class="" id="moisV">
                             <option value="" disabled selected>mois</option>
                             <option value="1">janvier</option>
                             <option value="2">fevrier</option>
@@ -89,7 +98,7 @@
                         </select>
                     </div>
                     <div class="select" id="annee">
-                        <select class="">
+                        <select class="" id="anneeV">
                             <option value="" disabled selected>année</option>
                             <option value="2020">2020</option>
                         </select>
@@ -97,7 +106,7 @@
                     
                     <p class="objectifP">durée du programme</p>
                     <div class="select" id="prgT">
-                        <select class="">
+                        <select class="" id="prgTV">
                             <option value="" disabled selected>mois</option>
                             <option value="2" id="2M">2 mois</option>
                             <option value="3" id="3M">3 mois</option>
@@ -107,7 +116,7 @@
                     
                     <p class="objectifP">entrainements par semaine</p>
                     <div class="select" id="prgJ">
-                        <select class="">
+                        <select class=" " id="prgJV">
                             <option value="" disabled selected>entrainements</option>
                             <option value="3">3</option>
                             <option value="4">4</option>

@@ -1,9 +1,9 @@
 $("#save").click(function() {
-    let année = document.getElementById('annee').value;
-    let mois = document.getElementById('mois').value;
-    let nbd = document.getElementById('nbd').value;
-    let prgT = document.getElementById("prgT").value;
-    let prgJ = document.getElementById("prgJ").value;
+    let année = document.getElementById('anneeV').value;
+    let mois = document.getElementById('moisV').value;
+    let nbd = document.getElementById('nbdV').value;
+    let prgT = document.getElementById("prgTV").value;
+    let prgJ = document.getElementById("prgJV").value;
     let nbAnnée = Number(localStorage.année);
     let nbMois = Number(localStorage.mois);
     let nbNbd = Number(localStorage.nbd);

@@ -1275,14 +1275,14 @@ function prgGrimpeur() {
         if (nbPrgJ >= 3) {if(document.getElementById(nbObjectif - 84)) { document.getElementById(12028).innerText = "séance d'endurance";}}
         //semaine 5     
         if (nbPrgJ >= 7) {document.getElementById("10029").style.backgroundColor = ""}
-        if (nbPrgJ >= 4) {document.getElementById("10030").style.backgroundColor = "red"}
+        if (nbPrgJ >= 4) {document.getElementById("10030").style.backgroundColor = "green"}
         if (nbPrgJ >= 3) {document.getElementById("10031").style.backgroundColor = "green"}
         if (nbPrgJ >= 6) {document.getElementById("10032").style.backgroundColor = "green"}
         if (nbPrgJ >= 5) {document.getElementById("10033").style.backgroundColor = "orange"}
         if (nbPrgJ >= 3) {document.getElementById("10034").style.backgroundColor = "green"}
         if (nbPrgJ >= 3) {document.getElementById("10035").style.backgroundColor = "green"}
         if (nbPrgJ >= 7) {if(document.getElementById(nbObjectif - 83)) { document.getElementById(12029).innerText = "";}}
-        if (nbPrgJ >= 4) {if(document.getElementById(nbObjectif - 82)) { document.getElementById(12030).innerText = "séance de sprint";}}
+        if (nbPrgJ >= 4) {if(document.getElementById(nbObjectif - 82)) { document.getElementById(12030).innerText = "séance d'edurance";}}
         if (nbPrgJ >= 3) {if(document.getElementById(nbObjectif - 81)) { document.getElementById(12031).innerText = "séance d'endurance";}}
         if (nbPrgJ >= 6) {if(document.getElementById(nbObjectif - 80)) { document.getElementById(12032).innerText = "séance d'endurance";}}
         if (nbPrgJ >= 5) {if(document.getElementById(nbObjectif - 79)) { document.getElementById(12033).innerText = "séance de PMA";}}
@@ -1290,17 +1290,17 @@ function prgGrimpeur() {
         if (nbPrgJ >= 3) {if(document.getElementById(nbObjectif - 77)) { document.getElementById(12035).innerText = "séance d'endurance";}}
         //semaine 6     
         if (nbPrgJ >= 7) {document.getElementById("10036").style.backgroundColor = ""}
-        if (nbPrgJ >= 4) {document.getElementById("10037").style.backgroundColor = "yellow"}
-        if (nbPrgJ >= 3) {document.getElementById("10038").style.backgroundColor = "green"}
+        if (nbPrgJ >= 4) {document.getElementById("10037").style.backgroundColor = "green"}
+        if (nbPrgJ >= 3) {document.getElementById("10038").style.backgroundColor = "yellow"}
         if (nbPrgJ >= 6) {document.getElementById("10039").style.backgroundColor = "red"}
-        if (nbPrgJ >= 5) {document.getElementById("10040").style.backgroundColor = ""}
+        if (nbPrgJ >= 5) {document.getElementById("10040").style.backgroundColor = "green"}
         if (nbPrgJ >= 3) {document.getElementById("10041").style.backgroundColor = "green"}
         if (nbPrgJ >= 3) {document.getElementById("10042").style.backgroundColor = "green"}
         if (nbPrgJ >= 7) {if(document.getElementById(nbObjectif - 76)) { document.getElementById(12036).innerText = "";}}
-        if (nbPrgJ >= 4) {if(document.getElementById(nbObjectif - 75)) { document.getElementById(12037).innerText = "séance de seuil";}}
-        if (nbPrgJ >= 3) {if(document.getElementById(nbObjectif - 74)) { document.getElementById(12038).innerText = "séance d'endurance";}}
+        if (nbPrgJ >= 4) {if(document.getElementById(nbObjectif - 75)) { document.getElementById(12037).innerText = "séance d'endurance";}}
+        if (nbPrgJ >= 3) {if(document.getElementById(nbObjectif - 74)) { document.getElementById(12038).innerText = "séance de seuil";}}
         if (nbPrgJ >= 6) {if(document.getElementById(nbObjectif - 73)) { document.getElementById(12039).innerText = "séance de sprint";}}
-        if (nbPrgJ >= 5) {if(document.getElementById(nbObjectif - 72)) { document.getElementById(12040).innerText = "";}}
+        if (nbPrgJ >= 5) {if(document.getElementById(nbObjectif - 72)) { document.getElementById(12040).innerText = "séance d'endurance";}}
         if (nbPrgJ >= 3) {if(document.getElementById(nbObjectif - 71)) { document.getElementById(12041).innerText = "séance d'endurance";}}
         if (nbPrgJ >= 3) {if(document.getElementById(nbObjectif - 70)) { document.getElementById(12042).innerText = "séance d'endurance";}}
         //semaine 7       
@@ -1396,21 +1396,21 @@ function prgGrimpeur() {
         //semaine 13       
         if (nbPrgJ >= 7) {document.getElementById("10085").style.backgroundColor = ""}
         if (nbPrgJ >= 4) {document.getElementById("10086").style.backgroundColor = "red"}
-        if (nbPrgJ >= 3) {document.getElementById("10087").style.backgroundColor = "yellow"}
+        if (nbPrgJ >= 3) {document.getElementById("10087").style.backgroundColor = "orange"}
         if (nbPrgJ >= 6) {document.getElementById("10088").style.backgroundColor = "green"}
         if (nbPrgJ >= 5) {document.getElementById("10089").style.backgroundColor = "green"}
         if (nbPrgJ >= 3) {document.getElementById("10090").style.backgroundColor = "orange"}
         if (nbPrgJ >= 3) {document.getElementById("10091").style.backgroundColor = "green"}
         if (nbPrgJ >= 7) {if(document.getElementById(nbObjectif - 27)) { document.getElementById(12085).innerText = "";}}
         if (nbPrgJ >= 4) {if(document.getElementById(nbObjectif - 26)) { document.getElementById(12086).innerText = "séance de sprint";}}
-        if (nbPrgJ >= 3) {if(document.getElementById(nbObjectif - 25)) { document.getElementById(12087).innerText = "séance de seuil";}}
+        if (nbPrgJ >= 3) {if(document.getElementById(nbObjectif - 25)) { document.getElementById(12087).innerText = "séance de PMA";}}
         if (nbPrgJ >= 6) {if(document.getElementById(nbObjectif - 24)) { document.getElementById(12088).innerText = "séance d'endurance";}}
         if (nbPrgJ >= 5) {if(document.getElementById(nbObjectif - 23)) { document.getElementById(12089).innerText = "séance d'endurance";}}
         if (nbPrgJ >= 3) {if(document.getElementById(nbObjectif - 22)) { document.getElementById(12090).innerText = "séance de PMA";}}
         if (nbPrgJ >= 3) {if(document.getElementById(nbObjectif - 21)) { document.getElementById(12091).innerText = "séance d'endurance";}}
         //semaine 14    
         if (nbPrgJ >= 7) {document.getElementById("10092").style.backgroundColor = ""}
-        if (nbPrgJ >= 4) {document.getElementById("10093").style.backgroundColor = "red"}
+        if (nbPrgJ >= 4) {document.getElementById("10093").style.backgroundColor = "green"}
         if (nbPrgJ >= 3) {document.getElementById("10094").style.backgroundColor = "yellow"}
         if (nbPrgJ >= 6) {document.getElementById("10095").style.backgroundColor = "green"}
         if (nbPrgJ >= 5) {document.getElementById("10096").style.backgroundColor = "green"}
