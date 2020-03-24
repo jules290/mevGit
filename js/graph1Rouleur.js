@@ -1,13 +1,12 @@
-var ctx = document.getElementById('graph1');
+var ctx1 = document.getElementById('graph1');
 
-$(document).ready(function() {
-    var data = {
+    var data1 = {
         labels: [
             'semaine 1', 'semaine 2', 'semaine 3', 'semaine 4', 'semaine 5', 'semaine 6', 'semaine 7', 'semaine 8', 'semaine 9', 'semaine 10'
             , 'semaine 11', 'semaine 12', 'semaine 13', 'semaine 14', 'semaine 15', 'semaine 16'],
         datasets: [{
             label: 'intensité',
-            data: [25, 50, 60, 50, 55, 55, 90, 85, 80, 75, 100, 95, 85, 80, 40, 30],
+            data: [25, 55, 60, 60, 65, 60, 95, 95, 80, 90, 95, 90, 70, 70, 40, 30],
             borderColor: [
                 'rgba(255, 0, 0)',
             ],
@@ -15,17 +14,18 @@ $(document).ready(function() {
         },
         {
             label: 'volume',
-            data: [100, 85, 85, 85, 75, 75, 60, 65, 60, 65, 50, 55, 55, 60, 35, 25], 
+            data: [100, 90, 85, 80, 85, 80, 60, 60, 70, 65, 60, 65, 75, 75, 35, 25], 
             borderColor: [
                 'rgba(0, 4, 255)',
             ],
             borderWidth: 1
         }]
     }
+
     
-    var myChart = new Chart(ctx, {
+    var myChart1 = new Chart(ctx1, {
         type: 'line',
-        data: data,
+        data: data1,
         options: {
             scales: {
                 yAxes: [{
@@ -41,4 +41,3 @@ $(document).ready(function() {
             }
         }
     })
-}) 

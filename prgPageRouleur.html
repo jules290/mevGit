@@ -19,6 +19,7 @@
         <link rel="stylesheet" href="css/calendrier.css" media="screen">
         <link rel="stylesheet" href="css/prgPage.css" media="screen">
         <link rel="stylesheet" href="css/save.css" media="screen">
+        <link rel="stylesheet" href="css/prgStatsRouleur.css" media="screen">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
         <script src="js/count-visits.js"></script>
@@ -38,12 +39,14 @@
             <h1 class="titrePage" id="result">PROGRAMME ROULEUR</h1>
         </div>
         
-        <div id="main"> 
-               <div id="right">
-                    <div class="objectif_div">
-                        <p class="objectifP">veuillez entrer la date de votre objectif:</p>
-                        <select class="objectif1" id="nbd">
-                            <option value="0">jour</option>
+        <div id="main">
+            <div id="left">
+                <div id="formPrg">
+                    
+                  <p class="objectifP">date de l'objectif</p>
+                    <div class="select" id="nbd">
+                        <select class="" id="nbdV">
+                            <option value="" disabled selected>jour</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -76,8 +79,10 @@
                             <option value="30">30</option>
                             <option value="31">31</option>
                         </select>
-                        <select class="objectif1" id="mois">
-                            <option value="0">mois</option>
+                    </div>
+                    <div class="select" id="mois">
+                        <select class="" id="moisV">
+                            <option value="" disabled selected>mois</option>
                             <option value="1">janvier</option>
                             <option value="2">fevrier</option>
                             <option value="3">mars</option>
@@ -91,38 +96,100 @@
                             <option value="11">novembre</option>
                             <option value="12">decembre</option>
                         </select>
-                        <select class="objectif1" id="annee" >
-                            <option value="0">année</option>
+                    </div>
+                    <div class="select" id="annee">
+                        <select class="" id="anneeV">
+                            <option value="" disabled selected>année</option>
                             <option value="2020">2020</option>
                         </select>
                     </div>
-                    <div class="objectif_div">
-                        <p class="objectifP">veuillez entrer la durée de votre programme:</p>
-                        <select class="objectif1" id="prgT">
-                            <option value="0">mois</option>
-                            <option value="2">2 mois</option>
-                            <option value="3">3 mois</option>
-                            <option value="4">4 mois</option>
+                    
+                    <p class="objectifP">durée du programme</p>
+                    <div class="select" id="prgT">
+                        <select class="" id="prgTV">
+                            <option value="" disabled selected>mois</option>
+                            <option value="2" id="2M">2 mois</option>
+                            <option value="3" id="3M">3 mois</option>
+                            <option value="4" id="4M">4 mois</option>
                         </select>
                     </div>
-                    <div class="objectif_div">
-                        <p class="objectifP">veuillez entrer votre nombre d'entrainements par semaine:</p>
-                        <select class="objectif1" id="prgJ">
-                            <option value="0">entrainements</option>
+                    
+                    <p class="objectifP">entrainements par semaine</p>
+                    <div class="select" id="prgJ">
+                        <select class=" " id="prgJV">
+                            <option value="" disabled selected>entrainements</option>
                             <option value="3">3</option>
                             <option value="4">4</option>
                             <option value="5">5</option>
                             <option value="6">6</option>
                         </select>
                     </div>
+                    
                     <div class="objectif_div">
                         <input class="objectifS" type="submit" value="valider le programme" id="save"/>
                     </div>
-                </div> 
+                </div>
+            </div>
+            <div id="description">
+                <h1 id="h1Description">
+                    PROGRAMME ROULEUR
+                </h1>
+                <p id="pDescription">
+                    Ce programme est conçut pour rouler vite et longtemps, il permettra de participer à des épreuves de types contre la montre, de plus, il est accessible aux débutants.
+                </p>
+            </div>
+            
+            <div id="iV">
+                <canvas id="graph1"></canvas>
+            </div>
+            <div id="prgStats">
+                <div id="sprint" class="prgStats">
+                    <h1 class="TitreStats" id="titreSprint">1-15 SEC (SPRINT)</h1>
+                    <div class="CaseState" id="caseSprint">
+                        <div id="levelSprint"></div>
+                    </div>
+                </div>
+
+                <div id="anaerobie" class="prgStats">
+                    <h1 class="TitreStats" id="titreAnaerobie">1-3 MIN (ANAEROBIE)</h1>
+                    <div class="CaseState" id="caseAnaerobie">
+                        <div id="levelAnaerobie"></div>
+                    </div>
+                </div>
+
+                <div id="PMA" class="prgStats">
+                    <h1 class="TitreStats" id="titrePMA">5 MIN (PMA)</h1>
+                    <div class="CaseState" id="casePMA">
+                        <div id="levelPMA"></div>
+                    </div>
+                </div>
+
+                <div id="seuil" class="prgStats">
+                    <h1 class="TitreStats" id="titreSeuil">20 MIN (SEUIL)</h1>
+                    <div class="CaseState" id="caseStats">
+                        <div id="levelSeuil"></div>
+                    </div>
+                </div>
+
+                <div id="FTP" class="prgStats">
+                    <h1 class="TitreStats" id="titreFTP">1 H (FTP)</h1>
+                    <div class="CaseState" id="caseFTP">
+                        <div id="levelFTP"></div>
+                    </div>
+                </div>
+                
+                 <div id="endurance" class="prgStats">
+                    <h1 class="TitreStats" id="titreEndurance">>1H (endurance)</h1>
+                    <div class="CaseState" id="caseEndurance">
+                        <div id="levelEndurance"></div>
+                    </div>
+                </div>
+            </div>
         </div>
         <script src="jsSave/saveRouleur.js"></script>
         <script src="js/language.js"></script>
         <script src="js/menunav_prg.js"></script>
+        <script src="js/graph1Rouleur.js"></script>
     </body>
 
 </html>

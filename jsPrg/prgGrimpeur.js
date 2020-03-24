@@ -121,7 +121,7 @@ function prgGrimpeur() {
         //semaine 10      
         if (nbPrgJ >= 7) {if (document.getElementById(nbObjectif - 48)) {document.getElementById(nbObjectif - 48).style.backgroundColor = ""}}
         if (nbPrgJ >= 4) {if (document.getElementById(nbObjectif - 47)) {document.getElementById(nbObjectif - 47).style.backgroundColor = "green"}}   
-        if (nbPrgJ >= 3) {if (document.getElementById(nbObjectif - 46)) {document.getElementById(nbObjectif - 46).style.backgroundColor = "orange"}}   
+        if (nbPrgJ >= 3) {if (document.getElementById(nbObjectif - 46)) {document.getElementById(nbObjectif - 46).style.backgroundColor = "yellow"}}   
         if (nbPrgJ >= 6) {if (document.getElementById(nbObjectif - 45)) {document.getElementById(nbObjectif - 45).style.backgroundColor = "green"}}  
         if (nbPrgJ >= 5) {if (document.getElementById(nbObjectif - 44)) {document.getElementById(nbObjectif - 44).style.backgroundColor = "green"}}
         if (nbPrgJ >= 3) {if (document.getElementById(nbObjectif - 43)) {document.getElementById(nbObjectif - 43).style.backgroundColor = "yellow"}} 
@@ -191,7 +191,7 @@ function prgGrimpeur() {
         if (nbPrgJ >= 4) {if (document.getElementById(nbObjectif - 68)) {document.getElementById(nbObjectif - 68).style.backgroundColor = "red"}}   
         if (nbPrgJ >= 3) {if (document.getElementById(nbObjectif - 67)) {document.getElementById(nbObjectif - 67).style.backgroundColor = "yellow"}}   
         if (nbPrgJ >= 6) {if (document.getElementById(nbObjectif - 66)) {document.getElementById(nbObjectif - 66).style.backgroundColor = "green"}}  
-        if (nbPrgJ >= 5) {if (document.getElementById(nbObjectif - 65)) {document.getElementById(nbObjectif - 65).style.backgroundColor = "red"}}
+        if (nbPrgJ >= 5) {if (document.getElementById(nbObjectif - 65)) {document.getElementById(nbObjectif - 65).style.backgroundColor = "green"}}
         if (nbPrgJ >= 3) {if (document.getElementById(nbObjectif - 64)) {document.getElementById(nbObjectif - 64).style.backgroundColor = "green"}} 
         if (nbPrgJ >= 3) {if (document.getElementById(nbObjectif - 63)) {document.getElementById(nbObjectif - 63).style.backgroundColor = "green"}}
         //semaine 4      
@@ -199,9 +199,9 @@ function prgGrimpeur() {
         if (nbPrgJ >= 4) {if (document.getElementById(nbObjectif - 61)) {document.getElementById(nbObjectif - 61).style.backgroundColor = "green"}}   
         if (nbPrgJ >= 3) {if (document.getElementById(nbObjectif - 60)) {document.getElementById(nbObjectif - 60).style.backgroundColor = "green"}}   
         if (nbPrgJ >= 6) {if (document.getElementById(nbObjectif - 59)) {document.getElementById(nbObjectif - 59).style.backgroundColor = "orange"}}  
-        if (nbPrgJ >= 5) {if (document.getElementById(nbObjectif - 58)) {document.getElementById(nbObjectif - 58).style.backgroundColor = ""}}
+        if (nbPrgJ >= 5) {if (document.getElementById(nbObjectif - 58)) {document.getElementById(nbObjectif - 58).style.backgroundColor = "green"}}
         if (nbPrgJ >= 3) {if (document.getElementById(nbObjectif - 57)) {document.getElementById(nbObjectif - 57).style.backgroundColor = "green"}} 
-        if (nbPrgJ >= 3) {if (document.getElementById(nbObjectif - 56)) {document.getElementById(nbObjectif - 56).style.backgroundColor = "orange"}}
+        if (nbPrgJ >= 3) {if (document.getElementById(nbObjectif - 56)) {document.getElementById(nbObjectif - 56).style.backgroundColor = "green"}}
         //semaine 5    
         if (nbPrgJ >= 7) {if (document.getElementById(nbObjectif - 55)) {document.getElementById(nbObjectif - 55).style.backgroundColor = ""}} 
         if (nbPrgJ >= 4) {if (document.getElementById(nbObjectif - 54)) {document.getElementById(nbObjectif - 54).style.backgroundColor = "red"}}   
@@ -221,11 +221,11 @@ function prgGrimpeur() {
         //semaine 7    
         if (nbPrgJ >= 7) {if (document.getElementById(nbObjectif - 41)) {document.getElementById(nbObjectif - 41).style.backgroundColor = ""}} 
         if (nbPrgJ >= 4) {if (document.getElementById(nbObjectif - 40)) {document.getElementById(nbObjectif - 40).style.backgroundColor = "red"}}   
-        if (nbPrgJ >= 3) {if (document.getElementById(nbObjectif - 39)) {document.getElementById(nbObjectif - 39).style.backgroundColor = "green"}}   
-        if (nbPrgJ >= 6) {if (document.getElementById(nbObjectif - 38)) {document.getElementById(nbObjectif - 38).style.backgroundColor = "orange"}}  
-        if (nbPrgJ >= 5) {if (document.getElementById(nbObjectif - 37)) {document.getElementById(nbObjectif - 37).style.backgroundColor = "green"}}
-        if (nbPrgJ >= 3) {if (document.getElementById(nbObjectif - 36)) {document.getElementById(nbObjectif - 36).style.backgroundColor = "yellow"}} 
-        if (nbPrgJ >= 3) {if (document.getElementById(nbObjectif - 35)) {document.getElementById(nbObjectif - 35).style.backgroundColor = "green"}}   
+        if (nbPrgJ >= 3) {if (document.getElementById(nbObjectif - 39)) {document.getElementById(nbObjectif - 39).style.backgroundColor = "orange"}}   
+        if (nbPrgJ >= 6) {if (document.getElementById(nbObjectif - 38)) {document.getElementById(nbObjectif - 38).style.backgroundColor = "green"}}  
+        if (nbPrgJ >= 5) {if (document.getElementById(nbObjectif - 37)) {document.getElementById(nbObjectif - 37).style.backgroundColor = "orange"}}
+        if (nbPrgJ >= 3) {if (document.getElementById(nbObjectif - 36)) {document.getElementById(nbObjectif - 36).style.backgroundColor = "green"}} 
+        if (nbPrgJ >= 3) {if (document.getElementById(nbObjectif - 35)) {document.getElementById(nbObjectif - 35).style.backgroundColor = "orange"}}   
         //semaine 8
         if (nbPrgJ >= 7) {if (document.getElementById(nbObjectif - 34)) {document.getElementById(nbObjectif - 34).style.backgroundColor = ""}} 
         if (nbPrgJ >= 4) {if (document.getElementById(nbObjectif - 33)) {document.getElementById(nbObjectif - 33).style.backgroundColor = "green"}}   
@@ -283,14 +283,14 @@ function prgGrimpeur() {
         if (nbPrgJ >= 4) {if (document.getElementById(nbObjectif - 40)) {document.getElementById(nbObjectif - 40).style.backgroundColor = "green"}}   
         if (nbPrgJ >= 3) {if (document.getElementById(nbObjectif - 39)) {document.getElementById(nbObjectif - 39).style.backgroundColor = "yellow"}}   
         if (nbPrgJ >= 6) {if (document.getElementById(nbObjectif - 38)) {document.getElementById(nbObjectif - 38).style.backgroundColor = "green"}}  
-        if (nbPrgJ >= 5) {if (document.getElementById(nbObjectif - 37)) {document.getElementById(nbObjectif - 37).style.backgroundColor = "green"}}
-        if (nbPrgJ >= 3) {if (document.getElementById(nbObjectif - 36)) {document.getElementById(nbObjectif - 36).style.backgroundColor = "yellow"}} 
-        if (nbPrgJ >= 3) {if (document.getElementById(nbObjectif - 35)) {document.getElementById(nbObjectif - 35).style.backgroundColor = "green"}}   
+        if (nbPrgJ >= 5) {if (document.getElementById(nbObjectif - 37)) {document.getElementById(nbObjectif - 37).style.backgroundColor = "yellow"}}
+        if (nbPrgJ >= 3) {if (document.getElementById(nbObjectif - 36)) {document.getElementById(nbObjectif - 36).style.backgroundColor = "green"}} 
+        if (nbPrgJ >= 3) {if (document.getElementById(nbObjectif - 35)) {document.getElementById(nbObjectif - 35).style.backgroundColor = "yellow"}}   
         //semaine 4   
         if (nbPrgJ >= 7) {if (document.getElementById(nbObjectif - 34)) {document.getElementById(nbObjectif - 34).style.backgroundColor = ""}} 
         if (nbPrgJ >= 4) {if (document.getElementById(nbObjectif - 33)) {document.getElementById(nbObjectif - 33).style.backgroundColor = "red"}}   
         if (nbPrgJ >= 3) {if (document.getElementById(nbObjectif - 32)) {document.getElementById(nbObjectif - 32).style.backgroundColor = "yellow"}}   
-        if (nbPrgJ >= 6) {if (document.getElementById(nbObjectif - 31)) {document.getElementById(nbObjectif - 31).style.backgroundColor = "orange"}}  
+        if (nbPrgJ >= 6) {if (document.getElementById(nbObjectif - 31)) {document.getElementById(nbObjectif - 31).style.backgroundColor = "green"}}  
         if (nbPrgJ >= 5) {if (document.getElementById(nbObjectif - 30)) {document.getElementById(nbObjectif - 30).style.backgroundColor = "green"}}
         if (nbPrgJ >= 3) {if (document.getElementById(nbObjectif - 29)) {document.getElementById(nbObjectif - 29).style.backgroundColor = "yellow"}} 
         if (nbPrgJ >= 3) {if (document.getElementById(nbObjectif - 28)) {document.getElementById(nbObjectif - 28).style.backgroundColor = "green"}}
@@ -306,7 +306,7 @@ function prgGrimpeur() {
         if (nbPrgJ >= 7) {if (document.getElementById(nbObjectif - 20)) {document.getElementById(nbObjectif - 20).style.backgroundColor = ""}} 
         if (nbPrgJ >= 4) {if (document.getElementById(nbObjectif - 19)) {document.getElementById(nbObjectif - 19).style.backgroundColor = "red"}}   
         if (nbPrgJ >= 3) {if (document.getElementById(nbObjectif - 18)) {document.getElementById(nbObjectif - 18).style.backgroundColor = "orange"}}   
-        if (nbPrgJ >= 6) {if (document.getElementById(nbObjectif - 17)) {document.getElementById(nbObjectif - 17).style.backgroundColor = "orange"}}  
+        if (nbPrgJ >= 6) {if (document.getElementById(nbObjectif - 17)) {document.getElementById(nbObjectif - 17).style.backgroundColor = "green"}}  
         if (nbPrgJ >= 5) {if (document.getElementById(nbObjectif - 16)) {document.getElementById(nbObjectif - 16).style.backgroundColor = "green"}}
         if (nbPrgJ >= 3) {if (document.getElementById(nbObjectif - 15)) {document.getElementById(nbObjectif - 15).style.backgroundColor = "orange"}}
         if (nbPrgJ >= 3) {if (document.getElementById(nbObjectif - 14)) {document.getElementById(nbObjectif - 14).style.backgroundColor = "green"}} 
@@ -1351,14 +1351,14 @@ function prgGrimpeur() {
         //semaine 10      
         if (nbPrgJ >= 7) {document.getElementById("10064").style.backgroundColor = ""}
         if (nbPrgJ >= 4) {document.getElementById("10065").style.backgroundColor = "green"}
-        if (nbPrgJ >= 3) {document.getElementById("10066").style.backgroundColor = "orange"}
+        if (nbPrgJ >= 3) {document.getElementById("10066").style.backgroundColor = "yellow"}
         if (nbPrgJ >= 6) {document.getElementById("10067").style.backgroundColor = "green"}
         if (nbPrgJ >= 5) {document.getElementById("10068").style.backgroundColor = "green"}
         if (nbPrgJ >= 3) {document.getElementById("10069").style.backgroundColor = "yellow"}
         if (nbPrgJ >= 3) {document.getElementById("10070").style.backgroundColor = "green"}
         if (nbPrgJ >= 7) {if(document.getElementById(nbObjectif - 48)) { document.getElementById(12064).innerText = "";}}
         if (nbPrgJ >= 4) {if(document.getElementById(nbObjectif - 47)) { document.getElementById(12065).innerText = "séance d'endurance";}}
-        if (nbPrgJ >= 3) {if(document.getElementById(nbObjectif - 46)) { document.getElementById(12066).innerText = "séance de PMA";}}
+        if (nbPrgJ >= 3) {if(document.getElementById(nbObjectif - 46)) { document.getElementById(12066).innerText = "séance de seuil";}}
         if (nbPrgJ >= 6) {if(document.getElementById(nbObjectif - 45)) { document.getElementById(12067).innerText = "séance d'endurance";}}
         if (nbPrgJ >= 5) {if(document.getElementById(nbObjectif - 44)) { document.getElementById(12068).innerText = "séance d'endurance";}}
         if (nbPrgJ >= 3) {if(document.getElementById(nbObjectif - 43)) { document.getElementById(12069).innerText = "séance de seuil";}}
@@ -1411,7 +1411,7 @@ function prgGrimpeur() {
         //semaine 14    
         if (nbPrgJ >= 7) {document.getElementById("10092").style.backgroundColor = ""}
         if (nbPrgJ >= 4) {document.getElementById("10093").style.backgroundColor = "green"}
-        if (nbPrgJ >= 3) {document.getElementById("10094").style.backgroundColor = "yellow"}
+        if (nbPrgJ >= 3) {document.getElementById("10094").style.backgroundColor = "orange"}
         if (nbPrgJ >= 6) {document.getElementById("10095").style.backgroundColor = "green"}
         if (nbPrgJ >= 5) {document.getElementById("10096").style.backgroundColor = "green"}
         if (nbPrgJ >= 3) {document.getElementById("10097").style.backgroundColor = "orange"}
@@ -1475,14 +1475,14 @@ function prgGrimpeur() {
         if (nbPrgJ >= 4) {document.getElementById("10016").style.backgroundColor = "red"}
         if (nbPrgJ >= 3) {document.getElementById("10017").style.backgroundColor = "yellow"}
         if (nbPrgJ >= 6) {document.getElementById("10018").style.backgroundColor = "green"}
-        if (nbPrgJ >= 5) {document.getElementById("10019").style.backgroundColor = "red"}
+        if (nbPrgJ >= 5) {document.getElementById("10019").style.backgroundColor = "green"}
         if (nbPrgJ >= 3) {document.getElementById("10020").style.backgroundColor = "green"}
         if (nbPrgJ >= 3) {document.getElementById("10021").style.backgroundColor = "green"}
         if (nbPrgJ >= 7) {if(document.getElementById(nbObjectif - 69)) { document.getElementById(120015).innerText = "";}}
         if (nbPrgJ >= 4) {if(document.getElementById(nbObjectif - 68)) { document.getElementById(120016).innerText = "séance de sprint";}}
         if (nbPrgJ >= 3) {if(document.getElementById(nbObjectif - 67)) { document.getElementById(120017).innerText = "séance de seuil";}}
         if (nbPrgJ >= 6) {if(document.getElementById(nbObjectif - 66)) { document.getElementById(120018).innerText = "séance d'endurance";}}
-        if (nbPrgJ >= 5) {if(document.getElementById(nbObjectif - 65)) { document.getElementById(120019).innerText = "séance de sprint";}}
+        if (nbPrgJ >= 5) {if(document.getElementById(nbObjectif - 65)) { document.getElementById(120019).innerText = "séance d'endurance";}}
         if (nbPrgJ >= 3) {if(document.getElementById(nbObjectif - 64)) { document.getElementById(120020).innerText = "séance d'endurance";}}
         if (nbPrgJ >= 3) {if(document.getElementById(nbObjectif - 63)) { document.getElementById(120021).innerText = "séance d'endurance";}}
         //semaine 4      
@@ -1490,14 +1490,14 @@ function prgGrimpeur() {
         if (nbPrgJ >= 4) {document.getElementById("10023").style.backgroundColor = "green"}
         if (nbPrgJ >= 3) {document.getElementById("10024").style.backgroundColor = "green"}
         if (nbPrgJ >= 6) {document.getElementById("10025").style.backgroundColor = "orange"}
-        if (nbPrgJ >= 5) {document.getElementById("10026").style.backgroundColor = ""}
+        if (nbPrgJ >= 5) {document.getElementById("10026").style.backgroundColor = "green"}
         if (nbPrgJ >= 3) {document.getElementById("10027").style.backgroundColor = "green"}
         if (nbPrgJ >= 3) {document.getElementById("10028").style.backgroundColor = "green"}
         if (nbPrgJ >= 7) {if(document.getElementById(nbObjectif - 62)) { document.getElementById(120022).innerText = "";}}
         if (nbPrgJ >= 4) {if(document.getElementById(nbObjectif - 61)) { document.getElementById(120023).innerText = "séance d'endurance";}}
         if (nbPrgJ >= 3) {if(document.getElementById(nbObjectif - 60)) { document.getElementById(120024).innerText = "séance d'endurance";}}
         if (nbPrgJ >= 6) {if(document.getElementById(nbObjectif - 59)) { document.getElementById(120025).innerText = "séance de PMA";}}
-        if (nbPrgJ >= 5) {if(document.getElementById(nbObjectif - 58)) { document.getElementById(120026).innerText = "";}}
+        if (nbPrgJ >= 5) {if(document.getElementById(nbObjectif - 58)) { document.getElementById(120026).innerText = "séance d'endurance";}}
         if (nbPrgJ >= 3) {if(document.getElementById(nbObjectif - 57)) { document.getElementById(120027).innerText = "séance d'endurance";}}
         if (nbPrgJ >= 3) {if(document.getElementById(nbObjectif - 56)) { document.getElementById(120028).innerText = "séance d'endurance";}}
         //semaine 5     
@@ -1533,18 +1533,18 @@ function prgGrimpeur() {
         //semaine 7       
         if (nbPrgJ >= 7) {document.getElementById("10043").style.backgroundColor = ""}
         if (nbPrgJ >= 4) {document.getElementById("10044").style.backgroundColor = "red"}
-        if (nbPrgJ >= 3) {document.getElementById("10045").style.backgroundColor = "green"}
-        if (nbPrgJ >= 6) {document.getElementById("10046").style.backgroundColor = "orange"}
-        if (nbPrgJ >= 5) {document.getElementById("10047").style.backgroundColor = "green"}
-        if (nbPrgJ >= 3) {document.getElementById("10048").style.backgroundColor = "yellow"}
-        if (nbPrgJ >= 3) {document.getElementById("10049").style.backgroundColor = "green"}
+        if (nbPrgJ >= 3) {document.getElementById("10045").style.backgroundColor = "orange"}
+        if (nbPrgJ >= 6) {document.getElementById("10046").style.backgroundColor = "green"}
+        if (nbPrgJ >= 5) {document.getElementById("10047").style.backgroundColor = "orange"}
+        if (nbPrgJ >= 3) {document.getElementById("10048").style.backgroundColor = "green"}
+        if (nbPrgJ >= 3) {document.getElementById("10049").style.backgroundColor = "orange"}
         if (nbPrgJ >= 7) {if(document.getElementById(nbObjectif - 41)) { document.getElementById(120043).innerText = "";}}
         if (nbPrgJ >= 4) {if(document.getElementById(nbObjectif - 40)) { document.getElementById(120044).innerText = "séance de sprint";}}
-        if (nbPrgJ >= 3) {if(document.getElementById(nbObjectif - 39)) { document.getElementById(120045).innerText = "séance d'endurance";}}
-        if (nbPrgJ >= 6) {if(document.getElementById(nbObjectif - 38)) { document.getElementById(120046).innerText = "séance de PMA";}}
-        if (nbPrgJ >= 5) {if(document.getElementById(nbObjectif - 37)) { document.getElementById(120047).innerText = "séance d'endurance";}}
-        if (nbPrgJ >= 3) {if(document.getElementById(nbObjectif - 36)) { document.getElementById(120048).innerText = "séance de seuil";}}
-        if (nbPrgJ >= 3) {if(document.getElementById(nbObjectif - 35)) { document.getElementById(120049).innerText = "séance d'endurance";}}
+        if (nbPrgJ >= 3) {if(document.getElementById(nbObjectif - 39)) { document.getElementById(120045).innerText = "séance de PMA";}}
+        if (nbPrgJ >= 6) {if(document.getElementById(nbObjectif - 38)) { document.getElementById(120046).innerText = "séance d'endurance";}}
+        if (nbPrgJ >= 5) {if(document.getElementById(nbObjectif - 37)) { document.getElementById(120047).innerText = "séance de PMA";}}
+        if (nbPrgJ >= 3) {if(document.getElementById(nbObjectif - 36)) { document.getElementById(120048).innerText = "séance d'endurance";}}
+        if (nbPrgJ >= 3) {if(document.getElementById(nbObjectif - 35)) { document.getElementById(120049).innerText = "séance de PMA";}}
         //semaine 8       
         if (nbPrgJ >= 7) {document.getElementById("10050").style.backgroundColor = ""}
         if (nbPrgJ >= 4) {document.getElementById("10051").style.backgroundColor = "green"}
@@ -1642,28 +1642,28 @@ function prgGrimpeur() {
         if (nbPrgJ >= 4) {document.getElementById("10016").style.backgroundColor = "green"}
         if (nbPrgJ >= 3) {document.getElementById("10017").style.backgroundColor = "yellow"}
         if (nbPrgJ >= 6) {document.getElementById("10018").style.backgroundColor = "green"}
-        if (nbPrgJ >= 5) {document.getElementById("10019").style.backgroundColor = "green"}
-        if (nbPrgJ >= 3) {document.getElementById("10020").style.backgroundColor = "yellow"}
-        if (nbPrgJ >= 3) {document.getElementById("10021").style.backgroundColor = "green"}
+        if (nbPrgJ >= 5) {document.getElementById("10019").style.backgroundColor = "yellow"}
+        if (nbPrgJ >= 3) {document.getElementById("10020").style.backgroundColor = "green"}
+        if (nbPrgJ >= 3) {document.getElementById("10021").style.backgroundColor = "yellow"}
         if (nbPrgJ >= 7) {if(document.getElementById(nbObjectif - 41)) { document.getElementById(120015).innerText = "";}}
         if (nbPrgJ >= 4) {if(document.getElementById(nbObjectif - 40)) { document.getElementById(120016).innerText = "séance d'endurance";}}
         if (nbPrgJ >= 3) {if(document.getElementById(nbObjectif - 39)) { document.getElementById(120017).innerText = "séance de seuil";}}
         if (nbPrgJ >= 6) {if(document.getElementById(nbObjectif - 38)) { document.getElementById(120018).innerText = "séance d'endurance";}}
-        if (nbPrgJ >= 5) {if(document.getElementById(nbObjectif - 37)) { document.getElementById(120019).innerText = "séance d'endurance";}}
-        if (nbPrgJ >= 3) {if(document.getElementById(nbObjectif - 36)) { document.getElementById(120020).innerText = "séance de seuil";}}
-        if (nbPrgJ >= 3) {if(document.getElementById(nbObjectif - 35)) { document.getElementById(120021).innerText = "séance d'endurance";}}
+        if (nbPrgJ >= 5) {if(document.getElementById(nbObjectif - 37)) { document.getElementById(120019).innerText = "séance de seuil";}}
+        if (nbPrgJ >= 3) {if(document.getElementById(nbObjectif - 36)) { document.getElementById(120020).innerText = "séance d'endurance";}}
+        if (nbPrgJ >= 3) {if(document.getElementById(nbObjectif - 35)) { document.getElementById(120021).innerText = "séance de seuil";}}
         //semaine 4      
         if (nbPrgJ >= 7) {document.getElementById("10022").style.backgroundColor = ""}
         if (nbPrgJ >= 4) {document.getElementById("10023").style.backgroundColor = "green"}
         if (nbPrgJ >= 3) {document.getElementById("10024").style.backgroundColor = "yellow"}
-        if (nbPrgJ >= 6) {document.getElementById("10025").style.backgroundColor = "orange"}
+        if (nbPrgJ >= 6) {document.getElementById("10025").style.backgroundColor = "green"}
         if (nbPrgJ >= 5) {document.getElementById("10026").style.backgroundColor = "green"}
         if (nbPrgJ >= 3) {document.getElementById("10027").style.backgroundColor = "yellow"}
         if (nbPrgJ >= 3) {document.getElementById("10028").style.backgroundColor = "green"}
         if (nbPrgJ >= 7) {if(document.getElementById(nbObjectif - 34)) { document.getElementById(120022).innerText = "";}}
         if (nbPrgJ >= 4) {if(document.getElementById(nbObjectif - 33)) { document.getElementById(120023).innerText = "séance d'endurance";}}
         if (nbPrgJ >= 3) {if(document.getElementById(nbObjectif - 32)) { document.getElementById(120024).innerText = "séance de seuil";}}
-        if (nbPrgJ >= 6) {if(document.getElementById(nbObjectif - 31)) { document.getElementById(120025).innerText = "séance de PMA";}}
+        if (nbPrgJ >= 6) {if(document.getElementById(nbObjectif - 31)) { document.getElementById(120025).innerText = "séance d'endurance";}}
         if (nbPrgJ >= 5) {if(document.getElementById(nbObjectif - 30)) { document.getElementById(120026).innerText = "séance d'endurance";}}
         if (nbPrgJ >= 3) {if(document.getElementById(nbObjectif - 29)) { document.getElementById(120027).innerText = "séance de seuil";}}
         if (nbPrgJ >= 3) {if(document.getElementById(nbObjectif - 28)) { document.getElementById(120028).innerText = "séance d'endurance";}}
@@ -1686,14 +1686,14 @@ function prgGrimpeur() {
         if (nbPrgJ >= 7) {document.getElementById("10036").style.backgroundColor = ""}
         if (nbPrgJ >= 4) {document.getElementById("10037").style.backgroundColor = "red"}
         if (nbPrgJ >= 3) {document.getElementById("10038").style.backgroundColor = "orange"}
-        if (nbPrgJ >= 6) {document.getElementById("10039").style.backgroundColor = "orange"}
+        if (nbPrgJ >= 6) {document.getElementById("10039").style.backgroundColor = "green"}
         if (nbPrgJ >= 5) {document.getElementById("10040").style.backgroundColor = "green"}
         if (nbPrgJ >= 3) {document.getElementById("10041").style.backgroundColor = "orange"}
         if (nbPrgJ >= 3) {document.getElementById("10042").style.backgroundColor = "green"}
         if (nbPrgJ >= 7) {if(document.getElementById(nbObjectif - 20)) { document.getElementById(120036).innerText = "";}}
         if (nbPrgJ >= 4) {if(document.getElementById(nbObjectif - 19)) { document.getElementById(120037).innerText = "séance de sprint";}}
         if (nbPrgJ >= 3) {if(document.getElementById(nbObjectif - 18)) { document.getElementById(120038).innerText = "séance de PMA";}}
-        if (nbPrgJ >= 6) {if(document.getElementById(nbObjectif - 17)) { document.getElementById(120039).innerText = "séance de PMA";}}
+        if (nbPrgJ >= 6) {if(document.getElementById(nbObjectif - 17)) { document.getElementById(120039).innerText = "séance d'endurance";}}
         if (nbPrgJ >= 5) {if(document.getElementById(nbObjectif - 16)) { document.getElementById(120040).innerText = "séance d'endurance";}}
         if (nbPrgJ >= 3) {if(document.getElementById(nbObjectif - 15)) {document.getElementById(120041).innerText = "séance de PMA";}}
         if (nbPrgJ >= 3) {if(document.getElementById(nbObjectif - 14)) {document.getElementById(120042).innerText = "séance d'endurance";}}

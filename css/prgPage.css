@@ -63,7 +63,7 @@
 
 #description {
     top: 81.5px;
-    left: 790px;
+    left: 780.8px;
     position: absolute;
     display: inline-block;
     width: 547px;
@@ -90,6 +90,8 @@
     width: 545.3px;
     background-color: rgb(71, 71, 71);
     margin-top: -25px;
-    margin-left: 631.2px;
+    margin-left: 622px;
     border-radius: 6px;
+    height: 310px;
 }
+
