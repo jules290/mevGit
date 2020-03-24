@@ -1,0 +1,125 @@
+#prgStats {
+    position: absolute;
+    top: 375px;
+    left: 160px;
+    background-color: rgb(71, 71, 71);
+    width: 600px;
+    padding-bottom: 50px;
+    height: 198px;
+    border-radius: 6px;
+    display: inline-block;
+}
+
+#sprint {
+    margin-left: 20px;
+}
+
+#anaerobie {
+    margin-left: 20px;
+}
+
+#PMA {
+    margin-left: 20px;
+}
+
+#seuil {
+    margin-left: 20px;
+}
+
+#FTP {
+    margin-left: 20px;
+}
+
+#endurance {
+    margin-left: 20px;
+}
+
+.CaseState {
+    border: 1px white solid;
+    height: 22px;
+    width: 300px;
+    display: inline-block;
+    margin-right: -4.5px;
+    margin-bottom: -5px;
+    border-radius: 5px;
+}
+
+.TitreStats {
+    font-size: 21px;
+    display: inline-block;
+}
+#titreSprint {
+    width: 181.8px;
+    margin-right: 58.2px;
+}
+#levelSprint {
+    height: 20px;
+    width: 65%;
+    background-color: white;
+    margin: 1px;
+    border-radius: 5px;
+}
+
+#titreAnaerobie {
+    width: 221.1px;
+    margin-right: 18.9px;
+}
+#levelAnaerobie {
+    height: 20px;
+    width: 75%;
+    background-color: white;
+    margin: 1px;
+    border-radius: 5px;
+}
+
+#titrePMA {
+    width: 130.27px;
+    margin-right: 109.73px;
+}
+#levelPMA {
+    height: 20px;
+    width: 80%;
+    background-color: white;
+    margin: 1px;
+    border-radius: 5px;
+}
+
+#titreSeuil {
+    width: 150.2px;
+    margin-right: 89.8px;
+}
+#levelSeuil {
+    height: 20px;
+    width: 80%;
+    background-color: white;
+    margin: 1px;
+    border-radius: 5px;
+}
+
+#titreFTP {
+    width: 91.7px;
+    margin-right: 148.3px;
+}
+#levelFTP {
+    height: 20px;
+    width: 75%;
+    background-color: white;
+    margin: 1px;
+    border-radius: 5px;
+}
+
+#titreEndurance {
+    width: 190px;
+    margin-right: 50px;
+}
+#levelEndurance {
+    height: 20px;
+    width: 70%;
+    background-color: white;
+    margin: 1px;
+    border-radius: 5px;
+}
+
+.prgStats{
+    margin-bottom: -20px;
+}

@@ -1,8 +1,8 @@
 #left{
     display: inline-block;
-    width: 50%;
-    margin-top: -10px;
-    margin-left: -10px;
+    width: 600px;
+    margin-top: 0px;
+    margin-left: 0px;
 }
 
 #right{
@@ -30,9 +30,6 @@
     margin-top: 0px;
 }
 
-#prgJ{
-    width: 120px;
-}
 #prgJJ{
     width: 325px;
 }
@@ -62,4 +59,37 @@
     color: rgb(0, 0, 0);
     margin-left: 10px;
     margin-top: 5px;
+}
+
+#description {
+    top: 81.5px;
+    left: 790px;
+    position: absolute;
+    display: inline-block;
+    width: 547px;
+    background-color: rgb(71, 71, 71);
+    border-radius: 6px;
+    height: 250px
+}
+#h1Description {
+    margin-top: 5px;
+    margin-left: 10px;
+    margin-bottom: 0px;
+    margin-right: 0px;
+    text-align: center;
+    font-size: 25px;
+}
+#pDescription {
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+#iV{
+    display: inline-block;
+    width: 545.3px;
+    background-color: rgb(71, 71, 71);
+    margin-top: -25px;
+    margin-left: 631.2px;
+    border-radius: 6px;
 }
