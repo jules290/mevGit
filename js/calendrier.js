@@ -219,6 +219,8 @@ function calendar() {
             break;
     }
 }
+
+$(document).ready(function() {exo()})
 $(".dt_nb").click(function() {exo()})
 
     exo = () => {

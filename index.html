@@ -13,11 +13,14 @@
 
         <title>cyclisme - mon entrainement vélo - plans d'entrainements personnalisé gratuit</title>
         <meta name="description" content="programmes d'entrainement cyclistes gratuits et personnalisés de tout niveau (débutant à compétition)"/>
+        <meta name="keywords" content="cyclisme, entrainement vélo"/>
+        <meta name="robots" content="index, follow, all"/>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/style.css" media="screen">
         <link rel="stylesheet" href="css/menunav.css" media="screen">
         <link rel="stylesheet" href="css/header.css" media="screen">
+        <link rel="stylesheet" href="css/accueil.css" media="screen">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
         <script src="js/count-visits.js"></script>
@@ -25,21 +28,45 @@
     </head>
     <body>
         
-        <div id="mySidenav" class="sidenav">
+        <nav id="mySidenav" class="sidenav">
             <a class="a_accueil" id="accueil" href="index.html">accueil</a>
             <a class="a_programme" id="prg">programme<br>d'entrainement</a>
                 <a id="prgmy" href="prgmy.html">mon programme</a>
                 <a id="prgchc" href="prgchc.html">choisir un programme</a>
             <!-- <a class="a_parametre">paramètre</a> -->
-        </div>
+        </nav>
         
         <div id="header">
             <h1 class="titrePage" id="result">ACCUEIL</h1>
         </div>
         
         <div id="main">
-            <h1>bonjour</h1>
+            <div id="undefined1">
+            
+            </div>
+            
+            <section id="seanceDuJour">
+                <h1 id="titreSeanceDuJour">séance du jour</h1>
+                <div id="exoSeanceDuJour">
+                    <h1 id="dateSeanceDuJour" class="exoT"></h1>
+                    <h2 id="SeanceSeanceDuJour" class="exoS"></h2>
+                    <p class="exoP"></p>
+                </div>
+            </section>
+            
+            <section id="maj">
+                <h1 id="dernieremajH1">dernière mise à jour</h1>
+                <article class="maj">
+                    
+                </article>
+                <h1 id="prochainemajH1">prochaines mise à jour</h1>
+                <article class="maj">
+                    
+                </article>
+            </section>
+            <footer></footer>
         </div>
+        <script src="jsAccueil/seanceDuJour.js"></script>
         <script src="js/language.js"></script>
         <script src="js/menunav_prg.js"></script>
     </body>
