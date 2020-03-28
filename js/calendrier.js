@@ -220,8 +220,8 @@ function calendar() {
     }
 }
 
-$(document).ready(function() {exo()})
-$(".dt_nb").click(function() {exo()})
+//$(document).ready(function() {exo()})
+//$(".dt_nb").click(function() {exo()})
 
     exo = () => {
         let nbObjectif = Number(localStorage.objectif);

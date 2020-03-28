@@ -1,0 +1,39 @@
+#exo{
+    margin-top: 0px;
+}
+.exo{
+    background-color: #323232;
+    height: 345px;
+    width: 94%;
+    margin-left: 3%;
+    margin-right: 3%;
+    border-radius: 10px;
+}
+#exoT{
+    text-align: center;
+    font-size: 40px;
+    height: 58px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.exoP{
+    margin-top: 10px;
+    margin-bottom: 0px;
+    margin-left: 10px;
+    margin-right: 0px;
+}
+.exoS{
+    color: rgb(0, 0, 0);
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+#exoInstruction {
+    font-size: 25px;
+    text-align: center;
+    margin-top: 0px;
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+    padding-top: 24%;
+}

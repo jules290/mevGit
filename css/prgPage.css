@@ -6,10 +6,14 @@
 }
 
 #right{
-    display: inline-table;
+    background-color:  rgb(71, 71, 71);
+    position: absolute;
+    display: inline-block;
     width: 40%;
-    margin-top: -100px;
-    margin-left: 50px;
+    height: 440px;
+    margin-left: 30px;
+    margin-top: 7px;
+    border-radius: 20px;
 }
 
 .objectif_div{
@@ -32,33 +36,6 @@
 
 #prgJJ{
     width: 325px;
-}
-
-#exo{
-    margin-top: 40px;
-}
-.exo{
-    background-color: #323232;
-    height: 100px;
-    margin-top: 15px;
-    border-radius: 10px;
-}
-.exoT{
-    margin-top: 0px;
-    margin-bottom: 0px;
-    margin-left: 10px;
-    margin-right: 0px;  
-}
-.exoP{
-    margin-top: 10px;
-    margin-bottom: 0px;
-    margin-left: 10px;
-    margin-right: 0px;
-}
-.exoS{
-    color: rgb(0, 0, 0);
-    margin-left: 10px;
-    margin-top: 5px;
 }
 
 #description {
