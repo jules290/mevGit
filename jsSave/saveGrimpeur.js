@@ -934,9 +934,11 @@ $("#save").click(function() {
         localStorage.exo111 = "séance d'endurance";
         localStorage.exoClr111 = "green";
 
+        localStorage.exo112 = "objectif";
+        localStorage.exoClr112 = "grey";
+
     }
 
-    
     else if (nbPrgT == 3) {
         //semaine 1
         if (nbPrgJ >= 4) {
@@ -1381,6 +1383,9 @@ $("#save").click(function() {
         localStorage.exo83 = "séance d'endurance";
         localStorage.exoClr83 = "green";
 
+        localStorage.exo83 = "objectif";
+        localStorage.exoClr83 = "grey";
+
     }
 
     
@@ -1671,6 +1676,9 @@ $("#save").click(function() {
 
         localStorage.exo55 = "séance d'endurance";
         localStorage.exoClr55 = "green";
+
+        localStorage.exo55 = "objectif";
+        localStorage.exoClr55 = "grey";
 
     }
     

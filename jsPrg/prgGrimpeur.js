@@ -1099,786 +1099,1000 @@ function prgGrimpeur() {
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr111
             }
         }  
+        if(document.getElementById(nbObjectif)) {
+            document.getElementById(nbObjectif).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 1).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo112
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr
+            }
+        }  
     }
         
-    // else if (nbPrgT == 3) {
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 83).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11001).innerText = document.getElementById(nbObjectif - 83).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10001).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 82).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11002).innerText = document.getElementById(nbObjectif - 82).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10002).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 81).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11003).innerText = document.getElementById(nbObjectif - 81).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10003).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 80).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11004).innerText = document.getElementById(nbObjectif - 80).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10004).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 79).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11005).innerText = document.getElementById(nbObjectif - 79).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10005).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 78).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11006).innerText = document.getElementById(nbObjectif - 78).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10006).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 77).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11007).innerText = document.getElementById(nbObjectif - 77).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10007).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 76).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11008).innerText = document.getElementById(nbObjectif - 76).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10008).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 75).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11009).innerText = document.getElementById(nbObjectif - 75).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10009).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 74).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11010).innerText = document.getElementById(nbObjectif - 74).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10010).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 73).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11011).innerText = document.getElementById(nbObjectif - 73).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10011).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 72).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11012).innerText = document.getElementById(nbObjectif - 72).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10012).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 71).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11013).innerText = document.getElementById(nbObjectif - 71).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10013).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 70).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11014).innerText = document.getElementById(nbObjectif - 70).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10014).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 69).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11015).innerText = document.getElementById(nbObjectif - 69).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10015).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 68).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11016).innerText = document.getElementById(nbObjectif - 68).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10016).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 67).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11017).innerText = document.getElementById(nbObjectif - 67).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10017).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 66).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11018).innerText = document.getElementById(nbObjectif - 66).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10018).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 65).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11019).innerText = document.getElementById(nbObjectif - 65).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10019).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 64).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11020).innerText = document.getElementById(nbObjectif - 64).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10020).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 63).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11021).innerText = document.getElementById(nbObjectif - 63).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10021).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 62).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11022).innerText = document.getElementById(nbObjectif - 62).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10022).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 61).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11023).innerText = document.getElementById(nbObjectif - 61).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10023).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 60).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11024).innerText = document.getElementById(nbObjectif - 60).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10024).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 59).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11025).innerText = document.getElementById(nbObjectif - 59).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10025).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 58).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11026).innerText = document.getElementById(nbObjectif - 58).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10026).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 57).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11027).innerText = document.getElementById(nbObjectif - 57).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10027).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 56).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11028).innerText = document.getElementById(nbObjectif - 56).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10028).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 55).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11029).innerText = document.getElementById(nbObjectif - 55).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10029).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 54).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11030).innerText = document.getElementById(nbObjectif - 54).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10030).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 53).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11031).innerText = document.getElementById(nbObjectif - 53).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10031).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 52).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11032).innerText = document.getElementById(nbObjectif - 52).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10032).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 51).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11033).innerText = document.getElementById(nbObjectif - 51).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10033).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 50).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11034).innerText = document.getElementById(nbObjectif - 50).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10034).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 49).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11035).innerText = document.getElementById(nbObjectif - 49).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10035).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 48).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11036).innerText = document.getElementById(nbObjectif - 48).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10036).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 47).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11037).innerText = document.getElementById(nbObjectif - 47).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10037).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 46).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11038).innerText = document.getElementById(nbObjectif - 46).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10038).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 45).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11039).innerText = document.getElementById(nbObjectif - 45).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10039).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 44).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11040).innerText = document.getElementById(nbObjectif - 44).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10040).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 43).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11041).innerText = document.getElementById(nbObjectif - 43).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10041).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 42).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11042).innerText = document.getElementById(nbObjectif - 42).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10042).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 41).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11043).innerText = document.getElementById(nbObjectif - 41).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10043).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 40).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11044).innerText = document.getElementById(nbObjectif - 40).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10044).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 39).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11045).innerText = document.getElementById(nbObjectif - 39).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10045).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 38).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11046).innerText = document.getElementById(nbObjectif - 38).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10046).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 37).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11047).innerText = document.getElementById(nbObjectif - 37).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10047).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 36).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11048).innerText = document.getElementById(nbObjectif - 36).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10048).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 35).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11049).innerText = document.getElementById(nbObjectif - 35).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10049).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 34).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11050).innerText = document.getElementById(nbObjectif - 34).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10050).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 33).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11051).innerText = document.getElementById(nbObjectif - 33).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10051).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 32).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11052).innerText = document.getElementById(nbObjectif - 32).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10052).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 31).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11053).innerText = document.getElementById(nbObjectif - 31).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10053).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 30).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11054).innerText = document.getElementById(nbObjectif - 30).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10054).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 29).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11055).innerText = document.getElementById(nbObjectif - 29).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10055).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 28).onclick = function() {
-    //                 resetExoHeigt();
-    //         document.getElementById(11056).innerText = document.getElementById(nbObjectif - 28).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10056).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 27).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11057).innerText = document.getElementById(nbObjectif - 27).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10057).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 26).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11058).innerText = document.getElementById(nbObjectif - 26).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10058).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 25).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11059).innerText = document.getElementById(nbObjectif - 25).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10059).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 24).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11060).innerText = document.getElementById(nbObjectif - 24).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10060).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 23).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11061).innerText = document.getElementById(nbObjectif - 23).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10061).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 22).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11062).innerText = document.getElementById(nbObjectif - 22).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10062).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 21).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11063).innerText = document.getElementById(nbObjectif - 21).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10063).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 20).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11064).innerText = document.getElementById(nbObjectif - 20).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10064).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 19).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11065).innerText = document.getElementById(nbObjectif - 19).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10065).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 18).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11066).innerText = document.getElementById(nbObjectif - 18).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10066).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 17).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11067).innerText = document.getElementById(nbObjectif - 17).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10067).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 16).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11068).innerText = document.getElementById(nbObjectif - 16).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10068).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 15).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11069).innerText = document.getElementById(nbObjectif - 15).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10069).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 14).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11070).innerText = document.getElementById(nbObjectif - 14).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10070).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 13).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11071).innerText = document.getElementById(nbObjectif - 13).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10071).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 12).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11072).innerText = document.getElementById(nbObjectif - 12).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10072).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 11).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11073).innerText = document.getElementById(nbObjectif - 11).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10073).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 10).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11074).innerText = document.getElementById(nbObjectif - 10).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10074).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 9).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11075).innerText = document.getElementById(nbObjectif - 9).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10075).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 8).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11076).innerText = document.getElementById(nbObjectif - 8).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10076).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 7).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11077).innerText = document.getElementById(nbObjectif - 7).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10077).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 6).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11078).innerText = document.getElementById(nbObjectif - 6).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10078).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 5).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11079).innerText = document.getElementById(nbObjectif - 5).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10079).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 4).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11080).innerText = document.getElementById(nbObjectif - 4).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10080).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 3).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11081).innerText = document.getElementById(nbObjectif - 3).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10081).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 2).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11082).innerText = document.getElementById(nbObjectif - 2).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10082).style.height = "100px"
-    //     }
-    //     if(document.getElementById(nbObjectif - )) {
-    //     document.getElementById(nbObjectif - 1).onclick = function() {
-    //         resetExoHeigt();
-    //         document.getElementById(11083).innerText = document.getElementById(nbObjectif - 1).innerText + " " + monthA[Number(sessionStorage.month)]
-    //         document.getElementById(10083).style.height = "100px"
-    //     }  
-    // }
-        
-//    else if (nbPrgT == 2) {
-//        document.getElementById(nbObjectif - 55).onclick = function() {
-//            resetExoHeigt();
-//            document.getElementById(1100).innerText = document.getElementById(nbObjectif - 55).innerText + " " + monthA[Number(sessionStorage.month)]
-//            document.getElementById(1000).style.height = "100px"
-//        }
-//        document.getElementById(nbObjectif - 54).onclick = function() {
-//            resetExoHeigt();
-//            document.getElementById(1100).innerText = document.getElementById(nbObjectif - 54).innerText + " " + monthA[Number(sessionStorage.month)]
-//            document.getElementById(1000).style.height = "100px"
-//        }
-//        document.getElementById(nbObjectif - 53).onclick = function() {
-//            resetExoHeigt();
-//            document.getElementById(1100).innerText = document.getElementById(nbObjectif - 53).innerText + " " + monthA[Number(sessionStorage.month)]
-//            document.getElementById(1000).style.height = "100px"
-//        }
-//        document.getElementById(nbObjectif - 52).onclick = function() {
-//            resetExoHeigt();
-//            document.getElementById(1100).innerText = document.getElementById(nbObjectif - 52).innerText + " " + monthA[Number(sessionStorage.month)]
-//            document.getElementById(1000).style.height = "100px"
-//        }
-//        document.getElementById(nbObjectif - 51).onclick = function() {
-//            resetExoHeigt();
-//            document.getElementById(1100).innerText = document.getElementById(nbObjectif - 51).innerText + " " + monthA[Number(sessionStorage.month)]
-//            document.getElementById(1000).style.height = "100px"
-//        }
-//        document.getElementById(nbObjectif - 50).onclick = function() {
-//            resetExoHeigt();
-//            document.getElementById(1100).innerText = document.getElementById(nbObjectif - 50).innerText + " " + monthA[Number(sessionStorage.month)]
-//            document.getElementById(1000).style.height = "100px"
-//        }
-//        document.getElementById(nbObjectif - 49).onclick = function() {
-//            resetExoHeigt();
-//            document.getElementById(1100).innerText = document.getElementById(nbObjectif - 49).innerText + " " + monthA[Number(sessionStorage.month)]
-//            document.getElementById(1000).style.height = "100px"
-//        }
-//        document.getElementById(nbObjectif - 48).onclick = function() {
-//            resetExoHeigt();
-//            document.getElementById(1100).innerText = document.getElementById(nbObjectif - 48).innerText + " " + monthA[Number(sessionStorage.month)]
-//            document.getElementById(1000).style.height = "100px"
-//        }
-//        document.getElementById(nbObjectif - 47).onclick = function() {
-//            resetExoHeigt();
-//            document.getElementById(1100).innerText = document.getElementById(nbObjectif - 47).innerText + " " + monthA[Number(sessionStorage.month)]
-//            document.getElementById(1000).style.height = "100px"
-//        }
-//        document.getElementById(nbObjectif - 46).onclick = function() {
-//            resetExoHeigt();
-//            document.getElementById(1100).innerText = document.getElementById(nbObjectif - 46).innerText + " " + monthA[Number(sessionStorage.month)]
-//            document.getElementById(1000).style.height = "100px"
-//        }
-//        document.getElementById(nbObjectif - 45).onclick = function() {
-//            resetExoHeigt();
-//            document.getElementById(1100).innerText = document.getElementById(nbObjectif - 45).innerText + " " + monthA[Number(sessionStorage.month)]
-//            document.getElementById(1000).style.height = "100px"
-//        }
-//        document.getElementById(nbObjectif - 44).onclick = function() {
-//            resetExoHeigt();
-//            document.getElementById(1100).innerText = document.getElementById(nbObjectif - 44).innerText + " " + monthA[Number(sessionStorage.month)]
-//            document.getElementById(1000).style.height = "100px"
-//        }
-//        document.getElementById(nbObjectif - 43).onclick = function() {
-//            resetExoHeigt();
-//            document.getElementById(1100).innerText = document.getElementById(nbObjectif - 43).innerText + " " + monthA[Number(sessionStorage.month)]
-//            document.getElementById(1000).style.height = "100px"
-//        }
-//        document.getElementById(nbObjectif - 42).onclick = function() {
-//            resetExoHeigt();
-//            document.getElementById(1100).innerText = document.getElementById(nbObjectif - 42).innerText + " " + monthA[Number(sessionStorage.month)]
-//            document.getElementById(1000).style.height = "100px"
-//        }
-//        document.getElementById(nbObjectif - 41).onclick = function() {
-//            resetExoHeigt();
-//            document.getElementById(1100).innerText = document.getElementById(nbObjectif - 41).innerText + " " + monthA[Number(sessionStorage.month)]
-//            document.getElementById(1000).style.height = "100px"
-//        }
-//        document.getElementById(nbObjectif - 40).onclick = function() {
-//            resetExoHeigt();
-//            document.getElementById(1100).innerText = document.getElementById(nbObjectif - 40).innerText + " " + monthA[Number(sessionStorage.month)]
-//            document.getElementById(1000).style.height = "100px"
-//        }
-//        document.getElementById(nbObjectif - 39).onclick = function() {
-//            resetExoHeigt();
-//            document.getElementById(1100).innerText = document.getElementById(nbObjectif - 39).innerText + " " + monthA[Number(sessionStorage.month)]
-//            document.getElementById(1000).style.height = "100px"
-//        }
-//        document.getElementById(nbObjectif - 38).onclick = function() {
-//            resetExoHeigt();
-//            document.getElementById(1100).innerText = document.getElementById(nbObjectif - 38).innerText + " " + monthA[Number(sessionStorage.month)]
-//            document.getElementById(1000).style.height = "100px"
-//        }
-//        document.getElementById(nbObjectif - 37).onclick = function() {
-//            resetExoHeigt() {
-//            document.getElementById(1100).innerText = document.getElementById(nbObjectif - 37).innerText + " " + monthA[Number(sessionStorage.month)]
-//            document.getElementById(1000).style.height = "100px"
-//        }
-//        document.getElementById(nbObjectif - 36).onclick = function() {
-//            resetExoHeigt();
-//            document.getElementById(1100).innerText = document.getElementById(nbObjectif - 36).innerText + " " + monthA[Number(sessionStorage.month)]
-//            document.getElementById(1000).style.height = "100px"
-//        }
-//        document.getElementById(nbObjectif - 35).onclick = function() {
-//            resetExoHeigt();
-//            document.getElementById(1100).innerText = document.getElementById(nbObjectif - 35).innerText + " " + monthA[Number(sessionStorage.month)]
-//            document.getElementById(1000).style.height = "100px"
-//        }
-//        document.getElementById(nbObjectif - 34).onclick = function() {
-//            resetExoHeigt();
-//            document.getElementById(11001).innerText = document.getElementById(nbObjectif - 34).innerText + " " + monthA[Number(sessionStorage.month)]
-//            document.getElementById(10001).style.height = "100px"
-//        }
-//        document.getElementById(nbObjectif - 33).onclick = function() {
-//            resetExoHeigt();
-//            document.getElementById(1100).innerText = document.getElementById(nbObjectif - 33).innerText + " " + monthA[Number(sessionStorage.month)]
-//            document.getElementById(1000).style.height = "100px"
-//        }
-//        document.getElementById(nbObjectif - 32).onclick = function() {
-//            resetExoHeigt();
-//            document.getElementById(1100).innerText = document.getElementById(nbObjectif - 32).innerText + " " + monthA[Number(sessionStorage.month)]
-//            document.getElementById(1000).style.height = "100px"
-//        }
-//        document.getElementById(nbObjectif - 31).onclick = function() {
-//            resetExoHeigt();
-//            document.getElementById(11001).innerText = document.getElementById(nbObjectif - 31).innerText + " " + monthA[Number(sessionStorage.month)]
-//            document.getElementById(10001).style.height = "100px"
-//        }
-//        document.getElementById(nbObjectif - 30).onclick = function() {
-//            resetExoHeigt();
-//            document.getElementById(11001).innerText = document.getElementById(nbObjectif - 30).innerText + " " + monthA[Number(sessionStorage.month)]
-//            document.getElementById(10001).style.height = "100px"
-//        }
-//        document.getElementById(nbObjectif - 29).onclick = function() {
-//            resetExoHeigt();
-//            document.getElementById(11001).innerText = document.getElementById(nbObjectif - 29).innerText + " " + monthA[Number(sessionStorage.month)]
-//            document.getElementById(10001).style.height = "100px"
-//        }
-//        document.getElementById(nbObjectif - 28).onclick = function() {
-//                    resetExoHeigt();
-//            document.getElementById(1100).innerText = document.getElementById(nbObjectif - 28).innerText + " " + monthA[Number(sessionStorage.month)]
-//            document.getElementById(1000).style.height = "100px"
-//        }
-//        document.getElementById(nbObjectif - 27).onclick = function() {
-//            resetExoHeigt();
-//            document.getElementById(1100).innerText = document.getElementById(nbObjectif - 27).innerText + " " + monthA[Number(sessionStorage.month)]
-//            document.getElementById(1000).style.height = "100px"
-//        }
-//        document.getElementById(nbObjectif - 26).onclick = function() {
-//            resetExoHeigt();
-//            document.getElementById(1100).innerText = document.getElementById(nbObjectif - 26).innerText + " " + monthA[Number(sessionStorage.month)]
-//            document.getElementById(1000).style.height = "100px"
-//        }
-//        document.getElementById(nbObjectif - 25).onclick = function() {
-//            resetExoHeigt();
-//            document.getElementById(1100).innerText = document.getElementById(nbObjectif - 25).innerText + " " + monthA[Number(sessionStorage.month)]
-//            document.getElementById(1000).style.height = "100px"
-//        }
-//        document.getElementById(nbObjectif - 24).onclick = function() {
-//            resetExoHeigt();
-//            document.getElementById(1100).innerText = document.getElementById(nbObjectif - 24).innerText + " " + monthA[Number(sessionStorage.month)]
-//            document.getElementById(1000).style.height = "100px"
-//        }
-//        document.getElementById(nbObjectif - 23).onclick = function() {
-//            resetExoHeigt();
-//            document.getElementById(1100).innerText = document.getElementById(nbObjectif - 23).innerText + " " + monthA[Number(sessionStorage.month)]
-//            document.getElementById(1000).style.height = "100px"
-//        }
-//        document.getElementById(nbObjectif - 22).onclick = function() {
-//            resetExoHeigt();
-//            document.getElementById(1100).innerText = document.getElementById(nbObjectif - 22).innerText + " " + monthA[Number(sessionStorage.month)]
-//            document.getElementById(1000).style.height = "100px"
-//        }
-//        document.getElementById(nbObjectif - 21).onclick = function() {
-//            resetExoHeigt();
-//            document.getElementById(1100).innerText = document.getElementById(nbObjectif - 21).innerText + " " + monthA[Number(sessionStorage.month)]
-//            document.getElementById(1000).style.height = "100px"
-//        }
-//        document.getElementById(nbObjectif - 20).onclick = function() {
-//            resetExoHeigt();
-//            document.getElementById(1100).innerText = document.getElementById(nbObjectif - 20).innerText + " " + monthA[Number(sessionStorage.month)]
-//            document.getElementById(1000).style.height = "100px"
-//        }
-//        document.getElementById(nbObjectif - 19).onclick = function() {
-//            resetExoHeigt();
-//            document.getElementById(1100).innerText = document.getElementById(nbObjectif - 19).innerText + " " + monthA[Number(sessionStorage.month)]
-//            document.getElementById(1000).style.height = "100px"
-//        }
-//        document.getElementById(nbObjectif - 18).onclick = function() {
-//            resetExoHeigt();
-//            document.getElementById(1100).innerText = document.getElementById(nbObjectif - 18).innerText + " " + monthA[Number(sessionStorage.month)]
-//            document.getElementById(1000).style.height = "100px"
-//        }
-//        document.getElementById(nbObjectif - 17).onclick = function() {
-//            resetExoHeigt();
-//            document.getElementById(1100).innerText = document.getElementById(nbObjectif - 17).innerText + " " + monthA[Number(sessionStorage.month)]
-//            document.getElementById(1000).style.height = "100px"
-//        }
-//        document.getElementById(nbObjectif - 16).onclick = function() {
-//            resetExoHeigt();
-//            document.getElementById(1100).innerText = document.getElementById(nbObjectif - 16).innerText + " " + monthA[Number(sessionStorage.month)]
-//            document.getElementById(1000).style.height = "100px"
-//        }
-//        document.getElementById(nbObjectif - 15).onclick = function() {
-//            resetExoHeigt();
-//            document.getElementById(1100).innerText = document.getElementById(nbObjectif - 15).innerText + " " + monthA[Number(sessionStorage.month)]
-//            document.getElementById(1000).style.height = "100px"
-//        }
-//        document.getElementById(nbObjectif - 14).onclick = function() {
-//            resetExoHeigt();
-//            document.getElementById(1100).innerText = document.getElementById(nbObjectif - 14).innerText + " " + monthA[Number(sessionStorage.month)]
-//            document.getElementById(1000).style.height = "100px"
-//        }
-//        document.getElementById(nbObjectif - 13).onclick = function() {
-//            resetExoHeigt();
-//            document.getElementById(1100).innerText = document.getElementById(nbObjectif - 13).innerText + " " + monthA[Number(sessionStorage.month)]
-//            document.getElementById(1000).style.height = "100px"
-//        }
-//        document.getElementById(nbObjectif - 12).onclick = function() {
-//            resetExoHeigt();
-//            document.getElementById(1100).innerText = document.getElementById(nbObjectif - 12).innerText + " " + monthA[Number(sessionStorage.month)]
-//            document.getElementById(1000).style.height = "100px"
-//        }
-//        document.getElementById(nbObjectif - 11).onclick = function() {
-//            resetExoHeigt();
-//            document.getElementById(1100).innerText = document.getElementById(nbObjectif - 11).innerText + " " + monthA[Number(sessionStorage.month)]
-//            document.getElementById(1000).style.height = "100px"
-//        }
-//        document.getElementById(nbObjectif - 10).onclick = function() {
-//            resetExoHeigt();
-//            document.getElementById(1100).innerText = document.getElementById(nbObjectif - 10).innerText + " " + monthA[Number(sessionStorage.month)]
-//            document.getElementById(1000).style.height = "100px"
-//        }
-//        document.getElementById(nbObjectif - 9).onclick = function() {
-//            resetExoHeigt();
-//            document.getElementById(1100).innerText = document.getElementById(nbObjectif - 9).innerText + " " + monthA[Number(sessionStorage.month)]
-//            document.getElementById(1000).style.height = "100px"
-//        }
-//        document.getElementById(nbObjectif - 8).onclick = function() {
-//            resetExoHeigt();
-//            document.getElementById(1100).innerText = document.getElementById(nbObjectif - 8).innerText + " " + monthA[Number(sessionStorage.month)]
-//            document.getElementById(1000).style.height = "100px"
-//        }
-//        document.getElementById(nbObjectif - 7).onclick = function() {
-//            resetExoHeigt();
-//            document.getElementById(1100).innerText = document.getElementById(nbObjectif - 7).innerText + " " + monthA[Number(sessionStorage.month)]
-//            document.getElementById(1000).style.height = "100px"
-//        }
-//        document.getElementById(nbObjectif - 6).onclick = function() {
-//            resetExoHeigt();
-//            document.getElementById(1100).innerText = document.getElementById(nbObjectif - 6).innerText + " " + monthA[Number(sessionStorage.month)]
-//            document.getElementById(1000).style.height = "100px"
-//        }
-//        document.getElementById(nbObjectif - 5).onclick = function() {
-//            resetExoHeigt();
-//            document.getElementById(1100).innerText = document.getElementById(nbObjectif - 5).innerText + " " + monthA[Number(sessionStorage.month)]
-//            document.getElementById(1000).style.height = "100px"
-//        }
-//        document.getElementById(nbObjectif - 4).onclick = function() {
-//            resetExoHeigt();
-//            document.getElementById(1100).innerText = document.getElementById(nbObjectif - 4).innerText + " " + monthA[Number(sessionStorage.month)]
-//            document.getElementById(1000).style.height = "100px"
-//        }
-//        document.getElementById(nbObjectif - 3).onclick = function() {
-//            resetExoHeigt();
-//            document.getElementById(1100).innerText = document.getElementById(nbObjectif - 3).innerText + " " + monthA[Number(sessionStorage.month)]
-//            document.getElementById(1000).style.height = "100px"
-//        }
-//        document.getElementById(nbObjectif - 2).onclick = function() {
-//            resetExoHeigt();
-//            document.getElementById(1100).innerText = document.getElementById(nbObjectif - 2).innerText + " " + monthA[Number(sessionStorage.month)]
-//            document.getElementById(1000).style.height = "100px"
-//        }
-//        document.getElementById(nbObjectif - 1).onclick = function() {
-//            resetExoHeigt();
-//            document.getElementById(1100).innerText = document.getElementById(nbObjectif - 1).innerText + " " + monthA[Number(sessionStorage.month)]
-//            document.getElementById(1000).style.height = "100px"
-//        }  
-//    }
+    if (nbPrgT == 3) {
+        if(document.getElementById(nbObjectif - 83)) {
+            document.getElementById(nbObjectif - 83).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 83).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo1
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr1
+            }
+        }
+        if(document.getElementById(nbObjectif - 82)) {
+            document.getElementById(nbObjectif - 82).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 82).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo2
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr2
+            }
+        }
+        if(document.getElementById(nbObjectif - 81)) {
+            document.getElementById(nbObjectif - 81).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 81).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo3
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr3
+            }
+        }
+        if(document.getElementById(nbObjectif - 80)) {
+            document.getElementById(nbObjectif - 80).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 80).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo4
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr4
+            }
+        }
+        if(document.getElementById(nbObjectif - 79)) {
+            document.getElementById(nbObjectif - 79).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 79).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo5
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr5
+            }
+        }
+        if(document.getElementById(nbObjectif - 78)) {
+            document.getElementById(nbObjectif - 78).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 78).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo6
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr6
+            }
+        }
+        if(document.getElementById(nbObjectif - 77)) {
+            document.getElementById(nbObjectif - 77).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 77).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo7
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr7
+            }
+        }
+        if(document.getElementById(nbObjectif - 76)) {
+            document.getElementById(nbObjectif - 76).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 76).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo8
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr8
+            }
+        }
+        if(document.getElementById(nbObjectif - 75)) {
+            document.getElementById(nbObjectif - 75).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 75).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo9
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr9
+            }
+        }
+        if(document.getElementById(nbObjectif - 74)) {
+            document.getElementById(nbObjectif - 74).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 74).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo10
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr10
+            }
+        }
+        if(document.getElementById(nbObjectif - 73)) {
+            document.getElementById(nbObjectif - 73).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 73).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo11
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr11
+            }
+        }
+        if(document.getElementById(nbObjectif - 72)) {
+            document.getElementById(nbObjectif - 72).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 72).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo12
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr12
+            }
+        }
+        if(document.getElementById(nbObjectif - 71)) {
+            document.getElementById(nbObjectif - 71).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 71).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo13
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr13
+            }
+        }
+        if(document.getElementById(nbObjectif - 70)) {
+            document.getElementById(nbObjectif - 70).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 70).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo14
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr14
+            }
+        }
+        if(document.getElementById(nbObjectif - 69)) {
+            document.getElementById(nbObjectif - 69).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 69).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo15
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr15
+            }
+        }
+        if(document.getElementById(nbObjectif - 68)) {
+            document.getElementById(nbObjectif - 68).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 68).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo16
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr16
+            }    
+        }
+        if(document.getElementById(nbObjectif - 67)) {
+            document.getElementById(nbObjectif - 67).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 67).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo17
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr17
+            } 
+        }
+        if(document.getElementById(nbObjectif - 66)) {
+            document.getElementById(nbObjectif - 66).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 66).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo18
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr18
+            }
+        }
+        if(document.getElementById(nbObjectif - 65)) {
+            document.getElementById(nbObjectif - 65).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 65).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo19
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr19
+            }
+        }
+        if(document.getElementById(nbObjectif - 64)) {
+            document.getElementById(nbObjectif - 64).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 64).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo20
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr20
+            }
+        }
+        if(document.getElementById(nbObjectif - 63)) {
+            document.getElementById(nbObjectif - 63).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 63).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo21
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr21
+            }
+        }
+        if(document.getElementById(nbObjectif - 62)) {
+            document.getElementById(nbObjectif - 62).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 62).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo22
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr22
+            }
+        }
+        if(document.getElementById(nbObjectif - 61)) {
+            document.getElementById(nbObjectif - 61).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 61).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo23
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr23
+            }
+        }
+        if(document.getElementById(nbObjectif - 60)) {
+            document.getElementById(nbObjectif - 60).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 60).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo24
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr24
+            }
+        }
+        if(document.getElementById(nbObjectif - 59)) {
+            document.getElementById(nbObjectif - 59).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 59).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo25
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr25
+            }
+        }
+        if(document.getElementById(nbObjectif - 58)) {
+            document.getElementById(nbObjectif - 58).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 58).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo26
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr26
+            }
+        }
+        if(document.getElementById(nbObjectif - 57)) {
+            document.getElementById(nbObjectif - 57).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 57).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo27
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr27
+            }
+        }
+        if(document.getElementById(nbObjectif - 56)) {
+            document.getElementById(nbObjectif - 56).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 56).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo28
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr28
+            }
+        }
+        if(document.getElementById(nbObjectif - 55)) {
+            document.getElementById(nbObjectif - 55).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 55).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo29
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr29
+            }
+        }
+        if(document.getElementById(nbObjectif - 54)) {
+            document.getElementById(nbObjectif - 54).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 54).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo30
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr30
+            }
+        }
+        if(document.getElementById(nbObjectif - 53)) {
+            document.getElementById(nbObjectif - 53).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 53).innerText + " " + monthA[Number(sessionStorage.month)]  
+                document.getElementById("exoInstruction").innerText = localStorage.exo31
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr31
+            }
+        }
+        if(document.getElementById(nbObjectif - 52)) {
+            document.getElementById(nbObjectif - 52).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 52).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo32
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr32
+            }
+        }
+        if(document.getElementById(nbObjectif - 51)) {
+            document.getElementById(nbObjectif - 51).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 51).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo33
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr33
+            }
+        }
+        if(document.getElementById(nbObjectif - 50)) {
+            document.getElementById(nbObjectif - 50).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 50).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo34
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr34
+            }
+        }
+        if(document.getElementById(nbObjectif - 49)) {
+            document.getElementById(nbObjectif - 49).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 49).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo35
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr35
+            }
+        }
+        if(document.getElementById(nbObjectif - 48)) {
+            document.getElementById(nbObjectif - 48).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 48).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo36
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr36
+            }
+        }
+        if(document.getElementById(nbObjectif - 47)) {
+            document.getElementById(nbObjectif - 47).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 47).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo37
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr37
+            }
+        }
+        if(document.getElementById(nbObjectif - 46)) {
+            document.getElementById(nbObjectif - 46).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 46).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo38
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr38
+            }
+        }
+        if(document.getElementById(nbObjectif - 45)) {
+            document.getElementById(nbObjectif - 45).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 45).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo39
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr39
+            }
+        }
+        if(document.getElementById(nbObjectif - 44)) {
+            document.getElementById(nbObjectif - 44).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 44).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo40
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr40
+            }
+        }
+        if(document.getElementById(nbObjectif - 43)) {
+            document.getElementById(nbObjectif - 43).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 43).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo41
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr41
+            }
+        }
+        if(document.getElementById(nbObjectif - 42)) {
+            document.getElementById(nbObjectif - 42).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 42).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo42
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr42
+            }
+        }
+        if(document.getElementById(nbObjectif - 41)) {
+            document.getElementById(nbObjectif - 41).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 41).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo43
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr43
+            }
+        }
+        if(document.getElementById(nbObjectif - 40)) {
+            document.getElementById(nbObjectif - 40).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 40).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo44
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr44
+            }
+        }
+        if(document.getElementById(nbObjectif - 39)) {
+            document.getElementById(nbObjectif - 39).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 39).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo45
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr45
+            }
+        }
+        if(document.getElementById(nbObjectif - 38)) {
+            document.getElementById(nbObjectif - 38).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 38).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo46
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr46
+            }
+        }
+        if(document.getElementById(nbObjectif - 37)) {
+            document.getElementById(nbObjectif - 37).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 37).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo47
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr47
+            }
+        }
+        if(document.getElementById(nbObjectif - 36)) {
+            document.getElementById(nbObjectif - 36).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 36).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo48
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr48
+            }
+        }
+        if(document.getElementById(nbObjectif - 35)) {
+            document.getElementById(nbObjectif - 35).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 35).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo49
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr49
+            }
+        }
+        if(document.getElementById(nbObjectif - 34)) {
+            document.getElementById(nbObjectif - 34).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 34).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo50
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr50
+            }
+        }
+        if(document.getElementById(nbObjectif - 33)) {
+            document.getElementById(nbObjectif - 33).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 33).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo51
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr51
+            }
+        }
+        if(document.getElementById(nbObjectif - 32)) {
+            document.getElementById(nbObjectif - 32).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 32).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo52
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr52
+            }
+        }
+        if(document.getElementById(nbObjectif - 31)) {
+            document.getElementById(nbObjectif - 31).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 31).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo53
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr53
+            }
+        }
+        if(document.getElementById(nbObjectif - 30)) {
+            document.getElementById(nbObjectif - 30).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 30).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo54
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr54
+            }
+        }
+        if(document.getElementById(nbObjectif - 29)) {
+            document.getElementById(nbObjectif - 29).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 29).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo55
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr55
+            }
+        }
+        if(document.getElementById(nbObjectif - 28)) {
+            document.getElementById(nbObjectif - 28).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 28).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo56
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr56
+            }
+        }
+        if(document.getElementById(nbObjectif - 27)) {
+            document.getElementById(nbObjectif - 27).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 27).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo57
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr57
+            }
+        }
+        if(document.getElementById(nbObjectif - 26)) {
+            document.getElementById(nbObjectif - 26).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 26).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo58
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr58
+            }
+        }
+        if(document.getElementById(nbObjectif - 25)) {
+            document.getElementById(nbObjectif - 25).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 25).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo59
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr59
+            }
+        }
+        if(document.getElementById(nbObjectif - 24)) {
+            document.getElementById(nbObjectif - 24).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 24).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo60
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr60
+            }
+        }
+        if(document.getElementById(nbObjectif - 23)) {
+            document.getElementById(nbObjectif - 23).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 23).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo61
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr61
+            }
+        }
+        if(document.getElementById(nbObjectif - 22)) {
+            document.getElementById(nbObjectif - 22).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 22).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo62
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr62
+            }
+        }
+        if(document.getElementById(nbObjectif - 21)) {
+            document.getElementById(nbObjectif - 21).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 21).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo63
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr63
+            }
+        }
+        if(document.getElementById(nbObjectif - 20)) {
+            document.getElementById(nbObjectif - 20).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 20).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo64
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr64
+            }
+        }
+        if(document.getElementById(nbObjectif - 19)) {
+            document.getElementById(nbObjectif - 19).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 19).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo65
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr65
+            }
+        }
+        if(document.getElementById(nbObjectif - 18)) {
+            document.getElementById(nbObjectif - 18).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 18).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo66
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr66
+            }
+        }
+        if(document.getElementById(nbObjectif - 17)) {
+            document.getElementById(nbObjectif - 17).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 17).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo67
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr67
+            }
+        }
+        if(document.getElementById(nbObjectif - 16)) {
+            document.getElementById(nbObjectif - 16).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 16).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo68
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr68
+            }
+        }
+        if(document.getElementById(nbObjectif - 15)) {
+            document.getElementById(nbObjectif - 15).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 15).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo69
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr69
+            }
+        }
+        if(document.getElementById(nbObjectif - 14)) {
+            document.getElementById(nbObjectif - 14).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 14).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo70
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr70
+            }
+        }
+        if(document.getElementById(nbObjectif - 13)) {
+            document.getElementById(nbObjectif - 13).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 13).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo71
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr71
+            }
+        }
+        if(document.getElementById(nbObjectif - 12)) {
+            document.getElementById(nbObjectif - 12).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 12).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo72
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr72
+            }
+        }
+        if(document.getElementById(nbObjectif - 11)) {
+            document.getElementById(nbObjectif - 11).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 11).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo73
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr73
+            }
+        }
+        if(document.getElementById(nbObjectif - 10)) {
+            document.getElementById(nbObjectif - 10).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 10).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo74
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr74
+            }
+        }
+        if(document.getElementById(nbObjectif - 9)) {
+            document.getElementById(nbObjectif - 9).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 9).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo75
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr75
+            } 
+        }
+        if(document.getElementById(nbObjectif - 8)) {
+            document.getElementById(nbObjectif - 8).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 8).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo76
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr76
+            }
+        }
+        if(document.getElementById(nbObjectif - 7)) {
+            document.getElementById(nbObjectif - 7).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 7).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo77
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr77
+            }
+        }
+        if(document.getElementById(nbObjectif - 6)) {
+            document.getElementById(nbObjectif - 6).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 6).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo78
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr78
+            }
+        }
+        if(document.getElementById(nbObjectif - 5)) {
+            document.getElementById(nbObjectif - 5).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 5).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo79
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr79
+            }
+        }
+        if(document.getElementById(nbObjectif - 4)) {
+            document.getElementById(nbObjectif - 4).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 4).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo80
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr80
+            }
+        }
+        if(document.getElementById(nbObjectif - 3)) {
+            document.getElementById(nbObjectif - 3).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 3).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo81
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr81
+            }
+        }
+        if(document.getElementById(nbObjectif - 2)) {
+            document.getElementById(nbObjectif - 2).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 2).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo82
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr82
+            }
+        }
+        if(document.getElementById(nbObjectif - 1)) {
+            document.getElementById(nbObjectif - 1).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 1).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo83
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr83
+            }
+        }  
+        if(document.getElementById(nbObjectif)) {
+            document.getElementById(nbObjectif).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 1).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo84
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr84
+            }
+        }  
+    }
+
+    if (nbPrgT == 2) {
+        if(document.getElementById(nbObjectif - 55)) {
+            document.getElementById(nbObjectif - 55).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 55).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo1
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr1
+            }
+        }
+        if(document.getElementById(nbObjectif - 54)) {
+            document.getElementById(nbObjectif - 54).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 54).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo2
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr2
+            }
+        }
+        if(document.getElementById(nbObjectif - 53)) {
+            document.getElementById(nbObjectif - 53).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 53).innerText + " " + monthA[Number(sessionStorage.month)]  
+                document.getElementById("exoInstruction").innerText = localStorage.exo3
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr3
+            }
+        }
+        if(document.getElementById(nbObjectif - 52)) {
+            document.getElementById(nbObjectif - 52).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 52).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo4
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr4
+            }
+        }
+        if(document.getElementById(nbObjectif - 51)) {
+            document.getElementById(nbObjectif - 51).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 51).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo5
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr5
+            }
+        }
+        if(document.getElementById(nbObjectif - 50)) {
+            document.getElementById(nbObjectif - 50).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 50).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo6
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr6
+            }
+        }
+        if(document.getElementById(nbObjectif - 49)) {
+            document.getElementById(nbObjectif - 49).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 49).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo7
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr7
+            }
+        }
+        if(document.getElementById(nbObjectif - 48)) {
+            document.getElementById(nbObjectif - 48).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 48).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo8
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr8
+            }
+        }
+        if(document.getElementById(nbObjectif - 47)) {
+            document.getElementById(nbObjectif - 47).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 47).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo9
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr9
+            }
+        }
+        if(document.getElementById(nbObjectif - 46)) {
+            document.getElementById(nbObjectif - 46).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 46).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo10
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr10
+            }
+        }
+        if(document.getElementById(nbObjectif - 45)) {
+            document.getElementById(nbObjectif - 45).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 45).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo11
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr11
+            }
+        }
+        if(document.getElementById(nbObjectif - 44)) {
+            document.getElementById(nbObjectif - 44).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 44).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo12
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr12
+            }
+        }
+        if(document.getElementById(nbObjectif - 43)) {
+            document.getElementById(nbObjectif - 43).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 43).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo13
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr13
+            }
+        }
+        if(document.getElementById(nbObjectif - 42)) {
+            document.getElementById(nbObjectif - 42).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 42).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo14
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr14
+            }
+        }
+        if(document.getElementById(nbObjectif - 41)) {
+            document.getElementById(nbObjectif - 41).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 41).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo15
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr15
+            }
+        }
+        if(document.getElementById(nbObjectif - 40)) {
+            document.getElementById(nbObjectif - 40).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 40).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo16
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr16
+            }
+        }
+        if(document.getElementById(nbObjectif - 39)) {
+            document.getElementById(nbObjectif - 39).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 39).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo17
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr17
+            }
+        }
+        if(document.getElementById(nbObjectif - 38)) {
+            document.getElementById(nbObjectif - 38).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 38).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo18
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr18
+            }
+        }
+        if(document.getElementById(nbObjectif - 37)) {
+            document.getElementById(nbObjectif - 37).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 37).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo19
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr19
+            }
+        }
+        if(document.getElementById(nbObjectif - 36)) {
+            document.getElementById(nbObjectif - 36).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 36).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo20
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr20
+            }
+        }
+        if(document.getElementById(nbObjectif - 35)) {
+            document.getElementById(nbObjectif - 35).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 35).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo21
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr21
+            }
+        }
+        if(document.getElementById(nbObjectif - 34)) {
+            document.getElementById(nbObjectif - 34).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 34).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo22
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr22
+            }
+        }
+        if(document.getElementById(nbObjectif - 33)) {
+            document.getElementById(nbObjectif - 33).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 33).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo23
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr23
+            }
+        }
+        if(document.getElementById(nbObjectif - 32)) {
+            document.getElementById(nbObjectif - 32).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 32).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo24
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr24
+            }
+        }
+        if(document.getElementById(nbObjectif - 31)) {
+            document.getElementById(nbObjectif - 31).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 31).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo25
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr25
+            }
+        }
+        if(document.getElementById(nbObjectif - 30)) {
+            document.getElementById(nbObjectif - 30).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 30).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo26
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr26
+            }
+        }
+        if(document.getElementById(nbObjectif - 29)) {
+            document.getElementById(nbObjectif - 29).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 29).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo27
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr27
+            }
+        }
+        if(document.getElementById(nbObjectif - 28)) {
+            document.getElementById(nbObjectif - 28).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 28).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo28
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr28
+            }
+        }
+        if(document.getElementById(nbObjectif - 27)) {
+            document.getElementById(nbObjectif - 27).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 27).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo29
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr29
+            }
+        }
+        if(document.getElementById(nbObjectif - 26)) {
+            document.getElementById(nbObjectif - 26).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 26).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo30
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr30
+            }
+        }
+        if(document.getElementById(nbObjectif - 25)) {
+            document.getElementById(nbObjectif - 25).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 25).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo31
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr31
+            }
+        }
+        if(document.getElementById(nbObjectif - 24)) {
+            document.getElementById(nbObjectif - 24).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 24).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo32
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr32
+            }
+        }
+        if(document.getElementById(nbObjectif - 23)) {
+            document.getElementById(nbObjectif - 23).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 23).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo33
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr33
+            }
+        }
+        if(document.getElementById(nbObjectif - 22)) {
+            document.getElementById(nbObjectif - 22).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 22).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo34
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr34
+            }
+        }
+        if(document.getElementById(nbObjectif - 21)) {
+            document.getElementById(nbObjectif - 21).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 21).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo35
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr35
+            }
+        }
+        if(document.getElementById(nbObjectif - 20)) {
+            document.getElementById(nbObjectif - 20).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 20).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo36
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr36
+            }
+        }
+        if(document.getElementById(nbObjectif - 19)) {
+            document.getElementById(nbObjectif - 19).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 19).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo37
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr37
+            }
+        }
+        if(document.getElementById(nbObjectif - 18)) {
+            document.getElementById(nbObjectif - 18).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 18).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo38
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr38
+            }
+        }
+        if(document.getElementById(nbObjectif - 17)) {
+            document.getElementById(nbObjectif - 17).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 17).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo39
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr39
+            }
+        }
+        if(document.getElementById(nbObjectif - 16)) {
+            document.getElementById(nbObjectif - 16).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 16).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo40
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr40
+            }
+        }
+        if(document.getElementById(nbObjectif - 15)) {
+            document.getElementById(nbObjectif - 15).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 15).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo41
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr41
+            }
+        }
+        if(document.getElementById(nbObjectif - 14)) {
+            document.getElementById(nbObjectif - 14).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 14).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo42
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr42
+            }
+        }
+        if(document.getElementById(nbObjectif - 13)) {
+            document.getElementById(nbObjectif - 13).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 13).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo43
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr43
+            }
+        }
+        if(document.getElementById(nbObjectif - 12)) {
+            document.getElementById(nbObjectif - 12).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 12).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo44
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr44
+            }
+        }
+        if(document.getElementById(nbObjectif - 11)) {
+            document.getElementById(nbObjectif - 11).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 11).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo45
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr45
+            }
+        }
+        if(document.getElementById(nbObjectif - 10)) {
+            document.getElementById(nbObjectif - 10).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 10).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo46
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr46
+            }
+        }
+        if(document.getElementById(nbObjectif - 9)) {
+            document.getElementById(nbObjectif - 9).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 9).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo47
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr47
+            } 
+        }
+        if(document.getElementById(nbObjectif - 8)) {
+            document.getElementById(nbObjectif - 8).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 8).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo48
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr48
+            }
+        }
+        if(document.getElementById(nbObjectif - 7)) {
+            document.getElementById(nbObjectif - 7).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 7).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo49
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr49
+            }
+        }
+        if(document.getElementById(nbObjectif - 6)) {
+            document.getElementById(nbObjectif - 6).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 6).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo50
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr50
+            }
+        }
+        if(document.getElementById(nbObjectif - 5)) {
+            document.getElementById(nbObjectif - 5).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 5).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo51
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr51
+            }
+        }
+        if(document.getElementById(nbObjectif - 4)) {
+            document.getElementById(nbObjectif - 4).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 4).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo52
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr52
+            }
+        }
+        if(document.getElementById(nbObjectif - 3)) {
+            document.getElementById(nbObjectif - 3).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 3).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo53
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr53
+            }
+        }
+        if(document.getElementById(nbObjectif - 2)) {
+            document.getElementById(nbObjectif - 2).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 2).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo54
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr54
+            }
+        }
+        if(document.getElementById(nbObjectif - 1)) {
+            document.getElementById(nbObjectif - 1).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 1).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo55
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr55
+            }
+        }  
+        if(document.getElementById(nbObjectif)) {
+            document.getElementById(nbObjectif).onclick = function() {
+                document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 1).innerText + " " + monthA[Number(sessionStorage.month)]
+                document.getElementById("exoInstruction").innerText = localStorage.exo56
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr56
+            }
+        }  
+    }
 
 //     if (nbPrgT == 4) {
 //         //semaine 1     
