@@ -1681,5 +1681,5 @@ $("#save").click(function() {
         localStorage.exoClr55 = "grey";
 
     }
-    window.location.href = "file:///C:/Users/El%C3%A8ve/Desktop/projet/mon%20entrainement%20velo/prgmy.html";
+    window.location.href = "https://mon-entrainement-velo.netlify.com/prgmy.html";
 })
