@@ -523,6 +523,9 @@ function getAujourdHui() {
             document.getElementById("SeanceSeanceDuJour").innerText = localStorage.exo1
             document.getElementById("exoSeanceDuJour").style.backgroundColor = localStorage.exoClr1
         }
+        else {
+            $("#seanceDuJour").hide();
+        }
     }
     
     if (nbPrgT == 3) {
@@ -858,6 +861,9 @@ function getAujourdHui() {
             document.getElementById("SeanceSeanceDuJour").innerText = localStorage.exo1
             document.getElementById("exoSeanceDuJour").style.backgroundColor = localStorage.exoClr1
         }
+        else {
+            $("#seanceDuJour").hide();
+        }
     }
     
     if (nbPrgT == 2) {
@@ -1080,6 +1086,9 @@ function getAujourdHui() {
         else if(nbExo == 55) {
             document.getElementById("SeanceSeanceDuJour").innerText = localStorage.exo1
             document.getElementById("exoSeanceDuJour").style.backgroundColor = localStorage.exoClr1
+        }
+        else {
+            $("#seanceDuJour").hide();
         }
     }
 }

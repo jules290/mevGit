@@ -1,113 +1,4 @@
-$("#save").click(function() {
-    let année = document.getElementById('annee').value;
-    let mois = document.getElementById('mois').value;
-    let nbd = document.getElementById('nbd').value;
-    let prgT = document.getElementById("prgT").value;
-    let prgJ = document.getElementById("prgJ").value;
-    let nbAnnée = Number(localStorage.année);
-    let nbMois = Number(localStorage.mois);
-    let nbNbd = Number(localStorage.nbd);
-    let nbObjectif = Number(localStorage.objectif);  
-    localStorage.prg = 2;
-    localStorage.année = année;
-    localStorage.mois = mois;
-    localStorage.nbd = nbd;
-    localStorage.prgT = prgT;
-    localStorage.prgJ = prgJ;
-    
-    //2020
-    if(nbAnnée == 2020) {
-        //janvier 01
-        if(nbMois == 1) {
-            localStorage.objectif = 1 + nbNbd - 1;
-        }
-        //fevrier 02
-        else if(nbMois == 2) {
-            if(nbNbd <= 29) {
-                localStorage.objectif = 32 + nbNbd - 1;
-            }
-            else {
-                alert("veuillez sélectionner une date valide");
-                localStorage.année = 0;
-                localStorage.mois = 0;
-                localStorage.nbd = 0;
-            }
-        } 
-        //mars 03
-        else if(nbMois == 3) {
-            localStorage.objectif = 61 + nbNbd - 1;
-        }
-        //avril 04
-        else if(nbMois == 4) {
-            if(nbNbd <= 30) {
-                localStorage.objectif = 92 + nbNbd - 1;
-            }
-            else {
-                alert("veuillez sélectionner une date valide");
-                localStorage.année = 0;
-                localStorage.mois = 0;
-                localStorage.nbd = 0;
-            }
-        }
-        //mai 05
-        else if(nbMois == 5) {
-            localStorage.objectif = 122 + nbNbd - 1;
-        }
-        //juin 06
-        else if(nbMois == 6) {
-            if (nbNbd <= 30) {
-                localStorage.objectif = 153 + nbNbd - 1;
-            }
-            else {
-                alert("veuillez sélectionner une date valide");
-                localStorage.année = 0;
-                localStorage.mois = 0;
-                localStorage.nbd = 0;
-            }
-        }
-        //juillet 07
-        else if(nbMois == 7) {
-            localStorage.objectif = 183 + nbNbd - 1;
-        }
-        //aout 08
-        else if(nbMois == 8) {
-            localStorage.objectif = 214 + nbNbd - 1;
-        }
-        //septembre 09
-        else if(nbMois == 9) {
-            if (nbNbd <= 30) {
-                localStorage.objectif = 245 + nbNbd - 1;
-            }
-            else {
-                alert("veuillez sélectionner une date valide");
-                localStorage.année = 0;
-                localStorage.mois = 0;
-                localStorage.nbd = 0;
-            }
-        }
-        //octobre 10
-        else if(nbMois == 10) {
-            localStorage.objectif = 275 + nbNbd - 1;
-        }
-        //novembre 11
-        else if(nbMois == 11) {
-            if (nbNbd <= 30) {
-            localStorage.objectif = 306 + nbNbd - 1;
-            }
-            else {
-                alert("veuillez sélectionner une date valide");
-                localStorage.année = 0;
-                localStorage.mois = 0;
-                localStorage.nbd = 0;
-            } 
-        }
-        //decembre 12
-        else if (nbMois == 12) {
-            localStorage.objectif = 336 + nbNbd - 1;
-        }  
-    }
-
-    localStorage.exo1 = "";
+localStorage.exo1 = "";
     localStorage.exo2 = "";
     localStorage.exo3 = "";
     localStorage.exo4 = "";
@@ -345,11 +236,11 @@ $("#save").click(function() {
         localStorage.exo2 = "repos"
         localStorage.exoClr2 = "";
 
-        localStorage.exo3 = "séance d'endurance"
+        localStorage.exo3 = ""
         localStorage.exoClr3 = "";
 
         if (nbPrgJ >= 5) {
-            localStorage.exo4 = "séance d'endurance"
+            localStorage.exo4 = ""
             localStorage.exoClr4 = "";
         }
         else {
@@ -357,7 +248,7 @@ $("#save").click(function() {
             localStorage.exoClr4 = "";
         }
         if (nbPrgJ >= 6) {
-            localStorage.exo5 = "séance d'endurance"
+            localStorage.exo5 = ""
             localStorage.exoClr5 = "";
         }
         else {
@@ -365,10 +256,10 @@ $("#save").click(function() {
             localStorage.exoClr5 = "";
         }
 
-        localStorage.exo6 = "séance d'endurance"
+        localStorage.exo6 = ""
         localStorage.exoClr6 = "";
 
-        localStorage.exo7 = "séance d'endurance"
+        localStorage.exo7 = ""
         localStorage.exoClr7 = "";
 
         //semaine 2
@@ -376,7 +267,7 @@ $("#save").click(function() {
         localStorage.exoClr8 = "";
 
         if (nbPrgJ >= 4) {
-            localStorage.exo9 = "séance d'endurance"
+            localStorage.exo9 = ""
             localStorage.exoClr9 = "";
         }
         else {
@@ -384,11 +275,11 @@ $("#save").click(function() {
             localStorage.exoClr9 = "";
         }
 
-        localStorage.exo10 = "séance de sprint"
+        localStorage.exo10 = ""
         localStorage.exoClr10 = "";
 
         if (nbPrgJ >= 6) {
-            localStorage.exo11 = "séance d'endurance"
+            localStorage.exo11 = ""
             localStorage.exoClr11 = "";
         }
         else {
@@ -396,7 +287,7 @@ $("#save").click(function() {
             localStorage.exoClr11 = "";
         }
         if (nbPrgJ >= 5) {
-            localStorage.exo12 = "séance de seuil"
+            localStorage.exo12 = ""
             localStorage.exoClr12 = "";
         }
         else {
@@ -404,10 +295,10 @@ $("#save").click(function() {
             localStorage.exoClr12 = "";
         }
 
-        localStorage.exo13 = "séance d'endurance"
+        localStorage.exo13 = ""
         localStorage.exoClr13 = "";
 
-        localStorage.exo14 = "séance d'endurance"
+        localStorage.exo14 = ""
         localStorage.exoClr14 = "";
 
         //semaine 3
@@ -415,7 +306,7 @@ $("#save").click(function() {
         localStorage.exoClr15 = "";
         
         if (nbPrgJ >= 4) {
-            localStorage.exo16 = "séance de sprint"
+            localStorage.exo16 = ""
             localStorage.exoClr16 = "";
         }
         else {
@@ -423,11 +314,11 @@ $("#save").click(function() {
             localStorage.exoClr16 = "";
         }
 
-        localStorage.exo17 = "séance d'endurance"
+        localStorage.exo17 = ""
         localStorage.exoClr17 = "";
 
         if (nbPrgJ >= 6) {
-            localStorage.exo18 = "séance de PMA"
+            localStorage.exo18 = ""
             localStorage.exoClr18 = "";
         }
         else {
@@ -435,7 +326,7 @@ $("#save").click(function() {
             localStorage.exoClr18 = "";
         }
         if (nbPrgJ >= 5) {
-            localStorage.exo19 = "séance d'endurance"
+            localStorage.exo19 = ""
             localStorage.exoClr19 = "";
         }
         else {
@@ -443,10 +334,10 @@ $("#save").click(function() {
             localStorage.exoClr19 = "";
         }
 
-        localStorage.exo20 = "séance d'endurance"
+        localStorage.exo20 = ""
         localStorage.exoClr20 = "";
 
-        localStorage.exo21 = "séance d'endurance"
+        localStorage.exo21 = ""
         localStorage.exoClr21 = "";
 
         //semaine 4
@@ -454,7 +345,7 @@ $("#save").click(function() {
         localStorage.exoClr22 = "";
         
         if (nbPrgJ >= 4) {
-            localStorage.exo23 = "séance de seuil"
+            localStorage.exo23 = ""
             localStorage.exoClr23 = "";
         }
         else {
@@ -462,11 +353,11 @@ $("#save").click(function() {
             localStorage.exoClr23 = "";
         }
 
-        localStorage.exo24 = "séance d'endurance"
+        localStorage.exo24 = ""
         localStorage.exoClr24 = "";
 
         if (nbPrgJ >= 6) {
-            localStorage.exo25 = "séance d'endurance"
+            localStorage.exo25 = ""
             localStorage.exoClr25 = "";
         }
         else {
@@ -474,7 +365,7 @@ $("#save").click(function() {
             localStorage.exoClr25 = "";
         }
         if (nbPrgJ >= 5) {
-            localStorage.exo26 = "séance de sprint"
+            localStorage.exo26 = ""
             localStorage.exoClr26 = "";
         }
         else {
@@ -482,10 +373,10 @@ $("#save").click(function() {
             localStorage.exoClr26 = "";
         }
 
-        localStorage.exo27 = "séance d'endurance"
+        localStorage.exo27 = ""
         localStorage.exoClr27 = "";
 
-        localStorage.exo28 = "séance d'endurance"
+        localStorage.exo28 = ""
         localStorage.exoClr28 = "";
 
         //semaine 5
@@ -493,7 +384,7 @@ $("#save").click(function() {
         localStorage.exoClr29 = "";
         
         if (nbPrgJ >= 4) {
-            localStorage.exo30 = "séance d'endurance"
+            localStorage.exo30 = ""
             localStorage.exoClr30 = "";
         }
         else {
@@ -501,11 +392,11 @@ $("#save").click(function() {
             localStorage.exoClr30 = "";
         }
 
-        localStorage.exo31 = "séance d'endurance"
+        localStorage.exo31 = ""
         localStorage.exoClr31 = "";
 
         if (nbPrgJ >= 6) {
-            localStorage.exo = "séance d'endurance"
+            localStorage.exo = ""
             localStorage.exoClr32 = "";
         }
         else {
@@ -513,7 +404,7 @@ $("#save").click(function() {
             localStorage.exoClr32 = "";
         }
         if (nbPrgJ >= 5) {
-            localStorage.exo33 = "séance de PMA"
+            localStorage.exo33 = ""
             localStorage.exoClr33 = "";
         }
         else {
@@ -521,10 +412,10 @@ $("#save").click(function() {
             localStorage.exoClr33 = "";
         }
 
-        localStorage.exo34 = "séance d'endurance"
+        localStorage.exo34 = ""
         localStorage.exoClr34 = "";
 
-        localStorage.exo35 = "séance d'endurance"
+        localStorage.exo35 = ""
         localStorage.exoClr35 = "";
 
         //semaine 6
@@ -532,7 +423,7 @@ $("#save").click(function() {
         localStorage.exoClr36 = "";
         
         if (nbPrgJ >= 4) {
-            localStorage.exo37 = "séance d'endurance"
+            localStorage.exo37 = ""
             localStorage.exoClr37 = "";
         }
         else {
@@ -540,11 +431,11 @@ $("#save").click(function() {
             localStorage.exoClr37 = "";
         }
 
-        localStorage.exo38 = "séance de seuil"
+        localStorage.exo38 = ""
         localStorage.exoClr38 = "";
 
         if (nbPrgJ >= 6) {
-            localStorage.exo39 = "séance de sprint"
+            localStorage.exo39 = ""
             localStorage.exoClr39 = "";
         }
         else {
@@ -552,7 +443,7 @@ $("#save").click(function() {
             localStorage.exoClr39 = "";
         }
         if (nbPrgJ >= 5) {
-            localStorage.exo40 = "séance d'endurance"
+            localStorage.exo40 = ""
             localStorage.exoClr40 = "";
         }
         else {
@@ -560,17 +451,17 @@ $("#save").click(function() {
             localStorage.exoClr40 = "";
         }
 
-        localStorage.exo41 = "séance d'endurance"
+        localStorage.exo41 = ""
         localStorage.exoClr41 = "";
 
-        localStorage.exo42 = "séance d'endurance"
+        localStorage.exo42 = ""
         localStorage.exoClr42 = "";
         //semaine 7
         localStorage.exo43 = "repos"
         localStorage.exoClr43 = "";
         
         if (nbPrgJ >= 4) {
-            localStorage.exo44 = "séance de sprint"
+            localStorage.exo44 = ""
             localStorage.exoClr44 = "";
         }
         else {
@@ -578,11 +469,11 @@ $("#save").click(function() {
             localStorage.exoClr44 = "";
         }
 
-        localStorage.exo45 = "séance de seuil"
+        localStorage.exo45 = ""
         localStorage.exoClr45 = "";
 
         if (nbPrgJ >= 6) {
-            localStorage.exo46 = "séance d'endurance"
+            localStorage.exo46 = ""
             localStorage.exoClr46 = "";
         }
         else {
@@ -590,7 +481,7 @@ $("#save").click(function() {
             localStorage.exoClr46 = "";
         }
         if (nbPrgJ >= 5) {
-            localStorage.exo47 = "séance de PMA"
+            localStorage.exo47 = ""
             localStorage.exoClr47 = "";
         }
         else {
@@ -598,10 +489,10 @@ $("#save").click(function() {
             localStorage.exoClr47 = "";
         }
 
-        localStorage.exo48 = "séance d'endurance"
+        localStorage.exo48 = ""
         localStorage.exoClr48 = "";
 
-        localStorage.exo49 = "séance de PMA"
+        localStorage.exo49 = ""
         localStorage.exoClr49 = "";
         
         //semaine 8
@@ -609,7 +500,7 @@ $("#save").click(function() {
         localStorage.exoClr50 = "";
         
         if (nbPrgJ >= 4) {
-            localStorage.exo51 = "séance de seuil"
+            localStorage.exo51 = ""
             localStorage.exoClr51 = "";
         }
         else {
@@ -617,11 +508,11 @@ $("#save").click(function() {
             localStorage.exoClr51 = "";
         }
 
-        localStorage.exo52 = "séance d'endurance"
+        localStorage.exo52 = ""
         localStorage.exoClr52 = "";
 
         if (nbPrgJ >= 6) {
-            localStorage.exo53 = "séance de seuil"
+            localStorage.exo53 = ""
             localStorage.exoClr53 = "";
         }
         else {
@@ -629,7 +520,7 @@ $("#save").click(function() {
             localStorage.exoClr53 = "";
         }
         if (nbPrgJ >= 5) {
-            localStorage.exo54 = "séance d'endurance"
+            localStorage.exo54 = ""
             localStorage.exoClr54 = "";
         }
         else {
@@ -637,10 +528,10 @@ $("#save").click(function() {
             localStorage.exoClr54 = "";
         }
 
-        localStorage.exo55 = "séance de seuil"
+        localStorage.exo55 = ""
         localStorage.exoClr55 = "";
 
-        localStorage.exo56 = "séance d'endurance"
+        localStorage.exo56 = ""
         localStorage.exoClr56 = "";
         
         //semaine 9
@@ -648,7 +539,7 @@ $("#save").click(function() {
         localStorage.exoClr57 = "";
         
         if (nbPrgJ >= 4) {
-            localStorage.exo58 = "séance de sprint"
+            localStorage.exo58 = ""
             localStorage.exoClr58 = "";
         }
         else {
@@ -656,11 +547,11 @@ $("#save").click(function() {
             localStorage.exoClr58 = "";
         }
 
-        localStorage.exo59 = "séance d'endurance"
+        localStorage.exo59 = ""
         localStorage.exoClr59 = "";
 
         if (nbPrgJ >= 6) {
-            localStorage.exo60 = "séance de seuil"
+            localStorage.exo60 = ""
             localStorage.exoClr60 = "";
         }
         else {
@@ -668,7 +559,7 @@ $("#save").click(function() {
             localStorage.exoClr60 = "";
         }
         if (nbPrgJ >= 5) {
-            localStorage.exo61 = "séance d'endurance"
+            localStorage.exo61 = ""
             localStorage.exoClr61 = "";
         }
         else {
@@ -676,10 +567,10 @@ $("#save").click(function() {
             localStorage.exoClr61 = "";
         }
 
-        localStorage.exo62 = "séance de seuil"
+        localStorage.exo62 = ""
         localStorage.exoClr62 = "";
 
-        localStorage.exo63 = "séance d'endurance"
+        localStorage.exo63 = ""
         localStorage.exoClr63 = "";
 
         //semaine 10
@@ -687,7 +578,7 @@ $("#save").click(function() {
         localStorage.exoClr64 = "";
         
         if (nbPrgJ >= 4) {
-            localStorage.exo65 = "séance d'endurance"
+            localStorage.exo65 = ""
             localStorage.exoClr65 = "";
         }
         else {
@@ -695,11 +586,11 @@ $("#save").click(function() {
             localStorage.exoClr65 = "";
         }
 
-        localStorage.exo66 = "séance de seuil"
+        localStorage.exo66 = ""
         localStorage.exoClr66 = "";
 
         if (nbPrgJ >= 6) {
-            localStorage.exo67 = "séance d'endurance"
+            localStorage.exo67 = ""
             localStorage.exoClr67 = "";
         }
         else {
@@ -707,7 +598,7 @@ $("#save").click(function() {
             localStorage.exoClr67 = "";
         }
         if (nbPrgJ >= 5) {
-            localStorage.exo68 = "séance d'endurance"
+            localStorage.exo68 = ""
             localStorage.exoClr68 = "";
         }
         else {
@@ -715,10 +606,10 @@ $("#save").click(function() {
             localStorage.exoClr68 = "";
         }
 
-        localStorage.exo69 = "séance de seuil"
+        localStorage.exo69 = ""
         localStorage.exoClr69 = "";
 
-        localStorage.exo70 = "séance d'endurance"
+        localStorage.exo70 = ""
         localStorage.exoClr70 = "";
         
         //semaine 11
@@ -726,7 +617,7 @@ $("#save").click(function() {
         localStorage.exoClr71 = "";
         
         if (nbPrgJ >= 4) {
-            localStorage.exo72 = "séance de sprint"
+            localStorage.exo72 = ""
             localStorage.exoClr72 = "";
         }
         else {
@@ -734,11 +625,11 @@ $("#save").click(function() {
             localStorage.exoClr72 = "";
         }
 
-        localStorage.exo73 = "séance de PMA"
+        localStorage.exo73 = ""
         localStorage.exoClr73 = "";
 
         if (nbPrgJ >= 6) {
-            localStorage.exo74 = "séance d'endurance"
+            localStorage.exo74 = ""
             localStorage.exoClr74 = "";
         }
         else {
@@ -746,7 +637,7 @@ $("#save").click(function() {
             localStorage.exoClr74 = "";
         }
         if (nbPrgJ >= 5) {
-            localStorage.exo75 = "séance de PMA"
+            localStorage.exo75 = ""
             localStorage.exoClr75 = "";
         }
         else {
@@ -754,10 +645,10 @@ $("#save").click(function() {
             localStorage.exoClr75 = "";
         }
 
-        localStorage.exo76 = "séance de PMA"
+        localStorage.exo76 = ""
         localStorage.exoClr76 = "";
 
-        localStorage.exo77 = "séance d'endurance"
+        localStorage.exo77 = ""
         localStorage.exoClr77 = "";
         
         //semaine 12
@@ -765,7 +656,7 @@ $("#save").click(function() {
         localStorage.exoClr78 = "";
         
         if (nbPrgJ >= 4) {
-            localStorage.exo79 = "séance de PMA"
+            localStorage.exo79 = ""
             localStorage.exoClr79 = "";
         }
         else {
@@ -773,11 +664,11 @@ $("#save").click(function() {
             localStorage.exoClr79 = "";
         }
 
-        localStorage.exo80 = "séance d'endurance"
+        localStorage.exo80 = ""
         localStorage.exoClr80 = "";
 
         if (nbPrgJ >= 6) {
-            localStorage.exo81 = "séance de PMA"
+            localStorage.exo81 = ""
             localStorage.exoClr81 = "";
         }
         else {
@@ -785,7 +676,7 @@ $("#save").click(function() {
             localStorage.exoClr81 = "";
         }
         if (nbPrgJ >= 5) {
-            localStorage.exo82 = "séance d'endurance"
+            localStorage.exo82 = ""
             localStorage.exoClr82 = "";
         }
         else {
@@ -793,10 +684,10 @@ $("#save").click(function() {
             localStorage.exoClr82 = "";
         }
 
-        localStorage.exo83 = "séance de PMA"
+        localStorage.exo83 = ""
         localStorage.exoClr83 = "";
 
-        localStorage.exo84 = "séance d'endurance"
+        localStorage.exo84 = ""
         localStorage.exoClr84 = "";
         
         //semaine 13
@@ -804,7 +695,7 @@ $("#save").click(function() {
         localStorage.exoClr85 = "";
         
         if (nbPrgJ >= 4) {
-            localStorage.exo86 = "séance de sprint"
+            localStorage.exo86 = ""
             localStorage.exoClr86 = "";
         }
         else {
@@ -812,11 +703,11 @@ $("#save").click(function() {
             localStorage.exoClr86 = "";
         }
 
-        localStorage.exo87 = "séance de PMA"
+        localStorage.exo87 = ""
         localStorage.exoClr87 = "";
 
         if (nbPrgJ >= 6) {
-            localStorage.exo88 = "séance d'endurance"
+            localStorage.exo88 = ""
             localStorage.exoClr88 = "";
         }
         else {
@@ -824,7 +715,7 @@ $("#save").click(function() {
             localStorage.exoClr88 = "";
         }
         if (nbPrgJ >= 5) {
-            localStorage.exo89 = "séance d'endurance"
+            localStorage.exo89 = ""
             localStorage.exoClr89 = "";
         }
         else {
@@ -832,10 +723,10 @@ $("#save").click(function() {
             localStorage.exoClr89 = "";
         }
 
-        localStorage.exo90 = "séance de PMA"
+        localStorage.exo90 = ""
         localStorage.exoClr90 = "";
 
-        localStorage.exo91 = "séance d'endurance"
+        localStorage.exo91 = ""
         localStorage.exoClr91 = "";
         
         //semaine 14
@@ -843,7 +734,7 @@ $("#save").click(function() {
         localStorage.exoClr92 = "";
         
         if (nbPrgJ >= 4) {
-            localStorage.exo93 = "séance d'endurance"
+            localStorage.exo93 = ""
             localStorage.exoClr93 = "";
         }
         else {
@@ -851,11 +742,11 @@ $("#save").click(function() {
             localStorage.exoClr93 = "";
         }
 
-        localStorage.exo94 = "séance de PMA"
+        localStorage.exo94 = ""
         localStorage.exoClr94 = "";
 
         if (nbPrgJ >= 6) {
-            localStorage.exo95 = "séance d'endurance"
+            localStorage.exo95 = ""
             localStorage.exoClr95 = "";
         }
         else {
@@ -863,7 +754,7 @@ $("#save").click(function() {
             localStorage.exoClr95 = "";
         }
         if (nbPrgJ >= 5) {
-            localStorage.exo96 = "séance d'endurance"
+            localStorage.exo96 = ""
             localStorage.exoClr96 = "";
         }
         else {
@@ -871,10 +762,10 @@ $("#save").click(function() {
             localStorage.exoClr96 = "";
         }
 
-        localStorage.exo97 = "séance de PMA"
+        localStorage.exo97 = ""
         localStorage.exoClr97 = "";
 
-        localStorage.exo98 = "séance d'endurance"
+        localStorage.exo98 = ""
         localStorage.exoClr98 = "";
         
         //semaine 15
@@ -937,7 +828,7 @@ $("#save").click(function() {
     else if (nbPrgT == 3) {
         //semaine 1
         if (nbPrgJ >= 4) {
-            localStorage.exo1 = "séance d'endurance"
+            localStorage.exo1 = ""
             localStorage.exoClr1 = "";
         }
         else {
@@ -949,11 +840,11 @@ $("#save").click(function() {
         localStorage.exoClr2 = "";
         
 
-        localStorage.exo = "séance d'endurance"
+        localStorage.exo = ""
         localStorage.exoClr3 = "";
 
         if (nbPrgJ >= 5) {
-            localStorage.exo4 = "séance d'endurance"
+            localStorage.exo4 = ""
             localStorage.exoClr4 = "";
         }
         else {
@@ -961,7 +852,7 @@ $("#save").click(function() {
             localStorage.exoClr4 = "";
         }
         if (nbPrgJ >= 6) {
-            localStorage.exo5 = "séance d'endurance"
+            localStorage.exo5 = ""
             localStorage.exoClr5 = "";
         }
         else {
@@ -969,10 +860,10 @@ $("#save").click(function() {
             localStorage.exoClr5 = "";
         }
 
-        localStorage.exo6 = "séance d'endurance"
+        localStorage.exo6 = ""
         localStorage.exoClr6 = "";
 
-        localStorage.exo7 = "séance d'endurance"
+        localStorage.exo7 = ""
         localStorage.exoClr7 = "";
 
         //semaine 2
@@ -980,7 +871,7 @@ $("#save").click(function() {
         localStorage.exoClr8 = "";
         
         if (nbPrgJ >= 4) {
-            localStorage.exo9 = "séance d'endurance"
+            localStorage.exo9 = ""
             localStorage.exoClr9 = "";
         }
         else {
@@ -988,11 +879,11 @@ $("#save").click(function() {
             localStorage.exoClr9 = "";
         }
 
-        localStorage.exo10 = "séance de sprint"
+        localStorage.exo10 = ""
         localStorage.exoClr10 = "";
 
         if (nbPrgJ >= 6) {
-            localStorage.exo11 = "séance d'endurance"
+            localStorage.exo11 = ""
             localStorage.exoClr11 = "";
         }
         else {
@@ -1000,7 +891,7 @@ $("#save").click(function() {
             localStorage.exoClr11 = "";
         }
         if (nbPrgJ >= 5) {
-            localStorage.exo12 = "séance de seuil"
+            localStorage.exo12 = ""
             localStorage.exoClr12 = "";
         }
         else {
@@ -1008,10 +899,10 @@ $("#save").click(function() {
             localStorage.exoClr12 = "";
         }
 
-        localStorage.exo13 = "séance d'endurance"
+        localStorage.exo13 = ""
         localStorage.exoClr13 = "";
 
-        localStorage.exo14 = "séance d'endurance"
+        localStorage.exo14 = ""
         localStorage.exoClr14 = "";
 
         //semaine 3
@@ -1019,7 +910,7 @@ $("#save").click(function() {
         localStorage.exoClr15 = "";
         
         if (nbPrgJ >= 4) {
-            localStorage.exo16 = "séance de sprint"
+            localStorage.exo16 = ""
             localStorage.exoClr16 = "";
         }
         else {
@@ -1027,11 +918,11 @@ $("#save").click(function() {
             localStorage.exoClr16 = "";
         }
 
-        localStorage.exo17 = "séance de seuil"
+        localStorage.exo17 = ""
         localStorage.exoClr17 = "";
 
         if (nbPrgJ >= 6) {
-            localStorage.exo18 = "séance d'endurance"
+            localStorage.exo18 = ""
             localStorage.exoClr18 = "";
         }
         else {
@@ -1039,7 +930,7 @@ $("#save").click(function() {
             localStorage.exoClr18 = "";
         }
         if (nbPrgJ >= 5) {
-            localStorage.exo19 = "séance d'endurance"
+            localStorage.exo19 = ""
             localStorage.exoClr19 = "";
         }
         else {
@@ -1047,10 +938,10 @@ $("#save").click(function() {
             localStorage.exoClr19 = "";
         }
 
-        localStorage.exo20 = "séance d'endurance"
+        localStorage.exo20 = ""
         localStorage.exoClr20 = "";
 
-        localStorage.exo21 = "séance d'endurance"
+        localStorage.exo21 = ""
         localStorage.exoClr21 = "";
 
         //semaine 4
@@ -1058,7 +949,7 @@ $("#save").click(function() {
         localStorage.exoClr22 = "";
         
         if (nbPrgJ >= 4) {
-            localStorage.exo23 = "séance d'endurance"
+            localStorage.exo23 = ""
             localStorage.exoClr23 = "";
         }
         else {
@@ -1066,11 +957,11 @@ $("#save").click(function() {
             localStorage.exoClr23 = "";
         }
 
-        localStorage.exo24 = "séance d'endurance"
+        localStorage.exo24 = ""
         localStorage.exoClr24 = "";
 
         if (nbPrgJ >= 6) {
-            localStorage.exo25 = "séance de PMA"
+            localStorage.exo25 = ""
             localStorage.exoClr25 = "";
         }
         else {
@@ -1078,7 +969,7 @@ $("#save").click(function() {
             localStorage.exoClr25 = "";
         }
         if (nbPrgJ >= 5) {
-            localStorage.exo26 = "séance d'endurance"
+            localStorage.exo26 = ""
             localStorage.exoClr26 = "";
         }
         else {
@@ -1086,10 +977,10 @@ $("#save").click(function() {
             localStorage.exoClr26 = "";
         }
 
-        localStorage.exo27 = "séance d'endurance"
+        localStorage.exo27 = ""
         localStorage.exoClr27 = "";
 
-        localStorage.exo28 = "séance d'endurance"
+        localStorage.exo28 = ""
         localStorage.exoClr28 = "";
 
         //semaine 5
@@ -1097,7 +988,7 @@ $("#save").click(function() {
         localStorage.exoClr29 = "";
         
         if (nbPrgJ >= 4) {
-            localStorage.exo30 = "séance de sprint"
+            localStorage.exo30 = ""
             localStorage.exoClr30 = "";
         }
         else {
@@ -1105,19 +996,19 @@ $("#save").click(function() {
             localStorage.exoClr30 = "";
         }
 
-        localStorage.exo31 = "séance de seuil"
+        localStorage.exo31 = ""
         localStorage.exoClr31 = "";
 
         if (nbPrgJ >= 6) {
-            localStorage.exo32 = "séance d'endurance"
+            localStorage.exo32 = ""
             localStorage.exoClr32 = "";
         }
         else {
             localStorage.exo32 = "repos"
             localStorage.exoClr32 = "";
         }
-        if (nbPrgJ >= 4) {
-            localStorage.exo33 = "séance de seuil"
+        if (nbPrgJ >= 5) {
+            localStorage.exo33 = ""
             localStorage.exoClr33 = "";
         }
         else {
@@ -1125,10 +1016,10 @@ $("#save").click(function() {
             localStorage.exoClr33 = "";
         }
 
-        localStorage.exo34 = "séance de seuil"
+        localStorage.exo34 = ""
         localStorage.exoClr34 = "";
 
-        localStorage.exo35 = "séance d'endurance"
+        localStorage.exo35 = ""
         localStorage.exoClr35 = "";
 
         //semaine 6
@@ -1136,7 +1027,7 @@ $("#save").click(function() {
         localStorage.exoClr36 = "";
         
         if (nbPrgJ >= 4) {
-            localStorage.exo37 = "séance d'endurance"
+            localStorage.exo37 = ""
             localStorage.exoClr37 = "";
         }
         else {
@@ -1144,11 +1035,11 @@ $("#save").click(function() {
             localStorage.exoClr37 = "";
         }
 
-        localStorage.exo38 = "séance de seuil"
+        localStorage.exo38 = ""
         localStorage.exoClr38 = "";
 
         if (nbPrgJ >= 6) {
-            localStorage.exo39 = "séance de seuil"
+            localStorage.exo39 = ""
             localStorage.exoClr39 = "";
         }
         else {
@@ -1156,7 +1047,7 @@ $("#save").click(function() {
             localStorage.exoClr39 = "";
         }
         if (nbPrgJ >= 5) {
-            localStorage.exo40 = "séance d'endurance"
+            localStorage.exo40 = ""
             localStorage.exoClr40 = "";
         }
         else {
@@ -1164,10 +1055,10 @@ $("#save").click(function() {
             localStorage.exoClr40 = "";
         }
 
-        localStorage.exo41 = "séance de seuil"
+        localStorage.exo41 = ""
         localStorage.exoClr41 = "";
 
-        localStorage.exo42 = "séance d'endurance"
+        localStorage.exo42 = ""
         localStorage.exoClr42 = "";
 
         //semaine 7
@@ -1175,7 +1066,7 @@ $("#save").click(function() {
         localStorage.exoClr43 = "";
         
         if (nbPrgJ >= 4) {
-            localStorage.exo44 = "séance de sprint"
+            localStorage.exo44 = ""
             localStorage.exoClr44 = "";
         }
         else {
@@ -1183,11 +1074,11 @@ $("#save").click(function() {
             localStorage.exoClr44 = "";
         }
 
-        localStorage.exo45 = "séance de PMA"
+        localStorage.exo45 = ""
         localStorage.exoClr45 = "";
 
         if (nbPrgJ >= 6) {
-            localStorage.exo46 = "séance d'endurance"
+            localStorage.exo46 = ""
             localStorage.exoClr46 = "";
         }
         else {
@@ -1195,7 +1086,7 @@ $("#save").click(function() {
             localStorage.exoClr46 = "";
         }
         if (nbPrgJ >= 5) {
-            localStorage.exo47 = "séance de PMA"
+            localStorage.exo47 = ""
             localStorage.exoClr47 = "";
         }
         else {
@@ -1203,10 +1094,10 @@ $("#save").click(function() {
             localStorage.exoClr47 = "";
         }
 
-        localStorage.exo48 = "séance d'endurance"
+        localStorage.exo48 = ""
         localStorage.exoClr48 = "";
 
-        localStorage.exo49 = "séance de PMA"
+        localStorage.exo49 = ""
         localStorage.exoClr49 = "";
         
         //semaine 8
@@ -1214,7 +1105,7 @@ $("#save").click(function() {
         localStorage.exoClr50 = "";
         
         if (nbPrgJ >= 4) {
-            localStorage.exo51 = "séance d'endurance"
+            localStorage.exo51 = ""
             localStorage.exoClr51 = "";
         }
         else {
@@ -1222,11 +1113,11 @@ $("#save").click(function() {
             localStorage.exoClr51 = "";
         }
 
-        localStorage.exo52 = "séance de PMA"
+        localStorage.exo52 = ""
         localStorage.exoClr52 = "";
 
         if (nbPrgJ >= 6) {
-            localStorage.exo53 = "séance d'endurance"
+            localStorage.exo53 = ""
             localStorage.exoClr53 = "";
         }
         else {
@@ -1234,7 +1125,7 @@ $("#save").click(function() {
             localStorage.exoClr53 = "";
         }
         if (nbPrgJ >= 5) {
-            localStorage.exo54 = "séance de PMA"
+            localStorage.exo54 = ""
             localStorage.exoClr54 = "";
         }
         else {
@@ -1242,10 +1133,10 @@ $("#save").click(function() {
             localStorage.exoClr54 = "";
         }
 
-        localStorage.exo55 = "séance d'endurance"
+        localStorage.exo55 = ""
         localStorage.exoClr55 = "";
 
-        localStorage.exo56 = "séance de PMA"
+        localStorage.exo56 = ""
         localStorage.exoClr56 = "";
         
         //semaine 9
@@ -1253,7 +1144,7 @@ $("#save").click(function() {
         localStorage.exoClr57 = "";
         
         if (nbPrgJ >= 4) {
-            localStorage.exo58 = "séance de sprint"
+            localStorage.exo58 = ""
             localStorage.exoClr58 = "";
         }
         else {
@@ -1261,11 +1152,11 @@ $("#save").click(function() {
             localStorage.exoClr58 = "";
         }
 
-        localStorage.exo59 = "séance de PMA"
+        localStorage.exo59 = ""
         localStorage.exoClr59 = "";
 
         if (nbPrgJ >= 6) {
-            localStorage.exo60 = "séance d'endurance"
+            localStorage.exo60 = ""
             localStorage.exoClr60 = "";
         }
         else {
@@ -1273,7 +1164,7 @@ $("#save").click(function() {
             localStorage.exoClr60 = "";
         }
         if (nbPrgJ >= 5) {
-            localStorage.exo61 = "séance de PMA"
+            localStorage.exo61 = ""
             localStorage.exoClr61 = "";
         }
         else {
@@ -1281,10 +1172,10 @@ $("#save").click(function() {
             localStorage.exoClr61 = "";
         }
 
-        localStorage.exo62 = "séance d'endurance"
+        localStorage.exo62 = ""
         localStorage.exoClr62 = "";
 
-        localStorage.exo63 = "séance de PMA"
+        localStorage.exo63 = ""
         localStorage.exoClr63 = "";
 
         //semaine 10
@@ -1292,7 +1183,7 @@ $("#save").click(function() {
         localStorage.exoClr64 = "";
         
         if (nbPrgJ >= 4) {
-            localStorage.exo65 = "séance d'endurance"
+            localStorage.exo65 = ""
             localStorage.exoClr65 = "";
         }
         else {
@@ -1300,11 +1191,11 @@ $("#save").click(function() {
             localStorage.exoClr65 = "";
         }
 
-        localStorage.exo66 = "séance de PMA"
+        localStorage.exo66 = ""
         localStorage.exoClr66 = "";
 
         if (nbPrgJ >= 6) {
-            localStorage.exo67 = "séance d'endurance"
+            localStorage.exo67 = ""
             localStorage.exoClr67 = "";
         }
         else {
@@ -1312,7 +1203,7 @@ $("#save").click(function() {
             localStorage.exoClr67 = "";
         }
         if (nbPrgJ >= 5) {
-            localStorage.exo68 = "séance d'endurance"
+            localStorage.exo68 = ""
             localStorage.exoClr68 = "";
         }
         else {
@@ -1320,10 +1211,10 @@ $("#save").click(function() {
             localStorage.exoClr68 = "";
         }
 
-        localStorage.exo69 = "séance de PMA"
+        localStorage.exo69 = ""
         localStorage.exoClr69 = "";
 
-        localStorage.exo70 = "séance d'endurance"
+        localStorage.exo70 = ""
         localStorage.exoClr70 = "";
 
         //semaine 11
@@ -1386,7 +1277,7 @@ $("#save").click(function() {
     else if (nbPrgT == 2) {
         //semaine 1
         if (nbPrgJ >= 4) {
-            localStorage.exo1 = "séance d'endurance"
+            localStorage.exo1 = ""
             localStorage.exoClr1 = "";
         }
         else {
@@ -1397,11 +1288,11 @@ $("#save").click(function() {
         localStorage.exo2 = "repos"
         localStorage.exoClr2 = "";
 
-        localStorage.exo3 = "séance d'endurance"
+        localStorage.exo3 = ""
         localStorage.exoClr3 = "";
 
         if (nbPrgJ >= 5) {
-            localStorage.exo4 = "séance d'endurance"
+            localStorage.exo4 = ""
             localStorage.exoClr4 = "";
         }
         else {
@@ -1409,7 +1300,7 @@ $("#save").click(function() {
             localStorage.exoClr4 = "";
         }
         if (nbPrgJ >= 6) {
-            localStorage.exo5 = "séance d'endurance"
+            localStorage.exo5 = ""
             localStorage.exoClr5 = "";
         }
         else {
@@ -1417,10 +1308,10 @@ $("#save").click(function() {
             localStorage.exoClr5 = "";
         }
 
-        localStorage.exo6 = "séance d'endurance"
+        localStorage.exo6 = ""
         localStorage.exoClr6 = "";
 
-        localStorage.exo7 = "séance d'endurance"
+        localStorage.exo7 = ""
         localStorage.exoClr7 = "";
 
         //semaine 2
@@ -1428,7 +1319,7 @@ $("#save").click(function() {
         localStorage.exoClr8 = "";
         
         if (nbPrgJ >= 4) {
-            localStorage.exo9 = "séance d'endurance"
+            localStorage.exo9 = ""
             localStorage.exoClr9 = "";
         }
         else {
@@ -1436,11 +1327,11 @@ $("#save").click(function() {
             localStorage.exoClr9 = "";
         }
 
-        localStorage.exo10 = "séance de sprint"
+        localStorage.exo10 = ""
         localStorage.exoClr10 = "";
 
         if (nbPrgJ >= 6) {
-            localStorage.exo11 = "séance d'endurance"
+            localStorage.exo11 = ""
             localStorage.exoClr11 = "";
         }
         else {
@@ -1448,7 +1339,7 @@ $("#save").click(function() {
             localStorage.exoClr11 = "";
         }
         if (nbPrgJ >= 5) {
-            localStorage.exo12 = "séance d'endurance"
+            localStorage.exo12 = ""
             localStorage.exoClr12 = "";
         }
         else {
@@ -1456,10 +1347,10 @@ $("#save").click(function() {
             localStorage.exoClr12 = "";
         }
 
-        localStorage.exo13 = "séance de seuil"
+        localStorage.exo13 = ""
         localStorage.exoClr13 = "";
 
-        localStorage.exo14 = "séance d'endurance"
+        localStorage.exo14 = ""
         localStorage.exoClr14 = "";
 
         //semaine 3
@@ -1467,7 +1358,7 @@ $("#save").click(function() {
         localStorage.exoClr15 = "";
         
         if (nbPrgJ >= 4) {
-            localStorage.exo16 = "séance d'endurance"
+            localStorage.exo16 = ""
             localStorage.exoClr16 = "";
         }
         else {
@@ -1475,11 +1366,11 @@ $("#save").click(function() {
             localStorage.exoClr16 = "";
         }
 
-        localStorage.exo17 = "séance de seuil"
+        localStorage.exo17 = ""
         localStorage.exoClr17 = "";
 
         if (nbPrgJ >= 6) {
-            localStorage.exo18 = "séance d'endurance"
+            localStorage.exo18 = ""
             localStorage.exoClr18 = "";
         }
         else {
@@ -1487,7 +1378,7 @@ $("#save").click(function() {
             localStorage.exoClr18 = "";
         }
         if (nbPrgJ >= 5) {
-            localStorage.exo19 = "séance de seuil"
+            localStorage.exo19 = ""
             localStorage.exoClr19 = "";
         }
         else {
@@ -1495,10 +1386,10 @@ $("#save").click(function() {
             localStorage.exoClr19 = "";
         }
 
-        localStorage.exo20 = "séance d'endurance"
+        localStorage.exo20 = ""
         localStorage.exoClr20 = "";
 
-        localStorage.exo21 = "séance de seuil"
+        localStorage.exo21 = ""
         localStorage.exoClr21 = "";
 
         //semaine 4
@@ -1506,7 +1397,7 @@ $("#save").click(function() {
         localStorage.exoClr22 = "";
         
         if (nbPrgJ >= 4) {
-            localStorage.exo23 = "séance de sprint"
+            localStorage.exo23 = ""
             localStorage.exoClr23 = "";
         }
         else {
@@ -1514,11 +1405,11 @@ $("#save").click(function() {
             localStorage.exoClr23 = "";
         }
 
-        localStorage.exo24 = "séance de seuil"
+        localStorage.exo24 = ""
         localStorage.exoClr24 = "";
 
         if (nbPrgJ >= 6) {
-            localStorage.exo25 = "séance d'endurance"
+            localStorage.exo25 = ""
             localStorage.exoClr25 = "";
         }
         else {
@@ -1526,7 +1417,7 @@ $("#save").click(function() {
             localStorage.exoClr25 = "";
         }
         if (nbPrgJ >= 5) {
-            localStorage.exo26 = "séance d'endurance"
+            localStorage.exo26 = ""
             localStorage.exoClr26 = "";
         }
         else {
@@ -1534,10 +1425,10 @@ $("#save").click(function() {
             localStorage.exoClr26 = "";
         }
 
-        localStorage.exo27 = "séance de seuil"
+        localStorage.exo27 = ""
         localStorage.exoClr27 = "";
 
-        localStorage.exo28 = "séance d'endurance"
+        localStorage.exo28 = ""
         localStorage.exoClr28 = "";
 
         //semaine 5
@@ -1545,7 +1436,7 @@ $("#save").click(function() {
         localStorage.exoClr29 = "";
         
         if (nbPrgJ >= 4) {
-            localStorage.exo30 = "séance d'endurance"
+            localStorage.exo30 = ""
             localStorage.exoClr30 = "";
         }
         else {
@@ -1553,11 +1444,11 @@ $("#save").click(function() {
             localStorage.exoClr30 = "";
         }
 
-        localStorage.exo31 = "séance de PMA"
+        localStorage.exo31 = ""
         localStorage.exoClr31 = "";
 
         if (nbPrgJ >= 6) {
-            localStorage.exo32 = "séance d'endurance"
+            localStorage.exo32 = ""
             localStorage.exoClr32 = "";
         }
         else {
@@ -1565,7 +1456,7 @@ $("#save").click(function() {
             localStorage.exoClr32 = "";
         }
         if (nbPrgJ >= 5) {
-            localStorage.exo33 = "séance de PMA"
+            localStorage.exo33 = ""
             localStorage.exoClr33 = "";
         }
         else {
@@ -1573,10 +1464,10 @@ $("#save").click(function() {
             localStorage.exoClr33 = "";
         }
 
-        localStorage.exo34 = "séance de PMA"
+        localStorage.exo34 = ""
         localStorage.exoClr34 = "";
 
-        localStorage.exo35 = "séance d'endurance"
+        localStorage.exo35 = ""
         localStorage.exoClr35 = "";
 
         //semaine 6
@@ -1584,7 +1475,7 @@ $("#save").click(function() {
         localStorage.exoClr36 = "";
         
         if (nbPrgJ >= 4) {
-            localStorage.exo37 = "séance de sprint"
+            localStorage.exo37 = ""
             localStorage.exoClr37 = "";
         }
         else {
@@ -1592,11 +1483,11 @@ $("#save").click(function() {
             localStorage.exoClr37 = "";
         }
 
-        localStorage.exo38 = "séance de PMA"
+        localStorage.exo38 = ""
         localStorage.exoClr38 = "";
 
         if (nbPrgJ >= 6) {
-            localStorage.exo39 = "séance d'endurance"
+            localStorage.exo39 = ""
             localStorage.exoClr39 = "";
         }
         else {
@@ -1604,7 +1495,7 @@ $("#save").click(function() {
             localStorage.exoClr39 = "";
         }
         if (nbPrgJ >= 5) {
-            localStorage.exo40 = "séance d'endurance"
+            localStorage.exo40 = ""
             localStorage.exoClr40 = "";
         }
         else {
@@ -1612,10 +1503,10 @@ $("#save").click(function() {
             localStorage.exoClr40 = "";
         }
 
-        localStorage.exo41 = "séance de PMA"
+        localStorage.exo41 = ""
         localStorage.exoClr41 = "";
 
-        localStorage.exo42 = "séance d'endurance"
+        localStorage.exo42 = ""
         localStorage.exoClr42 = "";
 
         //semaine 7
@@ -1674,5 +1565,3 @@ $("#save").click(function() {
         localStorage.exo56 = "objectif";
         localStorage.exoClr56 = "grey";
     }
-    window.location.reload();
-})
