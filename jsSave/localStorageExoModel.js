@@ -229,11 +229,11 @@ localStorage.exo1 = "";
             localStorage.exoClr1 = "";
         }
         else {
-            localStorage.exo1 = "repos"
+            localStorage.exo1 = "jour de repos"
             localStorage.exoClr1 = "";
         }
 
-        localStorage.exo2 = "repos"
+        localStorage.exo2 = "jour de repos"
         localStorage.exoClr2 = "";
 
         localStorage.exo3 = ""
@@ -244,7 +244,7 @@ localStorage.exo1 = "";
             localStorage.exoClr4 = "";
         }
         else {
-            localStorage.exo4 = "repos"
+            localStorage.exo4 = "jour de repos"
             localStorage.exoClr4 = "";
         }
         if (nbPrgJ >= 6) {
@@ -252,7 +252,7 @@ localStorage.exo1 = "";
             localStorage.exoClr5 = "";
         }
         else {
-            localStorage.exo5 = "repos"
+            localStorage.exo5 = "jour de repos"
             localStorage.exoClr5 = "";
         }
 
@@ -263,7 +263,7 @@ localStorage.exo1 = "";
         localStorage.exoClr7 = "";
 
         //semaine 2
-        localStorage.exo8 = "repos"
+        localStorage.exo8 = "jour de repos"
         localStorage.exoClr8 = "";
 
         if (nbPrgJ >= 4) {
@@ -271,7 +271,7 @@ localStorage.exo1 = "";
             localStorage.exoClr9 = "";
         }
         else {
-            localStorage.exo9 = "repos"
+            localStorage.exo9 = " jour de repos"
             localStorage.exoClr9 = "";
         }
 
@@ -283,7 +283,7 @@ localStorage.exo1 = "";
             localStorage.exoClr11 = "";
         }
         else {
-            localStorage.exo11 = "repos"
+            localStorage.exo11 = "jour de repos"
             localStorage.exoClr11 = "";
         }
         if (nbPrgJ >= 5) {
@@ -291,7 +291,7 @@ localStorage.exo1 = "";
             localStorage.exoClr12 = "";
         }
         else {
-            localStorage.exo12 = "repos"
+            localStorage.exo12 = "jour de repos"
             localStorage.exoClr12 = "";
         }
 
@@ -302,7 +302,7 @@ localStorage.exo1 = "";
         localStorage.exoClr14 = "";
 
         //semaine 3
-        localStorage.exo15 = "repos"
+        localStorage.exo15 = "jour de repos"
         localStorage.exoClr15 = "";
         
         if (nbPrgJ >= 4) {
@@ -310,7 +310,7 @@ localStorage.exo1 = "";
             localStorage.exoClr16 = "";
         }
         else {
-            localStorage.exo16 = "repos"
+            localStorage.exo16 = "jour de repos"
             localStorage.exoClr16 = "";
         }
 
@@ -322,7 +322,7 @@ localStorage.exo1 = "";
             localStorage.exoClr18 = "";
         }
         else {
-            localStorage.exo18 = "repos"
+            localStorage.exo18 = "jour de repos"
             localStorage.exoClr18 = "";
         }
         if (nbPrgJ >= 5) {
@@ -330,7 +330,7 @@ localStorage.exo1 = "";
             localStorage.exoClr19 = "";
         }
         else {
-            localStorage.exo19 = "repos"
+            localStorage.exo19 = "jour de repos"
             localStorage.exoClr19 = "";
         }
 
@@ -341,7 +341,7 @@ localStorage.exo1 = "";
         localStorage.exoClr21 = "";
 
         //semaine 4
-        localStorage.exo22 = "repos"
+        localStorage.exo22 = "jour de repos"
         localStorage.exoClr22 = "";
         
         if (nbPrgJ >= 4) {
@@ -349,7 +349,7 @@ localStorage.exo1 = "";
             localStorage.exoClr23 = "";
         }
         else {
-            localStorage.exo23 = "repos"
+            localStorage.exo23 = "jour de repos"
             localStorage.exoClr23 = "";
         }
 
@@ -361,7 +361,7 @@ localStorage.exo1 = "";
             localStorage.exoClr25 = "";
         }
         else {
-            localStorage.exo25 = "repos"
+            localStorage.exo25 = "jour de repos"
             localStorage.exoClr25 = "";
         }
         if (nbPrgJ >= 5) {
@@ -369,7 +369,7 @@ localStorage.exo1 = "";
             localStorage.exoClr26 = "";
         }
         else {
-            localStorage.exo26 = "repos"
+            localStorage.exo26 = "jour de repos"
             localStorage.exoClr26 = "";
         }
 
@@ -380,7 +380,7 @@ localStorage.exo1 = "";
         localStorage.exoClr28 = "";
 
         //semaine 5
-        localStorage.exo29 = "repos"
+        localStorage.exo29 = "jour de repos"
         localStorage.exoClr29 = "";
         
         if (nbPrgJ >= 4) {
@@ -388,7 +388,7 @@ localStorage.exo1 = "";
             localStorage.exoClr30 = "";
         }
         else {
-            localStorage.exo30 = "repos"
+            localStorage.exo30 = "jour de repos"
             localStorage.exoClr30 = "";
         }
 
@@ -400,7 +400,7 @@ localStorage.exo1 = "";
             localStorage.exoClr32 = "";
         }
         else {
-            localStorage.exo = "repos"
+            localStorage.exo = "jour de repos"
             localStorage.exoClr32 = "";
         }
         if (nbPrgJ >= 5) {
@@ -408,7 +408,7 @@ localStorage.exo1 = "";
             localStorage.exoClr33 = "";
         }
         else {
-            localStorage.exo33 = "repos"
+            localStorage.exo33 = "jour de repos"
             localStorage.exoClr33 = "";
         }
 
@@ -419,7 +419,7 @@ localStorage.exo1 = "";
         localStorage.exoClr35 = "";
 
         //semaine 6
-        localStorage.exo36 = "repos"
+        localStorage.exo36 = "jour de repos"
         localStorage.exoClr36 = "";
         
         if (nbPrgJ >= 4) {
@@ -427,7 +427,7 @@ localStorage.exo1 = "";
             localStorage.exoClr37 = "";
         }
         else {
-            localStorage.exo37 = "repos"
+            localStorage.exo37 = "jour de repos"
             localStorage.exoClr37 = "";
         }
 
@@ -439,7 +439,7 @@ localStorage.exo1 = "";
             localStorage.exoClr39 = "";
         }
         else {
-            localStorage.exo39 = "repos"
+            localStorage.exo39 = "jour de repos"
             localStorage.exoClr39 = "";
         }
         if (nbPrgJ >= 5) {
@@ -447,7 +447,7 @@ localStorage.exo1 = "";
             localStorage.exoClr40 = "";
         }
         else {
-            localStorage.exo40 = "repos"
+            localStorage.exo40 = "jour de repos"
             localStorage.exoClr40 = "";
         }
 
@@ -457,7 +457,7 @@ localStorage.exo1 = "";
         localStorage.exo42 = ""
         localStorage.exoClr42 = "";
         //semaine 7
-        localStorage.exo43 = "repos"
+        localStorage.exo43 = "jour de repos"
         localStorage.exoClr43 = "";
         
         if (nbPrgJ >= 4) {
@@ -465,7 +465,7 @@ localStorage.exo1 = "";
             localStorage.exoClr44 = "";
         }
         else {
-            localStorage.exo44 = "repos"
+            localStorage.exo44 = "jour de repos"
             localStorage.exoClr44 = "";
         }
 
@@ -477,7 +477,7 @@ localStorage.exo1 = "";
             localStorage.exoClr46 = "";
         }
         else {
-            localStorage.exo46 = "repos"
+            localStorage.exo46 = "jour de repos"
             localStorage.exoClr46 = "";
         }
         if (nbPrgJ >= 5) {
@@ -485,7 +485,7 @@ localStorage.exo1 = "";
             localStorage.exoClr47 = "";
         }
         else {
-            localStorage.exo47 = "repos"
+            localStorage.exo47 = "jour de repos"
             localStorage.exoClr47 = "";
         }
 
@@ -496,7 +496,7 @@ localStorage.exo1 = "";
         localStorage.exoClr49 = "";
         
         //semaine 8
-        localStorage.exo50 = "repos"
+        localStorage.exo50 = "jour de repos"
         localStorage.exoClr50 = "";
         
         if (nbPrgJ >= 4) {
@@ -504,7 +504,7 @@ localStorage.exo1 = "";
             localStorage.exoClr51 = "";
         }
         else {
-            localStorage.exo51 = "repos"
+            localStorage.exo51 = "jour de repos"
             localStorage.exoClr51 = "";
         }
 
@@ -516,7 +516,7 @@ localStorage.exo1 = "";
             localStorage.exoClr53 = "";
         }
         else {
-            localStorage.exo53 = "repos"
+            localStorage.exo53 = "jour de repos"
             localStorage.exoClr53 = "";
         }
         if (nbPrgJ >= 5) {
@@ -524,7 +524,7 @@ localStorage.exo1 = "";
             localStorage.exoClr54 = "";
         }
         else {
-            localStorage.exo54 = "repos"
+            localStorage.exo54 = "jour de repos"
             localStorage.exoClr54 = "";
         }
 
@@ -535,7 +535,7 @@ localStorage.exo1 = "";
         localStorage.exoClr56 = "";
         
         //semaine 9
-        localStorage.exo57 = "repos"
+        localStorage.exo57 = "jour de repos"
         localStorage.exoClr57 = "";
         
         if (nbPrgJ >= 4) {
@@ -543,7 +543,7 @@ localStorage.exo1 = "";
             localStorage.exoClr58 = "";
         }
         else {
-            localStorage.exo58 = "repos"
+            localStorage.exo58 = "jour de repos"
             localStorage.exoClr58 = "";
         }
 
@@ -555,7 +555,7 @@ localStorage.exo1 = "";
             localStorage.exoClr60 = "";
         }
         else {
-            localStorage.exo60 = "repos"
+            localStorage.exo60 = "jour de repos"
             localStorage.exoClr60 = "";
         }
         if (nbPrgJ >= 5) {
@@ -563,7 +563,7 @@ localStorage.exo1 = "";
             localStorage.exoClr61 = "";
         }
         else {
-            localStorage.exo61 = "repos"
+            localStorage.exo61 = "jour de repos"
             localStorage.exoClr61 = "";
         }
 
@@ -574,7 +574,7 @@ localStorage.exo1 = "";
         localStorage.exoClr63 = "";
 
         //semaine 10
-        localStorage.exo64 = "repos"
+        localStorage.exo64 = "jour de repos"
         localStorage.exoClr64 = "";
         
         if (nbPrgJ >= 4) {
@@ -582,7 +582,7 @@ localStorage.exo1 = "";
             localStorage.exoClr65 = "";
         }
         else {
-            localStorage.exo65 = "repos"
+            localStorage.exo65 = "jour de repos"
             localStorage.exoClr65 = "";
         }
 
@@ -594,7 +594,7 @@ localStorage.exo1 = "";
             localStorage.exoClr67 = "";
         }
         else {
-            localStorage.exo67 = "repos"
+            localStorage.exo67 = "jour de repos"
             localStorage.exoClr67 = "";
         }
         if (nbPrgJ >= 5) {
@@ -602,7 +602,7 @@ localStorage.exo1 = "";
             localStorage.exoClr68 = "";
         }
         else {
-            localStorage.exo68 = "repos"
+            localStorage.exo68 = "jour de repos"
             localStorage.exoClr68 = "";
         }
 
@@ -613,7 +613,7 @@ localStorage.exo1 = "";
         localStorage.exoClr70 = "";
         
         //semaine 11
-        localStorage.exo71 = "repos"
+        localStorage.exo71 = "jour de repos"
         localStorage.exoClr71 = "";
         
         if (nbPrgJ >= 4) {
@@ -621,7 +621,7 @@ localStorage.exo1 = "";
             localStorage.exoClr72 = "";
         }
         else {
-            localStorage.exo72 = "repos"
+            localStorage.exo72 = "jour de repos"
             localStorage.exoClr72 = "";
         }
 
@@ -633,7 +633,7 @@ localStorage.exo1 = "";
             localStorage.exoClr74 = "";
         }
         else {
-            localStorage.exo74 = "repos"
+            localStorage.exo74 = "jour de repos"
             localStorage.exoClr74 = "";
         }
         if (nbPrgJ >= 5) {
@@ -641,7 +641,7 @@ localStorage.exo1 = "";
             localStorage.exoClr75 = "";
         }
         else {
-            localStorage.exo75 = "repos"
+            localStorage.exo75 = "jour de repos"
             localStorage.exoClr75 = "";
         }
 
@@ -652,7 +652,7 @@ localStorage.exo1 = "";
         localStorage.exoClr77 = "";
         
         //semaine 12
-        localStorage.exo78 = "repos"
+        localStorage.exo78 = "jour de repos"
         localStorage.exoClr78 = "";
         
         if (nbPrgJ >= 4) {
@@ -660,7 +660,7 @@ localStorage.exo1 = "";
             localStorage.exoClr79 = "";
         }
         else {
-            localStorage.exo79 = "repos"
+            localStorage.exo79 = "jour de repos"
             localStorage.exoClr79 = "";
         }
 
@@ -672,7 +672,7 @@ localStorage.exo1 = "";
             localStorage.exoClr81 = "";
         }
         else {
-            localStorage.exo81 = "repos"
+            localStorage.exo81 = "jour de repos"
             localStorage.exoClr81 = "";
         }
         if (nbPrgJ >= 5) {
@@ -680,7 +680,7 @@ localStorage.exo1 = "";
             localStorage.exoClr82 = "";
         }
         else {
-            localStorage.exo82 = "repos"
+            localStorage.exo82 = "jour de repos"
             localStorage.exoClr82 = "";
         }
 
@@ -691,7 +691,7 @@ localStorage.exo1 = "";
         localStorage.exoClr84 = "";
         
         //semaine 13
-        localStorage.exo85 = "repos"
+        localStorage.exo85 = "jour de repos"
         localStorage.exoClr85 = "";
         
         if (nbPrgJ >= 4) {
@@ -699,7 +699,7 @@ localStorage.exo1 = "";
             localStorage.exoClr86 = "";
         }
         else {
-            localStorage.exo86 = "repos"
+            localStorage.exo86 = "jour de repos"
             localStorage.exoClr86 = "";
         }
 
@@ -711,7 +711,7 @@ localStorage.exo1 = "";
             localStorage.exoClr88 = "";
         }
         else {
-            localStorage.exo88 = "repos"
+            localStorage.exo88 = "jour de repos"
             localStorage.exoClr88 = "";
         }
         if (nbPrgJ >= 5) {
@@ -719,7 +719,7 @@ localStorage.exo1 = "";
             localStorage.exoClr89 = "";
         }
         else {
-            localStorage.exo89 = "repos"
+            localStorage.exo89 = "jour de repos"
             localStorage.exoClr89 = "";
         }
 
@@ -730,7 +730,7 @@ localStorage.exo1 = "";
         localStorage.exoClr91 = "";
         
         //semaine 14
-        localStorage.exo92 = "repos"
+        localStorage.exo92 = "jour de repos"
         localStorage.exoClr92 = "";
         
         if (nbPrgJ >= 4) {
@@ -738,7 +738,7 @@ localStorage.exo1 = "";
             localStorage.exoClr93 = "";
         }
         else {
-            localStorage.exo93 = "repos"
+            localStorage.exo93 = "jour de repos"
             localStorage.exoClr93 = "";
         }
 
@@ -750,7 +750,7 @@ localStorage.exo1 = "";
             localStorage.exoClr95 = "";
         }
         else {
-            localStorage.exo95 = "repos"
+            localStorage.exo95 = "jour de repos"
             localStorage.exoClr95 = "";
         }
         if (nbPrgJ >= 5) {
@@ -758,7 +758,7 @@ localStorage.exo1 = "";
             localStorage.exoClr96 = "";
         }
         else {
-            localStorage.exo96 = "repos"
+            localStorage.exo96 = "jour de repos"
             localStorage.exoClr96 = "";
         }
 
@@ -832,11 +832,11 @@ localStorage.exo1 = "";
             localStorage.exoClr1 = "";
         }
         else {
-            localStorage.exo1 = "repos"
+            localStorage.exo1 = "jour de repos"
             localStorage.exoClr1 = "";
         }
 
-        localStorage.exo2 = "repos"
+        localStorage.exo2 = "jour de repos"
         localStorage.exoClr2 = "";
         
 
@@ -848,7 +848,7 @@ localStorage.exo1 = "";
             localStorage.exoClr4 = "";
         }
         else {
-            localStorage.exo4 = "repos"
+            localStorage.exo4 = "jour de repos"
             localStorage.exoClr4 = "";
         }
         if (nbPrgJ >= 6) {
@@ -856,7 +856,7 @@ localStorage.exo1 = "";
             localStorage.exoClr5 = "";
         }
         else {
-            localStorage.exo5 = "repos"
+            localStorage.exo5 = "jour de repos"
             localStorage.exoClr5 = "";
         }
 
@@ -867,7 +867,7 @@ localStorage.exo1 = "";
         localStorage.exoClr7 = "";
 
         //semaine 2
-        localStorage.exo8 = "repos"
+        localStorage.exo8 = "jour de repos"
         localStorage.exoClr8 = "";
         
         if (nbPrgJ >= 4) {
@@ -875,7 +875,7 @@ localStorage.exo1 = "";
             localStorage.exoClr9 = "";
         }
         else {
-            localStorage.exo9 = "repos"
+            localStorage.exo9 = "jour de repos"
             localStorage.exoClr9 = "";
         }
 
@@ -887,7 +887,7 @@ localStorage.exo1 = "";
             localStorage.exoClr11 = "";
         }
         else {
-            localStorage.exo11 = "repos"
+            localStorage.exo11 = "jour de repos"
             localStorage.exoClr11 = "";
         }
         if (nbPrgJ >= 5) {
@@ -895,7 +895,7 @@ localStorage.exo1 = "";
             localStorage.exoClr12 = "";
         }
         else {
-            localStorage.exo12 = "repos"
+            localStorage.exo12 = "jour de repos"
             localStorage.exoClr12 = "";
         }
 
@@ -906,7 +906,7 @@ localStorage.exo1 = "";
         localStorage.exoClr14 = "";
 
         //semaine 3
-        localStorage.exo15 = "repos"
+        localStorage.exo15 = "jour de repos"
         localStorage.exoClr15 = "";
         
         if (nbPrgJ >= 4) {
@@ -914,7 +914,7 @@ localStorage.exo1 = "";
             localStorage.exoClr16 = "";
         }
         else {
-            localStorage.exo16 = "repos"
+            localStorage.exo16 = "jour de repos"
             localStorage.exoClr16 = "";
         }
 
@@ -926,7 +926,7 @@ localStorage.exo1 = "";
             localStorage.exoClr18 = "";
         }
         else {
-            localStorage.exo18 = "repos"
+            localStorage.exo18 = "jour de repos"
             localStorage.exoClr18 = "";
         }
         if (nbPrgJ >= 5) {
@@ -934,7 +934,7 @@ localStorage.exo1 = "";
             localStorage.exoClr19 = "";
         }
         else {
-            localStorage.exo19 = "repos"
+            localStorage.exo19 = "jour de repos"
             localStorage.exoClr19 = "";
         }
 
@@ -945,7 +945,7 @@ localStorage.exo1 = "";
         localStorage.exoClr21 = "";
 
         //semaine 4
-        localStorage.exo22 = "repos"
+        localStorage.exo22 = "jour de repos"
         localStorage.exoClr22 = "";
         
         if (nbPrgJ >= 4) {
@@ -953,7 +953,7 @@ localStorage.exo1 = "";
             localStorage.exoClr23 = "";
         }
         else {
-            localStorage.exo23 = "repos"
+            localStorage.exo23 = "jour de repos"
             localStorage.exoClr23 = "";
         }
 
@@ -965,7 +965,7 @@ localStorage.exo1 = "";
             localStorage.exoClr25 = "";
         }
         else {
-            localStorage.exo25 = "repos"
+            localStorage.exo25 = "jour de repos"
             localStorage.exoClr25 = "";
         }
         if (nbPrgJ >= 5) {
@@ -973,7 +973,7 @@ localStorage.exo1 = "";
             localStorage.exoClr26 = "";
         }
         else {
-            localStorage.exo26 = "repos"
+            localStorage.exo26 = "jour de repos"
             localStorage.exoClr26 = "";
         }
 
@@ -984,7 +984,7 @@ localStorage.exo1 = "";
         localStorage.exoClr28 = "";
 
         //semaine 5
-        localStorage.exo29 = "repos"
+        localStorage.exo29 = "jour de repos"
         localStorage.exoClr29 = "";
         
         if (nbPrgJ >= 4) {
@@ -992,7 +992,7 @@ localStorage.exo1 = "";
             localStorage.exoClr30 = "";
         }
         else {
-            localStorage.exo30 = "repos"
+            localStorage.exo30 = "jour de repos"
             localStorage.exoClr30 = "";
         }
 
@@ -1004,7 +1004,7 @@ localStorage.exo1 = "";
             localStorage.exoClr32 = "";
         }
         else {
-            localStorage.exo32 = "repos"
+            localStorage.exo32 = "jour de repos"
             localStorage.exoClr32 = "";
         }
         if (nbPrgJ >= 5) {
@@ -1012,7 +1012,7 @@ localStorage.exo1 = "";
             localStorage.exoClr33 = "";
         }
         else {
-            localStorage.exo33 = "repos"
+            localStorage.exo33 = "jour de repos"
             localStorage.exoClr33 = "";
         }
 
@@ -1023,7 +1023,7 @@ localStorage.exo1 = "";
         localStorage.exoClr35 = "";
 
         //semaine 6
-        localStorage.exo36 = "repos"
+        localStorage.exo36 = "jour de repos"
         localStorage.exoClr36 = "";
         
         if (nbPrgJ >= 4) {
@@ -1031,7 +1031,7 @@ localStorage.exo1 = "";
             localStorage.exoClr37 = "";
         }
         else {
-            localStorage.exo37 = "repos"
+            localStorage.exo37 = "jour de repos"
             localStorage.exoClr37 = "";
         }
 
@@ -1043,7 +1043,7 @@ localStorage.exo1 = "";
             localStorage.exoClr39 = "";
         }
         else {
-            localStorage.exo39 = "repos"
+            localStorage.exo39 = "jour de repos"
             localStorage.exoClr39 = "";
         }
         if (nbPrgJ >= 5) {
@@ -1051,7 +1051,7 @@ localStorage.exo1 = "";
             localStorage.exoClr40 = "";
         }
         else {
-            localStorage.exo40 = "repos"
+            localStorage.exo40 = "jour de repos"
             localStorage.exoClr40 = "";
         }
 
@@ -1062,7 +1062,7 @@ localStorage.exo1 = "";
         localStorage.exoClr42 = "";
 
         //semaine 7
-        localStorage.exo43 = "repos"
+        localStorage.exo43 = "jour de repos"
         localStorage.exoClr43 = "";
         
         if (nbPrgJ >= 4) {
@@ -1070,7 +1070,7 @@ localStorage.exo1 = "";
             localStorage.exoClr44 = "";
         }
         else {
-            localStorage.exo44 = "repos"
+            localStorage.exo44 = "jour de repos"
             localStorage.exoClr44 = "";
         }
 
@@ -1082,7 +1082,7 @@ localStorage.exo1 = "";
             localStorage.exoClr46 = "";
         }
         else {
-            localStorage.exo46 = "repos"
+            localStorage.exo46 = "jour de repos"
             localStorage.exoClr46 = "";
         }
         if (nbPrgJ >= 5) {
@@ -1090,7 +1090,7 @@ localStorage.exo1 = "";
             localStorage.exoClr47 = "";
         }
         else {
-            localStorage.exo47 = "repos"
+            localStorage.exo47 = "jour de repos"
             localStorage.exoClr47 = "";
         }
 
@@ -1101,7 +1101,7 @@ localStorage.exo1 = "";
         localStorage.exoClr49 = "";
         
         //semaine 8
-        localStorage.exo = "repos"
+        localStorage.exo = "jour de repos"
         localStorage.exoClr50 = "";
         
         if (nbPrgJ >= 4) {
@@ -1109,7 +1109,7 @@ localStorage.exo1 = "";
             localStorage.exoClr51 = "";
         }
         else {
-            localStorage.exo51 = "repos"
+            localStorage.exo51 = "jour de repos"
             localStorage.exoClr51 = "";
         }
 
@@ -1121,7 +1121,7 @@ localStorage.exo1 = "";
             localStorage.exoClr53 = "";
         }
         else {
-            localStorage.exo53 = "repos"
+            localStorage.exo53 = "jour de repos"
             localStorage.exoClr53 = "";
         }
         if (nbPrgJ >= 5) {
@@ -1129,7 +1129,7 @@ localStorage.exo1 = "";
             localStorage.exoClr54 = "";
         }
         else {
-            localStorage.exo54 = "repos"
+            localStorage.exo54 = "jour de repos"
             localStorage.exoClr54 = "";
         }
 
@@ -1140,7 +1140,7 @@ localStorage.exo1 = "";
         localStorage.exoClr56 = "";
         
         //semaine 9
-        localStorage.exo57 = "repos"
+        localStorage.exo57 = "jour de repos"
         localStorage.exoClr57 = "";
         
         if (nbPrgJ >= 4) {
@@ -1148,7 +1148,7 @@ localStorage.exo1 = "";
             localStorage.exoClr58 = "";
         }
         else {
-            localStorage.exo58 = "repos"
+            localStorage.exo58 = "jour de repos"
             localStorage.exoClr58 = "";
         }
 
@@ -1160,7 +1160,7 @@ localStorage.exo1 = "";
             localStorage.exoClr60 = "";
         }
         else {
-            localStorage.exo60 = "repos"
+            localStorage.exo60 = "jour de repos"
             localStorage.exoClr60 = "";
         }
         if (nbPrgJ >= 5) {
@@ -1168,7 +1168,7 @@ localStorage.exo1 = "";
             localStorage.exoClr61 = "";
         }
         else {
-            localStorage.exo61 = "repos"
+            localStorage.exo61 = "jour de repos"
             localStorage.exoClr61 = "";
         }
 
@@ -1179,7 +1179,7 @@ localStorage.exo1 = "";
         localStorage.exoClr63 = "";
 
         //semaine 10
-        localStorage.exo64 = "repos"
+        localStorage.exo64 = "jour de repos"
         localStorage.exoClr64 = "";
         
         if (nbPrgJ >= 4) {
@@ -1187,7 +1187,7 @@ localStorage.exo1 = "";
             localStorage.exoClr65 = "";
         }
         else {
-            localStorage.exo65 = "repos"
+            localStorage.exo65 = "jour de repos"
             localStorage.exoClr65 = "";
         }
 
@@ -1199,7 +1199,7 @@ localStorage.exo1 = "";
             localStorage.exoClr67 = "";
         }
         else {
-            localStorage.exo67 = "repos"
+            localStorage.exo67 = "jour de repos"
             localStorage.exoClr67 = "";
         }
         if (nbPrgJ >= 5) {
@@ -1207,7 +1207,7 @@ localStorage.exo1 = "";
             localStorage.exoClr68 = "";
         }
         else {
-            localStorage.exo68 = "repos"
+            localStorage.exo68 = "jour de repos"
             localStorage.exoClr68 = "";
         }
 
@@ -1281,11 +1281,11 @@ localStorage.exo1 = "";
             localStorage.exoClr1 = "";
         }
         else {
-            localStorage.exo1 = "repos"
+            localStorage.exo1 = "jour de repos"
             localStorage.exoClr1 = "";
         }
         
-        localStorage.exo2 = "repos"
+        localStorage.exo2 = "jour de repos"
         localStorage.exoClr2 = "";
 
         localStorage.exo3 = ""
@@ -1296,7 +1296,7 @@ localStorage.exo1 = "";
             localStorage.exoClr4 = "";
         }
         else {
-            localStorage.exo4 = "repos"
+            localStorage.exo4 = "jour de repos"
             localStorage.exoClr4 = "";
         }
         if (nbPrgJ >= 6) {
@@ -1304,7 +1304,7 @@ localStorage.exo1 = "";
             localStorage.exoClr5 = "";
         }
         else {
-            localStorage.exo5 = "repos"
+            localStorage.exo5 = "jour de repos"
             localStorage.exoClr5 = "";
         }
 
@@ -1315,7 +1315,7 @@ localStorage.exo1 = "";
         localStorage.exoClr7 = "";
 
         //semaine 2
-        localStorage.exo8 = "repos"
+        localStorage.exo8 = "jour de repos"
         localStorage.exoClr8 = "";
         
         if (nbPrgJ >= 4) {
@@ -1323,7 +1323,7 @@ localStorage.exo1 = "";
             localStorage.exoClr9 = "";
         }
         else {
-            localStorage.exo9 = "repos"
+            localStorage.exo9 = "jour de repos"
             localStorage.exoClr9 = "";
         }
 
@@ -1335,7 +1335,7 @@ localStorage.exo1 = "";
             localStorage.exoClr11 = "";
         }
         else {
-            localStorage.exo11 = "repos"
+            localStorage.exo11 = "jour de repos"
             localStorage.exoClr11 = "";
         }
         if (nbPrgJ >= 5) {
@@ -1343,7 +1343,7 @@ localStorage.exo1 = "";
             localStorage.exoClr12 = "";
         }
         else {
-            localStorage.exo12 = "repos"
+            localStorage.exo12 = "jour de repos"
             localStorage.exoClr12 = "";
         }
 
@@ -1354,7 +1354,7 @@ localStorage.exo1 = "";
         localStorage.exoClr14 = "";
 
         //semaine 3
-        localStorage.exo15 = "repos"
+        localStorage.exo15 = "jour de repos"
         localStorage.exoClr15 = "";
         
         if (nbPrgJ >= 4) {
@@ -1362,7 +1362,7 @@ localStorage.exo1 = "";
             localStorage.exoClr16 = "";
         }
         else {
-            localStorage.exo16 = "repos"
+            localStorage.exo16 = "jour de repos"
             localStorage.exoClr16 = "";
         }
 
@@ -1374,7 +1374,7 @@ localStorage.exo1 = "";
             localStorage.exoClr18 = "";
         }
         else {
-            localStorage.exo18 = "repos"
+            localStorage.exo18 = "jour de repos"
             localStorage.exoClr18 = "";
         }
         if (nbPrgJ >= 5) {
@@ -1382,7 +1382,7 @@ localStorage.exo1 = "";
             localStorage.exoClr19 = "";
         }
         else {
-            localStorage.exo19 = "repos"
+            localStorage.exo19 = "jour de repos"
             localStorage.exoClr19 = "";
         }
 
@@ -1393,7 +1393,7 @@ localStorage.exo1 = "";
         localStorage.exoClr21 = "";
 
         //semaine 4
-        localStorage.exo22 = "repos"
+        localStorage.exo22 = "jour de repos"
         localStorage.exoClr22 = "";
         
         if (nbPrgJ >= 4) {
@@ -1401,7 +1401,7 @@ localStorage.exo1 = "";
             localStorage.exoClr23 = "";
         }
         else {
-            localStorage.exo23 = "repos"
+            localStorage.exo23 = "jour de repos"
             localStorage.exoClr23 = "";
         }
 
@@ -1413,7 +1413,7 @@ localStorage.exo1 = "";
             localStorage.exoClr25 = "";
         }
         else {
-            localStorage.exo25 = "repos"
+            localStorage.exo25 = "jour de repos"
             localStorage.exoClr25 = "";
         }
         if (nbPrgJ >= 5) {
@@ -1421,7 +1421,7 @@ localStorage.exo1 = "";
             localStorage.exoClr26 = "";
         }
         else {
-            localStorage.exo26 = "repos"
+            localStorage.exo26 = "jour de repos"
             localStorage.exoClr26 = "";
         }
 
@@ -1432,7 +1432,7 @@ localStorage.exo1 = "";
         localStorage.exoClr28 = "";
 
         //semaine 5
-        localStorage.exo29 = "repos"
+        localStorage.exo29 = "jour de repos"
         localStorage.exoClr29 = "";
         
         if (nbPrgJ >= 4) {
@@ -1440,7 +1440,7 @@ localStorage.exo1 = "";
             localStorage.exoClr30 = "";
         }
         else {
-            localStorage.exo30 = "repos"
+            localStorage.exo30 = "jour de repos"
             localStorage.exoClr30 = "";
         }
 
@@ -1452,7 +1452,7 @@ localStorage.exo1 = "";
             localStorage.exoClr32 = "";
         }
         else {
-            localStorage.exo32 = "repos"
+            localStorage.exo32 = "jour de repos"
             localStorage.exoClr32 = "";
         }
         if (nbPrgJ >= 5) {
@@ -1460,7 +1460,7 @@ localStorage.exo1 = "";
             localStorage.exoClr33 = "";
         }
         else {
-            localStorage.exo33 = "repos"
+            localStorage.exo33 = "jour de repos"
             localStorage.exoClr33 = "";
         }
 
@@ -1471,7 +1471,7 @@ localStorage.exo1 = "";
         localStorage.exoClr35 = "";
 
         //semaine 6
-        localStorage.exo36 = "repos"
+        localStorage.exo36 = "jour de repos"
         localStorage.exoClr36 = "";
         
         if (nbPrgJ >= 4) {
@@ -1479,7 +1479,7 @@ localStorage.exo1 = "";
             localStorage.exoClr37 = "";
         }
         else {
-            localStorage.exo37 = "repos"
+            localStorage.exo37 = "jour de repos"
             localStorage.exoClr37 = "";
         }
 
@@ -1491,7 +1491,7 @@ localStorage.exo1 = "";
             localStorage.exoClr39 = "";
         }
         else {
-            localStorage.exo39 = "repos"
+            localStorage.exo39 = "jour de repos"
             localStorage.exoClr39 = "";
         }
         if (nbPrgJ >= 5) {
@@ -1499,7 +1499,7 @@ localStorage.exo1 = "";
             localStorage.exoClr40 = "";
         }
         else {
-            localStorage.exo40 = "repos"
+            localStorage.exo40 = "jour de repos"
             localStorage.exoClr40 = "";
         }
 

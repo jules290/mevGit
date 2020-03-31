@@ -14,6 +14,8 @@ $("#save").click(function() {
     localStorage.nbd = nbd;
     localStorage.prgT = prgT;
     localStorage.prgJ = prgJ;
+    let nbPrgT = Number(localStorage.prgT); 
+    let nbPrgJ = Number(localStorage.prgJ);
     
     //2020
     if(nbAnnée == 2020) {
