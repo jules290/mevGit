@@ -1,16 +1,16 @@
 $("#up").click(function() {
-    prgGrimpeur();
+    prgRouleur();
 })
 
 $("#down").click(function() {
-    prgGrimpeur();
+    prgRouleur();
 })
 
 $(document).ready(function() {
-    prgGrimpeur();
+    prgRouleur();
 })
 
-function prgGrimpeur() {
+function prgRouleur() {
     if(Number(localStorage.prg) == 3) {
     let monthA = new Array(12);
     monthA[1] = "janvier";
