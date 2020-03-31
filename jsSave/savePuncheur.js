@@ -1,14 +1,14 @@
 $("#save").click(function() {
-    let année = document.getElementById('annee').value;
-    let mois = document.getElementById('mois').value;
-    let nbd = document.getElementById('nbd').value;
-    let prgT = document.getElementById("prgT").value;
-    let prgJ = document.getElementById("prgJ").value;
+    let année = document.getElementById('anneeV').value;
+    let mois = document.getElementById('moisV').value;
+    let nbd = document.getElementById('nbdV').value;
+    let prgT = document.getElementById("prgTV").value;
+    let prgJ = document.getElementById("prgJV").value;
     let nbAnnée = Number(localStorage.année);
     let nbMois = Number(localStorage.mois);
     let nbNbd = Number(localStorage.nbd);
     let nbObjectif = Number(localStorage.objectif);  
-    localStorage.prg = 2;
+    localStorage.prg = 1;
     localStorage.année = année;
     localStorage.mois = mois;
     localStorage.nbd = nbd;
@@ -16,6 +16,7 @@ $("#save").click(function() {
     localStorage.prgJ = prgJ;
     let nbPrgT = Number(localStorage.prgT); 
     let nbPrgJ = Number(localStorage.prgJ);
+    
     
     //2020
     if(nbAnnée == 2020) {
@@ -220,7 +221,7 @@ $("#save").click(function() {
     localStorage.exo109 = "";
     localStorage.exo110 = "";
     localStorage.exo111 = "";
-    
+        
     localStorage.exoClr1 = "";
     localStorage.exoClr2 = "";
     localStorage.exoClr3 = "";
@@ -332,554 +333,134 @@ $("#save").click(function() {
     localStorage.exoClr109 = "";
     localStorage.exoClr110 = "";
     localStorage.exoClr111 = "";
-
+    
     if (nbPrgT == 4) {
         //semaine 1
-        if (nbPrgJ >= 4) {
-            localStorage.exo1 = "séance d'endurance"
-            localStorage.exoClr1 = "";
-        }
-        else {
-            localStorage.exo1 = "jour de repos"
-            localStorage.exoClr1 = "";
-        }
-
+        if (nbPrgJ >= 4) {localStorage.exo1 = "séance d'endurance"}
         localStorage.exo2 = "jour de repos"
-        localStorage.exoClr2 = "";
-
         localStorage.exo3 = "séance d'endurance"
-        localStorage.exoClr3 = "";
-
-        if (nbPrgJ >= 5) {
-            localStorage.exo4 = "séance d'endurance"
-            localStorage.exoClr4 = "";
-        }
-        else {
-            localStorage.exo4 = "jour de repos"
-            localStorage.exoClr4 = "";
-        }
-        if (nbPrgJ >= 6) {
-            localStorage.exo5 = "séance d'endurance"
-            localStorage.exoClr5 = "";
-        }
-        else {
-            localStorage.exo5 = "jour de repos"
-            localStorage.exoClr5 = "";
-        }
-
+        if (nbPrgJ >= 5) {localStorage.exo4 = "séance d'endurance"}
+        if (nbPrgJ >= 6) {localStorage.exo5 = "séance d'endurance"}
         localStorage.exo6 = "séance d'endurance"
-        localStorage.exoClr6 = "";
-
         localStorage.exo7 = "séance d'endurance"
-        localStorage.exoClr7 = "";
-
+        
         //semaine 2
         localStorage.exo8 = "jour de repos"
-        localStorage.exoClr8 = "";
-
-        if (nbPrgJ >= 4) {
-            localStorage.exo9 = "séance d'endurance"
-            localStorage.exoClr9 = "";
-        }
-        else {
-            localStorage.exo9 = "jour de repos"
-            localStorage.exoClr9 = "";
-        }
-
+        if (nbPrgJ >= 4) {localStorage.exo9 = "séance d'endurance"}
         localStorage.exo10 = "séance de sprint"
-        localStorage.exoClr10 = "";
-
-        if (nbPrgJ >= 6) {
-            localStorage.exo11 = "séance d'endurance"
-            localStorage.exoClr11 = "";
-        }
-        else {
-            localStorage.exo11 = "jour de repos"
-            localStorage.exoClr11 = "";
-        }
-        if (nbPrgJ >= 5) {
-            localStorage.exo12 = "séance de PMA"
-            localStorage.exoClr12 = "";
-        }
-        else {
-            localStorage.exo12 = "jour de repos"
-            localStorage.exoClr12 = "";
-        }
-
+        if (nbPrgJ >= 6) {localStorage.exo11 = "séance d'endurance"}
+        if (nbPrgJ >= 5) {localStorage.exo12 = "séance de PMA"}
         localStorage.exo13 = "séance d'endurance"
-        localStorage.exoClr13 = "";
-
         localStorage.exo14 = "séance d'endurance"
-        localStorage.exoClr14 = "";
-
+    
         //semaine 3
         localStorage.exo15 = "jour de repos"
-        localStorage.exoClr15 = "";
-        
-        if (nbPrgJ >= 4) {
-            localStorage.exo16 = "séance de sprint"
-            localStorage.exoClr16 = "";
-        }
-        else {
-            localStorage.exo16 = "jour de repos"
-            localStorage.exoClr16 = "";
-        }
-
+        if (nbPrgJ >= 4) {localStorage.exo16 = "séance de sprint"}
         localStorage.exo17 = "séance d'endurance"
-        localStorage.exoClr17 = "";
-
-        if (nbPrgJ >= 6) {
-            localStorage.exo18 = "séance de PMA"
-            localStorage.exoClr18 = "";
-        }
-        else {
-            localStorage.exo18 = "jour de repos"
-            localStorage.exoClr18 = "";
-        }
-        if (nbPrgJ >= 5) {
-            localStorage.exo19 = "séance d'endurance"
-            localStorage.exoClr19 = "";
-        }
-        else {
-            localStorage.exo19 = "jour de repos"
-            localStorage.exoClr19 = "";
-        }
-
+        if (nbPrgJ >= 6) {localStorage.exo18 = "séance de PMA"}
+        if (nbPrgJ >= 5) {localStorage.exo19 = "séance d'endurance"}
         localStorage.exo20 = "séance d'endurance"
-        localStorage.exoClr20 = "";
-
         localStorage.exo21 = "séance d'endurance"
-        localStorage.exoClr21 = "";
-
+       
         //semaine 4
         localStorage.exo22 = "jour de repos"
-        localStorage.exoClr22 = "";
-        
-        if (nbPrgJ >= 4) {
-            localStorage.exo23 = "séance de seuil"
-            localStorage.exoClr23 = "";
-        }
-        else {
-            localStorage.exo23 = "jour de repos"
-            localStorage.exoClr23 = "";
-        }
-
+        if (nbPrgJ >= 4) {localStorage.exo23 = "séance de seuil"}
         localStorage.exo24 = "séance d'endurance"
-        localStorage.exoClr24 = "";
-
-        if (nbPrgJ >= 6) {
-            localStorage.exo25 = "séance d'endurance"
-            localStorage.exoClr25 = "";
-        }
-        else {
-            localStorage.exo25 = "jour de repos"
-            localStorage.exoClr25 = "";
-        }
-        if (nbPrgJ >= 5) {
-            localStorage.exo26 = "séance de sprint"
-            localStorage.exoClr26 = "";
-        }
-        else {
-            localStorage.exo26 = "jour de repos"
-            localStorage.exoClr26 = "";
-        }
-
+        if (nbPrgJ >= 6) {localStorage.exo25 = "séance d'endurance"}
+        if (nbPrgJ >= 5) {localStorage.exo26 = "séance de sprint"}
         localStorage.exo27 = "séance d'endurance"
-        localStorage.exoClr27 = "";
-
         localStorage.exo28 = "séance d'endurance"
-        localStorage.exoClr28 = "";
-
+    
         //semaine 5
         localStorage.exo29 = "jour de repos"
-        localStorage.exoClr29 = "";
-        
-        if (nbPrgJ >= 4) {
-            localStorage.exo30 = "séance de sprint"
-            localStorage.exoClr30 = "";
-        }
-        else {
-            localStorage.exo30 = "jour de repos"
-            localStorage.exoClr30 = "";
-        }
-
+        if (nbPrgJ >= 4) {localStorage.exo30 = "séance de sprint"}
         localStorage.exo31 = "séance d'endurance"
-        localStorage.exoClr31 = "";
-
-        if (nbPrgJ >= 6) {
-            localStorage.exo = "séance d'endurance"
-            localStorage.exoClr32 = "";
-        }
-        else {
-            localStorage.exo = "jour de repos"
-            localStorage.exoClr32 = "";
-        }
-        if (nbPrgJ >= 5) {
-            localStorage.exo33 = "séance de PMA"
-            localStorage.exoClr33 = "";
-        }
-        else {
-            localStorage.exo33 = "jour de repos"
-            localStorage.exoClr33 = "";
-        }
-
+        if (nbPrgJ >= 6) {localStorage.exo = "séance d'endurance"}
+        if (nbPrgJ >= 5) { localStorage.exo33 = "séance de PMA"} 
         localStorage.exo34 = "séance d'endurance"
-        localStorage.exoClr34 = "";
-
         localStorage.exo35 = "séance d'endurance"
-        localStorage.exoClr35 = "";
-
+    
         //semaine 6
         localStorage.exo36 = "jour de repos"
-        localStorage.exoClr36 = "";
-        
-        if (nbPrgJ >= 4) {
-            localStorage.exo37 = "séance de seuil"
-            localStorage.exoClr37 = "";
-        }
-        else {
-            localStorage.exo37 = "jour de repos"
-            localStorage.exoClr37 = "";
-        }
-
+        if (nbPrgJ >= 4) {localStorage.exo37 = "séance de seuil"}
         localStorage.exo38 = "séance d'endurance"
-        localStorage.exoClr38 = "";
-
-        if (nbPrgJ >= 6) {
-            localStorage.exo39 = "séance de sprint"
-            localStorage.exoClr39 = "";
-        }
-        else {
-            localStorage.exo39 = "jour de repos"
-            localStorage.exoClr39 = "";
-        }
-        if (nbPrgJ >= 5) {
-            localStorage.exo40 = "séance de seuil"
-            localStorage.exoClr40 = "";
-        }
-        else {
-            localStorage.exo40 = "jour de repos"
-            localStorage.exoClr40 = "";
-        }
-
+        if (nbPrgJ >= 6) {localStorage.exo39 = "séance de sprint"}
+        if (nbPrgJ >= 5) {localStorage.exo40 = "séance de seuil"}
         localStorage.exo41 = "séance d'endurance"
-        localStorage.exoClr41 = "";
-
         localStorage.exo42 = "séance de seuil"
-        localStorage.exoClr42 = "";
-
+    
         //semaine 7
         localStorage.exo43 = "jour de repos"
-        localStorage.exoClr43 = "";
-        
-        if (nbPrgJ >= 4) {
-            localStorage.exo44 = "séance de sprint"
-            localStorage.exoClr44 = "";
-        }
-        else {
-            localStorage.exo44 = "jour de repos"
-            localStorage.exoClr44 = "";
-        }
-
+        if (nbPrgJ >= 4) {localStorage.exo44 = "séance de sprint"}
         localStorage.exo45 = "séance de seuil"
-        localStorage.exoClr45 = "";
-
-        if (nbPrgJ >= 6) {
-            localStorage.exo46 = "séance d'endurance"
-            localStorage.exoClr46 = "";
-        }
-        else {
-            localStorage.exo46 = "jour de repos"
-            localStorage.exoClr46 = "";
-        }
-        if (nbPrgJ >= 5) {
-            localStorage.exo47 = "séance de seuil"
-            localStorage.exoClr47 = "";
-        }
-        else {
-            localStorage.exo47 = "jour de repos"
-            localStorage.exoClr47 = "";
-        }
-
+        if (nbPrgJ >= 6) {localStorage.exo46 = "séance d'endurance"}
+        if (nbPrgJ >= 5) {localStorage.exo47 = "séance de seuil"}
         localStorage.exo48 = "séance d'endurance"
-        localStorage.exoClr48 = "";
-
         localStorage.exo49 = "séance de seuil"
-        localStorage.exoClr49 = "";
-        
+    
         //semaine 8
         localStorage.exo50 = "jour de repos"
-        localStorage.exoClr50 = "";
-        
-        if (nbPrgJ >= 4) {
-            localStorage.exo51 = "séance de seuil"
-            localStorage.exoClr51 = "";
-        }
-        else {
-            localStorage.exo51 = "jour de repos"
-            localStorage.exoClr51 = "";
-        }
-
+        if (nbPrgJ >= 4) {localStorage.exo51 = "séance de seuil"}
         localStorage.exo52 = "séance de sprint"
-        localStorage.exoClr52 = "";
-
-        if (nbPrgJ >= 6) {
-            localStorage.exo53 = "séance d'endurance"
-            localStorage.exoClr53 = "";
-        }
-        else {
-            localStorage.exo53 = "jour de repos"
-            localStorage.exoClr53 = "";
-        }
-        if (nbPrgJ >= 5) {
-            localStorage.exo54 = "séance d'endurance"
-            localStorage.exoClr54 = "";
-        }
-        else {
-            localStorage.exo54 = "jour de repos"
-            localStorage.exoClr54 = "";
-        }
-
+        if (nbPrgJ >= 6) {localStorage.exo53 = "séance d'endurance"}
+        if (nbPrgJ >= 5) {localStorage.exo54 = "séance d'endurance"}
         localStorage.exo55 = "séance de seuil"
-        localStorage.exoClr55 = "";
-
         localStorage.exo56 = "séance d'endurance"
-        localStorage.exoClr56 = "";
-        
+       
         //semaine 9
         localStorage.exo57 = "jour de repos"
-        localStorage.exoClr57 = "";
-        
-        if (nbPrgJ >= 4) {
-            localStorage.exo58 = "séance de sprint"
-            localStorage.exoClr58 = "";
-        }
-        else {
-            localStorage.exo58 = "jour de repos"
-            localStorage.exoClr58 = "";
-        }
-
+        if (nbPrgJ >= 4) {localStorage.exo58 = "séance de sprint"}
         localStorage.exo59 = "séance de PMA"
-        localStorage.exoClr59 = "";
-
-        if (nbPrgJ >= 6) {
-            localStorage.exo60 = "séance d'endurance"
-            localStorage.exoClr60 = "";
-        }
-        else {
-            localStorage.exo60 = "jour de repos"
-            localStorage.exoClr60 = "";
-        }
-        if (nbPrgJ >= 5) {
-            localStorage.exo61 = "séance de PMA"
-            localStorage.exoClr61 = "";
-        }
-        else {
-            localStorage.exo61 = "jour de repos"
-            localStorage.exoClr61 = "";
-        }
-
+        if (nbPrgJ >= 6) {localStorage.exo60 = "séance d'endurance"}
+        if (nbPrgJ >= 5) {localStorage.exo61 = "séance de PMA"}
         localStorage.exo62 = "séance d'endurance"
-        localStorage.exoClr62 = "";
-
         localStorage.exo63 = "séance de PMA"
-        localStorage.exoClr63 = "";
-
+           
         //semaine 10
         localStorage.exo64 = "jour de repos"
-        localStorage.exoClr64 = "";
-        
-        if (nbPrgJ >= 4) {
-            localStorage.exo65 = "séance de sprint"
-            localStorage.exoClr65 = "";
-        }
-        else {
-            localStorage.exo65 = "jour de repos"
-            localStorage.exoClr65 = "";
-        }
-
+        if (nbPrgJ >= 4) {localStorage.exo65 = "séance de sprint"}
         localStorage.exo66 = "séance de PMA"
-        localStorage.exoClr66 = "";
-
-        if (nbPrgJ >= 6) {
-            localStorage.exo67 = "séance d'endurance"
-            localStorage.exoClr67 = "";
-        }
-        else {
-            localStorage.exo67 = "jour de repos"
-            localStorage.exoClr67 = "";
-        }
-        if (nbPrgJ >= 5) {
-            localStorage.exo68 = "séance de PMA"
-            localStorage.exoClr68 = "";
-        }
-        else {
-            localStorage.exo68 = "jour de repos"
-            localStorage.exoClr68 = "";
-        }
-
+        if (nbPrgJ >= 6) {localStorage.exo67 = "séance d'endurance"}
+        if (nbPrgJ >= 5) {localStorage.exo68 = "séance de PMA"}
         localStorage.exo69 = "séance d'endurance"
-        localStorage.exoClr69 = "";
-
         localStorage.exo70 = "séance de PMA"
-        localStorage.exoClr70 = "";
-        
+    
         //semaine 11
         localStorage.exo71 = "jour de repos"
-        localStorage.exoClr71 = "";
-        
-        if (nbPrgJ >= 4) {
-            localStorage.exo72 = "séance d'endurance"
-            localStorage.exoClr72 = "";
-        }
-        else {
-            localStorage.exo72 = "jour de repos"
-            localStorage.exoClr72 = "";
-        }
-
+        if (nbPrgJ >= 4) {localStorage.exo72 = "séance d'endurance"}
         localStorage.exo73 = "séance de PMA"
-        localStorage.exoClr73 = "";
-
-        if (nbPrgJ >= 6) {
-            localStorage.exo74 = "séance d'endurance"
-            localStorage.exoClr74 = "";
-        }
-        else {
-            localStorage.exo74 = "jour de repos"
-            localStorage.exoClr74 = "";
-        }
-        if (nbPrgJ >= 5) {
-            localStorage.exo75 = "séance de PMA"
-            localStorage.exoClr75 = "";
-        }
-        else {
-            localStorage.exo75 = "jour de repos"
-            localStorage.exoClr75 = "";
-        }
-
+        if (nbPrgJ >= 6) {localStorage.exo74 = "séance d'endurance"}
+        if (nbPrgJ >= 5) {localStorage.exo75 = "séance de PMA"}
         localStorage.exo76 = "séance d'endurance"
-        localStorage.exoClr76 = "";
-
         localStorage.exo77 = "séance de PMA"
-        localStorage.exoClr77 = "";
-        
+            
         //semaine 12
         localStorage.exo78 = "jour de repos"
-        localStorage.exoClr78 = "";
-        
-        if (nbPrgJ >= 4) {
-            localStorage.exo79 = "séance de sprint"
-            localStorage.exoClr79 = "";
-        }
-        else {
-            localStorage.exo79 = "jour de repos"
-            localStorage.exoClr79 = "";
-        }
-
+        if (nbPrgJ >= 4) {localStorage.exo79 = "séance de sprint"}
         localStorage.exo80 = "séance d'endurance"
-        localStorage.exoClr80 = "";
-
-        if (nbPrgJ >= 6) {
-            localStorage.exo81 = "séance de PMA"
-            localStorage.exoClr81 = "";
-        }
-        else {
-            localStorage.exo81 = "jour de repos"
-            localStorage.exoClr81 = "";
-        }
-        if (nbPrgJ >= 5) {
-            localStorage.exo82 = "séance d'endurance"
-            localStorage.exoClr82 = "";
-        }
-        else {
-            localStorage.exo82 = "jour de repos"
-            localStorage.exoClr82 = "";
-        }
-
+        if (nbPrgJ >= 6) {localStorage.exo81 = "séance de PMA"}
+        if (nbPrgJ >= 5) {localStorage.exo82 = "séance d'endurance"}
         localStorage.exo83 = "séance de PMA"
-        localStorage.exoClr83 = "";
-
         localStorage.exo84 = "séance d'endurance"
-        localStorage.exoClr84 = "";
         
         //semaine 13
         localStorage.exo85 = "jour de repos"
-        localStorage.exoClr85 = "";
-        
-        if (nbPrgJ >= 4) {
-            localStorage.exo86 = "séance de sprint"
-            localStorage.exoClr86 = "";
-        }
-        else {
-            localStorage.exo86 = "jour de repos"
-            localStorage.exoClr86 = "";
-        }
-
+        if (nbPrgJ >= 4) {localStorage.exo86 = "séance de sprint"}
         localStorage.exo87 = "séance de PMA"
-        localStorage.exoClr87 = "";
-
-        if (nbPrgJ >= 6) {
-            localStorage.exo88 = "séance d'endurance"
-            localStorage.exoClr88 = "";
-        }
-        else {
-            localStorage.exo88 = "jour de repos"
-            localStorage.exoClr88 = "";
-        }
-        if (nbPrgJ >= 5) {
-            localStorage.exo89 = "séance d'endurance"
-            localStorage.exoClr89 = "";
-        }
-        else {
-            localStorage.exo89 = "jour de repos"
-            localStorage.exoClr89 = "";
-        }
-
+        if (nbPrgJ >= 6) {localStorage.exo88 = "séance d'endurance"}
+        if (nbPrgJ >= 5) {localStorage.exo89 = "séance d'endurance"}
         localStorage.exo90 = "séance de PMA"
-        localStorage.exoClr90 = "";
-
         localStorage.exo91 = "séance d'endurance"
-        localStorage.exoClr91 = "";
-        
+            
         //semaine 14
         localStorage.exo92 = "jour de repos"
-        localStorage.exoClr92 = "";
-        
-        if (nbPrgJ >= 4) {
-            localStorage.exo93 = "séance de sprint"
-            localStorage.exoClr93 = "";
-        }
-        else {
-            localStorage.exo93 = "jour de repos"
-            localStorage.exoClr93 = "";
-        }
-
+        if (nbPrgJ >= 4) {localStorage.exo93 = "séance de sprint"}
         localStorage.exo94 = "séance de PMA"
-        localStorage.exoClr94 = "";
-
-        if (nbPrgJ >= 6) {
-            localStorage.exo95 = "séance d'endurance"
-            localStorage.exoClr95 = "";
-        }
-        else {
-            localStorage.exo95 = "jour de repos"
-            localStorage.exoClr95 = "";
-        }
-        if (nbPrgJ >= 5) {
-            localStorage.exo96 = "séance d'endurance"
-            localStorage.exoClr96 = "";
-        }
-        else {
-            localStorage.exo96 = "jour de repos"
-            localStorage.exoClr96 = "";
-        }
-
+        if (nbPrgJ >= 6) {localStorage.exo95 = "séance d'endurance"}
+        if (nbPrgJ >= 5) {localStorage.exo96 = "séance d'endurance"}
         localStorage.exo97 = "séance de PMA"
-        localStorage.exoClr97 = "";
-
         localStorage.exo98 = "séance d'endurance"
-        localStorage.exoClr98 = "";
-        
+         
         //semaine 15
         if (nbPrgJ >= 5) {
             localStorage.exo99 = "séance de sprint";
@@ -889,25 +470,25 @@ $("#save").click(function() {
             localStorage.exo99 = "jour de repos"
             localStorage.exoClr99 = "";
         };
-
+    
         localStorage.exo100 = "jour de repos";
         localStorage.exoClr100 = "";
-
+    
         localStorage.exo101 = "séance d'endurance";
         localStorage.exoClr101 = "green";
-
+    
         localStorage.exo102 = "jour de repos";
         localStorage.exoClr102 = "";
-
+    
         localStorage.exo103 = "jour de repos";
         localStorage.exoClr103 = "";
-
+    
         localStorage.exo104 = "séance de PMA";
         localStorage.exoClr104 = "orange";
-
+    
         localStorage.exo105 = "jour de repos";
         localStorage.exoClr105 = "";
-
+    
         //semaine 16
         if (nbPrgJ >= 5) {
             localStorage.exo106 = "séance d'endurance";
@@ -917,418 +498,117 @@ $("#save").click(function() {
             localStorage.exo106 = "jour de repos"
             localStorage.exoClr106 = "";
         };
-
+    
         localStorage.exo107 = "jour de repos";
         localStorage.exoClr107 = "";
-
+    
         localStorage.exo108 = "séance de PMA";
         localStorage.exoClr108 = "orange";
-
+    
         localStorage.exo109 = "jour de repos";
         localStorage.exoClr109 = "";
-
+    
         localStorage.exo110 = "jour de repos";
         localStorage.exoClr110 = "";
-
+    
         localStorage.exo111 = "séance d'endurance";
         localStorage.exoClr111 = "green";
-
+    
         localStorage.exo112 = "objectif";
         localStorage.exoClr112 = "grey";
     }
-
+    
     else if (nbPrgT == 3) {
         //semaine 1
-        if (nbPrgJ >= 4) {
-            localStorage.exo1 = "séance d'endurance"
-            localStorage.exoClr1 = "";
-        }
-        else {
-            localStorage.exo1 = "jour de repos"
-            localStorage.exoClr1 = "";
-        }
-
+        if (nbPrgJ >= 4) {localStorage.exo1 = "séance d'endurance"}
         localStorage.exo2 = "jour de repos"
-        localStorage.exoClr2 = "";
-        
-
         localStorage.exo = "séance d'endurance"
-        localStorage.exoClr3 = "";
-
-        if (nbPrgJ >= 5) {
-            localStorage.exo4 = "séance d'endurance"
-            localStorage.exoClr4 = "";
-        }
-        else {
-            localStorage.exo4 = "jour de repos"
-            localStorage.exoClr4 = "";
-        }
-        if (nbPrgJ >= 6) {
-            localStorage.exo5 = "séance d'endurance"
-            localStorage.exoClr5 = "";
-        }
-        else {
-            localStorage.exo5 = "jour de repos"
-            localStorage.exoClr5 = "";
-        }
-
+        if (nbPrgJ >= 5) {localStorage.exo4 = "séance d'endurance"}
+        if (nbPrgJ >= 6) {localStorage.exo5 = "séance d'endurance"}
         localStorage.exo6 = "séance d'endurance"
-        localStorage.exoClr6 = "";
-
         localStorage.exo7 = "séance d'endurance"
-        localStorage.exoClr7 = "";
-
+         
         //semaine 2
         localStorage.exo8 = "jour de repos"
-        localStorage.exoClr8 = "";
-        
-        if (nbPrgJ >= 4) {
-            localStorage.exo9 = "séance de PMA"
-            localStorage.exoClr9 = "";
-        }
-        else {
-            localStorage.exo9 = "jour de repos"
-            localStorage.exoClr9 = "";
-        }
-
+        if (nbPrgJ >= 4) {localStorage.exo9 = "séance de PMA"}
         localStorage.exo10 = "séance d'endurance"
-        localStorage.exoClr10 = "";
-
-        if (nbPrgJ >= 6) {
-            localStorage.exo11 = "séance de sprint"
-            localStorage.exoClr11 = "";
-        }
-        else {
-            localStorage.exo11 = "jour de repos"
-            localStorage.exoClr11 = "";
-        }
-        if (nbPrgJ >= 5) {
-            localStorage.exo12 = "séance d'endurance"
-            localStorage.exoClr12 = "";
-        }
-        else {
-            localStorage.exo12 = "jour de repos"
-            localStorage.exoClr12 = "";
-        }
-
+        if (nbPrgJ >= 6) {localStorage.exo11 = "séance de sprint"}
+        if (nbPrgJ >= 5) {localStorage.exo12 = "séance d'endurance"}
         localStorage.exo13 = "séance de sprint"
-        localStorage.exoClr13 = "";
-
         localStorage.exo14 = "séance d'endurance"
-        localStorage.exoClr14 = "";
-
+         
         //semaine 3
         localStorage.exo15 = "jour de repos"
-        localStorage.exoClr15 = "";
-        
-        if (nbPrgJ >= 4) {
-            localStorage.exo16 = "séance de sprint"
-            localStorage.exoClr16 = "";
-        }
-        else {
-            localStorage.exo16 = "jour de repos"
-            localStorage.exoClr16 = "";
-        }
-
+        if (nbPrgJ >= 4) {localStorage.exo16 = "séance de sprint"}
         localStorage.exo17 = "séance de seuil"
-        localStorage.exoClr17 = "";
-
-        if (nbPrgJ >= 6) {
-            localStorage.exo18 = "séance d'endurance"
-            localStorage.exoClr18 = "";
-        }
-        else {
-            localStorage.exo18 = "jour de repos"
-            localStorage.exoClr18 = "";
-        }
-        if (nbPrgJ >= 5) {
-            localStorage.exo19 = "séance d'endurance"
-            localStorage.exoClr19 = "";
-        }
-        else {
-            localStorage.exo19 = "jour de repos"
-            localStorage.exoClr19 = "";
-        }
-
+        if (nbPrgJ >= 6) {localStorage.exo18 = "séance d'endurance"}
+        if (nbPrgJ >= 5) {localStorage.exo19 = "séance d'endurance"}
         localStorage.exo20 = "séance d'endurance"
-        localStorage.exoClr20 = "";
-
         localStorage.exo21 = "séance d'endurance"
-        localStorage.exoClr21 = "";
-
+            
         //semaine 4
         localStorage.exo22 = "jour de repos"
-        localStorage.exoClr22 = "";
-        
-        if (nbPrgJ >= 4) {
-            localStorage.exo23 = "séance d'endurance"
-            localStorage.exoClr23 = "";
-        }
-        else {
-            localStorage.exo23 = "jour de repos"
-            localStorage.exoClr23 = "";
-        }
-
+        if (nbPrgJ >= 4) {localStorage.exo23 = "séance d'endurance"}
         localStorage.exo24 = "séance d'endurance"
-        localStorage.exoClr24 = "";
-
-        if (nbPrgJ >= 6) {
-            localStorage.exo25 = "séance de seuil"
-            localStorage.exoClr25 = "";
-        }
-        else {
-            localStorage.exo25 = "jour de repos"
-            localStorage.exoClr25 = "";
-        }
-        if (nbPrgJ >= 5) {
-            localStorage.exo26 = "séance de sprint"
-            localStorage.exoClr26 = "";
-        }
-        else {
-            localStorage.exo26 = "jour de repos"
-            localStorage.exoClr26 = "";
-        }
-
+        if (nbPrgJ >= 6) {localStorage.exo25 = "séance de seuil"}
+        if (nbPrgJ >= 5) {localStorage.exo26 = "séance de sprint"}
         localStorage.exo27 = "séance d'endurance"
-        localStorage.exoClr27 = "";
-
         localStorage.exo28 = "séance de PMA"
-        localStorage.exoClr28 = "";
-
+         
         //semaine 5
         localStorage.exo29 = "jour de repos"
-        localStorage.exoClr29 = "";
-        
-        if (nbPrgJ >= 4) {
-            localStorage.exo30 = "séance de sprint"
-            localStorage.exoClr30 = "";
-        }
-        else {
-            localStorage.exo30 = "jour de repos"
-            localStorage.exoClr30 = "";
-        }
-
+        if (nbPrgJ >= 4) {localStorage.exo30 = "séance de sprint"}
         localStorage.exo31 = "séance de seuil"
-        localStorage.exoClr31 = "";
-
-        if (nbPrgJ >= 6) {
-            localStorage.exo32 = "séance d'endurance"
-            localStorage.exoClr32 = "";
-        }
-        else {
-            localStorage.exo32 = "jour de repos"
-            localStorage.exoClr32 = "";
-        }
-        if (nbPrgJ >= 5) {
-            localStorage.exo33 = "séance de seuil"
-            localStorage.exoClr33 = "";
-        }
-        else {
-            localStorage.exo33 = "jour de repos"
-            localStorage.exoClr33 = "";
-        }
-
+        if (nbPrgJ >= 6) {localStorage.exo32 = "séance d'endurance"}
+        if (nbPrgJ >= 5) {localStorage.exo33 = "séance de seuil"}
         localStorage.exo34 = "séance d'endurance"
-        localStorage.exoClr34 = "";
-
         localStorage.exo35 = "séance de seuil"
-        localStorage.exoClr35 = "";
-
+           
         //semaine 6
         localStorage.exo36 = "jour de repos"
-        localStorage.exoClr36 = "";
-        
-        if (nbPrgJ >= 4) {
-            localStorage.exo37 = "séance de sprint"
-            localStorage.exoClr37 = "";
-        }
-        else {
-            localStorage.exo37 = "jour de repos"
-            localStorage.exoClr37 = "";
-        }
-
+        if (nbPrgJ >= 4) {localStorage.exo37 = "séance de sprint"}
         localStorage.exo38 = "séance de seuil"
-        localStorage.exoClr38 = "";
-
-        if (nbPrgJ >= 6) {
-            localStorage.exo39 = "séance d'endurance"
-            localStorage.exoClr39 = "";
-        }
-        else {
-            localStorage.exo39 = "jour de repos"
-            localStorage.exoClr39 = "";
-        }
-        if (nbPrgJ >= 5) {
-            localStorage.exo40 = "séance d'endurance"
-            localStorage.exoClr40 = "";
-        }
-        else {
-            localStorage.exo40 = "jour de repos"
-            localStorage.exoClr40 = "";
-        }
-
+        if (nbPrgJ >= 6) {localStorage.exo39 = "séance d'endurance"}
+        if (nbPrgJ >= 5) {localStorage.exo40 = "séance d'endurance"}
         localStorage.exo41 = "séance de seuil"
-        localStorage.exoClr41 = "";
-
         localStorage.exo42 = "séance d'endurance"
-        localStorage.exoClr42 = "";
-
+         
         //semaine 7
         localStorage.exo43 = "jour de repos"
-        localStorage.exoClr43 = "";
-        
-        if (nbPrgJ >= 4) {
-            localStorage.exo44 = "séance de sprint"
-            localStorage.exoClr44 = "";
-        }
-        else {
-            localStorage.exo44 = "jour de repos"
-            localStorage.exoClr44 = "";
-        }
-
+        if (nbPrgJ >= 4) {localStorage.exo44 = "séance de sprint"}
         localStorage.exo45 = "séance de PMA"
-        localStorage.exoClr45 = "";
-
-        if (nbPrgJ >= 6) {
-            localStorage.exo46 = "séance d'endurance"
-            localStorage.exoClr46 = "";
-        }
-        else {
-            localStorage.exo46 = "jour de repos"
-            localStorage.exoClr46 = "";
-        }
-        if (nbPrgJ >= 5) {
-            localStorage.exo47 = "séance de PMA"
-            localStorage.exoClr47 = "";
-        }
-        else {
-            localStorage.exo47 = "jour de repos"
-            localStorage.exoClr47 = "";
-        }
-
+        if (nbPrgJ >= 6) {localStorage.exo46 = "séance d'endurance"}
+        if (nbPrgJ >= 5) {localStorage.exo47 = "séance de PMA"}
         localStorage.exo48 = "séance d'endurance"
-        localStorage.exoClr48 = "";
-
         localStorage.exo49 = "séance de PMA"
-        localStorage.exoClr49 = "";
-        
+    
         //semaine 8
         localStorage.exo = "jour de repos"
-        localStorage.exoClr50 = "";
-        
-        if (nbPrgJ >= 4) {
-            localStorage.exo51 = "séance de sprint"
-            localStorage.exoClr51 = "";
-        }
-        else {
-            localStorage.exo51 = "jour de repos"
-            localStorage.exoClr51 = "";
-        }
-
+        if (nbPrgJ >= 4) {localStorage.exo51 = "séance de sprint"}
         localStorage.exo52 = "séance de PMA"
-        localStorage.exoClr52 = "";
-
-        if (nbPrgJ >= 6) {
-            localStorage.exo53 = "séance d'endurance"
-            localStorage.exoClr53 = "";
-        }
-        else {
-            localStorage.exo53 = "jour de repos"
-            localStorage.exoClr53 = "";
-        }
-        if (nbPrgJ >= 5) {
-            localStorage.exo54 = "séance de PMA"
-            localStorage.exoClr54 = "";
-        }
-        else {
-            localStorage.exo54 = "jour de repos"
-            localStorage.exoClr54 = "";
-        }
-
+        if (nbPrgJ >= 6) {localStorage.exo53 = "séance d'endurance"}
+        if (nbPrgJ >= 5) {localStorage.exo54 = "séance de PMA"}
         localStorage.exo55 = "séance d'endurance"
-        localStorage.exoClr55 = "";
-
         localStorage.exo56 = "séance de PMA"
-        localStorage.exoClr56 = "";
-        
+       
         //semaine 9
         localStorage.exo57 = "jour de repos"
-        localStorage.exoClr57 = "";
-        
-        if (nbPrgJ >= 4) {
-            localStorage.exo58 = "séance de sprint"
-            localStorage.exoClr58 = "";
-        }
-        else {
-            localStorage.exo58 = "jour de repos"
-            localStorage.exoClr58 = "";
-        }
-
+        if (nbPrgJ >= 4) {localStorage.exo58 = "séance de sprint"}
         localStorage.exo59 = "séance de PMA"
-        localStorage.exoClr59 = "";
-
-        if (nbPrgJ >= 6) {
-            localStorage.exo60 = "séance d'endurance"
-            localStorage.exoClr60 = "";
-        }
-        else {
-            localStorage.exo60 = "jour de repos"
-            localStorage.exoClr60 = "";
-        }
-        if (nbPrgJ >= 5) {
-            localStorage.exo61 = "séance de PMA"
-            localStorage.exoClr61 = "";
-        }
-        else {
-            localStorage.exo61 = "jour de repos"
-            localStorage.exoClr61 = "";
-        }
-
+        if (nbPrgJ >= 6) {localStorage.exo60 = "séance d'endurance"}
+        if (nbPrgJ >= 5) {localStorage.exo61 = ""}
         localStorage.exo62 = "séance d'endurance"
-        localStorage.exoClr62 = "";
-
         localStorage.exo63 = "séance de PMA"
-        localStorage.exoClr63 = "";
-
+    
         //semaine 10
         localStorage.exo64 = "jour de repos"
-        localStorage.exoClr64 = "";
-        
-        if (nbPrgJ >= 4) {
-            localStorage.exo65 = "séance de sprint"
-            localStorage.exoClr65 = "";
-        }
-        else {
-            localStorage.exo65 = "jour de repos"
-            localStorage.exoClr65 = "";
-        }
-
+        if (nbPrgJ >= 4) {localStorage.exo65 = "séance de sprint"}
         localStorage.exo66 = "séance de PMA"
-        localStorage.exoClr66 = "";
-
-        if (nbPrgJ >= 6) {
-            localStorage.exo67 = "séance d'endurance"
-            localStorage.exoClr67 = "";
-        }
-        else {
-            localStorage.exo67 = "jour de repos"
-            localStorage.exoClr67 = "";
-        }
-        if (nbPrgJ >= 5) {
-            localStorage.exo68 = "séance d'endurance"
-            localStorage.exoClr68 = "";
-        }
-        else {
-            localStorage.exo68 = "jour de repos"
-            localStorage.exoClr68 = "";
-        }
-
+        if (nbPrgJ >= 6) {localStorage.exo67 = "séance d'endurance"}
+        if (nbPrgJ >= 5) {localStorage.exo68 = "séance d'endurance"}
         localStorage.exo69 = "séance de PMA"
-        localStorage.exoClr69 = "";
-
         localStorage.exo70 = "séance d'endurance"
-        localStorage.exoClr70 = "";
-
+     
         //semaine 11
         if (nbPrgJ >= 5) {
             localStorage.exo71 = "séance de sprint";
@@ -1338,25 +618,25 @@ $("#save").click(function() {
             localStorage.exo71 = "jour de repos"
             localStorage.exoClr71 = "";
         };
-
+    
         localStorage.exo72 = "jour de repos";
         localStorage.exoClr72 = "";
-
+    
         localStorage.exo73 = "séance d'endurance";
         localStorage.exoClr73 = "green";
-
+    
         localStorage.exo74 = "jour de repos";
         localStorage.exoClr74 = "";
-
+    
         localStorage.exo75 = "jour de repos";
         localStorage.exoClr75 = "";
-
+    
         localStorage.exo76 = "séance de PMA";
         localStorage.exoClr76 = "orange";
-
+    
         localStorage.exo77 = "jour de repos";
         localStorage.exoClr77 = "";
-
+    
         //semaine 12
         if (nbPrgJ >= 5) {
             localStorage.exo78 = "séance d'endurance";
@@ -1366,317 +646,137 @@ $("#save").click(function() {
             localStorage.exo78 = "jour de repos"
             localStorage.exoClr78 = "";
         };
-
+    
         localStorage.exo79 = "jour de repos";
         localStorage.exoClr79 = "";
-
+    
         localStorage.exo80 = "séance de PMA";
         localStorage.exoClr80 = "orange";
-
+    
         localStorage.exo81 = "jour de repos";
         localStorage.exoClr81 = "";
-
+    
         localStorage.exo82 = "jour de repos";
         localStorage.exoClr82 = "";
-
+    
         localStorage.exo83 = "séance d'endurance";
         localStorage.exoClr83 = "green";
-
+    
         localStorage.exo84 = "objectif";
         localStorage.exoClr84 = "grey";
     }
-
-    else if (nbPrgT == 2) {
+    
+        else if (nbPrgT == 2) {
         //semaine 1
-        if (nbPrgJ >= 4) {
-            localStorage.exo1 = "séance d'endurance"
-            localStorage.exoClr1 = "";
-        }
-        else {
-            localStorage.exo1 = "jour de repos"
-            localStorage.exoClr1 = "";
-        }
-        
+        if (nbPrgJ >= 4) {localStorage.exo1 = "séance d'endurance"}
         localStorage.exo2 = "jour de repos"
-        localStorage.exoClr2 = "";
-
         localStorage.exo3 = "séance d'endurance"
-        localStorage.exoClr3 = "";
-
-        if (nbPrgJ >= 5) {
-            localStorage.exo4 = "séance d'endurance"
-            localStorage.exoClr4 = "";
-        }
-        else {
-            localStorage.exo4 = "jour de repos"
-            localStorage.exoClr4 = "";
-        }
-        if (nbPrgJ >= 6) {
-            localStorage.exo5 = "séance d'endurance"
-            localStorage.exoClr5 = "";
-        }
-        else {
-            localStorage.exo5 = "jour de repos"
-            localStorage.exoClr5 = "";
-        }
-
+        if (nbPrgJ >= 5) {localStorage.exo4 = "séance d'endurance"}
+        if (nbPrgJ >= 6) {localStorage.exo5 = "séance d'endurance"}
         localStorage.exo6 = "séance d'endurance"
-        localStorage.exoClr6 = "";
-
         localStorage.exo7 = "séance d'endurance"
-        localStorage.exoClr7 = "";
-
+      
         //semaine 2
         localStorage.exo8 = "jour de repos"
-        localStorage.exoClr8 = "";
-        
-        if (nbPrgJ >= 4) {
-            localStorage.exo9 = "séance d'endurance"
-            localStorage.exoClr9 = "";
-        }
-        else {
-            localStorage.exo9 = "jour de repos"
-            localStorage.exoClr9 = "";
-        }
-
+        if (nbPrgJ >= 4) {localStorage.exo9 = "séance d'endurance"}
         localStorage.exo10 = "séance de sprint"
-        localStorage.exoClr10 = "";
-
-        if (nbPrgJ >= 6) {
-            localStorage.exo11 = "séance d'endurance"
-            localStorage.exoClr11 = "";
-        }
-        else {
-            localStorage.exo11 = "jour de repos"
-            localStorage.exoClr11 = "";
-        }
-        if (nbPrgJ >= 5) {
-            localStorage.exo12 = "séance de sprint"
-            localStorage.exoClr12 = "";
-        }
-        else {
-            localStorage.exo12 = "jour de repos"
-            localStorage.exoClr12 = "";
-        }
-
+        if (nbPrgJ >= 6) {localStorage.exo11 = "séance d'endurance"}
+        if (nbPrgJ >= 5) {localStorage.exo12 = "séance de sprint"}
         localStorage.exo13 = "séance de PMA"
-        localStorage.exoClr13 = "";
-
         localStorage.exo14 = "séance d'endurance"
-        localStorage.exoClr14 = "";
-
+      
         //semaine 3
         localStorage.exo15 = "jour de repos"
-        localStorage.exoClr15 = "";
-        
-        if (nbPrgJ >= 4) {
-            localStorage.exo16 = "séance de sprint"
-            localStorage.exoClr16 = "";
-        }
-        else {
-            localStorage.exo16 = "jour de repos"
-            localStorage.exoClr16 = "";
-        }
-
+        if (nbPrgJ >= 4) {localStorage.exo16 = "séance de sprint"}
         localStorage.exo17 = "séance de PMA"
-        localStorage.exoClr17 = "";
-
-        if (nbPrgJ >= 6) {
-            localStorage.exo18 = "séance d'endurance"
-            localStorage.exoClr18 = "";
-        }
-        else {
-            localStorage.exo18 = "jour de repos"
-            localStorage.exoClr18 = "";
-        }
-        if (nbPrgJ >= 5) {
-            localStorage.exo19 = "séance d'endurance"
-            localStorage.exoClr19 = "";
-        }
-        else {
-            localStorage.exo19 = "jour de repos"
-            localStorage.exoClr19 = "";
-        }
-
-        localStorage.exo20 = "séance de seuil"
-        localStorage.exoClr20 = "";
-
+        if (nbPrgJ >= 6) {localStorage.exo18 = "séance d'endurance"}
+        if (nbPrgJ >= 5) {localStorage.exo19 = "séance d'endurance"}
+        localStorage.exo20 = "séance d'endurance"
         localStorage.exo21 = "séance d'endurance"
-        localStorage.exoClr21 = "";
-
+           
         //semaine 4
         localStorage.exo22 = "jour de repos"
-        localStorage.exoClr22 = "";
-        
-        if (nbPrgJ >= 4) {
-            localStorage.exo23 = "séance de sprint"
-            localStorage.exoClr23 = "";
-        }
-        else {
-            localStorage.exo23 = "jour de repos"
-            localStorage.exoClr23 = "";
-        }
-
+        if (nbPrgJ >= 4) {localStorage.exo23 = "séance de sprint"}
         localStorage.exo24 = "séance de seuil"
-        localStorage.exoClr24 = "";
-
-        if (nbPrgJ >= 6) {
-            localStorage.exo25 = "séance d'endurance"
-            localStorage.exoClr25 = "";
-        }
-        else {
-            localStorage.exo25 = "jour de repos"
-            localStorage.exoClr25 = "";
-        }
-        if (nbPrgJ >= 5) {
-            localStorage.exo26 = "séance de seuil"
-            localStorage.exoClr26 = "";
-        }
-        else {
-            localStorage.exo26 = "jour de repos"
-            localStorage.exoClr26 = "";
-        }
-
+        if (nbPrgJ >= 6) {localStorage.exo25 = "séance d'endurance"}
+        if (nbPrgJ >= 5) {localStorage.exo26 = "séance de seuil"}
         localStorage.exo27 = "séance d'endurance"
-        localStorage.exoClr27 = "";
-
         localStorage.exo28 = "séance de seuil"
-        localStorage.exoClr28 = "";
-
+        
         //semaine 5
         localStorage.exo29 = "jour de repos"
-        localStorage.exoClr29 = "";
-        
-        if (nbPrgJ >= 4) {
-            localStorage.exo30 = "séance de sprint"
-            localStorage.exoClr30 = "";
-        }
-        else {
-            localStorage.exo30 = "jour de repos"
-            localStorage.exoClr30 = "";
-        }
-
+        if (nbPrgJ >= 4) {localStorage.exo30 = "séance de sprint"}
         localStorage.exo31 = "séance de PMA"
-        localStorage.exoClr31 = "";
-
-        if (nbPrgJ >= 6) {
-            localStorage.exo32 = "séance d'endurance"
-            localStorage.exoClr32 = "";
-        }
-        else {
-            localStorage.exo32 = "jour de repos"
-            localStorage.exoClr32 = "";
-        }
-        if (nbPrgJ >= 5) {
-            localStorage.exo33 = "séance de seuil"
-            localStorage.exoClr33 = "";
-        }
-        else {
-            localStorage.exo33 = "jour de repos"
-            localStorage.exoClr33 = "";
-        }
-
+        if (nbPrgJ >= 6) {localStorage.exo32 = "séance d'endurance"}
+        if (nbPrgJ >= 5) {localStorage.exo33 = "séance de PMA"}
         localStorage.exo34 = "séance d'endurance"
-        localStorage.exoClr34 = "";
-
         localStorage.exo35 = "séance de PMA"
-        localStorage.exoClr35 = "";
-
+           
         //semaine 6
-        localStorage.exo36 = "repos"
-        localStorage.exoClr36 = "";
-        
-        if (nbPrgJ >= 4) {
-            localStorage.exo37 = "séance de sprint"
-            localStorage.exoClr37 = "";
-        }
-        else {
-            localStorage.exo37 = "jour de repos"
-            localStorage.exoClr37 = "";
-        }
-
+        localStorage.exo36 = "jour de repos"
+        if (nbPrgJ >= 4) {localStorage.exo37 = "séance de sprint"}
         localStorage.exo38 = "séance de PMA"
-        localStorage.exoClr38 = "";
-
-        if (nbPrgJ >= 6) {
-            localStorage.exo39 = "séance de PMA"
-            localStorage.exoClr39 = "";
-        }
-        else {
-            localStorage.exo39 = "jour de repos"
-            localStorage.exoClr39 = "";
-        }
-        if (nbPrgJ >= 5) {
-            localStorage.exo40 = "séance d'endurance"
-            localStorage.exoClr40 = "";
-        }
-        else {
-            localStorage.exo40 = "jour de repos"
-            localStorage.exoClr40 = "";
-        }
-
+        if (nbPrgJ >= 6) {localStorage.exo39 = "séance de PMA"}
+        if (nbPrgJ >= 5) {localStorage.exo40 = "séance d'endurance"}
         localStorage.exo41 = "séance de PMA"
-        localStorage.exoClr41 = "";
-
         localStorage.exo42 = "séance d'endurance"
-        localStorage.exoClr42 = "";
-
+    
         //semaine 7
         if (nbPrgJ >= 5) {
             localStorage.exo43 = "séance de sprint";
-            localStorage.exoClr43 = "red";
+            localStorage.exoClr = "red";
         }
         else {
             localStorage.exo43 = "jour de repos"
-            localStorage.exoClr43 = "";
+            localStorage.exoClr = "";
         };
-
+    
         localStorage.exo44 = "jour de repos";
-        localStorage.exoClr44 = "";
-
+        localStorage.exoClr = "";
+    
         localStorage.exo45 = "séance d'endurance";
-        localStorage.exoClr45 = "green";
-
+        localStorage.exoClr = "green";
+    
         localStorage.exo46 = "jour de repos";
-        localStorage.exoClr46 = "";
-
+        localStorage.exoClr = "";
+    
         localStorage.exo47 = "jour de repos";
-        localStorage.exoClr47 = "";
-
+        localStorage.exoClr = "";
+    
         localStorage.exo48 = "séance de PMA";
-        localStorage.exoClr48 = "orange";
-
+        localStorage.exoClr = "";
+    
         localStorage.exo49 = "jour de repos";
-        localStorage.exoClr49 = "";
-
+        localStorage.exoClr = "";
+    
         //semaine 8
         if (nbPrgJ >= 5) {
             localStorage.exo50 = "séance d'endurance";
-            localStorage.exoClr50 = "green";
+            localStorage.exoClr = "green";
         }
         else {
             localStorage.exo = "jour de repos"
-            localStorage.exoClr50 = "";
+            localStorage.exoClr = "";
         };
-
+    
         localStorage.exo51 = "jour de repos";
-        localStorage.exoClr51 = "";
-
+        localStorage.exoClr = "";
+    
         localStorage.exo52 = "séance de PMA";
-        localStorage.exoClr52 = "orange";
-
+        localStorage.exoClr = "orange";
+    
         localStorage.exo53 = "jour de repos";
-        localStorage.exoClr53 = "";
-
+        localStorage.exoClr = "";
+    
         localStorage.exo54 = "jour de repos";
-        localStorage.exoClr54 = "";
-
+        localStorage.exoClr = "";
+    
         localStorage.exo55 = "séance d'endurance";
-        localStorage.exoClr55 = "green";
-
+        localStorage.exoClr = "green";
+    
         localStorage.exo56 = "objectif";
-        localStorage.exoClr56 = "grey";
+        localStorage.exoClr = "";
     }
-    alert("bonjour")
-    window.location.href = "https://mon-entrainement-velo.netlify.com/prgmy.html";
+
+    window.location.reload()
 })
