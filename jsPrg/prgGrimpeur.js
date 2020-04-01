@@ -1103,7 +1103,7 @@ function prgGrimpeur() {
             document.getElementById(nbObjectif).onclick = function() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 1).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo112
-                document.getElementById("exo").style.backgroundColor = localStorage.exoClr
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr112
             }
         }  
     }
