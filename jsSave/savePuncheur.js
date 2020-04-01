@@ -963,7 +963,7 @@ lcExo = () => {
         localStorage.exoClr111 = "green";
     
         localStorage.exo112 = "objectif";
-        localStorage.exoClr112 = "grey";
+        localStorage.exoClr112 = "";
     }
     
     else if (nbPrgT == 3) {
@@ -1421,7 +1421,7 @@ lcExo = () => {
         localStorage.exoClr83 = "green";
     
         localStorage.exo84 = "objectif";
-        localStorage.exoClr84 = "grey";
+        localStorage.exoClr84 = "";
     }
     
         else if (nbPrgT == 2) {
@@ -1719,7 +1719,7 @@ lcExo = () => {
         localStorage.exoClr = "green";
     
         localStorage.exo56 = "objectif";
-        localStorage.exoClr = "grey";
+        localStorage.exoClr = "";
     }
 }
 

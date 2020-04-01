@@ -349,131 +349,564 @@ lcExo = () => {
     
     if (nbPrgT == 4) {
         //semaine 1
-        if (nbPrgJ >= 4) {localStorage.exo1 = ""}
+        if (nbPrgJ >= 4) {
+            localStorage.exo1 = "séance d'endurance"
+            localStorage.exoClr1 = ""
+        }
+        else {
+            localStorage.exo1 = "jour de repos"
+            localStorage.exoClr1 = ""
+        }
+
         localStorage.exo2 = "jour de repos"
-        localStorage.exo3 = ""
-        if (nbPrgJ >= 5) {localStorage.exo4 = ""}
-        if (nbPrgJ >= 6) {localStorage.exo5 = ""}
-        localStorage.exo6 = ""
-        localStorage.exo7 = ""
+        localStorage.exoClr2 = ""
+
+        localStorage.exo3 = "séance d'endurance"
+        localStorage.exoClr3 = ""
+
+        if (nbPrgJ >= 5) {
+            localStorage.exo4 = "séance d'endurance"
+            localStorage.exoClr4 = ""
+        }
+        else {
+            localStorage.exo4 = "jour de repos"
+            localStorage.exoClr4 = ""
+        }
+
+        if (nbPrgJ >= 6) {
+            localStorage.exo5 = "séance d'endurance"
+            localStorage.exoClr5 = ""
+        }
+        else {
+            localStorage.exo5 = "jour de repos"
+            localStorage.exoClr5 = ""
+        }
+
+        localStorage.exo6 = "séance d'endurance"
+        localStorage.exoClr6 = ""
+
+        localStorage.exo7 = "séance d'endurance"
+        localStorage.exoClr7 = ""
         
         //semaine 2
         localStorage.exo8 = "jour de repos"
-        if (nbPrgJ >= 4) {localStorage.exo9 = ""}
-        localStorage.exo10 = ""
+        localStorage.exoClr8 = ""
+
+        if (nbPrgJ >= 4) {
+            localStorage.exo9 = "séance d'endurance"
+            localStorage.exoClr9 = ""
+        }
+        else {
+            localStorage.exo9 = "jour de repos"
+            localStorage.exoClr9 = ""
+        }
+
+        localStorage.exo10 = "séance d'endurance"
+        localStorage.exoClr10 = ""
+
         if (nbPrgJ >= 6) {
-        localStorage.exo11 = ""}
-        if (nbPrgJ >= 5) {localStorage.exo12 = ""}
-        localStorage.exo13 = ""
-        localStorage.exo14 = ""
+            localStorage.exo11 = "séance d'endurance"
+            localStorage.exoClr11 = ""
+        }
+        else {
+            localStorage.exo11 = "jour de repos"
+            localStorage.exoClr11 = ""
+        }
+
+        if (nbPrgJ >= 5) {
+            localStorage.exo12 = "séance de seuil"
+            localStorage.exoClr12 = ""
+        }
+        else {
+            localStorage.exo12 = "jour de repos"
+            localStorage.exoClr12 = ""
+        }
+
+        localStorage.exo13 = "séance d'endurance"
+        localStorage.exoClr13 = ""
+
+        localStorage.exo14 = "séance d'endurance"
+        localStorage.exoClr14 = ""
     
         //semaine 3
         localStorage.exo15 = "jour de repos"
-        if (nbPrgJ >= 4) {localStorage.exo16 = ""}
-        localStorage.exo17 = ""
-        if (nbPrgJ >= 6) {localStorage.exo18 = ""}
-        if (nbPrgJ >= 5) {localStorage.exo19 = ""}
-        localStorage.exo20 = ""
-        localStorage.exo21 = ""
+        localStorage.exoClr15 = ""
+
+        if (nbPrgJ >= 4) {
+            localStorage.exo16 = "séance d'endurance"
+            localStorage.exoClr16 = ""
+        }
+        else {
+            localStorage.exo16 = "jour de repos"
+            localStorage.exoClr16 = ""
+        }
+
+        localStorage.exo17 = "séance d'endurance"
+        localStorage.exoClr17 = ""
+
+        if (nbPrgJ >= 6) {
+            localStorage.exo18 = ""
+            localStorage.exoClr18 = ""
+        }
+        else {
+            localStorage.exo18 = "jour de repos"
+            localStorage.exoClr18 = ""
+        }
+
+        if (nbPrgJ >= 5) {
+            localStorage.exo19 = "séance d'endurance"
+            localStorage.exoClr19 = ""
+        }
+        else {
+            localStorage.exo19 = "jour de repos"
+            localStorage.exoClr19 = ""
+        }
+
+        localStorage.exo20 = "séance d'endurance"
+        localStorage.exoClr20 = ""
+
+        localStorage.exo21 = "séance d'endurance"
+        localStorage.exoClr21 = ""
        
         //semaine 4
         localStorage.exo22 = "jour de repos"
-        if (nbPrgJ >= 4) {localStorage.exo23 = ""}
-        localStorage.exo24 = ""
-        if (nbPrgJ >= 6) {localStorage.exo25 = ""}
-        if (nbPrgJ >= 5) {localStorage.exo26 = ""}
-        localStorage.exo27 = ""
-        localStorage.exo28 = ""
+        localStorage.exoClr22 = ""
+
+        if (nbPrgJ >= 4) {
+            localStorage.exo23 = "séance d'endurance"
+            localStorage.exoClr23 = ""
+        }
+        else {
+            localStorage.exo23 = "jour de repos"
+            localStorage.exoClr23 = ""
+        }
+
+        localStorage.exo24 = "séance de seuil"
+        localStorage.exoClr24 = ""
+
+        if (nbPrgJ >= 6) {
+            localStorage.exo25 = "séance d'endurance"
+            localStorage.exoClr25 = ""
+        }
+        else {
+            localStorage.exo25 = "jour de repos"
+            localStorage.exoClr25 = ""
+        }
+
+        if (nbPrgJ >= 5) {
+            localStorage.exo26 = ""
+            localStorage.exoClr26 = ""
+        }
+        else {
+            localStorage.exo26 = "jour de repos"
+            localStorage.exoClr26 = ""
+        }
+
+        localStorage.exo27 = "séance d'endurance"
+        localStorage.exoClr27 = ""
+
+        localStorage.exo28 = "séance d'endurance"
+        localStorage.exoClr28 = ""
     
         //semaine 5
         localStorage.exo29 = "jour de repos"
-        if (nbPrgJ >= 4) {localStorage.exo30 = ""}
-        localStorage.exo31 = ""
-        if (nbPrgJ >= 6) {localStorage.exo = ""}
-        if (nbPrgJ >= 5) { localStorage.exo33 = ""} 
-        localStorage.exo34 = ""
-        localStorage.exo35 = ""
+        localStorage.exoClr29 = ""
+
+        if (nbPrgJ >= 4) {
+            localStorage.exo30 = "séance d'endurance"
+            localStorage.exoClr30 = ""
+        }
+        else {
+            localStorage.exo30 = "jour de repos"
+            localStorage.exoClr30 = ""
+        }
+
+        localStorage.exo31 = "séance d'endurance"
+        localStorage.exoClr31 = ""
+
+        if (nbPrgJ >= 6) {
+            localStorage.exo32 = "séance d'endurance"
+            localStorage.exoClr32 = ""
+        }
+        else {
+            localStorage.exo32 = "jour de repos"
+            localStorage.exoClr32 = ""
+        }
+
+        if (nbPrgJ >= 5) {
+            localStorage.exo33 = ""
+            localStorage.exoClr33 = ""
+        } 
+        else {
+            localStorage.exo33 = "jour de repos"
+            localStorage.exoClr33 = ""
+        }
+
+        localStorage.exo34 = "séance d'endurance"
+        localStorage.exoClr34 = ""
+
+        localStorage.exo35 = "séance d'endurance"
+        localStorage.exoClr35 = ""
     
         //semaine 6
         localStorage.exo36 = "jour de repos"
-        if (nbPrgJ >= 4) {localStorage.exo37 = ""}
-        localStorage.exo38 = ""
-        if (nbPrgJ >= 6) {localStorage.exo39 = ""}
-        if (nbPrgJ >= 5) {localStorage.exo40 = ""}
-        localStorage.exo41 = ""
-        localStorage.exo42 = ""
+        localStorage.exoClr36 = ""
+
+        if (nbPrgJ >= 4) {
+            localStorage.exo37 = "séance de seuil"
+            localStorage.exoClr37 = ""
+        }
+        else {
+            localStorage.exo37 = "jour de repos"
+            localStorage.exoClr37 = ""
+        }
+
+        localStorage.exo38 = "séance d'endurance"
+        localStorage.exoClr38 = ""
+
+        if (nbPrgJ >= 6) {
+            localStorage.exo39 = ""
+            localStorage.exoClr39 = ""
+        }
+        else {
+            localStorage.exo39 = "jour de repos"
+            localStorage.exoClr39 = ""
+        }
+
+        if (nbPrgJ >= 5) {
+            localStorage.exo40 = "séance d'endurance"
+            localStorage.exoClr40 = ""
+        }
+        else {
+            localStorage.exo40 = "jour de repos"
+            localStorage.exoClr40 = ""
+        }
+
+        localStorage.exo41 = "séance d'endurance"
+        localStorage.exoClr41 = ""
+
+        localStorage.exo42 = "séance d'endurance"
+        localStorage.exoClr42 = ""
     
         //semaine 7
         localStorage.exo43 = "jour de repos"
-        if (nbPrgJ >= 4) {localStorage.exo44 = ""}
+        localStorage.exoClr43 = ""
+
+        if (nbPrgJ >= 4) {
+            localStorage.exo44 = "séance d'endurance"
+            localStorage.exoClr44 = ""
+        }
+        else {
+            localStorage.exo44 = "jour de repos"
+            localStorage.exoClr44 = ""
+        }
+
         localStorage.exo45 = ""
-        if (nbPrgJ >= 6) {localStorage.exo46 = ""}
-        if (nbPrgJ >= 5) {localStorage.exo47 = ""}
-        localStorage.exo48 = ""
+        localStorage.exoClr45 = ""
+
+        if (nbPrgJ >= 6) {
+            localStorage.exo46 = "séance d'endurance"
+            localStorage.exoClr46 = ""
+        }
+        else {
+            localStorage.exo46 = "jour de repos"
+            localStorage.exoClr46 = ""
+        }
+
+        if (nbPrgJ >= 5) {
+            localStorage.exo47 = ""
+            localStorage.exoClr47 = ""
+        }
+        else {
+            localStorage.exo47 = "jour de repos"
+            localStorage.exoClr47 = ""
+        }
+
+        localStorage.exo48 = "séance d'endurance"
+        localStorage.exoClr48 = ""
+
         localStorage.exo49 = ""
+        localStorage.exoClr49 = ""
     
         //semaine 8
         localStorage.exo50 = "jour de repos"
-        if (nbPrgJ >= 4) {localStorage.exo51 = ""}
-        localStorage.exo52 = ""
-        if (nbPrgJ >= 6) {localStorage.exo53 = ""}
-        if (nbPrgJ >= 5) {localStorage.exo54 = ""}
+        localStorage.exoClr50 = ""
+
+        if (nbPrgJ >= 4) {
+            localStorage.exo51 = ""
+            localStorage.exoClr51 = ""
+        }
+        else {
+            localStorage.exo51 = "jour de repos"
+            localStorage.exoClr51 = ""
+        }
+
+        localStorage.exo52 = "séance d'endurance"
+        localStorage.exoClr52 = ""
+
+        if (nbPrgJ >= 6) {
+            localStorage.exo53 = ""
+            localStorage.exoClr53 = ""
+        }
+        else {
+            localStorage.exo53 = "jour de repos"
+            localStorage.exoClr53 = ""
+        }
+
+        if (nbPrgJ >= 5) {
+            localStorage.exo54 = "séance d'endurance"
+            localStorage.exoClr54 = ""
+        }
+        else {
+            localStorage.exo54 = "jour de repos"
+            localStorage.exoClr54 = ""
+        }
+
         localStorage.exo55 = ""
-        localStorage.exo56 = ""
+        localStorage.exoClr55 = ""
+
+        localStorage.exo56 = "séance d'endurance"
+        localStorage.exoClr56 = ""
        
         //semaine 9
         localStorage.exo57 = "jour de repos"
-        if (nbPrgJ >= 4) {localStorage.exo58 = ""}
+        localStorage.exoClr57 = ""
+
+        if (nbPrgJ >= 4) {
+            localStorage.exo58 = "séance d'endurance"
+            localStorage.exoClr58 = ""
+        }
+        else {
+            localStorage.exo = "jour de repos"
+            localStorage.exoClr58 = ""
+        }
+
         localStorage.exo59 = ""
-        if (nbPrgJ >= 6) {localStorage.exo60 = ""}
-        if (nbPrgJ >= 5) {localStorage.exo61 = ""}
+        localStorage.exoClr59 = ""
+
+        if (nbPrgJ >= 6) {
+            localStorage.exo60 = "séance d'endurance"
+            localStorage.exoClr60 = ""
+        }
+        else {
+            localStorage.exo60 = "jour de repos"
+            localStorage.exoClr60 = ""
+        }
+
+        if (nbPrgJ >= 5) {
+            localStorage.exo61 = "séance d'endurance"
+            localStorage.exoClr61 = ""
+        }
+        else {
+            localStorage.exo61 = "jour de repos"
+            localStorage.exoClr61 = ""
+        }
+
         localStorage.exo62 = ""
-        localStorage.exo63 = ""
+        localStorage.exoClr62 = ""
+
+        localStorage.exo63 = "séance d'endurance"
+        localStorage.exoClr63 = ""
            
         //semaine 10
         localStorage.exo64 = "jour de repos"
-        if (nbPrgJ >= 4) {localStorage.exo65 = ""}
-        localStorage.exo66 = ""
-        if (nbPrgJ >= 6) {localStorage.exo67 = ""}
-        if (nbPrgJ >= 5) {localStorage.exo68 = ""}
-        localStorage.exo69 = ""
-        localStorage.exo70 = ""
+        localStorage.exoClr64 = ""
+
+        if (nbPrgJ >= 4) {
+            localStorage.exo65 = "séance d'endurance"
+            localStorage.exoClr65 = ""
+        }
+        else {
+            localStorage.exo65 = "jour de repos"
+            localStorage.exoClr65 = ""
+        }
+
+        localStorage.exo66 = "séance de seuil"
+        localStorage.exoClr66 = ""
+
+        if (nbPrgJ >= 6) {
+            localStorage.exo67 = "séance d'endurance"
+            localStorage.exoClr67 = ""
+        }
+        else {
+            localStorage.exo67 = "jour de repos"
+            localStorage.exoClr67 = ""
+        }
+
+        if (nbPrgJ >= 5) {
+            localStorage.exo68 = "séance de seuil"
+            localStorage.exoClr68 = ""
+        }
+        else {
+            localStorage.exo68 = "jour de repos"
+            localStorage.exoClr68 = ""
+        }
+
+        localStorage.exo69 = "séance d'endurance"
+        localStorage.exoClr69 = ""
+
+        localStorage.exo70 = "séance de seuil"
+        localStorage.exoClr70 = ""
     
         //semaine 11
         localStorage.exo71 = "jour de repos"
-        if (nbPrgJ >= 4) {localStorage.exo72 = ""}
-        localStorage.exo73 = ""
-        if (nbPrgJ >= 6) {localStorage.exo74 = ""}
-        if (nbPrgJ >= 5) {localStorage.exo75 = ""}
-        localStorage.exo76 = ""
-        localStorage.exo77 = ""
+        localStorage.exoClr71 = ""
+
+        if (nbPrgJ >= 4) {
+            localStorage.exo72 = ""
+            localStorage.exoClr72 = ""
+        }
+        else {
+            localStorage.exo72 = "jour de repos"
+            localStorage.exoClr72 = ""
+        }
+
+        localStorage.exo73 = "séance de seuil"
+        localStorage.exoClr73 = ""
+
+        if (nbPrgJ >= 6) {
+            localStorage.exo74 = "séance d'endurance"
+            localStorage.exoClr74 = ""
+        }
+        else {
+            localStorage.exo74 = "jour de repos"
+            localStorage.exoClr74 = ""
+        }
+
+        if (nbPrgJ >= 5) {
+            localStorage.exo75 = "séance de seuil"
+            localStorage.exoClr75 = ""
+        }
+        else {
+            localStorage.exo75 = "jour de repos"
+            localStorage.exoClr75 = ""
+        }
+
+        localStorage.exo76 = "séance d'endurance"
+        localStorage.exoClr76 = ""
+
+        localStorage.exo77 = "séance de seuil"
+        localStorage.exoClr77 = ""
             
         //semaine 12
         localStorage.exo78 = "jour de repos"
-        if (nbPrgJ >= 4) {localStorage.exo79 = ""}
-        localStorage.exo80 = ""
-        if (nbPrgJ >= 6) {localStorage.exo81 = ""}
-        if (nbPrgJ >= 5) {localStorage.exo82 = ""}
-        localStorage.exo83 = ""
-        localStorage.exo84 = ""
+        localStorage.exoClr78 = ""
+
+        if (nbPrgJ >= 4) {
+            localStorage.exo79 = "séance de seuil"
+            localStorage.exoClr79 = ""
+        }
+        else {
+            localStorage.exo79 = "jour de repos"
+            localStorage.exoClr79 = ""
+        }
+
+        localStorage.exo80 = "séance d'endurance"
+        localStorage.exoClr80 = ""
+
+        if (nbPrgJ >= 6) {
+            localStorage.exo81 = "séance de seuil"
+            localStorage.exoClr81 = ""
+        }
+        else {
+            localStorage.exo81 = "jour de repos"
+            localStorage.exoClr81 = ""
+        }
+
+        if (nbPrgJ >= 5) {
+            localStorage.exo82 = "séance d'endurance"
+            localStorage.exoClr82 = ""
+        }
+        else {
+            localStorage.exo82 = "jour de repos"
+            localStorage.exoClr82 = ""
+        }
+
+        localStorage.exo83 = "séance de seuil"
+        localStorage.exoClr83 = ""
+
+        localStorage.exo84 = "séance d'endurance"
+        localStorage.exoClr84 = ""
         
         //semaine 13
         localStorage.exo85 = "jour de repos"
-        if (nbPrgJ >= 4) {localStorage.exo86 = ""}
-        localStorage.exo87 = ""
-        if (nbPrgJ >= 6) {localStorage.exo88 = ""}
-        if (nbPrgJ >= 5) {localStorage.exo89 = ""}
-        localStorage.exo90 = ""
-        localStorage.exo91 = ""
+        localStorage.exoClr85 = ""
+
+        if (nbPrgJ >= 4) {
+            localStorage.exo86 = "séance d'endurance"
+            localStorage.exoClr86 = ""
+        }
+        else {
+            localStorage.exo86 = "jour de repos"
+            localStorage.exoClr86 = ""
+        }
+
+        localStorage.exo87 = "séance de seuil"
+        localStorage.exoClr87 = ""
+
+        if (nbPrgJ >= 6) {
+            localStorage.exo88 = "séance d'endurance"
+            localStorage.exoClr88 = ""
+        }
+        else {
+            localStorage.exo88 = "jour de repos"
+            localStorage.exoClr88 = ""
+        }
+
+        if (nbPrgJ >= 5) {
+            localStorage.exo89 = "séance d'endurance"
+            localStorage.exoClr89 = ""
+        }
+        else {
+            localStorage.exo89 = "jour de repos"
+            localStorage.exoClr89 = ""
+        }
+
+        localStorage.exo90 = "séance de seuil"
+        localStorage.exoClr90 = ""
+
+        localStorage.exo91 = "séance d'endurance"
+        localStorage.exoClr91 = ""
             
         //semaine 14
         localStorage.exo92 = "jour de repos"
-        if (nbPrgJ >= 4) {localStorage.exo93 = ""}
-        localStorage.exo94 = ""
-        if (nbPrgJ >= 6) {localStorage.exo95 = ""}
-        if (nbPrgJ >= 5) {localStorage.exo96 = ""}
-        localStorage.exo97 = ""
-        localStorage.exo98 = ""
+        localStorage.exoClr92 = ""
+
+        if (nbPrgJ >= 4) {
+            localStorage.exo93 = "séance d'endurance"
+            localStorage.exoClr93 = ""
+        }
+        else {
+            localStorage.exo93 = "jour de repos"
+            localStorage.exoClr93 = ""
+        }
+
+        localStorage.exo94 = "séance de seuil"
+        localStorage.exoClr94 = ""
+
+        if (nbPrgJ >= 6) {
+            localStorage.exo95 = "séance d'endurance"
+            localStorage.exoClr95 = ""
+        }
+        else {
+            localStorage.exo95 = "jour de repos"
+            localStorage.exoClr95 = ""
+        }
+
+        if (nbPrgJ >= 5) {
+            localStorage.exo96 = "séance d'endurance"
+            localStorage.exoClr96 = ""
+        }
+        else {
+            localStorage.exo96 = "jour de repos"
+            localStorage.exoClr96 = ""
+        }
+
+        localStorage.exo97 = "séance de seuil"
+        localStorage.exoClr97 = ""
+
+        localStorage.exo98 = "séance d'endurance"
+        localStorage.exoClr98 = ""
          
         //semaine 15
         if (nbPrgJ >= 5) {
@@ -529,99 +962,409 @@ lcExo = () => {
         localStorage.exoClr111 = "green";
     
         localStorage.exo112 = "objectif";
-        localStorage.exoClr112 = "grey";
+        localStorage.exoClr112 = "";
     }
     
     else if (nbPrgT == 3) {
         //semaine 1
-        if (nbPrgJ >= 4) {localStorage.exo1 = ""}
+        if (nbPrgJ >= 4) {
+            localStorage.exo1 = "séance d'endurance"
+            localStorage.exoClr1 = ""
+        }
+        else {
+            localStorage.exo1 = "jour de repos"
+            localStorage.exoClr1 = ""
+        }
+
         localStorage.exo2 = "jour de repos"
-        localStorage.exo = ""
-        if (nbPrgJ >= 5) {localStorage.exo4 = ""}
-        if (nbPrgJ >= 6) {localStorage.exo5 = ""}
-        localStorage.exo6 = ""
-        localStorage.exo7 = ""
+        localStorage.exoClr2 = ""
+
+        localStorage.exo3 = "séance d'endurance"
+        localStorage.exoClr3 = ""
+
+        if (nbPrgJ >= 5) {
+            localStorage.exo4 = "séance d'endurance"
+            localStorage.exoClr4 = ""
+        }
+        else {
+            localStorage.exo4 = "jour de repos"
+            localStorage.exoClr4 = ""
+        }
+
+        if (nbPrgJ >= 6) {
+            localStorage.exo5 = "séance d'endurance"
+            localStorage.exoClr5 = ""
+        }
+        else {
+            localStorage.exo5 = "jour de repos"
+            localStorage.exoClr5 = ""
+        }
+
+        localStorage.exo6 = "séance d'endurance"
+        localStorage.exoClr6 = ""
+
+        localStorage.exo7 = "séance d'endurance"
+        localStorage.exoClr7 = ""
          
         //semaine 2
         localStorage.exo8 = "jour de repos"
-        if (nbPrgJ >= 4) {localStorage.exo9 = ""}
-        localStorage.exo10 = ""
-        if (nbPrgJ >= 6) {localStorage.exo11 = ""}
-        if (nbPrgJ >= 5) {localStorage.exo12 = ""}
-        localStorage.exo13 = ""
-        localStorage.exo14 = ""
+        localStorage.exoClr8 = ""
+
+        if (nbPrgJ >= 4) {
+            localStorage.exo9 = "séance d'endurance"
+            localStorage.exoClr9 = ""
+        }
+        else {
+            localStorage.exo9 = "jour de repos"
+            localStorage.exoClr9 = ""
+        }
+
+        localStorage.exo10 = "séance d'endurance"
+        localStorage.exoClr10 = ""
+
+        if (nbPrgJ >= 6) {
+            localStorage.exo11 = "séance d'endurance"
+            localStorage.exoClr11 = ""
+        }
+        else {
+            localStorage.exo11 = "jour de repos"
+            localStorage.exoClr11 = ""
+        }
+
+        if (nbPrgJ >= 5) {
+            localStorage.exo12 = "séance de seuil"
+            localStorage.exoClr12 = ""
+        }
+        else {
+            localStorage.exo12 = "jour de repos"
+            localStorage.exoClr12 = ""
+        }
+
+        localStorage.exo13 = "séance d'endurance"
+        localStorage.exoClr13 = ""
+
+        localStorage.exo14 = "séance d'endurance"
+        localStorage.exoClr14 = ""
          
         //semaine 3
         localStorage.exo15 = "jour de repos"
-        if (nbPrgJ >= 4) {localStorage.exo16 = ""}
-        localStorage.exo17 = ""
-        if (nbPrgJ >= 6) {localStorage.exo18 = ""}
-        if (nbPrgJ >= 5) {localStorage.exo19 = ""}
-        localStorage.exo20 = ""
-        localStorage.exo21 = ""
+        localStorage.exoClr15 = ""
+
+        if (nbPrgJ >= 4) {
+            localStorage.exo16 = "séance de sprint"
+            localStorage.exoClr16 = ""
+        }
+        else {
+            localStorage.exo16 = "jour de repos"
+            localStorage.exoClr16 = ""
+        }
+
+        localStorage.exo17 = "séance de seuil"
+        localStorage.exoClr17 = ""
+
+        if (nbPrgJ >= 6) {
+            localStorage.exo18 = "séance d'endurance"
+            localStorage.exoClr18 = ""
+        }
+        else {
+            localStorage.exo18 = "jour de repos"
+            localStorage.exoClr18 = ""
+        }
+
+        if (nbPrgJ >= 5) {
+            localStorage.exo19 = "séance d'endurance"
+            localStorage.exoClr19 = ""
+        }
+        else {
+            localStorage.exo19 = "jour de repos"
+            localStorage.exoClr19 = ""
+        }
+
+        localStorage.exo20 = "séance d'endurance"
+        localStorage.exoClr20 = ""
+
+        localStorage.exo21 = "séance d'endurance"
+        localStorage.exoClr21 = ""
             
         //semaine 4
         localStorage.exo22 = "jour de repos"
-        if (nbPrgJ >= 4) {localStorage.exo23 = ""}
-        localStorage.exo24 = ""
-        if (nbPrgJ >= 6) {localStorage.exo25 = ""}
-        if (nbPrgJ >= 5) {localStorage.exo26 = ""}
-        localStorage.exo27 = ""
-        localStorage.exo28 = ""
+        localStorage.exoClr22 = ""
+
+        if (nbPrgJ >= 4) {
+            localStorage.exo23 = "séance d'endurance"
+            localStorage.exoClr23 = ""
+        }
+        else {
+            localStorage.exo23 = "jour de repos"
+            localStorage.exoClr23 = ""
+        }
+
+        localStorage.exo24 = "séance d'endurance"
+        localStorage.exoClr24 = ""
+
+        if (nbPrgJ >= 6) {
+            localStorage.exo25 = "séance de PMA"
+            localStorage.exoClr25 = ""
+        }
+        else {
+            localStorage.exo25 = "jour de repos"
+            localStorage.exoClr25 = ""
+        }
+
+        if (nbPrgJ >= 5) {
+            localStorage.exo26 = "séance d'endurance"
+            localStorage.exoClr26 = ""
+        }
+        else {
+            localStorage.exo26 = "jour de repos"
+            localStorage.exoClr26 = ""
+        }
+
+        localStorage.exo27 = "séance d'endurance"
+        localStorage.exoClr27 = ""
+
+        localStorage.exo28 = "séance d'endurance"
+        localStorage.exoClr28 = ""
          
         //semaine 5
         localStorage.exo29 = "jour de repos"
-        if (nbPrgJ >= 4) {localStorage.exo30 = ""}
-        localStorage.exo31 = ""
-        if (nbPrgJ >= 6) {localStorage.exo32 = ""}
-        if (nbPrgJ >= 5) {localStorage.exo33 = ""}
-        localStorage.exo34 = ""
-        localStorage.exo35 = ""
+        localStorage.exoClr29 = ""
+
+        if (nbPrgJ >= 4) {
+            localStorage.exo30 = "séance d'endurance"
+            localStorage.exoClr30 = ""
+        }
+        else {
+            localStorage.exo30 = "jour de repos"
+            localStorage.exoClr30 = ""
+        }
+
+        localStorage.exo31 = "séance de PMA"
+        localStorage.exoClr31 = ""
+
+        if (nbPrgJ >= 6) {
+            localStorage.exo32 = "séance d'endurance"
+            localStorage.exoClr32 = ""
+        }
+        else {
+            localStorage.exo32 = "jour de repos"
+            localStorage.exoClr32 = ""
+        }
+
+        if (nbPrgJ >= 5) {
+            localStorage.exo33 = "séance de PMA"
+            localStorage.exoClr33 = ""
+        }
+        else {
+            localStorage.exo33 = "jour de repos"
+            localStorage.exoClr33 = ""
+        }
+
+        localStorage.exo34 = "séance d'endurance"
+        localStorage.exoClr34 = ""
+
+        localStorage.exo35 = "séance de PMA"
+        localStorage.exoClr35 = ""
            
         //semaine 6
         localStorage.exo36 = "jour de repos"
-        if (nbPrgJ >= 4) {localStorage.exo37 = ""}
-        localStorage.exo38 = ""
-        if (nbPrgJ >= 6) {localStorage.exo39 = ""}
-        if (nbPrgJ >= 5) {localStorage.exo40 = ""}
-        localStorage.exo41 = ""
-        localStorage.exo42 = ""
+        localStorage.exoClr36 = ""
+
+        if (nbPrgJ >= 4) {
+            localStorage.exo37 = "séance d'endurance"
+            localStorage.exoClr37 = ""
+        }
+        else {
+            localStorage.exo37 = "jour de repos"
+            localStorage.exoClr37 = ""
+        }
+
+        localStorage.exo38 = "séance de PMA"
+        localStorage.exoClr38 = ""
+
+        if (nbPrgJ >= 6) {
+            localStorage.exo39 = "séance d'endurance"
+            localStorage.exoClr39 = ""
+        }
+        else {
+            localStorage.exo39 = "jour de repos"
+            localStorage.exoClr39 = ""
+        }
+
+        if (nbPrgJ >= 5) {
+            localStorage.exo40 = "séance d'endurance"
+            localStorage.exoClr40 = ""
+        }
+        else {
+            localStorage.exo40 = "jour de repos"
+            localStorage.exoClr40 = ""
+        }
+
+        localStorage.exo41 = "séance de PMA"
+        localStorage.exoClr41 = ""
+
+        localStorage.exo42 = "séance d'endurance"
+        localStorage.exoClr42 = ""
          
         //semaine 7
         localStorage.exo43 = "jour de repos"
-        if (nbPrgJ >= 4) {localStorage.exo44 = ""}
-        localStorage.exo45 = ""
-        if (nbPrgJ >= 6) {localStorage.exo46 = ""}
-        if (nbPrgJ >= 5) {localStorage.exo47 = ""}
-        localStorage.exo48 = ""
-        localStorage.exo49 = ""
+        localStorage.exoClr43 = ""
+
+        if (nbPrgJ >= 4) {
+            localStorage.exo44 = "séance d'endurance"
+            localStorage.exoClr44 = ""
+        }
+        else {
+            localStorage.exo44 = "jour de repos"
+            localStorage.exoClr44 = ""
+        }
+
+        localStorage.exo45 = "séance de seuil"
+        localStorage.exoClr45 = ""
+
+        if (nbPrgJ >= 6) {
+            localStorage.exo46 = "séance d'endurance"
+            localStorage.exoClr46 = ""
+        }
+        else {
+            localStorage.exo46 = "jour de repos"
+            localStorage.exoClr46 = ""
+        }
+
+        if (nbPrgJ >= 5) {
+            localStorage.exo47 = "séance de seuil"
+            localStorage.exoClr47 = ""
+        }
+        else {
+            localStorage.exo47 = "jour de repos"
+            localStorage.exoClr47 = ""
+        }
+
+        localStorage.exo48 = "séance d'endurance"
+        localStorage.exoClr48 = ""
+
+        localStorage.exo49 = "séance de seuil"
+        localStorage.exoClr49 = ""
     
         //semaine 8
-        localStorage.exo = "jour de repos"
-        if (nbPrgJ >= 4) {localStorage.exo51 = ""}
-        localStorage.exo52 = ""
-        if (nbPrgJ >= 6) {localStorage.exo53 = ""}
-        if (nbPrgJ >= 5) {localStorage.exo54 = ""}
-        localStorage.exo55 = ""
-        localStorage.exo56 = ""
+        localStorage.exo50 = "jour de repos"
+        localStorage.exoClr50 = ""
+
+        if (nbPrgJ >= 4) {
+            localStorage.exo51 = "séance d'endurance"
+            localStorage.exoClr51 = ""
+        }
+        else {
+            localStorage.exo51 = "jour de repos"
+            localStorage.exoClr51 = ""
+        }
+
+        localStorage.exo52 = "séance de seuil"
+        localStorage.exoClr52 = ""
+
+        if (nbPrgJ >= 6) {
+            localStorage.exo53 = "séance d'endurance"
+            localStorage.exoClr53 = ""
+        }
+        else {
+            localStorage.exo53 = "jour de repos"
+            localStorage.exoClr53 = ""
+        }
+
+        if (nbPrgJ >= 5) {
+            localStorage.exo54 = "séance de seuil"
+            localStorage.exoClr54 = ""
+        }
+        else {
+            localStorage.exo54 = "jour de repos"
+            localStorage.exoClr54 = ""
+        }
+
+        localStorage.exo55 = "séance d'endurance"
+        localStorage.exoClr55 = ""
+
+        localStorage.exo56 = "séance de seuil"
+        localStorage.exoClr56 = ""
        
         //semaine 9
         localStorage.exo57 = "jour de repos"
-        if (nbPrgJ >= 4) {localStorage.exo58 = ""}
-        localStorage.exo59 = ""
-        if (nbPrgJ >= 6) {localStorage.exo60 = ""}
-        if (nbPrgJ >= 5) {localStorage.exo61 = ""}
-        localStorage.exo62 = ""
-        localStorage.exo63 = ""
+        localStorage.exoClr57 = ""
+
+        if (nbPrgJ >= 4) {
+            localStorage.exo58 = ""
+            localStorage.exoClr58 = ""
+        }
+        else {
+            localStorage.exo58 = "jour de repos"
+            localStorage.exoClr58 = ""
+        }
+
+        localStorage.exo59 = "séance de seuil"
+        localStorage.exoClr59 = ""
+
+        if (nbPrgJ >= 6) {
+            localStorage.exo60 = "séance d'endurance"
+            localStorage.exoClr60 = ""
+        }
+        else {
+            localStorage.exo60 = "jour de repos"
+            localStorage.exoClr60 = ""
+        }
+
+        if (nbPrgJ >= 5) {
+            localStorage.exo61 = "séance d'endurance"
+            localStorage.exoClr61 = ""
+        }
+        else {
+            localStorage.exo61 = "jour de repos"
+            localStorage.exoClr61 = ""
+        }
+
+        localStorage.exo62 = "séance de seuil"
+        localStorage.exoClr62 = ""
+
+        localStorage.exo63 = "séance d'endurance"
+        localStorage.exoClr63 = ""
     
         //semaine 10
         localStorage.exo64 = "jour de repos"
-        if (nbPrgJ >= 4) {localStorage.exo65 = ""}
-        localStorage.exo66 = ""
-        if (nbPrgJ >= 6) {localStorage.exo67 = ""}
-        if (nbPrgJ >= 5) {localStorage.exo68 = ""}
-        localStorage.exo69 = ""
-        localStorage.exo70 = ""
+        localStorage.exoClr64 = ""
+
+        if (nbPrgJ >= 4) {
+            localStorage.exo65 = "séance d'endurance"
+            localStorage.exoClr65 = ""
+        }
+        else {
+            localStorage.exo65 = "jour de repos"
+            localStorage.exoClr65 = ""
+        }
+
+        localStorage.exo66 = "séance de seuil"
+        localStorage.exoClr66 = ""
+
+        if (nbPrgJ >= 6) {
+            localStorage.exo67 = "séance d'endurance"
+            localStorage.exoClr67 = ""
+        }
+        else {
+            localStorage.exo67 = "jour de repos"
+            localStorage.exoClr67 = ""
+        }
+
+        if (nbPrgJ >= 5) {
+            localStorage.exo68 = "séance d'endurance"
+            localStorage.exoClr68 = ""
+        }
+        else {
+            localStorage.exo68 = "jour de repos"
+            localStorage.exoClr68 = ""
+        }
+
+        localStorage.exo69 = "séance de seuil"
+        localStorage.exoClr69 = ""
+
+        localStorage.exo70 = "séance d'endurance"
+        localStorage.exoClr70 = ""
      
         //semaine 11
         if (nbPrgJ >= 5) {
@@ -677,118 +1420,304 @@ lcExo = () => {
         localStorage.exoClr83 = "green";
     
         localStorage.exo84 = "objectif";
-        localStorage.exoClr84 = "grey";
+        localStorage.exoClr84 = "";
     }
     
         else if (nbPrgT == 2) {
         //semaine 1
-        if (nbPrgJ >= 4) {localStorage.exo1 = ""}
+        if (nbPrgJ >= 4) {
+            localStorage.exo1 = "séance d'endurance"
+            localStorage.exoClr1 = ""
+        }
+        else {
+            localStorage.exo1 = "jour de repos"
+            localStorage.exoClr1 = ""
+        }
+
         localStorage.exo2 = "jour de repos"
-        localStorage.exo3 = ""
-        if (nbPrgJ >= 5) {localStorage.exo4 = ""}
-        if (nbPrgJ >= 6) {localStorage.exo5 = ""}
-        localStorage.exo6 = ""
-        localStorage.exo7 = ""
+        localStorage.exoClr2 = ""
+
+        localStorage.exo3 = "séance d'endurance"
+        localStorage.exoClr3 = ""
+
+        if (nbPrgJ >= 5) {
+            localStorage.exo4 = "séance d'endurance"
+            localStorage.exoClr4 = ""
+        }
+        else {
+            localStorage.exo4 = "jour de repos"
+            localStorage.exoClr4 = ""
+        }
+
+        if (nbPrgJ >= 6) {
+            localStorage.exo5 = "séance d'endurance"
+            localStorage.exoClr5 = ""
+        }
+        else {
+            localStorage.exo5 = "jour de repos"
+            localStorage.exoClr5 = ""
+        }
+
+        localStorage.exo6 = "séance d'endurance"
+        localStorage.exoClr6 = ""
+
+        localStorage.exo7 = "séance d'endurance"
+        localStorage.exoClr7 = ""
       
         //semaine 2
         localStorage.exo8 = "jour de repos"
-        if (nbPrgJ >= 4) {localStorage.exo9 = ""}
-        localStorage.exo10 = ""
-        if (nbPrgJ >= 6) {localStorage.exo11 = ""}
-        if (nbPrgJ >= 5) {localStorage.exo12 = ""}
-        localStorage.exo13 = ""
-        localStorage.exo14 = ""
+        localStorage.exoClr8 = ""
+
+        if (nbPrgJ >= 4) {
+            localStorage.exo9 = "séance d'endurance"
+            localStorage.exoClr9 = ""
+        }
+        else {
+            localStorage.exo9 = "jour de repos"
+            localStorage.exoClr9 = ""
+        }
+
+        localStorage.exo10 = "séance de sprint"
+        localStorage.exoClr10 = ""
+
+        if (nbPrgJ >= 6) {
+            localStorage.exo11 = "séance d'endurance"
+            localStorage.exoClr11 = ""
+        }
+        else {
+            localStorage.exo11 = "jour de repos"
+            localStorage.exoClr11 = ""
+        }
+
+        if (nbPrgJ >= 5) {
+            localStorage.exo12 = "séance d'endurance"
+            localStorage.exoClr12 = ""
+        }
+        else {
+            localStorage.exo12 = "jour de repos"
+            localStorage.exoClr12 = ""
+        }
+
+        localStorage.exo13 = "séance seuil"
+        localStorage.exoClr13 = ""
+
+        localStorage.exo14 = "séance d'endurance"
+        localStorage.exoClr14 = ""
       
         //semaine 3
         localStorage.exo15 = "jour de repos"
-        if (nbPrgJ >= 4) {localStorage.exo16 = ""}
-        localStorage.exo17 = ""
-        if (nbPrgJ >= 6) {localStorage.exo18 = ""}
-        if (nbPrgJ >= 5) {localStorage.exo19 = ""}
-        localStorage.exo20 = ""
-        localStorage.exo21 = ""
+        localStorage.exoClr15 = ""
+
+        if (nbPrgJ >= 4) {
+            localStorage.exo16 = "séance d'endurance"
+            localStorage.exoClr16 = ""
+        }
+        else {
+            localStorage.exo16 = "jour de repos"
+            localStorage.exoClr16 = ""
+        }
+
+        localStorage.exo17 = "séance d'endurance"
+        localStorage.exoClr17 = ""
+
+        if (nbPrgJ >= 6) {
+            localStorage.exo18 = "séance d'endurance"
+            localStorage.exoClr18 = ""
+        }
+        else {
+            localStorage.exo18 = "jour de repos"
+            localStorage.exoClr18 = ""
+        }
+
+        if (nbPrgJ >= 5) {
+            localStorage.exo19 = "séance d'endurance"
+            localStorage.exoClr19 = ""
+        }
+        else {
+            localStorage.exo19 = "jour de repos"
+            localStorage.exoClr19 = ""
+        }
+
+        localStorage.exo20 = "séance de seuil"
+        localStorage.exoClr20 = ""
+
+        localStorage.exo21 = "séance d'endurance"
+        localStorage.exoClr21 = ""
            
         //semaine 4
         localStorage.exo22 = "jour de repos"
-        if (nbPrgJ >= 4) {localStorage.exo23 = ""}
-        localStorage.exo24 = ""
-        if (nbPrgJ >= 6) {localStorage.exo25 = ""}
-        if (nbPrgJ >= 5) {localStorage.exo26 = ""}
-        localStorage.exo27 = ""
-        localStorage.exo28 = ""
+        localStorage.exoClr22 = ""
+
+        if (nbPrgJ >= 4) {
+            localStorage.exo23 = "séance d'endurance"
+            localStorage.exoClr23 = ""
+        }
+        else {
+            localStorage.exo23 = "jour de repos"
+            localStorage.exoClr23 = ""
+        }
+
+        localStorage.exo24 = "séance de PMA"
+        localStorage.exoClr24 = ""
+
+        if (nbPrgJ >= 6) {
+            localStorage.exo25 = "séance de PMA"
+            localStorage.exoClr25 = ""
+        }
+        else {
+            localStorage.exo25 = "jour de repos"
+            localStorage.exoClr25 = ""
+        }
+
+        if (nbPrgJ >= 5) {
+            localStorage.exo26 = "séance d'endurance"
+            localStorage.exoClr26 = ""
+        }
+        else {
+            localStorage.exo26 = "jour de repos"
+            localStorage.exoClr26 = ""
+        }
+
+        localStorage.exo27 = "séance de PMA"
+        localStorage.exoClr27 = ""
+
+        localStorage.exo28 = "séance d'endurance"
+        localStorage.exoClr28 = ""
         
         //semaine 5
         localStorage.exo29 = "jour de repos"
-        if (nbPrgJ >= 4) {localStorage.exo30 = ""}
-        localStorage.exo31 = ""
-        if (nbPrgJ >= 6) {localStorage.exo32 = ""}
-        if (nbPrgJ >= 5) {localStorage.exo33 = ""}
-        localStorage.exo34 = ""
-        localStorage.exo35 = ""
+        localStorage.exoClr29 = ""
+
+        if (nbPrgJ >= 4) {
+            localStorage.exo30 = "séance d'endurance"
+            localStorage.exoClr30 = ""
+        }
+        else {
+            localStorage.exo30 = "jour de repos"
+            localStorage.exoClr30 = ""
+        }
+
+        localStorage.exo31 = "séance de seuil"
+        localStorage.exoClr31 = ""
+
+        if (nbPrgJ >= 6) {
+            localStorage.exo32 = "séance de seuil"
+            localStorage.exoClr32 = ""
+        }
+        else {
+            localStorage.exo32 = "jour de repos"
+            localStorage.exoClr32 = ""
+        }
+
+        if (nbPrgJ >= 5) {
+            localStorage.exo33 = "séance d'endurance"
+            localStorage.exoClr33 = ""
+        }
+        else {
+            localStorage.exo33 = "jour de repos"
+            localStorage.exoClr33 = ""
+        }
+
+        localStorage.exo34 = "séance de seuil"
+        localStorage.exoClr34 = ""
+
+        localStorage.exo35 = "séance d'endurance"
+        localStorage.exoClr35 = ""
            
         //semaine 6
         localStorage.exo36 = "jour de repos"
-        if (nbPrgJ >= 4) {localStorage.exo37 = ""}
-        localStorage.exo38 = ""
-        if (nbPrgJ >= 6) {localStorage.exo39 = ""}
-        if (nbPrgJ >= 5) {localStorage.exo40 = ""}
-        localStorage.exo41 = ""
-        localStorage.exo42 = ""
+        localStorage.exoClr36 = ""
+
+        if (nbPrgJ >= 4) {
+            localStorage.exo37 = "séance d'endurance"
+            localStorage.exoClr37 = ""
+        }
+        else {
+            localStorage.exo37 = "jour de repos"
+            localStorage.exoClr37 = ""
+        }
+
+        localStorage.exo38 = "séance de seuil"
+        localStorage.exoClr38 = ""
+
+        if (nbPrgJ >= 6) {
+            localStorage.exo39 = "séance d'endurance"
+            localStorage.exoClr39 = ""
+        }
+        else {
+            localStorage.exo39 = "jour de repos"
+            localStorage.exoClr39 = ""
+        }
+
+        if (nbPrgJ >= 5) {
+            localStorage.exo40 = "séance d'endurance"
+            localStorage.exoClr40 = ""
+        }
+        else {
+            localStorage.exo40 = "jour de repos"
+            localStorage.exoClr40 = ""
+        }
+
+        localStorage.exo41 = "séance de seuil"
+        localStorage.exoClr41 = ""
+
+        localStorage.exo42 = "séance d'endurance"
+        localStorage.exoClr42 = ""
     
         //semaine 7
         if (nbPrgJ >= 5) {
             localStorage.exo43 = "séance de sprint";
-            localStorage.exoClr = "red";
+            localStorage.exoClr43 = "red";
         }
         else {
             localStorage.exo43 = "jour de repos"
-            localStorage.exoClr = "";
+            localStorage.exoClr43 = "";
         };
     
         localStorage.exo44 = "jour de repos";
-        localStorage.exoClr = "";
+        localStorage.exoClr44 = "";
     
         localStorage.exo45 = "séance d'endurance";
-        localStorage.exoClr = "green";
+        localStorage.exoClr45 = "green";
     
         localStorage.exo46 = "jour de repos";
-        localStorage.exoClr = "";
+        localStorage.exoClr46 = "";
     
         localStorage.exo47 = "jour de repos";
-        localStorage.exoClr = "";
+        localStorage.exoClr47 = "";
     
         localStorage.exo48 = "séance de PMA";
-        localStorage.exoClr = "";
+        localStorage.exoClr48 = "";
     
         localStorage.exo49 = "jour de repos";
-        localStorage.exoClr = "";
+        localStorage.exoClr49 = "";
     
         //semaine 8
         if (nbPrgJ >= 5) {
             localStorage.exo50 = "séance d'endurance";
-            localStorage.exoClr = "green";
+            localStorage.exoClr50 = "green";
         }
         else {
-            localStorage.exo = "jour de repos"
-            localStorage.exoClr = "";
+            localStorage.exo50 = "jour de repos"
+            localStorage.exoClr50 = "";
         };
     
         localStorage.exo51 = "jour de repos";
-        localStorage.exoClr = "";
+        localStorage.exoClr51 = "";
     
         localStorage.exo52 = "séance de PMA";
-        localStorage.exoClr = "orange";
+        localStorage.exoClr52 = "orange";
     
         localStorage.exo53 = "jour de repos";
-        localStorage.exoClr = "";
+        localStorage.exoClr53 = "";
     
         localStorage.exo54 = "jour de repos";
-        localStorage.exoClr = "";
+        localStorage.exoClr54 = "";
     
         localStorage.exo55 = "séance d'endurance";
-        localStorage.exoClr = "green";
+        localStorage.exoClr55 = "green";
     
         localStorage.exo56 = "objectif";
-        localStorage.exoClr = "";
+        localStorage.exoClr56 = "";
     }
 }

@@ -949,7 +949,7 @@ lcExo = () => {
         localStorage.exoClr111 = "green";
 
         localStorage.exo112 = "objectif";
-        localStorage.exoClr112 = "grey";
+        localStorage.exoClr112 = "";
 
     }
 
@@ -1398,7 +1398,7 @@ lcExo = () => {
         localStorage.exoClr83 = "green";
 
         localStorage.exo83 = "objectif";
-        localStorage.exoClr83 = "grey";
+        localStorage.exoClr83 = "";
 
     }
 
@@ -1692,7 +1692,7 @@ lcExo = () => {
         localStorage.exoClr55 = "green";
 
         localStorage.exo55 = "objectif";
-        localStorage.exoClr55 = "grey";
+        localStorage.exoClr55 = "";
 
     }
 }

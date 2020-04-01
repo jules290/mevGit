@@ -613,56 +613,56 @@ else if (nbPrgT == 3) {
     //semaine 7
     if (nbPrgJ >= 5) {
         localStorage.exo43 = "séance de sprint";
-        localStorage.exoClr = "red";
+        localStorage.exoClr43 = "red";
     }
     else {
         localStorage.exo43 = "jour de repos"
-        localStorage.exoClr = "";
+        localStorage.exoClr43 = "";
     };
 
     localStorage.exo44 = "jour de repos";
-    localStorage.exoClr = "";
+    localStorage.exoClr44 = "";
 
     localStorage.exo45 = "séance d'endurance";
-    localStorage.exoClr = "green";
+    localStorage.exoClr45 = "green";
 
     localStorage.exo46 = "jour de repos";
-    localStorage.exoClr = "";
+    localStorage.exoClr46 = "";
 
     localStorage.exo47 = "jour de repos";
-    localStorage.exoClr = "";
+    localStorage.exoClr47 = "";
 
     localStorage.exo48 = "séance de PMA";
-    localStorage.exoClr = "";
+    localStorage.exoClr48 = "";
 
     localStorage.exo49 = "jour de repos";
-    localStorage.exoClr = "";
+    localStorage.exoClr49 = "";
 
     //semaine 8
     if (nbPrgJ >= 5) {
         localStorage.exo50 = "séance d'endurance";
-        localStorage.exoClr = "green";
+        localStorage.exoClr50 = "green";
     }
     else {
-        localStorage.exo = "jour de repos"
-        localStorage.exoClr = "";
+        localStorage.exo50 = "jour de repos"
+        localStorage.exoClr50 = "";
     };
 
     localStorage.exo51 = "jour de repos";
-    localStorage.exoClr = "";
+    localStorage.exoClr51 = "";
 
     localStorage.exo52 = "séance de PMA";
-    localStorage.exoClr = "orange";
+    localStorage.exoClr52 = "orange";
 
     localStorage.exo53 = "jour de repos";
-    localStorage.exoClr = "";
+    localStorage.exoClr53 = "";
 
     localStorage.exo54 = "jour de repos";
-    localStorage.exoClr = "";
+    localStorage.exoClr54 = "";
 
     localStorage.exo55 = "séance d'endurance";
-    localStorage.exoClr = "green";
+    localStorage.exoClr55 = "green";
 
     localStorage.exo56 = "objectif";
-    localStorage.exoClr = "";
+    localStorage.exoClr56 = "";
 }
