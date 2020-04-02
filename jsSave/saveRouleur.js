@@ -351,7 +351,7 @@ lcExo = () => {
         //semaine 1
         if (nbPrgJ >= 4) {
             localStorage.exo1 = "séance d'endurance"
-            localStorage.exoClr1 = ""
+            localStorage.exoClr1 = "green"
         }
         else {
             localStorage.exo1 = "jour de repos"
@@ -362,11 +362,11 @@ lcExo = () => {
         localStorage.exoClr2 = ""
 
         localStorage.exo3 = "séance d'endurance"
-        localStorage.exoClr3 = ""
+        localStorage.exoClr3 = "green"
 
         if (nbPrgJ >= 5) {
             localStorage.exo4 = "séance d'endurance"
-            localStorage.exoClr4 = ""
+            localStorage.exoClr4 = "green"
         }
         else {
             localStorage.exo4 = "jour de repos"
@@ -375,7 +375,7 @@ lcExo = () => {
 
         if (nbPrgJ >= 6) {
             localStorage.exo5 = "séance d'endurance"
-            localStorage.exoClr5 = ""
+            localStorage.exoClr5 = "green"
         }
         else {
             localStorage.exo5 = "jour de repos"
@@ -383,10 +383,10 @@ lcExo = () => {
         }
 
         localStorage.exo6 = "séance d'endurance"
-        localStorage.exoClr6 = ""
+        localStorage.exoClr6 = "green"
 
         localStorage.exo7 = "séance d'endurance"
-        localStorage.exoClr7 = ""
+        localStorage.exoClr7 = "green"
         
         //semaine 2
         localStorage.exo8 = "jour de repos"
@@ -394,7 +394,7 @@ lcExo = () => {
 
         if (nbPrgJ >= 4) {
             localStorage.exo9 = "séance d'endurance"
-            localStorage.exoClr9 = ""
+            localStorage.exoClr9 = "green"
         }
         else {
             localStorage.exo9 = "jour de repos"
@@ -402,11 +402,11 @@ lcExo = () => {
         }
 
         localStorage.exo10 = "séance d'endurance"
-        localStorage.exoClr10 = ""
+        localStorage.exoClr10 = "green"
 
         if (nbPrgJ >= 6) {
             localStorage.exo11 = "séance d'endurance"
-            localStorage.exoClr11 = ""
+            localStorage.exoClr11 = "green"
         }
         else {
             localStorage.exo11 = "jour de repos"
@@ -415,7 +415,7 @@ lcExo = () => {
 
         if (nbPrgJ >= 5) {
             localStorage.exo12 = "séance de seuil"
-            localStorage.exoClr12 = ""
+            localStorage.exoClr12 = "#bebe02"
         }
         else {
             localStorage.exo12 = "jour de repos"
@@ -423,10 +423,10 @@ lcExo = () => {
         }
 
         localStorage.exo13 = "séance d'endurance"
-        localStorage.exoClr13 = ""
+        localStorage.exoClr13 = "green"
 
         localStorage.exo14 = "séance d'endurance"
-        localStorage.exoClr14 = ""
+        localStorage.exoClr14 = "green"
     
         //semaine 3
         localStorage.exo15 = "jour de repos"
@@ -434,7 +434,7 @@ lcExo = () => {
 
         if (nbPrgJ >= 4) {
             localStorage.exo16 = "séance d'endurance"
-            localStorage.exoClr16 = ""
+            localStorage.exoClr16 = "green"
         }
         else {
             localStorage.exo16 = "jour de repos"
@@ -442,11 +442,11 @@ lcExo = () => {
         }
 
         localStorage.exo17 = "séance d'endurance"
-        localStorage.exoClr17 = ""
+        localStorage.exoClr17 = "green"
 
         if (nbPrgJ >= 6) {
-            localStorage.exo18 = ""
-            localStorage.exoClr18 = ""
+            localStorage.exo18 = "séance de PMA"
+            localStorage.exoClr18 = "orange"
         }
         else {
             localStorage.exo18 = "jour de repos"
@@ -455,7 +455,7 @@ lcExo = () => {
 
         if (nbPrgJ >= 5) {
             localStorage.exo19 = "séance d'endurance"
-            localStorage.exoClr19 = ""
+            localStorage.exoClr19 = "green"
         }
         else {
             localStorage.exo19 = "jour de repos"
@@ -463,10 +463,10 @@ lcExo = () => {
         }
 
         localStorage.exo20 = "séance d'endurance"
-        localStorage.exoClr20 = ""
+        localStorage.exoClr20 = "green"
 
         localStorage.exo21 = "séance d'endurance"
-        localStorage.exoClr21 = ""
+        localStorage.exoClr21 = "green"
        
         //semaine 4
         localStorage.exo22 = "jour de repos"
@@ -474,7 +474,7 @@ lcExo = () => {
 
         if (nbPrgJ >= 4) {
             localStorage.exo23 = "séance d'endurance"
-            localStorage.exoClr23 = ""
+            localStorage.exoClr23 = "green"
         }
         else {
             localStorage.exo23 = "jour de repos"
@@ -482,11 +482,11 @@ lcExo = () => {
         }
 
         localStorage.exo24 = "séance de seuil"
-        localStorage.exoClr24 = ""
+        localStorage.exoClr24 = "#bebe02"
 
         if (nbPrgJ >= 6) {
             localStorage.exo25 = "séance d'endurance"
-            localStorage.exoClr25 = ""
+            localStorage.exoClr25 = "green"
         }
         else {
             localStorage.exo25 = "jour de repos"
@@ -494,7 +494,7 @@ lcExo = () => {
         }
 
         if (nbPrgJ >= 5) {
-            localStorage.exo26 = ""
+            localStorage.exo26 = "séance de sprint"
             localStorage.exoClr26 = ""
         }
         else {
@@ -503,10 +503,10 @@ lcExo = () => {
         }
 
         localStorage.exo27 = "séance d'endurance"
-        localStorage.exoClr27 = ""
+        localStorage.exoClr27 = "green"
 
         localStorage.exo28 = "séance d'endurance"
-        localStorage.exoClr28 = ""
+        localStorage.exoClr28 = "green"
     
         //semaine 5
         localStorage.exo29 = "jour de repos"
@@ -514,7 +514,7 @@ lcExo = () => {
 
         if (nbPrgJ >= 4) {
             localStorage.exo30 = "séance d'endurance"
-            localStorage.exoClr30 = ""
+            localStorage.exoClr30 = "green"
         }
         else {
             localStorage.exo30 = "jour de repos"
@@ -522,11 +522,11 @@ lcExo = () => {
         }
 
         localStorage.exo31 = "séance d'endurance"
-        localStorage.exoClr31 = ""
+        localStorage.exoClr31 = "green"
 
         if (nbPrgJ >= 6) {
             localStorage.exo32 = "séance d'endurance"
-            localStorage.exoClr32 = ""
+            localStorage.exoClr32 = "green"
         }
         else {
             localStorage.exo32 = "jour de repos"
@@ -534,8 +534,8 @@ lcExo = () => {
         }
 
         if (nbPrgJ >= 5) {
-            localStorage.exo33 = ""
-            localStorage.exoClr33 = ""
+            localStorage.exo33 = "séance de PMA"
+            localStorage.exoClr33 = "orange"
         } 
         else {
             localStorage.exo33 = "jour de repos"
@@ -543,10 +543,10 @@ lcExo = () => {
         }
 
         localStorage.exo34 = "séance d'endurance"
-        localStorage.exoClr34 = ""
+        localStorage.exoClr34 = "green"
 
         localStorage.exo35 = "séance d'endurance"
-        localStorage.exoClr35 = ""
+        localStorage.exoClr35 = "green"
     
         //semaine 6
         localStorage.exo36 = "jour de repos"
@@ -554,7 +554,7 @@ lcExo = () => {
 
         if (nbPrgJ >= 4) {
             localStorage.exo37 = "séance de seuil"
-            localStorage.exoClr37 = ""
+            localStorage.exoClr37 = "#bebe02"
         }
         else {
             localStorage.exo37 = "jour de repos"
@@ -562,10 +562,10 @@ lcExo = () => {
         }
 
         localStorage.exo38 = "séance d'endurance"
-        localStorage.exoClr38 = ""
+        localStorage.exoClr38 = "green"
 
         if (nbPrgJ >= 6) {
-            localStorage.exo39 = ""
+            localStorage.exo39 = "séance de sprint"
             localStorage.exoClr39 = ""
         }
         else {
@@ -575,7 +575,7 @@ lcExo = () => {
 
         if (nbPrgJ >= 5) {
             localStorage.exo40 = "séance d'endurance"
-            localStorage.exoClr40 = ""
+            localStorage.exoClr40 = "green"
         }
         else {
             localStorage.exo40 = "jour de repos"
@@ -583,10 +583,10 @@ lcExo = () => {
         }
 
         localStorage.exo41 = "séance d'endurance"
-        localStorage.exoClr41 = ""
+        localStorage.exoClr41 = "green"
 
         localStorage.exo42 = "séance d'endurance"
-        localStorage.exoClr42 = ""
+        localStorage.exoClr42 = "green"
     
         //semaine 7
         localStorage.exo43 = "jour de repos"
@@ -594,19 +594,19 @@ lcExo = () => {
 
         if (nbPrgJ >= 4) {
             localStorage.exo44 = "séance d'endurance"
-            localStorage.exoClr44 = ""
+            localStorage.exoClr44 = "green"
         }
         else {
             localStorage.exo44 = "jour de repos"
             localStorage.exoClr44 = ""
         }
 
-        localStorage.exo45 = ""
-        localStorage.exoClr45 = ""
+        localStorage.exo45 = "séance de PMA"
+        localStorage.exoClr45 = "orange"
 
         if (nbPrgJ >= 6) {
             localStorage.exo46 = "séance d'endurance"
-            localStorage.exoClr46 = ""
+            localStorage.exoClr46 = "green"
         }
         else {
             localStorage.exo46 = "jour de repos"
@@ -614,8 +614,8 @@ lcExo = () => {
         }
 
         if (nbPrgJ >= 5) {
-            localStorage.exo47 = ""
-            localStorage.exoClr47 = ""
+            localStorage.exo47 = "séance de PMA"
+            localStorage.exoClr47 = "orange"
         }
         else {
             localStorage.exo47 = "jour de repos"
@@ -623,18 +623,18 @@ lcExo = () => {
         }
 
         localStorage.exo48 = "séance d'endurance"
-        localStorage.exoClr48 = ""
+        localStorage.exoClr48 = "green"
 
-        localStorage.exo49 = ""
-        localStorage.exoClr49 = ""
+        localStorage.exo49 = "séance de PMA"
+        localStorage.exoClr49 = "orange"
     
         //semaine 8
         localStorage.exo50 = "jour de repos"
         localStorage.exoClr50 = ""
 
         if (nbPrgJ >= 4) {
-            localStorage.exo51 = ""
-            localStorage.exoClr51 = ""
+            localStorage.exo51 = "séance de PMA"
+            localStorage.exoClr51 = "orange"
         }
         else {
             localStorage.exo51 = "jour de repos"
@@ -642,11 +642,11 @@ lcExo = () => {
         }
 
         localStorage.exo52 = "séance d'endurance"
-        localStorage.exoClr52 = ""
+        localStorage.exoClr52 = "green"
 
         if (nbPrgJ >= 6) {
-            localStorage.exo53 = ""
-            localStorage.exoClr53 = ""
+            localStorage.exo53 = "séance de PMA"
+            localStorage.exoClr53 = "orange"
         }
         else {
             localStorage.exo53 = "jour de repos"
@@ -655,18 +655,18 @@ lcExo = () => {
 
         if (nbPrgJ >= 5) {
             localStorage.exo54 = "séance d'endurance"
-            localStorage.exoClr54 = ""
+            localStorage.exoClr54 = "green"
         }
         else {
             localStorage.exo54 = "jour de repos"
             localStorage.exoClr54 = ""
         }
 
-        localStorage.exo55 = ""
-        localStorage.exoClr55 = ""
+        localStorage.exo55 = "séance de PMA"
+        localStorage.exoClr55 = "orange"
 
         localStorage.exo56 = "séance d'endurance"
-        localStorage.exoClr56 = ""
+        localStorage.exoClr56 = "green"
        
         //semaine 9
         localStorage.exo57 = "jour de repos"
@@ -674,19 +674,19 @@ lcExo = () => {
 
         if (nbPrgJ >= 4) {
             localStorage.exo58 = "séance d'endurance"
-            localStorage.exoClr58 = ""
+            localStorage.exoClr58 = "green"
         }
         else {
             localStorage.exo = "jour de repos"
             localStorage.exoClr58 = ""
         }
 
-        localStorage.exo59 = ""
-        localStorage.exoClr59 = ""
+        localStorage.exo59 = "séance de PMA"
+        localStorage.exoClr59 = "orange"
 
         if (nbPrgJ >= 6) {
             localStorage.exo60 = "séance d'endurance"
-            localStorage.exoClr60 = ""
+            localStorage.exoClr60 = "green"
         }
         else {
             localStorage.exo60 = "jour de repos"
@@ -695,18 +695,18 @@ lcExo = () => {
 
         if (nbPrgJ >= 5) {
             localStorage.exo61 = "séance d'endurance"
-            localStorage.exoClr61 = ""
+            localStorage.exoClr61 = "green"
         }
         else {
             localStorage.exo61 = "jour de repos"
             localStorage.exoClr61 = ""
         }
 
-        localStorage.exo62 = ""
-        localStorage.exoClr62 = ""
+        localStorage.exo62 = "séance de PMA"
+        localStorage.exoClr62 = "orange"
 
         localStorage.exo63 = "séance d'endurance"
-        localStorage.exoClr63 = ""
+        localStorage.exoClr63 = "green"
            
         //semaine 10
         localStorage.exo64 = "jour de repos"
@@ -714,7 +714,7 @@ lcExo = () => {
 
         if (nbPrgJ >= 4) {
             localStorage.exo65 = "séance d'endurance"
-            localStorage.exoClr65 = ""
+            localStorage.exoClr65 = "green"
         }
         else {
             localStorage.exo65 = "jour de repos"
@@ -722,11 +722,11 @@ lcExo = () => {
         }
 
         localStorage.exo66 = "séance de seuil"
-        localStorage.exoClr66 = ""
+        localStorage.exoClr66 = "#bebe02"
 
         if (nbPrgJ >= 6) {
             localStorage.exo67 = "séance d'endurance"
-            localStorage.exoClr67 = ""
+            localStorage.exoClr67 = "green"
         }
         else {
             localStorage.exo67 = "jour de repos"
@@ -735,7 +735,7 @@ lcExo = () => {
 
         if (nbPrgJ >= 5) {
             localStorage.exo68 = "séance de seuil"
-            localStorage.exoClr68 = ""
+            localStorage.exoClr68 = "#bebe02"
         }
         else {
             localStorage.exo68 = "jour de repos"
@@ -743,10 +743,10 @@ lcExo = () => {
         }
 
         localStorage.exo69 = "séance d'endurance"
-        localStorage.exoClr69 = ""
+        localStorage.exoClr69 = "green"
 
         localStorage.exo70 = "séance de seuil"
-        localStorage.exoClr70 = ""
+        localStorage.exoClr70 = "#bebe02"
     
         //semaine 11
         localStorage.exo71 = "jour de repos"
@@ -762,11 +762,11 @@ lcExo = () => {
         }
 
         localStorage.exo73 = "séance de seuil"
-        localStorage.exoClr73 = ""
+        localStorage.exoClr73 = "#bebe02"
 
         if (nbPrgJ >= 6) {
             localStorage.exo74 = "séance d'endurance"
-            localStorage.exoClr74 = ""
+            localStorage.exoClr74 = "green"
         }
         else {
             localStorage.exo74 = "jour de repos"
@@ -775,7 +775,7 @@ lcExo = () => {
 
         if (nbPrgJ >= 5) {
             localStorage.exo75 = "séance de seuil"
-            localStorage.exoClr75 = ""
+            localStorage.exoClr75 = "#bebe02"
         }
         else {
             localStorage.exo75 = "jour de repos"
@@ -783,10 +783,10 @@ lcExo = () => {
         }
 
         localStorage.exo76 = "séance d'endurance"
-        localStorage.exoClr76 = ""
+        localStorage.exoClr76 = "green"
 
         localStorage.exo77 = "séance de seuil"
-        localStorage.exoClr77 = ""
+        localStorage.exoClr77 = "#bebe02"
             
         //semaine 12
         localStorage.exo78 = "jour de repos"
@@ -794,7 +794,7 @@ lcExo = () => {
 
         if (nbPrgJ >= 4) {
             localStorage.exo79 = "séance de seuil"
-            localStorage.exoClr79 = ""
+            localStorage.exoClr79 = "#bebe02"
         }
         else {
             localStorage.exo79 = "jour de repos"
@@ -802,11 +802,11 @@ lcExo = () => {
         }
 
         localStorage.exo80 = "séance d'endurance"
-        localStorage.exoClr80 = ""
+        localStorage.exoClr80 = "green"
 
         if (nbPrgJ >= 6) {
             localStorage.exo81 = "séance de seuil"
-            localStorage.exoClr81 = ""
+            localStorage.exoClr81 = "#bebe02"
         }
         else {
             localStorage.exo81 = "jour de repos"
@@ -815,7 +815,7 @@ lcExo = () => {
 
         if (nbPrgJ >= 5) {
             localStorage.exo82 = "séance d'endurance"
-            localStorage.exoClr82 = ""
+            localStorage.exoClr82 = "green"
         }
         else {
             localStorage.exo82 = "jour de repos"
@@ -823,10 +823,10 @@ lcExo = () => {
         }
 
         localStorage.exo83 = "séance de seuil"
-        localStorage.exoClr83 = ""
+        localStorage.exoClr83 = "#bebe02"
 
         localStorage.exo84 = "séance d'endurance"
-        localStorage.exoClr84 = ""
+        localStorage.exoClr84 = "green"
         
         //semaine 13
         localStorage.exo85 = "jour de repos"
@@ -834,7 +834,7 @@ lcExo = () => {
 
         if (nbPrgJ >= 4) {
             localStorage.exo86 = "séance d'endurance"
-            localStorage.exoClr86 = ""
+            localStorage.exoClr86 = "green"
         }
         else {
             localStorage.exo86 = "jour de repos"
@@ -842,11 +842,11 @@ lcExo = () => {
         }
 
         localStorage.exo87 = "séance de seuil"
-        localStorage.exoClr87 = ""
+        localStorage.exoClr87 = "#bebe02"
 
         if (nbPrgJ >= 6) {
             localStorage.exo88 = "séance d'endurance"
-            localStorage.exoClr88 = ""
+            localStorage.exoClr88 = "green"
         }
         else {
             localStorage.exo88 = "jour de repos"
@@ -855,7 +855,7 @@ lcExo = () => {
 
         if (nbPrgJ >= 5) {
             localStorage.exo89 = "séance d'endurance"
-            localStorage.exoClr89 = ""
+            localStorage.exoClr89 = "green"
         }
         else {
             localStorage.exo89 = "jour de repos"
@@ -863,10 +863,10 @@ lcExo = () => {
         }
 
         localStorage.exo90 = "séance de seuil"
-        localStorage.exoClr90 = ""
+        localStorage.exoClr90 = "#bebe02"
 
         localStorage.exo91 = "séance d'endurance"
-        localStorage.exoClr91 = ""
+        localStorage.exoClr91 = "green"
             
         //semaine 14
         localStorage.exo92 = "jour de repos"
@@ -874,7 +874,7 @@ lcExo = () => {
 
         if (nbPrgJ >= 4) {
             localStorage.exo93 = "séance d'endurance"
-            localStorage.exoClr93 = ""
+            localStorage.exoClr93 = "green"
         }
         else {
             localStorage.exo93 = "jour de repos"
@@ -882,11 +882,11 @@ lcExo = () => {
         }
 
         localStorage.exo94 = "séance de seuil"
-        localStorage.exoClr94 = ""
+        localStorage.exoClr94 = "#bebe02"
 
         if (nbPrgJ >= 6) {
             localStorage.exo95 = "séance d'endurance"
-            localStorage.exoClr95 = ""
+            localStorage.exoClr95 = "green"
         }
         else {
             localStorage.exo95 = "jour de repos"
@@ -895,7 +895,7 @@ lcExo = () => {
 
         if (nbPrgJ >= 5) {
             localStorage.exo96 = "séance d'endurance"
-            localStorage.exoClr96 = ""
+            localStorage.exoClr96 = "green"
         }
         else {
             localStorage.exo96 = "jour de repos"
@@ -903,10 +903,10 @@ lcExo = () => {
         }
 
         localStorage.exo97 = "séance de seuil"
-        localStorage.exoClr97 = ""
+        localStorage.exoClr97 = "#bebe02"
 
         localStorage.exo98 = "séance d'endurance"
-        localStorage.exoClr98 = ""
+        localStorage.exoClr98 = "green"
          
         //semaine 15
         if (nbPrgJ >= 5) {
@@ -969,7 +969,7 @@ lcExo = () => {
         //semaine 1
         if (nbPrgJ >= 4) {
             localStorage.exo1 = "séance d'endurance"
-            localStorage.exoClr1 = ""
+            localStorage.exoClr1 = "green"
         }
         else {
             localStorage.exo1 = "jour de repos"
@@ -980,11 +980,11 @@ lcExo = () => {
         localStorage.exoClr2 = ""
 
         localStorage.exo3 = "séance d'endurance"
-        localStorage.exoClr3 = ""
+        localStorage.exoClr3 = "green"
 
         if (nbPrgJ >= 5) {
             localStorage.exo4 = "séance d'endurance"
-            localStorage.exoClr4 = ""
+            localStorage.exoClr4 = "green"
         }
         else {
             localStorage.exo4 = "jour de repos"
@@ -993,7 +993,7 @@ lcExo = () => {
 
         if (nbPrgJ >= 6) {
             localStorage.exo5 = "séance d'endurance"
-            localStorage.exoClr5 = ""
+            localStorage.exoClr5 = "green"
         }
         else {
             localStorage.exo5 = "jour de repos"
@@ -1001,10 +1001,10 @@ lcExo = () => {
         }
 
         localStorage.exo6 = "séance d'endurance"
-        localStorage.exoClr6 = ""
+        localStorage.exoClr6 = "green"
 
         localStorage.exo7 = "séance d'endurance"
-        localStorage.exoClr7 = ""
+        localStorage.exoClr7 = "green"
          
         //semaine 2
         localStorage.exo8 = "jour de repos"
@@ -1012,7 +1012,7 @@ lcExo = () => {
 
         if (nbPrgJ >= 4) {
             localStorage.exo9 = "séance d'endurance"
-            localStorage.exoClr9 = ""
+            localStorage.exoClr9 = "green"
         }
         else {
             localStorage.exo9 = "jour de repos"
@@ -1020,11 +1020,11 @@ lcExo = () => {
         }
 
         localStorage.exo10 = "séance d'endurance"
-        localStorage.exoClr10 = ""
+        localStorage.exoClr10 = "green"
 
         if (nbPrgJ >= 6) {
             localStorage.exo11 = "séance d'endurance"
-            localStorage.exoClr11 = ""
+            localStorage.exoClr11 = "green"
         }
         else {
             localStorage.exo11 = "jour de repos"
@@ -1033,7 +1033,7 @@ lcExo = () => {
 
         if (nbPrgJ >= 5) {
             localStorage.exo12 = "séance de seuil"
-            localStorage.exoClr12 = ""
+            localStorage.exoClr12 = "#bebe02"
         }
         else {
             localStorage.exo12 = "jour de repos"
@@ -1041,10 +1041,10 @@ lcExo = () => {
         }
 
         localStorage.exo13 = "séance d'endurance"
-        localStorage.exoClr13 = ""
+        localStorage.exoClr13 = "green"
 
         localStorage.exo14 = "séance d'endurance"
-        localStorage.exoClr14 = ""
+        localStorage.exoClr14 = "green"
          
         //semaine 3
         localStorage.exo15 = "jour de repos"
@@ -1052,7 +1052,7 @@ lcExo = () => {
 
         if (nbPrgJ >= 4) {
             localStorage.exo16 = "séance de sprint"
-            localStorage.exoClr16 = ""
+            localStorage.exoClr16 = "red"
         }
         else {
             localStorage.exo16 = "jour de repos"
@@ -1060,11 +1060,11 @@ lcExo = () => {
         }
 
         localStorage.exo17 = "séance de seuil"
-        localStorage.exoClr17 = ""
+        localStorage.exoClr17 = "#bebe02"
 
         if (nbPrgJ >= 6) {
             localStorage.exo18 = "séance d'endurance"
-            localStorage.exoClr18 = ""
+            localStorage.exoClr18 = "green"
         }
         else {
             localStorage.exo18 = "jour de repos"
@@ -1073,7 +1073,7 @@ lcExo = () => {
 
         if (nbPrgJ >= 5) {
             localStorage.exo19 = "séance d'endurance"
-            localStorage.exoClr19 = ""
+            localStorage.exoClr19 = "green"
         }
         else {
             localStorage.exo19 = "jour de repos"
@@ -1081,10 +1081,10 @@ lcExo = () => {
         }
 
         localStorage.exo20 = "séance d'endurance"
-        localStorage.exoClr20 = ""
+        localStorage.exoClr20 = "green"
 
         localStorage.exo21 = "séance d'endurance"
-        localStorage.exoClr21 = ""
+        localStorage.exoClr21 = "green"
             
         //semaine 4
         localStorage.exo22 = "jour de repos"
@@ -1092,7 +1092,7 @@ lcExo = () => {
 
         if (nbPrgJ >= 4) {
             localStorage.exo23 = "séance d'endurance"
-            localStorage.exoClr23 = ""
+            localStorage.exoClr23 = "green"
         }
         else {
             localStorage.exo23 = "jour de repos"
@@ -1100,11 +1100,11 @@ lcExo = () => {
         }
 
         localStorage.exo24 = "séance d'endurance"
-        localStorage.exoClr24 = ""
+        localStorage.exoClr24 = "green"
 
         if (nbPrgJ >= 6) {
             localStorage.exo25 = "séance de PMA"
-            localStorage.exoClr25 = ""
+            localStorage.exoClr25 = "orange"
         }
         else {
             localStorage.exo25 = "jour de repos"
@@ -1113,7 +1113,7 @@ lcExo = () => {
 
         if (nbPrgJ >= 5) {
             localStorage.exo26 = "séance d'endurance"
-            localStorage.exoClr26 = ""
+            localStorage.exoClr26 = "green"
         }
         else {
             localStorage.exo26 = "jour de repos"
@@ -1121,7 +1121,7 @@ lcExo = () => {
         }
 
         localStorage.exo27 = "séance d'endurance"
-        localStorage.exoClr27 = ""
+        localStorage.exoClr27 = "green"
 
         localStorage.exo28 = "séance d'endurance"
         localStorage.exoClr28 = ""
@@ -1132,7 +1132,7 @@ lcExo = () => {
 
         if (nbPrgJ >= 4) {
             localStorage.exo30 = "séance d'endurance"
-            localStorage.exoClr30 = ""
+            localStorage.exoClr30 = "green"
         }
         else {
             localStorage.exo30 = "jour de repos"
@@ -1140,11 +1140,11 @@ lcExo = () => {
         }
 
         localStorage.exo31 = "séance de PMA"
-        localStorage.exoClr31 = ""
+        localStorage.exoClr31 = "orange"
 
         if (nbPrgJ >= 6) {
             localStorage.exo32 = "séance d'endurance"
-            localStorage.exoClr32 = ""
+            localStorage.exoClr32 = "green"
         }
         else {
             localStorage.exo32 = "jour de repos"
@@ -1153,7 +1153,7 @@ lcExo = () => {
 
         if (nbPrgJ >= 5) {
             localStorage.exo33 = "séance de PMA"
-            localStorage.exoClr33 = ""
+            localStorage.exoClr33 = "orange"
         }
         else {
             localStorage.exo33 = "jour de repos"
@@ -1161,10 +1161,10 @@ lcExo = () => {
         }
 
         localStorage.exo34 = "séance d'endurance"
-        localStorage.exoClr34 = ""
+        localStorage.exoClr34 = "green"
 
         localStorage.exo35 = "séance de PMA"
-        localStorage.exoClr35 = ""
+        localStorage.exoClr35 = "orange"
            
         //semaine 6
         localStorage.exo36 = "jour de repos"
@@ -1172,7 +1172,7 @@ lcExo = () => {
 
         if (nbPrgJ >= 4) {
             localStorage.exo37 = "séance d'endurance"
-            localStorage.exoClr37 = ""
+            localStorage.exoClr37 = "green"
         }
         else {
             localStorage.exo37 = "jour de repos"
@@ -1180,11 +1180,11 @@ lcExo = () => {
         }
 
         localStorage.exo38 = "séance de PMA"
-        localStorage.exoClr38 = ""
+        localStorage.exoClr38 = "orange"
 
         if (nbPrgJ >= 6) {
             localStorage.exo39 = "séance d'endurance"
-            localStorage.exoClr39 = ""
+            localStorage.exoClr39 = "green"
         }
         else {
             localStorage.exo39 = "jour de repos"
@@ -1193,7 +1193,7 @@ lcExo = () => {
 
         if (nbPrgJ >= 5) {
             localStorage.exo40 = "séance d'endurance"
-            localStorage.exoClr40 = ""
+            localStorage.exoClr40 = "green"
         }
         else {
             localStorage.exo40 = "jour de repos"
@@ -1201,10 +1201,10 @@ lcExo = () => {
         }
 
         localStorage.exo41 = "séance de PMA"
-        localStorage.exoClr41 = ""
+        localStorage.exoClr41 = "orange"
 
         localStorage.exo42 = "séance d'endurance"
-        localStorage.exoClr42 = ""
+        localStorage.exoClr42 = "green"
          
         //semaine 7
         localStorage.exo43 = "jour de repos"
@@ -1212,7 +1212,7 @@ lcExo = () => {
 
         if (nbPrgJ >= 4) {
             localStorage.exo44 = "séance d'endurance"
-            localStorage.exoClr44 = ""
+            localStorage.exoClr44 = "green"
         }
         else {
             localStorage.exo44 = "jour de repos"
@@ -1220,11 +1220,11 @@ lcExo = () => {
         }
 
         localStorage.exo45 = "séance de seuil"
-        localStorage.exoClr45 = ""
+        localStorage.exoClr45 = "#bebe02"
 
         if (nbPrgJ >= 6) {
             localStorage.exo46 = "séance d'endurance"
-            localStorage.exoClr46 = ""
+            localStorage.exoClr46 = "green"
         }
         else {
             localStorage.exo46 = "jour de repos"
@@ -1233,7 +1233,7 @@ lcExo = () => {
 
         if (nbPrgJ >= 5) {
             localStorage.exo47 = "séance de seuil"
-            localStorage.exoClr47 = ""
+            localStorage.exoClr47 = "#bebe02"
         }
         else {
             localStorage.exo47 = "jour de repos"
@@ -1241,10 +1241,10 @@ lcExo = () => {
         }
 
         localStorage.exo48 = "séance d'endurance"
-        localStorage.exoClr48 = ""
+        localStorage.exoClr48 = "green"
 
         localStorage.exo49 = "séance de seuil"
-        localStorage.exoClr49 = ""
+        localStorage.exoClr49 = "#bebe02"
     
         //semaine 8
         localStorage.exo50 = "jour de repos"
@@ -1252,7 +1252,7 @@ lcExo = () => {
 
         if (nbPrgJ >= 4) {
             localStorage.exo51 = "séance d'endurance"
-            localStorage.exoClr51 = ""
+            localStorage.exoClr51 = "green"
         }
         else {
             localStorage.exo51 = "jour de repos"
@@ -1260,11 +1260,11 @@ lcExo = () => {
         }
 
         localStorage.exo52 = "séance de seuil"
-        localStorage.exoClr52 = ""
+        localStorage.exoClr52 = "#bebe02"
 
         if (nbPrgJ >= 6) {
             localStorage.exo53 = "séance d'endurance"
-            localStorage.exoClr53 = ""
+            localStorage.exoClr53 = "green"
         }
         else {
             localStorage.exo53 = "jour de repos"
@@ -1273,7 +1273,7 @@ lcExo = () => {
 
         if (nbPrgJ >= 5) {
             localStorage.exo54 = "séance de seuil"
-            localStorage.exoClr54 = ""
+            localStorage.exoClr54 = "#bebe02"
         }
         else {
             localStorage.exo54 = "jour de repos"
@@ -1281,18 +1281,18 @@ lcExo = () => {
         }
 
         localStorage.exo55 = "séance d'endurance"
-        localStorage.exoClr55 = ""
+        localStorage.exoClr55 = "green"
 
         localStorage.exo56 = "séance de seuil"
-        localStorage.exoClr56 = ""
+        localStorage.exoClr56 = "#bebe02"
        
         //semaine 9
         localStorage.exo57 = "jour de repos"
         localStorage.exoClr57 = ""
 
         if (nbPrgJ >= 4) {
-            localStorage.exo58 = ""
-            localStorage.exoClr58 = ""
+            localStorage.exo58 = "séance d'endurance"
+            localStorage.exoClr58 = "green"
         }
         else {
             localStorage.exo58 = "jour de repos"
@@ -1300,11 +1300,11 @@ lcExo = () => {
         }
 
         localStorage.exo59 = "séance de seuil"
-        localStorage.exoClr59 = ""
+        localStorage.exoClr59 = "#bebe02"
 
         if (nbPrgJ >= 6) {
             localStorage.exo60 = "séance d'endurance"
-            localStorage.exoClr60 = ""
+            localStorage.exoClr60 = "green"
         }
         else {
             localStorage.exo60 = "jour de repos"
@@ -1313,7 +1313,7 @@ lcExo = () => {
 
         if (nbPrgJ >= 5) {
             localStorage.exo61 = "séance d'endurance"
-            localStorage.exoClr61 = ""
+            localStorage.exoClr61 = "green"
         }
         else {
             localStorage.exo61 = "jour de repos"
@@ -1321,10 +1321,10 @@ lcExo = () => {
         }
 
         localStorage.exo62 = "séance de seuil"
-        localStorage.exoClr62 = ""
+        localStorage.exoClr62 = "#bebe02"
 
         localStorage.exo63 = "séance d'endurance"
-        localStorage.exoClr63 = ""
+        localStorage.exoClr63 = "green"
     
         //semaine 10
         localStorage.exo64 = "jour de repos"
@@ -1332,7 +1332,7 @@ lcExo = () => {
 
         if (nbPrgJ >= 4) {
             localStorage.exo65 = "séance d'endurance"
-            localStorage.exoClr65 = ""
+            localStorage.exoClr65 = "green"
         }
         else {
             localStorage.exo65 = "jour de repos"
@@ -1340,11 +1340,11 @@ lcExo = () => {
         }
 
         localStorage.exo66 = "séance de seuil"
-        localStorage.exoClr66 = ""
+        localStorage.exoClr66 = "#bebe02"
 
         if (nbPrgJ >= 6) {
             localStorage.exo67 = "séance d'endurance"
-            localStorage.exoClr67 = ""
+            localStorage.exoClr67 = "green"
         }
         else {
             localStorage.exo67 = "jour de repos"
@@ -1353,7 +1353,7 @@ lcExo = () => {
 
         if (nbPrgJ >= 5) {
             localStorage.exo68 = "séance d'endurance"
-            localStorage.exoClr68 = ""
+            localStorage.exoClr68 = "green"
         }
         else {
             localStorage.exo68 = "jour de repos"
@@ -1361,10 +1361,10 @@ lcExo = () => {
         }
 
         localStorage.exo69 = "séance de seuil"
-        localStorage.exoClr69 = ""
+        localStorage.exoClr69 = "#bebe02"
 
         localStorage.exo70 = "séance d'endurance"
-        localStorage.exoClr70 = ""
+        localStorage.exoClr70 = "green"
      
         //semaine 11
         if (nbPrgJ >= 5) {
@@ -1427,7 +1427,7 @@ lcExo = () => {
         //semaine 1
         if (nbPrgJ >= 4) {
             localStorage.exo1 = "séance d'endurance"
-            localStorage.exoClr1 = ""
+            localStorage.exoClr1 = "green"
         }
         else {
             localStorage.exo1 = "jour de repos"
@@ -1438,11 +1438,11 @@ lcExo = () => {
         localStorage.exoClr2 = ""
 
         localStorage.exo3 = "séance d'endurance"
-        localStorage.exoClr3 = ""
+        localStorage.exoClr3 = "green"
 
         if (nbPrgJ >= 5) {
             localStorage.exo4 = "séance d'endurance"
-            localStorage.exoClr4 = ""
+            localStorage.exoClr4 = "green"
         }
         else {
             localStorage.exo4 = "jour de repos"
@@ -1451,7 +1451,7 @@ lcExo = () => {
 
         if (nbPrgJ >= 6) {
             localStorage.exo5 = "séance d'endurance"
-            localStorage.exoClr5 = ""
+            localStorage.exoClr5 = "green"
         }
         else {
             localStorage.exo5 = "jour de repos"
@@ -1459,10 +1459,10 @@ lcExo = () => {
         }
 
         localStorage.exo6 = "séance d'endurance"
-        localStorage.exoClr6 = ""
+        localStorage.exoClr6 = "green"
 
         localStorage.exo7 = "séance d'endurance"
-        localStorage.exoClr7 = ""
+        localStorage.exoClr7 = "green"
       
         //semaine 2
         localStorage.exo8 = "jour de repos"
@@ -1470,7 +1470,7 @@ lcExo = () => {
 
         if (nbPrgJ >= 4) {
             localStorage.exo9 = "séance d'endurance"
-            localStorage.exoClr9 = ""
+            localStorage.exoClr9 = "green"
         }
         else {
             localStorage.exo9 = "jour de repos"
@@ -1478,11 +1478,11 @@ lcExo = () => {
         }
 
         localStorage.exo10 = "séance de sprint"
-        localStorage.exoClr10 = ""
+        localStorage.exoClr10 = "red"
 
         if (nbPrgJ >= 6) {
             localStorage.exo11 = "séance d'endurance"
-            localStorage.exoClr11 = ""
+            localStorage.exoClr11 = "green"
         }
         else {
             localStorage.exo11 = "jour de repos"
@@ -1491,7 +1491,7 @@ lcExo = () => {
 
         if (nbPrgJ >= 5) {
             localStorage.exo12 = "séance d'endurance"
-            localStorage.exoClr12 = ""
+            localStorage.exoClr12 = "green"
         }
         else {
             localStorage.exo12 = "jour de repos"
@@ -1499,10 +1499,10 @@ lcExo = () => {
         }
 
         localStorage.exo13 = "séance seuil"
-        localStorage.exoClr13 = ""
+        localStorage.exoClr13 = "#bebe02"
 
         localStorage.exo14 = "séance d'endurance"
-        localStorage.exoClr14 = ""
+        localStorage.exoClr14 = "green"
       
         //semaine 3
         localStorage.exo15 = "jour de repos"
@@ -1510,7 +1510,7 @@ lcExo = () => {
 
         if (nbPrgJ >= 4) {
             localStorage.exo16 = "séance d'endurance"
-            localStorage.exoClr16 = ""
+            localStorage.exoClr16 = "green"
         }
         else {
             localStorage.exo16 = "jour de repos"
@@ -1518,11 +1518,11 @@ lcExo = () => {
         }
 
         localStorage.exo17 = "séance d'endurance"
-        localStorage.exoClr17 = ""
+        localStorage.exoClr17 = "green"
 
         if (nbPrgJ >= 6) {
             localStorage.exo18 = "séance d'endurance"
-            localStorage.exoClr18 = ""
+            localStorage.exoClr18 = "green"
         }
         else {
             localStorage.exo18 = "jour de repos"
@@ -1531,7 +1531,7 @@ lcExo = () => {
 
         if (nbPrgJ >= 5) {
             localStorage.exo19 = "séance d'endurance"
-            localStorage.exoClr19 = ""
+            localStorage.exoClr19 = "green"
         }
         else {
             localStorage.exo19 = "jour de repos"
@@ -1539,10 +1539,10 @@ lcExo = () => {
         }
 
         localStorage.exo20 = "séance de seuil"
-        localStorage.exoClr20 = ""
+        localStorage.exoClr20 = "#bebe02"
 
         localStorage.exo21 = "séance d'endurance"
-        localStorage.exoClr21 = ""
+        localStorage.exoClr21 = "green"
            
         //semaine 4
         localStorage.exo22 = "jour de repos"
@@ -1550,7 +1550,7 @@ lcExo = () => {
 
         if (nbPrgJ >= 4) {
             localStorage.exo23 = "séance d'endurance"
-            localStorage.exoClr23 = ""
+            localStorage.exoClr23 = "green"
         }
         else {
             localStorage.exo23 = "jour de repos"
@@ -1558,11 +1558,11 @@ lcExo = () => {
         }
 
         localStorage.exo24 = "séance de PMA"
-        localStorage.exoClr24 = ""
+        localStorage.exoClr24 = "orange"
 
         if (nbPrgJ >= 6) {
             localStorage.exo25 = "séance de PMA"
-            localStorage.exoClr25 = ""
+            localStorage.exoClr25 = "orange"
         }
         else {
             localStorage.exo25 = "jour de repos"
@@ -1571,7 +1571,7 @@ lcExo = () => {
 
         if (nbPrgJ >= 5) {
             localStorage.exo26 = "séance d'endurance"
-            localStorage.exoClr26 = ""
+            localStorage.exoClr26 = "green"
         }
         else {
             localStorage.exo26 = "jour de repos"
@@ -1579,10 +1579,10 @@ lcExo = () => {
         }
 
         localStorage.exo27 = "séance de PMA"
-        localStorage.exoClr27 = ""
+        localStorage.exoClr27 = "orange"
 
         localStorage.exo28 = "séance d'endurance"
-        localStorage.exoClr28 = ""
+        localStorage.exoClr28 = "green"
         
         //semaine 5
         localStorage.exo29 = "jour de repos"
@@ -1590,7 +1590,7 @@ lcExo = () => {
 
         if (nbPrgJ >= 4) {
             localStorage.exo30 = "séance d'endurance"
-            localStorage.exoClr30 = ""
+            localStorage.exoClr30 = "green"
         }
         else {
             localStorage.exo30 = "jour de repos"
@@ -1598,11 +1598,11 @@ lcExo = () => {
         }
 
         localStorage.exo31 = "séance de seuil"
-        localStorage.exoClr31 = ""
+        localStorage.exoClr31 = "#bebe02"
 
         if (nbPrgJ >= 6) {
             localStorage.exo32 = "séance de seuil"
-            localStorage.exoClr32 = ""
+            localStorage.exoClr32 = "#bebe02"
         }
         else {
             localStorage.exo32 = "jour de repos"
@@ -1611,7 +1611,7 @@ lcExo = () => {
 
         if (nbPrgJ >= 5) {
             localStorage.exo33 = "séance d'endurance"
-            localStorage.exoClr33 = ""
+            localStorage.exoClr33 = "green"
         }
         else {
             localStorage.exo33 = "jour de repos"
@@ -1619,10 +1619,10 @@ lcExo = () => {
         }
 
         localStorage.exo34 = "séance de seuil"
-        localStorage.exoClr34 = ""
+        localStorage.exoClr34 = "#bebe02"
 
         localStorage.exo35 = "séance d'endurance"
-        localStorage.exoClr35 = ""
+        localStorage.exoClr35 = "green"
            
         //semaine 6
         localStorage.exo36 = "jour de repos"
@@ -1630,7 +1630,7 @@ lcExo = () => {
 
         if (nbPrgJ >= 4) {
             localStorage.exo37 = "séance d'endurance"
-            localStorage.exoClr37 = ""
+            localStorage.exoClr37 = "green"
         }
         else {
             localStorage.exo37 = "jour de repos"
@@ -1638,11 +1638,11 @@ lcExo = () => {
         }
 
         localStorage.exo38 = "séance de seuil"
-        localStorage.exoClr38 = ""
+        localStorage.exoClr38 = "#bebe02"
 
         if (nbPrgJ >= 6) {
             localStorage.exo39 = "séance d'endurance"
-            localStorage.exoClr39 = ""
+            localStorage.exoClr39 = "green"
         }
         else {
             localStorage.exo39 = "jour de repos"
@@ -1651,7 +1651,7 @@ lcExo = () => {
 
         if (nbPrgJ >= 5) {
             localStorage.exo40 = "séance d'endurance"
-            localStorage.exoClr40 = ""
+            localStorage.exoClr40 = "green"
         }
         else {
             localStorage.exo40 = "jour de repos"
@@ -1659,10 +1659,10 @@ lcExo = () => {
         }
 
         localStorage.exo41 = "séance de seuil"
-        localStorage.exoClr41 = ""
+        localStorage.exoClr41 = "#bebe02"
 
         localStorage.exo42 = "séance d'endurance"
-        localStorage.exoClr42 = ""
+        localStorage.exoClr42 = "green"
     
         //semaine 7
         if (nbPrgJ >= 5) {
@@ -1687,7 +1687,7 @@ lcExo = () => {
         localStorage.exoClr47 = "";
     
         localStorage.exo48 = "séance de PMA";
-        localStorage.exoClr48 = "";
+        localStorage.exoClr48 = "orange";
     
         localStorage.exo49 = "jour de repos";
         localStorage.exoClr49 = "";
