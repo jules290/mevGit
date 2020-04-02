@@ -37,3 +37,11 @@
     margin-right: 25%;
     padding-top: 24%;
 }
+#graph1 {
+    width: 90%;
+    height: 270px;
+    margin-left: 5%;
+    margin-right: 5%;
+    background-color: rgba(255, 255, 255, 0.287);
+    border-radius: 10px;
+}

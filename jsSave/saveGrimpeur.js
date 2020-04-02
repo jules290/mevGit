@@ -1397,8 +1397,8 @@ lcExo = () => {
         localStorage.exo83 = "séance d'endurance";
         localStorage.exoClr83 = "green";
 
-        localStorage.exo83 = "objectif";
-        localStorage.exoClr83 = "";
+        localStorage.exo84 = "objectif";
+        localStorage.exoClr84 = "";
 
     }
 
@@ -1691,8 +1691,8 @@ lcExo = () => {
         localStorage.exo55 = "séance d'endurance";
         localStorage.exoClr55 = "green";
 
-        localStorage.exo55 = "objectif";
-        localStorage.exoClr55 = "";
+        localStorage.exo56 = "objectif";
+        localStorage.exoClr56 = "";
 
     }
 }

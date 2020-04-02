@@ -11,6 +11,13 @@ $(document).ready(function() {
 })
 
 function prgRouleur() {
+    function animExo() {
+        $("#graph1").show()
+        $("#exoInstruction").animate({paddingTop: '24%'}, 0);
+        if(document.getElementById("exoInstruction").innerHTML !== "jour de repos") {
+            $("#exoInstruction").animate({paddingTop: '0px'}, 500);
+        }
+    }
     if(Number(localStorage.prg) == 3) {
     let monthA = new Array(12);
     monthA[1] = "janvier";
@@ -327,6 +334,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 111).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo1
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr1
+                animExo()
             }
         }  
         if(document.getElementById(nbObjectif - 110)) {
@@ -334,6 +342,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 110).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo2
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr2
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 109)) {
@@ -341,6 +350,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 109).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo3
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr3
+                animExo()
             }
         }   
         if(document.getElementById(nbObjectif - 108)) {
@@ -348,6 +358,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 108).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo4
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr4
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 107)) {
@@ -355,6 +366,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 107).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo5
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr5
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 106)) {
@@ -362,6 +374,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 106).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo6
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr6
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif -105 )) {
@@ -369,6 +382,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 105).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo7
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr7
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 104)) {
@@ -376,6 +390,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 104).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo8
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr8
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 103)) {
@@ -383,6 +398,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 103).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo9
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr9
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 102)) {
@@ -390,6 +406,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 102).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo10
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr10
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 101)) {
@@ -397,6 +414,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 101).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo11
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr11
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 100)) {
@@ -404,6 +422,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 100).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo12
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr12
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 99)) {
@@ -411,6 +430,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 99).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo13
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr13
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 98)) {
@@ -418,6 +438,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 98).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo14
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr14
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 97)) {
@@ -425,6 +446,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 97).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo15
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr15
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 96)) {
@@ -432,6 +454,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 96).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo16
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr16
+                animExo()
             }  
         }
         if(document.getElementById(nbObjectif - 95)) {
@@ -439,6 +462,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 95).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo17
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr17
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 94)) {
@@ -446,6 +470,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 94).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo18
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr18
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 93)) {
@@ -453,6 +478,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 93).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo19
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr19
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 92)) {
@@ -460,6 +486,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 92).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo20
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr20
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 91)) {
@@ -467,6 +494,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 91).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo21
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr21
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 90)) {
@@ -474,6 +502,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 90).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo22
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr22
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 89)) {
@@ -481,6 +510,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 89).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo23
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr23
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 88)) {
@@ -488,6 +518,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 88).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo24
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr24
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 87)) {
@@ -495,6 +526,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 87).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo25
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr25
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 86)) {
@@ -502,6 +534,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 86).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo26
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr26
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 85)) {
@@ -509,6 +542,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 85).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo27
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr27
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 84)) {
@@ -516,6 +550,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 84).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo28
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr28
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 83)) {
@@ -523,6 +558,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 83).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo29
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr29
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 82)) {
@@ -530,6 +566,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 82).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo30
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr30
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 81)) {
@@ -537,6 +574,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 81).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo31
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr31
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 80)) {
@@ -544,6 +582,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 80).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo32
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr32
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 79)) {
@@ -551,6 +590,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 79).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo33
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr33
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 78)) {
@@ -558,6 +598,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 78).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo34
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr34
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 77)) {
@@ -565,6 +606,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 77).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo35
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr35
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 76)) {
@@ -572,6 +614,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 76).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo36
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr36
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 75)) {
@@ -579,6 +622,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 75).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo37
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr37
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 74)) {
@@ -586,6 +630,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 74).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo38
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr38
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 73)) {
@@ -593,6 +638,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 73).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo39
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr39
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 72)) {
@@ -600,6 +646,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 72).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo40
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr40
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 71)) {
@@ -607,6 +654,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 71).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo41
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr41
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 70)) {
@@ -614,6 +662,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 70).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo42
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr42
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 69)) {
@@ -621,6 +670,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 69).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo43
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr43
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 68)) {
@@ -628,6 +678,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 68).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo44
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr44
+                animExo()
             }    
         }
         if(document.getElementById(nbObjectif - 67)) {
@@ -635,6 +686,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 67).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo45
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr45
+                animExo()
             } 
         }
         if(document.getElementById(nbObjectif - 66)) {
@@ -642,6 +694,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 66).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo46
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr46
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 65)) {
@@ -649,6 +702,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 65).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo47
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr47
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 64)) {
@@ -656,6 +710,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 64).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo48
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr48
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 63)) {
@@ -663,6 +718,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 63).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo49
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr49
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 62)) {
@@ -670,6 +726,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 62).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo50
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr50
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 61)) {
@@ -677,6 +734,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 61).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo51
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr51
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 60)) {
@@ -684,6 +742,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 60).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo52
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr52
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 59)) {
@@ -691,6 +750,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 59).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo53
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr53
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 58)) {
@@ -698,6 +758,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 58).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo54
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr54
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 57)) {
@@ -705,6 +766,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 57).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo55
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr55
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 56)) {
@@ -712,6 +774,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 56).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo56
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr56
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 55)) {
@@ -719,6 +782,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 55).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo57
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr57
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 54)) {
@@ -726,6 +790,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 54).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo58
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr58
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 53)) {
@@ -733,6 +798,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 53).innerText + " " + monthA[Number(sessionStorage.month)]  
                 document.getElementById("exoInstruction").innerText = localStorage.exo59
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr59
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 52)) {
@@ -740,6 +806,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 52).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo60
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr60
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 51)) {
@@ -747,6 +814,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 51).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo61
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr61
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 50)) {
@@ -754,6 +822,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 50).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo62
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr62
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 49)) {
@@ -761,6 +830,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 49).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo63
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr63
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 48)) {
@@ -768,6 +838,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 48).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo64
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr64
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 47)) {
@@ -775,6 +846,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 47).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo65
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr65
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 46)) {
@@ -782,6 +854,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 46).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo66
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr66
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 45)) {
@@ -789,6 +862,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 45).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo67
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr67
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 44)) {
@@ -796,6 +870,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 44).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo68
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr68
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 43)) {
@@ -803,6 +878,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 43).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo69
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr69
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 42)) {
@@ -810,6 +886,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 42).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo70
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr70
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 41)) {
@@ -817,6 +894,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 41).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo71
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr71
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 40)) {
@@ -824,6 +902,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 40).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo72
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr72
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 39)) {
@@ -831,6 +910,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 39).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo73
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr73
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 38)) {
@@ -838,6 +918,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 38).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo74
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr74
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 37)) {
@@ -845,6 +926,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 37).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo75
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr75
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 36)) {
@@ -852,6 +934,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 36).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo76
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr76
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 35)) {
@@ -859,6 +942,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 35).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo77
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr77
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 34)) {
@@ -866,6 +950,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 34).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo78
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr78
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 33)) {
@@ -873,6 +958,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 33).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo79
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr79
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 32)) {
@@ -880,6 +966,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 32).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo80
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr80
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 31)) {
@@ -887,6 +974,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 31).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo81
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr81
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 30)) {
@@ -894,6 +982,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 30).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo82
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr82
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 29)) {
@@ -901,6 +990,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 29).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo83
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr83
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 28)) {
@@ -908,6 +998,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 28).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo84
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr84
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 27)) {
@@ -915,6 +1006,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 27).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo85
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr85
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 26)) {
@@ -922,6 +1014,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 26).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo86
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr86
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 25)) {
@@ -929,6 +1022,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 25).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo87
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr87
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 24)) {
@@ -936,6 +1030,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 24).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo88
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr88
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 23)) {
@@ -943,6 +1038,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 23).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo89
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr89
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 22)) {
@@ -950,6 +1046,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 22).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo90
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr90
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 21)) {
@@ -957,6 +1054,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 21).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo91
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr91
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 20)) {
@@ -964,6 +1062,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 20).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo92
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr92
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 19)) {
@@ -971,6 +1070,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 19).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo93
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr93
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 18)) {
@@ -978,6 +1078,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 18).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo94
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr94
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 17)) {
@@ -985,6 +1086,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 17).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo95
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr95
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 16)) {
@@ -992,6 +1094,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 16).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo96
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr96
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 15)) {
@@ -999,6 +1102,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 15).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo97
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr97
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 14)) {
@@ -1006,6 +1110,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 14).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo98
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr98
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 13)) {
@@ -1013,6 +1118,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 13).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo99
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr99
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 12)) {
@@ -1020,6 +1126,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 12).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo100
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr100
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 11)) {
@@ -1027,6 +1134,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 11).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo101
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr101
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 10)) {
@@ -1034,6 +1142,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 10).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo102
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr102
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 9)) {
@@ -1041,6 +1150,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 9).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo103
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr103
+                animExo()
             } 
         }
         if(document.getElementById(nbObjectif - 8)) {
@@ -1048,6 +1158,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 8).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo104
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr104
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 7)) {
@@ -1055,6 +1166,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 7).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo105
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr105
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 6)) {
@@ -1062,6 +1174,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 6).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo106
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr106
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 5)) {
@@ -1069,6 +1182,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 5).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo107
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr107
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 4)) {
@@ -1076,6 +1190,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 4).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo108
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr108
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 3)) {
@@ -1083,6 +1198,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 3).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo109
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr109
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 2)) {
@@ -1090,6 +1206,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 2).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo110
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr110
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 1)) {
@@ -1097,13 +1214,15 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 1).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo111
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr111
+                animExo()
             }
         }  
         if(document.getElementById(nbObjectif)) {
             document.getElementById(nbObjectif).onclick = function() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 1).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo112
-                document.getElementById("exo").style.backgroundColor = localStorage.exoClr
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr112
+                animExo()
             }
         }  
     }
@@ -1114,6 +1233,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 83).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo1
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr1
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 82)) {
@@ -1121,6 +1241,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 82).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo2
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr2
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 81)) {
@@ -1128,6 +1249,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 81).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo3
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr3
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 80)) {
@@ -1135,6 +1257,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 80).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo4
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr4
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 79)) {
@@ -1142,6 +1265,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 79).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo5
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr5
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 78)) {
@@ -1149,6 +1273,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 78).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo6
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr6
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 77)) {
@@ -1156,6 +1281,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 77).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo7
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr7
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 76)) {
@@ -1163,6 +1289,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 76).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo8
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr8
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 75)) {
@@ -1170,6 +1297,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 75).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo9
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr9
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 74)) {
@@ -1177,6 +1305,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 74).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo10
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr10
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 73)) {
@@ -1184,6 +1313,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 73).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo11
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr11
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 72)) {
@@ -1191,6 +1321,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 72).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo12
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr12
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 71)) {
@@ -1198,6 +1329,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 71).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo13
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr13
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 70)) {
@@ -1205,6 +1337,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 70).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo14
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr14
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 69)) {
@@ -1212,6 +1345,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 69).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo15
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr15
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 68)) {
@@ -1219,6 +1353,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 68).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo16
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr16
+                animExo()
             }    
         }
         if(document.getElementById(nbObjectif - 67)) {
@@ -1226,6 +1361,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 67).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo17
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr17
+                animExo()
             } 
         }
         if(document.getElementById(nbObjectif - 66)) {
@@ -1233,6 +1369,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 66).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo18
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr18
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 65)) {
@@ -1240,6 +1377,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 65).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo19
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr19
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 64)) {
@@ -1247,6 +1385,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 64).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo20
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr20
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 63)) {
@@ -1254,6 +1393,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 63).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo21
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr21
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 62)) {
@@ -1261,6 +1401,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 62).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo22
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr22
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 61)) {
@@ -1268,6 +1409,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 61).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo23
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr23
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 60)) {
@@ -1275,6 +1417,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 60).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo24
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr24
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 59)) {
@@ -1282,6 +1425,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 59).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo25
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr25
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 58)) {
@@ -1289,6 +1433,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 58).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo26
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr26
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 57)) {
@@ -1296,6 +1441,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 57).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo27
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr27
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 56)) {
@@ -1303,6 +1449,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 56).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo28
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr28
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 55)) {
@@ -1310,6 +1457,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 55).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo29
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr29
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 54)) {
@@ -1317,6 +1465,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 54).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo30
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr30
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 53)) {
@@ -1324,6 +1473,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 53).innerText + " " + monthA[Number(sessionStorage.month)]  
                 document.getElementById("exoInstruction").innerText = localStorage.exo31
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr31
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 52)) {
@@ -1331,6 +1481,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 52).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo32
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr32
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 51)) {
@@ -1338,6 +1489,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 51).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo33
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr33
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 50)) {
@@ -1345,6 +1497,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 50).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo34
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr34
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 49)) {
@@ -1352,6 +1505,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 49).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo35
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr35
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 48)) {
@@ -1359,6 +1513,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 48).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo36
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr36
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 47)) {
@@ -1366,6 +1521,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 47).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo37
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr37
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 46)) {
@@ -1373,6 +1529,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 46).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo38
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr38
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 45)) {
@@ -1380,6 +1537,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 45).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo39
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr39
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 44)) {
@@ -1387,6 +1545,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 44).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo40
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr40
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 43)) {
@@ -1394,6 +1553,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 43).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo41
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr41
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 42)) {
@@ -1401,6 +1561,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 42).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo42
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr42
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 41)) {
@@ -1408,6 +1569,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 41).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo43
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr43
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 40)) {
@@ -1415,6 +1577,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 40).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo44
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr44
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 39)) {
@@ -1422,6 +1585,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 39).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo45
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr45
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 38)) {
@@ -1429,6 +1593,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 38).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo46
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr46
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 37)) {
@@ -1436,6 +1601,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 37).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo47
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr47
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 36)) {
@@ -1443,6 +1609,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 36).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo48
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr48
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 35)) {
@@ -1450,6 +1617,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 35).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo49
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr49
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 34)) {
@@ -1457,6 +1625,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 34).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo50
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr50
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 33)) {
@@ -1464,6 +1633,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 33).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo51
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr51
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 32)) {
@@ -1471,6 +1641,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 32).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo52
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr52
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 31)) {
@@ -1478,6 +1649,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 31).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo53
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr53
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 30)) {
@@ -1485,6 +1657,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 30).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo54
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr54
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 29)) {
@@ -1492,6 +1665,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 29).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo55
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr55
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 28)) {
@@ -1499,6 +1673,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 28).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo56
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr56
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 27)) {
@@ -1506,6 +1681,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 27).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo57
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr57
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 26)) {
@@ -1513,6 +1689,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 26).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo58
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr58
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 25)) {
@@ -1520,6 +1697,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 25).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo59
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr59
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 24)) {
@@ -1527,6 +1705,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 24).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo60
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr60
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 23)) {
@@ -1534,6 +1713,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 23).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo61
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr61
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 22)) {
@@ -1541,6 +1721,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 22).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo62
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr62
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 21)) {
@@ -1548,6 +1729,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 21).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo63
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr63
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 20)) {
@@ -1555,6 +1737,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 20).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo64
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr64
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 19)) {
@@ -1562,6 +1745,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 19).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo65
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr65
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 18)) {
@@ -1569,6 +1753,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 18).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo66
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr66
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 17)) {
@@ -1576,6 +1761,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 17).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo67
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr67
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 16)) {
@@ -1583,6 +1769,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 16).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo68
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr68
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 15)) {
@@ -1590,6 +1777,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 15).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo69
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr69
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 14)) {
@@ -1597,6 +1785,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 14).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo70
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr70
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 13)) {
@@ -1604,6 +1793,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 13).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo71
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr71
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 12)) {
@@ -1611,6 +1801,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 12).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo72
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr72
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 11)) {
@@ -1618,6 +1809,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 11).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo73
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr73
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 10)) {
@@ -1625,6 +1817,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 10).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo74
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr74
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 9)) {
@@ -1632,6 +1825,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 9).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo75
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr75
+                animExo()
             } 
         }
         if(document.getElementById(nbObjectif - 8)) {
@@ -1639,6 +1833,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 8).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo76
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr76
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 7)) {
@@ -1646,6 +1841,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 7).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo77
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr77
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 6)) {
@@ -1653,6 +1849,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 6).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo78
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr78
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 5)) {
@@ -1660,6 +1857,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 5).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo79
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr79
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 4)) {
@@ -1667,6 +1865,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 4).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo80
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr80
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 3)) {
@@ -1674,6 +1873,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 3).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo81
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr81
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 2)) {
@@ -1681,6 +1881,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 2).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo82
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr82
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 1)) {
@@ -1688,6 +1889,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 1).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo83
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr83
+                animExo()
             }
         }  
         if(document.getElementById(nbObjectif)) {
@@ -1695,6 +1897,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 1).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo84
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr84
+                animExo()
             }
         }  
     }
@@ -1705,6 +1908,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 55).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo1
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr1
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 54)) {
@@ -1712,6 +1916,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 54).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo2
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr2
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 53)) {
@@ -1719,6 +1924,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 53).innerText + " " + monthA[Number(sessionStorage.month)]  
                 document.getElementById("exoInstruction").innerText = localStorage.exo3
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr3
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 52)) {
@@ -1726,6 +1932,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 52).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo4
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr4
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 51)) {
@@ -1733,6 +1940,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 51).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo5
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr5
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 50)) {
@@ -1740,6 +1948,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 50).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo6
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr6
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 49)) {
@@ -1747,6 +1956,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 49).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo7
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr7
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 48)) {
@@ -1754,6 +1964,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 48).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo8
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr8
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 47)) {
@@ -1761,6 +1972,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 47).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo9
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr9
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 46)) {
@@ -1768,6 +1980,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 46).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo10
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr10
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 45)) {
@@ -1775,6 +1988,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 45).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo11
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr11
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 44)) {
@@ -1782,6 +1996,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 44).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo12
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr12
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 43)) {
@@ -1789,6 +2004,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 43).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo13
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr13
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 42)) {
@@ -1796,6 +2012,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 42).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo14
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr14
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 41)) {
@@ -1803,6 +2020,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 41).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo15
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr15
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 40)) {
@@ -1810,6 +2028,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 40).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo16
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr16
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 39)) {
@@ -1817,6 +2036,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 39).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo17
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr17
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 38)) {
@@ -1824,6 +2044,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 38).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo18
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr18
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 37)) {
@@ -1831,6 +2052,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 37).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo19
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr19
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 36)) {
@@ -1838,6 +2060,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 36).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo20
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr20
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 35)) {
@@ -1845,6 +2068,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 35).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo21
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr21
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 34)) {
@@ -1852,6 +2076,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 34).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo22
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr22
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 33)) {
@@ -1859,6 +2084,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 33).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo23
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr23
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 32)) {
@@ -1866,6 +2092,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 32).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo24
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr24
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 31)) {
@@ -1873,6 +2100,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 31).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo25
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr25
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 30)) {
@@ -1880,6 +2108,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 30).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo26
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr26
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 29)) {
@@ -1887,6 +2116,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 29).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo27
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr27
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 28)) {
@@ -1894,6 +2124,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 28).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo28
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr28
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 27)) {
@@ -1901,6 +2132,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 27).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo29
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr29
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 26)) {
@@ -1908,6 +2140,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 26).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo30
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr30
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 25)) {
@@ -1915,6 +2148,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 25).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo31
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr31
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 24)) {
@@ -1922,6 +2156,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 24).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo32
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr32
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 23)) {
@@ -1929,6 +2164,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 23).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo33
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr33
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 22)) {
@@ -1936,6 +2172,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 22).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo34
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr34
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 21)) {
@@ -1943,6 +2180,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 21).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo35
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr35
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 20)) {
@@ -1950,6 +2188,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 20).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo36
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr36
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 19)) {
@@ -1957,6 +2196,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 19).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo37
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr37
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 18)) {
@@ -1964,6 +2204,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 18).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo38
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr38
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 17)) {
@@ -1971,6 +2212,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 17).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo39
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr39
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 16)) {
@@ -1978,6 +2220,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 16).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo40
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr40
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 15)) {
@@ -1985,6 +2228,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 15).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo41
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr41
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 14)) {
@@ -1992,6 +2236,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 14).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo42
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr42
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 13)) {
@@ -1999,6 +2244,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 13).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo43
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr43
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 12)) {
@@ -2006,6 +2252,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 12).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo44
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr44
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 11)) {
@@ -2013,6 +2260,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 11).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo45
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr45
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 10)) {
@@ -2020,6 +2268,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 10).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo46
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr46
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 9)) {
@@ -2027,6 +2276,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 9).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo47
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr47
+                animExo()
             } 
         }
         if(document.getElementById(nbObjectif - 8)) {
@@ -2034,6 +2284,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 8).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo48
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr48
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 7)) {
@@ -2041,6 +2292,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 7).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo49
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr49
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 6)) {
@@ -2048,6 +2300,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 6).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo50
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr50
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 5)) {
@@ -2055,6 +2308,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 5).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo51
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr51
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 4)) {
@@ -2062,6 +2316,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 4).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo52
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr52
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 3)) {
@@ -2069,6 +2324,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 3).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo53
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr53
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 2)) {
@@ -2076,6 +2332,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 2).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo54
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr54
+                animExo()
             }
         }
         if(document.getElementById(nbObjectif - 1)) {
@@ -2083,6 +2340,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 1).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo55
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr55
+                animExo()
             }
         }  
         if(document.getElementById(nbObjectif)) {
@@ -2090,6 +2348,7 @@ function prgRouleur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 1).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo56
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr56
+                animExo()
             }
         }  
     }
