@@ -5,17 +5,6 @@
     margin-left: 0px;
 }
 
-#right{
-    background-color:  rgb(71, 71, 71);
-    position: absolute;
-    display: inline-block;
-    width: 40%;
-    height: 440px;
-    margin-left: 30px;
-    margin-top: 7px;
-    border-radius: 20px;
-}
-
 .objectif_div{
     display: block;
     margin-bottom: 20px;

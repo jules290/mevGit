@@ -8,18 +8,754 @@ $("#down").click(function() {
 
 $(document).ready(function() {
     prgGrimpeur();
-    $("#graph1").hide()
+    $("#graphMy").hide()
 })
 
 function prgGrimpeur() {
+    let pSprint;
+    let p30sec;
+    let p1min;
+    let pPMA;
+    let p10min;
+    let pSeuil;
+    let pFTP;
+    let pEndurance;
+    if (Number(localStorage.PMA) > 1 || Number(localStorage.FTP) > 1) {
+        pSprint = localStorage.pSprint;
+        p30sec = localStorage.p30sec;
+        p1min = localStorage.p1min;
+        pPMA30sec_30sec = localStorage.pPMA30sec_30sec;
+        pPMA = localStorage.PMA;
+        p10min = localStorage.p10min;
+        pSeuil = localStorage.pSeuil;
+        pFTP = localStorage.pFTP;
+        pEndurance = localStorage.pEndurance;
+    }
+    else if (Number(localStorage.fcMax) > 1) {
+
+    }
+    else {
+        pSprint = "300% PMA"
+        pPMA30sec_30sec = "130% PMA"
+        pPMA = "100% PMA"
+        pSeuil = "90% PMA"
+        pEndurance = "50% - 65% PMA"
+    }
+    
     function animExo() {
-        $("#graph1").hide()
+        $("#graphMy").hide()
         $("#exoInstruction").animate({paddingTop: '24%'}, 0);
-        if(document.getElementById("exoInstruction").innerHTML !== "jour de repos") {
+        if(document.getElementById("exoInstruction").innerHTML !== "jour de repos" && document.getElementById("exoInstruction").innerHTML !== "objectif") {
             $("#exoInstruction").animate({paddingTop: '0px'}, 500);
-            $("#graph1").show(500)
+            $("#graphMy").show(500)
         }
     }
+
+    const canvas = document.getElementById("graphExo");
+    const ctx = canvas.getContext("2d");
+    const maxH = 220;
+    const maxL = 350;
+
+    $(".dt_nb").click(function () {
+        $("#detailsSeance").empty()
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        document.getElementById("exoDetails").innerText = ""
+    })
+
+    function endurance(){
+        $("#detailsSeance").empty()
+        var div = document.createElement("div");
+        var h1 = document.createElement("h1");
+        div.style.width = "96%";
+        div.style.height = "30px";
+        div.style.marginLeft = "2%";
+        div.style.marginRight = "2%";
+        div.style.marginTop = "-10px";
+        div.style.background = "green";
+        div.style.borderRadius = "5px"
+        div.style.color = "white";
+        h1.style.fontSize ="15px"
+        h1.style.padding = "5px";
+        h1.style.textAlign = "end"
+        h1.innerHTML = "entre 2H et 6H" + " " + "@" + " " + pEndurance;
+        
+        div.appendChild(h1);
+        document.getElementById("detailsSeance").appendChild(div);
+
+        let iEndurance = maxH * 0.10
+
+        document.getElementById("exoDetails").innerText = "entre 2H et 6H"
+
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = "green";
+        ctx.fillRect(0, maxH - iEndurance, maxL, iEndurance)
+    }
+
+    function seuil(){
+        let rep = Number(sessionStorage.rep) + Number(localStorage.lvlSeuil);
+        $("#detailsSeance").empty()
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        let iRecup = maxH * 0.10;
+        let iSeuil = maxH * 0.60;
+        let LgrExo = 0;
+        let tpsEffort = 10 * rep;
+        let tps = 0;
+        let init = 0;
+        let lgrEchauffement = 0;
+        let lgrSeuil;
+
+        switch(Number(sessionStorage.serie)) {
+            case 1:
+                document.getElementById("exoDetails").innerText = 
+                rep + " "+ "x"+ " " + "5min/5min";
+                LgrExo = 10 + tpsEffort + 10;
+                lgrEchauffement = 10 / LgrExo;
+                lgrSeuil = 5 / LgrExo;
+                tps = 0 ; 
+                recupDetails()
+                échauffement()
+                tps =  lgrEchauffement * maxL;
+                seuilDetails()
+                while (init < rep) {
+                    seuilRep()
+                    tps = tps + lgrSeuil * maxL + lgrSeuil * maxL;
+                    init++;
+                }
+                recupDetails()
+                recup()
+              break;
+            case 2:
+                document.getElementById("exoDetails").innerText = 
+                sessionStorage.serie + " " + "x" + " " + rep + " "+ "x"+ " " + "5min/5min";
+                LgrExo = 10 + tpsEffort + 10 + tpsEffort + 10;
+                lgrEchauffement = 10 / LgrExo;
+                lgrSeuil = 5 / LgrExo;
+                tps = 0 ; 
+                recupDetails()
+                échauffement()
+                tps =  lgrEchauffement * maxL;
+                seuilDetails()
+                while (init < rep) {
+                    seuilRep()
+                    tps = tps + lgrSeuil * maxL + lgrSeuil * maxL;
+                    init++;
+                }
+                recupDetails()
+                recup()
+                tps = tps + lgrEchauffement * maxL
+                init = 0
+                seuilDetails()
+                while (init < rep) {
+                    seuilRep()
+                    tps = tps + lgrSeuil * maxL + lgrSeuil * maxL;
+                    init++;
+                }
+                recupDetails()
+                recup()
+              break;
+            case 3:
+                document.getElementById("exoDetails").innerText = 
+                sessionStorage.serie + " " + "x" + " " + rep + " "+ "x"+ " " + "5min/5min";
+                LgrExo = 10 + tpsEffort + 10 + tpsEffort + 10 + tpsEffort + 10;
+                lgrEchauffement = 10 / LgrExo;
+                lgrSeuil = 5 / LgrExo;
+                tps = 0 ; 
+                recupDetails()
+                échauffement()
+                tps =  lgrEchauffement * maxL;
+                seuilDetails()
+                while (init < rep) {
+                    seuilRep()
+                    tps = tps + lgrSeuil * maxL + lgrSeuil * maxL;
+                    init++;
+                }
+                recupDetails()
+                recup()
+                tps = tps + lgrEchauffement * maxL
+                init = 0
+                seuilDetails()
+                while (init < rep) {
+                    seuilRep()
+                    tps = tps + lgrSeuil * maxL + lgrSeuil * maxL;
+                    init++;
+                }
+                recupDetails()
+                recup()
+                tps = tps + lgrEchauffement * maxL
+                init = 0
+                seuilDetails()
+                while (init < rep) {
+                    seuilRep()
+                    tps = tps + lgrSeuil * maxL + lgrSeuil * maxL;
+                    init++;
+                }
+                recupDetails()
+                recup()
+              break;
+            case 4:
+                document.getElementById("exoDetails").innerText = 
+                sessionStorage.serie + " " + "x" + " " + rep + " "+ "x"+ " " + "5min/5min";
+                LgrExo = 10 + tpsEffort + 10 + tpsEffort + 10 + tpsEffort + 10 + tpsEffort + 10;
+                lgrEchauffement = 10 / LgrExo;
+                lgrSeuil = 5 / LgrExo;
+                tps = 0 ; 
+                recupDetails()
+                échauffement()
+                tps =  lgrEchauffement * maxL
+                seuilDetails()
+                while (init < rep) {
+                    seuilRep()
+                    tps = tps + lgrSeuil * maxL + lgrSeuil * maxL;
+                    init++;
+                }
+                recupDetails()
+                recup()
+                tps = tps + lgrEchauffement * maxL
+                init = 0
+                seuilDetails()
+                while (init < rep) {
+                    seuilRep()
+                    tps = tps + lgrSeuil * maxL + lgrSeuil * maxL;
+                    init++;
+                }
+                recupDetails()
+                recup()
+                tps = tps + lgrEchauffement * maxL
+                init = 0
+                seuilDetails()
+                while (init < rep) {
+                    seuilRep()
+                    tps = tps + lgrSeuil * maxL + lgrSeuil * maxL;
+                    init++;
+                }
+                recupDetails()
+                recup()
+                tps = tps + lgrEchauffement * maxL
+                init = 0
+                seuilDetails()
+                while (init < rep) {
+                    seuilRep()
+                    tps = tps + lgrSeuil * maxL + lgrSeuil * maxL;
+                    init++;
+                }
+                recupDetails()
+                recup()
+              break;
+        }
+
+        function recupDetails() {
+            var div = document.createElement("div");
+            var h1 = document.createElement("h1");
+            div.style.width = "96%";
+            div.style.height = "30px";
+            div.style.marginLeft = "2%";
+            div.style.marginRight = "2%";
+            div.style.marginTop = "-10px";
+            div.style.marginBottom = "13px";
+            div.style.background = "green";
+            div.style.borderRadius = "5px";
+            h1.style.fontSize ="15px";
+            h1.style.padding = "5px";
+            h1.style.textAlign = "end"
+            h1.innerHTML = "10 min" + " " + "@" + " " + pEndurance;
+            div.appendChild(h1);
+            document.getElementById("detailsSeance").appendChild(div);
+        }
+
+        function seuilDetails() {
+            var div = document.createElement("div");
+            var X = document.createElement("h1");
+            var h1 = document.createElement("h1");
+            var h1_2 = document.createElement("h1");
+            div.style.width = "96%";
+            div.style.height = "50px";
+            div.style.marginLeft = "2%";
+            div.style.marginRight = "2%";
+            div.style.marginTop = "-10px";
+            div.style.background = "#bebe02";
+            div.style.borderRadius = "5px";
+            X.style.fontSize ="15px";
+            X.style.padding = "5px";
+            X.innerHTML = "X" + " " + rep;
+            X.style.position = "relativ"
+            X.style.marginTop = "10px"
+            h1.style.fontSize ="15px";
+            h1.style.padding = "5px";
+            h1.style.marginTop = "-45px"
+            h1.style.textAlign = "end"
+            h1.innerHTML = "5 min" + " " + "@" + " " + pSeuil;
+            h1_2.style.marginTop = "-21px"
+            h1_2.style.fontSize ="15px";
+            h1_2.style.padding = "5px";
+            h1_2.style.textAlign = "end"
+            h1_2.innerHTML = "5 min" + " " + "@" + " " + pEndurance;
+            div.appendChild(X);
+            div.appendChild(h1);
+            div.appendChild(h1_2);
+            document.getElementById("detailsSeance").appendChild(div);
+        }
+
+        function échauffement() {
+            let lgrEchauffement = 10 / LgrExo;
+            ctx.fillStyle = "green";
+            ctx.fillRect(tps, maxH - iRecup, lgrEchauffement * maxL, iRecup)
+        }
+        function seuilRep() {
+            ctx.fillStyle = "yellow";
+            ctx.fillRect(tps, maxH - iSeuil, lgrSeuil * maxL, iSeuil)
+            ctx.fillStyle = "green";
+            ctx.fillRect(tps + lgrSeuil * maxL, maxH - iRecup, lgrSeuil * maxL, iRecup)
+        }
+        function recup() {
+            ctx.fillStyle = "green";
+            ctx.fillRect(tps, maxH - iRecup, lgrEchauffement * maxL, iRecup)
+        }
+    }
+
+    function PMA(){
+        let rep = Number(sessionStorage.rep) + Number(localStorage.lvlPMA);
+        $("#detailsSeance").empty()
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        let iRecup = maxH * 0.10;
+        let iPMA = maxH * 0.70;
+        let LgrExo = 0;
+        let tpsEffort = 1 * rep;
+        let tps = 0;
+        let init = 0;
+        let lgrEchauffement = 0;
+        let lgrPMA;
+
+        switch(Number(sessionStorage.serie)) {
+            case 1:
+                document.getElementById("exoDetails").innerText = 
+                rep + " "+ "x"+ " " + "30sec/30sec";
+                LgrExo = 10 + tpsEffort + 10;
+                lgrEchauffement = 10 / LgrExo;
+                lgrPMA = 0.5 / LgrExo;
+                tps = 0 ; 
+                recupDetails()
+                échauffement()
+                tps =  lgrEchauffement * maxL;
+                PMADetails()
+                while (init < rep) {
+                    PMARep()
+                    tps = tps + lgrPMA * maxL + lgrPMA * maxL;
+                    init++;
+                }
+                recupDetails()
+                recup()
+              break;
+            case 2:
+                document.getElementById("exoDetails").innerText = 
+                sessionStorage.serie + " " + "x" + " " + rep + " "+ "x"+ " " + "30sec/30sec";
+                LgrExo = 10 + tpsEffort + 10 + tpsEffort + 10;
+                lgrEchauffement = 10 / LgrExo;
+                lgrPMA = 0.5 / LgrExo;
+                tps = 0 ; 
+                recupDetails()
+                échauffement()
+                tps =  lgrEchauffement * maxL;
+                PMADetails()
+                while (init < rep) {
+                    PMARep()
+                    tps = tps + lgrPMA * maxL + lgrPMA * maxL;
+                    init++;
+                }
+                recupDetails()
+                recup()
+                tps = tps + lgrEchauffement * maxL
+                init = 0
+                PMADetails()
+                while (init < rep) {
+                    PMARep()
+                    tps = tps + lgrPMA * maxL + lgrPMA * maxL;
+                    init++;
+                }
+                recupDetails()
+                recup()
+              break;
+            case 3:
+                document.getElementById("exoDetails").innerText = 
+                sessionStorage.serie + " " + "x" + " " + rep + " "+ "x"+ " " + "30sec/30sec";
+                LgrExo = 10 + tpsEffort + 10 + tpsEffort + 10 + tpsEffort + 10;
+                lgrEchauffement = 10 / LgrExo;
+                lgrPMA = 0.5 / LgrExo;
+                tps = 0 ; 
+                recupDetails()
+                échauffement()
+                tps =  lgrEchauffement * maxL;
+                PMADetails()
+                while (init < rep) {
+                    PMARep()
+                    tps = tps + lgrPMA * maxL + lgrPMA * maxL;
+                    init++;
+                }
+                recupDetails()
+                recup()
+                tps = tps + lgrEchauffement * maxL
+                init = 0
+                PMADetails()
+                while (init < rep) {
+                    PMARep()
+                    tps = tps + lgrPMA * maxL + lgrPMA * maxL;
+                    init++;
+                }
+                recupDetails()
+                recup()
+                tps = tps + lgrEchauffement * maxL
+                init = 0
+                PMADetails()
+                while (init < rep) {
+                    PMARep()
+                    tps = tps + lgrPMA * maxL + lgrPMA * maxL;
+                    init++;
+                }
+                recupDetails()
+                recup()
+              break;
+            case 4:
+                document.getElementById("exoDetails").innerText = 
+                sessionStorage.serie + " " + "x" + " " + rep + " "+ "x"+ " " + "30sec/30sec";
+                LgrExo = 10 + tpsEffort + 10 + tpsEffort + 10 + tpsEffort + 10 + tpsEffort + 10;
+                lgrEchauffement = 10 / LgrExo;
+                lgrPMA = 0.5 / LgrExo;
+                tps = 0 ; 
+                recupDetails()
+                échauffement()
+                tps =  lgrEchauffement * maxL
+                PMADetails()
+                while (init < rep) {
+                    PMARep()
+                    tps = tps + lgrPMA * maxL + lgrPMA * maxL;
+                    init++;
+                }
+                recupDetails()
+                recup()
+                tps = tps + lgrEchauffement * maxL
+                init = 0
+                PMADetails()
+                while (init < rep) {
+                    PMARep()
+                    tps = tps + lgrPMA * maxL + lgrPMA * maxL;
+                    init++;
+                }
+                recupDetails()
+                recup()
+                tps = tps + lgrEchauffement * maxL
+                init = 0
+                PMADetails()
+                while (init < rep) {
+                    PMARep()
+                    tps = tps + lgrPMA * maxL + lgrPMA * maxL;
+                    init++;
+                }
+                recupDetails()
+                recup()
+                tps = tps + lgrEchauffement * maxL
+                init = 0
+                PMADetails()
+                while (init < rep) {
+                    PMARep()
+                    tps = tps + lgrPMA * maxL + lgrPMA * maxL;
+                    init++;
+                }
+                recupDetails()
+                recup()
+              break;
+        }
+
+        function recupDetails() {
+            var div = document.createElement("div");
+            var h1 = document.createElement("h1");
+            div.style.width = "96%";
+            div.style.height = "30px";
+            div.style.marginLeft = "2%";
+            div.style.marginRight = "2%";
+            div.style.marginTop = "-10px";
+            div.style.marginBottom = "13px";
+            div.style.background = "green";
+            div.style.borderRadius = "5px";
+            h1.style.fontSize ="15px";
+            h1.style.padding = "5px";
+            h1.style.textAlign = "end"
+            h1.innerHTML = "10 min" + " " + "@" + " " + pEndurance;
+            div.appendChild(h1);
+            document.getElementById("detailsSeance").appendChild(div);
+        }
+
+        function PMADetails() {
+            var div = document.createElement("div");
+            var X = document.createElement("h1");
+            var h1 = document.createElement("h1");
+            var h1_2 = document.createElement("h1");
+            div.style.width = "96%";
+            div.style.height = "50px";
+            div.style.marginLeft = "2%";
+            div.style.marginRight = "2%";
+            div.style.marginTop = "-10px";
+            div.style.background = "orange";
+            div.style.borderRadius = "5px";
+            X.style.fontSize ="15px";
+            X.style.padding = "5px";
+            X.innerHTML = "X" + " " + rep;
+            X.style.position = "relativ"
+            X.style.marginTop = "10px"
+            h1.style.fontSize ="15px";
+            h1.style.padding = "5px";
+            h1.style.marginTop = "-45px"
+            h1.style.textAlign = "end"
+            h1.innerHTML = "30 sec" + " " + "@" + " " + pPMA30sec_30sec;
+            h1_2.style.marginTop = "-21px"
+            h1_2.style.fontSize ="15px";
+            h1_2.style.padding = "5px";
+            h1_2.style.textAlign = "end"
+            h1_2.innerHTML = "30 sec" + " " + "@" + " " + pEndurance;
+            div.appendChild(X);
+            div.appendChild(h1);
+            div.appendChild(h1_2);
+            document.getElementById("detailsSeance").appendChild(div);
+        }
+
+        function échauffement() {
+            let lgrEchauffement = 10 / LgrExo;
+            ctx.fillStyle = "green";
+            ctx.fillRect(tps, maxH - iRecup, lgrEchauffement * maxL, iRecup)
+        }
+        function PMARep() {
+            let lgrPMA = 0.5 / LgrExo;
+            ctx.fillStyle = "orange";
+            ctx.fillRect(tps, maxH - iPMA, lgrPMA * maxL, iPMA)
+            ctx.fillStyle = "green";
+            ctx.fillRect(tps + lgrPMA * maxL, maxH - iRecup, lgrPMA * maxL, iRecup)
+        }
+        function recup() {
+            ctx.fillStyle = "green";
+            ctx.fillRect(tps, maxH - iRecup, lgrEchauffement * maxL, iRecup)
+        }
+    }
+
+    function sprint(){
+        let rep = Number(sessionStorage.rep) + Number(localStorage.lvlSprint);
+        $("#detailsSeance").empty()
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        let iRecup = maxH * 0.10;
+        let iSprint = maxH * 0.90;
+        let LgrExo = 0;
+        let tpsEffort = 0.4 * rep;
+        let tps = 0;
+        let init = 0;
+        let lgrEchauffement = 0;
+        let lgrSprint ;
+
+        switch(Number(sessionStorage.serie)) {
+            case 1:
+                document.getElementById("exoDetails").innerText = 
+                rep + " "+ "x"+ " " + "12sec/2min";
+                LgrExo = 10 + tpsEffort + 10;
+                lgrEchauffement = 10 / LgrExo;
+                lgrSprint = 0.2 / LgrExo;
+                tps = 0 ; 
+                recupDetails()
+                échauffement()
+                tps =  lgrEchauffement * maxL;
+                sprintDetails()
+                while (init < rep) {
+                    sprintRep()
+                    tps = tps + lgrSprint * maxL + lgrSprint * maxL;
+                    init++;
+                }
+                recupDetails()
+                recup()
+              break;
+            case 2:
+                document.getElementById("exoDetails").innerText = 
+                sessionStorage.serie + " " + "x" + " " + rep + " "+ "x"+ " " + "12sec/2min";
+                LgrExo = 10 + tpsEffort + 10 + tpsEffort + 10;
+                console.log(10 + tpsEffort + 10 + tpsEffort + 10)
+                lgrEchauffement = 10 / LgrExo;
+                lgrSprint = 0.2 / LgrExo;
+                tps = 0 ; 
+                recupDetails()
+                échauffement()
+                tps =  lgrEchauffement * maxL;
+                sprintDetails()
+                while (init < rep) {
+                    sprintRep()
+                    tps = tps + lgrSprint * maxL + lgrSprint * maxL;
+                    init++;
+                }
+                recupDetails()
+                recup()
+                tps = tps + lgrEchauffement * maxL
+                init = 0
+                sprintDetails()
+                while (init < rep) {
+                    sprintRep()
+                    tps = tps + lgrSprint * maxL + lgrSprint * maxL;
+                    init++;
+                }
+                recupDetails()
+                recup()
+              break;
+            case 3:
+                document.getElementById("exoDetails").innerText = 
+                sessionStorage.serie + " " + "x" + " " + rep + " "+ "x"+ " " + "12sec/2min";
+                LgrExo = 10 + tpsEffort + 10 + tpsEffort + 10 + tpsEffort + 10;
+                lgrEchauffement = 10 / LgrExo;
+                lgrSprint = 0.2 / LgrExo;
+                tps = 0 ; 
+                recupDetails()
+                échauffement()
+                tps =  lgrEchauffement * maxL;
+                sprintDetails()
+                while (init < rep) {
+                    sprintRep()
+                    tps = tps + lgrSprint * maxL + lgrSprint * maxL;
+                    init++;
+                }
+                recupDetails()
+                recup()
+                tps = tps + lgrEchauffement * maxL
+                init = 0
+                sprintDetails()
+                while (init < rep) {
+                    sprintRep()
+                    tps = tps + lgrSprint * maxL + lgrSprint * maxL;
+                    init++;
+                }
+                recupDetails()
+                recup()
+                tps = tps + lgrEchauffement * maxL
+                init = 0
+                sprintDetails()
+                while (init < rep) {
+                    sprintRep()
+                    tps = tps + lgrSprint * maxL + lgrSprint * maxL;
+                    init++;
+                }
+                recupDetails()
+                recup()
+              break;
+            case 4:
+                document.getElementById("exoDetails").innerText = 
+                sessionStorage.serie + " " + "x" + " " + rep + " "+ "x"+ " " + "12sec/2min";
+                LgrExo = 10 + tpsEffort + 10 + tpsEffort + 10 + tpsEffort + 10 + tpsEffort + 10;
+                lgrEchauffement = 10 / LgrExo;
+                lgrSprint = 0.2 / LgrExo;
+                tps = 0 ; 
+                recupDetails()
+                échauffement()
+                tps =  lgrEchauffement * maxL;
+                sprintDetails()
+                while (init < rep) {
+                    sprintRep()
+                    tps = tps + lgrSprint * maxL + lgrSprint * maxL;
+                    init++;
+                }
+                recupDetails()
+                recup()
+                tps = tps + lgrEchauffement * maxL
+                init = 0
+                sprintDetails()
+                while (init < rep) {
+                    sprintRep()
+                    tps = tps + lgrSprint * maxL + lgrSprint * maxL;
+                    init++;
+                }
+                recupDetails()
+                recup()
+                tps = tps + lgrEchauffement * maxL
+                init = 0
+                sprintDetails()
+                while (init < rep) {
+                    sprintRep()
+                    tps = tps + lgrSprint * maxL + lgrSprint * maxL;
+                    init++;
+                }
+                recupDetails()
+                recup()
+                tps = tps + lgrEchauffement * maxL
+                init = 0
+                sprintDetails()
+                while (init < rep) {
+                    sprintRep()
+                    tps = tps + lgrSprint * maxL + lgrSprint * maxL;
+                    init++;
+                }
+                recupDetails()
+                recup()
+              break;
+        }
+
+        function recupDetails() {
+            var div = document.createElement("div");
+            var h1 = document.createElement("h1");
+            div.style.width = "96%";
+            div.style.height = "30px";
+            div.style.marginLeft = "2%";
+            div.style.marginRight = "2%";
+            div.style.marginTop = "-10px";
+            div.style.marginBottom = "13px";
+            div.style.background = "green";
+            div.style.borderRadius = "5px";
+            h1.style.fontSize ="15px";
+            h1.style.padding = "5px";
+            h1.style.textAlign = "end"
+            h1.innerHTML = "10 min" + " " + "@" + " " + pEndurance;
+            div.appendChild(h1);
+            document.getElementById("detailsSeance").appendChild(div);
+        }
+
+        function sprintDetails() {
+            var div = document.createElement("div");
+            var X = document.createElement("h1");
+            var h1 = document.createElement("h1");
+            var h1_2 = document.createElement("h1");
+            div.style.width = "96%";
+            div.style.height = "50px";
+            div.style.marginLeft = "2%";
+            div.style.marginRight = "2%";
+            div.style.marginTop = "-10px";
+            div.style.background = "red";
+            div.style.borderRadius = "5px";
+            X.style.fontSize ="15px";
+            X.style.padding = "5px";
+            X.innerHTML = "X" + " " + rep;
+            X.style.position = "relativ"
+            X.style.marginTop = "10px"
+            h1.style.fontSize ="15px";
+            h1.style.padding = "5px";
+            h1.style.marginTop = "-45px"
+            h1.style.textAlign = "end"
+            h1.innerHTML = "12 sec" + " " + "@" + " " + pSprint;
+            h1_2.style.marginTop = "-21px"
+            h1_2.style.fontSize ="15px";
+            h1_2.style.padding = "5px";
+            h1_2.style.textAlign = "end"
+            h1_2.innerHTML = "2 min" + " " + "@" + " " + pEndurance;
+            div.appendChild(X);
+            div.appendChild(h1);
+            div.appendChild(h1_2);
+            document.getElementById("detailsSeance").appendChild(div);
+        }
+
+        function échauffement() {
+            let lgrEchauffement = 10 / LgrExo;
+            ctx.fillStyle = "green";
+            ctx.fillRect(tps, maxH - iRecup, lgrEchauffement * maxL, iRecup)
+        }
+        function sprintRep() {
+            ctx.fillStyle = "red";
+            ctx.fillRect(tps, maxH - iSprint, lgrSprint * maxL, iSprint)
+            ctx.fillStyle = "green";
+            ctx.fillRect(tps + lgrSprint * maxL, maxH - iRecup, lgrSprint * maxL, iRecup)
+        }
+        function recup() {
+            ctx.fillStyle = "green";
+            ctx.fillRect(tps, maxH - iRecup, lgrEchauffement * maxL, iRecup)
+        }
+    }
+
     if(Number(localStorage.prg) == 1) {
     let monthA = new Array(12);
     monthA[1] = "janvier";
@@ -230,11 +966,11 @@ function prgGrimpeur() {
         //semaine 7    
         if (nbPrgJ >= 7) {if (document.getElementById(nbObjectif - 41)) {document.getElementById(nbObjectif - 41).style.backgroundColor = ""}} 
         if (nbPrgJ >= 4) {if (document.getElementById(nbObjectif - 40)) {document.getElementById(nbObjectif - 40).style.backgroundColor = "red"}}   
-        if (nbPrgJ >= 3) {if (document.getElementById(nbObjectif - 39)) {document.getElementById(nbObjectif - 39).style.backgroundColor = "orange"}}   
+        if (nbPrgJ >= 3) {if (document.getElementById(nbObjectif - 39)) {document.getElementById(nbObjectif - 39).style.backgroundColor = "yellow"}}   
         if (nbPrgJ >= 6) {if (document.getElementById(nbObjectif - 38)) {document.getElementById(nbObjectif - 38).style.backgroundColor = "green"}}  
-        if (nbPrgJ >= 5) {if (document.getElementById(nbObjectif - 37)) {document.getElementById(nbObjectif - 37).style.backgroundColor = "orange"}}
-        if (nbPrgJ >= 3) {if (document.getElementById(nbObjectif - 36)) {document.getElementById(nbObjectif - 36).style.backgroundColor = "green"}} 
-        if (nbPrgJ >= 3) {if (document.getElementById(nbObjectif - 35)) {document.getElementById(nbObjectif - 35).style.backgroundColor = "orange"}}   
+        if (nbPrgJ >= 5) {if (document.getElementById(nbObjectif - 37)) {document.getElementById(nbObjectif - 37).style.backgroundColor = "green"}}
+        if (nbPrgJ >= 3) {if (document.getElementById(nbObjectif - 36)) {document.getElementById(nbObjectif - 36).style.backgroundColor = "yellow"}} 
+        if (nbPrgJ >= 3) {if (document.getElementById(nbObjectif - 35)) {document.getElementById(nbObjectif - 35).style.backgroundColor = "green"}}   
         //semaine 8
         if (nbPrgJ >= 7) {if (document.getElementById(nbObjectif - 34)) {document.getElementById(nbObjectif - 34).style.backgroundColor = ""}} 
         if (nbPrgJ >= 4) {if (document.getElementById(nbObjectif - 33)) {document.getElementById(nbObjectif - 33).style.backgroundColor = "green"}}   
@@ -330,12 +1066,16 @@ function prgGrimpeur() {
         if (document.getElementById(nbObjectif)) {document.getElementById(nbObjectif).style.backgroundColor = "gray"} 
     }
 
+    sessionStorage.nbExo = 0;
+    let nbLevel = Number(localStorage.level)
+    
     if (nbPrgT == 4) {
         if(document.getElementById(nbObjectif - 111)) {
             document.getElementById(nbObjectif - 111).onclick = function() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 111).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo1
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr1
+                endurance()
                 animExo()
             }
         }  
@@ -352,6 +1092,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 109).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo3
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr3
+                endurance()
                 animExo()
             }
         }   
@@ -360,6 +1101,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 108).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo4
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr4
+                endurance()
                 animExo()
             }
         }
@@ -368,6 +1110,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 107).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo5
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr5
+                endurance()
                 animExo()
             }
         }
@@ -376,14 +1119,16 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 106).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo6
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr6
+                endurance()
                 animExo()
             }
         }
-        if(document.getElementById(nbObjectif -105 )) {
+        if(document.getElementById(nbObjectif - 105 )) {
             document.getElementById(nbObjectif - 105).onclick = function() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 105).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo7
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr7
+                endurance()
                 animExo()
             }
         }
@@ -400,6 +1145,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 103).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo9
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr9
+                endurance()
                 animExo()
             }
         }
@@ -408,6 +1154,25 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 102).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo10
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr10
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 4;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 6;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 8;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 3;
+                        sessionStorage.rep = 7;
+                        break;
+                }
+                sprint()
                 animExo()
             }
         }
@@ -416,6 +1181,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 101).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo11
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr11
+                endurance()
                 animExo()
             }
         }
@@ -424,6 +1190,25 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 100).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo12
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr12
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 1;
+                        sessionStorage.rep = 4;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 1;
+                        sessionStorage.rep = 5;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 3;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 5;
+                        break;
+                }
+                seuil()
                 animExo()
             }
         }
@@ -432,6 +1217,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 99).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo13
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr13
+                endurance()
                 animExo()
             }
         }
@@ -440,6 +1226,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 98).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo14
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr14
+                endurance()
                 animExo()
             }
         }
@@ -456,6 +1243,25 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 96).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo16
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr16
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 4;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 7;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 9;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 3;
+                        sessionStorage.rep = 8;
+                        break;
+                }
+                sprint()
                 animExo()
             }  
         }
@@ -464,6 +1270,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 95).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo17
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr17
+                endurance()
                 animExo()
             }
         }
@@ -472,6 +1279,25 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 94).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo18
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr18
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 1;
+                        sessionStorage.rep = 7;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 5;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 7;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 10;
+                        break;
+                }
+                PMA()
                 animExo()
             }
         }
@@ -480,6 +1306,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 93).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo19
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr19
+                endurance()
                 animExo()
             }
         }
@@ -488,6 +1315,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 92).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo20
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr20
+                endurance()
                 animExo()
             }
         }
@@ -496,6 +1324,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 91).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo21
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr21
+                endurance()
                 animExo()
             }
         }
@@ -512,6 +1341,25 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 89).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo23
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr23
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 1;
+                        sessionStorage.rep = 4;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 1;
+                        sessionStorage.rep = 5;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 4;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 5;
+                        break;
+                }
+                seuil()
                 animExo()
             }
         }
@@ -520,6 +1368,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 88).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo24
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr24
+                endurance()
                 animExo()
             }
         }
@@ -528,6 +1377,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 87).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo25
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr25
+                endurance()
                 animExo()
             }
         }
@@ -536,6 +1386,25 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 86).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo26
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr26
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 5;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 7;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 11;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 3;
+                        sessionStorage.rep = 9;
+                        break;
+                }
+                sprint()
                 animExo()
             }
         }
@@ -544,6 +1413,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 85).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo27
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr27
+                endurance()
                 animExo()
             }
         }
@@ -552,6 +1422,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 84).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo28
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr28
+                endurance()
                 animExo()
             }
         }
@@ -568,6 +1439,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 82).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo30
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr30
+                endurance()
                 animExo()
             }
         }
@@ -576,6 +1448,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 81).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo31
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr31
+                endurance()
                 animExo()
             }
         }
@@ -584,6 +1457,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 80).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo32
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr32
+                endurance()
                 animExo()
             }
         }
@@ -592,6 +1466,25 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 79).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo33
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr33
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 1;
+                        sessionStorage.rep = 7;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 5;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 7;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 10;
+                        break;
+                }
+                PMA()
                 animExo()
             }
         }
@@ -600,6 +1493,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 78).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo34
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr34
+                endurance()
                 animExo()
             }
         }
@@ -608,6 +1502,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 77).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo35
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr35
+                endurance()
                 animExo()
             }
         }
@@ -624,6 +1519,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 75).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo37
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr37
+                endurance()
                 animExo()
             }
         }
@@ -632,6 +1528,25 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 74).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo38
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr38
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 1;
+                        sessionStorage.rep = 4;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 1;
+                        sessionStorage.rep = 5;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 4;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 5;
+                        break;
+                }
+                seuil()
                 animExo()
             }
         }
@@ -640,6 +1555,25 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 73).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo39
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr39
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 5;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 8;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 12;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 3;
+                        sessionStorage.rep = 10;
+                        break;
+                }
+                sprint()
                 animExo()
             }
         }
@@ -648,6 +1582,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 72).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo40
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr40
+                endurance()
                 animExo()
             }
         }
@@ -656,6 +1591,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 71).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo41
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr41
+                endurance()
                 animExo()
             }
         }
@@ -664,6 +1600,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 70).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo42
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr42
+                endurance()
                 animExo()
             }
         }
@@ -680,6 +1617,25 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 68).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo44
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr44
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 6;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 8;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 3;
+                        sessionStorage.rep = 8;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 3;
+                        sessionStorage.rep = 10;
+                        break;
+                }
+                sprint()
                 animExo()
             }    
         }
@@ -688,6 +1644,25 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 67).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo45
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr45
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 1;
+                        sessionStorage.rep = 5;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 3;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 4;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 5;
+                        break;
+                }
+                seuil()
                 animExo()
             } 
         }
@@ -696,6 +1671,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 66).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo46
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr46
+                endurance()
                 animExo()
             }
         }
@@ -704,6 +1680,25 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 65).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo47
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr47
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 1;
+                        sessionStorage.rep = 5;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 3;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 5;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 3;
+                        sessionStorage.rep = 4;
+                        break;
+                }
+                seuil()
                 animExo()
             }
         }
@@ -712,6 +1707,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 64).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo48
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr48
+                endurance()
                 animExo()
             }
         }
@@ -720,6 +1716,25 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 63).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo49
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr49
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 1;
+                        sessionStorage.rep = 5;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 1;
+                        sessionStorage.rep = 6;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 5;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 3;
+                        sessionStorage.rep = 4;
+                        break;
+                }
+                seuil()
                 animExo()
             }
         }
@@ -736,6 +1751,25 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 61).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo51
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr51
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 3;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 1;
+                        sessionStorage.rep = 6;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 3;
+                        sessionStorage.rep = 4;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 6;
+                        break;
+                }
+                seuil()
                 animExo()
             }
         }
@@ -744,6 +1778,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 60).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo52
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr52
+                endurance()
                 animExo()
             }
         }
@@ -752,6 +1787,25 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 59).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo53
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr53
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 3;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 4;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 3;
+                        sessionStorage.rep = 4;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 6;
+                        break;
+                }
+                seuil()
                 animExo()
             }
         }
@@ -760,6 +1814,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 58).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo54
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr54
+                endurance()
                 animExo()
             }
         }
@@ -768,6 +1823,25 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 57).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo55
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr55
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 1;
+                        sessionStorage.rep = 6;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 4;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 6;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 7;
+                        break;
+                }
+                seuil()
                 animExo()
             }
         }
@@ -776,6 +1850,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 56).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo56
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr56
+                endurance()
                 animExo()
             }
         }
@@ -792,6 +1867,25 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 54).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo58
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr58
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 1;
+                        sessionStorage.rep = 6;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 9;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 3;
+                        sessionStorage.rep = 8;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 3;
+                        sessionStorage.rep = 11;
+                        break;
+                }
+                sprint()
                 animExo()
             }
         }
@@ -800,6 +1894,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 53).innerText + " " + monthA[Number(sessionStorage.month)]  
                 document.getElementById("exoInstruction").innerText = localStorage.exo59
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr59
+                endurance()
                 animExo()
             }
         }
@@ -808,6 +1903,25 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 52).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo60
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr60
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 4;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 5;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 6;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 7;
+                        break;
+                }
+                seuil()
                 animExo()
             }
         }
@@ -816,6 +1930,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 51).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo61
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr61
+                endurance()
                 animExo()
             }
         }
@@ -824,6 +1939,25 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 50).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo62
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr62
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 4;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 5;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 6;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 7;
+                        break;
+                }
+                seuil()
                 animExo()
             }
         }
@@ -832,6 +1966,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 49).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo63
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr63
+                endurance()
                 animExo()
             }
         }
@@ -848,6 +1983,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 47).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo65
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr65
+                endurance()
                 animExo()
             }
         }
@@ -856,6 +1992,25 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 46).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo66
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr66
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 5;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 3;
+                        sessionStorage.rep = 4;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 7;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 3;
+                        sessionStorage.rep = 5;
+                        break;
+                }
+                seuil()
                 animExo()
             }
         }
@@ -864,6 +2019,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 45).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo67
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr67
+                endurance()
                 animExo()
             }
         }
@@ -872,6 +2028,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 44).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo68
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr68
+                endurance()
                 animExo()
             }
         }
@@ -880,6 +2037,25 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 43).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo69
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr69
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 5;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 3;
+                        sessionStorage.rep = 4;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 7;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 3;
+                        sessionStorage.rep = 5;
+                        break;
+                }
+                seuil()
                 animExo()
             }
         }
@@ -888,6 +2064,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 42).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo70
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr70
+                endurance()
                 animExo()
             }
         }
@@ -904,6 +2081,25 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 40).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo72
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr72
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 6;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 9;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 3;
+                        sessionStorage.rep = 9;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 3;
+                        sessionStorage.rep = 12;
+                        break;
+                }
+                sprint()
                 animExo()
             }
         }
@@ -912,6 +2108,25 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 39).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo73
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr73
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 4;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 5;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 7;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 10;
+                        break;
+                }
+                PMA()
                 animExo()
             }
         }
@@ -920,6 +2135,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 38).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo74
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr74
+                endurance()
                 animExo()
             }
         }
@@ -928,6 +2144,25 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 37).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo75
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr75
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 4;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 6;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 8;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 11;
+                        break;
+                }
+                PMA()
                 animExo()
             }
         }
@@ -936,6 +2171,25 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 36).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo76
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr76
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 5;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 7;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 9;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 3;
+                        sessionStorage.rep = 8;
+                        break;
+                }
+                PMA()
                 animExo()
             }
         }
@@ -944,6 +2198,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 35).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo77
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr77
+                endurance()
                 animExo()
             }
         }
@@ -960,6 +2215,25 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 33).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo79
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr79
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 5;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 7;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 10;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 3;
+                        sessionStorage.rep = 9;
+                        break;
+                }
+                PMA()
                 animExo()
             }
         }
@@ -968,6 +2242,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 32).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo80
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr80
+                endurance()
                 animExo()
             }
         }
@@ -976,6 +2251,25 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 31).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo81
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr81
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 6;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 8;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 10;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 3;
+                        sessionStorage.rep = 10;
+                        break;
+                }
+                PMA()
                 animExo()
             }
         }
@@ -984,6 +2278,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 30).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo82
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr82
+                endurance()
                 animExo()
             }
         }
@@ -992,6 +2287,25 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 29).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo83
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr83
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 7;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 8;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 3;
+                        sessionStorage.rep = 7;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 3
+                        sessionStorage.rep = 10;
+                        break;
+                }
+                PMA()
                 animExo()
             }
         }
@@ -1000,6 +2314,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 28).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo84
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr84
+                endurance()
                 animExo()
             }
         }
@@ -1016,6 +2331,25 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 26).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo86
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr86
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 7;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 10;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 3;
+                        sessionStorage.rep = 10;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 3;
+                        sessionStorage.rep = 13;
+                        break;
+                }
+                sprint()
                 animExo()
             }
         }
@@ -1024,6 +2358,25 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 25).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo87
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr87
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 7;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 9;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 12;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 3;
+                        sessionStorage.rep = 11;
+                        break;
+                }
+                PMA()
                 animExo()
             }
         }
@@ -1032,6 +2385,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 24).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo88
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr88
+                endurance()
                 animExo()
             }
         }
@@ -1040,6 +2394,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 23).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo89
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr89
+                endurance()
                 animExo()
             }
         }
@@ -1048,6 +2403,25 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 22).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo90
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr90
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 8;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 10;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 3;
+                        sessionStorage.rep = 8;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 3;
+                        sessionStorage.rep = 11;
+                        break;
+                }
+                PMA()
                 animExo()
             }
         }
@@ -1056,6 +2430,8 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 21).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo91
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr91
+                sessionStorage.nbExo = 91;
+                endurance()
                 animExo()
             }
         }
@@ -1072,6 +2448,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 19).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo93
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr93
+                endurance()
                 animExo()
             }
         }
@@ -1080,6 +2457,25 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 18).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo94
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr94
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 8;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 10;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 3;
+                        sessionStorage.rep = 9;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 3;
+                        sessionStorage.rep = 12;
+                        break;
+                }
+                PMA()
                 animExo()
             }
         }
@@ -1088,6 +2484,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 17).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo95
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr95
+                endurance()
                 animExo()
             }
         }
@@ -1096,6 +2493,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 16).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo96
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr96
+                endurance()
                 animExo()
             }
         }
@@ -1104,6 +2502,25 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 15).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo97
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr97
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 9;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 3;
+                        sessionStorage.rep = 7;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 3;
+                        sessionStorage.rep = 10;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 3;
+                        sessionStorage.rep = 13;
+                        break;
+                }
+                PMA()
                 animExo()
             }
         }
@@ -1112,6 +2529,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 14).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo98
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr98
+                endurance()
                 animExo()
             }
         }
@@ -1120,6 +2538,25 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 13).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo99
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr99
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 3;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 4;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 6;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 7;
+                        break;
+                }
+                sprint()
                 animExo()
             }
         }
@@ -1136,6 +2573,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 11).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo101
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr101
+                endurance()
                 animExo()
             }
         }
@@ -1159,7 +2597,26 @@ function prgGrimpeur() {
             document.getElementById(nbObjectif - 8).onclick = function() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 8).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo104
-                document.getElementById("exo").style.backgroundColor = localStorage.
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr104
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 1;
+                        sessionStorage.rep = 7;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 1;
+                        sessionStorage.rep = 9;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 6;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 8;
+                        break;
+                }
+                PMA()
                 animExo()
             }
         }
@@ -1176,6 +2633,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 6).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo106
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr106
+                endurance()
                 animExo()
             }
         }
@@ -1192,6 +2650,25 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 4).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo108
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr108
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 1;
+                        sessionStorage.rep = 5;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 1;
+                        sessionStorage.rep = 7;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 4;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 6;
+                        break;
+                }
+                PMA()
                 animExo()
             }
         }
@@ -1216,6 +2693,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 1).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo111
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr111
+                endurance()
                 animExo()
             }
         }  
@@ -1235,6 +2713,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 83).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo1
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr1
+                endurance()        
                 animExo()
             }
         }
@@ -1251,6 +2730,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 81).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo3
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr3
+                endurance()
                 animExo()
             }
         }
@@ -1259,6 +2739,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 80).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo4
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr4
+                endurance()
                 animExo()
             }
         }
@@ -1267,6 +2748,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 79).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo5
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr5
+                endurance()
                 animExo()
             }
         }
@@ -1275,6 +2757,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 78).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo6
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr6
+                endurance()
                 animExo()
             }
         }
@@ -1283,6 +2766,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 77).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo7
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr7
+                endurance()
                 animExo()
             }
         }
@@ -1299,6 +2783,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 75).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo9
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr9
+                endurance()
                 animExo()
             }
         }
@@ -1307,6 +2792,25 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 74).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo10
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr10
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 4;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 6;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 8;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 3;
+                        sessionStorage.rep = 7;
+                        break;
+                }
+                sprint()
                 animExo()
             }
         }
@@ -1315,6 +2819,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 73).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo11
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr11
+                endurance()
                 animExo()
             }
         }
@@ -1323,6 +2828,25 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 72).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo12
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr12
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 1;
+                        sessionStorage.rep = 4;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 1;
+                        sessionStorage.rep = 5;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 3;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 4;
+                        break;
+                }
+                seuil()
                 animExo()
             }
         }
@@ -1331,6 +2855,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 71).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo13
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr13
+                endurance()
                 animExo()
             }
         }
@@ -1339,6 +2864,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 70).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo14
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr14
+                endurance()
                 animExo()
             }
         }
@@ -1355,6 +2881,25 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 68).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo16
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr16
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 4;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 7;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 9;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 3;
+                        sessionStorage.rep = 8;
+                        break;
+                }
+                sprint()
                 animExo()
             }    
         }
@@ -1363,6 +2908,25 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 67).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo17
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr17
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 1;
+                        sessionStorage.rep = 4;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 1;
+                        sessionStorage.rep = 5;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 3;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 4;
+                        break;
+                }
+                seuil()
                 animExo()
             } 
         }
@@ -1371,6 +2935,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 66).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo18
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr18
+                endurance()
                 animExo()
             }
         }
@@ -1379,6 +2944,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 65).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo19
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr19
+                endurance()
                 animExo()
             }
         }
@@ -1387,6 +2953,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 64).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo20
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr20
+                endurance()
                 animExo()
             }
         }
@@ -1395,6 +2962,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 63).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo21
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr21
+                endurance()
                 animExo()
             }
         }
@@ -1411,6 +2979,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 61).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo23
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr23
+                endurance()
                 animExo()
             }
         }
@@ -1419,6 +2988,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 60).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo24
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr24
+                endurance()
                 animExo()
             }
         }
@@ -1427,6 +2997,25 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 59).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo25
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr25
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 4;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 5;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 7;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 9;
+                        break;
+                }
+                PMA()
                 animExo()
             }
         }
@@ -1435,6 +3024,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 58).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo26
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr26
+                endurance()
                 animExo()
             }
         }
@@ -1443,6 +3033,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 57).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo27
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr27
+                endurance()
                 animExo()
             }
         }
@@ -1451,6 +3042,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 56).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo28
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr28
+                endurance()
                 animExo()
             }
         }
@@ -1467,6 +3059,25 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 54).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo30
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr30
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 5;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 7;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 10;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 3;
+                        sessionStorage.rep = 9;
+                        break;
+                }
+                sprint()
                 animExo()
             }
         }
@@ -1475,6 +3086,25 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 53).innerText + " " + monthA[Number(sessionStorage.month)]  
                 document.getElementById("exoInstruction").innerText = localStorage.exo31
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr31
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 1;
+                        sessionStorage.rep = 4;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 1;
+                        sessionStorage.rep = 5;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 4;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 5;
+                        break;
+                }
+                seuil()
                 animExo()
             }
         }
@@ -1483,6 +3113,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 52).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo32
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr32
+                endurance()
                 animExo()
             }
         }
@@ -1491,6 +3122,25 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 51).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo33
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr33
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 1;
+                        sessionStorage.rep = 5;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 3;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 4;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 5;
+                        break;
+                }
+                seuil()
                 animExo()
             }
         }
@@ -1499,6 +3149,25 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 50).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo34
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr34
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 1;
+                        sessionStorage.rep = 5;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 3;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 4;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 5;
+                        break;
+                }
+                seuil()
                 animExo()
             }
         }
@@ -1507,6 +3176,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 49).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo35
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr35
+                endurance()
                 animExo()
             }
         }
@@ -1523,6 +3193,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 47).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo37
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr37
+                endurance()
                 animExo()
             }
         }
@@ -1531,6 +3202,25 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 46).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo38
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr38
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 3;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 4;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 5;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 3;
+                        sessionStorage.rep = 4;
+                        break;
+                }
+                seuil()
                 animExo()
             }
         }
@@ -1539,6 +3229,25 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 45).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo39
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr39
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 1;
+                        sessionStorage.rep = 6;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 4;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 5;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 3;
+                        sessionStorage.rep = 4;
+                        break;
+                }
+                seuil()
                 animExo()
             }
         }
@@ -1547,6 +3256,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 44).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo40
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr40
+                endurance()
                 animExo()
             }
         }
@@ -1555,6 +3265,25 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 43).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo41
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr41
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 1;
+                        sessionStorage.rep = 6;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 4;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 3;
+                        sessionStorage.rep = 4;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 6;
+                        break;
+                }
+                seuil()
                 animExo()
             }
         }
@@ -1563,6 +3292,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 42).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo42
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr42
+                endurance()
                 animExo()
             }
         }
@@ -1579,6 +3309,25 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 40).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo44
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr44
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 6;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 8;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 11;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 3;
+                        sessionStorage.rep = 9;
+                        break;
+                }
+                sprint()
                 animExo()
             }
         }
@@ -1587,6 +3336,25 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 39).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo45
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr45
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 4;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 5;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 3;
+                        sessionStorage.rep = 4;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 6;
+                        break;
+                }
+                seuil()
                 animExo()
             }
         }
@@ -1595,6 +3363,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 38).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo46
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr46
+                endurance()
                 animExo()
             }
         }
@@ -1603,6 +3372,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 37).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo47
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr47
+                endurance()
                 animExo()
             }
         }
@@ -1611,6 +3381,25 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 36).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo48
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr48
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 4;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 5;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 6;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 7;
+                        break;
+                }
+                seuil()
                 animExo()
             }
         }
@@ -1619,6 +3408,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 35).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo49
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr49
+                endurance()
                 animExo()
             }
         }
@@ -1635,6 +3425,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 33).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo51
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr51
+                endurance()
                 animExo()
             }
         }
@@ -1643,6 +3434,25 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 32).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo52
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr52
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 4;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 5;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 7;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 10;
+                        break;
+                }
+                PMA()
                 animExo()
             }
         }
@@ -1651,6 +3461,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 31).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo53
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr53
+                endurance()
                 animExo()
             }
         }
@@ -1659,6 +3470,25 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 30).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo54
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr54
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 5;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 6;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 8;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 11;
+                        break;
+                }
+                PMA()
                 animExo()
             }
         }
@@ -1667,6 +3497,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 29).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo55
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr55
+                endurance()
                 animExo()
             }
         }
@@ -1675,6 +3506,24 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 28).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo56
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr56
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 5;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 6;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 8;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 11;
+                }
+                PMA()
                 animExo()
             }
         }
@@ -1691,6 +3540,25 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 26).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo58
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr58
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 6;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 8;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 3;
+                        sessionStorage.rep = 8;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 3;
+                        sessionStorage.rep = 10;
+                        break;
+                }
+                sprint()
                 animExo()
             }
         }
@@ -1699,6 +3567,25 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 25).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo59
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr59
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 3;
+                        sessionStorage.rep = 4;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 7;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 9;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 3;
+                        sessionStorage.rep = 9;
+                        break;
+                }
+                PMA()
                 animExo()
             }
         }
@@ -1707,6 +3594,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 24).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo60
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr60
+                endurance()
                 animExo()
             }
         }
@@ -1715,6 +3603,25 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 23).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo61
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr61
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 3;
+                        sessionStorage.rep = 4;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 7;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 10;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 3;
+                        sessionStorage.rep = 9;
+                        break;
+                }
+                PMA()
                 animExo()
             }
         }
@@ -1723,6 +3630,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 22).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo62
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr62
+                endurance()
                 animExo()
             }
         }
@@ -1731,6 +3639,25 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 21).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo63
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr63
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 6;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 8;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 3;
+                        sessionStorage.rep = 7;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 3;
+                        sessionStorage.rep = 10;
+                        break;
+                }
+                PMA()
                 animExo()
             }
         }
@@ -1747,6 +3674,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 19).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo65
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr65
+                endurance()
                 animExo()
             }
         }
@@ -1755,6 +3683,25 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 18).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo66
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr66
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 6;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 8;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 3;
+                        sessionStorage.rep = 8;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 3;
+                        sessionStorage.rep = 11;
+                        break;
+                }
+                PMA()
                 animExo()
             }
         }
@@ -1763,6 +3710,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 17).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo67
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr67
+                endurance()
                 animExo()
             }
         }
@@ -1771,6 +3719,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 16).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo68
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr68
+                endurance()
                 animExo()
             }
         }
@@ -1779,6 +3728,25 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 15).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo69
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr69
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 7;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 9;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 3;
+                        sessionStorage.rep = 10;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 3;
+                        sessionStorage.rep = 12;
+                        break;
+                }
+                PMA()
                 animExo()
             }
         }
@@ -1787,6 +3755,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 14).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo70
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr70
+                endurance()
                 animExo()
             }
         }
@@ -1794,7 +3763,26 @@ function prgGrimpeur() {
             document.getElementById(nbObjectif - 13).onclick = function() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 13).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo71
-                document.getElementById("exo").style.backgroundColor = localStorage.exoClr71animExo()
+                document.getElementById("exo").style.backgroundColor = localStorage.exoClr71
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 3;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 4;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 5;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 6;
+                        break;
+                }
+                sprint()
                 animExo()
             }
         }
@@ -1811,6 +3799,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 11).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo73
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr73
+                endurance()
                 animExo()
             }
         }
@@ -1835,6 +3824,25 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 8).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo76
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr76
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 5;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 6;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 7;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 8;
+                        break;
+                }
+                PMA()
                 animExo()
             }
         }
@@ -1850,7 +3858,8 @@ function prgGrimpeur() {
             document.getElementById(nbObjectif - 6).onclick = function() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 6).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo78
-                document.getElementById("exo").style.backgroundColor = localStorage.exoClr78
+                document.getElementById("exo").style.backgroundColor = localStorage.
+                endurance()
                 animExo()
             }
         }
@@ -1867,6 +3876,25 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 4).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo80
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr80
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 3;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 4;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 5;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 6;
+                        break;
+                }
+                PMA()
                 animExo()
             }
         }
@@ -1891,6 +3919,8 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 1).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo83
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr83
+                
+                endurance()
                 animExo()
             }
         }  
@@ -1910,6 +3940,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 55).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo1
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr1
+                endurance()
                 animExo()
             }
         }
@@ -1926,6 +3957,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 53).innerText + " " + monthA[Number(sessionStorage.month)]  
                 document.getElementById("exoInstruction").innerText = localStorage.exo3
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr3
+                endurance()
                 animExo()
             }
         }
@@ -1934,6 +3966,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 52).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo4
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr4
+                endurance()
                 animExo()
             }
         }
@@ -1942,6 +3975,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 51).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo5
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr5
+                endurance()
                 animExo()
             }
         }
@@ -1950,6 +3984,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 50).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo6
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr6
+                endurance()
                 animExo()
             }
         }
@@ -1958,6 +3993,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 49).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo7
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr7
+                endurance()
                 animExo()
             }
         }
@@ -1974,6 +4010,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 47).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo9
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr9
+                endurance()
                 animExo()
             }
         }
@@ -1982,6 +4019,25 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 46).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo10
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr10
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 4;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 7;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 9;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 3;
+                        sessionStorage.rep = 8;
+                        break;
+                }
+                sprint()
                 animExo()
             }
         }
@@ -1990,6 +4046,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 45).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo11
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr11
+                endurance()
                 animExo()
             }
         }
@@ -1998,6 +4055,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 44).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo12
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr12
+                endurance()
                 animExo()
             }
         }
@@ -2006,6 +4064,25 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 43).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo13
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr13
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 1;
+                        sessionStorage.rep = 4;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 1;
+                        sessionStorage.rep = 5;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 3;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 4;
+                        break;
+                }
+                seuil()
                 animExo()
             }
         }
@@ -2014,6 +4091,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 42).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo14
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr14
+                endurance()
                 animExo()
             }
         }
@@ -2030,6 +4108,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 40).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo16
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr16
+                endurance()
                 animExo()
             }
         }
@@ -2038,6 +4117,25 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 39).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo17
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr17
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 1;
+                        sessionStorage.rep = 5;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 3;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 4;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 5;
+                        break;
+                }
+                seuil()
                 animExo()
             }
         }
@@ -2046,6 +4144,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 38).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo18
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr18
+                endurance()
                 animExo()
             }
         }
@@ -2054,6 +4153,25 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 37).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo19
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr19
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 1;
+                        sessionStorage.rep = 5;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 3;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 4;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 6;
+                        break;
+                }
+                seuil()
                 animExo()
             }
         }
@@ -2062,6 +4180,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 36).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo20
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr20
+                endurance()
                 animExo()
             }
         }
@@ -2070,6 +4189,25 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 35).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo21
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr21
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 1;
+                        sessionStorage.rep = 6;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 1;
+                        sessionStorage.rep = 6;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 4;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 6;
+                        break;
+                }
+                seuil()
                 animExo()
             }
         }
@@ -2086,6 +4224,25 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 33).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo23
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr23
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 1;
+                        sessionStorage.rep = 6;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 8;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 10;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 3;
+                        sessionStorage.rep = 9;
+                        break;
+                }
+                sprint()
                 animExo()
             }
         }
@@ -2094,6 +4251,25 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 32).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo24
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr24
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 3;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 4;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 5;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 7;
+                        break;
+                }
+                seuil()
                 animExo()
             }
         }
@@ -2102,6 +4278,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 31).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo25
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr25
+                endurance()
                 animExo()
             }
         }
@@ -2110,6 +4287,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 30).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo26
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr26
+                endurance()
                 animExo()
             }
         }
@@ -2118,6 +4296,25 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 29).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo27
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr27
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 3;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 4;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 5;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 7;
+                        break;
+                }
+                seuil()
                 animExo()
             }
         }
@@ -2126,6 +4323,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 28).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo28
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr28
+                endurance()
                 animExo()
             }
         }
@@ -2142,6 +4340,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 26).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo30
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr30
+                endurance()
                 animExo()
             }
         }
@@ -2150,6 +4349,25 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 25).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo31
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr31
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 4;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 5;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 7;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 10;
+                        break;
+                }
+                PMA()
                 animExo()
             }
         }
@@ -2158,6 +4376,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 24).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo32
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr32
+                endurance()
                 animExo()
             }
         }
@@ -2166,6 +4385,25 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 23).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo33
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr33
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 1;
+                        sessionStorage.rep = 8;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 6;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 8;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 11;
+                        break;
+                }
+                PMA()
                 animExo()
             }
         }
@@ -2174,6 +4412,25 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 22).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo34
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr34
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 5;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 7;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 9;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 12;
+                        break;
+                }
+                PMA()
                 animExo()
             }
         }
@@ -2182,6 +4439,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 21).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo35
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr35
+                endurance()
                 animExo()
             }
         }
@@ -2198,6 +4456,25 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 19).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo37
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr37
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 6;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 9;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 11;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 3;
+                        sessionStorage.rep = 10;
+                        break;
+                }
+                sprint()
                 animExo()
             }
         }
@@ -2206,6 +4483,25 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 18).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo38
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr38
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 6;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 8;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 10;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 3;
+                        sessionStorage.rep = 8;
+                        break;
+                }
+                PMA()
                 animExo()
             }
         }
@@ -2214,6 +4510,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 17).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo39
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr39
+                endurance()
                 animExo()
             }
         }
@@ -2222,6 +4519,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 16).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo40
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr40
+                endurance()
                 animExo()
             }
         }
@@ -2230,6 +4528,25 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 15).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo41
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr41
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 7;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 9;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 11;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 3;
+                        sessionStorage.rep = 9;
+                        break;
+                }
+                PMA()
                 animExo()
             }
         }
@@ -2238,6 +4555,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 14).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo42
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr42
+                endurance()
                 animExo()
             }
         }
@@ -2246,6 +4564,25 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 13).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo43
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr43
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 4;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 5;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 6;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 7;
+                        break;
+                }
+                sprint()
                 animExo()
             }
         }
@@ -2262,6 +4599,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 11).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo45
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr45
+                endurance()
                 animExo()
             }
         }
@@ -2278,6 +4616,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 9).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo47
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr47
+                animExo()
             } 
         }
         if(document.getElementById(nbObjectif - 8)) {
@@ -2285,6 +4624,25 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 8).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo48
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr48
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 3;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 4;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 5;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 6;
+                        break;
+                }
+                PMA()
                 animExo()
             }
         }
@@ -2301,6 +4659,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 6).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo50
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr50
+                endurance()
                 animExo()
             }
         }
@@ -2317,6 +4676,25 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 4).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo52
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr52
+                switch (nbLevel) {
+                    case 1:
+                        sessionStorage.serie = 1;
+                        sessionStorage.rep = 4;
+                        break;
+                    case 2:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 3;
+                        break;
+                    case 3:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 4;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep = 5;
+                        break;
+                }
+                PMA()
                 animExo()
             }
         }
@@ -2341,6 +4719,7 @@ function prgGrimpeur() {
                 document.getElementById("exoT").innerText = document.getElementById(nbObjectif - 1).innerText + " " + monthA[Number(sessionStorage.month)]
                 document.getElementById("exoInstruction").innerText = localStorage.exo55
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr55
+                endurance()
                 animExo()
             }
         }  

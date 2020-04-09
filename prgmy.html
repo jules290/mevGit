@@ -19,7 +19,6 @@
         <link rel="stylesheet" href="css/menunav.css" media="screen">
         <link rel="stylesheet" href="css/header.css" media="screen">
         <link rel="stylesheet" href="css/calendrier.css" media="screen">
-        <link rel="stylesheet" href="css/prgPage.css" media="screen">
         <link rel="stylesheet" href="css/prgMy.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
@@ -114,16 +113,38 @@
                             </tr>
                         </table>
                     </div>
-            </div>  
-            <section id="right">
+            </div>
+            <section id="middle">
                 <h1 id="exoT"></h1>
                 <div id="exo" class="exo">
                     <h1 id="exoInstruction">cliquer sur une journée pour avoir le détail de la séance</h1>
-                    <canvas id="graph1"></canvas>
+                    <div id="graphMy">
+                        <h1 id="exoDetails"></h1>
+                        <canvas id="graphExo" width="350" height="220"></canvas>
+                    </div>
+                </div>
+            </section>
+            <section id="right">
+                <div id="detailsSeance">
+                
+                </div>
+            </section>
+            <section id="difficulte">
+                <h1 id="difficulteT">votre programme est trop difficile ou trop facile, vous pouvez le modifier:</h1>
+                <div id="difficulteClick">
+                    <a id="difficulteA" rel="nofollow">
+                        <p id="difficulteClickT">changer la difficulté du programme</p>
+                    </a>
                 </div>
             </section>
         </div>
-        <script src="js/animationExo.js"></script>
+        <script>
+        $("#difficulteClick").click(function() {
+            location.href = "prgMyDifficulte.html";
+        })
+        
+        </script>
+        <script src="js/graph1My.js"></script>
         <script src="js/calendrier.js"></script>
         <script src="jsPrg/prgGrimpeur.js"></script>
         <script src="jsPrg/prgPuncheur.js"></script>

@@ -1,7 +1,7 @@
 $("#save").click(function() {
     save();
     lcExo();
-    window.location.reload()
+     window.location.reload()
 })
 
 save = () => {
@@ -10,18 +10,29 @@ save = () => {
     let nbd = document.getElementById('nbdV').value;
     let prgT = document.getElementById("prgTV").value;
     let prgJ = document.getElementById("prgJV").value; 
+    let level = document.getElementById("levelV").value; 
     localStorage.prg = 1;
     localStorage.année = année;
     localStorage.mois = mois;
     localStorage.nbd = nbd;
     localStorage.prgT = prgT;
     localStorage.prgJ = prgJ;
+    localStorage.level= level;
+    localStorage.lvlSprint = 0;
+    localStorage.lvlPMA = 0;
+    localStorage.lvlSeuil = 0;
+    localStorage.lvlEndurance = 0;
+}
+
+function downEndurance() {
+    localStorage.lvlEndurance
     let nbAnnée = Number(localStorage.année);
     let nbMois = Number(localStorage.mois);
     let nbNbd = Number(localStorage.nbd);
     let nbObjectif = Number(localStorage.objectif);  
     let nbPrgT = Number(localStorage.prgT); 
     let nbPrgJ = Number(localStorage.prgJ);
+    let nbLevel = Number(localStorage.level)
 }
 
 lcExo = () => {
@@ -31,6 +42,7 @@ lcExo = () => {
     let nbObjectif = Number(localStorage.objectif);  
     let nbPrgT = Number(localStorage.prgT); 
     let nbPrgJ = Number(localStorage.prgJ);
+    let nbLevel = Number(localStorage.level)
     //2020
     if(nbAnnée == 2020) {
         //janvier 01
@@ -1201,8 +1213,8 @@ lcExo = () => {
             localStorage.exoClr44 = "";
         };
 
-        localStorage.exo45 = "séance de PMA";
-        localStorage.exoClr45 = "orange";
+        localStorage.exo45 = "séance de seuil";
+        localStorage.exoClr45 = "#bebe02";
 
         if (nbPrgJ >= 6) {
             localStorage.exo46 = "séance d'endurance";
@@ -1213,19 +1225,19 @@ lcExo = () => {
             localStorage.exoClr46 = "";
         };
         if (nbPrgJ >= 5) {
-            localStorage.exo47 = "séance de PMA";
-            localStorage.exoClr47 = "orange";
+            localStorage.exo47 = "séance d'endurance";
+            localStorage.exoClr47 = "green";
         }
         else {
             localStorage.exo47 = "jour de repos"
             localStorage.exoClr47 = "";
         };
 
-        localStorage.exo48 = "séance d'endurance";
-        localStorage.exoClr48 = "green";
+        localStorage.exo48 = "séance de seuil";
+        localStorage.exoClr48 = "#bebe02";
 
-        localStorage.exo49 = "séance de PMA";
-        localStorage.exoClr49 = "orange";
+        localStorage.exo49 = "séance d'endurance";
+        localStorage.exoClr49 = "green";
 
         //semaine 8
         localStorage.exo50 = "jour de repos";

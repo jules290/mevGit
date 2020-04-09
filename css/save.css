@@ -73,14 +73,24 @@ select {
     display: inline-block;
 }
 
+#divPrgT{
+    display: inline-block;
+    margin-left: 115px;
+}
 #prgT {
     margin-top: 5px;
-    margin-left: 214px;
 }
     
 #prgJ {
     margin-top: 5px;
-    margin-left: 214px;
+}
+#divPrgJ{
+    display: inline-block;
+    margin-left: 10px;
+}
+
+#level {
+    margin-left: 35.5%
 }
 
 #save {

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+         <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161645631-2"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-161645631-2');
+        </script>
+        <title>cyclisme - mon entrainement vélo - mon programme</title>
+        <meta name="description" content="programmes d'entrainement cyclistes gratuits et personnalisés de tout niveau (débutant à compétition)"/>
+        <meta name="robots" content="noindex, nofollow">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/style.css" media="screen">
+        <link rel="stylesheet" href="css/menunav.css" media="screen">
+        <link rel="stylesheet" href="css/header.css" media="screen">
+        <link rel="stylesheet" href="css/difficulte.css" media="screen">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+        <script src="js/count-visits.js"></script>
+    
+    </head>
+    <body>
+        <div id="alert">
+            <p id="alertT">voulez-vous modifier votre programme ?</p>
+            <button class="alertBtn"  id="oui">oui</button>
+            <button class="alertBtn" id="non">non</button>
+        </div>
+        
+        <nav id="mySidenav" class="sidenav">
+            <a class="a_accueil" id="accueil" href="index.html">accueil</a>
+            <a class="a_programme" id="prg">programme<br>d'entrainement</a>
+                <a id="prgmy" href="prgmy.html">mon programme</a>
+                <a id="prgchc" href="prgchc.html">choisir un programme</a>
+            <!-- <a class="a_parametre">paramètre</a> -->
+        </nav>
+        
+        <div id="header">
+            <h1 class="titrePage" id="result">MON PROGRAMME</h1>
+        </div>
+        
+        <section id="main">
+            <section id="exo">
+                <div id="sprint" class="exo">
+                    <div id="sprintT"><h1>séance de sprint</h1></div>
+                    <img src="img/Mark_Cavendish,_Stage_11,_2011_Tour_de_France.jpg" class="Img" id="sprintImg">
+                    <div class="up" id="upSprint"><p class="upT">augmenter la difficulté</p></div>
+                    <div class="down" id="downSprint"><p class="downT">baisser la difficulté</p></div>
+                    <div class="progressBar">
+                        <div id="STlvlProgressBar1" class="lvlProgressBar"></div>
+                        <div id="STlvlProgressBar2" class="lvlProgressBar"></div>
+                        <div id="STlvlProgressBar3" class="lvlProgressBar"></div>
+                        <div id="STlvlProgressBar4" class="lvlProgressBar"></div>
+                    </div>
+                </div>
+                <div id="PMA" class="exo">
+                    <div id="PMAT"><h1>séance de PMA</h1></div>
+                    <img src="img/WATSON_00004159-059.jpg" class="Img" id="PMAImg">
+                    <div class="up" id="upPMA"><p class="upT">augmenter la difficulté</p></div>
+                    <div class="down" id="downPMA"><p class="downT">baisser la difficulté</p></div>
+                    <div class="progressBar">
+                        <div id="PMAlvlProgressBar1" class="lvlProgressBar"></div>
+                        <div id="PMAlvlProgressBar2" class="lvlProgressBar"></div>
+                        <div id="PMAlvlProgressBar3" class="lvlProgressBar"></div>
+                        <div id="PMAlvlProgressBar4" class="lvlProgressBar"></div>
+                    </div>
+                </div>
+                <div id="seuil" class="exo">
+                    <div id="seuilT"><h1>séance seuil</h1></div>
+                    <img src="img/chrono.jpg" class="Img" id="seuilImg">
+                    <div class="up" id="upSeuil"><p class="upT">augmenter la difficulté</p></div>
+                    <div class="down" id="downSeuil"><p class="downT">baisser la difficulté</p></div>
+                    <div class="progressBar">
+                        <div id="SeuillvlProgressBar1" class="lvlProgressBar"></div>
+                        <div id="SeuillvlProgressBar2" class="lvlProgressBar"></div>
+                        <div id="SeuillvlProgressBar3" class="lvlProgressBar"></div>
+                        <div id="SeuillvlProgressBar4" class="lvlProgressBar"></div>
+                    </div>
+                </div>
+<!--
+                <div id="endurance" class="exo">
+                    <div id="enduranceT"><h1>séance d'endurance</h1></div>
+                    <img src="img/th.jpg" class="Img" id="enduranceImg">
+                    <div class="up" id="upEndurance"><p class="upT">augmenter la difficulté</p></div>
+                    <div class="down" id="downEndurance"><p class="downT">baisser la difficulté</p></div>
+                   <div class="progressBar">
+                        <div id="EndurancelvlProgressBar1" class="lvlProgressBar"></div>
+                        <div id="EndurancelvlProgressBar2" class="lvlProgressBar"></div>
+                        <div id="EndurancelvlProgressBar3" class="lvlProgressBar"></div>
+                        <div id="EndurancelvlProgressBar4" class="lvlProgressBar"></div>
+                    </div>
+                </div>
+-->
+                <button id="sauvegarder">sauvegarder</button>
+            </section>
+        </section>
+        <script src="js/difficulte.js"></script>
+        <script src="js/language.js"></script>
+        <script src="js/menunav_prg.js"></script>
+    </body>
+
+</html>

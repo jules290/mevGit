@@ -1,20 +1,37 @@
+#left{
+    display: inline-block;
+    width: auto;
+    margin-top: -10px;
+    margin-left: -10px;
+}
+#middle{
+    background-color:  rgb(71, 71, 71);
+    position: absolute;
+    display: inline-block;
+    width: 400px;
+    height: 357px;
+    margin-left: 10px;
+    margin-top: -3px;
+    border-radius: 20px;
+}
+
 #exo{
     margin-top: 0px;
 }
 .exo{
     background-color: #323232;
-    height: 345px;
-    width: 94%;
-    margin-left: 3%;
-    margin-right: 3%;
+    height: 302px;
+    width: 97%;
+    margin-left: 1.5%;
+    margin-right: 1.5%;
     border-radius: 10px;
 }
 #exoT{
     text-align: center;
     font-size: 40px;
     height: 58px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: -5px;
+    margin-bottom: -5px;
 }
 .exoP{
     margin-top: 10px;
@@ -29,19 +46,116 @@
 }
 
 #exoInstruction {
-    font-size: 25px;
+    font-size: 22px;
     text-align: center;
     margin-top: 0px;
-    width: 50%;
-    margin-left: 25%;
-    margin-right: 25%;
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
     padding-top: 24%;
 }
-#graph1 {
+#graphMy {
+    width: 96%;
+    height: 260px;
+    margin-left: 2%;
+    margin-right: 2%;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 10px;
+    margin-top: -20px;
+}
+
+#exoDetails {
+    font-size: 20px;
+    text-align: center;
+}
+
+#graphExo {
+    margin-top: -16px;
+    margin-left: 10px;
+    border-bottom: solid black 2px;
+    border-left: solid black 1px;
+}
+
+#right {
+    background-color: rgb(71, 71, 71);
+    width: 315px;
+    height: 355px;
+    display: inline-block;
+    position: absolute;
+    margin-left: 420px;
+    margin-top: -2px;
+    border-radius: 13px;
+}
+
+#detailsSeance {
+    border: 2px solid rgb(54, 54, 54);
+    width: 94%;
+    height: 94%;
+    margin: 3%;
+    border-radius: 10px;
+    overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+    width: 20px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+  } 
+
+  ::-webkit-scrollbar-thumb {
+    background: grey; 
+    border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #444444; 
+  }
+
+#difficulte {
+    width: 460px;
+    margin-left: -8px;
+    height: 190px;
+    background-color: rgb(71, 71, 71);
+    margin-top: 10px;
+    margin-bottom: -10px;
+    border-radius: 10px;
+}
+
+#difficulteT {
+    font-size: 16.3px;
+    text-align: center;
+    width: 82%;
+    margin-left: 9%;
+    margin-right: 9%;
+}
+
+#difficulteClick {
+    transition-duration: 0.4s;
     width: 90%;
-    height: 270px;
     margin-left: 5%;
     margin-right: 5%;
-    background-color: rgba(255, 255, 255, 0.287);
-    border-radius: 10px;
+    height: 110px;
+    border: solid 1.3px rgb(37, 37, 37);
+    border-radius: 500px;
+}
+#difficulteClick:hover {
+    border: solid 1.3px rgba(255, 255, 255, 0.212);
+    cursor: pointer;
+}
+
+#difficulteA {
+    text-decoration: none;
+    color: white;
+}
+
+#difficulteClickT {
+    font-size: 15px;
+    text-align: center;
+    width: 40%;
+    margin-top: 7.5%;
+    margin-left: 30%;
+    margin-right: 30%;
 }
