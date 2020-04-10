@@ -2,6 +2,13 @@ $(document).ready(function () {
     $("#alert").animate({height: '0px'}, 0);
     $("#alertT").hide()
     $(".alertBtn").hide()
+    $("#reinitialiser").click(function() {
+        localStorage.lvlSprint = 0;
+        localStorage.lvlPMA = 0;
+        localStorage.lvlSeuil = 0;
+        localStorage.lvlEndurance = 0;
+        window.location.reload()
+    })
     $("#non").click(function () {
         hideAlertPerso()
     })

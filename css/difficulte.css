@@ -172,7 +172,7 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     transition-duration: 0.4s;
     background-color: rgb(65, 65, 65);
-    margin-left: 515px;
+    margin-left: 603px;
     font-size: 20px;
     padding-top: 8px;
     padding-bottom: 15px;
@@ -182,6 +182,30 @@
 }
 
 #sauvegarder:hover {
+    background-color: rgb(255, 255, 255);
+    color: rgb(65, 65, 65);
+    border-radius: 15px;
+    box-shadow: 1px 1px 5px #000000;
+}
+
+#reinitialiser {
+    background-color: white;
+    color: rgb(189, 189, 189);
+    border: 1px solid #555555;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition-duration: 0.4s;
+    background-color: rgb(65, 65, 65);
+    margin-left: -330px;
+    font-size: 20px;
+    padding-top: 8px;
+    padding-bottom: 15px;
+    padding-left: 21px;
+    padding-right: 21px;
+    border-radius: 5px;
+    position: absolute;
+}
+
+#reinitialiser:hover {
     background-color: rgb(255, 255, 255);
     color: rgb(65, 65, 65);
     border-radius: 15px;
