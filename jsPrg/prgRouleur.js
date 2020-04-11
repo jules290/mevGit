@@ -12,10 +12,11 @@ $(document).ready(function() {
 
 function prgRouleur() {
     function animExo() {
-        $("#graph1").show()
+        $("#graphMy").hide()
         $("#exoInstruction").animate({paddingTop: '24%'}, 0);
-        if(document.getElementById("exoInstruction").innerHTML !== "jour de repos") {
+        if(document.getElementById("exoInstruction").innerHTML !== "jour de repos" && document.getElementById("exoInstruction").innerHTML !== "objectif") {
             $("#exoInstruction").animate({paddingTop: '0px'}, 500);
+            $("#graphMy").show(500)
         }
     }
     if(Number(localStorage.prg) == 3) {

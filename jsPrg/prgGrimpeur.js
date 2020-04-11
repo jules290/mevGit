@@ -1869,7 +1869,7 @@ function prgGrimpeur() {
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr58
                 switch (nbLevel) {
                     case 1:
-                        sessionStorage.serie = 1;
+                        sessionStorage.serie = 2;
                         sessionStorage.rep = 6;
                         break;
                     case 2:

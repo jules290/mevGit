@@ -1,7 +1,7 @@
 $("#save").click(function() {
     save();
     lcExo();
-     window.location.reload()
+    window.location.reload()
 })
 
 save = () => {
