@@ -59,7 +59,6 @@ function prgGrimpeur() {
     $(".dt_nb").click(function () {
         $("#detailsSeance").empty()
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        document.getElementById("exoDetails").innerText = ""
     })
 
     function endurance(){

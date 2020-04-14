@@ -10,18 +10,19 @@ save = () => {
     let nbd = document.getElementById('nbdV').value;
     let prgT = document.getElementById("prgTV").value;
     let prgJ = document.getElementById("prgJV").value; 
+    let level = document.getElementById("levelV").value;
     localStorage.prg = 3;
     localStorage.année = année;
     localStorage.mois = mois;
     localStorage.nbd = nbd;
     localStorage.prgT = prgT;
     localStorage.prgJ = prgJ;
-    let nbAnnée = Number(localStorage.année);
-    let nbMois = Number(localStorage.mois);
-    let nbNbd = Number(localStorage.nbd);
-    let nbObjectif = Number(localStorage.objectif);  
-    let nbPrgT = Number(localStorage.prgT); 
-    let nbPrgJ = Number(localStorage.prgJ);
+    localStorage.level= level;
+    localStorage.lvlSprint = 0;
+    localStorage.lvlPMA = 0;
+    localStorage.lvlSeuil = 0;
+    localStorage.lvlGimenez = 0;
+    localStorage.lvlEndurance = 0;
 }
 
 lcExo = () => {
@@ -346,6 +347,8 @@ lcExo = () => {
     localStorage.exoClr109 = "";
     localStorage.exoClr110 = "";
     localStorage.exoClr111 = "";
+
+    let nbLevel = Number(localStorage.level)
     
     if (nbPrgT == 4) {
         //semaine 1
@@ -495,7 +498,7 @@ lcExo = () => {
 
         if (nbPrgJ >= 5) {
             localStorage.exo26 = "séance de sprint"
-            localStorage.exoClr26 = ""
+            localStorage.exoClr26 = "red"
         }
         else {
             localStorage.exo26 = "jour de repos"
@@ -566,7 +569,7 @@ lcExo = () => {
 
         if (nbPrgJ >= 6) {
             localStorage.exo39 = "séance de sprint"
-            localStorage.exoClr39 = ""
+            localStorage.exoClr39 = "red"
         }
         else {
             localStorage.exo39 = "jour de repos"
@@ -753,8 +756,8 @@ lcExo = () => {
         localStorage.exoClr71 = ""
 
         if (nbPrgJ >= 4) {
-            localStorage.exo72 = ""
-            localStorage.exoClr72 = ""
+            localStorage.exo72 = "séance de sprint"
+            localStorage.exoClr72 = "red"
         }
         else {
             localStorage.exo72 = "jour de repos"
@@ -793,8 +796,24 @@ lcExo = () => {
         localStorage.exoClr78 = ""
 
         if (nbPrgJ >= 4) {
-            localStorage.exo79 = "séance de seuil"
-            localStorage.exoClr79 = "#bebe02"
+            switch (nbLevel) {
+                case 1:
+                    localStorage.exo79 = "séance de seuil"
+                    localStorage.exoClr79 = "#bebe02"
+                    break;
+                case 2:
+                    localStorage.exo79 = "séance de seuil"
+                    localStorage.exoClr79 = "#bebe02"
+                    break;
+                case 3:
+                    localStorage.exo79 = "séance de gimenez"
+                    localStorage.exoClr79 = "#bebe02"
+                    break;
+                case 4:
+                    localStorage.exo79 = "séance de gimenez"
+                    localStorage.exoClr79 = "#bebe02"
+                    break;
+            }
         }
         else {
             localStorage.exo79 = "jour de repos"
@@ -805,8 +824,24 @@ lcExo = () => {
         localStorage.exoClr80 = "green"
 
         if (nbPrgJ >= 6) {
-            localStorage.exo81 = "séance de seuil"
-            localStorage.exoClr81 = "#bebe02"
+            switch (nbLevel) {
+                case 1:
+                    localStorage.exo81 = "séance de seuil"
+                    localStorage.exoClr81 = "#bebe02"
+                    break;
+                case 2:
+                    localStorage.exo81 = "séance de seuil"
+                    localStorage.exoClr81 = "#bebe02"
+                    break;
+                case 3:
+                    localStorage.exo81 = "séance de gimenez"
+                    localStorage.exoClr81 = "#bebe02"
+                    break;
+                case 4:
+                    localStorage.exo81 = "séance de gimenez"
+                    localStorage.exoClr81 = "#bebe02"
+                    break;
+            }
         }
         else {
             localStorage.exo81 = "jour de repos"
@@ -822,8 +857,24 @@ lcExo = () => {
             localStorage.exoClr82 = ""
         }
 
-        localStorage.exo83 = "séance de seuil"
-        localStorage.exoClr83 = "#bebe02"
+        switch (nbLevel) {
+            case 1:
+                localStorage.exo83 = "séance de seuil"
+                localStorage.exoClr83 = "#bebe02"
+                break;
+            case 2:
+                localStorage.exo83 = "séance de seuil"
+                localStorage.exoClr83 = "#bebe02"
+                break;
+            case 3:
+                localStorage.exo83 = "séance de seuil"
+                localStorage.exoClr83 = "#bebe02"
+                break;
+            case 4:
+                localStorage.exo83 = "séance de gimenez"
+                localStorage.exoClr83 = "#bebe02"
+                break;
+        }
 
         localStorage.exo84 = "séance d'endurance"
         localStorage.exoClr84 = "green"
@@ -841,8 +892,24 @@ lcExo = () => {
             localStorage.exoClr86 = ""
         }
 
-        localStorage.exo87 = "séance de seuil"
-        localStorage.exoClr87 = "#bebe02"
+        switch (nbLevel) {
+            case 1:
+                localStorage.exo87 = "séance de seuil"
+                localStorage.exoClr87 = "#bebe02"
+                break;
+            case 2:
+                localStorage.exo87 = "séance de seuil"
+                localStorage.exoClr87 = "#bebe02"
+                break;
+            case 3:
+                localStorage.exo87 = "séance de gimenez"
+                localStorage.exoClr87 = "#bebe02"
+                break;
+            case 4:
+                localStorage.exo87 = "séance de gimenez"
+                localStorage.exoClr87 = "#bebe02"
+                break;
+        }
 
         if (nbPrgJ >= 6) {
             localStorage.exo88 = "séance d'endurance"
@@ -881,8 +948,24 @@ lcExo = () => {
             localStorage.exoClr93 = ""
         }
 
-        localStorage.exo94 = "séance de seuil"
-        localStorage.exoClr94 = "#bebe02"
+        switch (nbLevel) {
+            case 1:
+                localStorage.exo94 = "séance de seuil"
+                localStorage.exoClr94 = "#bebe02"
+                break;
+            case 2:
+                localStorage.exo94 = "séance de gimenez"
+                localStorage.exoClr94 = "#bebe02"
+                break;
+            case 3:
+                localStorage.exo94 = "séance de gimenez"
+                localStorage.exoClr94 = "#bebe02"
+                break;
+            case 4:
+                localStorage.exo94 = "séance de gimenez"
+                localStorage.exoClr94 = "#bebe02"
+                break;
+        }
 
         if (nbPrgJ >= 6) {
             localStorage.exo95 = "séance d'endurance"
@@ -900,6 +983,25 @@ lcExo = () => {
         else {
             localStorage.exo96 = "jour de repos"
             localStorage.exoClr96 = ""
+        }
+
+        switch (nbLevel) {
+            case 1:
+                localStorage.exo79 = "séance de seuil"
+                localStorage.exoClr79 = "#bebe02"
+                break;
+            case 2:
+                localStorage.exo97 = "séance de seuil"
+                localStorage.exoClr97 = "#bebe02"
+                break;
+            case 3:
+                localStorage.exo979 = "séance de gimenez"
+                localStorage.exoClr97 = "#bebe02"
+                break;
+            case 4:
+                localStorage.exo97 = "séance de gimenez"
+                localStorage.exoClr97 = "#bebe02"
+                break;
         }
 
         localStorage.exo97 = "séance de seuil"
@@ -1272,7 +1374,7 @@ lcExo = () => {
         }
 
         if (nbPrgJ >= 5) {
-            localStorage.exo54 = "séance de seuil"
+            localStorage.exo54 = "séance de gimenez"
             localStorage.exoClr54 = "#bebe02"
         }
         else {
@@ -1299,7 +1401,7 @@ lcExo = () => {
             localStorage.exoClr58 = ""
         }
 
-        localStorage.exo59 = "séance de seuil"
+        localStorage.exo59 = "séance de gimenez"
         localStorage.exoClr59 = "#bebe02"
 
         if (nbPrgJ >= 6) {
@@ -1339,7 +1441,7 @@ lcExo = () => {
             localStorage.exoClr65 = ""
         }
 
-        localStorage.exo66 = "séance de seuil"
+        localStorage.exo66 = "séance de gimenez"
         localStorage.exoClr66 = "#bebe02"
 
         if (nbPrgJ >= 6) {
@@ -1601,7 +1703,7 @@ lcExo = () => {
         localStorage.exoClr31 = "#bebe02"
 
         if (nbPrgJ >= 6) {
-            localStorage.exo32 = "séance de seuil"
+            localStorage.exo32 = "séance de gimenez"
             localStorage.exoClr32 = "#bebe02"
         }
         else {
@@ -1637,7 +1739,7 @@ lcExo = () => {
             localStorage.exoClr37 = ""
         }
 
-        localStorage.exo38 = "séance de seuil"
+        localStorage.exo38 = "séance de gimenez"
         localStorage.exoClr38 = "#bebe02"
 
         if (nbPrgJ >= 6) {
@@ -1719,1809 +1821,5 @@ lcExo = () => {
     
         localStorage.exo56 = "objectif";
         localStorage.exoClr56 = "";
-    }
-
-    if(nbLevel == 1) {
-    localStorage.exoLevel1 = "";
-    localStorage.exoLevel2 = "";
-    localStorage.exoLevel3 = "";
-    localStorage.exoLevel4 = "";
-    localStorage.exoLevel5 = "";
-    localStorage.exoLevel6 = "";
-    localStorage.exoLevel7 = "";
-    localStorage.exoLevel8 = "";
-    localStorage.exoLevel9 = "";
-    localStorage.exoLevel10 = "";
-    localStorage.exoLevel11 = "";
-    localStorage.exoLevel12 = "";
-    localStorage.exoLevel13 = "";
-    localStorage.exoLevel14 = "";
-    localStorage.exoLevel15 = "";
-    localStorage.exoLevel16 = "";
-    localStorage.exoLevel17 = "";
-    localStorage.exoLevel18 = "";
-    localStorage.exoLevel19 = "";
-    localStorage.exoLevel20 = "";
-    localStorage.exoLevel21 = "";
-    localStorage.exoLevel22 = "";
-    localStorage.exoLevel23 = "";
-    localStorage.exoLevel24 = "";
-    localStorage.exoLevel25 = "";
-    localStorage.exoLevel26 = "";
-    localStorage.exoLevel27 = "";
-    localStorage.exoLevel28 = "";
-    localStorage.exoLevel29 = "";
-    localStorage.exoLevel30 = "";
-    localStorage.exoLevel31 = "";
-    localStorage.exoLevel32 = "";
-    localStorage.exoLevel33 = "";
-    localStorage.exoLevel34 = "";
-    localStorage.exoLevel35 = "";
-    localStorage.exoLevel36 = "";
-    localStorage.exoLevel37 = "";
-    localStorage.exoLevel38 = "";
-    localStorage.exoLevel39 = "";
-    localStorage.exoLevel40 = "";
-    localStorage.exoLevel41 = "";
-    localStorage.exoLevel42 = "";
-    localStorage.exoLevel43 = "";
-    localStorage.exoLevel44 = "";
-    localStorage.exoLevel45 = "";
-    localStorage.exoLevel46 = "";
-    localStorage.exoLevel47 = "";
-    localStorage.exoLevel48 = "";
-    localStorage.exoLevel49 = "";
-    localStorage.exoLevel50 = "";
-    localStorage.exoLevel51 = "";
-    localStorage.exoLevel52 = "";
-    localStorage.exoLevel53 = "";
-    localStorage.exoLevel54 = "";
-    localStorage.exoLevel55 = "";
-    localStorage.exoLevel56 = "";
-    localStorage.exoLevel57 = "";
-    localStorage.exoLevel58 = "";
-    localStorage.exoLevel59 = "";
-    localStorage.exoLevel60 = "";
-    localStorage.exoLevel61 = "";
-    localStorage.exoLevel62 = "";
-    localStorage.exoLevel63 = "";
-    localStorage.exoLevel64 = "";
-    localStorage.exoLevel65 = "";
-    localStorage.exoLevel66 = "";
-    localStorage.exoLevel67 = "";
-    localStorage.exoLevel68 = "";
-    localStorage.exoLevel69 = "";
-    localStorage.exoLevel70 = "";
-    localStorage.exoLevel71 = "";
-    localStorage.exoLevel72 = "";
-    localStorage.exoLevel73 = "";
-    localStorage.exoLevel74 = "";
-    localStorage.exoLevel75 = "";
-    localStorage.exoLevel76 = "";
-    localStorage.exoLevel77 = "";
-    localStorage.exoLevel78 = "";
-    localStorage.exoLevel79 = "";
-    localStorage.exoLevel80 = "";
-    localStorage.exoLevel81 = "";
-    localStorage.exoLevel82 = "";
-    localStorage.exoLevel83 = "";
-    localStorage.exoLevel84 = "";
-    localStorage.exoLevel85 = "";
-    localStorage.exoLevel86 = "";
-    localStorage.exoLevel87 = "";
-    localStorage.exoLevel88 = "";
-    localStorage.exoLevel89 = "";
-    localStorage.exoLevel90 = "";
-    localStorage.exoLevel91 = "";
-    localStorage.exoLevel92 = "";
-    localStorage.exoLevel93 = "";
-    localStorage.exoLevel94 = "";
-    localStorage.exoLevel95 = "";
-    localStorage.exoLevel96 = "";
-    localStorage.exoLevel97 = "";
-    localStorage.exoLevel98 = "";
-    localStorage.exoLevel99 = "";
-    localStorage.exoLevel100 = "";
-    localStorage.exoLevel101 = "";
-    localStorage.exoLevel102 = "";
-    localStorage.exoLevel103 = "";
-    localStorage.exoLevel104 = "";
-    localStorage.exoLevel105 = "";
-    localStorage.exoLevel106 = "";
-    localStorage.exoLevel107 = "";
-    localStorage.exoLevel108 = "";
-    localStorage.exoLevel109 = "";
-    localStorage.exoLevel110 = "";
-    localStorage.exoLevel111 = "";
-
-    if (nbPrgT == 4) {
-        //semaine 1
-        if (nbPrgJ >= 4) {localStorage.exoLevel1 = ""}
-        localStorage.exoLevel2 = ""
-        localStorage.exoLevel3 = ""
-        if (nbPrgJ >= 5) {localStorage.exoLevel4 = ""}
-        if (nbPrgJ >= 6) {localStorage.exoLevel5 = ""}
-        localStorage.exoLevel6 = ""
-        localStorage.exoLevel7 = ""
-        
-        //semaine 2
-        localStorage.exoLevel8 = ""
-        if (nbPrgJ >= 4) {localStorage.exoLevel9 = ""}
-        localStorage.exoLevel10 = ""
-        if (nbPrgJ >= 6) {localStorage.exoLevel11 = ""}
-        if (nbPrgJ >= 5) {localStorage.exoLevel12 = ""}
-        localStorage.exoLevel13 = ""
-        localStorage.exoLevel14 = ""
-    
-        //semaine 3
-        localStorage.exoLevel15 = ""
-        if (nbPrgJ >= 4) {localStorage.exoLevel16 = ""}
-        localStorage.exoLevel17 = ""
-        if (nbPrgJ >= 6) {localStorage.exoLevel18 = ""}
-        if (nbPrgJ >= 5) {localStorage.exoLevel19 = ""}
-        localStorage.exoLevel20 = ""
-        localStorage.exoLevel21 = ""
-       
-        //semaine 4
-        localStorage.exoLevel22 = ""
-        if (nbPrgJ >= 4) {localStorage.exoLevel23 = ""}
-        localStorage.exoLevel24 = ""
-        if (nbPrgJ >= 6) {localStorage.exoLevel25 = ""}
-        if (nbPrgJ >= 5) {localStorage.exoLevel26 = ""}
-        localStorage.exoLevel27 = ""
-        localStorage.exoLevel28 = ""
-    
-        //semaine 5
-        localStorage.exoLevel29 = ""
-        if (nbPrgJ >= 4) {localStorage.exoLevel30 = ""}
-        localStorage.exoLevel31 = ""
-        if (nbPrgJ >= 6) {localStorage.exoLevel32 = ""}
-        if (nbPrgJ >= 5) { localStorage.exoLevel33 = ""} 
-        localStorage.exoLevel34 = ""
-        localStorage.exoLevel35 = ""
-    
-        //semaine 6
-        localStorage.exoLevel36 = ""
-        if (nbPrgJ >= 4) {localStorage.exoLevel37 = ""}
-        localStorage.exoLevel38 = ""
-        if (nbPrgJ >= 6) {localStorage.exoLevel39 = ""}
-        if (nbPrgJ >= 5) {localStorage.exoLevel40 = ""}
-        localStorage.exoLevel41 = ""
-        localStorage.exoLevel42 = ""
-    
-        //semaine 7
-        localStorage.exoLevel43 = ""
-        if (nbPrgJ >= 4) {localStorage.exoLevel44 = ""}
-        localStorage.exoLevel45 = ""
-        if (nbPrgJ >= 6) {localStorage.exoLevel46 = ""}
-        if (nbPrgJ >= 5) {localStorage.exoLevel47 = ""}
-        localStorage.exoLevel48 = ""
-        localStorage.exoLevel49 = ""
-    
-        //semaine 8
-        localStorage.exoLevel50 = ""
-        if (nbPrgJ >= 4) {localStorage.exoLevel51 = ""}
-        localStorage.exoLevel52 = ""
-        if (nbPrgJ >= 6) {localStorage.exoLevel53 = ""}
-        if (nbPrgJ >= 5) {localStorage.exoLevel54 = ""}
-        localStorage.exoLevel55 = ""
-        localStorage.exoLevel56 = ""
-       
-        //semaine 9
-        localStorage.exoLevel57 = ""
-        if (nbPrgJ >= 4) {localStorage.exoLevel58 = ""}
-        localStorage.exoLevel59 = ""
-        if (nbPrgJ >= 6) {localStorage.exoLevel60 = ""}
-        if (nbPrgJ >= 5) {localStorage.exoLevel61 = ""}
-        localStorage.exoLevel62 = ""
-        localStorage.exoLevel63 = ""
-           
-        //semaine 10
-        localStorage.exoLevel64 = ""
-        if (nbPrgJ >= 4) {localStorage.exoLevel65 = ""}
-        localStorage.exoLevel66 = ""
-        if (nbPrgJ >= 6) {localStorage.exoLevel67 = ""}
-        if (nbPrgJ >= 5) {localStorage.exoLevel68 = ""}
-        localStorage.exoLevel69 = ""
-        localStorage.exoLevel70 = ""
-    
-        //semaine 11
-        localStorage.exoLevel71 = ""
-        if (nbPrgJ >= 4) {localStorage.exoLevel72 = ""}
-        localStorage.exoLevel73 = ""
-        if (nbPrgJ >= 6) {localStorage.exoLevel74 = ""}
-        if (nbPrgJ >= 5) {localStorage.exoLevel75 = ""}
-        localStorage.exoLevel76 = ""
-        localStorage.exoLevel77 = ""
-            
-        //semaine 12
-        localStorage.exoLevel78 = ""
-        if (nbPrgJ >= 4) {localStorage.exoLevel79 = ""}
-        localStorage.exoLevel80 = ""
-        if (nbPrgJ >= 6) {localStorage.exoLevel81 = ""}
-        if (nbPrgJ >= 5) {localStorage.exoLevel82 = ""}
-        localStorage.exoLevel83 = ""
-        localStorage.exoLevel84 = ""
-        
-        //semaine 13
-        localStorage.exoLevel85 = ""
-        if (nbPrgJ >= 4) {localStorage.exoLevel86 = ""}
-        localStorage.exoLevel87 = ""
-        if (nbPrgJ >= 6) {localStorage.exoLevel88 = ""}
-        if (nbPrgJ >= 5) {localStorage.exoLevel89 = ""}
-        localStorage.exoLevel90 = ""
-        localStorage.exoLevel91 = ""
-            
-        //semaine 14
-        localStorage.exoLevel92 = ""
-        if (nbPrgJ >= 4) {localStorage.exoLevel93 = ""}
-        localStorage.exoLevel94 = ""
-        if (nbPrgJ >= 6) {localStorage.exoLevel95 = ""}
-        if (nbPrgJ >= 5) {localStorage.exoLevel96 = ""}
-        localStorage.exoLevel97 = ""
-        localStorage.exoLevel98 = ""
-         
-        //semaine 15
-        if (nbPrgJ >= 5) {localStorage.exoLevel99 = "";}
-        else {localStorage.exoLevel99 = ""};
-        localStorage.exoLevel100 = "";
-        localStorage.exoLevel101 = "";
-        localStorage.exoLevel102 = "";
-        localStorage.exoLevel103 = "";
-        localStorage.exoLevel104 = "";
-        localStorage.exoLevel105 = "";
-    
-        //semaine 16
-        if (nbPrgJ >= 5) {localStorage.exoLevel106 = "";}
-        else {localStorage.exoLevel106 = ""};
-        localStorage.exoLevel107 = "";
-        localStorage.exoLevel108 = "";
-        localStorage.exoLevel109 = "";
-        localStorage.exoLevel110 = "";
-        localStorage.exoLevel111 = "";
-        localStorage.exoLevel112 = "";
-    }
-    
-    else if (nbPrgT == 3) {
-        //semaine 1
-        if (nbPrgJ >= 4) {localStorage.exoLevel1 = ""}
-        localStorage.exoLevel2 = ""
-        localStorage.exoLevel3 = ""
-        if (nbPrgJ >= 5) {localStorage.exoLevel4 = ""}
-        if (nbPrgJ >= 6) {localStorage.exoLevel5 = ""}
-        localStorage.exoLevel6 = ""
-        localStorage.exoLevel7 = ""
-         
-        //semaine 2
-        localStorage.exoLevel8 = ""
-        if (nbPrgJ >= 4) {localStorage.exoLevel9 = ""}
-        localStorage.exoLevel10 = ""
-        if (nbPrgJ >= 6) {localStorage.exoLevel11 = ""}
-        if (nbPrgJ >= 5) {localStorage.exoLevel12 = ""}
-        localStorage.exoLevel13 = ""
-        localStorage.exoLevel14 = ""
-         
-        //semaine 3
-        localStorage.exoLevel15 = ""
-        if (nbPrgJ >= 4) {localStorage.exoLevel16 = ""}
-        localStorage.exoLevel17 = ""
-        if (nbPrgJ >= 6) {localStorage.exoLevel18 = ""}
-        if (nbPrgJ >= 5) {localStorage.exoLevel19 = ""}
-        localStorage.exoLevel20 = ""
-        localStorage.exoLevel21 = ""
-            
-        //semaine 4
-        localStorage.exoLevel22 = ""
-        if (nbPrgJ >= 4) {localStorage.exoLevel23 = ""}
-        localStorage.exoLevel24 = ""
-        if (nbPrgJ >= 6) {localStorage.exoLevel25 = ""}
-        if (nbPrgJ >= 5) {localStorage.exoLevel26 = ""}
-        localStorage.exoLevel27 = ""
-        localStorage.exoLevel28 = ""
-         
-        //semaine 5
-        localStorage.exoLevel29 = ""
-        if (nbPrgJ >= 4) {localStorage.exoLevel30 = ""}
-        localStorage.exoLevel31 = ""
-        if (nbPrgJ >= 6) {localStorage.exoLevel32 = ""}
-        if (nbPrgJ >= 5) {localStorage.exoLevel33 = ""}
-        localStorage.exoLevel34 = ""
-        localStorage.exoLevel35 = ""
-           
-        //semaine 6
-        localStorage.exoLevel36 = ""
-        if (nbPrgJ >= 4) {localStorage.exoLevel37 = ""}
-        localStorage.exoLevel38 = ""
-        if (nbPrgJ >= 6) {localStorage.exoLevel39 = ""}
-        if (nbPrgJ >= 5) {localStorage.exoLevel40 = ""}
-        localStorage.exoLevel41 = ""
-        localStorage.exoLevel42 = ""
-         
-        //semaine 7
-        localStorage.exoLevel43 = ""
-        if (nbPrgJ >= 4) {localStorage.exoLevel44 = ""}
-        localStorage.exoLevel45 = ""
-        if (nbPrgJ >= 6) {localStorage.exoLevel46 = ""}
-        if (nbPrgJ >= 5) {localStorage.exoLevel47 = ""}
-        localStorage.exoLevel48 = ""
-        localStorage.exoLevel49 = ""
-    
-        //semaine 8
-        localStorage.exoLevel50 = ""
-        if (nbPrgJ >= 4) {localStorage.exoLevel51 = ""}
-        localStorage.exoLevel52 = ""
-        if (nbPrgJ >= 6) {localStorage.exoLevel53 = ""}
-        if (nbPrgJ >= 5) {localStorage.exoLevel54 = ""}
-        localStorage.exoLevel55 = ""
-        localStorage.exoLevel56 = ""
-       
-        //semaine 9
-        localStorage.exoLevel57 = ""
-        if (nbPrgJ >= 4) {localStorage.exoLevel58 = ""}
-        localStorage.exoLevel59 = ""
-        if (nbPrgJ >= 6) {localStorage.exoLevel60 = ""}
-        if (nbPrgJ >= 5) {localStorage.exoLevel61 = ""}
-        localStorage.exoLevel62 = ""
-        localStorage.exoLevel63 = ""
-    
-        //semaine 10
-        localStorage.exo6Level4 = ""
-        if (nbPrgJ >= 4) {localStorage.exoLevel65 = ""}
-        localStorage.exoLevel66 = ""
-        if (nbPrgJ >= 6) {localStorage.exoLevel67 = ""}
-        if (nbPrgJ >= 5) {localStorage.exoLevel68 = ""}
-        localStorage.exoLevel69 = ""
-        localStorage.exoLevel70 = ""
-     
-        //semaine 11
-        if (nbPrgJ >= 5) {localStorage.exoLevel71 = "";}
-        else {localStorage.exoLevel71 = ""};   
-        localStorage.exoLevel72 = "";    
-        localStorage.exoLevel73 = "";   
-        localStorage.exoLevel74 = "";    
-        localStorage.exoLevel75 = "";   
-        localStorage.exoLevel76 = "";
-        localStorage.exoLevel77 = "";
-    
-        //semaine 12
-        if (nbPrgJ >= 5) {localStorage.exoLevel78 = "";}
-        else {localStorage.exoLevel78 = ""};    
-        localStorage.exoLevel79 = "";    
-        localStorage.exoLevel80 = "";   
-        localStorage.exoLevel81 = "";   
-        localStorage.exoLevel82 = "";   
-        localStorage.exoLevel83 = "";
-        localStorage.exoLevel84 = "";
-    
-    }
-    
-        else if (nbPrgT == 2) {
-        //semaine 1
-        if (nbPrgJ >= 4) {localStorage.exoLevel1 = ""}
-        localStorage.exoLevel2 = ""
-        localStorage.exoLevel3 = ""
-        if (nbPrgJ >= 5) {localStorage.exoLevel4 = ""}
-        if (nbPrgJ >= 6) {localStorage.exoLevel5 = ""}
-        localStorage.exoLevel6 = ""
-        localStorage.exoLevel7 = ""
-      
-        //semaine 2
-        localStorage.exoLevel8 = ""
-        if (nbPrgJ >= 4) {localStorage.exoLevel9 = ""}
-        localStorage.exoLevel10 = ""
-        if (nbPrgJ >= 6) {localStorage.exoLevel11 = ""}
-        if (nbPrgJ >= 5) {localStorage.exoLevel12 = ""}
-        localStorage.exoLevel13 = ""
-        localStorage.exoLevel14 = ""
-      
-        //semaine 3
-        localStorage.exoLevel15 = ""
-        if (nbPrgJ >= 4) {localStorage.exoLevel16 = ""}
-        localStorage.exoLevel17 = ""
-        if (nbPrgJ >= 6) {localStorage.exoLevel18 = ""}
-        if (nbPrgJ >= 5) {localStorage.exoLevel19 = ""}
-        localStorage.exoLevel20 = ""
-        localStorage.exoLevel21 = ""
-           
-        //semaine 4
-        localStorage.exoLevel22 = ""
-        if (nbPrgJ >= 4) {localStorage.exoLevel23 = ""}
-        localStorage.exoLevel24 = ""
-        if (nbPrgJ >= 6) {localStorage.exoLevel25 = ""}
-        if (nbPrgJ >= 5) {localStorage.exoLevel26 = ""}
-        localStorage.exoLevel27 = ""
-        localStorage.exoLevel28 = ""
-        
-        //semaine 5
-        localStorage.exoLevel29 = ""
-        if (nbPrgJ >= 4) {localStorage.exoLevel30 = ""}
-        localStorage.exoLevel31 = ""
-        if (nbPrgJ >= 6) {localStorage.exoLevel32 = ""}
-        if (nbPrgJ >= 5) {localStorage.exoLevel33 = ""}
-        localStorage.exoLevel34 = ""
-        localStorage.exoLevel35 = ""
-           
-        //semaine 6
-        localStorage.exoLevel36 = ""
-        if (nbPrgJ >= 4) {localStorage.exoLevel37 = ""}
-        localStorage.exoLevel38 = ""
-        if (nbPrgJ >= 6) {localStorage.exoLevel39 = ""}
-        if (nbPrgJ >= 5) {localStorage.exoLevel40 = ""}
-        localStorage.exoLevel41 = ""
-        localStorage.exoLevel42 = ""
-    
-        //semaine 7
-        if (nbPrgJ >= 5) {localStorage.exo43 = "";}
-        else {localStorage.exo43 = ""};
-        localStorage.exo44 = "";
-        localStorage.exo45 = "";
-        localStorage.exo46 = "";
-        localStorage.exo47 = "";
-        localStorage.exo48 = "";
-        localStorage.exo49 = "";
-    
-        //semaine 8
-        if (nbPrgJ >= 5) {localStorage.exo50 = "";}
-        else {localStorage.exo50 = ""};
-        localStorage.exo51 = "";
-        localStorage.exo52 = "";
-        localStorage.exo53 = "";
-        localStorage.exo54 = "";
-        localStorage.exo55 = "";
-        localStorage.exo56 = "";
-    }
-    }
-
-    else if(nbLevel == 2) {
-        localStorage.exoLevel1 = "";
-        localStorage.exoLevel2 = "";
-        localStorage.exoLevel3 = "";
-        localStorage.exoLevel4 = "";
-        localStorage.exoLevel5 = "";
-        localStorage.exoLevel6 = "";
-        localStorage.exoLevel7 = "";
-        localStorage.exoLevel8 = "";
-        localStorage.exoLevel9 = "";
-        localStorage.exoLevel10 = "";
-        localStorage.exoLevel11 = "";
-        localStorage.exoLevel12 = "";
-        localStorage.exoLevel13 = "";
-        localStorage.exoLevel14 = "";
-        localStorage.exoLevel15 = "";
-        localStorage.exoLevel16 = "";
-        localStorage.exoLevel17 = "";
-        localStorage.exoLevel18 = "";
-        localStorage.exoLevel19 = "";
-        localStorage.exoLevel20 = "";
-        localStorage.exoLevel21 = "";
-        localStorage.exoLevel22 = "";
-        localStorage.exoLevel23 = "";
-        localStorage.exoLevel24 = "";
-        localStorage.exoLevel25 = "";
-        localStorage.exoLevel26 = "";
-        localStorage.exoLevel27 = "";
-        localStorage.exoLevel28 = "";
-        localStorage.exoLevel29 = "";
-        localStorage.exoLevel30 = "";
-        localStorage.exoLevel31 = "";
-        localStorage.exoLevel32 = "";
-        localStorage.exoLevel33 = "";
-        localStorage.exoLevel34 = "";
-        localStorage.exoLevel35 = "";
-        localStorage.exoLevel36 = "";
-        localStorage.exoLevel37 = "";
-        localStorage.exoLevel38 = "";
-        localStorage.exoLevel39 = "";
-        localStorage.exoLevel40 = "";
-        localStorage.exoLevel41 = "";
-        localStorage.exoLevel42 = "";
-        localStorage.exoLevel43 = "";
-        localStorage.exoLevel44 = "";
-        localStorage.exoLevel45 = "";
-        localStorage.exoLevel46 = "";
-        localStorage.exoLevel47 = "";
-        localStorage.exoLevel48 = "";
-        localStorage.exoLevel49 = "";
-        localStorage.exoLevel50 = "";
-        localStorage.exoLevel51 = "";
-        localStorage.exoLevel52 = "";
-        localStorage.exoLevel53 = "";
-        localStorage.exoLevel54 = "";
-        localStorage.exoLevel55 = "";
-        localStorage.exoLevel56 = "";
-        localStorage.exoLevel57 = "";
-        localStorage.exoLevel58 = "";
-        localStorage.exoLevel59 = "";
-        localStorage.exoLevel60 = "";
-        localStorage.exoLevel61 = "";
-        localStorage.exoLevel62 = "";
-        localStorage.exoLevel63 = "";
-        localStorage.exoLevel64 = "";
-        localStorage.exoLevel65 = "";
-        localStorage.exoLevel66 = "";
-        localStorage.exoLevel67 = "";
-        localStorage.exoLevel68 = "";
-        localStorage.exoLevel69 = "";
-        localStorage.exoLevel70 = "";
-        localStorage.exoLevel71 = "";
-        localStorage.exoLevel72 = "";
-        localStorage.exoLevel73 = "";
-        localStorage.exoLevel74 = "";
-        localStorage.exoLevel75 = "";
-        localStorage.exoLevel76 = "";
-        localStorage.exoLevel77 = "";
-        localStorage.exoLevel78 = "";
-        localStorage.exoLevel79 = "";
-        localStorage.exoLevel80 = "";
-        localStorage.exoLevel81 = "";
-        localStorage.exoLevel82 = "";
-        localStorage.exoLevel83 = "";
-        localStorage.exoLevel84 = "";
-        localStorage.exoLevel85 = "";
-        localStorage.exoLevel86 = "";
-        localStorage.exoLevel87 = "";
-        localStorage.exoLevel88 = "";
-        localStorage.exoLevel89 = "";
-        localStorage.exoLevel90 = "";
-        localStorage.exoLevel91 = "";
-        localStorage.exoLevel92 = "";
-        localStorage.exoLevel93 = "";
-        localStorage.exoLevel94 = "";
-        localStorage.exoLevel95 = "";
-        localStorage.exoLevel96 = "";
-        localStorage.exoLevel97 = "";
-        localStorage.exoLevel98 = "";
-        localStorage.exoLevel99 = "";
-        localStorage.exoLevel100 = "";
-        localStorage.exoLevel101 = "";
-        localStorage.exoLevel102 = "";
-        localStorage.exoLevel103 = "";
-        localStorage.exoLevel104 = "";
-        localStorage.exoLevel105 = "";
-        localStorage.exoLevel106 = "";
-        localStorage.exoLevel107 = "";
-        localStorage.exoLevel108 = "";
-        localStorage.exoLevel109 = "";
-        localStorage.exoLevel110 = "";
-        localStorage.exoLevel111 = "";
-    
-        if (nbPrgT == 4) {
-            //semaine 1
-            if (nbPrgJ >= 4) {localStorage.exoLevel1 = ""}
-            localStorage.exoLevel2 = ""
-            localStorage.exoLevel3 = ""
-            if (nbPrgJ >= 5) {localStorage.exoLevel4 = ""}
-            if (nbPrgJ >= 6) {localStorage.exoLevel5 = ""}
-            localStorage.exoLevel6 = ""
-            localStorage.exoLevel7 = ""
-            
-            //semaine 2
-            localStorage.exoLevel8 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel9 = ""}
-            localStorage.exoLevel10 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel11 = ""}
-            if (nbPrgJ >= 5) {localStorage.exoLevel12 = ""}
-            localStorage.exoLevel13 = ""
-            localStorage.exoLevel14 = ""
-        
-            //semaine 3
-            localStorage.exoLevel15 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel16 = ""}
-            localStorage.exoLevel17 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel18 = ""}
-            if (nbPrgJ >= 5) {localStorage.exoLevel19 = ""}
-            localStorage.exoLevel20 = ""
-            localStorage.exoLevel21 = ""
-           
-            //semaine 4
-            localStorage.exoLevel22 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel23 = ""}
-            localStorage.exoLevel24 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel25 = ""}
-            if (nbPrgJ >= 5) {localStorage.exoLevel26 = ""}
-            localStorage.exoLevel27 = ""
-            localStorage.exoLevel28 = ""
-        
-            //semaine 5
-            localStorage.exoLevel29 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel30 = ""}
-            localStorage.exoLevel31 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel32 = ""}
-            if (nbPrgJ >= 5) { localStorage.exoLevel33 = ""} 
-            localStorage.exoLevel34 = ""
-            localStorage.exoLevel35 = ""
-        
-            //semaine 6
-            localStorage.exoLevel36 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel37 = ""}
-            localStorage.exoLevel38 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel39 = ""}
-            if (nbPrgJ >= 5) {localStorage.exoLevel40 = ""}
-            localStorage.exoLevel41 = ""
-            localStorage.exoLevel42 = ""
-        
-            //semaine 7
-            localStorage.exoLevel43 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel44 = ""}
-            localStorage.exoLevel45 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel46 = ""}
-            if (nbPrgJ >= 5) {localStorage.exoLevel47 = ""}
-            localStorage.exoLevel48 = ""
-            localStorage.exoLevel49 = ""
-        
-            //semaine 8
-            localStorage.exoLevel50 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel51 = ""}
-            localStorage.exoLevel52 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel53 = ""}
-            if (nbPrgJ >= 5) {localStorage.exoLevel54 = ""}
-            localStorage.exoLevel55 = ""
-            localStorage.exoLevel56 = ""
-           
-            //semaine 9
-            localStorage.exoLevel57 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel58 = ""}
-            localStorage.exoLevel59 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel60 = ""}
-            if (nbPrgJ >= 5) {localStorage.exoLevel61 = ""}
-            localStorage.exoLevel62 = ""
-            localStorage.exoLevel63 = ""
-               
-            //semaine 10
-            localStorage.exoLevel64 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel65 = ""}
-            localStorage.exoLevel66 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel67 = ""}
-            if (nbPrgJ >= 5) {localStorage.exoLevel68 = ""}
-            localStorage.exoLevel69 = ""
-            localStorage.exoLevel70 = ""
-        
-            //semaine 11
-            localStorage.exoLevel71 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel72 = ""}
-            localStorage.exoLevel73 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel74 = ""}
-            if (nbPrgJ >= 5) {localStorage.exoLevel75 = ""}
-            localStorage.exoLevel76 = ""
-            localStorage.exoLevel77 = ""
-                
-            //semaine 12
-            localStorage.exoLevel78 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel79 = ""}
-            localStorage.exoLevel80 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel81 = ""}
-            if (nbPrgJ >= 5) {localStorage.exoLevel82 = ""}
-            localStorage.exoLevel83 = ""
-            localStorage.exoLevel84 = ""
-            
-            //semaine 13
-            localStorage.exoLevel85 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel86 = ""}
-            localStorage.exoLevel87 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel88 = ""}
-            if (nbPrgJ >= 5) {localStorage.exoLevel89 = ""}
-            localStorage.exoLevel90 = ""
-            localStorage.exoLevel91 = ""
-                
-            //semaine 14
-            localStorage.exoLevel92 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel93 = ""}
-            localStorage.exoLevel94 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel95 = ""}
-            if (nbPrgJ >= 5) {localStorage.exoLevel96 = ""}
-            localStorage.exoLevel97 = ""
-            localStorage.exoLevel98 = ""
-             
-            //semaine 15
-            if (nbPrgJ >= 5) {localStorage.exoLevel99 = "";}
-            else {localStorage.exoLevel99 = ""};
-            localStorage.exoLevel100 = "";
-            localStorage.exoLevel101 = "";
-            localStorage.exoLevel102 = "";
-            localStorage.exoLevel103 = "";
-            localStorage.exoLevel104 = "";
-            localStorage.exoLevel105 = "";
-        
-            //semaine 16
-            if (nbPrgJ >= 5) {localStorage.exoLevel106 = "";}
-            else {localStorage.exoLevel106 = ""};
-            localStorage.exoLevel107 = "";
-            localStorage.exoLevel108 = "";
-            localStorage.exoLevel109 = "";
-            localStorage.exoLevel110 = "";
-            localStorage.exoLevel111 = "";
-            localStorage.exoLevel112 = "";
-        }
-        
-        else if (nbPrgT == 3) {
-            //semaine 1
-            if (nbPrgJ >= 4) {localStorage.exoLevel1 = ""}
-            localStorage.exoLevel2 = ""
-            localStorage.exoLevel3 = ""
-            if (nbPrgJ >= 5) {localStorage.exoLevel4 = ""}
-            if (nbPrgJ >= 6) {localStorage.exoLevel5 = ""}
-            localStorage.exoLevel6 = ""
-            localStorage.exoLevel7 = ""
-             
-            //semaine 2
-            localStorage.exoLevel8 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel9 = ""}
-            localStorage.exoLevel10 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel11 = ""}
-            if (nbPrgJ >= 5) {localStorage.exoLevel12 = ""}
-            localStorage.exoLevel13 = ""
-            localStorage.exoLevel14 = ""
-             
-            //semaine 3
-            localStorage.exoLevel15 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel16 = ""}
-            localStorage.exoLevel17 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel18 = ""}
-            if (nbPrgJ >= 5) {localStorage.exoLevel19 = ""}
-            localStorage.exoLevel20 = ""
-            localStorage.exoLevel21 = ""
-                
-            //semaine 4
-            localStorage.exoLevel22 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel23 = ""}
-            localStorage.exoLevel24 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel25 = ""}
-            if (nbPrgJ >= 5) {localStorage.exoLevel26 = ""}
-            localStorage.exoLevel27 = ""
-            localStorage.exoLevel28 = ""
-             
-            //semaine 5
-            localStorage.exoLevel29 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel30 = ""}
-            localStorage.exoLevel31 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel32 = ""}
-            if (nbPrgJ >= 5) {localStorage.exoLevel33 = ""}
-            localStorage.exoLevel34 = ""
-            localStorage.exoLevel35 = ""
-               
-            //semaine 6
-            localStorage.exoLevel36 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel37 = ""}
-            localStorage.exoLevel38 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel39 = ""}
-            if (nbPrgJ >= 5) {localStorage.exoLevel40 = ""}
-            localStorage.exoLevel41 = ""
-            localStorage.exoLevel42 = ""
-             
-            //semaine 7
-            localStorage.exoLevel43 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel44 = ""}
-            localStorage.exoLevel45 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel46 = ""}
-            if (nbPrgJ >= 5) {localStorage.exoLevel47 = ""}
-            localStorage.exoLevel48 = ""
-            localStorage.exoLevel49 = ""
-        
-            //semaine 8
-            localStorage.exoLevel50 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel51 = ""}
-            localStorage.exoLevel52 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel53 = ""}
-            if (nbPrgJ >= 5) {localStorage.exoLevel54 = ""}
-            localStorage.exoLevel55 = ""
-            localStorage.exoLevel56 = ""
-           
-            //semaine 9
-            localStorage.exoLevel57 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel58 = ""}
-            localStorage.exoLevel59 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel60 = ""}
-            if (nbPrgJ >= 5) {localStorage.exoLevel61 = ""}
-            localStorage.exoLevel62 = ""
-            localStorage.exoLevel63 = ""
-        
-            //semaine 10
-            localStorage.exo6Level4 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel65 = ""}
-            localStorage.exoLevel66 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel67 = ""}
-            if (nbPrgJ >= 5) {localStorage.exoLevel68 = ""}
-            localStorage.exoLevel69 = ""
-            localStorage.exoLevel70 = ""
-         
-            //semaine 11
-            if (nbPrgJ >= 5) {localStorage.exoLevel71 = "";}
-            else {localStorage.exoLevel71 = ""};   
-            localStorage.exoLevel72 = "";    
-            localStorage.exoLevel73 = "";   
-            localStorage.exoLevel74 = "";    
-            localStorage.exoLevel75 = "";   
-            localStorage.exoLevel76 = "";
-            localStorage.exoLevel77 = "";
-        
-            //semaine 12
-            if (nbPrgJ >= 5) {localStorage.exoLevel78 = "";}
-            else {localStorage.exoLevel78 = ""};    
-            localStorage.exoLevel79 = "";    
-            localStorage.exoLevel80 = "";   
-            localStorage.exoLevel81 = "";   
-            localStorage.exoLevel82 = "";   
-            localStorage.exoLevel83 = "";
-            localStorage.exoLevel84 = "";
-        
-        }
-        
-            else if (nbPrgT == 2) {
-            //semaine 1
-            if (nbPrgJ >= 4) {localStorage.exoLevel1 = ""}
-            localStorage.exoLevel2 = ""
-            localStorage.exoLevel3 = ""
-            if (nbPrgJ >= 5) {localStorage.exoLevel4 = ""}
-            if (nbPrgJ >= 6) {localStorage.exoLevel5 = ""}
-            localStorage.exoLevel6 = ""
-            localStorage.exoLevel7 = ""
-          
-            //semaine 2
-            localStorage.exoLevel8 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel9 = ""}
-            localStorage.exoLevel10 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel11 = ""}
-            if (nbPrgJ >= 5) {localStorage.exoLevel12 = ""}
-            localStorage.exoLevel13 = ""
-            localStorage.exoLevel14 = ""
-          
-            //semaine 3
-            localStorage.exoLevel15 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel16 = ""}
-            localStorage.exoLevel17 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel18 = ""}
-            if (nbPrgJ >= 5) {localStorage.exoLevel19 = ""}
-            localStorage.exoLevel20 = ""
-            localStorage.exoLevel21 = ""
-               
-            //semaine 4
-            localStorage.exoLevel22 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel23 = ""}
-            localStorage.exoLevel24 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel25 = ""}
-            if (nbPrgJ >= 5) {localStorage.exoLevel26 = ""}
-            localStorage.exoLevel27 = ""
-            localStorage.exoLevel28 = ""
-            
-            //semaine 5
-            localStorage.exoLevel29 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel30 = ""}
-            localStorage.exoLevel31 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel32 = ""}
-            if (nbPrgJ >= 5) {localStorage.exoLevel33 = ""}
-            localStorage.exoLevel34 = ""
-            localStorage.exoLevel35 = ""
-               
-            //semaine 6
-            localStorage.exoLevel36 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel37 = ""}
-            localStorage.exoLevel38 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel39 = ""}
-            if (nbPrgJ >= 5) {localStorage.exoLevel40 = ""}
-            localStorage.exoLevel41 = ""
-            localStorage.exoLevel42 = ""
-        
-            //semaine 7
-            if (nbPrgJ >= 5) {localStorage.exo43 = "";}
-            else {localStorage.exo43 = ""};
-            localStorage.exo44 = "";
-            localStorage.exo45 = "";
-            localStorage.exo46 = "";
-            localStorage.exo47 = "";
-            localStorage.exo48 = "";
-            localStorage.exo49 = "";
-        
-            //semaine 8
-            if (nbPrgJ >= 5) {localStorage.exo50 = "";}
-            else {localStorage.exo50 = ""};
-            localStorage.exo51 = "";
-            localStorage.exo52 = "";
-            localStorage.exo53 = "";
-            localStorage.exo54 = "";
-            localStorage.exo55 = "";
-            localStorage.exo56 = "";
-        }
-    }
-
-    else if(nbLevel == 3) {
-        localStorage.exoLevel1 = "";
-        localStorage.exoLevel2 = "";
-        localStorage.exoLevel3 = "";
-        localStorage.exoLevel4 = "";
-        localStorage.exoLevel5 = "";
-        localStorage.exoLevel6 = "";
-        localStorage.exoLevel7 = "";
-        localStorage.exoLevel8 = "";
-        localStorage.exoLevel9 = "";
-        localStorage.exoLevel10 = "";
-        localStorage.exoLevel11 = "";
-        localStorage.exoLevel12 = "";
-        localStorage.exoLevel13 = "";
-        localStorage.exoLevel14 = "";
-        localStorage.exoLevel15 = "";
-        localStorage.exoLevel16 = "";
-        localStorage.exoLevel17 = "";
-        localStorage.exoLevel18 = "";
-        localStorage.exoLevel19 = "";
-        localStorage.exoLevel20 = "";
-        localStorage.exoLevel21 = "";
-        localStorage.exoLevel22 = "";
-        localStorage.exoLevel23 = "";
-        localStorage.exoLevel24 = "";
-        localStorage.exoLevel25 = "";
-        localStorage.exoLevel26 = "";
-        localStorage.exoLevel27 = "";
-        localStorage.exoLevel28 = "";
-        localStorage.exoLevel29 = "";
-        localStorage.exoLevel30 = "";
-        localStorage.exoLevel31 = "";
-        localStorage.exoLevel32 = "";
-        localStorage.exoLevel33 = "";
-        localStorage.exoLevel34 = "";
-        localStorage.exoLevel35 = "";
-        localStorage.exoLevel36 = "";
-        localStorage.exoLevel37 = "";
-        localStorage.exoLevel38 = "";
-        localStorage.exoLevel39 = "";
-        localStorage.exoLevel40 = "";
-        localStorage.exoLevel41 = "";
-        localStorage.exoLevel42 = "";
-        localStorage.exoLevel43 = "";
-        localStorage.exoLevel44 = "";
-        localStorage.exoLevel45 = "";
-        localStorage.exoLevel46 = "";
-        localStorage.exoLevel47 = "";
-        localStorage.exoLevel48 = "";
-        localStorage.exoLevel49 = "";
-        localStorage.exoLevel50 = "";
-        localStorage.exoLevel51 = "";
-        localStorage.exoLevel52 = "";
-        localStorage.exoLevel53 = "";
-        localStorage.exoLevel54 = "";
-        localStorage.exoLevel55 = "";
-        localStorage.exoLevel56 = "";
-        localStorage.exoLevel57 = "";
-        localStorage.exoLevel58 = "";
-        localStorage.exoLevel59 = "";
-        localStorage.exoLevel60 = "";
-        localStorage.exoLevel61 = "";
-        localStorage.exoLevel62 = "";
-        localStorage.exoLevel63 = "";
-        localStorage.exoLevel64 = "";
-        localStorage.exoLevel65 = "";
-        localStorage.exoLevel66 = "";
-        localStorage.exoLevel67 = "";
-        localStorage.exoLevel68 = "";
-        localStorage.exoLevel69 = "";
-        localStorage.exoLevel70 = "";
-        localStorage.exoLevel71 = "";
-        localStorage.exoLevel72 = "";
-        localStorage.exoLevel73 = "";
-        localStorage.exoLevel74 = "";
-        localStorage.exoLevel75 = "";
-        localStorage.exoLevel76 = "";
-        localStorage.exoLevel77 = "";
-        localStorage.exoLevel78 = "";
-        localStorage.exoLevel79 = "";
-        localStorage.exoLevel80 = "";
-        localStorage.exoLevel81 = "";
-        localStorage.exoLevel82 = "";
-        localStorage.exoLevel83 = "";
-        localStorage.exoLevel84 = "";
-        localStorage.exoLevel85 = "";
-        localStorage.exoLevel86 = "";
-        localStorage.exoLevel87 = "";
-        localStorage.exoLevel88 = "";
-        localStorage.exoLevel89 = "";
-        localStorage.exoLevel90 = "";
-        localStorage.exoLevel91 = "";
-        localStorage.exoLevel92 = "";
-        localStorage.exoLevel93 = "";
-        localStorage.exoLevel94 = "";
-        localStorage.exoLevel95 = "";
-        localStorage.exoLevel96 = "";
-        localStorage.exoLevel97 = "";
-        localStorage.exoLevel98 = "";
-        localStorage.exoLevel99 = "";
-        localStorage.exoLevel100 = "";
-        localStorage.exoLevel101 = "";
-        localStorage.exoLevel102 = "";
-        localStorage.exoLevel103 = "";
-        localStorage.exoLevel104 = "";
-        localStorage.exoLevel105 = "";
-        localStorage.exoLevel106 = "";
-        localStorage.exoLevel107 = "";
-        localStorage.exoLevel108 = "";
-        localStorage.exoLevel109 = "";
-        localStorage.exoLevel110 = "";
-        localStorage.exoLevel111 = "";
-    
-        if (nbPrgT == 4) {
-            //semaine 1
-            if (nbPrgJ >= 4) {localStorage.exoLevel1 = ""}
-            localStorage.exoLevel2 = ""
-            localStorage.exoLevel3 = ""
-            if (nbPrgJ >= 5) {localStorage.exoLevel4 = ""}
-            if (nbPrgJ >= 6) {localStorage.exoLevel5 = ""}
-            localStorage.exoLevel6 = ""
-            localStorage.exoLevel7 = ""
-            
-            //semaine 2
-            localStorage.exoLevel8 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel9 = ""}
-            localStorage.exoLevel10 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel11 = ""}
-            if (nbPrgJ >= 5) {localStorage.exoLevel12 = ""}
-            localStorage.exoLevel13 = ""
-            localStorage.exoLevel14 = ""
-        
-            //semaine 3
-            localStorage.exoLevel15 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel16 = ""}
-            localStorage.exoLevel17 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel18 = ""}
-            if (nbPrgJ >= 5) {localStorage.exoLevel19 = ""}
-            localStorage.exoLevel20 = ""
-            localStorage.exoLevel21 = ""
-           
-            //semaine 4
-            localStorage.exoLevel22 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel23 = ""}
-            localStorage.exoLevel24 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel25 = ""}
-            if (nbPrgJ >= 5) {localStorage.exoLevel26 = ""}
-            localStorage.exoLevel27 = ""
-            localStorage.exoLevel28 = ""
-        
-            //semaine 5
-            localStorage.exoLevel29 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel30 = ""}
-            localStorage.exoLevel31 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel32 = ""}
-            if (nbPrgJ >= 5) { localStorage.exoLevel33 = ""} 
-            localStorage.exoLevel34 = ""
-            localStorage.exoLevel35 = ""
-        
-            //semaine 6
-            localStorage.exoLevel36 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel37 = ""}
-            localStorage.exoLevel38 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel39 = ""}
-            if (nbPrgJ >= 5) {localStorage.exoLevel40 = ""}
-            localStorage.exoLevel41 = ""
-            localStorage.exoLevel42 = ""
-        
-            //semaine 7
-            localStorage.exoLevel43 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel44 = ""}
-            localStorage.exoLevel45 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel46 = ""}
-            if (nbPrgJ >= 5) {localStorage.exoLevel47 = ""}
-            localStorage.exoLevel48 = ""
-            localStorage.exoLevel49 = ""
-        
-            //semaine 8
-            localStorage.exoLevel50 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel51 = ""}
-            localStorage.exoLevel52 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel53 = ""}
-            if (nbPrgJ >= 5) {localStorage.exoLevel54 = ""}
-            localStorage.exoLevel55 = ""
-            localStorage.exoLevel56 = ""
-           
-            //semaine 9
-            localStorage.exoLevel57 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel58 = ""}
-            localStorage.exoLevel59 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel60 = ""}
-            if (nbPrgJ >= 5) {localStorage.exoLevel61 = ""}
-            localStorage.exoLevel62 = ""
-            localStorage.exoLevel63 = ""
-               
-            //semaine 10
-            localStorage.exoLevel64 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel65 = ""}
-            localStorage.exoLevel66 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel67 = ""}
-            if (nbPrgJ >= 5) {localStorage.exoLevel68 = ""}
-            localStorage.exoLevel69 = ""
-            localStorage.exoLevel70 = ""
-        
-            //semaine 11
-            localStorage.exoLevel71 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel72 = ""}
-            localStorage.exoLevel73 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel74 = ""}
-            if (nbPrgJ >= 5) {localStorage.exoLevel75 = ""}
-            localStorage.exoLevel76 = ""
-            localStorage.exoLevel77 = ""
-                
-            //semaine 12
-            localStorage.exoLevel78 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel79 = ""}
-            localStorage.exoLevel80 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel81 = ""}
-            if (nbPrgJ >= 5) {localStorage.exoLevel82 = ""}
-            localStorage.exoLevel83 = ""
-            localStorage.exoLevel84 = ""
-            
-            //semaine 13
-            localStorage.exoLevel85 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel86 = ""}
-            localStorage.exoLevel87 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel88 = ""}
-            if (nbPrgJ >= 5) {localStorage.exoLevel89 = ""}
-            localStorage.exoLevel90 = ""
-            localStorage.exoLevel91 = ""
-                
-            //semaine 14
-            localStorage.exoLevel92 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel93 = ""}
-            localStorage.exoLevel94 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel95 = ""}
-            if (nbPrgJ >= 5) {localStorage.exoLevel96 = ""}
-            localStorage.exoLevel97 = ""
-            localStorage.exoLevel98 = ""
-             
-            //semaine 15
-            if (nbPrgJ >= 5) {localStorage.exoLevel99 = "";}
-            else {localStorage.exoLevel99 = ""};
-            localStorage.exoLevel100 = "";
-            localStorage.exoLevel101 = "";
-            localStorage.exoLevel102 = "";
-            localStorage.exoLevel103 = "";
-            localStorage.exoLevel104 = "";
-            localStorage.exoLevel105 = "";
-        
-            //semaine 16
-            if (nbPrgJ >= 5) {localStorage.exoLevel106 = "";}
-            else {localStorage.exoLevel106 = ""};
-            localStorage.exoLevel107 = "";
-            localStorage.exoLevel108 = "";
-            localStorage.exoLevel109 = "";
-            localStorage.exoLevel110 = "";
-            localStorage.exoLevel111 = "";
-            localStorage.exoLevel112 = "";
-        }
-        
-        else if (nbPrgT == 3) {
-            //semaine 1
-            if (nbPrgJ >= 4) {localStorage.exoLevel1 = ""}
-            localStorage.exoLevel2 = ""
-            localStorage.exoLevel3 = ""
-            if (nbPrgJ >= 5) {localStorage.exoLevel4 = ""}
-            if (nbPrgJ >= 6) {localStorage.exoLevel5 = ""}
-            localStorage.exoLevel6 = ""
-            localStorage.exoLevel7 = ""
-             
-            //semaine 2
-            localStorage.exoLevel8 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel9 = ""}
-            localStorage.exoLevel10 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel11 = ""}
-            if (nbPrgJ >= 5) {localStorage.exoLevel12 = ""}
-            localStorage.exoLevel13 = ""
-            localStorage.exoLevel14 = ""
-             
-            //semaine 3
-            localStorage.exoLevel15 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel16 = ""}
-            localStorage.exoLevel17 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel18 = ""}
-            if (nbPrgJ >= 5) {localStorage.exoLevel19 = ""}
-            localStorage.exoLevel20 = ""
-            localStorage.exoLevel21 = ""
-                
-            //semaine 4
-            localStorage.exoLevel22 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel23 = ""}
-            localStorage.exoLevel24 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel25 = ""}
-            if (nbPrgJ >= 5) {localStorage.exoLevel26 = ""}
-            localStorage.exoLevel27 = ""
-            localStorage.exoLevel28 = ""
-             
-            //semaine 5
-            localStorage.exoLevel29 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel30 = ""}
-            localStorage.exoLevel31 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel32 = ""}
-            if (nbPrgJ >= 5) {localStorage.exoLevel33 = ""}
-            localStorage.exoLevel34 = ""
-            localStorage.exoLevel35 = ""
-               
-            //semaine 6
-            localStorage.exoLevel36 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel37 = ""}
-            localStorage.exoLevel38 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel39 = ""}
-            if (nbPrgJ >= 5) {localStorage.exoLevel40 = ""}
-            localStorage.exoLevel41 = ""
-            localStorage.exoLevel42 = ""
-             
-            //semaine 7
-            localStorage.exoLevel43 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel44 = ""}
-            localStorage.exoLevel45 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel46 = ""}
-            if (nbPrgJ >= 5) {localStorage.exoLevel47 = ""}
-            localStorage.exoLevel48 = ""
-            localStorage.exoLevel49 = ""
-        
-            //semaine 8
-            localStorage.exoLevel50 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel51 = ""}
-            localStorage.exoLevel52 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel53 = ""}
-            if (nbPrgJ >= 5) {localStorage.exoLevel54 = ""}
-            localStorage.exoLevel55 = ""
-            localStorage.exoLevel56 = ""
-           
-            //semaine 9
-            localStorage.exoLevel57 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel58 = ""}
-            localStorage.exoLevel59 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel60 = ""}
-            if (nbPrgJ >= 5) {localStorage.exoLevel61 = ""}
-            localStorage.exoLevel62 = ""
-            localStorage.exoLevel63 = ""
-        
-            //semaine 10
-            localStorage.exo6Level4 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel65 = ""}
-            localStorage.exoLevel66 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel67 = ""}
-            if (nbPrgJ >= 5) {localStorage.exoLevel68 = ""}
-            localStorage.exoLevel69 = ""
-            localStorage.exoLevel70 = ""
-         
-            //semaine 11
-            if (nbPrgJ >= 5) {localStorage.exoLevel71 = "";}
-            else {localStorage.exoLevel71 = ""};   
-            localStorage.exoLevel72 = "";    
-            localStorage.exoLevel73 = "";   
-            localStorage.exoLevel74 = "";    
-            localStorage.exoLevel75 = "";   
-            localStorage.exoLevel76 = "";
-            localStorage.exoLevel77 = "";
-        
-            //semaine 12
-            if (nbPrgJ >= 5) {localStorage.exoLevel78 = "";}
-            else {localStorage.exoLevel78 = ""};    
-            localStorage.exoLevel79 = "";    
-            localStorage.exoLevel80 = "";   
-            localStorage.exoLevel81 = "";   
-            localStorage.exoLevel82 = "";   
-            localStorage.exoLevel83 = "";
-            localStorage.exoLevel84 = "";
-        
-        }
-        
-            else if (nbPrgT == 2) {
-            //semaine 1
-            if (nbPrgJ >= 4) {localStorage.exoLevel1 = ""}
-            localStorage.exoLevel2 = ""
-            localStorage.exoLevel3 = ""
-            if (nbPrgJ >= 5) {localStorage.exoLevel4 = ""}
-            if (nbPrgJ >= 6) {localStorage.exoLevel5 = ""}
-            localStorage.exoLevel6 = ""
-            localStorage.exoLevel7 = ""
-          
-            //semaine 2
-            localStorage.exoLevel8 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel9 = ""}
-            localStorage.exoLevel10 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel11 = ""}
-            if (nbPrgJ >= 5) {localStorage.exoLevel12 = ""}
-            localStorage.exoLevel13 = ""
-            localStorage.exoLevel14 = ""
-          
-            //semaine 3
-            localStorage.exoLevel15 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel16 = ""}
-            localStorage.exoLevel17 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel18 = ""}
-            if (nbPrgJ >= 5) {localStorage.exoLevel19 = ""}
-            localStorage.exoLevel20 = ""
-            localStorage.exoLevel21 = ""
-               
-            //semaine 4
-            localStorage.exoLevel22 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel23 = ""}
-            localStorage.exoLevel24 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel25 = ""}
-            if (nbPrgJ >= 5) {localStorage.exoLevel26 = ""}
-            localStorage.exoLevel27 = ""
-            localStorage.exoLevel28 = ""
-            
-            //semaine 5
-            localStorage.exoLevel29 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel30 = ""}
-            localStorage.exoLevel31 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel32 = ""}
-            if (nbPrgJ >= 5) {localStorage.exoLevel33 = ""}
-            localStorage.exoLevel34 = ""
-            localStorage.exoLevel35 = ""
-               
-            //semaine 6
-            localStorage.exoLevel36 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel37 = ""}
-            localStorage.exoLevel38 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel39 = ""}
-            if (nbPrgJ >= 5) {localStorage.exoLevel40 = ""}
-            localStorage.exoLevel41 = ""
-            localStorage.exoLevel42 = ""
-        
-            //semaine 7
-            if (nbPrgJ >= 5) {localStorage.exo43 = "";}
-            else {localStorage.exo43 = ""};
-            localStorage.exo44 = "";
-            localStorage.exo45 = "";
-            localStorage.exo46 = "";
-            localStorage.exo47 = "";
-            localStorage.exo48 = "";
-            localStorage.exo49 = "";
-        
-            //semaine 8
-            if (nbPrgJ >= 5) {localStorage.exo50 = "";}
-            else {localStorage.exo50 = ""};
-            localStorage.exo51 = "";
-            localStorage.exo52 = "";
-            localStorage.exo53 = "";
-            localStorage.exo54 = "";
-            localStorage.exo55 = "";
-            localStorage.exo56 = "";
-        }
-    }
-
-    else if(nbLevel == 4) {
-        localStorage.exoLevel1 = "";
-        localStorage.exoLevel2 = "";
-        localStorage.exoLevel3 = "";
-        localStorage.exoLevel4 = "";
-        localStorage.exoLevel5 = "";
-        localStorage.exoLevel6 = "";
-        localStorage.exoLevel7 = "";
-        localStorage.exoLevel8 = "";
-        localStorage.exoLevel9 = "";
-        localStorage.exoLevel10 = "";
-        localStorage.exoLevel11 = "";
-        localStorage.exoLevel12 = "";
-        localStorage.exoLevel13 = "";
-        localStorage.exoLevel14 = "";
-        localStorage.exoLevel15 = "";
-        localStorage.exoLevel16 = "";
-        localStorage.exoLevel17 = "";
-        localStorage.exoLevel18 = "";
-        localStorage.exoLevel19 = "";
-        localStorage.exoLevel20 = "";
-        localStorage.exoLevel21 = "";
-        localStorage.exoLevel22 = "";
-        localStorage.exoLevel23 = "";
-        localStorage.exoLevel24 = "";
-        localStorage.exoLevel25 = "";
-        localStorage.exoLevel26 = "";
-        localStorage.exoLevel27 = "";
-        localStorage.exoLevel28 = "";
-        localStorage.exoLevel29 = "";
-        localStorage.exoLevel30 = "";
-        localStorage.exoLevel31 = "";
-        localStorage.exoLevel32 = "";
-        localStorage.exoLevel33 = "";
-        localStorage.exoLevel34 = "";
-        localStorage.exoLevel35 = "";
-        localStorage.exoLevel36 = "";
-        localStorage.exoLevel37 = "";
-        localStorage.exoLevel38 = "";
-        localStorage.exoLevel39 = "";
-        localStorage.exoLevel40 = "";
-        localStorage.exoLevel41 = "";
-        localStorage.exoLevel42 = "";
-        localStorage.exoLevel43 = "";
-        localStorage.exoLevel44 = "";
-        localStorage.exoLevel45 = "";
-        localStorage.exoLevel46 = "";
-        localStorage.exoLevel47 = "";
-        localStorage.exoLevel48 = "";
-        localStorage.exoLevel49 = "";
-        localStorage.exoLevel50 = "";
-        localStorage.exoLevel51 = "";
-        localStorage.exoLevel52 = "";
-        localStorage.exoLevel53 = "";
-        localStorage.exoLevel54 = "";
-        localStorage.exoLevel55 = "";
-        localStorage.exoLevel56 = "";
-        localStorage.exoLevel57 = "";
-        localStorage.exoLevel58 = "";
-        localStorage.exoLevel59 = "";
-        localStorage.exoLevel60 = "";
-        localStorage.exoLevel61 = "";
-        localStorage.exoLevel62 = "";
-        localStorage.exoLevel63 = "";
-        localStorage.exoLevel64 = "";
-        localStorage.exoLevel65 = "";
-        localStorage.exoLevel66 = "";
-        localStorage.exoLevel67 = "";
-        localStorage.exoLevel68 = "";
-        localStorage.exoLevel69 = "";
-        localStorage.exoLevel70 = "";
-        localStorage.exoLevel71 = "";
-        localStorage.exoLevel72 = "";
-        localStorage.exoLevel73 = "";
-        localStorage.exoLevel74 = "";
-        localStorage.exoLevel75 = "";
-        localStorage.exoLevel76 = "";
-        localStorage.exoLevel77 = "";
-        localStorage.exoLevel78 = "";
-        localStorage.exoLevel79 = "";
-        localStorage.exoLevel80 = "";
-        localStorage.exoLevel81 = "";
-        localStorage.exoLevel82 = "";
-        localStorage.exoLevel83 = "";
-        localStorage.exoLevel84 = "";
-        localStorage.exoLevel85 = "";
-        localStorage.exoLevel86 = "";
-        localStorage.exoLevel87 = "";
-        localStorage.exoLevel88 = "";
-        localStorage.exoLevel89 = "";
-        localStorage.exoLevel90 = "";
-        localStorage.exoLevel91 = "";
-        localStorage.exoLevel92 = "";
-        localStorage.exoLevel93 = "";
-        localStorage.exoLevel94 = "";
-        localStorage.exoLevel95 = "";
-        localStorage.exoLevel96 = "";
-        localStorage.exoLevel97 = "";
-        localStorage.exoLevel98 = "";
-        localStorage.exoLevel99 = "";
-        localStorage.exoLevel100 = "";
-        localStorage.exoLevel101 = "";
-        localStorage.exoLevel102 = "";
-        localStorage.exoLevel103 = "";
-        localStorage.exoLevel104 = "";
-        localStorage.exoLevel105 = "";
-        localStorage.exoLevel106 = "";
-        localStorage.exoLevel107 = "";
-        localStorage.exoLevel108 = "";
-        localStorage.exoLevel109 = "";
-        localStorage.exoLevel110 = "";
-        localStorage.exoLevel111 = "";
-    
-        if (nbPrgT == 4) {
-            //semaine 1
-            if (nbPrgJ >= 4) {localStorage.exoLevel1 = ""}
-            localStorage.exoLevel2 = ""
-            localStorage.exoLevel3 = ""
-            if (nbPrgJ >= 5) {localStorage.exoLevel4 = ""}
-            if (nbPrgJ >= 6) {localStorage.exoLevel5 = ""}
-            localStorage.exoLevel6 = ""
-            localStorage.exoLevel7 = ""
-            
-            //semaine 2
-            localStorage.exoLevel8 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel9 = ""}
-            localStorage.exoLevel10 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel11 = ""}
-            if (nbPrgJ >= 5) {localStorage.exoLevel12 = ""}
-            localStorage.exoLevel13 = ""
-            localStorage.exoLevel14 = ""
-        
-            //semaine 3
-            localStorage.exoLevel15 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel16 = ""}
-            localStorage.exoLevel17 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel18 = ""}
-            if (nbPrgJ >= 5) {localStorage.exoLevel19 = ""}
-            localStorage.exoLevel20 = ""
-            localStorage.exoLevel21 = ""
-           
-            //semaine 4
-            localStorage.exoLevel22 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel23 = ""}
-            localStorage.exoLevel24 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel25 = ""}
-            if (nbPrgJ >= 5) {localStorage.exoLevel26 = ""}
-            localStorage.exoLevel27 = ""
-            localStorage.exoLevel28 = ""
-        
-            //semaine 5
-            localStorage.exoLevel29 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel30 = ""}
-            localStorage.exoLevel31 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel32 = ""}
-            if (nbPrgJ >= 5) { localStorage.exoLevel33 = ""} 
-            localStorage.exoLevel34 = ""
-            localStorage.exoLevel35 = ""
-        
-            //semaine 6
-            localStorage.exoLevel36 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel37 = ""}
-            localStorage.exoLevel38 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel39 = ""}
-            if (nbPrgJ >= 5) {localStorage.exoLevel40 = ""}
-            localStorage.exoLevel41 = ""
-            localStorage.exoLevel42 = ""
-        
-            //semaine 7
-            localStorage.exoLevel43 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel44 = ""}
-            localStorage.exoLevel45 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel46 = ""}
-            if (nbPrgJ >= 5) {localStorage.exoLevel47 = ""}
-            localStorage.exoLevel48 = ""
-            localStorage.exoLevel49 = ""
-        
-            //semaine 8
-            localStorage.exoLevel50 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel51 = ""}
-            localStorage.exoLevel52 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel53 = ""}
-            if (nbPrgJ >= 5) {localStorage.exoLevel54 = ""}
-            localStorage.exoLevel55 = ""
-            localStorage.exoLevel56 = ""
-           
-            //semaine 9
-            localStorage.exoLevel57 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel58 = ""}
-            localStorage.exoLevel59 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel60 = ""}
-            if (nbPrgJ >= 5) {localStorage.exoLevel61 = ""}
-            localStorage.exoLevel62 = ""
-            localStorage.exoLevel63 = ""
-               
-            //semaine 10
-            localStorage.exoLevel64 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel65 = ""}
-            localStorage.exoLevel66 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel67 = ""}
-            if (nbPrgJ >= 5) {localStorage.exoLevel68 = ""}
-            localStorage.exoLevel69 = ""
-            localStorage.exoLevel70 = ""
-        
-            //semaine 11
-            localStorage.exoLevel71 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel72 = ""}
-            localStorage.exoLevel73 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel74 = ""}
-            if (nbPrgJ >= 5) {localStorage.exoLevel75 = ""}
-            localStorage.exoLevel76 = ""
-            localStorage.exoLevel77 = ""
-                
-            //semaine 12
-            localStorage.exoLevel78 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel79 = ""}
-            localStorage.exoLevel80 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel81 = ""}
-            if (nbPrgJ >= 5) {localStorage.exoLevel82 = ""}
-            localStorage.exoLevel83 = ""
-            localStorage.exoLevel84 = ""
-            
-            //semaine 13
-            localStorage.exoLevel85 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel86 = ""}
-            localStorage.exoLevel87 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel88 = ""}
-            if (nbPrgJ >= 5) {localStorage.exoLevel89 = ""}
-            localStorage.exoLevel90 = ""
-            localStorage.exoLevel91 = ""
-                
-            //semaine 14
-            localStorage.exoLevel92 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel93 = ""}
-            localStorage.exoLevel94 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel95 = ""}
-            if (nbPrgJ >= 5) {localStorage.exoLevel96 = ""}
-            localStorage.exoLevel97 = ""
-            localStorage.exoLevel98 = ""
-             
-            //semaine 15
-            if (nbPrgJ >= 5) {localStorage.exoLevel99 = "";}
-            else {localStorage.exoLevel99 = ""};
-            localStorage.exoLevel100 = "";
-            localStorage.exoLevel101 = "";
-            localStorage.exoLevel102 = "";
-            localStorage.exoLevel103 = "";
-            localStorage.exoLevel104 = "";
-            localStorage.exoLevel105 = "";
-        
-            //semaine 16
-            if (nbPrgJ >= 5) {localStorage.exoLevel106 = "";}
-            else {localStorage.exoLevel106 = ""};
-            localStorage.exoLevel107 = "";
-            localStorage.exoLevel108 = "";
-            localStorage.exoLevel109 = "";
-            localStorage.exoLevel110 = "";
-            localStorage.exoLevel111 = "";
-            localStorage.exoLevel112 = "";
-        }
-        
-        else if (nbPrgT == 3) {
-            //semaine 1
-            if (nbPrgJ >= 4) {localStorage.exoLevel1 = ""}
-            localStorage.exoLevel2 = ""
-            localStorage.exoLevel3 = ""
-            if (nbPrgJ >= 5) {localStorage.exoLevel4 = ""}
-            if (nbPrgJ >= 6) {localStorage.exoLevel5 = ""}
-            localStorage.exoLevel6 = ""
-            localStorage.exoLevel7 = ""
-             
-            //semaine 2
-            localStorage.exoLevel8 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel9 = ""}
-            localStorage.exoLevel10 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel11 = ""}
-            if (nbPrgJ >= 5) {localStorage.exoLevel12 = ""}
-            localStorage.exoLevel13 = ""
-            localStorage.exoLevel14 = ""
-             
-            //semaine 3
-            localStorage.exoLevel15 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel16 = ""}
-            localStorage.exoLevel17 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel18 = ""}
-            if (nbPrgJ >= 5) {localStorage.exoLevel19 = ""}
-            localStorage.exoLevel20 = ""
-            localStorage.exoLevel21 = ""
-                
-            //semaine 4
-            localStorage.exoLevel22 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel23 = ""}
-            localStorage.exoLevel24 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel25 = ""}
-            if (nbPrgJ >= 5) {localStorage.exoLevel26 = ""}
-            localStorage.exoLevel27 = ""
-            localStorage.exoLevel28 = ""
-             
-            //semaine 5
-            localStorage.exoLevel29 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel30 = ""}
-            localStorage.exoLevel31 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel32 = ""}
-            if (nbPrgJ >= 5) {localStorage.exoLevel33 = ""}
-            localStorage.exoLevel34 = ""
-            localStorage.exoLevel35 = ""
-               
-            //semaine 6
-            localStorage.exoLevel36 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel37 = ""}
-            localStorage.exoLevel38 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel39 = ""}
-            if (nbPrgJ >= 5) {localStorage.exoLevel40 = ""}
-            localStorage.exoLevel41 = ""
-            localStorage.exoLevel42 = ""
-             
-            //semaine 7
-            localStorage.exoLevel43 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel44 = ""}
-            localStorage.exoLevel45 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel46 = ""}
-            if (nbPrgJ >= 5) {localStorage.exoLevel47 = ""}
-            localStorage.exoLevel48 = ""
-            localStorage.exoLevel49 = ""
-        
-            //semaine 8
-            localStorage.exoLevel50 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel51 = ""}
-            localStorage.exoLevel52 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel53 = ""}
-            if (nbPrgJ >= 5) {localStorage.exoLevel54 = ""}
-            localStorage.exoLevel55 = ""
-            localStorage.exoLevel56 = ""
-           
-            //semaine 9
-            localStorage.exoLevel57 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel58 = ""}
-            localStorage.exoLevel59 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel60 = ""}
-            if (nbPrgJ >= 5) {localStorage.exoLevel61 = ""}
-            localStorage.exoLevel62 = ""
-            localStorage.exoLevel63 = ""
-        
-            //semaine 10
-            localStorage.exo6Level4 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel65 = ""}
-            localStorage.exoLevel66 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel67 = ""}
-            if (nbPrgJ >= 5) {localStorage.exoLevel68 = ""}
-            localStorage.exoLevel69 = ""
-            localStorage.exoLevel70 = ""
-         
-            //semaine 11
-            if (nbPrgJ >= 5) {localStorage.exoLevel71 = "";}
-            else {localStorage.exoLevel71 = ""};   
-            localStorage.exoLevel72 = "";    
-            localStorage.exoLevel73 = "";   
-            localStorage.exoLevel74 = "";    
-            localStorage.exoLevel75 = "";   
-            localStorage.exoLevel76 = "";
-            localStorage.exoLevel77 = "";
-        
-            //semaine 12
-            if (nbPrgJ >= 5) {localStorage.exoLevel78 = "";}
-            else {localStorage.exoLevel78 = ""};    
-            localStorage.exoLevel79 = "";    
-            localStorage.exoLevel80 = "";   
-            localStorage.exoLevel81 = "";   
-            localStorage.exoLevel82 = "";   
-            localStorage.exoLevel83 = "";
-            localStorage.exoLevel84 = "";
-        
-        }
-        
-            else if (nbPrgT == 2) {
-            //semaine 1
-            if (nbPrgJ >= 4) {localStorage.exoLevel1 = ""}
-            localStorage.exoLevel2 = ""
-            localStorage.exoLevel3 = ""
-            if (nbPrgJ >= 5) {localStorage.exoLevel4 = ""}
-            if (nbPrgJ >= 6) {localStorage.exoLevel5 = ""}
-            localStorage.exoLevel6 = ""
-            localStorage.exoLevel7 = ""
-          
-            //semaine 2
-            localStorage.exoLevel8 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel9 = ""}
-            localStorage.exoLevel10 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel11 = ""}
-            if (nbPrgJ >= 5) {localStorage.exoLevel12 = ""}
-            localStorage.exoLevel13 = ""
-            localStorage.exoLevel14 = ""
-          
-            //semaine 3
-            localStorage.exoLevel15 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel16 = ""}
-            localStorage.exoLevel17 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel18 = ""}
-            if (nbPrgJ >= 5) {localStorage.exoLevel19 = ""}
-            localStorage.exoLevel20 = ""
-            localStorage.exoLevel21 = ""
-               
-            //semaine 4
-            localStorage.exoLevel22 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel23 = ""}
-            localStorage.exoLevel24 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel25 = ""}
-            if (nbPrgJ >= 5) {localStorage.exoLevel26 = ""}
-            localStorage.exoLevel27 = ""
-            localStorage.exoLevel28 = ""
-            
-            //semaine 5
-            localStorage.exoLevel29 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel30 = ""}
-            localStorage.exoLevel31 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel32 = ""}
-            if (nbPrgJ >= 5) {localStorage.exoLevel33 = ""}
-            localStorage.exoLevel34 = ""
-            localStorage.exoLevel35 = ""
-               
-            //semaine 6
-            localStorage.exoLevel36 = ""
-            if (nbPrgJ >= 4) {localStorage.exoLevel37 = ""}
-            localStorage.exoLevel38 = ""
-            if (nbPrgJ >= 6) {localStorage.exoLevel39 = ""}
-            if (nbPrgJ >= 5) {localStorage.exoLevel40 = ""}
-            localStorage.exoLevel41 = ""
-            localStorage.exoLevel42 = ""
-        
-            //semaine 7
-            if (nbPrgJ >= 5) {localStorage.exo43 = "";}
-            else {localStorage.exo43 = ""};
-            localStorage.exo44 = "";
-            localStorage.exo45 = "";
-            localStorage.exo46 = "";
-            localStorage.exo47 = "";
-            localStorage.exo48 = "";
-            localStorage.exo49 = "";
-        
-            //semaine 8
-            if (nbPrgJ >= 5) {localStorage.exo50 = "";}
-            else {localStorage.exo50 = ""};
-            localStorage.exo51 = "";
-            localStorage.exo52 = "";
-            localStorage.exo53 = "";
-            localStorage.exo54 = "";
-            localStorage.exo55 = "";
-            localStorage.exo56 = "";
-        }
     }
 }

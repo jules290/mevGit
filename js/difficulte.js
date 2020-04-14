@@ -6,6 +6,7 @@ $(document).ready(function () {
         localStorage.lvlSprint = 0;
         localStorage.lvlPMA = 0;
         localStorage.lvlSeuil = 0;
+        localStorage.lvlGimenez = 0;
         localStorage.lvlEndurance = 0;
         window.location.reload()
     })
@@ -53,7 +54,21 @@ $(document).ready(function () {
     if(sessionStorage.lvlSeuil >= -1) {
         $("#SeuillvlProgressBar1").css("background-color", "white");
     }
+    
 
+    if(sessionStorage.lvlGimenez >= 2) {
+        $("#GimenezlvlProgressBar4").css("background-color", "white");
+    }
+    if(sessionStorage.lvlGimenez >= 1) {
+        $("#GimenezlvlProgressBar3").css("background-color", "white");
+    }
+    if(sessionStorage.lvlGimenez >= 0) {
+        $("#GimenezlvlProgressBar2").css("background-color", "white");
+    }
+    if(sessionStorage.lvlGimenez >= -1) {
+        $("#GimenezlvlProgressBar1").css("background-color", "white");
+    }
+    
 
     if(sessionStorage.lvlEndurance >= 2) {
         $("#EndurancelvlProgressBar4").css("background-color", "white");
@@ -78,6 +93,7 @@ $("#oui").click(function () {
     localStorage.lvlPMA = sessionStorage.lvlPMA;
     localStorage.lvlSeuil = sessionStorage.lvlSeuil;
     localStorage.lvlEndurance = sessionStorage.lvlEndurance;
+    localStorage.lvlGimenez = sessionStorage.lvlGimenez;
     window.location.reload()
 })
 
@@ -85,6 +101,7 @@ sessionStorage.lvlSprint = localStorage.lvlSprint;
 sessionStorage.lvlPMA = localStorage.lvlPMA;
 sessionStorage.lvlSeuil = localStorage.lvlSeuil;
 sessionStorage.lvlEndurance = localStorage.lvlEndurance;
+sessionStorage.lvlGimenez = localStorage.lvlGimenez;
 $("#upSprint").click(function () {
     if (sessionStorage.lvlSprint < 2) {
         sessionStorage.lvlSprint++;
@@ -195,6 +212,44 @@ $("#downSeuil").click(function () {
         }
         if(sessionStorage.lvlSeuil < -1) {
             $("#SeuillvlProgressBar1").css("background-color", "");
+        }
+    }
+})
+
+$("#upGimenez").click(function () {
+    if (sessionStorage.lvlGimenez < 2) {
+        sessionStorage.lvlGimenez++;
+
+        if(sessionStorage.lvlGimenez >= 2) {
+            $("#GimenezlvlProgressBar4").css("background-color", "white");
+        }
+        if(sessionStorage.lvlGimenez >= 1) {
+            $("#GimenezlvlProgressBar3").css("background-color", "white");
+        }
+        if(sessionStorage.lvlGimenez >= 0) {
+            $("#GimenezlvlProgressBar2").css("background-color", "white");
+        }
+        if(sessionStorage.lvlGimenez >= -1) {
+            $("#GimenezlvlProgressBar1").css("background-color", "white");
+        }
+    }
+})
+
+$("#downGimenez").click(function () {
+    if (sessionStorage.lvlGimenez > -2) {
+        sessionStorage.lvlGimenez--;
+        
+        if(sessionStorage.lvlGimenez < 2) {
+            $("#GimenezlvlProgressBar4").css("background-color", "");
+        }
+        if(sessionStorage.lvlGimenez < 1) {
+            $("#GimenezlvlProgressBar3").css("background-color", "");
+        }
+        if(sessionStorage.lvlGimenez < 0) {
+            $("#GimenezlvlProgressBar2").css("background-color", "");
+        }
+        if(sessionStorage.lvlGimenez < -1) {
+            $("#GimenezlvlProgressBar1").css("background-color", "");
         }
     }
 })

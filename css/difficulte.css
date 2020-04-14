@@ -63,6 +63,11 @@
     left: 547px;
 }
 
+#gimenezImg {
+    position: absolute;
+    left: 1130px;
+}
+
 #endurance {
     
 }
@@ -249,6 +254,12 @@
     border-bottom-left-radius: 5px;
 }
 
+#GimenezlvlProgressBar1 {
+    margin-left: 1px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
 #EndurancelvlProgressBar1 {
     margin-left: 1px;
     border-top-left-radius: 5px;
@@ -266,6 +277,11 @@
 }
 
 #SeuillvlProgressBar4 {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+#GimenezlvlProgressBar4 {
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
 }

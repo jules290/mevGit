@@ -10,18 +10,19 @@ save = () => {
     let nbd = document.getElementById('nbdV').value;
     let prgT = document.getElementById("prgTV").value;
     let prgJ = document.getElementById("prgJV").value; 
+    let level = document.getElementById("levelV").value;
     localStorage.prg = 2;
     localStorage.année = année;
     localStorage.mois = mois;
     localStorage.nbd = nbd;
     localStorage.prgT = prgT;
     localStorage.prgJ = prgJ;
-    let nbAnnée = Number(localStorage.année);
-    let nbMois = Number(localStorage.mois);
-    let nbNbd = Number(localStorage.nbd);
-    let nbObjectif = Number(localStorage.objectif);  
-    let nbPrgT = Number(localStorage.prgT); 
-    let nbPrgJ = Number(localStorage.prgJ);
+    localStorage.level= level;
+    localStorage.lvlSprint = 0;
+    localStorage.lvlPMA = 0;
+    localStorage.lvlSeuil = 0;
+    localStorage.lvlGimenez = 0;
+    localStorage.lvlEndurance = 0;
 }
 
 lcExo = () => {

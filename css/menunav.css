@@ -13,10 +13,10 @@
 .sidenav .a_accueil {
     padding-top: 8px;
     padding-bottom: 8px;
-    padding-left: 20px;
+    padding-left: 10px;
     padding-right: 15px;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 13.8px;
     display: block;
     letter-spacing: 0.5px;
     color: #E3E3E3;
@@ -25,10 +25,10 @@
 .sidenav .a_programme {
     padding-top: 8px;
     padding-bottom: 8px;
-    padding-left: 20px;
+    padding-left: 10px;
     padding-right: 15px;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 13.8px;
     display: block;
     letter-spacing: 0.5px;
     color: #E3E3E3;
@@ -73,7 +73,7 @@
     padding-left: 20px;
     padding-right: 15px;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 13.5px;
     display: block;
     letter-spacing: 0.5px;
     color: #E3E3E3;
@@ -86,7 +86,7 @@
     padding-left: 20px;
     padding-right: 15px;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 13.5px;
     display: block;
     letter-spacing: 0.5px;
     color: #E3E3E3;
@@ -96,4 +96,19 @@
 .sidenav a:hover {
     background-color: #2B2B2B;
     
+}
+
+#arrowDownPrg {
+    position: absolute;
+    left: 123px;
+    top: 54px;
+}
+
+#arrowDownPrg::after {
+    content: '\276F';
+    position: absolute;
+    right: 0;
+    pointer-events: none;
+    transform: rotate(90deg);
+    font-size: 15px;
 }

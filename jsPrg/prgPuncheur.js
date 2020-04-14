@@ -58,7 +58,6 @@ function prgPuncheur() {
     $(".dt_nb").click(function () {
         $("#detailsSeance").empty()
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        document.getElementById("exoDetails").innerText = ""
     })
 
     function endurance(){
@@ -105,8 +104,6 @@ function prgPuncheur() {
 
         switch(Number(sessionStorage.serie)) {
             case 1:
-                document.getElementById("exoDetails").innerText = 
-                rep + " "+ "x"+ " " + "5min/5min";
                 LgrExo = 10 + tpsEffort + 10;
                 lgrEchauffement = 10 / LgrExo;
                 lgrSeuil = 5 / LgrExo;
@@ -124,8 +121,6 @@ function prgPuncheur() {
                 recup()
               break;
             case 2:
-                document.getElementById("exoDetails").innerText = 
-                sessionStorage.serie + " " + "x" + " " + rep + " "+ "x"+ " " + "5min/5min";
                 LgrExo = 10 + tpsEffort + 10 + tpsEffort + 10;
                 lgrEchauffement = 10 / LgrExo;
                 lgrSeuil = 5 / LgrExo;
@@ -153,8 +148,6 @@ function prgPuncheur() {
                 recup()
               break;
             case 3:
-                document.getElementById("exoDetails").innerText = 
-                sessionStorage.serie + " " + "x" + " " + rep + " "+ "x"+ " " + "5min/5min";
                 LgrExo = 10 + tpsEffort + 10 + tpsEffort + 10 + tpsEffort + 10;
                 lgrEchauffement = 10 / LgrExo;
                 lgrSeuil = 5 / LgrExo;
@@ -793,7 +786,7 @@ function prgPuncheur() {
     if (nbPrgT == 4) {
         //semaine 1     
         if (nbPrgJ >= 4) {if (document.getElementById(nbObjectif - 111)) {document.getElementById(nbObjectif - 111).style.backgroundColor = "green"}}
-        if (nbPrgJ >= 7) {if (document.getElementById(nbObjectif - 110)) {document.getElementById(nbObjectif - 111).style.backgroundColor = ""}}
+        if (nbPrgJ >= 7) {if (document.getElementById(nbObjectif - 110)) {document.getElementById(nbObjectif - 110).style.backgroundColor = ""}}
         if (nbPrgJ >= 3) {if (document.getElementById(nbObjectif - 109)) {document.getElementById(nbObjectif - 109).style.backgroundColor = "green"}} 
         if (nbPrgJ >= 5) {if (document.getElementById(nbObjectif - 108)) {document.getElementById(nbObjectif - 108).style.backgroundColor = "green"}}  
         if (nbPrgJ >= 6) {if (document.getElementById(nbObjectif - 107)) {document.getElementById(nbObjectif - 107).style.backgroundColor = "green"}}

@@ -64,13 +64,8 @@
     margin-top: -20px;
 }
 
-#exoDetails {
-    font-size: 20px;
-    text-align: center;
-}
-
 #graphExo {
-    margin-top: -16px;
+    margin-top: 10px;
     margin-left: 10px;
     border-bottom: solid black 2px;
     border-left: solid black 1px;
