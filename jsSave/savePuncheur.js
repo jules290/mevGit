@@ -352,7 +352,7 @@ lcExo = () => {
         //semaine 1
         if (nbPrgJ >= 4) {
             localStorage.exo1 = "séance d'endurance"
-            localStorage.exoClr1 = ""
+            localStorage.exoClr1 = "green"
         }
         else {
             localStorage.exo1 = "jour de repos"

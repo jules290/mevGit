@@ -6,7 +6,7 @@ var ctx1 = document.getElementById('graph1');
             , 'semaine 11', 'semaine 12', 'semaine 13', 'semaine 14', 'semaine 15', 'semaine 16'],
         datasets: [{
             label: 'intensité',
-            data: [25, 55, 60, 60, 65, 60, 95, 95, 80, 90, 95, 90, 70, 70, 40, 30],
+            data: [25, 55, 60, 60, 65, 60, 95, 95, 80, 90, 95, 90, 85, 85, 40, 30],
             borderColor: [
                 'rgba(255, 0, 0)',
             ],

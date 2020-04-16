@@ -8,6 +8,7 @@ $("#down").click(function() {
 
 $(document).ready(function() {
     prgRouleur();
+    $("#graphMy").hide()
 })
 
 function prgRouleur() {
@@ -2077,7 +2078,7 @@ function prgRouleur() {
                         break;
                     case 2:
                         sessionStorage.serie = 1;
-                        sessionStorage.rep1 = 3;
+                        sessionStorage.rep1 = 4;
                         sessionStorage.rep2 = 0;
                         sessionStorage.rep3 = 0;
                         sessionStorage.rep4 = 0;
@@ -2838,27 +2839,27 @@ function prgRouleur() {
                     case 1:
                         sessionStorage.serie = 2;
                         sessionStorage.rep1 = 2;
-                        sessionStorage.rep2 = 1;
+                        sessionStorage.rep2 = 2;
                         sessionStorage.rep3 = 0;
                         sessionStorage.rep4 = 0;
                         break;
                     case 2:
-                        sessionStorage.serie = 1;
-                        sessionStorage.rep1 = 3;
-                        sessionStorage.rep2 = 0;
-                        sessionStorage.rep3 = 0;
-                        sessionStorage.rep4 = 0;
-                        break;
-                    case 3:
                         sessionStorage.serie = 2;
                         sessionStorage.rep1 = 3;
                         sessionStorage.rep2 = 2;
                         sessionStorage.rep3 = 0;
                         sessionStorage.rep4 = 0;
                         break;
-                    case 4:
+                    case 3:
                         sessionStorage.serie = 2;
                         sessionStorage.rep1 = 3;
+                        sessionStorage.rep2 = 3;
+                        sessionStorage.rep3 = 0;
+                        sessionStorage.rep4 = 0;
+                        break;
+                    case 4:
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep1 = 4;
                         sessionStorage.rep2 = 3;
                         sessionStorage.rep3 = 0;
                         sessionStorage.rep4 = 0;
@@ -2898,15 +2899,15 @@ function prgRouleur() {
                 document.getElementById("exo").style.backgroundColor = localStorage.exoClr68
                 switch (nbLevel) {
                     case 1:
-                        sessionStorage.serie = 1;
-                        sessionStorage.rep1 = 3;
-                        sessionStorage.rep2 = 0;
+                        sessionStorage.serie = 2;
+                        sessionStorage.rep1 = 2;
+                        sessionStorage.rep2 = 2;
                         sessionStorage.rep3 = 0;
                         sessionStorage.rep4 = 0;
                         break;
                     case 2:
                         sessionStorage.serie = 2;
-                        sessionStorage.rep1 = 2;
+                        sessionStorage.rep1 = 3;
                         sessionStorage.rep2 = 2;
                         sessionStorage.rep3 = 0;
                         sessionStorage.rep4 = 0;
@@ -2961,14 +2962,14 @@ function prgRouleur() {
                 switch (nbLevel) {
                     case 1:
                         sessionStorage.serie = 1;
-                        sessionStorage.rep1 = 3;
+                        sessionStorage.rep1 = 4;
                         sessionStorage.rep2 = 0;
                         sessionStorage.rep3 = 0;
                         sessionStorage.rep4 = 0;
                         break;
                     case 2:
                         sessionStorage.serie = 2;
-                        sessionStorage.rep1 = 2;
+                        sessionStorage.rep1 = 3;
                         sessionStorage.rep2 = 2;
                         sessionStorage.rep3 = 0;
                         sessionStorage.rep4 = 0;
@@ -3047,7 +3048,7 @@ function prgRouleur() {
                 switch (nbLevel) {
                     case 1:
                         sessionStorage.serie = 2;
-                        sessionStorage.rep1 = 2;
+                        sessionStorage.rep1 = 3;
                         sessionStorage.rep2 = 2;
                         sessionStorage.rep3 = 0;
                         sessionStorage.rep4 = 0;
@@ -3055,7 +3056,7 @@ function prgRouleur() {
                     case 2:
                         sessionStorage.serie = 2;
                         sessionStorage.rep1 = 3;
-                        sessionStorage.rep2 = 2;
+                        sessionStorage.rep2 = 3;
                         sessionStorage.rep3 = 0;
                         sessionStorage.rep4 = 0;
                         break;
@@ -3109,7 +3110,7 @@ function prgRouleur() {
                 switch (nbLevel) {
                     case 1:
                         sessionStorage.serie = 2;
-                        sessionStorage.rep1 = 2;
+                        sessionStorage.rep1 = 3;
                         sessionStorage.rep2 = 2;
                         sessionStorage.rep3 = 0;
                         sessionStorage.rep4 = 0;
@@ -3117,7 +3118,7 @@ function prgRouleur() {
                     case 2:
                         sessionStorage.serie = 2;
                         sessionStorage.rep1 = 3;
-                        sessionStorage.rep2 = 2;
+                        sessionStorage.rep2 = 3;
                         sessionStorage.rep3 = 0;
                         sessionStorage.rep4 = 0;
                         break;
@@ -3225,7 +3226,7 @@ function prgRouleur() {
                         seuil()
                         break;
                     case 2:
-                        sessionStorage.serie = 1;
+                        sessionStorage.serie = 2;
                         sessionStorage.rep1 = 3;
                         sessionStorage.rep2 = 3;
                         sessionStorage.rep3 = 0;
@@ -3547,7 +3548,7 @@ function prgRouleur() {
                     case 4:
                         sessionStorage.serie = 2;
                         sessionStorage.rep1 = 6;
-                        sessionStorage.rep2 = 5;
+                        sessionStorage.rep2 = 6;
                         sessionStorage.rep3 = 0;
                         sessionStorage.rep4 = 0;
                         break;

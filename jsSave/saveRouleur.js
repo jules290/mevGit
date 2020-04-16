@@ -1376,6 +1376,25 @@ lcExo = () => {
         if (nbPrgJ >= 5) {
             localStorage.exo54 = "séance de gimenez"
             localStorage.exoClr54 = "#bebe02"
+            switch (nbLevel) {
+                case 1:
+                    localStorage.exo54 = "séance de seuil"
+                    localStorage.exoClr54 = "#bebe02"
+                    break;
+                case 2:
+                    localStorage.exo54 = "séance de seuil"
+                    localStorage.exoClr54 = "#bebe02"
+                    break;
+                case 3:
+                    localStorage.exo54 = "séance de gimenez"
+                    localStorage.exoClr54 = "#bebe02"
+                    break;
+                case 4:
+                    localStorage.exo54 = "séance de gimenez"
+                    localStorage.exoClr54 = "#bebe02"
+                    break;
+            }
+    
         }
         else {
             localStorage.exo54 = "jour de repos"
@@ -1385,8 +1404,25 @@ lcExo = () => {
         localStorage.exo55 = "séance d'endurance"
         localStorage.exoClr55 = "green"
 
-        localStorage.exo56 = "séance de seuil"
-        localStorage.exoClr56 = "#bebe02"
+        switch (nbLevel) {
+            case 1:
+                localStorage.exo56 = "séance de seuil"
+                localStorage.exoClr56 = "#bebe02"
+                break;
+            case 2:
+                localStorage.exo56 = "séance de seuil"
+                localStorage.exoClr56 = "#bebe02"
+                break;
+            case 3:
+                localStorage.exo56 = "séance de gimenez"
+                localStorage.exoClr56 = "#bebe02"
+                break;
+            case 4:
+                localStorage.exo56 = "séance de gimenez"
+                localStorage.exoClr56 = "#bebe02"
+                break;
+        }
+
        
         //semaine 9
         localStorage.exo57 = "jour de repos"
@@ -1401,9 +1437,25 @@ lcExo = () => {
             localStorage.exoClr58 = ""
         }
 
-        localStorage.exo59 = "séance de gimenez"
-        localStorage.exoClr59 = "#bebe02"
-
+        switch (nbLevel) {
+            case 1:
+                localStorage.exo59 = "séance de seuil"
+                localStorage.exoClr59 = "#bebe02"
+                break;
+            case 2:
+                localStorage.exo59 = "séance de seuil"
+                localStorage.exoClr59 = "#bebe02"
+                break;
+            case 3:
+                localStorage.exo59 = "séance de seuil"
+                localStorage.exoClr59 = "#bebe02"
+                break;
+            case 4:
+                localStorage.exo59 = "séance de gimenez"
+                localStorage.exoClr59 = "#bebe02"
+                break;
+        }
+    
         if (nbPrgJ >= 6) {
             localStorage.exo60 = "séance d'endurance"
             localStorage.exoClr60 = "green"
@@ -1421,10 +1473,10 @@ lcExo = () => {
             localStorage.exo61 = "jour de repos"
             localStorage.exoClr61 = ""
         }
-
+       
         localStorage.exo62 = "séance de seuil"
         localStorage.exoClr62 = "#bebe02"
-
+                
         localStorage.exo63 = "séance d'endurance"
         localStorage.exoClr63 = "green"
     
@@ -1441,8 +1493,24 @@ lcExo = () => {
             localStorage.exoClr65 = ""
         }
 
-        localStorage.exo66 = "séance de gimenez"
-        localStorage.exoClr66 = "#bebe02"
+        switch (nbLevel) {
+            case 1:
+                localStorage.exo66 = "séance de seuil"
+                localStorage.exoClr66 = "#bebe02"
+                break;
+            case 2:
+                localStorage.exo66 = "séance de gimenez"
+                localStorage.exoClr66 = "#bebe02"
+                break;
+            case 3:
+                localStorage.exo66 = "séance de gimenez"
+                localStorage.exoClr66 = "#bebe02"
+                break;
+            case 4:
+                localStorage.exo66 = "séance de gimenez"
+                localStorage.exoClr66 = "#bebe02"
+                break;
+        }
 
         if (nbPrgJ >= 6) {
             localStorage.exo67 = "séance d'endurance"
@@ -1464,6 +1532,25 @@ lcExo = () => {
 
         localStorage.exo69 = "séance de seuil"
         localStorage.exoClr69 = "#bebe02"
+        switch (nbLevel) {
+            case 1:
+                localStorage.exo69 = "séance de seuil"
+                localStorage.exoClr69 = "#bebe02"
+                break;
+            case 2:
+                localStorage.exo69 = "séance de seuil"
+                localStorage.exoClr69 = "#bebe02"
+                break;
+            case 3:
+                localStorage.exo69 = "séance de seuil"
+                localStorage.exoClr69 = "#bebe02"
+                break;
+            case 4:
+                localStorage.exo69 = "séance de gimenez"
+                localStorage.exoClr69 = "#bebe02"
+                break;
+        }
+
 
         localStorage.exo70 = "séance d'endurance"
         localStorage.exoClr70 = "green"
@@ -1705,6 +1792,25 @@ lcExo = () => {
         if (nbPrgJ >= 6) {
             localStorage.exo32 = "séance de gimenez"
             localStorage.exoClr32 = "#bebe02"
+            switch (nbLevel) {
+                case 1:
+                    localStorage.exo32 = "séance de seuil"
+                    localStorage.exoClr32 = "#bebe02"
+                    break;
+                case 2:
+                    localStorage.exo32 = "séance de seuil"
+                    localStorage.exoClr32 = "#bebe02"
+                    break;
+                case 3:
+                    localStorage.exo32 = "séance de gimenez"
+                    localStorage.exoClr32 = "#bebe02"
+                    break;
+                case 4:
+                    localStorage.exo32 = "séance de gimenez"
+                    localStorage.exoClr32 = "#bebe02"
+                    break;
+            }
+    
         }
         else {
             localStorage.exo32 = "jour de repos"
@@ -1739,8 +1845,25 @@ lcExo = () => {
             localStorage.exoClr37 = ""
         }
 
-        localStorage.exo38 = "séance de gimenez"
-        localStorage.exoClr38 = "#bebe02"
+        switch (nbLevel) {
+            case 1:
+                localStorage.exo18 = "séance de seuil"
+                localStorage.exoClr18 = "#bebe02"
+                break;
+            case 2:
+                localStorage.exo18 = "séance de seuil"
+                localStorage.exoClr18 = "#bebe02"
+                break;
+            case 3:
+                localStorage.exo18 = "séance de gimenez"
+                localStorage.exoClr18 = "#bebe02"
+                break;
+            case 4:
+                localStorage.exo18 = "séance de gimenez"
+                localStorage.exoClr18 = "#bebe02"
+                break;
+        }
+
 
         if (nbPrgJ >= 6) {
             localStorage.exo39 = "séance d'endurance"
@@ -1762,6 +1885,25 @@ lcExo = () => {
 
         localStorage.exo41 = "séance de seuil"
         localStorage.exoClr41 = "#bebe02"
+        switch (nbLevel) {
+            case 1:
+                localStorage.exo41 = "séance de seuil"
+                localStorage.exoClr41 = "#bebe02"
+                break;
+            case 2:
+                localStorage.exo41 = "séance de seuil"
+                localStorage.exoClr41 = "#bebe02"
+                break;
+            case 3:
+                localStorage.exo41 = "séance de gimenez"
+                localStorage.exoClr41 = "#bebe02"
+                break;
+            case 4:
+                localStorage.exo41 = "séance de gimenez"
+                localStorage.exoClr41 = "#bebe02"
+                break;
+        }
+
 
         localStorage.exo42 = "séance d'endurance"
         localStorage.exoClr42 = "green"
