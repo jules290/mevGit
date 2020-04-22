@@ -13,35 +13,102 @@ $(document).ready(function() {
 
 function prgPuncheur() {
     let pSprint;
-    let p30sec;
-    let p1min;
+    let pPMA30sec;
     let pPMA;
-    let pI3;
-    let p10min;
     let pSeuil;
-    let pFTP;
+    let pI3;
+    let pFtp;
     let pEndurance;
-    if (Number(localStorage.PMA) > 1 || Number(localStorage.FTP) > 1) {
-        pSprint = localStorage.pSprint;
-        p30sec = localStorage.p30sec;
-        p1min = localStorage.p1min;
-        pPMA30sec_30sec = localStorage.pPMA30sec_30sec;
-        pPMA = localStorage.PMA;
-        p10min = localStorage.p10min;
-        pSeuil = localStorage.pSeuil;
-        pFTP = localStorage.pFTP;
-        pEndurance = localStorage.pEndurance;
-    }
-    else if (Number(localStorage.fcMax) > 1) {
 
+    if (localStorage.PMA > 0 && localStorage.seuil > 0 && localStorage.ftp > 0) {
+        if (localStorage.PMA * 0.80 < localStorage.seuil && localStorage.PMA * 0.76 < localStorage.ftp) {
+            pSprint = "entre" + " " + Math.round(1.80 * Number(localStorage.PMA)) + "W" + " " + 
+            "et" + " " + Math.round(3.50 * Number(localStorage.PMA)) + "W";
+            pPMA30sec = "entre" + " " + Math.round(1.18 * Number(localStorage.PMA)) + "W" + " " + 
+            "et" + " " + Math.round(1.33 * Number(localStorage.PMA)) + "W";
+            pPMA = "entre" + " " + Math.round(0.88 * Number(localStorage.PMA)) + "W" + " " + 
+            "et" + " " + Math.round(Number(localStorage.PMA)) + "W";
+            pSeuil = "entre" + " " + Math.round(0.99 * Number(localStorage.seuil)) + "W" + " " + 
+            "et" + " " + Math.round(1.1 * Number(localStorage.seuil)) + "W";
+            pI3 = "entre" + " " + Math.round(0.92 * Number(localStorage.ftp)) + "W" + " " + 
+            "et" + " " + Math.round(1.042105263 * Number(localStorage.ftp)) + "W";
+            pFtp = Math.round(localStorage.ftp) + "W";
+            pEndurance = "entre" + " " + Math.round(0.5263157895 * Number(localStorage.ftp)) + "W" + " " + 
+            "et" + " " + Math.round(0.85 * Number(localStorage.ftp)) + "W";
+        }
+
+        if (localStorage.PMA * 0.80 < localStorage.seuil && localStorage.PMA * 0.76 > localStorage.ftp) {
+            pSprint = "entre" + " " + Math.round(1.90 * Number(localStorage.PMA)) + "W" + " " + 
+            "et" + " " + Math.round(3.70 * Number(localStorage.PMA)) + "W";
+            pPMA30sec = "entre" + " " + Math.round(1.22 * Number(localStorage.PMA)) + "W" + " " + 
+            "et" + " " + Math.round(1.35 * Number(localStorage.PMA)) + "W";
+            pPMA = "entre" + " " + Math.round(0.88 * Number(localStorage.PMA)) + "W" + " " + 
+            "et" + " " + Math.round(Number(localStorage.PMA)) + "W";
+            pSeuil = "entre" + " " + Math.round(0.99 * Number(localStorage.seuil)) + "W" + " " + 
+            "et" + " " + Math.round(1.1 * Number(localStorage.seuil)) + "W";
+            pI3 = "entre" + " " + Math.round(0.92 * Number(localStorage.ftp)) + "W" + " " + 
+            "et" + " " + Math.round(1.042105263 * Number(localStorage.ftp)) + "W";
+            pFtp = Math.round((0.80 * Number(localStorage.PMA)) * 0.95) + "W";
+            pEndurance = "entre" + " " + Math.round(0.40 * Number(localStorage.PMA)) + "W" + " " + 
+            "et" + " " + Math.round(0.64 * Number(localStorage.PMA)) + "W";
+        }
+
+        else if (localStorage.PMA * 0.80 == localStorage.seuil && localStorage.PMA * 0.76 == localStorage.ftp) {
+            pSprint = "entre" + " " + Math.round(1.90 * Number(localStorage.PMA)) + "W" + " " + 
+            "et" + " " + Math.round(3.70 * Number(localStorage.PMA)) + "W";
+            pPMA30sec = "entre" + " " + Math.round(1.22 * Number(localStorage.PMA)) + "W" + " " + 
+            "et" + " " + Math.round(1.35 * Number(localStorage.PMA)) + "W";
+            pPMA = "entre" + " " + Math.round(0.88 * Number(localStorage.PMA)) + "W" + " " + 
+            "et" + " " + Math.round(Number(localStorage.PMA)) + "W";
+            pSeuil = "entre" + " " + Math.round(0.78 * Number(localStorage.PMA)) + "W" + " " + 
+            "et" + " " + Math.round(0.85 * Number(localStorage.PMA)) + "W";
+            pI3 = "entre" + " " + Math.round(0.68 * Number(localStorage.PMA)) + "W" + " " + 
+            "et" + " " + Math.round(0.78 * Number(localStorage.PMA)) + "W";
+            pFtp = Math.round((0.80 * Number(localStorage.PMA)) * 0.95) + "W";
+            pEndurance = "entre" + " " + Math.round(0.5263157895 * Number(localStorage.ftp)) + "W" + " " + 
+            "et" + " " + Math.round(0.85 * Number(localStorage.ftp)) + "W";
+        }
+
+        if (localStorage.PMA * 0.80 > localStorage.seuil && localStorage.PMA * 0.76 < localStorage.ftp) {
+            pSprint = "entre" + " " + Math.round(1.90 * Number(localStorage.PMA)) + "W" + " " + 
+            "et" + " " + Math.round(3.70 * Number(localStorage.PMA)) + "W";
+            pPMA30sec = "entre" + " " + Math.round(1.22 * Number(localStorage.PMA)) + "W" + " " + 
+            "et" + " " + Math.round(1.35 * Number(localStorage.PMA)) + "W";
+            pPMA = "entre" + " " + Math.round(0.88 * Number(localStorage.PMA)) + "W" + " " + 
+            "et" + " " + Math.round(Number(localStorage.PMA)) + "W";
+            pSeuil = "entre" + " " + Math.round(0.78 * Number(localStorage.PMA)) + "W" + " " + 
+            "et" + " " + Math.round(0.85 * Number(localStorage.PMA)) + "W";
+            pI3 = "entre" + " " + Math.round(0.68 * Number(localStorage.PMA)) + "W" + " " + 
+            "et" + " " + Math.round(0.78 * Number(localStorage.PMA)) + "W";
+            pFtp = Math.round((0.80 * Number(localStorage.PMA)) * 0.95) + "W";
+            pEndurance = "entre" + " " + Math.round(0.40 * Number(localStorage.PMA)) + "W" + " " + 
+            "et" + " " + Math.round(0.68 * Number(localStorage.PMA)) + "W";
+        }
+
+        else if (localStorage.PMA * 0.80 > localStorage.seuil && localStorage.PMA * 0.76 > localStorage.ftp) {
+            pSprint = "entre" + " " + Math.round(2.0 * Number(localStorage.PMA)) + "W" + " " + 
+            "et" + " " + Math.round(3.90 * Number(localStorage.PMA)) + "W";
+            pPMA30sec = "entre" + " " + Math.round(1.26 * Number(localStorage.PMA)) + "W" + " " + 
+            "et" + " " + Math.round(1.38 * Number(localStorage.PMA)) + "W";
+            pPMA = "entre" + " " + Math.round(0.90 * Number(localStorage.PMA)) + "W" + " " + 
+            "et" + " " + Math.round(Number(localStorage.PMA)) + "W";
+            pSeuil = "entre" + " " + Math.round(0.75 * Number(localStorage.PMA)) + "W" + " " + 
+            "et" + " " + Math.round(0.84 * Number(localStorage.PMA)) + "W";
+            pI3 = "entre" + " " + Math.round(0.65 * Number(localStorage.PMA)) + "W" + " " + 
+            "et" + " " + Math.round(0.75 * Number(localStorage.PMA)) + "W";
+            pFtp = Math.round((0.80 * Number(localStorage.PMA)) * 0.95) + "W";
+            pEndurance = "entre" + " " + Math.round(0.40 * Number(localStorage.PMA)) + "W" + " " + 
+            "et" + " " + Math.round(0.65 * Number(localStorage.PMA)) + "W";
+        }
     }
+
     else {
-        pSprint = "300% PMA"
-        pPMA30sec_30sec = "130% PMA"
-        pPMA = "100% PMA"
-        pSeuil = "90% PMA"
-        pI3 = "80% PMA"
-        pEndurance = "50% - 65% PMA"
+        pSprint = "180% - 300% PMA"
+        pPMA30sec = "120% - 135% PMA"
+        pPMA = "90% - 100% PMA"
+        pSeuil = "78% - 85% PMA"
+        pI3 = "68% - 78% PMA"
+        pEndurance = "40% - 68% PMA"
     }
 
     function animExo() {
@@ -75,7 +142,7 @@ function prgPuncheur() {
         div.style.background = "green";
         div.style.borderRadius = "5px"
         div.style.color = "white";
-        h1.style.fontSize ="15px"
+        h1.style.fontSize ="13px"
         h1.style.padding = "5px";
         h1.style.textAlign = "end"
         h1.innerHTML = 
@@ -289,13 +356,13 @@ function prgPuncheur() {
             X.innerHTML = "X" + " " + rep;
             X.style.position = "relativ"
             X.style.marginTop = "10px"
-            h1.style.fontSize ="15px";
+            h1.style.fontSize ="14px";
             h1.style.padding = "5px";
-            h1.style.marginTop = "-45px"
+            h1.style.marginTop = "-43px"
             h1.style.textAlign = "end"
             h1.innerHTML = "5 min" + " " + "@" + " " + pSeuil;
             h1_2.style.marginTop = "-21px"
-            h1_2.style.fontSize ="15px";
+            h1_2.style.fontSize ="14px";
             h1_2.style.padding = "5px";
             h1_2.style.textAlign = "end"
             h1_2.innerHTML = "5 min" + " " + "@" + " " + pEndurance;
@@ -324,7 +391,6 @@ function prgPuncheur() {
 
     function gimenez(){
         let rep = Number(sessionStorage.rep) + Number(localStorage.lvlGimenez);
-        console.log(localStorage.lvlGimenez)
         $("#detailsSeance").empty()
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         let tpsPMAGimenez = sessionStorage.lgrPMAGimenez * rep;
@@ -395,13 +461,13 @@ function prgPuncheur() {
                 X.innerHTML = "X" + " " + rep;
                 X.style.position = "relativ"
                 X.style.marginTop = "10px"
-                h1.style.fontSize ="15px";
+                h1.style.fontSize ="14px";
                 h1.style.padding = "5px";
-                h1.style.marginTop = "-45px"
+                h1.style.marginTop = "-43px"
                 h1.style.textAlign = "end"
                 h1.innerHTML = sessionStorage.lgrPMAGimenez + "min" + " " + "@" + " " + pPMA;
                 h1_2.style.marginTop = "-21px"
-                h1_2.style.fontSize ="15px";
+                h1_2.style.fontSize ="14px";
                 h1_2.style.padding = "5px";
                 h1_2.style.textAlign = "end"
                 h1_2.innerHTML = sessionStorage.lgrI3Gimenez + "min" + " " + "@" + " " + pI3;
@@ -423,18 +489,18 @@ function prgPuncheur() {
                 X.innerHTML = "X" + " " + rep;
                 X.style.position = "relativ"
                 X.style.marginTop = "10px"
-                h1.style.fontSize ="15px";
+                h1.style.fontSize ="14px";
                 h1.style.padding = "5px";
-                h1.style.marginTop = "-45px"
+                h1.style.marginTop = "-43px"
                 h1.style.textAlign = "end"
                 h1.innerHTML = sessionStorage.lgrPMAGimenez + "min" + " " + "@" + " " + pPMA;
                 h1_2.style.marginTop = "-21px"
-                h1_2.style.fontSize ="15px";
+                h1_2.style.fontSize ="14px";
                 h1_2.style.padding = "5px";
                 h1_2.style.textAlign = "end"
                 h1_2.innerHTML = sessionStorage.lgrI3Gimenez + "min" + " " + "@" + " " + pI3;
                 h1_3.style.marginTop = "-21px"
-                h1_3.style.fontSize ="15px";
+                h1_3.style.fontSize ="14px";
                 h1_3.style.padding = "5px";
                 h1_3.style.textAlign = "end"
                 h1_3.innerHTML = sessionStorage.lgrRecupGimenez + "min" + " " + "@" + " " + pEndurance;
@@ -667,13 +733,13 @@ function prgPuncheur() {
             X.innerHTML = "X" + " " + rep;
             X.style.position = "relativ"
             X.style.marginTop = "10px"
-            h1.style.fontSize ="15px";
+            h1.style.fontSize ="13.75px";
             h1.style.padding = "5px";
-            h1.style.marginTop = "-45px"
+            h1.style.marginTop = "-43px"
             h1.style.textAlign = "end"
             h1.innerHTML = "30 sec" + " " + "@" + " " + pPMA30sec;
             h1_2.style.marginTop = "-21px"
-            h1_2.style.fontSize ="15px";
+            h1_2.style.fontSize ="13.75px";
             h1_2.style.padding = "5px";
             h1_2.style.textAlign = "end"
             h1_2.innerHTML = "30 sec" + " " + "@" + " " + pEndurance;

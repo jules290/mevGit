@@ -103,12 +103,12 @@ function prgGrimpeur() {
     }
 
     else {
-        pSprint = "300% PMA"
-        pPMA30sec_30sec = "130% PMA"
-        pPMA = "100% PMA"
-        pSeuil = "100% seuil"
-        pI3 = ""
-        pEndurance = "50% - 65% PMA"
+        pSprint = "180% - 300% PMA"
+        pPMA30sec = "120% - 135% PMA"
+        pPMA = "90% - 100% PMA"
+        pSeuil = "78% - 85% PMA"
+        pI3 = "68% - 78% PMA"
+        pEndurance = "40% - 68% PMA"
     }
 
     function animExo() {
