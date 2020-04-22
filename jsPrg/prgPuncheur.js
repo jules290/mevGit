@@ -671,7 +671,7 @@ function prgPuncheur() {
             h1.style.padding = "5px";
             h1.style.marginTop = "-45px"
             h1.style.textAlign = "end"
-            h1.innerHTML = "30 sec" + " " + "@" + " " + pPMA30sec_30sec;
+            h1.innerHTML = "30 sec" + " " + "@" + " " + pPMA30sec;
             h1_2.style.marginTop = "-21px"
             h1_2.style.fontSize ="15px";
             h1_2.style.padding = "5px";

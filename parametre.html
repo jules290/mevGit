@@ -27,6 +27,56 @@
     
     </head>
     <body>
+
+        <div id="filter"></div>
+
+        <div id="alert">
+            <button class="alertBtn" id="sauvegarder">sauvegarder</button>
+            <button class="alertBtn" id="retour">retour</button>
+
+            <div class="settingInputDiv"> 
+                <h1 class="settingInputTitle">poids</h1>
+                <a class="settingInputLink">?</a>
+                <p class="settingInputP">(en kg)</p>
+                <input type="number" class="settingInput" id="settingInputPoids">
+            </div>
+
+            <div class="settingInputDiv">
+                <h1 class="settingInputTitle">fcMax</h1>
+                <a class="settingInputLink">?</a>
+                <p class="settingInputP">(en bpm)</p>
+                <input type="number" class="settingInput" id="settingInputFcMax">
+            </div>
+
+            <div class="settingInputDiv">
+                <h1 class="settingInputTitle">fcRepos</h1>
+                <a class="settingInputLink">?</a>
+                <p class="settingInputP">(en bpm)</p>
+                <input type="number" class="settingInput" id="settingInputFcRepos">
+            </div>
+
+            <div class="settingInputDiv">
+                <h1 class="settingInputTitle">PMA</h1>
+                <a class="settingInputLink">?</a>
+                <p class="settingInputP">(en W)</p>
+                <input type="number" class="settingInput" id="settingInputPMA">
+            </div>
+
+            <div class="settingInputDiv">
+                <h1 class="settingInputTitle">seuil</h1>
+                <a class="settingInputLink">?</a>
+                <p class="settingInputP">(en W)</p>
+                <input type="number" class="settingInput" id="settingInputSeuil">
+            </div>
+
+            <div class="settingInputDiv">
+                <h1 class="settingInputTitle">ftp</h1>
+                <a class="settingInputLink">?</a>
+                <p class="settingInputP">(en W)</p>
+                <input type="number" class="settingInput" id="settingInputFtp">
+            </div>
+
+        </div>
         
         <nav id="mySidenav" class="sidenav">
             <a class="a_accueil" id="accueil" href="index.html">accueil</a>
@@ -41,9 +91,31 @@
         </div>
         
         <div id="main">
-            
+            <div id="AthleteSettings">
+                <table>
+                    <tr>
+                        <th>date</th>
+                        <th>poids</th> 
+                        <th>fcMax</th>
+                        <th>fcRepos</th>
+                        <th>PMA</th>
+                        <th>seuil</th>
+                        <th>ftp</th>
+                    </tr>
+                    <tr>
+                        <td id="settingDate"></td>
+                        <td id="settingPoids"></td>
+                        <td id="settingFcMax"></td>
+                        <td id="settingFcRepos"></td>
+                        <td id="settingPMA"></td>
+                        <td id="settingSeuil"></td>
+                        <td id="settingFtp"></td>
+                        <td id="settingEdit">✎</td>
+                    </tr>
+                  </table>
+            </div>
         </div>
-        <script src="js/jsStrava/strava_api.js"></script>
+        <script src="js/prametre.js"></script>
         <script src="js/language.js"></script>
         <script src="js/menunav_prg.js"></script>
     </body>

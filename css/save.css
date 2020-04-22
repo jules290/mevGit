@@ -14,21 +14,23 @@
 select {
     appearance: none;
     outline: 0;
-    border: 0 !important;
+    border: 0;
     background: #F9F9F9;
     background-image: none;
     box-shadow: none;
     font-size: 1.2em;
-  }
+    outline: none;
+}
   
-  .select {
+.select {
     position: relative;
     width: 170px;
     height: 30px;
     overflow: hidden;
     border-radius: 5px;
     border: 1px solid #CED4DA;
-  }
+    outline: none;
+}
   
   select {
     width: 100%;
@@ -37,7 +39,8 @@ select {
     padding-left: 7px;
     color: #555555;
     cursor: pointer;
-  }
+    outline: none;
+}
   
   .select::after {
     content: '\276F';
@@ -49,7 +52,7 @@ select {
     transform: rotate(90deg);
     font-size: 1.5em;
     background: #F9F9F9;
-  }
+}
   
 .select:hover::after {
     color: rgb(71, 71, 71);
@@ -103,4 +106,5 @@ select {
     border-radius: 5px;
     border: 1px solid #CED4DA;
     font-size: 1em;
+    outline: none;
 }

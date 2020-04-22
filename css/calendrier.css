@@ -61,15 +61,22 @@
 }
 .btn_cld{
     display: inline-block;
+    background-color: rgba(255, 255, 255, 0);
+    color: #2E2E2E;
+    font-size: 22px;
+    padding: 8px;
+    border: none;
+    outline: none;
 }
+
 .btn_cld:hover{
     cursor: pointer;
 }
 #up{
-    margin-right: 100px;
+    right: 100px;
 }
 #down{
-    margin-left: 100px;
+    left: 100px;
 }
 #titre_cld{
     margin-top: 5px;

@@ -2,6 +2,7 @@ $(document).ready(function () {
     $("#alert").animate({height: '0px'}, 0);
     $("#alertT").hide()
     $(".alertBtn").hide()
+    $("#filter").hide()
     $("#reinitialiser").click(function() {
         localStorage.lvlSprint = 0;
         localStorage.lvlPMA = 0;
@@ -9,9 +10,6 @@ $(document).ready(function () {
         localStorage.lvlGimenez = 0;
         localStorage.lvlEndurance = 0;
         window.location.reload()
-    })
-    $("#non").click(function () {
-        hideAlertPerso()
     })
 
     if(sessionStorage.lvlSprint >= 2) {
@@ -95,6 +93,14 @@ $("#oui").click(function () {
     localStorage.lvlEndurance = sessionStorage.lvlEndurance;
     localStorage.lvlGimenez = sessionStorage.lvlGimenez;
     window.location.reload()
+})
+
+$("#non").click(function () {
+    hideAlertPerso()
+})
+
+$("#filter").click(function () {
+    hideAlertPerso()
 })
 
 sessionStorage.lvlSprint = localStorage.lvlSprint;
@@ -297,10 +303,12 @@ function ShowAlertPerso() {
     $("#alert").animate({height: '170px'}, 200);
     $("#alertT").show()
     $(".alertBtn").show()
+    $("#filter").show()
 }
 
 function hideAlertPerso() {
     $("#alert").animate({height: '0px'}, 200);
     $("#alertT").hide()
     $(".alertBtn").hide()
+    $("#filter").hide()
 }
