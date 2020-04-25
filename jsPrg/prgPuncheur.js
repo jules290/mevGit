@@ -122,8 +122,8 @@ function prgPuncheur() {
 
     const canvas = document.getElementById("graphExo");
     const ctx = canvas.getContext("2d");
-    const maxH = 220;
-    const maxL = 350;
+    const maxH = 238;
+    const maxL = 460;
 
     $(".dt_nb").click(function () {
         $("#detailsSeance").empty()
@@ -142,7 +142,7 @@ function prgPuncheur() {
         div.style.background = "green";
         div.style.borderRadius = "5px"
         div.style.color = "white";
-        h1.style.fontSize ="13px"
+        h1.style.fontSize ="15px"
         h1.style.padding = "5px";
         h1.style.textAlign = "end"
         h1.innerHTML = 
@@ -356,13 +356,13 @@ function prgPuncheur() {
             X.innerHTML = "X" + " " + rep;
             X.style.position = "relativ"
             X.style.marginTop = "10px"
-            h1.style.fontSize ="14px";
+            h1.style.fontSize ="15px";
             h1.style.padding = "5px";
             h1.style.marginTop = "-43px"
             h1.style.textAlign = "end"
             h1.innerHTML = "5 min" + " " + "@" + " " + pSeuil;
             h1_2.style.marginTop = "-21px"
-            h1_2.style.fontSize ="14px";
+            h1_2.style.fontSize ="15px";
             h1_2.style.padding = "5px";
             h1_2.style.textAlign = "end"
             h1_2.innerHTML = "5 min" + " " + "@" + " " + pEndurance;
@@ -461,13 +461,13 @@ function prgPuncheur() {
                 X.innerHTML = "X" + " " + rep;
                 X.style.position = "relativ"
                 X.style.marginTop = "10px"
-                h1.style.fontSize ="14px";
+                h1.style.fontSize ="15px";
                 h1.style.padding = "5px";
-                h1.style.marginTop = "-43px"
+                h1.style.marginTop = "-45px"
                 h1.style.textAlign = "end"
                 h1.innerHTML = sessionStorage.lgrPMAGimenez + "min" + " " + "@" + " " + pPMA;
                 h1_2.style.marginTop = "-21px"
-                h1_2.style.fontSize ="14px";
+                h1_2.style.fontSize ="15px";
                 h1_2.style.padding = "5px";
                 h1_2.style.textAlign = "end"
                 h1_2.innerHTML = sessionStorage.lgrI3Gimenez + "min" + " " + "@" + " " + pI3;
@@ -489,18 +489,18 @@ function prgPuncheur() {
                 X.innerHTML = "X" + " " + rep;
                 X.style.position = "relativ"
                 X.style.marginTop = "10px"
-                h1.style.fontSize ="14px";
+                h1.style.fontSize ="15px";
                 h1.style.padding = "5px";
-                h1.style.marginTop = "-43px"
+                h1.style.marginTop = "-45px"
                 h1.style.textAlign = "end"
                 h1.innerHTML = sessionStorage.lgrPMAGimenez + "min" + " " + "@" + " " + pPMA;
                 h1_2.style.marginTop = "-21px"
-                h1_2.style.fontSize ="14px";
+                h1_2.style.fontSize ="15px";
                 h1_2.style.padding = "5px";
                 h1_2.style.textAlign = "end"
                 h1_2.innerHTML = sessionStorage.lgrI3Gimenez + "min" + " " + "@" + " " + pI3;
                 h1_3.style.marginTop = "-21px"
-                h1_3.style.fontSize ="14px";
+                h1_3.style.fontSize ="15px";
                 h1_3.style.padding = "5px";
                 h1_3.style.textAlign = "end"
                 h1_3.innerHTML = sessionStorage.lgrRecupGimenez + "min" + " " + "@" + " " + pEndurance;
@@ -733,13 +733,13 @@ function prgPuncheur() {
             X.innerHTML = "X" + " " + rep;
             X.style.position = "relativ"
             X.style.marginTop = "10px"
-            h1.style.fontSize ="13.75px";
+            h1.style.fontSize ="15px";
             h1.style.padding = "5px";
-            h1.style.marginTop = "-43px"
+            h1.style.marginTop = "-45px"
             h1.style.textAlign = "end"
             h1.innerHTML = "30 sec" + " " + "@" + " " + pPMA30sec;
             h1_2.style.marginTop = "-21px"
-            h1_2.style.fontSize ="13.75px";
+            h1_2.style.fontSize ="15px";
             h1_2.style.padding = "5px";
             h1_2.style.textAlign = "end"
             h1_2.innerHTML = "30 sec" + " " + "@" + " " + pEndurance;

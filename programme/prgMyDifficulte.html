@@ -15,10 +15,10 @@
         <meta name="robots" content="noindex, nofollow">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="css/style.css" media="screen">
-        <link rel="stylesheet" href="css/menunav.css" media="screen">
-        <link rel="stylesheet" href="css/header.css" media="screen">
-        <link rel="stylesheet" href="css/difficulte.css" media="screen">
+        <link rel="stylesheet" href="../css/style.css" media="screen">
+        <link rel="stylesheet" href="../css/menunav.css" media="screen">
+        <link rel="stylesheet" href="../css/header.css" media="screen">
+        <link rel="stylesheet" href="../css/difficulte.css" media="screen">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
         <script src="js/count-visits.js"></script>
@@ -34,23 +34,26 @@
         </div>
         
         <nav id="mySidenav" class="sidenav">
-            <a class="a_accueil" id="accueil" href="index.html">accueil</a>
-            <a class="a_programme" id="prg">programme<br>d'entrainement</a><p id="arrowDownPrg"></p>
-                <a id="prgmy" href="prgmy.html">mon programme</a>
-                <a id="prgchc" href="prgchc.html">choisir un programme</a>
-                <a class="a_parametre" href="parametre.html">paramètre</a>
-                <a class="a_parametre" href="aide.html">aide</a>
+            <a class="a_accueil" id="accueil" href="../index.html">accueil</a>
+            <a class="a_programme" id="prg">programmes<br>d'entrainement</a><p id="arrowDownPrg"></p>
+            <a id="prgmy" href="./prgmy.html">mon programme</a>
+            <a id="prgchc" href="./prgchc.html">choisir un programme</a>
+            <a class="a_parametre" href="../setting/AthleteSettings.html">paramètres de l'athlète</a>
+            <a class="a_parametre" href="../support/aide.html">aide</a>
         </nav>
         
         <div id="header">
-            <h1 class="titrePage" id="result">MON PROGRAMME</h1>
+            <div id="open">&#9776</div>
+            <div id="titre">
+                <h1 id="mev">mon entrainement vélo</h1>
+            </div>
         </div>
         
         <section id="main">
             <section id="exo">
                 <div id="sprint" class="exo">
                     <div id="sprintT"><h1>séance de sprint</h1></div>
-                    <img src="img/Mark_Cavendish,_Stage_11,_2011_Tour_de_France.jpg" class="Img" id="sprintImg">
+                    <img src="../img/Mark_Cavendish,_Stage_11,_2011_Tour_de_France.jpg" class="Img" id="sprintImg">
                     <div class="up" id="upSprint"><p class="upT">augmenter la difficulté</p></div>
                     <div class="down" id="downSprint"><p class="downT">baisser la difficulté</p></div>
                     <div class="progressBar">
@@ -62,7 +65,7 @@
                 </div>
                 <div id="PMA" class="exo">
                     <div id="PMAT"><h1>séance de PMA</h1></div>
-                    <img src="img/WATSON_00004159-059.jpg" class="Img" id="PMAImg">
+                    <img src="../img/WATSON_00004159-059.jpg" class="Img" id="PMAImg">
                     <div class="up" id="upPMA"><p class="upT">augmenter la difficulté</p></div>
                     <div class="down" id="downPMA"><p class="downT">baisser la difficulté</p></div>
                     <div class="progressBar">
@@ -74,7 +77,7 @@
                 </div>
                 <div id="seuil" class="exo">
                     <div id="seuilT"><h1>séance de seuil</h1></div>
-                    <img src="img/chrono.jpg" class="Img" id="seuilImg">
+                    <img src="../img/chrono.jpg" class="Img" id="seuilImg">
                     <div class="up" id="upSeuil"><p class="upT">augmenter la difficulté</p></div>
                     <div class="down" id="downSeuil"><p class="downT">baisser la difficulté</p></div>
                     <div class="progressBar">
@@ -86,7 +89,7 @@
                 </div>
                 <div id="gimenez" class="exo">
                     <div id="seuilT"><h1>séance de gimenez</h1></div>
-                    <img src="img/niki.jpg" class="Img" id="gimenezImg">
+                    <img src="../img/niki.jpg" class="Img" id="gimenezImg">
                     <div class="up" id="upGimenez"><p class="upT">augmenter la difficulté</p></div>
                     <div class="down" id="downGimenez"><p class="downT">baisser la difficulté</p></div>
                     <div class="progressBar">
@@ -99,7 +102,7 @@
 <!--
                 <div id="endurance" class="exo">
                     <div id="enduranceT"><h1>séance d'endurance</h1></div>
-                    <img src="img/th.jpg" class="Img" id="enduranceImg">
+                    <img src="../img/th.jpg" class="Img" id="enduranceImg">
                     <div class="up" id="upEndurance"><p class="upT">augmenter la difficulté</p></div>
                     <div class="down" id="downEndurance"><p class="downT">baisser la difficulté</p></div>
                    <div class="progressBar">
@@ -114,9 +117,9 @@
                 <button id="reinitialiser">réinitialiser</button>
             </section>
         </section>
-        <script src="js/difficulte.js"></script>
-        <script src="js/language.js"></script>
-        <script src="js/menunav_prg.js"></script>
+        <script src="../js/difficulte.js"></script>
+        <script src="../js/language.js"></script>
+        <script src="../js/menunav_prg.js"></script>
     </body>
 
 </html>

@@ -13,11 +13,17 @@ $("#open").click(function() {
     }
 })
 
-$("#prgmy").hide();
-$("#prgchc").hide();
-
-$("#prg").click(function() {
-    $("#prgmy").toggle(300);
-    $("#prgchc").toggle(200);
-    
-});
+$("#search").keypress(function(){
+    if (event.keyCode == 13) {
+        fetch('../support/supportFetch.json')
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (data) {
+          appendData(data);
+        })
+        .catch(function (err) {
+          console.log(err);
+        });
+    }
+})

@@ -10,19 +10,19 @@
 
             gtag('config', 'UA-161645631-2');
         </script>
-        <title>cyclisme - mon entrainement vélo - programme grimpeur</title>
+        <title>cyclisme - mon entrainement vélo - programme puncheur</title>
         <meta name="description" content="programmes d'entrainement cyclistes gratuits et personnalisés de tout niveau (débutant à compétition)"/>
         <meta name="keywords" content="cyclisme, entrainement vélo"/>
         <meta name="robots" content="index, follow, all"/>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="css/style.css" media="screen">
-        <link rel="stylesheet" href="css/menunav.css" media="screen">
-        <link rel="stylesheet" href="css/header.css" media="screen">
-        <link rel="stylesheet" href="css/calendrier.css" media="screen">
-        <link rel="stylesheet" href="css/prgPage.css" media="screen">
-        <link rel="stylesheet" href="css/save.css" media="screen">
-        <link rel="stylesheet" href="css/prgStatsGrimpeur.css" media="screen">
+        <link rel="stylesheet" href="../css/style.css" media="screen">
+        <link rel="stylesheet" href="../css/menunav.css" media="screen">
+        <link rel="stylesheet" href="../css/header.css" media="screen">
+        <link rel="stylesheet" href="../css/calendrier.css" media="screen">
+        <link rel="stylesheet" href="../css/prgPage.css" media="screen">
+        <link rel="stylesheet" href="../css/save.css" media="screen">
+        <link rel="stylesheet" href="../css/prgstatsPuncheur.css" media="screen">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
         <script src="js/count-visits.js"></script>
@@ -31,18 +31,21 @@
     <body>
         
         <nav id="mySidenav" class="sidenav">
-            <a class="a_accueil" id="accueil" href="index.html">accueil</a>
-            <a class="a_programme" id="prg">programme<br>d'entrainement</a><p id="arrowDownPrg"></p>
-                <a id="prgmy" href="prgmy.html">mon programme</a>
-                <a id="prgchc" href="prgchc.html">choisir un programme</a>
-                <a class="a_parametre" href="parametre.html">paramètre</a>
-                <a class="a_parametre" href="aide.html">aide</a>
+            <a class="a_accueil" id="accueil" href="../index.html">accueil</a>
+            <a class="a_programme" id="prg">programmes<br>d'entrainement</a><p id="arrowDownPrg"></p>
+            <a id="prgmy" href="./prgmy.html">mon programme</a>
+            <a id="prgchc" href="./prgchc.html">choisir un programme</a>
+            <a class="a_parametre" href="../setting/AthleteSettings.html">paramètres de l'athlète</a>
+            <a class="a_parametre" href="../support/aide.html">aide</a>
         </nav>
-        
+
         <div id="header">
-            <h1 class="titrePage" id="result">PROGRAMME GRIMPEUR</h1>
+            <div id="open">&#9776</div>
+            <div id="titre">
+                <h1 id="mev">mon entrainement vélo</h1>
+            </div>
         </div>
-        
+
         <div id="main">
             <div id="left">
                 <div id="formPrg">
@@ -150,10 +153,10 @@
             </div>
             <div id="description">
                 <h1 id="h1Description">
-                    PROGRAMME GRIMPEUR
+                    PROGRAMME PUNCHEUR
                 </h1>
                 <p id="pDescription">
-                    Ce programme est le parfait compromis entre effort longue durée et effort violent, il permettra de participer à tout type d’épreuve, de plus, il est accessible aux débutants.
+                    Ce programme est conçut pour exeller dans les efforts court et intense, il permettra de participer des courses courtes et intenses, de plus, il est accessible aux débutants.
                 </p>
             </div>
             
@@ -204,10 +207,10 @@
                 </div>
             </div>
         </div>
-        <script src="jsSave/saveGrimpeur.js"></script>
-        <script src="js/language.js"></script>
-        <script src="js/menunav_prg.js"></script>
-        <script src="js/graph1Grimpeur.js"></script>
+        <script src="../jsSave/savePuncheur.js"></script>
+        <script src="../js/language.js"></script>
+        <script src="../js/menunav_prg.js"></script>
+        <script src="../js/graph1Puncheur.js"></script>
     </body>
 
 </html>

@@ -1,15 +1,32 @@
 #header {
+    width: 100%;
     height: 50px;
-    background-color: #2E2E2E;
-    margin-top: -12px;
-    margin-right: -8px;
-    margin-left: 122px;
-    font-family: "Segoe UI";
-    color: #E3E3E3;
-    
+    background-color: rgb(230, 230, 230);
 }
 
-.titrePage{
-    font-size: 20px;
-    padding: 10px;
+#open {
+    color: rgb(31, 31, 31);
+    font-size: 33px;
+    height: 50px;
+    padding-left: 10px;
+    width: 40px;
+    transition: 0.4s;
+}
+
+#open:hover {
+    background-color: rgb(189, 189, 189);
+}
+
+#titre {
+    position: relative;
+    margin-top: -70px;
+    text-align: center;
+    width: 366px;
+    left: 500px;
+}
+
+#mev {
+    color: rgb(141, 58, 58);
+    font-size: 30px;
+    display: inline-block;
 }

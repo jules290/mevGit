@@ -24,8 +24,8 @@ select {
   
 .select {
     position: relative;
-    width: 170px;
-    height: 30px;
+    width: 200px;
+    height: 40px;
     overflow: hidden;
     border-radius: 5px;
     border: 1px solid #CED4DA;
@@ -46,7 +46,7 @@ select {
     content: '\276F';
     position: absolute;
     right: 0;
-    padding: 0 15px;
+    padding: 5px 15px;
     background: white;
     pointer-events: none;
     transform: rotate(90deg);
@@ -78,7 +78,7 @@ select {
 
 #divPrgT{
     display: inline-block;
-    margin-left: 115px;
+    margin-left: 130px;
 }
 #prgT {
     margin-top: 5px;
@@ -92,16 +92,25 @@ select {
     margin-left: 10px;
 }
 
+
+#divPrgL {
+    margin-left: 239px;
+}
+
+#levelP {
+    margin-left: -258px;
+}
+
 #level {
-    margin-left: 35.5%
+    margin-left: 238px;
 }
 
 #save {
-    margin-top: 20px;
-    margin-left: 214px;
+    margin-top: 30px;
+    margin-left: 239px;
     position: relative;
-    width: 170px;
-    height: 30px;
+    width: 200px;
+    height: 40px;
     overflow: hidden;
     border-radius: 5px;
     border: 1px solid #CED4DA;

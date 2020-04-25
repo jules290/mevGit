@@ -17,10 +17,10 @@
         <meta name="robots" content="index, follow, all"/>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="css/style.css" media="screen">
-        <link rel="stylesheet" href="css/menunav.css" media="screen">
-        <link rel="stylesheet" href="css/header.css" media="screen">
-        <link rel="stylesheet" href="css/strava.css" media="screen">
+        <link rel="stylesheet" href="../css/style.css" media="screen">
+        <link rel="stylesheet" href="../css/menunav.css" media="screen">
+        <link rel="stylesheet" href="../css/header.css" media="screen">
+        <link rel="stylesheet" href="../css/strava.css" media="screen">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
         <script src="js/count-visits.js"></script>
@@ -28,29 +28,32 @@
     <body>
         
         <nav id="mySidenav" class="sidenav">
-            <a class="a_accueil" id="accueil" href="index.html">accueil</a>
-            <a class="a_programme" id="prg">programme<br>d'entrainement</a><p id="arrowDownPrg"></p>
-                <a id="prgmy" href="prgmy.html">mon programme</a>
-                <a id="prgchc" href="prgchc.html">choisir un programme</a>
-                <a class="a_parametre" href="parametre.html">paramètre</a>
-                <a class="a_parametre" href="aide.html">aide</a>
+            <a class="a_accueil" id="accueil" href="../index.html">accueil</a>
+            <a class="a_programme" id="prg">programmes<br>d'entrainement</a><p id="arrowDownPrg"></p>
+            <a id="prgmy" href="../programme/prgmy.html">mon programme</a>
+            <a id="prgchc" href="../programme/prgchc.html">choisir un programme</a>
+            <a class="a_parametre" href="../setting/AthleteSettings.html">paramètres de l'athlète</a>
+            <a class="a_parametre" href="../support/aide.html">aide</a>
         </nav>
         
         <div id="header">
-            <h1 class="titrePage" id="result">ACCUEIL</h1>
+            <div id="open">&#9776</div>
+            <div id="titre">
+                <h1 id="mev">mon entrainement vélo</h1>
+            </div>
         </div>
         
         <div id="main">
-            <img id="strava" src="img/Strava.png">
+            <img id="strava" src="../img/Strava.png">
            <button id="stravaConnect">
                <a href="http://www.strava.com/oauth/authorize?client_id=46262&response_type=code&redirect_uri=https://mon-entrainement-velo-fr.netlify.app/exchange_token&approval_prompt=force&scope=read_all">
                     se connecter à strava
                </a>
             </button>
         </div>
-        <script src="js/jsStrava/strava_api.js"></script>
-        <script src="js/language.js"></script>
-        <script src="js/menunav_prg.js"></script>
+        <script src="../js/jsStrava/strava_api.js"></script>
+        <script src="../js/language.js"></script>
+        <script src="../js/menunav_prg.js"></script>
     </body>
 
 </html>

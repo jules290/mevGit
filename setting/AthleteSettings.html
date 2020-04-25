@@ -17,10 +17,10 @@
         <meta name="robots" content="noindex, nofollow">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="css/style.css" media="screen">
-        <link rel="stylesheet" href="css/menunav.css" media="screen">
-        <link rel="stylesheet" href="css/header.css" media="screen">
-        <link rel="stylesheet" href="css/parametre.css" media="screen">
+        <link rel="stylesheet" href="../css/style.css" media="screen">
+        <link rel="stylesheet" href="../css/menunav.css" media="screen">
+        <link rel="stylesheet" href="../css/header.css" media="screen">
+        <link rel="stylesheet" href="../css/AthleteSettings.css" media="screen">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
         <script src="js/count-visits.js"></script>
@@ -36,42 +36,42 @@
 
             <div class="settingInputDiv"> 
                 <h1 class="settingInputTitle">poids</h1>
-                <a class="settingInputLink">?</a>
+                <a class="help settingInputLink">i</a>
                 <p class="settingInputP">(en kg)</p>
                 <input type="number" class="settingInput" id="settingInputPoids">
             </div>
 
             <div class="settingInputDiv">
                 <h1 class="settingInputTitle">fcMax</h1>
-                <a class="settingInputLink">?</a>
+                <a class="help settingInputLink">i</a>
                 <p class="settingInputP">(en bpm)</p>
                 <input type="number" class="settingInput" id="settingInputFcMax">
             </div>
 
             <div class="settingInputDiv">
                 <h1 class="settingInputTitle">fcRepos</h1>
-                <a class="settingInputLink">?</a>
+                <a class="help settingInputLink">i</a>
                 <p class="settingInputP">(en bpm)</p>
                 <input type="number" class="settingInput" id="settingInputFcRepos">
             </div>
 
             <div class="settingInputDiv">
                 <h1 class="settingInputTitle">PMA</h1>
-                <a class="settingInputLink">?</a>
+                <a class="help settingInputLink">i</a>
                 <p class="settingInputP">(en W)</p>
                 <input type="number" class="settingInput" id="settingInputPMA">
             </div>
 
             <div class="settingInputDiv">
                 <h1 class="settingInputTitle">seuil</h1>
-                <a class="settingInputLink">?</a>
+                <a class="help settingInputLink">i</a>
                 <p class="settingInputP">(en W)</p>
                 <input type="number" class="settingInput" id="settingInputSeuil">
             </div>
 
             <div class="settingInputDiv">
                 <h1 class="settingInputTitle">ftp</h1>
-                <a class="settingInputLink">?</a>
+                <a class="help settingInputLink">i</a>
                 <p class="settingInputP">(en W)</p>
                 <input type="number" class="settingInput" id="settingInputFtp">
             </div>
@@ -79,46 +79,47 @@
         </div>
         
         <nav id="mySidenav" class="sidenav">
-            <a class="a_accueil" id="accueil" href="index.html">accueil</a>
-            <a class="a_programme" id="prg">programme<br>d'entrainement</a><p id="arrowDownPrg"></p>
-                <a id="prgmy" href="prgmy.html">mon programme</a>
-                <a id="prgchc" href="prgchc.html">choisir un programme</a>
-                <a class="a_parametre" href="parametre.html">paramètre</a>
-                <a class="a_parametre" href="aide.html">aide</a>
+            <a class="a_accueil" id="accueil" href="../index.html">accueil</a>
+            <a class="a_programme" id="prg">programmes<br>d'entrainement</a><p id="arrowDownPrg"></p>
+            <a id="prgmy" href="../programme/prgmy.html">mon programme</a>
+            <a id="prgchc" href="../programme/prgchc.html">choisir un programme</a>
+            <a class="a_parametre" href="./AthleteSettings.html">paramètres de l'athlète</a>
+            <a class="a_parametre" href="../support/aide.html">aide</a>
         </nav>
         
         <div id="header">
-            <h1 class="titrePage" id="result">PARAMETRE</h1>
-        </div>
-        
-        <div id="main">
-            <div id="AthleteSettings">
-                <table>
-                    <tr>
-                        <th>date</th>
-                        <th>poids</th> 
-                        <th>fcMax</th>
-                        <th>fcRepos</th>
-                        <th>PMA</th>
-                        <th>seuil</th>
-                        <th>ftp</th>
-                    </tr>
-                    <tr>
-                        <td id="settingDate"></td>
-                        <td id="settingPoids"></td>
-                        <td id="settingFcMax"></td>
-                        <td id="settingFcRepos"></td>
-                        <td id="settingPMA"></td>
-                        <td id="settingSeuil"></td>
-                        <td id="settingFtp"></td>
-                        <td id="settingEdit">✎</td>
-                    </tr>
-                  </table>
+            <div id="open">&#9776</div>
+            <div id="titre">
+                <h1 id="mev">mon entrainement vélo</h1>
             </div>
         </div>
-        <script src="js/prametre.js"></script>
-        <script src="js/language.js"></script>
-        <script src="js/menunav_prg.js"></script>
+        
+        <div class="AthleteSettings">
+            <table>
+                <tr>
+                    <th>date</th>
+                    <th>poids</th> 
+                    <th>fcMax</th>
+                    <th>fcRepos</th>
+                    <th>PMA</th>
+                    <th>seuil</th>
+                    <th>ftp</th>
+                </tr>
+                <tr>
+                    <td id="settingDate"></td>
+                    <td id="settingPoids"></td>
+                    <td id="settingFcMax"></td>
+                    <td id="settingFcRepos"></td>
+                    <td id="settingPMA"></td>
+                    <td id="settingSeuil"></td>
+                    <td id="settingFtp"></td>
+                    <td id="settingEdit">✎</td>
+                </tr>
+            </table>
+        </div>
+        <script src="../js/AthleteSettings.js"></script>
+        <script src="../js/language.js"></script>
+        <script src="../js/menunav_prg.js"></script>
     </body>
 
 </html>

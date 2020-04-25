@@ -1,5 +1,5 @@
 #exo {
-    
+    margin-top: 7px;
 }
 .exo {
     background-color: rgb(71, 71, 71);
@@ -30,7 +30,7 @@
 }
 #sprintImg {
     position: absolute;
-    left: 545px;
+    left: 477px;
 }
 
 #PMA {
@@ -45,7 +45,7 @@
 }
 #PMAImg {
     position: absolute;
-    left: 1129px;
+    left: 1152px;
 }
 
 #seuil {
@@ -60,12 +60,12 @@
 }
 #seuilImg {
     position: absolute;
-    left: 547px;
+    left: 479px;
 }
 
 #gimenezImg {
     position: absolute;
-    left: 1130px;
+    left: 1154px;
 }
 
 #endurance {
@@ -80,7 +80,7 @@
 }
 #enduranceImg {
     position: absolute;
-    left: 1131px;
+    left: 1031px;
 }
 
 .up {

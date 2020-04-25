@@ -26,22 +26,24 @@
         <script src="js/count-visits.js"></script>
     
     </head>
-    <body>
-        
+    <body> 
         <nav id="mySidenav" class="sidenav">
-            <a class="a_accueil" id="accueil" href="index.html">accueil</a>
-            <a class="a_programme" id="prg">programme<br>d'entrainement</a><p id="arrowDownPrg"></p>
-                <a id="prgmy" href="prgmy.html">mon programme</a>
-                <a id="prgchc" href="prgchc.html">choisir un programme</a>
-                <a class="a_parametre" href="parametre.html">paramètre</a>
-                <a class="a_parametre" href="aide.html">aide</a>
+            <a class="a_accueil" id="accueil" href="./index.html">accueil</a>
+            <a class="a_programme" id="prg">programmes<br>d'entrainement</a><p id="arrowDownPrg"></p>
+            <a id="prgmy" href="./programme/prgmy.html">mon programme</a>
+            <a id="prgchc" href="./programme/prgchc.html">choisir un programme</a>
+            <a class="a_parametre" href="./setting/AthleteSettings.html">paramètres de l'athlète</a>
+            <a class="a_parametre" href="./support/aide.html">aide</a>
         </nav>
         
         <div id="header">
-            <h1 class="titrePage" id="result">ACCUEIL</h1>
+            <div id="open">&#9776</div>
+            <div id="titre">
+                <h1 id="mev">mon entrainement vélo</h1>
+            </div>
         </div>
         
-        <div id="main">
+       
             <div id="undefined1">
             
             </div>
@@ -66,7 +68,7 @@
                 </article>
             </section>
             <footer></footer>
-        </div>
+
         <script src="jsAccueil/seanceDuJour.js"></script>
         <script src="js/language.js"></script>
         <script src="js/menunav_prg.js"></script>

@@ -1,0 +1,72 @@
+#header {
+    width: 100%;
+    height: 50px;
+    background-color: rgb(230, 230, 230);
+}
+
+#open {
+    color: rgb(31, 31, 31);
+    font-size: 33px;
+    height: 50px;
+    padding-left: 10px;
+    width: 40px;
+    transition: 0.4s;
+}
+
+#open:hover {
+    background-color: rgb(189, 189, 189);
+}
+
+#titre {
+    position: relative;
+    margin-top: -70px;
+    text-align: center;
+    width: 366px;
+    left: 500px;
+}
+
+#mev {
+    color: rgb(141, 58, 58);
+    font-size: 25px;
+    display: inline-block;
+}
+
+#support {
+    color: rgb(77, 77, 77);
+    display: inline-block;
+    font-size: 25px;
+}
+
+#paysage {
+    width: 100%;
+}
+
+input[type=text] {
+    position: absolute;
+    top: 150px;
+    left: 233px;
+    width: 900px;
+    height: 60px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 0px;
+    font-size: 16px;
+    background-color: rgba(255, 255, 255, 0.808);
+    background-image: url('../img/searchicon.png');
+    background-position: 15px 15px; 
+    background-size: 30px;
+    background-repeat: no-repeat;
+    padding-left: 60px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition:  0.2s;
+    outline:none;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.664);
+}
+
+input[type=text]:hover {
+    background-color: rgb(255, 255, 255);
+}
+
+input[type=text]:focus {
+    background-color: rgb(255, 255, 255);
+}

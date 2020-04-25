@@ -13,6 +13,12 @@ $(document).ready(function () {
     if (!localStorage.seuil) {localStorage.seuil = ""}
     if (!localStorage.ftp) {localStorage.ftp = ""}
     postAthleteSettings()
+    if (localStorage.checkPois == 1) {document.querySelector('#checkPois').checked = true}
+    if (localStorage.checkFcMax == 1) {document.querySelector('#checkFcMax').checked = true}
+    if (localStorage.checkFcRepos == 1) {document.querySelector('#checkFcRepos').checked = true}
+    if (localStorage.checkPMA == 1) {document.querySelector('#checkPMA').checked = true}
+    if (localStorage.checkSeuil == 1) {document.querySelector('#checkSeuil').checked = true}
+    if (localStorage.checkFtp == 1) {document.querySelector('#checkFtp').checked = true}
 })
 
 $("#settingEdit").click(function () {
@@ -185,3 +191,52 @@ function alertHide() {
     $(".settingInputTitle").hide()
     $(".settingInput").hide()
 }
+
+$("#checkPois").click(function () {
+    if (document.querySelector('#checkPois').checked == true) {
+        localStorage.checkPois = 1;
+    } else {
+        localStorage.checkPois = 0;
+    }
+})
+
+$("#checkFcMax").click(function () {
+    if (document.querySelector('#checkFcMax').checked == true) {
+        localStorage.checkFcMax = 1;
+    } else {
+        localStorage.checkFcMax = 0;
+    }
+})
+
+$("#checkFcRepos").click(function () {
+    if (document.querySelector('#checkFcRepos').checked == true) {
+        localStorage.checkFcRepos = 1;
+    } else {
+        localStorage.checkFcRepos = 0;
+    }
+})
+
+$("#checkPMA").click(function () {
+    if (document.querySelector('#checkPMA').checked == true) {
+        localStorage.checkPMA = 1;
+    } else {
+        localStorage.checkPMA = 0;
+    }
+    console.log(localStorage.checkPMA)
+})
+
+$("#checkSeuil").click(function () {
+    if (document.querySelector('#checkSeuil').checked == true) {
+        localStorage.checkSeuil = 1;
+    } else {
+        localStorage.checkSeuil = 0;
+    }
+})
+
+$("#checkFtp").click(function () {
+    if (document.querySelector('#checkFtp').checked == true) {
+        localStorage.checkFtp = 1;
+    } else {
+        localStorage.checkFtp = 0;
+    }
+})

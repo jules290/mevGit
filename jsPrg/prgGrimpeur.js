@@ -37,7 +37,7 @@ function prgGrimpeur() {
             "et" + " " + Math.round(0.85 * Number(localStorage.ftp)) + "W";
         }
 
-        if (localStorage.PMA * 0.80 < localStorage.seuil && localStorage.PMA * 0.76 > localStorage.ftp) {
+        else if (localStorage.PMA * 0.80 < localStorage.seuil && localStorage.PMA * 0.76 > localStorage.ftp) {
             pSprint = "entre" + " " + Math.round(1.90 * Number(localStorage.PMA)) + "W" + " " + 
             "et" + " " + Math.round(3.70 * Number(localStorage.PMA)) + "W";
             pPMA30sec = "entre" + " " + Math.round(1.22 * Number(localStorage.PMA)) + "W" + " " + 
@@ -48,7 +48,7 @@ function prgGrimpeur() {
             "et" + " " + Math.round(1.1 * Number(localStorage.seuil)) + "W";
             pI3 = "entre" + " " + Math.round(0.92 * Number(localStorage.ftp)) + "W" + " " + 
             "et" + " " + Math.round(1.042105263 * Number(localStorage.ftp)) + "W";
-            pFtp = Math.round((0.80 * Number(localStorage.PMA)) * 0.95) + "W";
+            pFtp = Math.round(localStorage.ftp) + "W";
             pEndurance = "entre" + " " + Math.round(0.40 * Number(localStorage.PMA)) + "W" + " " + 
             "et" + " " + Math.round(0.64 * Number(localStorage.PMA)) + "W";
         }
@@ -64,12 +64,12 @@ function prgGrimpeur() {
             "et" + " " + Math.round(0.85 * Number(localStorage.PMA)) + "W";
             pI3 = "entre" + " " + Math.round(0.68 * Number(localStorage.PMA)) + "W" + " " + 
             "et" + " " + Math.round(0.78 * Number(localStorage.PMA)) + "W";
-            pFtp = Math.round((0.80 * Number(localStorage.PMA)) * 0.95) + "W";
+            pFtp = Math.round(localStorage.ftp) + "W";
             pEndurance = "entre" + " " + Math.round(0.5263157895 * Number(localStorage.ftp)) + "W" + " " + 
             "et" + " " + Math.round(0.85 * Number(localStorage.ftp)) + "W";
         }
 
-        if (localStorage.PMA * 0.80 > localStorage.seuil && localStorage.PMA * 0.76 < localStorage.ftp) {
+        else if (localStorage.PMA * 0.80 > localStorage.seuil && localStorage.PMA * 0.76 < localStorage.ftp) {
             pSprint = "entre" + " " + Math.round(1.90 * Number(localStorage.PMA)) + "W" + " " + 
             "et" + " " + Math.round(3.70 * Number(localStorage.PMA)) + "W";
             pPMA30sec = "entre" + " " + Math.round(1.22 * Number(localStorage.PMA)) + "W" + " " + 
@@ -80,7 +80,7 @@ function prgGrimpeur() {
             "et" + " " + Math.round(0.85 * Number(localStorage.PMA)) + "W";
             pI3 = "entre" + " " + Math.round(0.68 * Number(localStorage.PMA)) + "W" + " " + 
             "et" + " " + Math.round(0.78 * Number(localStorage.PMA)) + "W";
-            pFtp = Math.round((0.80 * Number(localStorage.PMA)) * 0.95) + "W";
+            pFtp = Math.round(localStorage.ftp) + "W";
             pEndurance = "entre" + " " + Math.round(0.40 * Number(localStorage.PMA)) + "W" + " " + 
             "et" + " " + Math.round(0.68 * Number(localStorage.PMA)) + "W";
         }
@@ -96,7 +96,7 @@ function prgGrimpeur() {
             "et" + " " + Math.round(0.84 * Number(localStorage.PMA)) + "W";
             pI3 = "entre" + " " + Math.round(0.65 * Number(localStorage.PMA)) + "W" + " " + 
             "et" + " " + Math.round(0.75 * Number(localStorage.PMA)) + "W";
-            pFtp = Math.round((0.80 * Number(localStorage.PMA)) * 0.95) + "W";
+            pFtp = Math.round(localStorage.ftp) + "W";
             pEndurance = "entre" + " " + Math.round(0.40 * Number(localStorage.PMA)) + "W" + " " + 
             "et" + " " + Math.round(0.65 * Number(localStorage.PMA)) + "W";
         }
@@ -122,8 +122,8 @@ function prgGrimpeur() {
 
     const canvas = document.getElementById("graphExo");
     const ctx = canvas.getContext("2d");
-    const maxH = 220;
-    const maxL = 350;
+    const maxH = 238;
+    const maxL = 460;
 
     $(".dt_nb").click(function () {
         $("#detailsSeance").empty()
@@ -142,7 +142,7 @@ function prgGrimpeur() {
         div.style.background = "green";
         div.style.borderRadius = "5px"
         div.style.color = "white";
-        h1.style.fontSize ="13px"
+        h1.style.fontSize ="15px"
         h1.style.padding = "5px";
         h1.style.textAlign = "end"
         h1.innerHTML = 
@@ -356,13 +356,13 @@ function prgGrimpeur() {
             X.innerHTML = "X" + " " + rep;
             X.style.position = "relativ"
             X.style.marginTop = "10px"
-            h1.style.fontSize ="14px";
+            h1.style.fontSize ="15px";
             h1.style.padding = "5px";
             h1.style.marginTop = "-43px"
             h1.style.textAlign = "end"
             h1.innerHTML = "5 min" + " " + "@" + " " + pSeuil;
             h1_2.style.marginTop = "-21px"
-            h1_2.style.fontSize ="14px";
+            h1_2.style.fontSize ="15px";
             h1_2.style.padding = "5px";
             h1_2.style.textAlign = "end"
             h1_2.innerHTML = "5 min" + " " + "@" + " " + pEndurance;
@@ -461,13 +461,13 @@ function prgGrimpeur() {
                 X.innerHTML = "X" + " " + rep;
                 X.style.position = "relativ"
                 X.style.marginTop = "10px"
-                h1.style.fontSize ="14px";
+                h1.style.fontSize ="15px";
                 h1.style.padding = "5px";
-                h1.style.marginTop = "-43px"
+                h1.style.marginTop = "-45px"
                 h1.style.textAlign = "end"
                 h1.innerHTML = sessionStorage.lgrPMAGimenez + "min" + " " + "@" + " " + pPMA;
                 h1_2.style.marginTop = "-21px"
-                h1_2.style.fontSize ="14px";
+                h1_2.style.fontSize ="15px";
                 h1_2.style.padding = "5px";
                 h1_2.style.textAlign = "end"
                 h1_2.innerHTML = sessionStorage.lgrI3Gimenez + "min" + " " + "@" + " " + pI3;
@@ -489,18 +489,18 @@ function prgGrimpeur() {
                 X.innerHTML = "X" + " " + rep;
                 X.style.position = "relativ"
                 X.style.marginTop = "10px"
-                h1.style.fontSize ="14px";
+                h1.style.fontSize ="15px";
                 h1.style.padding = "5px";
-                h1.style.marginTop = "-43px"
+                h1.style.marginTop = "-45px"
                 h1.style.textAlign = "end"
                 h1.innerHTML = sessionStorage.lgrPMAGimenez + "min" + " " + "@" + " " + pPMA;
                 h1_2.style.marginTop = "-21px"
-                h1_2.style.fontSize ="14px";
+                h1_2.style.fontSize ="15px";
                 h1_2.style.padding = "5px";
                 h1_2.style.textAlign = "end"
                 h1_2.innerHTML = sessionStorage.lgrI3Gimenez + "min" + " " + "@" + " " + pI3;
                 h1_3.style.marginTop = "-21px"
-                h1_3.style.fontSize ="14px";
+                h1_3.style.fontSize ="15px";
                 h1_3.style.padding = "5px";
                 h1_3.style.textAlign = "end"
                 h1_3.innerHTML = sessionStorage.lgrRecupGimenez + "min" + " " + "@" + " " + pEndurance;
@@ -733,13 +733,13 @@ function prgGrimpeur() {
             X.innerHTML = "X" + " " + rep;
             X.style.position = "relativ"
             X.style.marginTop = "10px"
-            h1.style.fontSize ="13.75px";
+            h1.style.fontSize ="15px";
             h1.style.padding = "5px";
-            h1.style.marginTop = "-43px"
+            h1.style.marginTop = "-45px"
             h1.style.textAlign = "end"
             h1.innerHTML = "30 sec" + " " + "@" + " " + pPMA30sec;
             h1_2.style.marginTop = "-21px"
-            h1_2.style.fontSize ="13.75px";
+            h1_2.style.fontSize ="15px";
             h1_2.style.padding = "5px";
             h1_2.style.textAlign = "end"
             h1_2.innerHTML = "30 sec" + " " + "@" + " " + pEndurance;
