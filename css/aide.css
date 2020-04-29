@@ -37,6 +37,10 @@
     font-size: 25px;
 }
 
+body {
+    background-color: rgb(240, 240, 240);
+}
+
 #paysage {
     width: 100%;
 }
@@ -57,6 +61,7 @@ input[type=text] {
     background-size: 30px;
     background-repeat: no-repeat;
     padding-left: 60px;
+    padding-right: 60px;
     -webkit-transition: width 0.4s ease-in-out;
     transition:  0.2s;
     outline:none;
@@ -69,4 +74,96 @@ input[type=text]:hover {
 
 input[type=text]:focus {
     background-color: rgb(255, 255, 255);
+}
+
+#clearSearch {
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: 150px;
+    left: 1073px;
+    background-image: url('../img/closeIcon.png');
+    background-position: 15px 15px; 
+    background-size: 30px;
+    background-repeat: no-repeat;
+    outline: none;
+}
+
+#clearSearch:hover {
+    background-color: rgba(231, 231, 231, 0.486);
+}
+
+#suggestionBox {
+    width: 900px;
+    height: 0px;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    top: 210px;
+    left: 233px;
+    transition: 0.2s;
+}
+
+.suggestionCase {
+    width: 860px;
+    height: 35px;
+    border-top: 0.5px solid rgba(42, 42, 42, 0.335);
+    margin-left: 20px;
+    transition: 0.4s;
+    color: rgb(72, 3, 151);
+}
+
+.suggestionCaseA {
+    margin: 0px;
+    font-size: 20px;
+    outline: none;
+    text-decoration: none;
+}
+
+.suggestionCaseA:hover {
+    border-bottom: 1px solid;     
+}
+  
+.suggestionCaseA:active {
+    color: rgb(105, 0, 88);
+}
+
+#article {
+    width: 100%;
+    height: auto;
+    min-height: 100px;
+}
+
+.documentationCase {
+    width: 40%;
+    height: 120px;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 10px;
+    border-radius: "2px";
+    color: rgb(0, 0, 0);
+    display: inline-block;
+}
+
+.documentationCaseA {
+    margin: 0px;
+    font-size: 25px;
+    outline: none;
+    text-decoration: none;
+}
+  
+.documentationCaseA:hover {
+    border-bottom: 1px solid;     
+}
+  
+.documentationCaseA:active {
+    color: rgb(105, 0, 88);
+}
+
+.documentationCaseDescription {
+    margin-top: 5px;
+    margin-left: 10px;
+    font-size: 15px;
+    color: rgb(49, 49, 49);
 }
