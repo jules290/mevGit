@@ -1,0 +1,85 @@
+#right {
+    width: 165px;
+    border-left: 2px solid rgb(66, 66, 66);
+    position: absolute;
+    top: 100px;
+    right: 0px;
+}
+
+#main {
+    width: 900px;
+    margin-left: 233px;
+    margin-right: 233px;
+}
+
+.mainTitle {
+    word-spacing: 5px;
+    letter-spacing: 2px;
+    color: rgb(78, 78, 78);
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 0px;
+}
+
+.section {
+    width: 100%;
+    border-left: 2px solid rgb(66, 66, 66);
+    margin-left: -2px;
+    transition: 0.2s;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.section:hover {
+    border-left: 4px solid rgb(66, 66, 66);
+    margin-left: -4px;
+}
+
+.sectionP {
+    color: rgb(66, 66, 66);
+    padding-top: 0px;
+    margin-left: 5px;
+}
+
+.mainDiv {
+    width: 100%;
+    min-height: 100px;
+    color: rgb(65, 64, 64);
+    background-color: rgb(195, 195, 195);
+    border-radius: 2.5px;
+    margin-top: 50px;
+}
+
+.mainDivTitle {
+    word-spacing: 3px;
+    letter-spacing: 1px;
+    padding-top: 5px;
+    text-align: center;
+    font-size: 24px;
+}
+
+.mainDivp {
+    word-spacing: 0.1px;
+    letter-spacing: -0.1px;
+    line-height: 1.25;
+    font-size: 19px;
+    width: 92%;
+    margin-left: 4%;
+    margin-right: 4%;
+    padding-bottom: 20px;
+}
+
+.mainDivpTitle {
+    margin: 0px;
+    margin-top: -20px;
+    text-align: center;
+    color: rgb(77, 77, 77);
+    margin-bottom: -20px;
+}
+
+#tableauIntensités {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+

@@ -38,14 +38,14 @@
 }
 
 body {
-    background-color: rgb(240, 240, 240);
+    background-color: rgb(251, 251, 251);
 }
 
 #paysage {
     width: 100%;
 }
 
-input[type=text] {
+#search[type=text] {
     position: absolute;
     top: 150px;
     left: 233px;
@@ -68,11 +68,11 @@ input[type=text] {
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.664);
 }
 
-input[type=text]:hover {
+#search[type=text]:hover {
     background-color: rgb(255, 255, 255);
 }
 
-input[type=text]:focus {
+#search[type=text]:focus {
     background-color: rgb(255, 255, 255);
 }
 
@@ -136,10 +136,10 @@ input[type=text]:focus {
 }
 
 .documentationCase {
-    width: 40%;
+    width: 30%;
     height: 120px;
-    margin-left: 5%;
-    margin-right: 5%;
+    margin-left: 4%;
+    margin-right: -3.5%;
     margin-top: 10px;
     border-radius: "2px";
     color: rgb(0, 0, 0);

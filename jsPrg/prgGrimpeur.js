@@ -21,9 +21,9 @@ function prgGrimpeur() {
     let pEndurance;
 
     if (localStorage.PMA > 0 && localStorage.seuil > 0 && localStorage.ftp > 0) {
-        if (localStorage.PMA * 0.80 < localStorage.seuil && localStorage.PMA * 0.76 < localStorage.ftp) {
-            pSprint = "entre" + " " + Math.round(1.80 * Number(localStorage.PMA)) + "W" + " " + 
-            "et" + " " + Math.round(3.50 * Number(localStorage.PMA)) + "W";
+        if (localStorage.PMA * 0.85 < localStorage.seuil && localStorage.PMA * 0.76 < localStorage.ftp) {
+            pSprint = "entre" + " " + Math.round(1.90 * Number(localStorage.PMA)) + "W" + " " + 
+            "et" + " " + Math.round(3.20 * Number(localStorage.PMA)) + "W";
             pPMA30sec = "entre" + " " + Math.round(1.18 * Number(localStorage.PMA)) + "W" + " " + 
             "et" + " " + Math.round(1.33 * Number(localStorage.PMA)) + "W";
             pPMA = "entre" + " " + Math.round(0.88 * Number(localStorage.PMA)) + "W" + " " + 
@@ -37,9 +37,9 @@ function prgGrimpeur() {
             "et" + " " + Math.round(0.85 * Number(localStorage.ftp)) + "W";
         }
 
-        else if (localStorage.PMA * 0.80 < localStorage.seuil && localStorage.PMA * 0.76 > localStorage.ftp) {
+        else if (localStorage.PMA * 0.85 < localStorage.seuil && localStorage.PMA * 0.76 > localStorage.ftp) {
             pSprint = "entre" + " " + Math.round(1.90 * Number(localStorage.PMA)) + "W" + " " + 
-            "et" + " " + Math.round(3.70 * Number(localStorage.PMA)) + "W";
+            "et" + " " + Math.round(3.20 * Number(localStorage.PMA)) + "W";
             pPMA30sec = "entre" + " " + Math.round(1.22 * Number(localStorage.PMA)) + "W" + " " + 
             "et" + " " + Math.round(1.35 * Number(localStorage.PMA)) + "W";
             pPMA = "entre" + " " + Math.round(0.88 * Number(localStorage.PMA)) + "W" + " " + 
@@ -53,46 +53,46 @@ function prgGrimpeur() {
             "et" + " " + Math.round(0.64 * Number(localStorage.PMA)) + "W";
         }
 
-        else if (localStorage.PMA * 0.80 == localStorage.seuil && localStorage.PMA * 0.76 == localStorage.ftp) {
+        else if (localStorage.PMA * 0.85 == localStorage.seuil && localStorage.PMA * 0.76 == localStorage.ftp) {
             pSprint = "entre" + " " + Math.round(1.90 * Number(localStorage.PMA)) + "W" + " " + 
-            "et" + " " + Math.round(3.70 * Number(localStorage.PMA)) + "W";
+            "et" + " " + Math.round(3.20 * Number(localStorage.PMA)) + "W";
             pPMA30sec = "entre" + " " + Math.round(1.22 * Number(localStorage.PMA)) + "W" + " " + 
             "et" + " " + Math.round(1.35 * Number(localStorage.PMA)) + "W";
             pPMA = "entre" + " " + Math.round(0.88 * Number(localStorage.PMA)) + "W" + " " + 
             "et" + " " + Math.round(Number(localStorage.PMA)) + "W";
-            pSeuil = "entre" + " " + Math.round(0.78 * Number(localStorage.PMA)) + "W" + " " + 
-            "et" + " " + Math.round(0.85 * Number(localStorage.PMA)) + "W";
-            pI3 = "entre" + " " + Math.round(0.68 * Number(localStorage.PMA)) + "W" + " " + 
-            "et" + " " + Math.round(0.78 * Number(localStorage.PMA)) + "W";
+            pSeuil = "entre" + " " + Math.round(0.82 * Number(localStorage.PMA)) + "W" + " " + 
+            "et" + " " + Math.round(0.88 * Number(localStorage.PMA)) + "W";
+            pI3 = "entre" + " " + Math.round(0.70 * Number(localStorage.PMA)) + "W" + " " + 
+            "et" + " " + Math.round(0.82 * Number(localStorage.PMA)) + "W";
             pFtp = Math.round(localStorage.ftp) + "W";
             pEndurance = "entre" + " " + Math.round(0.5263157895 * Number(localStorage.ftp)) + "W" + " " + 
             "et" + " " + Math.round(0.85 * Number(localStorage.ftp)) + "W";
         }
 
-        else if (localStorage.PMA * 0.80 > localStorage.seuil && localStorage.PMA * 0.76 < localStorage.ftp) {
+        else if (localStorage.PMA * 0.85 > localStorage.seuil && localStorage.PMA * 0.76 < localStorage.ftp) {
             pSprint = "entre" + " " + Math.round(1.90 * Number(localStorage.PMA)) + "W" + " " + 
-            "et" + " " + Math.round(3.70 * Number(localStorage.PMA)) + "W";
+            "et" + " " + Math.round(3.20 * Number(localStorage.PMA)) + "W";
             pPMA30sec = "entre" + " " + Math.round(1.22 * Number(localStorage.PMA)) + "W" + " " + 
             "et" + " " + Math.round(1.35 * Number(localStorage.PMA)) + "W";
             pPMA = "entre" + " " + Math.round(0.88 * Number(localStorage.PMA)) + "W" + " " + 
             "et" + " " + Math.round(Number(localStorage.PMA)) + "W";
-            pSeuil = "entre" + " " + Math.round(0.78 * Number(localStorage.PMA)) + "W" + " " + 
-            "et" + " " + Math.round(0.85 * Number(localStorage.PMA)) + "W";
+            pSeuil = "entre" + " " + Math.round(0.80 * Number(localStorage.PMA)) + "W" + " " + 
+            "et" + " " + Math.round(0.86 * Number(localStorage.PMA)) + "W";
             pI3 = "entre" + " " + Math.round(0.68 * Number(localStorage.PMA)) + "W" + " " + 
-            "et" + " " + Math.round(0.78 * Number(localStorage.PMA)) + "W";
+            "et" + " " + Math.round(0.80 * Number(localStorage.PMA)) + "W";
             pFtp = Math.round(localStorage.ftp) + "W";
             pEndurance = "entre" + " " + Math.round(0.40 * Number(localStorage.PMA)) + "W" + " " + 
             "et" + " " + Math.round(0.68 * Number(localStorage.PMA)) + "W";
         }
 
-        else if (localStorage.PMA * 0.80 > localStorage.seuil && localStorage.PMA * 0.76 > localStorage.ftp) {
-            pSprint = "entre" + " " + Math.round(2.0 * Number(localStorage.PMA)) + "W" + " " + 
-            "et" + " " + Math.round(3.90 * Number(localStorage.PMA)) + "W";
+        else if (localStorage.PMA * 0.85 > localStorage.seuil && localStorage.PMA * 0.76 > localStorage.ftp) {
+            pSprint = "entre" + " " + Math.round(1.9 * Number(localStorage.PMA)) + "W" + " " + 
+            "et" + " " + Math.round(3.20 * Number(localStorage.PMA)) + "W";
             pPMA30sec = "entre" + " " + Math.round(1.26 * Number(localStorage.PMA)) + "W" + " " + 
             "et" + " " + Math.round(1.38 * Number(localStorage.PMA)) + "W";
             pPMA = "entre" + " " + Math.round(0.90 * Number(localStorage.PMA)) + "W" + " " + 
             "et" + " " + Math.round(Number(localStorage.PMA)) + "W";
-            pSeuil = "entre" + " " + Math.round(0.75 * Number(localStorage.PMA)) + "W" + " " + 
+            pSeuil = "entre" + " " + Math.round(0.78 * Number(localStorage.PMA)) + "W" + " " + 
             "et" + " " + Math.round(0.84 * Number(localStorage.PMA)) + "W";
             pI3 = "entre" + " " + Math.round(0.65 * Number(localStorage.PMA)) + "W" + " " + 
             "et" + " " + Math.round(0.75 * Number(localStorage.PMA)) + "W";
@@ -103,10 +103,10 @@ function prgGrimpeur() {
     }
 
     else {
-        pSprint = "180% - 300% PMA"
+        pSprint = "190% - 320% PMA"
         pPMA30sec = "120% - 135% PMA"
         pPMA = "90% - 100% PMA"
-        pSeuil = "78% - 85% PMA"
+        pSeuil = "80% - 88% PMA"
         pI3 = "68% - 78% PMA"
         pEndurance = "40% - 68% PMA"
     }

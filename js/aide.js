@@ -61,9 +61,9 @@ let titre = new Array();
     titre[2] = "Functional Threshold Power (FTP)";
 
 let description = new Array(); 
-    description[0] = "- qu'est-ce que la puissance maximale aeorobie (PMA) ? <br>- comment calculer sa PMA ? <br>- comment travailler sa PMA ? <br>";
-    description[1] = "- qu'est-ce que le seuil ? <br>- comment calculer son seuil ? <br>- comment travailler son seuil ? <br>"; 
-    description[2] = "- qu'est-ce que la FTP ? <br>- comment calculer sa FTP ? <br>- comment travailler sa FTP ? <br>"
+    description[0] = "- qu'est-ce que la puissance maximale aeorobie (PMA) ? <br>- comment calculer sa PMA ? <br>- comment travailler sa PMA ?";
+    description[1] = "- qu'est-ce que le seuil ? <br>- comment calculer son seuil ? <br>- comment travailler son seuil ?"; 
+    description[2] = "- qu'est-ce que la FTP ? <br>- comment calculer sa FTP ? <br>- comment travailler sa FTP ?"
 
 let documentation = new Array(); 
     documentation[0] = {
@@ -233,7 +233,7 @@ function searchSuggestion() {
         for (let i = 0; i < suggestion.length; i++) {
             requêteSplit = document.getElementById('search').value.toLowerCase().split("");
             if (requêteSplit[0] == suggestionLetter[i][0]){
-                if (sessionStorage.nbSuggestion < 5) {sessionStorage.nbSuggestion ++}
+                if (sessionStorage.nbSuggestion < 7) {sessionStorage.nbSuggestion ++}
                 sessionStorage.i = i;
                 popSuggestion()
             }
@@ -271,14 +271,6 @@ function popSuggestion() {
                 $("#suggestionBox").empty()
                 suggestionBox.style.height = "0px"
             })
-
-            setTimeout(() => {
-                setInterval(() => {
-                    if (suggestionBox.style.height == "0px") {
-                        $("#suggestionBox").empty()
-                    }
-                }, 1);
-            }, 1);
             break;
         case 2:
             suggestionBox.style.height = suggestionBox.style.height = "70px"
@@ -300,14 +292,6 @@ function popSuggestion() {
                 $("#suggestionBox").empty()
                 suggestionBox.style.height = "0px"
             })
-
-            setTimeout(() => {
-                setInterval(() => {
-                    if (suggestionBox.style.height == "0px") {
-                        $("#suggestionBox").empty()
-                    }
-                }, 1);
-            }, 1);
             break;
         case 3:
             suggestionBox.style.height = suggestionBox.style.height = "105px"
@@ -329,14 +313,6 @@ function popSuggestion() {
                 $("#suggestionBox").empty()
                 suggestionBox.style.height = "0px"
             })
-
-            setTimeout(() => {
-                setInterval(() => {
-                    if (suggestionBox.style.height == "0px") {
-                        $("#suggestionBox").empty()
-                    }
-                }, 1);
-            }, 1);
             break;
         case 4:
             suggestionBox.style.height = suggestionBox.style.height = "140px"
@@ -358,16 +334,57 @@ function popSuggestion() {
                 $("#suggestionBox").empty()
                 suggestionBox.style.height = "0px"
             })
+            break;
+        case 5:
+            suggestionBox.style.height = suggestionBox.style.height = "175px"
+            var div = document.createElement("div");
+            div.className = "suggestionCase";
+            document.getElementById("suggestionBox").appendChild(div);
 
-            setTimeout(() => {
-                setInterval(() => {
-                    if (suggestionBox.style.height == "0px") {
-                        $("#suggestionBox").empty()
-                    }
-                }, 1);
-            }, 1);
+            var a = document.createElement("a");
+            a.className = "suggestionCaseA";
+            a.innerText = suggestion[i]
+            $(a).click(function () {
+                document.getElementById('search').value = suggestion[i];
+                request = suggestion[i];
+                searchSupport()
+            })
+            div.appendChild(a);
+
+            $(a).click(function () {
+                $("#suggestionBox").empty()
+                suggestionBox.style.height = "0px"
+            })
+            break;
+        case 6:
+            suggestionBox.style.height = suggestionBox.style.height = "210px"
+            var div = document.createElement("div");
+            div.className = "suggestionCase";
+            document.getElementById("suggestionBox").appendChild(div);
+
+            var a = document.createElement("a");
+            a.className = "suggestionCaseA";
+            a.innerText = suggestion[i]
+            $(a).click(function () {
+                document.getElementById('search').value = suggestion[i];
+                request = suggestion[i];
+                searchSupport()
+            })
+            div.appendChild(a);
+
+            $(a).click(function () {
+                $("#suggestionBox").empty()
+                suggestionBox.style.height = "0px"
+            })
             break;
     } 
+    setTimeout(() => {
+        setInterval(() => {
+            if (suggestionBox.style.height == "0px") {
+                $("#suggestionBox").empty()
+            }
+        }, 1);
+    }, 1);
 }
 
 $("#search").focusout(function() {
