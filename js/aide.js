@@ -25,10 +25,24 @@ $("#clearSearch").click(function(){
 
 $("#search").focusin(function() {
     $("#search").css("background-color", "white");
+    suggestionBox.style.backgroundColor = "white"
 })
 
 $("#search").focusout(function() {
     $("#search").css("background-color", "rgba(255, 255, 255, 0.808)");
+    suggestionBox.style.backgroundColor = "rgba(255, 255, 255, 0.808)"
+})
+
+$("#paysage").click(function () {
+    $("#suggestionBox").hide()
+})
+
+$("#article").click(function () {
+    $("#suggestionBox").hide()
+})
+
+$("#header").click(function () {
+    $("#suggestionBox").hide()
 })
 
 $("#search").focusin(function() {
@@ -41,6 +55,7 @@ $("#search").keypress(function(){
     if (event.keyCode == 13) {
         request = document.getElementById('search').value;
         searchSupport()
+        $("#suggestionBox").hide()
     }
 })
 
@@ -48,22 +63,27 @@ let name = new Array();
     name[0] = "PMA";
     name[1] = "seuil";
     name[2] = "FTP";
+    name[3] = "VO2max";
 
 
 let link = new Array(); 
     link[0] = "./PMA.html";
     link[1] = "./seuil.html";
     link[2] = "./ftp.html";
+    link[3] = "./VO2max.html";
 
 let titre = new Array(); 
     titre[0] = "puissance maximale aerobie (PMA)";
     titre[1] = "seuil";
     titre[2] = "Functional Threshold Power (FTP)";
+    titre[3] = "VO2max";
 
 let description = new Array(); 
     description[0] = "- qu'est-ce que la puissance maximale aeorobie (PMA) ? <br>- comment calculer sa PMA ? <br>- comment travailler sa PMA ?";
     description[1] = "- qu'est-ce que le seuil ? <br>- comment calculer son seuil ? <br>- comment travailler son seuil ?"; 
-    description[2] = "- qu'est-ce que la FTP ? <br>- comment calculer sa FTP ? <br>- comment travailler sa FTP ?"
+    description[2] = "- qu'est-ce que la FTP ? <br>- comment calculer sa FTP ? <br>- comment travailler sa FTP ?";
+    description[3] = "- qu'est-ce que la VO2max ? <br>- comment calculer sa VO2max ? <br>- comment travailler sa VO2max ?";
+   
 
 let documentation = new Array(); 
     documentation[0] = {
@@ -92,8 +112,20 @@ let documentation = new Array();
         keyWords: name[2] + " " + description[2],
         view: "non",
     }
+    
+    documentation[3] = {
+        name: name[3],
+        link: link[3],
+        titre: titre[3],
+        description: description[3], 
+        keyWords: name[3] + " " + description[3],
+        view: "non",
+    }
 
 function searchSupport() {
+    for (let i = 0; i < documentation.length; i++) {
+        documentation[i].view = "non"
+    }
     window.location.href = "#search";
     let keyWords = new Array();
     for (y = 0; y < documentation.length; y++) {
@@ -113,6 +145,9 @@ function searchSupport() {
                     }
                     else if (y == 2) {
                         keyWords[y][i] = "FTP"
+                    }
+                    else if (y == 3) {
+                        keyWords[y][i] = "VO2max"
                     }
             }
         }
@@ -144,6 +179,7 @@ function searchSupport() {
     let requête;
     let motClé;
     $("#article").empty()
+    sessionStorage.nbView = 0;
     for (y = 0; y < requestkeyWordsVIP.length; y++) {
         for (i = 0; i < documentation.length; i++) {
             for (l = 0; l < keyWords[i].length; l++) {
@@ -151,23 +187,10 @@ function searchSupport() {
                 motClé = keyWords[i][l].toLowerCase();
                 if(requestkeyWordsVIP[y].search(motClé) > -1) {
                     if (documentation[i].view == "non") {
+                        sessionStorage.i = i
                         view();
                         documentation[i].view = "oui";
-                    }
-                }
-            }
-            
-        }
-    }
-    for (y = 0; y < nbMotsRequest; y++) {
-        for (i = 0; i < documentation.length; i++) {
-            for (l = 0; l < keyWords[i].length; l++) {
-                requête = requestkeyWords[y].toLowerCase();
-                motClé = keyWords[i][l].toLowerCase();
-                if(requête.search(motClé) > -1) {
-                    if (documentation[i].view == "non") {
-                        view();
-                        documentation[i].view = "oui";
+                        sessionStorage.nbView ++;
                     }
                 }
             }
@@ -175,22 +198,80 @@ function searchSupport() {
         }
     }
 
+    if (sessionStorage.nbView == 0) {
+        for (y = 0; y < nbMotsRequest; y++) {
+            for (i = 0; i < documentation.length; i++) {
+                for (l = 0; l < keyWords[i].length; l++) {
+                    requête = requestkeyWords[y].toLowerCase();
+                    requête = requête.split("")
+                    motClé = keyWords[i][l].toLowerCase();
+                    motClé = documentation[i].name.toLowerCase().split("")
+                    for (k = 0; k < requête.length; k++) {
+                        for (p = 0; p < motClé.length; p++) {
+                            if(requête[k] == motClé[p]) {
+                                if (requête.length = 1) {
+                                    sessionStorage.requête = documentation[i].name;
+                                }
+                                if (k < requête.length - 1 && p < motClé.length - 1) {
+                                    k++;
+                                    p++;
+                                    if(requête[k] == motClé[p]) {
+                                        sessionStorage.requête = documentation[i].name;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    for (let i = 0; i < documentation.length; i++) {
+        if (sessionStorage.requête.toLowerCase() == documentation[i].name.toLowerCase()) {
+            console.log(sessionStorage.requête)
+            if (documentation[i].view == "non") {
+                sessionStorage.i = i
+                view();
+                documentation[i].view = "oui";
+            }
+        }
+    }
+
+    for (y = 0; y < nbMotsRequest; y++) {
+        for (i = 0; i < documentation.length; i++) {
+            for (l = 0; l < keyWords[i].length; l++) {
+                requête = requestkeyWords[y].toLowerCase();
+                motClé = keyWords[i][l].toLowerCase();
+                if(requête.search(motClé) > -1) {
+                    if (documentation[i].view == "non") {
+                        sessionStorage.i = i
+                        view();
+                        documentation[i].view = "oui";
+                        sessionStorage.nbView ++;
+                    }
+                }
+            }
+        }
+    }
+
     function view() {
-            var div = document.createElement("div");
-            div.className = "documentationCase";
+        i = sessionStorage.i;
+        var div = document.createElement("div");
+        div.className = "documentationCase";
             
-            var a = document.createElement("a");
-            a.className = "documentationCaseA";
-            a.href = documentation[i].link;
-            a.innerHTML = documentation[i].titre;
-            div.appendChild(a);
+        var a = document.createElement("a");
+        a.className = "documentationCaseA";
+        a.href = documentation[i].link;
+        a.innerHTML = documentation[i].titre;
+        div.appendChild(a);
     
-            var p = document.createElement("p");
-            p.className = "documentationCaseDescription";
-            p.innerHTML = documentation[i].description;
-            div.appendChild(p);
+        var p = document.createElement("p");
+        p.className = "documentationCaseDescription";
+        p.innerHTML = documentation[i].description;
+        div.appendChild(p);
             
-            document.getElementById("article").appendChild(div);
+        document.getElementById("article").appendChild(div);
     }
 }
 
@@ -207,20 +288,28 @@ let suggestion = new Array();
     suggestion[9] = "comment travailler sa PMA ?";
     suggestion[10] = "comment travailler son seuil ?";
     suggestion[11] = "comment travailler sa FTP ?";
+    suggestion[12] = "VO2max";
+    suggestion[13] = "qu'est-ce que la VO2max ?";
+    suggestion[14] = "comment calculer sa VO2max ?";
+    suggestion[15] = "comment travailler sa VO2max ?";
 
 let suggestionLetter = new Array(); 
-    suggestionLetter[0] = suggestion[0].split("");
-    suggestionLetter[1] = suggestion[1].split("");
-    suggestionLetter[2] = suggestion[2].split("");
-    suggestionLetter[3] = suggestion[3].split("");
-    suggestionLetter[4] = suggestion[4].split("");
-    suggestionLetter[5] = suggestion[5].split("");
-    suggestionLetter[6] = suggestion[6].split("");
-    suggestionLetter[7] = suggestion[7].split("");
-    suggestionLetter[8] = suggestion[8].split("");
-    suggestionLetter[9] = suggestion[9].split("");
-    suggestionLetter[10] = suggestion[10].split("");
-    suggestionLetter[11] = suggestion[11].split("");
+    suggestionLetter[0] = suggestion[0].toLowerCase().split("");
+    suggestionLetter[1] = suggestion[1].toLowerCase().split("");
+    suggestionLetter[2] = suggestion[2].toLowerCase().split("");
+    suggestionLetter[3] = suggestion[3].toLowerCase().split("");
+    suggestionLetter[4] = suggestion[4].toLowerCase().split("");
+    suggestionLetter[5] = suggestion[5].toLowerCase().split("");
+    suggestionLetter[6] = suggestion[6].toLowerCase().split("");
+    suggestionLetter[7] = suggestion[7].toLowerCase().split("");
+    suggestionLetter[8] = suggestion[8].toLowerCase().split("");
+    suggestionLetter[9] = suggestion[9].toLowerCase().split("");
+    suggestionLetter[10] = suggestion[10].toLowerCase().split("");
+    suggestionLetter[11] = suggestion[11].toLowerCase().split("");
+    suggestionLetter[12] = suggestion[12].toLowerCase().split("");
+    suggestionLetter[13] = suggestion[13].toLowerCase().split("");
+    suggestionLetter[14] = suggestion[14].toLowerCase().split("");
+    suggestionLetter[15] = suggestion[15].toLowerCase().split("");
 
 let requêteSplit = document.getElementById('search').value.toLowerCase().split("");
 
@@ -386,7 +475,3 @@ function popSuggestion() {
         }, 1);
     }, 1);
 }
-
-$("#search").focusout(function() {
-    suggestionBox.style.backgroundColor = "rgba(255, 255, 255, 0.808)"
-})

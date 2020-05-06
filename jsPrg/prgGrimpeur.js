@@ -29,7 +29,7 @@ function prgGrimpeur() {
             pPMA = "entre" + " " + Math.round(0.88 * Number(localStorage.PMA)) + "W" + " " + 
             "et" + " " + Math.round(Number(localStorage.PMA)) + "W";
             pSeuil = "entre" + " " + Math.round(0.99 * Number(localStorage.seuil)) + "W" + " " + 
-            "et" + " " + Math.round(1.1 * Number(localStorage.seuil)) + "W";
+            "et" + " " + Math.round(1.05 * Number(localStorage.seuil)) + "W";
             pI3 = "entre" + " " + Math.round(0.92 * Number(localStorage.ftp)) + "W" + " " + 
             "et" + " " + Math.round(1.042105263 * Number(localStorage.ftp)) + "W";
             pFtp = Math.round(localStorage.ftp) + "W";
@@ -45,7 +45,7 @@ function prgGrimpeur() {
             pPMA = "entre" + " " + Math.round(0.88 * Number(localStorage.PMA)) + "W" + " " + 
             "et" + " " + Math.round(Number(localStorage.PMA)) + "W";
             pSeuil = "entre" + " " + Math.round(0.99 * Number(localStorage.seuil)) + "W" + " " + 
-            "et" + " " + Math.round(1.1 * Number(localStorage.seuil)) + "W";
+            "et" + " " + Math.round(1.04 * Number(localStorage.seuil)) + "W";
             pI3 = "entre" + " " + Math.round(0.92 * Number(localStorage.ftp)) + "W" + " " + 
             "et" + " " + Math.round(1.042105263 * Number(localStorage.ftp)) + "W";
             pFtp = Math.round(localStorage.ftp) + "W";
@@ -60,8 +60,8 @@ function prgGrimpeur() {
             "et" + " " + Math.round(1.35 * Number(localStorage.PMA)) + "W";
             pPMA = "entre" + " " + Math.round(0.88 * Number(localStorage.PMA)) + "W" + " " + 
             "et" + " " + Math.round(Number(localStorage.PMA)) + "W";
-            pSeuil = "entre" + " " + Math.round(0.82 * Number(localStorage.PMA)) + "W" + " " + 
-            "et" + " " + Math.round(0.88 * Number(localStorage.PMA)) + "W";
+            pSeuil = "entre" + " " + Math.round(0.80 * Number(localStorage.PMA)) + "W" + " " + 
+            "et" + " " + Math.round(0.86 * Number(localStorage.PMA)) + "W";
             pI3 = "entre" + " " + Math.round(0.70 * Number(localStorage.PMA)) + "W" + " " + 
             "et" + " " + Math.round(0.82 * Number(localStorage.PMA)) + "W";
             pFtp = Math.round(localStorage.ftp) + "W";
@@ -76,8 +76,8 @@ function prgGrimpeur() {
             "et" + " " + Math.round(1.35 * Number(localStorage.PMA)) + "W";
             pPMA = "entre" + " " + Math.round(0.88 * Number(localStorage.PMA)) + "W" + " " + 
             "et" + " " + Math.round(Number(localStorage.PMA)) + "W";
-            pSeuil = "entre" + " " + Math.round(0.80 * Number(localStorage.PMA)) + "W" + " " + 
-            "et" + " " + Math.round(0.86 * Number(localStorage.PMA)) + "W";
+            pSeuil = "entre" + " " + Math.round(0.78 * Number(localStorage.PMA)) + "W" + " " + 
+            "et" + " " + Math.round(0.84 * Number(localStorage.PMA)) + "W";
             pI3 = "entre" + " " + Math.round(0.68 * Number(localStorage.PMA)) + "W" + " " + 
             "et" + " " + Math.round(0.80 * Number(localStorage.PMA)) + "W";
             pFtp = Math.round(localStorage.ftp) + "W";
@@ -92,8 +92,8 @@ function prgGrimpeur() {
             "et" + " " + Math.round(1.38 * Number(localStorage.PMA)) + "W";
             pPMA = "entre" + " " + Math.round(0.90 * Number(localStorage.PMA)) + "W" + " " + 
             "et" + " " + Math.round(Number(localStorage.PMA)) + "W";
-            pSeuil = "entre" + " " + Math.round(0.78 * Number(localStorage.PMA)) + "W" + " " + 
-            "et" + " " + Math.round(0.84 * Number(localStorage.PMA)) + "W";
+            pSeuil = "entre" + " " + Math.round(0.77 * Number(localStorage.PMA)) + "W" + " " + 
+            "et" + " " + Math.round(0.83 * Number(localStorage.PMA)) + "W";
             pI3 = "entre" + " " + Math.round(0.65 * Number(localStorage.PMA)) + "W" + " " + 
             "et" + " " + Math.round(0.75 * Number(localStorage.PMA)) + "W";
             pFtp = Math.round(localStorage.ftp) + "W";
@@ -107,6 +107,7 @@ function prgGrimpeur() {
         pPMA30sec = "120% - 135% PMA"
         pPMA = "90% - 100% PMA"
         pSeuil = "80% - 88% PMA"
+        pFtp = "73% - 79% PMA"
         pI3 = "68% - 78% PMA"
         pEndurance = "40% - 68% PMA"
     }

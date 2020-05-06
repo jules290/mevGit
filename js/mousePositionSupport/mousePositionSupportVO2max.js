@@ -4,10 +4,12 @@ $(document).ready(function() {
     Top = $('#mainTitle').offset().top;
     view = Top - $(window).scrollTop();
     viewSwitch()
+    console.log(view)
   
     $(window).scroll(function() {
         view = Top - $(window).scrollTop();
         viewSwitch()
+        console.log(view)
     });
 });
 

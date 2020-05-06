@@ -60,7 +60,7 @@ $("#sauvegarder").click(function () {
     ) {
             localStorage.PMA = Math.round(document.getElementById("settingInputPMA").value);
             localStorage.seuil = Math.round(document.getElementById("settingInputSeuil").value)
-            localStorage.ftp = Math.round(document.getElementById("settingInputSeuil").value * 0.95);
+            localStorage.ftp = Math.round(document.getElementById("settingInputSeuil").value * 0.93);
     }
 
 
@@ -88,8 +88,8 @@ $("#sauvegarder").click(function () {
         && !document.getElementById("settingInputFtp").value
     ) {
         localStorage.PMA = Math.round(document.getElementById("settingInputPMA").value);
-        localStorage.seuil = Math.round(document.getElementById("settingInputPMA").value * 0.80);
-        localStorage.ftp = Math.round(document.getElementById("settingInputPMA").value * 0.76);
+        localStorage.seuil = Math.round(document.getElementById("settingInputPMA").value * 0.84);
+        localStorage.ftp = Math.round(document.getElementById("settingInputPMA").value * 0.79);
     }
 
 
@@ -111,7 +111,7 @@ $("#sauvegarder").click(function () {
     ) {
         localStorage.PMA = Math.round(document.getElementById("settingInputSeuil").value * 1.25);
         localStorage.seuil = Math.round(document.getElementById("settingInputSeuil").value);
-        localStorage.ftp = Math.round(document.getElementById("settingInputSeuil").value * 0.95);
+        localStorage.ftp = Math.round(document.getElementById("settingInputSeuil").value * 0.93);
     }
 
 

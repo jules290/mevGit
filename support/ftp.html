@@ -20,6 +20,7 @@
         <link rel="stylesheet" href="../css/style.css" media="screen">
         <link rel="stylesheet" href="../css/menunav.css" media="screen">
         <link rel="stylesheet" href="../css/aide.css" media="screen">
+        <link rel="stylesheet" href="../css/support.css" media="screen">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
         <script src="../js/count-visits.js"></script>
@@ -43,6 +44,74 @@
             </div>
         </div>
 
+        <section id="right">
+            <div class="section" id="section1">
+                <p class="sectionP">qu'est-ce que la FTP ?</p>
+            </div>
+
+            <div class="section" id="section2">
+                <p class="sectionP">comment calculer sa FTP ?</p>
+            </div>
+
+            <div class="section" id="section3">
+                <p class="sectionP">comment travailler sa FTP ?</p>
+            </div>
+        </section>
+
+        <section id="main">
+            <h1 class="mainTitle" id="mainTitle">la FTP</h1>
+
+            <div class="mainDiv" id="mainDiv1">
+                <h1 class="mainDivTitle">qu'est-ce que la FTP ?</h1>
+                <p class="mainDivp">
+                    la FTP correspond à la puissance (en watts) qu'un cycliste peut produire sur un intervalle d'une heure, au dela de la FTP la 
+                    puissance devient <a href="https://fr.wikipedia.org/wiki/Fonction_exponentielle" target="blink">exponentielle</a> 
+                    
+                    <img class="tableauIntensites" src="../img/Courbe-de-puissanceFTP.png">
+
+                    de plus la FTP permet de calibrer des zones d'intensités au même titre que la <a href="./PMA.html">PMA</a>, Ces zones permettent 
+                    de créer des repères pour mieux contrôler la puissance produite lors des entrainements et améliorer la qualité de ceux-ci.
+
+                    <img class="tableauIntensites" src="../img/zone d'intensités FTP cyclisme.jpg">
+                </p>
+            </div>
+
+            <div class="mainDiv" id="mainDiv2">
+                <h1 class="mainDivTitle">comment calculer sa FTP ?</h1>
+                <p class="mainDivp">
+                    La méthode de calcul de la FTP la plus répandu est le CP20 93%,il consiste à effectuer un contre-la-montre sur 20 minutes, le résultat 
+                    du test correspond à 93% de la puissance moyenne développée sur les minutes 20 minutes d'effort (on multiplie par 0,93
+                    le résultat de notre CP20).
+                    <br>
+                    <br>
+                    D'autres méthode de clacul de la FTP préconisent de multiplier le CP20 par 0,95 comme 
+                    <a href="https://fr.wikipedia.org/wiki/Test_de_Coggan">le test de coggan</a> mais elle préconise  de faire 5 à PMA 10 minutes 
+                    avant le CP20.
+                </p>
+            </div>
+
+            <div class="mainDiv" id="mainDiv3">
+                <h1 class="mainDivTitle">comment travailler sa FTP ?</h1>
+                <p class="mainDivp">
+                    Il existe plusieurs exercices pour améliorer sa FTP:
+                    <br>
+                    <br>
+                    - l'endurance haute, qui consiste ç effectuer une longue séance (entre 2h et 4h) entre i2 et i3 (voir tableau des intensités: 
+                    zone 2 et zoné 3).
+                    <br>
+                    <br>
+                    - le seuil, qui est constitué d'une ou plusieurs répétition de 10 minutes (5 minutes au seuil et 5 minutes de repos).
+                    <br>
+                    <br>
+                    - le gimenez, qui est constitué de plusieurs répétitions de 5 minutes (1 minute à <a href="./PMA.html">PMA</a> et 4 minutes à I3 
+                    (voir tableau des intensités: zone 3), selon la séance on peut intégrer entre 30 secondes et 1 minute de récupération.
+                </p>
+            </div>
+            <br>
+            <br>
+
+        </section>
+        <script src="../js/mousePositionSupport/mousePositionSupportFTP.js"></script>
         <script src="../js/language.js"></script>
         <script src="../js/menunav_prg.js"></script>
     </body>

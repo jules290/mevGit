@@ -59,7 +59,7 @@ function viewSwitch() {
         document.getElementById("right").style.position = "absolute";
         document.getElementById("right").style.top = "100px"
     }
-    if (view < - 10 && view > -720) {
+    if (view < - 10 && view > -794) {
         document.getElementById("section1").style.borderLeft = "6px solid rgb(66, 66, 66)";
         document.getElementById("section1").style.marginLeft = "-6px";
 
@@ -68,7 +68,7 @@ function viewSwitch() {
         document.getElementById("section3").style.borderLeft = "2px solid rgb(66, 66, 66)";
         document.getElementById("section3").style.marginLeft = "-2px";
     }
-    else if (view < -720 && view > -1300) {
+    else if (view < -794 && view > -894) {
         document.getElementById("section2").style.borderLeft = "6px solid rgb(66, 66, 66)";
         document.getElementById("section2").style.marginLeft = "-6px";
 
@@ -77,7 +77,7 @@ function viewSwitch() {
         document.getElementById("section3").style.borderLeft = "2px solid rgb(66, 66, 66)";
         document.getElementById("section3").style.marginLeft = "-2px";
     }
-    else if (view < -1300) {
+    else if (view < -894) {
         document.getElementById("section3").style.borderLeft = "6px solid rgb(66, 66, 66)";
         document.getElementById("section3").style.marginLeft = "-6px";
 

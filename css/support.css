@@ -77,7 +77,9 @@
     margin-bottom: -20px;
 }
 
-#tableauIntensités {
+.tableauIntensites {
+    margin-top: 10px;
+    margin-bottom: 20px;
     width: 80%;
     margin-left: 10%;
     margin-right: 10%;
