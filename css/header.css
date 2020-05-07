@@ -23,7 +23,24 @@
 @media only screen and (max-width: 600px) {
     #titre {
         position: relative;
-        margin-top: -62px;
+        margin-top: -56px;
+        text-align: center;
+        width: 26,79%;
+        left: 36,6%;
+    }
+
+    #mev {
+        color: rgb(141, 58, 58);
+        font-size: 20px;
+        display: inline-block;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    #titre {
+        font-size: 10px;
+        position: relative;
+        margin-top: -63px;
         text-align: center;
         width: 26,79%;
         left: 36,6%;
@@ -36,15 +53,14 @@
     }
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 768px) {
     #titre {
-        font-size: 10px;
         position: relative;
         margin-top: -64px;
         text-align: center;
         width: 26,79%;
         left: 36,6%;
-    }
+    } 
 
     #mev {
         color: rgb(141, 58, 58);
@@ -53,26 +69,10 @@
     }
 }
 
-@media only screen and (min-width: 768px) {
-    #titre {
-        position: relative;
-        margin-top: -65px;
-        text-align: center;
-        width: 26,79%;
-        left: 36,6%;
-    } 
-
-    #mev {
-        color: rgb(141, 58, 58);
-        font-size: 26px;
-        display: inline-block;
-    }
-}
-
 @media only screen and (min-width: 992px) {
     #titre {
         position: relative;
-        margin-top: -68px;
+        margin-top: -67px;
         text-align: center;
         width: 26,79%;
         left: 36,6%;
@@ -80,7 +80,7 @@
 
     #mev {
         color: rgb(141, 58, 58);
-        font-size: 28px;
+        font-size: 27px;
         display: inline-block;
     }
 }
@@ -96,7 +96,7 @@
 
     #mev {
         color: rgb(141, 58, 58);
-        font-size: 30px;
+        font-size: 29px;
         display: inline-block;
     }
 } 

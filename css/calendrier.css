@@ -1,4 +1,4 @@
-.dt_box:hover{
+.dt_nb:hover{
     background-color: #2E2E2E;
     color: #E3E3E3;
 }
@@ -54,7 +54,7 @@
     #cld_box{
         height: auto;
         width: 96%;
-        margin-top: -30px;
+        margin-top: -23px;
         margin-bottom: 0px;
         margin-left: 2%;
         margin-right: 2%;
@@ -66,7 +66,7 @@
     
     .jr_nb{
         font-family: "Segoe UI";
-        font-size: 13.5px;
+        font-size: 11px;
         height: auto;
     }
     .dt_nb{
@@ -74,7 +74,7 @@
         font-size: 21px;
         margin-top: 0px;
         border-radius: 10px;
-        height: 40px;
+        height: auto;
     }
     
     .btn_cld{
@@ -125,19 +125,19 @@
     #cld_box{
         height: auto;
         width: 96%;
-        margin-top: -10px;
+        margin-top: -25px;
         margin-bottom: 0px;
         margin-left: 2%;
         margin-right: 2%;
     }
 
     .dt_box{
-        height: 30px;
+        height: 32px;
     }
     
     .jr_nb{
         font-family: "Segoe UI";
-        font-size: 13.5px;
+        font-size: 11.5px;
         height: auto;
     }
     .dt_nb{
@@ -145,7 +145,7 @@
         font-size: 22px;
         margin-top: 0px;
         border-radius: 10px;
-        height: 40px;
+        height: auto;
     }
     
     .btn_cld{
@@ -188,27 +188,27 @@
     #cld{
         background-color: #E3E3E3;
         border-radius: 25px;
-        width: 33%;
-        height: 355px;
+        width: 47%;
+        height: 315px;
         margin-top: 7px;
         margin-left: 7px;
     }
     #cld_box{
         height: auto;
         width: 96%;
-        margin-top: -10px;
+        margin-top: -24px;
         margin-bottom: 0px;
         margin-left: 2%;
         margin-right: 2%;
     }
 
     .dt_box{
-        height: 40px;
+        height: 37px;
     }
     
     .jr_nb{
         font-family: "Segoe UI";
-        font-size: 13.5px;
+        font-size: 12px;
         height: auto;
     }
     .dt_nb{
@@ -216,7 +216,7 @@
         font-size: 25px;
         margin-top: 0px;
         border-radius: 10px;
-        height: 40px;
+        height: auto;
     }
     
     .btn_cld{
@@ -259,22 +259,22 @@
     #cld{
         background-color: #E3E3E3;
         border-radius: 25px;
-        width: 33%;
-        height: 355px;
+        width: 47%;
+        height: 335px;
         margin-top: 7px;
         margin-left: 7px;
     }
     #cld_box{
         height: auto;
         width: 96%;
-        margin-top: -10px;
+        margin-top: -16px;
         margin-bottom: 0px;
         margin-left: 2%;
         margin-right: 2%;
     }
     
     .dt_box{
-        height: 40px;
+        height: 39px;
     }
 
     .jr_nb{
@@ -287,7 +287,7 @@
         font-size: 25px;
         margin-top: 0px;
         border-radius: 10px;
-        height: 40px;
+        height: auto;
     }
     
     .btn_cld{
@@ -358,7 +358,7 @@
         font-size: 25px;
         margin-top: 0px;
         border-radius: 10px;
-        height: 40px;
+        height: auto;
     }
     
     .btn_cld{
