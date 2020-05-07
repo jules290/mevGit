@@ -187,7 +187,7 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     transition-duration: 0.4s;
     background-color: rgb(65, 65, 65);
-    margin-left: 603px;
+    margin-left: 703px;
     font-size: 20px;
     padding-top: 8px;
     padding-bottom: 15px;
@@ -246,6 +246,7 @@
     height: 28px;
     border-right: white 1px solid;
     display: inline-block;
+    transition: 0.2s;
 }
 
 #STlvlProgressBar1 {

@@ -2,31 +2,101 @@
     width: 100%;
     height: 50px;
     background-color: rgb(230, 230, 230);
+    position: static;
 }
 
 #open {
-    color: rgb(31, 31, 31);
+    color: rgba(44, 44, 44);
     font-size: 33px;
     height: 50px;
     padding-left: 10px;
-    width: 40px;
+    width: 50px;
     transition: 0.4s;
+    position: relative;
+    z-index: 6;
 }
 
 #open:hover {
-    background-color: rgb(189, 189, 189);
+    background-color: rgba(0, 0, 0, 0.17);
 }
 
-#titre {
-    position: relative;
-    margin-top: -70px;
-    text-align: center;
-    width: 366px;
-    left: 500px;
+@media only screen and (max-width: 600px) {
+    #titre {
+        position: relative;
+        margin-top: -62px;
+        text-align: center;
+        width: 26,79%;
+        left: 36,6%;
+    }
+
+    #mev {
+        color: rgb(141, 58, 58);
+        font-size: 24px;
+        display: inline-block;
+    }
 }
 
-#mev {
-    color: rgb(141, 58, 58);
-    font-size: 30px;
-    display: inline-block;
+@media only screen and (min-width: 600px) {
+    #titre {
+        font-size: 10px;
+        position: relative;
+        margin-top: -64px;
+        text-align: center;
+        width: 26,79%;
+        left: 36,6%;
+    }
+
+    #mev {
+        color: rgb(141, 58, 58);
+        font-size: 25px;
+        display: inline-block;
+    }
 }
+
+@media only screen and (min-width: 768px) {
+    #titre {
+        position: relative;
+        margin-top: -65px;
+        text-align: center;
+        width: 26,79%;
+        left: 36,6%;
+    } 
+
+    #mev {
+        color: rgb(141, 58, 58);
+        font-size: 26px;
+        display: inline-block;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    #titre {
+        position: relative;
+        margin-top: -68px;
+        text-align: center;
+        width: 26,79%;
+        left: 36,6%;
+    }
+
+    #mev {
+        color: rgb(141, 58, 58);
+        font-size: 28px;
+        display: inline-block;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    #titre {
+        position: relative;
+        margin-top: -70px;
+        text-align: center;
+        width: 26,79%;
+        left: 36,6%;
+    }
+
+    #mev {
+        color: rgb(141, 58, 58);
+        font-size: 30px;
+        display: inline-block;
+    }
+} 
