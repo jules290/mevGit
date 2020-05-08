@@ -54,8 +54,11 @@
 }
 
 .up {
-    margin-top: 0px;
+    margin-top: -100px;
     border: solid 1px rgb(46, 46, 46);
+    background-color: rgba(0, 0, 0, 0);
+    color: rgb(228, 228, 228);
+    display: inline-block;
     width: 20%;
     height: 60px;
     margin-left: 25%;
@@ -74,10 +77,13 @@
 
 .down {
     border: solid 1px rgb(46, 46, 46);
+    background-color: rgba(0, 0, 0, 0);
+    color: rgb(228, 228, 228);
+    display: inline-block;
     width: 20%;
     height: 60px;
-    margin-left: 55%;
-    margin-top: -60px;
+    margin-left: 5%;
+    margin-top: 0px;
     border-radius: 50px;
     transition-duration: 0.4s;
 }
@@ -210,7 +216,8 @@
 .lvlProgressBar {
     width: 25%;
     margin-right: -5.1px;
-    margin-top: 0.1%;
+    margin-top: 0.5px;
+    margin-bottom: 5%;
     height: 95%;
     border-right: white 1px solid;
     display: inline-block;
