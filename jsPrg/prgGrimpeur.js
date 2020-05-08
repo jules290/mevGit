@@ -123,8 +123,8 @@ function prgGrimpeur() {
 
     const canvas = document.getElementById("graphExo");
     const ctx = canvas.getContext("2d");
-    const maxH = 238;
-    const maxL = 460;
+    const maxH = document.getElementById("graphExo").height;
+    const maxL = document.getElementById("graphExo").width;
 
     $(".dt_nb").click(function () {
         $("#detailsSeance").empty()

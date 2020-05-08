@@ -29,7 +29,7 @@
         <div id="filter"></div>
 
         <div id="alert">
-            <p id="alertT">voulez-vous modifier votre programme ?</p>
+            <p id="alertT">voulez-vous modifier<br>votre programme ?</p>
             <button class="alertBtn"  id="oui">oui</button>
             <button class="alertBtn" id="non">non</button>
         </div>
@@ -47,10 +47,6 @@
             <div id="titre">
                 <h1 id="mev">mon entrainement vélo</h1>
             </div>
-            
-            <button id="annulerPrg">
-                <p id="annulerPrgP">annuler votre programme</p>
-            </button>
         </div>
         
             <section id="cld">
@@ -131,23 +127,26 @@
                 <div id="exo" class="exo">
                     <h1 id="exoInstruction">cliquer sur une journée pour avoir le détail de la séance</h1>
                     <div id="graphMy">
-                        <canvas id="graphExo" width="460" height="238"></canvas>
+                        <canvas id="graphExo"></canvas>
                     </div>
                 </div>
             </section>
-            <!-- <section id="right">
+            <section id="right">
                 <div id="detailsSeance">
                 
                 </div>
             </section>
             <section id="difficulte">
-                <h1 id="difficulteT">votre programme est trop difficile ou trop facile, vous pouvez le modifier:</h1>
                 <div id="difficulteClick">
                     <a id="difficulteA" rel="nofollow">
                         <p id="difficulteClickT">changer la difficulté du programme</p>
                     </a>
                 </div>
-            </section> -->
+
+                <button id="annulerPrg">
+                    <p id="annulerPrgP">annuler votre programme</p>
+                </button>
+            </section>
         <script>
         $("#difficulteClick").click(function() {
             location.href = "prgMyDifficulte.html";
