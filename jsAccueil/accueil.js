@@ -1,18 +1,10 @@
 $(document).ready(function () {
     if (localStorage.prg == 0 || !localStorage.prg) {
         $("#seanceDuJour").hide()
+        $("#choisirPrg").show()
     }
     else {
         $("#seanceDuJour").show()
+        $("#choisirPrg").hide()
     }
 })
-
-var w = window.innerWidth
-|| document.documentElement.clientWidth
-|| document.body.clientWidth;
-
-var h = window.innerHeight
-|| document.documentElement.clientHeight
-|| document.body.clientHeight;
-
-console.log(w + ", " + h)

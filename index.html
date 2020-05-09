@@ -17,10 +17,11 @@
         <meta name="robots" content="index, follow"/>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="css/style.css" media="screen">
-        <link rel="stylesheet" href="css/menunav.css" media="screen">
-        <link rel="stylesheet" href="css/header.css" media="screen">
-        <link rel="stylesheet" href="css/accueil.css" media="screen">
+        <link rel="stylesheet" href="./css/style.css" media="screen">
+        <link rel="stylesheet" href="./css/menunav.css" media="screen">
+        <link rel="stylesheet" href="./css/header.css" media="screen">
+        <link rel="stylesheet" href="./css/accueil.css" media="screen">
+        <link rel="stylesheet" href="./css/prgCase.css" media="screen">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
         <script src="../js/count-visits.js"></script>
@@ -45,7 +46,7 @@
         <img src="./img/Content_022717_0709_Road_Bikes_Choose_lg.jpg" id="accueilFirstImg">
         
         <section id="seanceDuJour">
-            <h1 id="titreSeanceDuJour">séance du jour</h1>
+            <p id="titreSeanceDuJour">séance du jour</p>
             <div id="exoSeanceDuJour">
                 <h1 id="dateSeanceDuJour" class="exoT"></h1>
                 <h2 id="SeanceSeanceDuJour" class="exoS"></h2>
@@ -54,6 +55,73 @@
             </section>
             <section id="choisirPrg">
                 <p id="titreChoisirPrg">séance et plans d'entrainement</p>
+
+                <a id="grimpeurbtn" href="./programme/prgPageGrimpeur.html">
+                    <div class="aprgDiv">
+                        <h1 class="tprg">PROGRAMME GRIMPEUR</h1><img src="./img/grimpeur.jpg" class="Img" alt="GRIMPEUR"/>
+                    </div>
+                </a>
+                
+    
+                <a id="rouleurbtn" href="./programme/prgPageRouleur.html">
+                    <div class="aprgDiv">
+                        <h1 class="tprg">PROGRAMME ROULEUR</h1><img src="./img/rouleur.jpg" class="Img" alt="ROULEUR"/>
+                    </div>
+                </a> 
+                
+                <a id="puncheurbtn" href="./programme/prgPagePuncheur.html">
+                    <div class="aprgDiv">
+                        <h1 class="tprg">PROGRAMME PUNCHER</h1><img src="./img/puncher.jpg" class="Img" alt="PUNCHEUR"/>
+                    </div>
+                </a>
+
+                <a id="puncheurbtn" href="./programme/prgPagePuncheur.html">
+                    <div class="aprgDiv">
+                        <h1 class="tprg">PROGRAMME PUNCHER</h1><img src="./img/puncher.jpg" class="Img" alt="PUNCHEUR"/>
+                    </div>
+                </a>
+            </section>
+
+            <section id="aideArticle">
+                <p id="aideArticleTitre">aide et article</p>
+
+                <div id="article">
+                    <div class="documentationCase">
+                        <a class="documentationCaseA" href="./PMA.html">puissance maximale aerobie (PMA)</a>
+                        <p class="documentationCaseDescription">
+                            - qu'est-ce que la puissance maximale aeorobie (PMA) ? <br>
+                            - comment calculer sa PMA ? <br>
+                            - comment travailler sa PMA ?
+                        </p>
+                    </div>
+        
+                    <div class="documentationCase">
+                        <a class="documentationCaseA" href="./seuil.html">seuil</a>
+                        <p class="documentationCaseDescription">
+                            - qu'est-ce que le seuil ? <br>
+                            - comment calculer son seuil ? <br>
+                            - comment travailler son seuil ?
+                        </p>
+                    </div>
+        
+                    <div class="documentationCase">
+                        <a class="documentationCaseA" href="./ftp.html">Functional Threshold Power (FTP)</a>
+                        <p class="documentationCaseDescription">
+                            - qu'est-ce que la FTP ? <br>
+                            - comment calculer sa FTP ? <br>
+                            - comment travailler sa FTP ?
+                        </p>
+                    </div>
+        
+                    <div class="documentationCase">
+                        <a class="documentationCaseA" href="./VO2max.html">VO2max</a>
+                        <p class="documentationCaseDescription">
+                            - qu'est-ce que la VO2max ? <br>
+                            - comment calculer sa VO2max ? <br>
+                            - comment travailler sa VO2max ?
+                        </p>
+                    </div>
+                </div>
             </section>
             
         <script src="jsAccueil/seanceDuJour.js"></script>

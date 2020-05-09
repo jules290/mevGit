@@ -13,10 +13,9 @@ body {
 #seanceDuJour {
     position: absolute;
     display: inline-block;
-    background-color: rgb(71, 71, 71);
-    width: 860px;
+    width: 62.9575%;
     height: 230px;
-    left: 244px;
+    left: 17.8625%;
     border-radius: 5px;
     margin-top: 7px;
 }
@@ -25,6 +24,7 @@ body {
     font-size: 25px;
     text-align: center;
     margin-top: 5px;
+    color: rgb(44, 44, 44);
 }
 
 #exoSeanceDuJour {
@@ -34,7 +34,6 @@ body {
     margin-top: 15px;
     margin-left: 5%;
     margin-right: 5%;
-    border-radius: 10px;
 }
 
 #dateSeanceDuJour{
@@ -42,7 +41,8 @@ body {
 }
 
 #SeanceSeanceDuJour{
-     text-align: center;
+    margin-top: -10px;
+    text-align: center;
 }
 
 #choisirPrg {
@@ -62,4 +62,99 @@ body {
 
 #accueilFirstImg {
     width: 100%;
+}
+
+#aideArticleTitre {
+    text-align: center;
+    color: rgb(44, 44, 44);
+    font-size: 23px;
+}
+
+#article {
+    width: 100%;
+    height: auto;
+    min-height: 100px;
+}
+
+.documentationCase {
+    width: 30%;
+    height: 120px;
+    margin-left: 4%;
+    margin-right: -3.5%;
+    margin-top: 10px;
+    border-radius: "2px";
+    color: rgb(0, 0, 0);
+    display: inline-block;
+}
+
+.documentationCaseA {
+    margin: 0px;
+    font-size: 25px;
+    outline: none;
+    text-decoration: none;
+}
+  
+.documentationCaseA:hover {
+    border-bottom: 1px solid;     
+}
+  
+.documentationCaseA:active {
+    color: rgb(105, 0, 88);
+}
+
+.documentationCaseDescription {
+    margin-top: 5px;
+    margin-left: 10px;
+    font-size: 15px;
+    color: rgb(49, 49, 49);
+}
+
+@media only screen and (max-width: 600px) {
+    #seanceDuJour {
+        top: 260px;
+    }
+
+    #aideArticle {
+        margin-top: 120px;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    #seanceDuJour {
+        top: 320px;
+    }
+
+    #aideArticle {
+        margin-top: 120px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    #seanceDuJour {
+        top: 398px;
+    }
+
+    #aideArticle {
+        margin-top: 120px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    #seanceDuJour {
+        top: 475px;
+    }
+
+    #aideArticle {
+        margin-top: 320px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    #seanceDuJour {
+        top: 550px;
+    }
+
+    #aideArticle {
+        margin-top: 120px;
+    }
 }

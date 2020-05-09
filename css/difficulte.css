@@ -162,7 +162,6 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     transition-duration: 0.4s;
     background-color: rgb(65, 65, 65);
-    margin-left: 703px;
     font-size: 20px;
     padding-top: 8px;
     padding-bottom: 15px;
@@ -183,17 +182,15 @@
     background-color: white;
     color: rgb(189, 189, 189);
     border: 1px solid #555555;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     transition-duration: 0.4s;
     background-color: rgb(65, 65, 65);
-    margin-left: -330px;
+    margin-left: 10px;
     font-size: 20px;
-    padding-top: 8px;
+    padding-top: 12px;
     padding-bottom: 15px;
-    padding-left: 21px;
-    padding-right: 21px;
+    padding-left: 15px;
+    padding-right: 15px;
     border-radius: 5px;
-    position: absolute;
     outline: none;
 }
 
@@ -218,7 +215,7 @@
     margin-right: -5.1px;
     margin-top: 0.5px;
     margin-bottom: 5%;
-    height: 95%;
+    height: 94%;
     border-right: white 1px solid;
     display: inline-block;
     transition: 0.2s;
@@ -286,6 +283,10 @@
         height: 150px;
         margin-left: 2.5%;
     }
+
+    #sauvegarder {
+        margin-left: 20%;
+    }
 }
 
 @media only screen and (min-width: 600px) {
@@ -295,6 +296,10 @@
         height: 150px;
         margin-left: 2.5%;
     }
+
+    #sauvegarder {
+        margin-left: 29%;
+    }
 }
 
 @media only screen and (min-width: 768px) {
@@ -302,7 +307,11 @@
         display: inline-block;
         width: 48%;
         height: 150px;
-        margin-left: 14px;
+        margin-left: 13px;
+    }
+
+    #sauvegarder {
+        margin-left: 34.9%;
     }
 }
 
@@ -313,6 +322,10 @@
         height: 150px;
         margin-left: 14px;
     }
+
+    #sauvegarder {
+        margin-left: 37.4%;
+    }
 }
 
 @media only screen and (min-width: 1200px) {
@@ -321,5 +334,9 @@
         width: 48%;
         height: 150px;
         margin-left: 14px;
+    }
+
+    #sauvegarder {
+        margin-left: 38.9%;
     }
 }
