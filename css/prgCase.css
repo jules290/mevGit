@@ -24,45 +24,48 @@
 
 @media only screen and (max-width: 600px) {
     .aprgDiv{
-        width: 21%;
+        width: 20.5%;
+        height: 107px;
     }
 
     .Img {
-        height: 92.025px;
+        height: 75px;
     }
 
     .tprg {
-        font-size: 12px;
-        padding-top: 7px;
+        font-size: 11px;
+        padding-top: 0px;
     }
 }
 
 @media only screen and (min-width: 600px) {
     .aprgDiv{
         width: 23%;
+        height: 127px;
     }
     
     .Img {
-        height: 119.632px;
+        height: 95px;
     }
 
     .tprg {
-        font-size: 15px;
-        padding-top: 4px;
+        font-size: 12px;
+        padding-top: 0px;
     }
 }
 
 @media only screen and (min-width: 768px) {
     .aprgDiv{
         width: 23.5%;
+        height: 157px;
     }
     
     .Img {
-        height: 159.5px;
+        height: 125px;
     }
 
     .tprg {
-        font-size: 18px;
+        font-size: 14px;
         padding-top: 3px;
     }
 }
@@ -70,14 +73,15 @@
 @media only screen and (min-width: 992px) {
     .aprgDiv{
         width: 23.8653%;
+        height: 202px;
     }
     
     .Img {
-        height: 200px;
+        height: 170px;
     }
 
     .tprg {
-        font-size: 20px;
+        font-size: 18px;
         padding-top: 0px;
     }
 }
@@ -85,6 +89,7 @@
 @media only screen and (min-width: 1200px) {
     .aprgDiv{
         width: 23.8653%;
+        height: 232px;
     }
     
     .Img {
