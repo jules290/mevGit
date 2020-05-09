@@ -47,15 +47,14 @@ body {
 
 #search[type=text] {
     position: absolute;
-    top: 150px;
-    left: 233px;
-    width: 900px;
+    left: 12%;
+    width: 68%;
     height: 60px;
     box-sizing: border-box;
     border: none;
     border-radius: 0px;
     font-size: 16px;
-    background-color: rgba(255, 255, 255, 0.808);
+    background-color: rgba(255, 255, 255);
     background-image: url('../img/searchicon.png');
     background-position: 15px 15px; 
     background-size: 30px;
@@ -78,35 +77,36 @@ body {
 
 #clearSearch {
     border: none;
-    background-color: rgba(255, 255, 255, 0);
-    width: 60px;
+    background-color: rgb(255, 255, 255);
+    width: 4.5%;
     height: 60px;
     position: absolute;
-    top: 150px;
-    left: 1073px;
+    left: 80%;
     background-image: url('../img/closeIcon.png');
-    background-position: 15px 15px; 
-    background-size: 30px;
+    background-position: 45% 50%; 
+    background-size: 60%;
     background-repeat: no-repeat;
     outline: none;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.664);
+    transition: 0.2s;
 }
 
 #clearSearch:hover {
-    background-color: rgba(231, 231, 231, 0.486);
+    background-color: rgb(238, 238, 238);
+    border-top-right-radius: 10px;
 }
 
 #suggestionBox {
-    width: 900px;
+    width: 72.5%;
     height: 0px;
     background-color: rgb(255, 255, 255);
     position: absolute;
-    top: 210px;
-    left: 233px;
+    left: 12%;
     transition: 0.2s;
 }
 
 .suggestionCase {
-    width: 860px;
+    width: 62.95755%;
     height: 35px;
     border-top: 0.5px solid rgba(42, 42, 42, 0.335);
     margin-left: 20px;
@@ -136,19 +136,11 @@ body {
 }
 
 .documentationCase {
-    width: 30%;
-    height: 120px;
-    margin-left: 4%;
-    margin-right: -3.5%;
-    margin-top: 10px;
-    border-radius: "2px";
     color: rgb(0, 0, 0);
-    display: inline-block;
 }
 
 .documentationCaseA {
     margin: 0px;
-    font-size: 25px;
     outline: none;
     text-decoration: none;
 }
@@ -164,6 +156,193 @@ body {
 .documentationCaseDescription {
     margin-top: 5px;
     margin-left: 10px;
-    font-size: 15px;
     color: rgb(49, 49, 49);
+}
+
+@media only screen and (max-width: 600px) {
+    #seanceDuJour {
+        top: 260px;
+    }
+
+    #aideArticle {
+        margin-top: -30px;
+    }
+
+    .documentationCase {
+        width: 90%;
+        height: 120px;
+        margin-left: 5%;
+        margin-top: 10px;
+        display: block;
+    }
+
+    .documentationCaseA {
+        font-size: 25px;
+    }
+
+    .documentationCaseDescription {
+        font-size: 13px;
+    }
+
+    #search[type=text] {
+        top: 60px;
+    }
+    
+    #clearSearch {
+        top: 60px;
+    }
+    
+    #suggestionBox {
+        top: 120px;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    #seanceDuJour {
+        top: 320px;
+    }
+
+    #aideArticle {
+        margin-top: 20px;
+    }
+
+    .documentationCase {
+        width: 90%;
+        height: 120px;
+        margin-left: 5%;
+        margin-top: 10px;
+        display: block;
+    }
+
+    .documentationCaseA {
+        font-size: 23px;
+    }
+
+    .documentationCaseDescription {
+        font-size: 13px;
+    }
+
+    #search[type=text] {
+        top: 80px;
+    }
+    
+    #clearSearch {
+        top: 80px;
+    }
+    
+    #suggestionBox {
+        top: 140px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    #seanceDuJour {
+        top: 398px;
+    }
+
+    #aideArticle {
+        margin-top: 30px;
+    }
+
+    .documentationCase {
+        width: 47%;
+        height: 120px;
+        margin-left: 1.5%;
+        display: inline-block;
+    }
+
+    .documentationCaseA {
+        font-size: 24px;
+    }
+
+    .documentationCaseDescription {
+        font-size: 14px;
+    }
+
+    #search[type=text] {
+        top: 100px;
+    }
+    
+    #clearSearch {
+        top: 100px;
+    }
+    
+    #suggestionBox {
+        top: 160px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    #seanceDuJour {
+        top: 475px;
+    }
+
+    #aideArticle {
+        margin-top: 90px;
+    }
+
+    .documentationCase {
+        width: 45%;
+        height: 120px;
+        margin-left: 2.5%;
+        display: inline-block;
+    }
+
+    .documentationCaseA {
+        font-size: 25px;
+    }
+
+    .documentationCaseDescription {
+        font-size: 15px;
+    }
+
+    #search[type=text] {
+        top: 135px;
+    }
+    
+    #clearSearch {
+        top: 135px;
+    }
+    
+    #suggestionBox {
+        top: 195px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    #seanceDuJour {
+        top: 550px;
+    }
+
+    #aideArticle {
+        margin-top: 120px;
+    }
+
+    .documentationCase {
+        width: 30%;
+        height: 120px;
+        margin-left: 4%;
+        margin-right: -3.5%;
+        display: inline-block;
+    }
+
+    .documentationCaseA {
+        font-size: 25px;
+    }
+
+    .documentationCaseDescription {
+        font-size: 15px;
+    }
+
+    #search[type=text] {
+        top: 150px;
+    }
+    
+    #clearSearch {
+        top: 150px;
+    }
+    
+    #suggestionBox {
+        top: 210px;
+    }
 }

@@ -175,10 +175,10 @@ function alertShow() {
     $(".settingInputTitle").show()
     $(".settingInput").show()
     $("input").focusin(function(){
-        $(this).animate({width: '300px', marginLeft: '130px'}, 200);
+        $(this).animate({width: '50%', marginLeft: '25%'}, 200);
       });
       $("input").focusout(function(){
-        $(this).animate({width: '200px', marginLeft: '180px'}, 200);
+        $(this).animate({width: '40%', marginLeft: '30%'}, 200);
       });
 }
 

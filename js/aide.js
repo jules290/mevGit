@@ -16,7 +16,7 @@ $("#open").click(function() {
 $("#clearSearch #search").hover(function(){
     $("#search").css("background-color", "white");
     }, function(){
-    $("#search").css("background-color", "rgba(255, 255, 255, 0.808)");
+    $("#search").css("background-color", "rgba(255, 255, 255)");
   })
 
 $("#clearSearch").click(function(){
@@ -29,8 +29,8 @@ $("#search").focusin(function() {
 })
 
 $("#search").focusout(function() {
-    $("#search").css("background-color", "rgba(255, 255, 255, 0.808)");
-    suggestionBox.style.backgroundColor = "rgba(255, 255, 255, 0.808)"
+    $("#search").css("background-color", "rgba(255, 255, 255)");
+    suggestionBox.style.backgroundColor = "rgba(255, 255, 255)"
 })
 
 $("#paysage").click(function () {

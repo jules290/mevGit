@@ -16,13 +16,13 @@
     background: #444444; 
 }
 
-.AthleteSettings {
+#AthleteSettings {
     background-color: rgb(65, 65, 65);
     border-radius: 5px;
-    margin-left: 7px;
-    margin-right: 7px;
     margin-top: 10px;
-
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 table {
@@ -40,14 +40,13 @@ th, td {
     border-bottom: 1px solid rgb(165, 165, 165);
     border-left: 1px solid rgb(165, 165, 165);
     text-align: center;
-    padding: 8px;
     height: 30px;
 }
 
 #settingEdit {
     border: none;
     padding: 0px;
-    width: 60px;
+    width: 50px;
     height: 50px;
     transition-duration: 0.4s;
 }
@@ -62,23 +61,21 @@ th, td {
     position: absolute;
     background-color: rgb(73, 73, 73);
     margin-top: 70px;
-    width: 600px;
     height: 500px;
     z-index: 7;
     border-radius: 3px;
-    margin-left: 400px;
     box-shadow: 1px 1px 25px #000000;
     overflow-y: scroll;
 }
 
 
 #filter {
-    position: absolute;
+    position: fixed;
     margin-left: -8px;
     background-color: rgba(0, 0, 0, 0.445);
-    z-index: 6;
-    width: 100%;
-    height: 99.6%;
+    z-index: 7;
+    width: 102%;
+    height: 100%;
 }
 
 .alertBtn {
@@ -90,10 +87,10 @@ th, td {
     font-size: 20px;
     padding-top: 8px;
     padding-bottom: 15px;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 1%;
+    padding-right: 1%;
     border-radius: 3px;
-    width: 160px;
+    min-width: 26.67%;
     outline: none;
 }
 .alertBtn:hover {
@@ -106,12 +103,12 @@ th, td {
 #sauvegarder {
     display: inline-block;
     margin-top: 15px;
-    margin-left: 92px;
+    margin-left: 15.334%;
 }
 
 #retour {
     display: inline-block;
-    margin-left: 80px;
+    margin-left: 13.334%;
 }
 
 .settingInput {
@@ -121,13 +118,13 @@ th, td {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-left: 180px;
-    margin-right: 180px;
+    margin-left: 30%;
+    margin-right: 30%;
     border-style: none;
     border-bottom: rgb(179, 179, 179) 1px solid;
     outline:none;
     transition: 0.4s;
-    width: 200px;
+    width: 40%;
     color: rgb(179, 179, 179);
     font-size: 18px;
 }
@@ -160,17 +157,112 @@ th, td {
 .settingInputLink {
     position: absolute;
     margin-top: -50px;
-    margin-left: 520px;
+    margin-left: 80%;
 }
 
 .settingInputDiv {
     background-color: rgb(65, 65, 65); 
     border-radius: 3px;
-    width: 560px;
-    margin-left: 13px;
-    margin-right: 13px;
+    width: 93.334%;
+    margin-left: 3.334%;
+    margin-right: 3.334%;
     height: 180px;
     box-shadow: 1px 1px 5px #000000;
     margin-top: -10px;
     margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+    th, td {
+        font-size: 13px;
+    }
+
+    #alert {
+        width: 70%;
+        margin-left: 15%;
+    }
+
+    #sauvegarder {
+        font-size: 12px;
+    }
+    
+    #retour {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    th, td {
+        font-size: 14px;
+    }
+
+    #alert {
+        width: 60%;
+        margin-left: 20%;
+    }
+
+    #sauvegarder {
+        font-size: 12px;
+    }
+    
+    #retour {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    th, td {
+        font-size: 15px;
+    }
+
+    #alert {
+        width: 50%;
+        margin-left: 25%;
+    }
+
+    #sauvegarder {
+        font-size: 16px;
+    }
+    
+    #retour {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    th, td {
+        font-size: 16px;
+    }
+
+    #alert {
+        width: 45%;
+        margin-left: 27.5%;
+    }
+
+    #sauvegarder {
+        font-size: 19px;
+    }
+    
+    #retour {
+        font-size: 19px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    th, td {
+        font-size: 17px;
+    }
+
+    #alert {
+        width: 43.924%;
+        margin-left: 29.2826%;
+    }
+
+    #sauvegarder {
+        font-size: 22px;
+    }
+    
+    #retour {
+        font-size: 22px;
+    }
 }
