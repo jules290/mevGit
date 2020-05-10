@@ -25,7 +25,6 @@
 .CaseState {
     border: 1px white solid;
     height: 22px;
-    width: 300px;
     display: inline-block;
     margin-right: -4.5px;
     margin-bottom: -5px;
@@ -33,7 +32,6 @@
 }
 
 .TitreStats {
-    font-size: 21px;
     display: inline-block;
 }
 #titreSprint {
@@ -41,7 +39,7 @@
     margin-right: 58.2px;
 }
 #levelSprint {
-    height: 20px;
+    height: 18px;
     width: 65%;
     background-color: white;
     margin: 1px;
@@ -53,7 +51,7 @@
     margin-right: 18.9px;
 }
 #levelAnaerobie {
-    height: 20px;
+    height: 18px;
     width: 75%;
     background-color: white;
     margin: 1px;
@@ -65,7 +63,7 @@
     margin-right: 109.73px;
 }
 #levelPMA {
-    height: 20px;
+    height: 18px;
     width: 80%;
     background-color: white;
     margin: 1px;
@@ -77,7 +75,7 @@
     margin-right: 89.8px;
 }
 #levelSeuil {
-    height: 20px;
+    height: 18px;
     width: 80%;
     background-color: white;
     margin: 1px;
@@ -89,7 +87,7 @@
     margin-right: 148.3px;
 }
 #levelFTP {
-    height: 20px;
+    height: 18px;
     width: 75%;
     background-color: white;
     margin: 1px;
@@ -101,7 +99,7 @@
     margin-right: 50px;
 }
 #levelEndurance {
-    height: 20px;
+    height: 18px;
     width: 70%;
     background-color: white;
     margin: 1px;
@@ -110,4 +108,54 @@
 
 .prgStats{
     margin-bottom: -20px;
+}
+
+@media only screen and (max-width: 600px) {
+    .TitreStats {
+        font-size: 21px;
+    }
+
+    .CaseState {
+        width: 31%;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .TitreStats {
+        font-size: 21px;
+    }
+
+    .CaseState {
+        width: 50%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .TitreStats {
+        font-size: 21px;
+    }
+
+    .CaseState {
+        width: 29%;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .TitreStats {
+        font-size: 21px;
+    }
+
+    .CaseState {
+        width: 47%;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .TitreStats {
+        font-size: 21px;
+    }
+
+    .CaseState {
+        width: 56%;
+    }
 }

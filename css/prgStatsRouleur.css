@@ -41,7 +41,7 @@
     margin-right: 58.2px;
 }
 #levelSprint {
-    height: 20px;
+    height: 18px;
     width: 35%;
     background-color: white;
     margin: 1px;
@@ -53,7 +53,7 @@
     margin-right: 18.9px;
 }
 #levelAnaerobie {
-    height: 20px;
+    height: 18px;
     width: 55%;
     background-color: white;
     margin: 1px;
@@ -65,7 +65,7 @@
     margin-right: 109.73px;
 }
 #levelPMA {
-    height: 20px;
+    height: 18px;
     width: 70%;
     background-color: white;
     margin: 1px;
@@ -77,7 +77,7 @@
     margin-right: 89.8px;
 }
 #levelSeuil {
-    height: 20px;
+    height: 18px;
     width: 99.2%;
     background-color: white;
     margin: 1px;
@@ -89,7 +89,7 @@
     margin-right: 148.3px;
 }
 #levelFTP {
-    height: 20px;
+    height: 18px;
     width: 95%;
     background-color: white;
     margin: 1px;
@@ -101,7 +101,7 @@
     margin-right: 50px;
 }
 #levelEndurance {
-    height: 20px;
+    height: 18px;
     width: 90%;
     background-color: white;
     margin: 1px;
@@ -110,4 +110,54 @@
 
 .prgStats{
     margin-bottom: -20px;
+}
+
+@media only screen and (max-width: 600px) {
+    .TitreStats {
+        font-size: 21px;
+    }
+
+    .CaseState {
+        width: 31%;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .TitreStats {
+        font-size: 21px;
+    }
+
+    .CaseState {
+        width: 50%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .TitreStats {
+        font-size: 21px;
+    }
+
+    .CaseState {
+        width: 29%;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .TitreStats {
+        font-size: 21px;
+    }
+
+    .CaseState {
+        width: 47%;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .TitreStats {
+        font-size: 21px;
+    }
+
+    .CaseState {
+        width: 56%;
+    }
 }

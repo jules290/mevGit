@@ -102,13 +102,66 @@
 #difficulteClick {
     position: relative;
     transition-duration: 0.4s;
-    width: 90%;
     margin-top: 10px;
     margin-left: 5%;
     margin-right: 5%;
-    height: 80px;
     border: solid 1.3px rgb(37, 37, 37);
     border-radius: 500px;
+}
+@media only screen and (max-width: 600px) {
+    #difficulteClick {
+        width: 0px;
+        height: 0px;
+        border: solid 1.3px rgba(37, 37, 37, 0);
+    }
+
+    #difficulteClickT {
+        font-size: 0px;
+    }
+}
+@media only screen and (min-width: 600px) {
+    #difficulteClick {
+        width: 0px;
+        height: 0px;
+        border: solid 1.3px rgba(37, 37, 37, 0);
+    }
+
+    #difficulteClickT {
+        font-size: 0px;
+    }
+}
+@media only screen and (min-width: 768px) {
+    #difficulteClick {
+        width: 90%;
+        height: 80px;
+        border: solid 1.3px rgb(37, 37, 37);
+    }
+    
+    #difficulteClickT {
+        font-size: 15px;
+    }
+}
+@media only screen and (min-width: 992px) {
+    #difficulteClick {
+        width: 90%;
+        height: 80px;
+        border: solid 1.3px rgb(37, 37, 37);
+    }
+
+    #difficulteClickT {
+        font-size: 15px;
+    }
+}
+@media only screen and (min-width: 1200px) {
+    #difficulteClick {
+        width: 90%;
+        height: 80px;
+        border: solid 1.3px rgb(37, 37, 37);
+    }
+
+    #difficulteClickT {
+        font-size: 15px;
+    }
 }
 #difficulteClick:hover {
     border: solid 1.3px rgba(255, 255, 255, 0.212);
@@ -121,7 +174,6 @@
 }
 
 #difficulteClickT {
-    font-size: 15px;
     text-align: center;
     width: 40%;
     margin-top: 4%;
