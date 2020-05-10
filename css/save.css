@@ -125,7 +125,7 @@ select {
 
 @media only screen and (max-width: 600px) {
     .select {
-        width: 27.5%;
+        width: 27%;
         height: 32px;
     }
 
