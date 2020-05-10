@@ -1,5 +1,5 @@
 #right {
-    width: 165px;
+    width: 12.08%;
     border-left: 2px solid rgb(66, 66, 66);
     position: absolute;
     top: 100px;
@@ -7,9 +7,9 @@
 }
 
 #main {
-    width: 900px;
-    margin-left: 233px;
-    margin-right: 233px;
+    width: 65.9%;
+    margin-left: 17.05%;
+    margin-right: 17.05%;
 }
 
 .mainTitle {
