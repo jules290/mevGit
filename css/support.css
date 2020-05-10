@@ -3,13 +3,12 @@
     border-left: 2px solid rgb(66, 66, 66);
     position: absolute;
     top: 100px;
-    right: 0px;
+    right: 30px;
 }
 
 #main {
-    width: 65.9%;
-    margin-left: 17.05%;
-    margin-right: 17.05%;
+    width: 64%;
+    margin-left: 13%;
 }
 
 .mainTitle {
@@ -40,6 +39,16 @@
     padding-top: 0px;
     margin-left: 5px;
 }
+
+@media only screen and (max-width: 600px) {}
+
+@media only screen and (min-width: 600px) {}
+
+@media only screen and (min-width: 768px) {}
+
+@media only screen and (min-width: 992px) {}
+
+@media only screen and (min-width: 1200px) {}
 
 .mainDiv {
     width: 100%;
