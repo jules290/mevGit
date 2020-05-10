@@ -125,7 +125,7 @@ select {
 
 @media only screen and (max-width: 600px) {
     .select {
-        width: 28%;
+        width: 27.5%;
         height: 32px;
     }
 
@@ -144,7 +144,7 @@ select {
 
 @media only screen and (min-width: 600px) {
     .select {
-        width: 28.5%;
+        width: 28%;
         height: 34px;
     }    
 
@@ -163,7 +163,7 @@ select {
 
 @media only screen and (min-width: 768px) {
     .select {
-        width: 28.5%;
+        width: 28%;
         height: 36px;
     }
 
