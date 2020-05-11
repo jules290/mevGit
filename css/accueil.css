@@ -113,17 +113,30 @@ footer {
 }
 
 #RSDIV {
-    width: 30%;
-    margin-left: 40%;
+    width: 40%;
+    margin-left: 30%;
 }
 
 #insta {
-    width: 15%;
+    width: 20%;
     transition: 0.4s;
     border-radius: 30%;
 }
 
 #insta:hover {
+    background-color: rgb(90, 90, 90);
+    border-radius: 30%;
+    box-shadow: 0px 0px 10px black;
+}
+
+#mail {
+    width: 20%;
+    transition: 0.4s;
+    border-radius: 30%;
+    margin-left: 55%;
+}
+
+#mail:hover {
     background-color: rgb(90, 90, 90);
     border-radius: 30%;
     box-shadow: 0px 0px 10px black;
