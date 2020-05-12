@@ -7,6 +7,7 @@ if (position != -1) {
     
     $.post(auth_link,
     function(data){
+        localStorage.refresh_token = data.refresh_token;
         localStorage.access_token = data.access_token;
         getActivities()
     });
@@ -32,11 +33,9 @@ function reAuthorize() {
         body: JSON.stringify({
             client_id: '46262',
             client_secret: 'd10fe947c04ec802caa34e8f54f631090d305a77',
-            refresh_token: '4bf09955b3267a17f660fedb2a4b16ed4700dfbf',
+            refresh_token: localStorage.refresh_token,
             grant_type: 'refresh_token'
         })
     }).then((res) => res.json())
         .then(res => console.log(res.access_token))
 }
-
-reAuthorize()
