@@ -8,7 +8,7 @@ if (position != -1) {
     $.post(auth_link,
     function(data){
         localStorage.refresh_token = data.refresh_token;
-        localStorage.access_token = "jsd" //data.access_token;
+        localStorage.access_token = data.access_token;
         getActivities()
     });
 }
@@ -21,7 +21,7 @@ function getActivities() {
         })
         .catch(function(error) {
             reAuthorize();
-            console.log(error)
+            getActivities();
         });
 }
 
