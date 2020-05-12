@@ -19,7 +19,7 @@ function getActivities() {
         .then((res) => {
             console.log(res.json())
         })
-        .catch(function(error) {
+        .catch(function() {
             reAuthorize();
             getActivities();
         });
