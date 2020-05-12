@@ -11,6 +11,25 @@ if (position != -1) {
         localStorage.access_token = data.access_token;
         getActivities()
     });
+
+    function reAuthorize() {
+        fetch(auth_link,{
+            method: 'post',
+            headers: {
+                'Accept': 'application/json, text/plain, */*',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                client_id: '46262',
+                client_secret: 'd10fe947c04ec802caa34e8f54f631090d305a77',
+                refresh_token: '4bf09955b3267a17f660fedb2a4b16ed4700dfbf',
+                grant_type: 'authorization_code'
+            })
+        }).then((res) => res.json())
+            .then(res => console.log(res))
+    }
+    
+    reAuthorize()
 }
 
 function getActivities() {
@@ -20,22 +39,3 @@ function getActivities() {
             console.log(res.json())
         })
 }
-
-// function reAuthorize() {
-//     fetch(auth_link,{
-//         method: 'post',
-//         headers: {
-//             'Accept': 'application/json, text/plain, */*',
-//             'Content-Type': 'application/json'
-//         },
-//         body: JSON.stringify({
-//             client_id: '46262',
-//             client_secret: 'd10fe947c04ec802caa34e8f54f631090d305a77',
-//             refresh_token: '4bf09955b3267a17f660fedb2a4b16ed4700dfbf',
-//             grant_type: 'authorization_code'
-//         })
-//     }).then((res) => res.json())
-//         .then(res => getActivities(res))
-// }
-
-// reAuthorize()
