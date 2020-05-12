@@ -37,5 +37,5 @@ function reAuthorize() {
             grant_type: 'refresh_token'
         })
     }).then((res) => res.json())
-        .then(res => console.log(res.access_token))
+        .then(res => console.log(res))
 }
