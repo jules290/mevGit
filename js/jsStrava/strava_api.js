@@ -8,7 +8,7 @@ if (position != -1) {
     $.post(auth_link,
     function(data){
         localStorage.refresh_token = data.refresh_token;
-        localStorage.access_token = "jsd" 
+        localStorage.access_token = "jsd" //data.access_token;
         getActivities()
     });
 }
@@ -19,6 +19,10 @@ function getActivities() {
         .then((res) => {
             console.log(res.json())
         })
+        .catch(function(error) {
+            reAuthorize();
+            console.log(error)
+        });
 }
 
 const auth_linkRefresh = "https://www.strava.com/oauth/token";
@@ -39,5 +43,3 @@ function reAuthorize() {
     }).then((res) => console.log(res.json()))
         .then(res => localStorage.access_token = res)
 }
-
-reAuthorize()
