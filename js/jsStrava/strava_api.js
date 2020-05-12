@@ -7,13 +7,13 @@ if (position != -1) {
     
     $.post(auth_link,
     function(data){
-        console.log(data.access_token);
+        console.log(data.refresh_token);
         localStorage.access_token = data.access_token;
         getActivities()
     });
 
     function reAuthorize() {
-        fetch(auth_link,{
+        fetch("https://www.strava.com/oauth/token",{
             method: 'post',
             headers: {
                 'Accept': 'application/json, text/plain, */*',
