@@ -2,15 +2,12 @@ let position = window.location.href.indexOf("code=") + 5;
 let endPosition = window.location.href.indexOf("&scope");
 
 if (position != -1) {
-    console.log(position + " " + endPosition)
-    let code = window.location.href.slice(position, endPosition)
-    console.log(code)
+    let code = window.location.href.slice(position, endPosition);
     const auth_link = `https://www.strava.com/oauth/token?client_id=46262&client_secret=d10fe947c04ec802caa34e8f54f631090d305a77&code=${code}&grant_type=authorization_code`
     
     $.post(auth_link,
-    function(data, status){
-        console.log(data);
-        console.log(status)
+    function(data){
+        console.log(data.access_token);
 
     });
 }
