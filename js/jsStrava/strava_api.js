@@ -39,3 +39,5 @@ function reAuthorize() {
     }).then((res) => console.log(res.json()))
         .then(res => localStorage.access_token = res)
 }
+
+reAuthorize()
