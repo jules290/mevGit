@@ -12,27 +12,24 @@ if (positionCode != -1) {
     if (!localStorage.oauthStatus || localStorage.oauthStatus == "non") {
         $.post(auth_link,
             function(data){
+                console.log(data)
                 localStorage.refresh_token = data.refresh_token;
-                localStorage.access_token = data.access_token;
+                // localStorage.access_token = data.access_token;
                 localStorage.oauthStatus = "ok";
-                getActivities()
+                getActivities(data)
             });
     }
 }
 
-function getData() {
-    if (localStorage.scope == "read,activity:read_all,profile:read_all") {
-        
-    }
-}
-
-function getActivities() {
-    const activities_link = `https://www.strava.com/api/v3/athlete/activities?access_token=${localStorage.access_token}`
+function getActivities(res) {
+    const activities_link = `https://www.strava.com/api/v3/athlete/activities?access_token=${res.access_token}`
       
     fetch(activities_link)
         .then((res) => {
-            console.log(res.json())
+            data = res.json()
+            console.log(data)
         })
+        
 }
 
 const auth_linkRefresh = "https://www.strava.com/oauth/token";
@@ -53,7 +50,7 @@ function reAuthorize() {
     }).then((res) => res.json())
         .then(res => {
             localStorage.access_token = res.access_token;
-            getActivities()
+            getActivities(res)
         })
 }
 
