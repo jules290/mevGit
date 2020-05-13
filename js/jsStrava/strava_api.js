@@ -5,6 +5,7 @@ if (position != -1) {
     let code = window.location.href.slice(position, endPosition);
     const auth_link = `https://www.strava.com/oauth/token?client_id=46262&client_secret=d10fe947c04ec802caa34e8f54f631090d305a77&code=${code}&grant_type=authorization_code`
     
+    console.log(localStorage.oauthStatus)
     if (localStorage.oauthStatus != "ok") {
         $.post(auth_link,
             function(data){
