@@ -28,7 +28,14 @@ function getData() {
 
 function getActivities() {
     const activities_link = `https://www.strava.com/api/v3/athlete/activities&per_page=10?access_token=${localStorage.access_token}`
-    fetch(activities_link)
+    var opts = { 
+        'before': 56, // {Integer} An epoch timestamp to use for filtering activities that have taken place before a certain time.
+        'after': 56, // {Integer} An epoch timestamp to use for filtering activities that have taken place after a certain time.
+        'page': 56, // {Integer} Page number.
+        'perPage': 56 // {Integer} Number of items per page. Defaults to 30.
+    };
+      
+    fetch(activities_link, opts)
         .then((res) => {
             console.log(res.json())
         })
