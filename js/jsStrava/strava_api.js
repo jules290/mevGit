@@ -1,8 +1,12 @@
-let position = window.location.href.indexOf("code=") + 5;
-let endPosition = window.location.href.indexOf("&scope");
+let positionCode = window.location.href.indexOf("code=") + 5;
+let endPositionCode = window.location.href.indexOf("&scope");
+
+let positionScope = window.location.href.indexOf("scope=") + 5;
 
 if (position != -1) {
-    let code = window.location.href.slice(position, endPosition);
+    let code = window.location.href.slice(positionCode, endPositionCode);
+    let scope = window.location.href.slice(positionScope);
+    console.log(scope)
     const auth_link = `https://www.strava.com/oauth/token?client_id=46262&client_secret=d10fe947c04ec802caa34e8f54f631090d305a77&code=${code}&grant_type=authorization_code`
     
     if (!localStorage.oauthStatus || localStorage.oauthStatus == "non") {
@@ -16,7 +20,11 @@ if (position != -1) {
     }
 }
 
-function getActivities(res) {
+function getData() {
+    
+}
+
+function getActivities() {
     const activities_link = `https://www.strava.com/api/v3/athlete/activities?access_token=${localStorage.access_token}`
     fetch(activities_link)
         .then((res) => {
