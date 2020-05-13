@@ -22,10 +22,6 @@ function getActivities(res) {
         .then((res) => {
             console.log(res.json())
         })
-        .catch(function() {
-            reAuthorize();
-            getActivities();
-        });
 }
 
 const auth_linkRefresh = "https://www.strava.com/oauth/token";
@@ -47,4 +43,6 @@ function reAuthorize() {
         .then(res => getActivities(res))
 }
 
-reAuthorize();
+if (localStorage.oauthStatus) {
+    reAuthorize();
+}
