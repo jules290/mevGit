@@ -27,7 +27,7 @@ function getData() {
 }
 
 function getActivities() {
-    const activities_link = `https://www.strava.com/api/v3/athlete/activities&per_page=10?access_token=${localStorage.access_token}`
+    const activities_link = `https://www.strava.com/api/v3/athlete/activities?access_token=${localStorage.access_token}`
     var opts = { 
         'before': 56, // {Integer} An epoch timestamp to use for filtering activities that have taken place before a certain time.
         'after': 56, // {Integer} An epoch timestamp to use for filtering activities that have taken place after a certain time.
