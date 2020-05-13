@@ -16,7 +16,7 @@ if (position != -1) {
     }
 }
 
-function getActivities() {
+function getActivities(res) {
     const activities_link = `https://www.strava.com/api/v3/athlete/activities?access_token=${localStorage.access_token}`
     fetch(activities_link)
         .then((res) => {
@@ -44,5 +44,7 @@ function reAuthorize() {
             grant_type: 'refresh_token'
         })
     }).then((res) => res.json())
-        .then(res => localStorage.access_token = res)
+        .then(res => getActivities(res))
 }
+
+reAuthorize();
