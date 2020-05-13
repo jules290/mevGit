@@ -3,7 +3,7 @@ let endPositionCode = window.location.href.indexOf("&scope");
 
 let positionScope = window.location.href.indexOf("scope=") + 5;
 
-if (position != -1) {
+if (positionCode != -1) {
     let code = window.location.href.slice(positionCode, endPositionCode);
     let scope = window.location.href.slice(positionScope);
     console.log(scope)
