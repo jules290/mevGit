@@ -9,15 +9,14 @@ if (position != -1) {
         $.post(auth_link,
             function(data){
                 localStorage.refresh_token = data.refresh_token;
-                localStorage.access_token = data.access_token;
                 localStorage.oauthStatus = "ok";
-                getActivities()
+                getActivities(data)
             });
     }
 }
 
 function getActivities(res) {
-    const activities_link = `https://www.strava.com/api/v3/athlete/activities?access_token=${localStorage.access_token}`
+    const activities_link = `https://www.strava.com/api/v3/athlete/activities?access_token=${res.access_token}`
     fetch(activities_link)
         .then((res) => {
             console.log(res.json())
