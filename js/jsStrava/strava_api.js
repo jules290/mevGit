@@ -12,9 +12,7 @@ if (positionCode != -1) {
     if (!localStorage.oauthStatus || localStorage.oauthStatus == "non") {
         $.post(auth_link,
             function(data){
-                console.log(data)
                 localStorage.refresh_token = data.refresh_token;
-                // localStorage.access_token = data.access_token;
                 localStorage.oauthStatus = "ok";
                 getActivities(data)
             });
@@ -23,13 +21,83 @@ if (positionCode != -1) {
 
 function getActivities(res) {
     const activities_link = `https://www.strava.com/api/v3/athlete/activities?access_token=${res.access_token}`
-      
-    fetch(activities_link)
-        .then((res) => {
-            data = res.json()
-            console.log(data)
-        })
-        
+    var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": activities_link,
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-host": "35.188.171.173:8080",
+            "x-rapidapi-key": "SIGN-UP-FOR-KEY",
+            "content-type": "application/x-www-form-urlencoded"
+        },
+        "data": {
+            // "before": 56,
+            // "after": 56,
+            "page": 1,
+            // "perPage": 10,
+        }
+    }
+    $.ajax(settings).done(function (response) {
+        console.log(response);
+    });
+
+    const segment_link = `https://www.strava.com/api/v3/segments/starred?access_token=${res.access_token}`
+    var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": segment_link,
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-host": "35.188.171.173:8080",
+            "x-rapidapi-key": "SIGN-UP-FOR-KEY",
+            "content-type": "application/x-www-form-urlencoded"
+        },
+        "data": {
+            
+        }
+    }
+    $.ajax(settings).done(function (response) {
+        console.log(response);
+    });
+
+    const segment_link_streams = `https://www.strava.com/api/v3/segments/1625415/streams?access_token=${res.access_token}`
+    var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": segment_link_streams,
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-host": "35.188.171.173:8080",
+            "x-rapidapi-key": "SIGN-UP-FOR-KEY",
+            "content-type": "application/x-www-form-urlencoded"
+        },
+        "data": {
+            
+        }
+    }
+    $.ajax(settings).done(function (response) {
+        console.log(response);
+    });
+
+    const activities_link_streams = `https://www.strava.com/api/v3/segment_efforts/68810424990/streams?access_token=${res.access_token}`
+    var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": activities_link_streams,
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-host": "35.188.171.173:8080",
+            "x-rapidapi-key": "SIGN-UP-FOR-KEY",
+            "content-type": "application/x-www-form-urlencoded"
+        },
+        "data": {
+            
+        }
+    }
+    $.ajax(settings).done(function (response) {
+        console.log(response);
+    });
 }
 
 const auth_linkRefresh = "https://www.strava.com/oauth/token";
