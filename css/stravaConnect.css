@@ -1,0 +1,77 @@
+body {
+    background-color: rgb(251, 251, 251); 
+}
+
+#stravaImg {
+    width: 100%;
+}
+
+#stravaConnect {
+    color: rgb(189, 189, 189);
+    border: 1px solid #555555;
+    transition-duration: 0.4s;
+    background-color: rgb(65, 65, 65);
+    border-radius: 3px;
+    outline: none;
+    position: absolute;
+    height: 60px;
+    text-decoration: none;
+    text-align: center;
+}
+
+#stravaConnect:hover{
+    background-color: rgb(255, 255, 255);
+    border-radius: 15px;
+    color: rgb(42, 42, 42);
+    box-shadow: 1px 1px 5px #000000;
+}
+
+@media only screen and (max-width: 600px) {
+    #stravaConnect {
+        left: 29%;
+        width: 42%;
+        top: 100px;
+        padding-top: 16px;
+        font-size: 16px;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    #stravaConnect {
+        left: 32%;
+        width: 36%;
+        top: 120px;
+        padding-top: 15px;
+        font-size: 17px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    #stravaConnect {
+        left: 34%;
+        width: 30%;
+        top: 170px;
+        padding-top: 14px;
+        font-size: 18px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    #stravaConnect {
+        left: 34%;
+        width: 30%;
+        top: 200px;
+        padding-top: 13px;
+        font-size: 19px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    #stravaConnect {
+        left: 34%;
+        width: 30%;
+        top: 250px;
+        padding-top: 13px;
+        font-size: 20px;
+    }
+}

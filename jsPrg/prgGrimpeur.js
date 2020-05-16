@@ -61,7 +61,7 @@ function prgGrimpeur() {
             pPMA = "entre" + " " + Math.round(0.88 * Number(localStorage.PMA)) + "W" + " " + 
             "et" + " " + Math.round(Number(localStorage.PMA)) + "W";
             pSeuil = "entre" + " " + Math.round(0.80 * Number(localStorage.PMA)) + "W" + " " + 
-            "et" + " " + Math.round(0.86 * Number(localStorage.PMA)) + "W";
+            "et" + " " + Math.round(0.87 * Number(localStorage.PMA)) + "W";
             pI3 = "entre" + " " + Math.round(0.70 * Number(localStorage.PMA)) + "W" + " " + 
             "et" + " " + Math.round(0.82 * Number(localStorage.PMA)) + "W";
             pFtp = Math.round(localStorage.ftp) + "W";

@@ -1,5 +1,9 @@
 $(document).ready(function() {
     $("#mySidenav").animate({marginLeft: '-131px'}, 0);
+    if (localStorage.oauthStatus == "ok") {
+        document.getElementById("strava").innerText = "strava";
+        document.getElementById("strava").href = "../strava/strava.html"
+    }
 })
 
 $("#open").click(function() {
@@ -19,5 +23,4 @@ $("#prgchc").hide();
 $("#prg").click(function() {
     $("#prgmy").toggle(300);
     $("#prgchc").toggle(200);
-    
 });

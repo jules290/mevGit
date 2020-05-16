@@ -20,7 +20,7 @@
         <link rel="stylesheet" href="../css/style.css" media="screen">
         <link rel="stylesheet" href="../css/menunav.css" media="screen">
         <link rel="stylesheet" href="../css/header.css" media="screen">
-        <link rel="stylesheet" href="../css/strava.css" media="screen">
+        <link rel="stylesheet" href="../css/stravaConnect.css" media="screen">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
         <script src="../js/count-visits.js"></script>
@@ -32,6 +32,7 @@
             <a class="a_programme" id="prg">programmes<br>d'entrainement</a><p id="arrowDownPrg"></p>
             <a id="prgmy" href="../programme/prgmy.html">mon programme</a>
             <a id="prgchc" href="../programme/prgchc.html">choisir un programme</a>
+            <a id="strava" class="a_parametre" href="../strava/stravaConnect.html">se connecter à strava</a>
             <a class="a_parametre" href="../setting/AthleteSettings.html">paramètres de l'athlète</a>
             <a class="a_parametre" href="../support/aide.html">aide</a>
         </nav>
@@ -44,13 +45,12 @@
         </div>
         
         <div id="main">
-            <img id="strava" src="../img/Strava.png">
-           <button id="stravaConnect">
-               <a href="http://www.strava.com/oauth/authorize?client_id=46262&response_type=code&redirect_uri=https://mon-entrainement-velo.netlify.app/strava/strava.html&scope=activity:read_all&state=OK">
+            <img id="stravaImg" src="../img/strava.jpg">
+                <a id="stravaConnect" href="http://www.strava.com/oauth/authorize?client_id=46262&response_type=code&redirect_uri=https://mon-entrainement-velo.netlify.app/strava/strava.html&scope=activity:read_all,activity:write,profile:read_all,read_all&state=OK">
                     se connecter à strava
-               </a>
-            </button>
+                </a>
         </div>
+        <script src="../js/stravaConnect.js"></script>
         <script src="../js/language.js"></script>
         <script src="../js/menunav_prg.js"></script>
     </body>
