@@ -1,0 +1,60 @@
+body {
+    background-color: rgb(251, 251, 251);
+}
+#segmentDeReference {
+    border: 1px solid rgb(155, 155, 155);
+    position: absolute;
+    width: 28%;
+    height: 330px;
+    top: 57px;
+    right: 0.5%;
+}
+
+#segmentDeReferenceT {
+    color: rgb(46, 46, 46);
+    text-align: center;
+    margin: 0px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    margin-left: 0%;
+    width: 94%;
+}
+
+.segmentDeReferenceDiv {
+    width: 96%;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 5px;
+    height: 65px;
+    border-top: 1px solid rgb(158, 158, 158);
+}
+
+@media only screen and (max-width: 600px) {
+    #segmentDeReferenceT {
+        font-size: 17px;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    #segmentDeReferenceT {
+        font-size: 17px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    #segmentDeReferenceT {
+        font-size: 17px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    #segmentDeReferenceT {
+        font-size: 17px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    #segmentDeReferenceT {
+        font-size: 17px;
+    }
+}

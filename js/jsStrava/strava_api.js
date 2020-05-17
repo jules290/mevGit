@@ -13,6 +13,8 @@ if (positionCode != -1) {
             function(data){
                 localStorage.refresh_token = data.refresh_token;
                 localStorage.oauthStatus = "ok";
+                document.getElementById("strava").innerText = "strava";
+                document.getElementById("strava").href = "../strava/strava.html"
                 getActivities(data)
             });
     }

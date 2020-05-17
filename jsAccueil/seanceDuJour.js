@@ -18,7 +18,9 @@ let monthA = new Array(12);
     monthA[11] = "novembre";
     monthA[12] = "decembre";
 
-$(document).ready(function() {getAujourdHui()})
+$(document).ready(function() {
+    getAujourdHui()
+})
 
 function getAujourdHui() {
     document.getElementById("dateSeanceDuJour").innerText = date + " " + monthA[mois] + " " + annee
@@ -76,7 +78,6 @@ function getAujourdHui() {
     }
     
     let nbExo = nbObjectif - Number(localStorage.aujourdHui);
-    
 
     if (nbPrgT == 4) {
         if(nbExo == 1) {
@@ -523,8 +524,14 @@ function getAujourdHui() {
             document.getElementById("SeanceSeanceDuJour").innerText = localStorage.exo1
             document.getElementById("exoSeanceDuJour").style.backgroundColor = localStorage.exoClr1
         }
-        else {
-            $("#seanceDuJour").hide();
+        else if (nbExo > 111) {
+            start = nbExo - 111
+            if (start == 1) {
+                document.getElementById("SeanceSeanceDuJour").innerText = "début du programme dans" + " " + start + " " + "jour"
+            }
+            else {
+                document.getElementById("SeanceSeanceDuJour").innerText = "début du programme dans" + " " + start + " " + "jours"
+            }
         }
     }
     
@@ -861,8 +868,14 @@ function getAujourdHui() {
             document.getElementById("SeanceSeanceDuJour").innerText = localStorage.exo1
             document.getElementById("exoSeanceDuJour").style.backgroundColor = localStorage.exoClr1
         }
-        else {
-            $("#seanceDuJour").hide();
+        else if (nbExo > 83) {
+            start = nbExo - 83
+            if (start == 1) {
+                document.getElementById("SeanceSeanceDuJour").innerText = "début du programme dans" + " " + start + " " + "jour"
+            }
+            else {
+                document.getElementById("SeanceSeanceDuJour").innerText = "début du programme dans" + " " + start + " " + "jours"
+            }
         }
     }
     
@@ -1087,8 +1100,14 @@ function getAujourdHui() {
             document.getElementById("SeanceSeanceDuJour").innerText = localStorage.exo1
             document.getElementById("exoSeanceDuJour").style.backgroundColor = localStorage.exoClr1
         }
-        else {
-            $("#seanceDuJour").hide();
+        else if (nbExo > 55) {
+            start = nbExo - 55
+            if (start == 1) {
+                document.getElementById("SeanceSeanceDuJour").innerText = "début du programme dans" + " " + start + " " + "jour"
+            }
+            else {
+                document.getElementById("SeanceSeanceDuJour").innerText = "début du programme dans" + " " + start + " " + "jours"
+            }
         }
     }
 }
