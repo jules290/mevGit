@@ -4,10 +4,8 @@ body {
 #segmentDeReference {
     border: 1px solid rgb(155, 155, 155);
     position: absolute;
-    width: 28%;
-    height: 330px;
+    height: 400px;
     top: 57px;
-    right: 0.5%;
 }
 
 #segmentDeReferenceT {
@@ -17,7 +15,7 @@ body {
     margin-top: 5px;
     margin-bottom: 20px;
     margin-left: 0%;
-    width: 94%;
+    width: 88%;
 }
 
 .segmentDeReferenceDiv {
@@ -29,32 +27,389 @@ body {
     border-top: 1px solid rgb(158, 158, 158);
 }
 
+.segmentDeReferenceDivT {
+    color: rgb(46, 46, 46);
+    margin: 0px;
+    margin-top: 2px;
+}
+
+select {
+    appearance: none;
+    outline: 0;
+    border: 0;
+    background: #F9F9F9;
+    background-image: none;
+    box-shadow: none;
+    font-size: 1.2em;
+    outline: none;
+}
+  
+.select {
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+    border: 1px solid #CED4DA;
+    outline: none;
+    width: 100%;
+    margin-top: 1px;
+    height: 40px;
+}
+  
+select {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding-left: 7px;
+    color: #555555;
+    cursor: pointer;
+    outline: none;
+}
+  
+.select::after {
+    content: '\276F';
+    position: absolute;
+    right: 0;
+    background: white;
+    pointer-events: none;
+    transform: rotate(90deg);
+    font-size: 1.5em;
+    background: #F9F9F9;
+}
+  
+.select:hover::after {
+    color: rgb(71, 71, 71);
+}
+
+#segmentDeReferenceHelp {
+    position: absolute;
+    margin: 0px;
+    left: 90%;
+    top: 7px;
+    color: rgb(245, 244, 244);
+    background-color: rgb(61, 61, 61);
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 1000px;
+    text-align: center;
+    width: 25px;
+    height: 25px;
+}
+
+#segmentDeReferenceHelp:hover {
+    cursor: pointer;
+}
+
+#save {
+    outline: none;
+    border: none;
+    border: 1px solid rgb(161, 161, 161);
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 10px;
+    margin-top: 10px;
+    width: 40%;
+    height: 35px;
+    margin-left: 30%;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+#save:hover {
+    border: 1px solid rgb(66, 66, 66);
+}
+
+#activite {
+    border: 1px solid rgb(155, 155, 155);
+    position: absolute;
+    height: 400px;
+    top: 57px;
+    left: 0.5%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.activities:hover {
+    border-left: 1px solid rgb(224, 224, 224);
+    border-right: 1px solid rgb(224, 224, 224);
+    cursor: pointer;
+}
+
+#resumeDeSeance {
+    position: absolute;
+    width: 52%;
+    height: 550px;
+    left: 24%;
+    top: 57px;
+    border: 1px solid rgb(155, 155, 155);
+}
+
+#mapid {
+    width: 40%;
+    height: 250px;
+}
+
+.firstCase {
+    width: 30%;
+    height: 250px;
+    border: 1px solid rgb(155, 155, 155);
+}
+
+#myGraph {
+    width: 500px;
+}
+
 @media only screen and (max-width: 600px) {
+    #segmentDeReference {
+        width: 94%;
+        left: 3%;
+        top: 470px;
+        margin-bottom: 20px;
+    }
+
     #segmentDeReferenceT {
-        font-size: 17px;
+        font-size: 15px;
+    }
+    
+    .segmentDeReferenceDivT {
+        font-size: 15px;
+    }
+
+    .select::after {
+        padding: 5px 10px;
+    }
+
+    select {
+        font-size: 20px;
+    }
+
+    #activite {
+        width: 28%;
+    }
+
+    .activities {
+        border-bottom: 1px solid rgb(158, 158, 158);
+        height: 60px;
+        width: 96%;
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+
+    .activitiesT {
+        margin: 0px;
+        font-size: 12px;
+        color: #555555;
+    }
+
+    .activitiesD {
+        font-size: 11px;
+        color: #555555;
+        position: relative;
+        margin: 0px;
+        bottom: -10px;
+        white-space: nowrap;
     }
 }
 
 @media only screen and (min-width: 600px) {
+    #segmentDeReference {
+        width: 94%;
+        left: 3%;
+        top: 470px;
+        margin-bottom: 20px;
+    }
+
     #segmentDeReferenceT {
-        font-size: 17px;
+        font-size: 16px;
+    }
+    
+    .segmentDeReferenceDivT {
+        font-size: 15px;
+    }
+
+    .select::after {
+        padding: 5px 11px;
+    }
+
+    select {
+        font-size: 20px;
+    }
+
+    #activite {
+        width: 23%;
+    }
+
+    .activities {
+        border-bottom: 1px solid rgb(158, 158, 158);
+        height: 60px;
+        width: 96%;
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+
+    .activitiesT {
+        margin: 0px;
+        font-size: 13px;
+        color: #555555;
+    }
+
+    .activitiesD {
+        font-size: 12px;
+        color: #555555;
+        position: relative;
+        margin: 0px;
+        bottom: -10px;
+        white-space: nowrap;
     }
 }
 
 @media only screen and (min-width: 768px) {
+    #segmentDeReference {
+        width: 94%;
+        left: 3%;
+        top: 470px;
+        margin-bottom: 20px;
+    }
+
     #segmentDeReferenceT {
-        font-size: 17px;
+        font-size: 15px;
+    }
+    
+    .segmentDeReferenceDivT {
+        font-size: 15px;
+    }
+
+    .select::after {
+        padding: 5px 14px;
+    }
+
+    select {
+        font-size: 20px;
+    }
+
+    #activite {
+        width: 23%;
+    }
+
+    .activities {
+        border-bottom: 1px solid rgb(158, 158, 158);
+        height: 60px;
+        width: 96%;
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+
+    .activitiesT {
+        margin: 0px;
+        font-size: 14px;
+        color: #555555;
+    }
+
+    .activitiesD {
+        font-size: 13px;
+        color: #555555;
+        position: relative;
+        margin: 0px;
+        bottom: -10px;
+        white-space: nowrap;
     }
 }
 
 @media only screen and (min-width: 992px) {
+    #segmentDeReference {
+        width: 23%;
+        left: 76.5%;
+        top: 57px;
+    }
+
     #segmentDeReferenceT {
-        font-size: 17px;
+        font-size: 16px;
+    }
+    
+    .segmentDeReferenceDivT {
+        font-size: 15px;
+    }
+
+    .select::after {
+        padding: 5px 15px;
+    }
+
+    select {
+        font-size: 20px;
+    }
+
+    #activite {
+        width: 23%;
+    }
+
+    .activities {
+        border-bottom: 1px solid rgb(158, 158, 158);
+        height: 60px;
+        width: 96%;
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+
+    .activitiesT {
+        margin: 0px;
+        font-size: 15px;
+        color: #555555;
+    }
+
+    .activitiesD {
+        font-size: 14px;
+        color: #555555;
+        position: relative;
+        margin: 0px;
+        bottom: -10px;
+        white-space: nowrap;
     }
 }
 
 @media only screen and (min-width: 1200px) {
+    #segmentDeReference {
+        width: 23%;
+        left: 76.5%;
+        top: 57px;
+    }
+
     #segmentDeReferenceT {
-        font-size: 17px;
+        font-size: 16px;
+    }
+    
+    .segmentDeReferenceDivT {
+        font-size: 15px;
+    }
+
+    .select::after {
+        padding: 5px 15px;
+    }
+
+    select {
+        font-size: 20px;
+    }
+
+    #activite {
+        width: 23%;
+    }
+
+    .activities {
+        border-bottom: 1px solid rgb(158, 158, 158);
+        height: 60px;
+        width: 96%;
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+
+    .activitiesT {
+        margin: 0px;
+        font-size: 16px;
+        color: #555555;
+    }
+
+    .activitiesD {
+        font-size: 15px;
+        color: #555555;
+        position: relative;
+        margin: 0px;
+        bottom: -10px;
+        white-space: nowrap;
     }
 }

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161645631-2"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-161645631-2');
+        </script>
+
+        <title>cyclisme - mon entrainement vélo - puissance maximale aeorobie (PMA)</title>
+        <meta name="description" content="qu'est-ce que la puissance maximale aeorobie (PMA) ?, comment calculer sa PMA ?, comment travailler sa PMA ?"/>
+        <meta name="keywords" content="cyclisme, entrainement vélo, PMA, comment calculer sa PMA, comment travailler sa PMA"/>
+        <meta name="robots" content="index, follow"/>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../css/style.css" media="screen">
+        <link rel="stylesheet" href="../css/menunav.css" media="screen">
+        <link rel="stylesheet" href="../css/aide.css" media="screen">
+        <link rel="stylesheet" href="../css/support.css" media="screen">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+        <script src="../js/count-visits.js"></script>
+    
+    </head>
+    <body>
+        <nav id="mySidenav" class="sidenav">
+            <a class="a_accueil" id="accueil" href="../index.html">accueil</a>
+            <a class="a_programme" id="prg">programmes<br>d'entrainement</a><p id="arrowDownPrg"></p>
+            <a id="prgmy" href="../programme/prgmy.html">mon programme</a>
+            <a id="prgchc" href="../programme/prgchc.html">choisir un programme</a>
+            <a id="stravaConnect" class="a_strava" href="../strava/stravaConnect.html">se connecter à strava</a>
+            <a id="strava" class="a_strava">strava</a>
+            <a id="stravaActivite" class="a_strava_menu" href="../strava/activite.html">activités</a>
+            <a class="a_parametre" href="../setting/AthleteSettings.html">paramètres de l'athlète</a>
+            <a class="a_parametre" href="../support/aide.html">aide</a>
+        </nav>
+        
+        <div id="header">
+            <div id="open">&#9776</div>
+            <div id="titre">
+                <h1 id="mev">mon entrainement vélo</h1>
+                <p id="support">support</p>
+            </div>
+        </div>
+
+        <section id="right">
+            <div class="section" id="section1">
+                <p class="sectionP">qu'est-ce que les segements de réference ?</p>
+            </div>
+
+            <div class="section" id="section2">
+                <p class="sectionP">comment créer un segment de réference ?</p>
+            </div>
+
+            <div class="section" id="section3">
+                <p class="sectionP">comment créer un segment ?</p>
+            </div>
+        </section>
+
+        <section id="main">
+                <h1 class="mainTitle" id="mainTitle">les segment de réference</h1>
+
+                <div class="mainDiv" id="mainDiv1">
+                    <h1 class="mainDivTitle">qu'est-ce que les segments de réference ?</h1>
+                    <p class="mainDivp">
+                        Les segments de réferences servent à évaluer vos performance lors de vos séance de fractionné. Vos meilleurs temps sur ces 
+                        segments vous serons indiquer dans le résumé de séance. Cela vous permet d'évaluer vos performance.
+                    </p>
+                </div>
+
+                <div class="mainDiv" id="mainDiv2">
+                    <h1 class="mainDivTitle">comment créer un segment de réference ?</h1>
+                    <p class="mainDivp">
+                        Pour créer des segments de réferences vous devez tout dabord selectionné des segments comme favoris sur strava
+                        <img src="../img/CaptureStar.PNG" class="tableauIntensites">
+                        après avoir mis vos segment de réference en "favoris", vous devez les attribuer à l'une de vos séance
+                        <img src="../img/capSR.png" class="tableauIntensites">
+                        veuillez sélectionner des segements en accord avec vos séance, par exemple, pour les séance de fractionné 
+                        30s/30s veuillez attribuer un segment durant moins de 30 secondes, ce segment doit également être placer
+                    </p>
+                </div>
+
+                <div class="mainDiv" id="mainDiv3">
+                    <h1 class="mainDivTitle">comment créer un segment ?</h1>
+                    <p class="mainDivp">
+                        Pour créer des segments vous devez tout dabord aller dans les segments d'une activité puis selectionner
+                        "créer un segment"
+                        <img src="../img/CaptureSegments.PNG" class="tableauIntensites">
+                        puis définisser votre segment sur la carte
+                        <img src="../img/CaptureSegments2.PNG" class="tableauIntensites">
+                        puis nommer votre segments et renseignez le type de segment (privé ou public)
+                        <img src="../img/CaptureSegments3.PNG" class="tableauIntensites">
+                        puis selectionner "créer"
+                    </p>
+                </div>
+                <br>
+                <br>
+        </section>
+
+        <script src="../js/mousePositionSupport/mousePositionSupportSegmentReference.js"></script>
+        <script src="../js/language.js"></script>
+        <script src="../js/menunav_prg.js"></script>
+    </body>
+
+</html>

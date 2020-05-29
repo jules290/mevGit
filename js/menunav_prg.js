@@ -1,8 +1,12 @@
 $(document).ready(function() {
     $("#mySidenav").animate({marginLeft: '-131px'}, 0);
     if (localStorage.oauthStatus == "ok") {
-        document.getElementById("strava").innerText = "strava";
-        document.getElementById("strava").href = "../strava/strava.html"
+        $("#stravaConnect").hide();
+        $("#strava").show();
+    }
+    else {
+        $("#stravaConnect").show();
+        $("#strava").hide();
     }
 })
 
@@ -17,8 +21,13 @@ $("#open").click(function() {
     }
 })
 
+$("#strava").click(function() {
+    $("#stravaActivite").toggle(300);
+})
+
 $("#prgmy").hide();
 $("#prgchc").hide();
+$("#stravaActivite").hide();
 
 $("#prg").click(function() {
     $("#prgmy").toggle(300);

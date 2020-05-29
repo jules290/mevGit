@@ -20,10 +20,17 @@
         <link rel="stylesheet" href="../css/style.css" media="screen">
         <link rel="stylesheet" href="../css/menunav.css" media="screen">
         <link rel="stylesheet" href="../css/header.css" media="screen">
-        <link rel="stylesheet" href="../css/stravaConnect.css" media="screen">
+        <link rel="stylesheet" href="../css/resumeSeance.css" media="screen">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+        integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+        crossorigin=""></script>     
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
         <script src="../js/count-visits.js"></script>
+        <script src="../js/polylineDecoder.js"></script>
     </head>
     <body>
         
@@ -47,12 +54,36 @@
         </div>
         
         <div id="main">
-            <img id="stravaImg" src="../img/strava.jpg">
-                <a id="stravaConnect" href="http://www.strava.com/oauth/authorize?client_id=46262&response_type=code&redirect_uri=https://mon-entrainement-velo.netlify.app/strava/strava.html&scope=activity:read_all,activity:write,profile:read_all,read_all&state=OK">
-                    se connecter à strava
-                </a>
+            <section id="resumeDeSeance">
+                <div id="resumeDeSeanceTitle">
+                    <p id="resumeDeSeanceTitleName" class="resumeDeSeanceTitle"></p>
+                    <p class="resumeDeSeanceTitle">-</p>
+                    <p id="resumeDeSeanceTitleActivite" class="resumeDeSeanceTitle"></p>
+                </div>
+                <div class="firstRow">
+                    <div class="firstCase">
+                        <img class="resumeSeanceIcon" id="speedIcon" src="../img/speed.png">
+                        <p class="firstCaseTitle">VITESSE</p>
+                        <h1 class="firstCaseData" id="firstCaseDataSpeed"></h1>
+                    </div>
+                    <div class="firstCase">
+                        <img class="resumeSeanceIcon" id="distanceIcon" src="../img/distance.png">
+                        <p class="firstCaseTitle">DISTANCE</p>
+                        <h1 class="firstCaseData" id="firstCaseDataDistance"></h1>
+                    </div>
+                    <div class="firstCase">
+                        <img class="resumeSeanceIcon" id="tempsIcon" src="../img/temps.png">
+                        <p class="firstCaseTitle">TEMPS</p>
+                        <h1 class="firstCaseData" id="firstCaseDataTemps"></h1>
+                    </div>
+                </div>
+                <div id="mapid"></div>
+                <div id="myGraph">
+                    <canvas id="graph1"></canvas>
+                </div>
+            </section>
         </div>
-        <script src="../js/stravaConnect.js"></script>
+        <script src="../js/resumeSeance.js"></script>
         <script src="../js/language.js"></script>
         <script src="../js/menunav_prg.js"></script>
     </body>

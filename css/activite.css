@@ -1,0 +1,663 @@
+body {
+    background-color: rgb(251, 251, 251);
+}
+
+#activite {
+    position: absolute;
+    top: 57px;
+    left: 2%;
+}
+
+@media only screen and (max-width: 430px) {
+    #activite {
+        width: 96%;
+    }
+
+    #tableHeader {
+        background-color: rgb(230, 230, 230);
+        border-bottom: 1px solid rgb(158, 158, 158);
+        height: 50px;
+        width: 96%;
+        margin-left: 2%;
+        margin-right: 2%;
+        margin-top: 30px;
+    }
+
+    .activities {
+        border-bottom: 1px solid rgb(158, 158, 158);
+        height: 50px;
+        width: 96%;
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+
+    .activitiesT {
+        font-size: 8.5px;
+        color: #9900ff;
+        position: absolute;
+        display: inline-block;
+        left: 25%;
+        margin-top: 15px;
+        width: 20%;
+        text-align: center;
+    }
+
+    .activitiesD {
+        font-size: 8.5px;
+        color: #555555;
+        display: inline-block;
+        margin-top: 15px;
+        width: 20%;
+        text-align: center;
+    }
+
+    .activitiesTps {
+        margin-top: 15px;
+        font-size: 8.5px;
+        color: #555555;
+        position: absolute;
+        display: inline-block;
+        width: 20%;
+        left: 50%;
+        text-align: center;
+    }
+
+    .activitiesDst {
+        margin-top: 15px;
+        font-size: 8.5px;
+        color: #555555;
+        position: absolute;
+        display: inline-block;
+        width: 20%;
+        left: 75%;
+        text-align: center;
+    }
+
+    #activitiesD {
+        font-size: 8.5px;
+        color: #555555;
+        display: inline-block;
+        margin-top: 15px;
+        width: 20%;
+        text-align: center;
+        position: absolute;
+    }
+
+    #activitiesT {
+        font-size: 8.5px;
+        color: #555555;
+        display: inline-block;
+        margin-top: 15px;
+        width: 20%;
+        left: 25%;
+        text-align: center;
+        position: absolute;
+    }
+
+    #activitiesTps {
+        font-size: 8.5px;
+        color: #555555;
+        display: inline-block;
+        margin-top: 15px;
+        width: 20%;
+        left: 50%;
+        text-align: center;
+        position: absolute;
+    }
+
+    #activitiesDst {
+        font-size: 8.5px;
+        color: #555555;
+        display: inline-block;
+        margin-top: 15px;
+        width: 20%;
+        left: 75%;
+        text-align: center;
+        position: absolute;
+    }
+}
+
+@media only screen and (min-width: 430px) {
+    #activite {
+        width: 96%;
+    }
+
+    #tableHeader {
+        background-color: rgb(230, 230, 230);
+        border-bottom: 1px solid rgb(158, 158, 158);
+        height: 50px;
+        width: 96%;
+        margin-left: 2%;
+        margin-right: 2%;
+        margin-top: 30px;
+    }
+
+    .activities {
+        border-bottom: 1px solid rgb(158, 158, 158);
+        height: 50px;
+        width: 96%;
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+
+    .activitiesT {
+        font-size: 10px;
+        color: #9900ff;
+        position: absolute;
+        display: inline-block;
+        left: 25%;
+        margin-top: 15px;
+        width: 20%;
+        text-align: center;
+    }
+
+    .activitiesD {
+        font-size: 10px;
+        color: #555555;
+        display: inline-block;
+        margin-top: 15px;
+        width: 20%;
+        text-align: center;
+    }
+
+    .activitiesTps {
+        margin-top: 15px;
+        font-size: 10px;
+        color: #555555;
+        position: absolute;
+        display: inline-block;
+        width: 20%;
+        left: 50%;
+        text-align: center;
+    }
+
+    .activitiesDst {
+        margin-top: 15px;
+        font-size: 10px;
+        color: #555555;
+        position: absolute;
+        display: inline-block;
+        width: 20%;
+        left: 75%;
+        text-align: center;
+    }
+
+    #activitiesD {
+        font-size: 10px;
+        color: #555555;
+        display: inline-block;
+        margin-top: 15px;
+        width: 20%;
+        text-align: center;
+        position: absolute;
+    }
+
+    #activitiesT {
+        font-size: 10px;
+        color: #555555;
+        display: inline-block;
+        margin-top: 15px;
+        width: 20%;
+        left: 25%;
+        text-align: center;
+        position: absolute;
+    }
+
+    #activitiesTps {
+        font-size: 10px;
+        color: #555555;
+        display: inline-block;
+        margin-top: 15px;
+        width: 20%;
+        left: 50%;
+        text-align: center;
+        position: absolute;
+    }
+
+    #activitiesDst {
+        font-size: 10px;
+        color: #555555;
+        display: inline-block;
+        margin-top: 15px;
+        width: 20%;
+        left: 75%;
+        text-align: center;
+        position: absolute;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    #activite {
+        width: 96%;
+    }
+
+    #tableHeader {
+        background-color: rgb(230, 230, 230);
+        border-bottom: 1px solid rgb(158, 158, 158);
+        height: 50px;
+        width: 96%;
+        margin-left: 2%;
+        margin-right: 2%;
+        margin-top: 30px;
+    }
+
+    .activities {
+        border-bottom: 1px solid rgb(158, 158, 158);
+        height: 50px;
+        width: 96%;
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+
+    .activitiesT {
+        font-size: 12px;
+        color: #9900ff;
+        position: absolute;
+        display: inline-block;
+        left: 25%;
+        margin-top: 15px;
+        width: 20%;
+        text-align: center;
+    }
+
+    .activitiesD {
+        font-size: 12px;
+        color: #555555;
+        display: inline-block;
+        margin-top: 15px;
+        width: 20%;
+        text-align: center;
+    }
+
+    .activitiesTps {
+        margin-top: 15px;
+        font-size: 12px;
+        color: #555555;
+        position: absolute;
+        display: inline-block;
+        width: 20%;
+        left: 50%;
+        text-align: center;
+    }
+
+    .activitiesDst {
+        margin-top: 15px;
+        font-size: 12px;
+        color: #555555;
+        position: absolute;
+        display: inline-block;
+        width: 20%;
+        left: 75%;
+        text-align: center;
+    }
+
+    #activitiesD {
+        font-size: 12px;
+        color: #555555;
+        display: inline-block;
+        margin-top: 15px;
+        width: 20%;
+        text-align: center;
+        position: absolute;
+    }
+
+    #activitiesT {
+        font-size: 12px;
+        color: #555555;
+        display: inline-block;
+        margin-top: 15px;
+        width: 20%;
+        left: 25%;
+        text-align: center;
+        position: absolute;
+    }
+
+    #activitiesTps {
+        font-size: 12px;
+        color: #555555;
+        display: inline-block;
+        margin-top: 15px;
+        width: 20%;
+        left: 50%;
+        text-align: center;
+        position: absolute;
+    }
+
+    #activitiesDst {
+        font-size: 12px;
+        color: #555555;
+        display: inline-block;
+        margin-top: 15px;
+        width: 20%;
+        left: 75%;
+        text-align: center;
+        position: absolute;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    #activite {
+        width: 96%;
+    }
+
+    #tableHeader {
+        background-color: rgb(230, 230, 230);
+        border-bottom: 1px solid rgb(158, 158, 158);
+        height: 50px;
+        width: 96%;
+        margin-left: 2%;
+        margin-right: 2%;
+        margin-top: 30px;
+    }
+
+    .activities {
+        border-bottom: 1px solid rgb(158, 158, 158);
+        height: 50px;
+        width: 96%;
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+
+    .activitiesT {
+        font-size: 14px;
+        color: #9900ff;
+        position: absolute;
+        display: inline-block;
+        left: 25%;
+        margin-top: 15px;
+        width: 20%;
+        text-align: center;
+    }
+
+    .activitiesD {
+        font-size: 14px;
+        color: #555555;
+        display: inline-block;
+        margin-top: 15px;
+        width: 20%;
+        text-align: center;
+    }
+
+    .activitiesTps {
+        margin-top: 15px;
+        font-size: 14px;
+        color: #555555;
+        position: absolute;
+        display: inline-block;
+        width: 20%;
+        left: 50%;
+        text-align: center;
+    }
+
+    .activitiesDst {
+        margin-top: 15px;
+        font-size: 14px;
+        color: #555555;
+        position: absolute;
+        display: inline-block;
+        width: 20%;
+        left: 75%;
+        text-align: center;
+    }
+
+    #activitiesD {
+        font-size: 14px;
+        color: #555555;
+        display: inline-block;
+        margin-top: 15px;
+        width: 20%;
+        text-align: center;
+        position: absolute;
+    }
+
+    #activitiesT {
+        font-size: 14px;
+        color: #555555;
+        display: inline-block;
+        margin-top: 15px;
+        width: 20%;
+        left: 25%;
+        text-align: center;
+        position: absolute;
+    }
+
+    #activitiesTps {
+        font-size: 14px;
+        color: #555555;
+        display: inline-block;
+        margin-top: 15px;
+        width: 20%;
+        left: 50%;
+        text-align: center;
+        position: absolute;
+    }
+
+    #activitiesDst {
+        font-size: 14px;
+        color: #555555;
+        display: inline-block;
+        margin-top: 15px;
+        width: 20%;
+        left: 75%;
+        text-align: center;
+        position: absolute;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    #activite {
+        width: 96%;
+    }
+
+    #tableHeader {
+        background-color: rgb(230, 230, 230);
+        border-bottom: 1px solid rgb(158, 158, 158);
+        height: 50px;
+        width: 96%;
+        margin-left: 2%;
+        margin-right: 2%;
+        margin-top: 30px;
+    }
+
+    .activities {
+        border-bottom: 1px solid rgb(158, 158, 158);
+        height: 50px;
+        width: 96%;
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+
+    .activitiesT {
+        font-size: 15px;
+        color: #9900ff;
+        position: absolute;
+        display: inline-block;
+        left: 25%;
+        margin-top: 15px;
+        width: 20%;
+        text-align: center;
+    }
+
+    .activitiesD {
+        font-size: 15px;
+        color: #555555;
+        display: inline-block;
+        margin-top: 15px;
+        width: 20%;
+        text-align: center;
+    }
+
+    .activitiesTps {
+        margin-top: 15px;
+        font-size: 15px;
+        color: #555555;
+        position: absolute;
+        display: inline-block;
+        width: 20%;
+        left: 50%;
+        text-align: center;
+    }
+
+    .activitiesDst {
+        margin-top: 15px;
+        font-size: 15px;
+        color: #555555;
+        position: absolute;
+        display: inline-block;
+        width: 20%;
+        left: 75%;
+        text-align: center;
+    }
+
+    #activitiesD {
+        font-size: 16px;
+        color: #555555;
+        display: inline-block;
+        margin-top: 15px;
+        width: 20%;
+        text-align: center;
+        position: absolute;
+    }
+
+    #activitiesT {
+        font-size: 16px;
+        color: #555555;
+        display: inline-block;
+        margin-top: 15px;
+        width: 20%;
+        left: 25%;
+        text-align: center;
+        position: absolute;
+    }
+
+    #activitiesTps {
+        font-size: 16px;
+        color: #555555;
+        display: inline-block;
+        margin-top: 15px;
+        width: 20%;
+        left: 50%;
+        text-align: center;
+        position: absolute;
+    }
+
+    #activitiesDst {
+        font-size: 16px;
+        color: #555555;
+        display: inline-block;
+        margin-top: 15px;
+        width: 20%;
+        left: 75%;
+        text-align: center;
+        position: absolute;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    #activite {
+        width: 96%;
+    }
+
+    #tableHeader {
+        background-color: rgb(230, 230, 230);
+        border-bottom: 1px solid rgb(158, 158, 158);
+        height: 50px;
+        width: 96%;
+        margin-left: 2%;
+        margin-right: 2%;
+        margin-top: 30px;
+    }
+
+    .activities {
+        border-bottom: 1px solid rgb(158, 158, 158);
+        height: 50px;
+        width: 96%;
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+
+    .activitiesT {
+        font-size: 16px;
+        color: #9900ff;
+        position: absolute;
+        display: inline-block;
+        left: 25%;
+        margin-top: 15px;
+        width: 20%;
+        text-align: center;
+    }
+
+    .activitiesD {
+        font-size: 16px;
+        color: #555555;
+        display: inline-block;
+        margin-top: 15px;
+        width: 20%;
+        text-align: center;
+    }
+
+    .activitiesTps {
+        margin-top: 15px;
+        font-size: 16px;
+        color: #555555;
+        position: absolute;
+        display: inline-block;
+        width: 20%;
+        left: 50%;
+        text-align: center;
+    }
+
+    .activitiesDst {
+        margin-top: 15px;
+        font-size: 16px;
+        color: #555555;
+        position: absolute;
+        display: inline-block;
+        width: 20%;
+        left: 75%;
+        text-align: center;
+    }
+
+    #activitiesD {
+        font-size: 16px;
+        color: #555555;
+        display: inline-block;
+        margin-top: 15px;
+        width: 20%;
+        text-align: center;
+        position: absolute;
+    }
+
+    #activitiesT {
+        font-size: 16px;
+        color: #555555;
+        display: inline-block;
+        margin-top: 15px;
+        width: 20%;
+        left: 25%;
+        text-align: center;
+        position: absolute;
+    }
+
+    #activitiesTps {
+        font-size: 16px;
+        color: #555555;
+        display: inline-block;
+        margin-top: 15px;
+        width: 20%;
+        left: 50%;
+        text-align: center;
+        position: absolute;
+    }
+
+    #activitiesDst {
+        font-size: 16px;
+        color: #555555;
+        display: inline-block;
+        margin-top: 15px;
+        width: 20%;
+        left: 75%;
+        text-align: center;
+        position: absolute;
+    }
+}

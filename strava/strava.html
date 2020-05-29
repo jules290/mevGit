@@ -21,9 +21,16 @@
         <link rel="stylesheet" href="../css/menunav.css" media="screen">
         <link rel="stylesheet" href="../css/header.css" media="screen">
         <link rel="stylesheet" href="../css/strava.css" media="screen">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+        integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+        crossorigin=""></script>     
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
         <script src="../js/count-visits.js"></script>
+        <script src="../js/polylineDecoder.js"></script>
     </head>
     <body>
         
@@ -32,7 +39,9 @@
             <a class="a_programme" id="prg">programmes<br>d'entrainement</a><p id="arrowDownPrg"></p>
             <a id="prgmy" href="../programme/prgmy.html">mon programme</a>
             <a id="prgchc" href="../programme/prgchc.html">choisir un programme</a>
-            <a id="strava" class="a_parametre" href="../strava/stravaConnect.html">se connecter à strava</a>
+            <a id="stravaConnect" class="a_strava" href="stravaConnect.html">se connecter à strava</a>
+            <a id="strava" class="a_strava">strava</a>
+            <a id="stravaActivite" class="a_strava_menu" href="activite.html">activités</a>
             <a class="a_parametre" href="../setting/AthleteSettings.html">paramètres de l'athlète</a>
             <a class="a_parametre" href="../support/aide.html">aide</a>
         </nav>
@@ -45,24 +54,58 @@
         </div>
         
         <div id="main">
-            <section id="segmentDeReference">
-                <p id="segmentDeReferenceT">Segments de réference pour vos séance</p>
-                <div id="segmentDeReferenceSprint" class="segmentDeReferenceDiv">
-                    <p class="segmentDeReferenceDivT">Séance de sprint</p>
+            <section id="activite">
 
-                </div>
-                <div id="segmentDeReference30s/30s" class="segmentDeReferenceDiv">
+            </section>
 
-                </div>
-                <div id="segmentDeReference1m/1m" class="segmentDeReferenceDiv">
-
-                </div>
-                <div id="segmentDeReference2m/2m" class="segmentDeReferenceDiv">
-
+            <section id="resumeDeSeance">
+                <div id="mapid"></div>
+                <!-- <div id="distance" class="firstCase"></div>
+                <div id="vitesse"  class="firstCase"></div> -->
+                <div id="myGraph">
+                    <canvas id="graph1"></canvas>
                 </div>
             </section>
+
+            <section id="segmentDeReference">
+                <p id="segmentDeReferenceT">Segments de réference pour vos séance</p>
+                <p id="segmentDeReferenceHelp">?</p>
+                <div id="segmentDeReferenceSprint" class="segmentDeReferenceDiv">
+                    <p class="segmentDeReferenceDivT">Séance de sprint</p>
+                    <div class="select">
+                        <select class="segment" id="segmentDeReferenceSprintSelect">
+                            <option value="" disabled selected>segment</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="segmentDeReference30s/30s" class="segmentDeReferenceDiv">
+                    <p class="segmentDeReferenceDivT">Séance de PMA (30sec/30sec)</p>
+                    <div class="select">
+                        <select class="segment" id="segmentDeReference30s/30sSelect">
+                            <option value="" disabled selected>segment</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="segmentDeReference1m/1m" class="segmentDeReferenceDiv">
+                    <p class="segmentDeReferenceDivT">Séance de PMA (1min/1min)</p>
+                    <div class="select">
+                        <select class="segment" id="segmentDeReference1m/1mSelect">
+                            <option value="" disabled selected>segment</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="segmentDeReference2m/2m" class="segmentDeReferenceDiv">
+                    <p class="segmentDeReferenceDivT">Séance de PMA (2min/2min)</p>
+                    <div class="select">
+                        <select class="segment" id="segmentDeReference2m/2mSelect">
+                            <option value="" disabled selected>segment</option>      
+                        </select>
+                    </div>
+                </div>
+                <button id="save">sauvegarder</button>
+            </section>
         </div>
-        <script src="../js/jsStrava/strava_api.js"></script>
+        <script src="../js/strava_api.js"></script>
         <script src="../js/language.js"></script>
         <script src="../js/menunav_prg.js"></script>
     </body>
