@@ -53,7 +53,6 @@ $(document).ajaxError(function() {
 })
 
 function getActivities(res) {
-    const resGetactPlace = res;
     const activities_link = `https://www.strava.com/api/v3/athlete/activities?access_token=${res.access_token}`
     var settings = {
         "async": true,

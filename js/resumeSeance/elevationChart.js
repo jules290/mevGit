@@ -1,4 +1,4 @@
-function getSpeedChart(res) {
+function getElevationChart(res) {
     const acces = res;
     let positionId = window.location.href.indexOf("id=") + 3;
     
@@ -23,11 +23,11 @@ function getSpeedChart(res) {
         }
     }
     $.ajax(settings).done(function (response) {
-        getActivitiesStreamsSpeedChart(acces, sessionStorage.id, response)
+        getActivitiesStreamsElevationChart(acces, sessionStorage.id, response)
     });
 }
 
-function getActivitiesStreamsSpeedChart(res, id, activitie) {
+function getActivitiesStreamsElevationChart(res, id, activitie) {
         const activitiesStreams = `https://www.strava.com/api/v3/activities/${id}/streams?access_token=${res.access_token}`
         var settings = {
             "async": true,
@@ -40,13 +40,13 @@ function getActivitiesStreamsSpeedChart(res, id, activitie) {
                 "content-type": "application/x-www-form-urlencoded"
             },
             "data": {
-                
+                keys: "altitude"
             }
         }
         $.ajax(settings).done(function (response) {
             let vitesse = new Array()
             for (var i = 0; i < response[0].data.length; i++) {
-                vitesse[i] = (Math.round(((response[0].data[i + 1] -response[0].data[i]) * response[0].data.length / activitie.moving_time) * 36))/10
+                vitesse[i] = response[0].data[i]
             }
             vitesse.splice(vitesse.length - 1, 1)
     
@@ -141,55 +141,69 @@ function getActivitiesStreamsSpeedChart(res, id, activitie) {
                             + vitesse[i*35+31] + vitesse[i*35+32] + vitesse[i*35+33] + vitesse[i*35+34])/3.5)/10
                     }
                 }
+    
+            document.getElementById("firstCaseDataSpeed").innerText = Math.round(moyenne * 100) / 100 + "km/h"
                 
-            var ctx = document.getElementById('graphSpeed');
+            var ctx = document.getElementById('graphElevation');
+            var legend = document.getElementById('elevationBoxLegend');
             if (document.documentElement.clientWidth > 1800) {
-                ctx.height = 27;
+                ctx.height = 35;
+                legend = 35;
             }
             else if (document.documentElement.clientWidth > 1600) {
-                ctx.height = 30;
+                ctx.height = 39;
+                legend.height = 39;
             }
             else if (document.documentElement.clientWidth > 1400) {
-                ctx.height = 32;
+                ctx.height = 41;
+                legend.height = 41;
             }
             else if (document.documentElement.clientWidth > 1200) {
-                ctx.height = 35;
+                ctx.height = 45;
+                legend.style.height = document.getElementById("elevationGraph").style.height;
+                alert(document.getElementById("elevationGraph").style.height)
             }
             else if (document.documentElement.clientWidth > 1000) {
-                ctx.height = 40;
+                ctx.height = 52;
+                legend.height = 52;
             }
             else if (document.documentElement.clientWidth > 800) {
-                ctx.height = 49;
+                ctx.height = 63;
+                legend.height = 63;
             }
             else if (document.documentElement.clientWidth > 600) {
-                ctx.height = 60;
+                ctx.height = 76;
+                legend.height = 76;
             }
             else if (document.documentElement.clientWidth > 400) {
-                ctx.height = 84;
+                ctx.height = 108;
+                legend.height = 108;
             }
             else if (document.documentElement.clientWidth > 300) {
-                ctx.height = 105;
+                ctx.height = 135;
+                legend.height = 135;
             }
             else if (document.documentElement.clientWidth > 200) {
-                ctx.height = 133;
+                ctx.height = 171;
+                legend.height = 171;
             }
             else {
-                ctx.height = 161;
+                ctx.height = 207;
+                legend.height = 207;
             }
     
             var data = {
                 labels: Zomm100,
                 datasets: [{
-                    label: 'vitesse (km/h)',
+                    label: 'altitude (m)',
                     data: Zomm100,
                     borderColor: [
-                        'rgb(6, 141, 251)',
+                        'rgb(170, 170, 170)',
                     ],
                     backgroundColor: [
-                        'rgb(6, 141, 251, 0.1)',
+                        'rgb(170, 170, 170)',
                     ],
-                    borderWidth: 1,
-                    showLine: true,
+                    borderWidth: 1
                 }]
             }
                 
@@ -205,7 +219,7 @@ function getActivitiesStreamsSpeedChart(res, id, activitie) {
                     scales: {
                         yAxes: [{
                             ticks: {
-                                beginAtZero: true
+                                beginAtZero: false
                             }
                         }]
                     },
@@ -213,7 +227,6 @@ function getActivitiesStreamsSpeedChart(res, id, activitie) {
                         labels: {
                             fontColor: 'black'
                         },
-                        position: 'left',
                         display: false,
                     }
                 }

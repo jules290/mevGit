@@ -49,10 +49,6 @@ body {
     font-size: 22px;
 }
 
-#myGraph {
-    width: 100%;
-}
-
 #resumeDeSeanceTitle {
     width: 100%;
     height: 40px;
@@ -70,4 +66,31 @@ body {
     display: inline-block;
     font-size: 20px;
     padding-top: 4px;
+}
+
+#elevationBox {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.boxLegend {
+    position: absolute;
+    width: 15%;
+    left: 0px;
+    background-color: rgb(124, 124, 124);
+}
+
+#elevationGraph {
+    width: 70%;
+}
+
+#speedBox {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#speedGraph {
+    width: 70%;
 }

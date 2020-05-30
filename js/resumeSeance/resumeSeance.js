@@ -20,6 +20,7 @@ function reAuthorize() {
         getActivitiesZoom(res)
         getAthleteName(res)
         getSpeedChart(res)
+        getElevationChart(res)
     })
 }
 
