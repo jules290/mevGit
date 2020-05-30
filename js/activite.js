@@ -1,3 +1,27 @@
+let positionCode = window.location.href.indexOf("code=") + 5;
+let endPositionCode = window.location.href.indexOf("&scope");
+
+let positionScope = window.location.href.indexOf("scope=") + 6;
+
+if (positionCode != -1) {
+    let code = window.location.href.slice(positionCode, endPositionCode);
+    localStorage.scope = window.location.href.substr(positionScope);
+    
+    const auth_link = `https://www.strava.com/oauth/token?client_id=46262&client_secret=d10fe947c04ec802caa34e8f54f631090d305a77&code=${code}&grant_type=authorization_code`
+    if (!localStorage.oauthStatus || localStorage.oauthStatus == "non") {
+        $.post(auth_link,
+            function(data){
+                localStorage.refresh_token = data.refresh_token;
+                localStorage.oauthStatus = "ok";
+                document.getElementById("strava").innerText = "strava";
+                document.getElementById("strava").href = "../strava/strava.html";
+                getActivities(data)
+                getSegment(data);
+                getSegmentRef(data);
+            });
+    }
+}
+
 function reAuthorize() {
     const auth_linkRefresh = "https://www.strava.com/oauth/token";
     fetch(auth_linkRefresh,{
@@ -23,6 +47,10 @@ function reAuthorize() {
 if (localStorage.oauthStatus || localStorage.oauthStatus == "ok") {
     reAuthorize();
 }
+
+$(document).ajaxError(function() {
+    alert("erreur de chargement des données, veuillez réessayer plus tard.")
+})
 
 function getActivities(res) {
     const resGetactPlace = res;
