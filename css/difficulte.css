@@ -88,6 +88,7 @@ body {
 }
 
 .rowButton {
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -96,7 +97,7 @@ body {
 }
 
 .btnModifiy {
-    width: 30%;
+    width: 37%;
     height: 55px;
     background-color: rgb(251, 251, 251);
     color: rgb(77, 77, 77);
@@ -104,7 +105,7 @@ body {
     border: 2px solid rgb(93, 93, 93);
     text-align: center;
     text-decoration: none;
-    margin: 25px;
+    margin: 10%;
     transition-duration: 0.4s;
     cursor: pointer;
     border-radius: 5px;
@@ -120,7 +121,6 @@ body {
 }
 
 .btnModifiy > p {
-    font-size: 16px;
     white-space: wrap;
     font-variant: small-caps;
 }
@@ -212,9 +212,33 @@ body {
     box-shadow: 1px 1px 5px #000000;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 300px) {
     #alert {
         width: 70%;
+    }
+
+    .btnModifiy > p {
+        font-size: 7px;
+    }
+}
+
+@media only screen and (min-width: 300px) {
+    #alert {
+        width: 70%;
+    }
+
+    .btnModifiy > p {
+        font-size: 10px;
+    }
+}
+
+@media only screen and (min-width: 450px) {
+    #alert {
+        width: 70%;
+    }
+
+    .btnModifiy > p {
+        font-size: 10px;
     }
 }
 
@@ -222,11 +246,19 @@ body {
     #alert {
         width: 60%;
     }
+
+    .btnModifiy > p {
+        font-size: 16px;
+    }
 }
 
 @media only screen and (min-width: 768px) {
     #alert {
         width: 50%;
+    }
+
+    .btnModifiy > p {
+        font-size: 16px;
     }
 }
 
@@ -234,354 +266,18 @@ body {
     #alert {
         width: 40%;
     }
+
+    .btnModifiy > p {
+        font-size: 16px;
+    }
 }
 
 @media only screen and (min-width: 1200px) {
     #alert {
         width: 33%;
     }
-}
 
-/*
-#exo {
-    margin-top: 7px;
-}
-.exo {
-    background-color: rgb(71, 71, 71);
-    margin-bottom: 10px;
-    border-radius: 0px 10px 10px 0px;
-    box-shadow: 0.5px 0.5px 7px #000000;
-}
-
-#sprint {
-    
-}
-#sprintT {
-    display: inline-block;
-    margin-top: -15px;
-    width: 100%;
-    height: 50px;
-    text-align: center;
-}
-
-
-#PMA {
-    
-}
-#PMAT {
-    display: inline-block;
-    margin-top: -15px;
-    width: 100%;
-    height: 50px;
-    text-align: center;
-}
-
-#seuil {
-
-}
-#seuilT {
-    display: inline-block;
-    margin-top: -15px;
-    width: 100%;
-    height: 50px;
-    text-align: center;
-}
-
-#endurance {
-    
-}
-#enduranceT {
-    display: inline-block;
-    margin-top: -15px;
-    width: 100%;
-    height: 50px;
-    text-align: center;
-}
-
-.up {
-    margin-top: -100px;
-    border: solid 1px rgb(46, 46, 46);
-    background-color: rgba(0, 0, 0, 0);
-    color: rgb(228, 228, 228);
-    display: inline-block;
-    width: 20%;
-    height: 60px;
-    margin-left: 25%;
-    border-radius: 50px;
-    transition-duration: 0.4s;
-}
-.up:hover {
-    border: solid 1px rgba(255, 238, 238, 0.239);
-    cursor: pointer;
-}
-.upT {
-    margin-top: 9px;
-    font-size: 15px;
-    text-align: center;
-}
-
-.down {
-    border: solid 1px rgb(46, 46, 46);
-    background-color: rgba(0, 0, 0, 0);
-    color: rgb(228, 228, 228);
-    display: inline-block;
-    width: 20%;
-    height: 60px;
-    margin-left: 5%;
-    margin-top: 0px;
-    border-radius: 50px;
-    transition-duration: 0.4s;
-}
-.down:hover {
-    border: solid 1px rgba(255, 238, 238, 0.239);
-}
-.downT {
-    margin-top: 12px;
-    font-size: 14.8px;
-    text-align: center;
-}
-
-#alert {
-    position: absolute;
-    background-color: white;
-    width: 448px;
-    height: 170px;
-    z-index: 7;
-    border-radius: 3px;
-    margin-left: 33%;
-    box-shadow: 1px 1px 25px #000000;
-}
-
-#alertT {
-    color: rgb(65, 65, 65);
-    text-align: center;
-    font-size: 20px;
-}
-
-.alertBtn {
-    background-color: white;
-    color: rgb(189, 189, 189);
-    border: 1px solid #555555;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    transition-duration: 0.4s;
-    background-color: rgb(65, 65, 65);
-    font-size: 20px;
-    padding-top: 8px;
-    padding-bottom: 15px;
-    padding-left: 15px;
-    padding-right: 15px;
-    border-radius: 3px;
-    
-}
-.alertBtn:hover {
-    background-color: rgb(255, 255, 255);
-    color: rgb(65, 65, 65);
-    border-radius: 15px;
-    box-shadow: 1px 1px 5px #000000;
-}
-
-#oui {
-    margin-top: 20px;
-    margin-left: 105px;
-    outline: none;
-}
-
-#non {
-    margin-left: 100px;
-    outline: none;
-}
-
-#filter {
-    position: absolute;
-    margin-left: -8px;
-    background-color: rgba(0, 0, 0, 0.445);
-    z-index: 6;
-    width: 100%;
-    height: 99.6%;
-}
-
-#sauvegarder {
-    background-color: white;
-    color: rgb(189, 189, 189);
-    border: 1px solid #555555;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    transition-duration: 0.4s;
-    background-color: rgb(65, 65, 65);
-    font-size: 20px;
-    padding-top: 8px;
-    padding-bottom: 15px;
-    padding-left: 15px;
-    padding-right: 15px;
-    border-radius: 5px;
-    outline: none;
-}
-
-#sauvegarder:hover {
-    background-color: rgb(255, 255, 255);
-    color: rgb(65, 65, 65);
-    border-radius: 15px;
-    box-shadow: 1px 1px 5px #000000;
-}
-
-#reinitialiser {
-    background-color: white;
-    color: rgb(189, 189, 189);
-    border: 1px solid #555555;
-    transition-duration: 0.4s;
-    background-color: rgb(65, 65, 65);
-    margin-left: 10px;
-    font-size: 20px;
-    padding-top: 12px;
-    padding-bottom: 15px;
-    padding-left: 15px;
-    padding-right: 15px;
-    border-radius: 5px;
-    outline: none;
-}
-
-#reinitialiser:hover {
-    background-color: rgb(255, 255, 255);
-    color: rgb(65, 65, 65);
-    border-radius: 15px;
-    box-shadow: 1px 1px 5px #000000;
-}
-
-.progressBar {
-    width: 90%;
-    height: 30px;
-    margin-left: 5%;
-    margin-top: 10px;
-    border: 1px solid rgb(255, 255, 255);
-    border-radius: 5px;
-}
-
-.lvlProgressBar {
-    width: 25%;
-    margin-right: -5.1px;
-    margin-top: 0.5px;
-    margin-bottom: 5%;
-    height: 94%;
-    border-right: white 1px solid;
-    display: inline-block;
-    transition: 0.2s;
-}
-
-#STlvlProgressBar1 {
-    margin-left: 1px;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-}
-
-#PMAlvlProgressBar1 {
-    margin-left: 1px;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-}
-
-#SeuillvlProgressBar1 {
-    margin-left: 1px;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-}
-
-#GimenezlvlProgressBar1 {
-    margin-left: 1px;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-}
-
-#EndurancelvlProgressBar1 {
-    margin-left: 1px;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-}
-
-#STlvlProgressBar4 {
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-}
-
-#PMAlvlProgressBar4 {
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-}
-
-#SeuillvlProgressBar4 {
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-}
-
-#GimenezlvlProgressBar4 {
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-}
-
-#EndurancelvlProgressBar4 {
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-}
-
-@media only screen and (max-width: 600px) {
-    .exo {
-        display: block;
-        width: 95%;
-        height: 150px;
-        margin-left: 2.5%;
-    }
-
-    #sauvegarder {
-        margin-left: 20%;
+    .btnModifiy > p {
+        font-size: 16px;
     }
 }
-
-@media only screen and (min-width: 600px) {
-    .exo {
-        display: block;
-        width: 95%;
-        height: 150px;
-        margin-left: 2.5%;
-    }
-
-    #sauvegarder {
-        margin-left: 29%;
-    }
-}
-
-@media only screen and (min-width: 768px) {
-    .exo {
-        display: inline-block;
-        width: 48%;
-        height: 150px;
-        margin-left: 13px;
-    }
-
-    #sauvegarder {
-        margin-left: 34.9%;
-    }
-}
-
-@media only screen and (min-width: 992px) {
-    .exo {
-        display: inline-block;
-        width: 48%;
-        height: 150px;
-        margin-left: 14px;
-    }
-
-    #sauvegarder {
-        margin-left: 37.4%;
-    }
-}
-
-@media only screen and (min-width: 1200px) {
-    .exo {
-        display: inline-block;
-        width: 48%;
-        height: 150px;
-        margin-left: 14px;
-    }
-
-    #sauvegarder {
-        margin-left: 38.9%;
-    }
-}*/

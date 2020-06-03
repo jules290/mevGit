@@ -99,6 +99,8 @@
 }
 
 #difficulteClick {
+    width: 90%;
+    height: 80px;
     position: relative;
     transition-duration: 0.4s;
     margin-top: 10px;
@@ -106,64 +108,78 @@
     margin-right: 5%;
     border: solid 1.3px rgb(37, 37, 37);
     border-radius: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-@media only screen and (max-width: 600px) {
-    #difficulteClick {
-        width: 0px;
-        height: 0px;
-        border: solid 1.3px rgba(37, 37, 37, 0);
+@media only screen and (max-width: 300px) {
+    #difficulteClickT {
+        font-size: 12px;
     }
 
+    #annulerPrgP {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (min-width: 300px) {
     #difficulteClickT {
-        font-size: 0px;
+        font-size: 13px;
+    }
+
+    #annulerPrgP {
+        font-size: 13px;
+    }
+}
+
+@media only screen and (min-width: 450px) {
+    #difficulteClickT {
+        font-size: 15px;
+    }
+
+    #annulerPrgP {
+        font-size: 15px;
     }
 }
 
 @media only screen and (min-width: 600px) {
-    #difficulteClick {
-        width: 0px;
-        height: 0px;
-        border: solid 1.3px rgba(37, 37, 37, 0);
+    #difficulteClickT {
+        font-size: 16px;
     }
 
-    #difficulteClickT {
-        font-size: 0px;
+    #annulerPrgP {
+        font-size: 16px;
     }
 }
 
 @media only screen and (min-width: 768px) {
-    #difficulteClick {
-        width: 90%;
-        height: 80px;
-        border: solid 1.3px rgb(37, 37, 37);
-    }
-    
     #difficulteClickT {
+        font-size: 15px;
+    }
+
+    #annulerPrgP {
         font-size: 15px;
     }
 }
 @media only screen and (min-width: 992px) {
-    #difficulteClick {
-        width: 90%;
-        height: 80px;
-        border: solid 1.3px rgb(37, 37, 37);
+    #difficulteClickT {
+        font-size: 17px;
     }
 
-    #difficulteClickT {
-        font-size: 15px;
+    #annulerPrgP {
+        font-size: 17px;
     }
 }
 
 @media only screen and (min-width: 1200px) {
-    #difficulteClick {
-        width: 90%;
-        height: 80px;
-        border: solid 1.3px rgb(37, 37, 37);
+    #difficulteClickT {
+        font-size: 18px;
     }
 
-    #difficulteClickT {
-        font-size: 15px;
+    #annulerPrgP {
+        font-size: 18px;
     }
 }
 
@@ -177,14 +193,6 @@
     color: white;
 }
 
-#difficulteClickT {
-    text-align: center;
-    width: 40%;
-    margin-top: 4%;
-    margin-left: 30%;
-    margin-right: 30%;
-}
-
 #annulerPrg {
     outline: none;
     transition-duration: 0.4s;
@@ -196,6 +204,10 @@
     border: solid 1.3px rgb(37, 37, 37);
     border-radius: 500px;
     background-color: rgba(0, 0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 #annulerPrg:hover {
@@ -204,7 +216,6 @@
 }
 
 #annulerPrgP {
-    margin-top: 4px;
     color: rgb(227, 227, 227);
 }
 
