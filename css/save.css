@@ -2,7 +2,8 @@
     background-color: rgb(71, 71, 71);
     margin-bottom: 20px;
     border-radius: 6px;
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
 }
 
 
@@ -28,6 +29,8 @@ select {
     border-radius: 5px;
     border: 1px solid #CED4DA;
     outline: none;
+    width: 29%;
+    height: 35px;
 }
   
 select {
@@ -55,48 +58,55 @@ select {
     color: rgb(71, 71, 71);
 }
 
+#formDate {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
 #nbd {
-    margin-left: 26px;
-    margin-top: 5px;
-    display: inline-block;
+
 }
 
 #mois {
-    margin-left: 10px;
-    margin-top: 5px;
-    display: inline-block;
+    margin-left: 4%;
+    margin-right: 4%;
 }
 
 #annee {
-    margin-left: 10px;
-    margin-top: 5px;
-    display: inline-block;
+
 }
 
 #divPrgT{
     width: 100%;
-    display: inline-block;
-    margin-top: -5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 #prgT {
-    margin-top: 5px;
-    margin-left: 35%;
+   
 }
     
 #prgJ {
-    margin-left: 35%;
-    margin-top: 5px;
+    
 }
 #divPrgJ{
-    display: inline-block;
     width: 100%;
-    margin-top: -5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 
 #divPrgL {
     width: 100%;
-    margin-top: -5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 #levelP {
@@ -104,23 +114,26 @@ select {
 }
 
 #level {
-    margin-left: 35%;
+
+}
+
+#saveDiv {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 #save {
     margin-top: 15px;
-    margin-left: 36.3%;
     position: relative;
-    width: 26%;
+    width: 29%;
     height: 40px;
     overflow: hidden;
     border-radius: 5px;
     border: 1px solid #CED4DA;
     outline: none;
-}
-
-#save {
-    font-size: 1em;
 }
 
 @media only screen and (max-width: 600px) {

@@ -25,12 +25,14 @@
     
     </head>
     <body>
-        <div id="filter"></div>
-        
-        <div id="alert">
-            <p id="alertT">voulez-vous modifier votre programme ?</p>
-            <button class="alertBtn"  id="oui">oui</button>
-            <button class="alertBtn" id="non">non</button>
+        <div id="filter">
+            <div id="alert">
+                <p id="alertT">voulez-vous modifier<br>la difficulté de votre programme ?</p>
+                <div id="rowAlertBtn">
+                    <button class="alertBtn"  id="oui">oui</button>
+                    <button class="alertBtn" id="non">non</button>
+                </div>
+            </div>
         </div>
         
         <nav id="mySidenav" class="sidenav">
@@ -53,67 +55,57 @@
         </div>
         
         <section id="main">
-            <section id="exo">
-                <div id="sprint" class="exo">
-                    <div id="sprintT"><h1>séance de sprint</h1></div>
-                    <button class="up" id="upSprint"><p class="upT">augmenter la difficulté</p></button>
-                    <button class="down" id="downSprint"><p class="downT">baisser la difficulté</p></button>
+            <div class="row" id="row1">
+                 <div id="sprint" class="exo firstRowExo">
+                    <h1 class="exoT">séance de sprint</h1>
                     <div class="progressBar">
-                        <div id="STlvlProgressBar1" class="lvlProgressBar"></div>
-                        <div id="STlvlProgressBar2" class="lvlProgressBar"></div>
-                        <div id="STlvlProgressBar3" class="lvlProgressBar"></div>
-                        <div id="STlvlProgressBar4" class="lvlProgressBar"></div>
+                        <span class="bar" id="sprintBar"></span>
+                    </div>
+                    <div class="rowButton">
+                        <button class="up btnModifiy" id="upSprint"><p class="upT btnModifiyT">augmenter la difficulté</p></button>
+                        <button class="down btnModifiy" id="downSprint"><p class="downT btnModifiyT">baisser la difficulté</p></button>
                     </div>
                 </div>
                 <div id="PMA" class="exo">
-                    <div id="PMAT"><h1>séance de PMA</h1></div>
-                    <button class="up" id="upPMA"><p class="upT">augmenter la difficulté</p></button>
-                    <button class="down" id="downPMA"><p class="downT">baisser la difficulté</p></button>
+                    <h1 class="exoT">séance de pma</h1>
                     <div class="progressBar">
-                        <div id="PMAlvlProgressBar1" class="lvlProgressBar"></div>
-                        <div id="PMAlvlProgressBar2" class="lvlProgressBar"></div>
-                        <div id="PMAlvlProgressBar3" class="lvlProgressBar"></div>
-                        <div id="PMAlvlProgressBar4" class="lvlProgressBar"></div>
+                        <span class="bar" id="pmaBar"></span>
+                    </div>
+                    <div class="rowButton">
+                        <button class="up btnModifiy" id="upPMA"><p class="upT btnModifiyT">augmenter la difficulté</p></button>
+                        <button class="down btnModifiy" id="downPMA"><p class="downT btnModifiyT">baisser la difficulté</p></button>
                     </div>
                 </div>
-                <div id="seuil" class="exo">
-                    <div id="seuilT"><h1>séance de seuil</h1></div>
-                    <button class="up" id="upSeuil"><p class="upT">augmenter la difficulté</p></button>
-                    <button class="down" id="downSeuil"><p class="downT">baisser la difficulté</p></button>
+            </div>
+            
+            <div class="row rowGrey" id="row2">
+                    <div id="seuil" class="exo firstRowExo">
+                    <h1 class="exoT">séance de seuil</h1>
                     <div class="progressBar">
-                        <div id="SeuillvlProgressBar1" class="lvlProgressBar"></div>
-                        <div id="SeuillvlProgressBar2" class="lvlProgressBar"></div>
-                        <div id="SeuillvlProgressBar3" class="lvlProgressBar"></div>
-                        <div id="SeuillvlProgressBar4" class="lvlProgressBar"></div>
+                        <span class="bar" id="seuilBar"></span>
+                    </div>
+                    <div class="rowButton">
+                        <button class="up btnModifiy" id="upSeuil"><p class="upT btnModifiyT">augmenter la difficulté</p></button>
+                        <button class="down btnModifiy" id="downSeuil"><p class="downT btnModifiyT">baisser la difficulté</p></button>
                     </div>
                 </div>
                 <div id="gimenez" class="exo">
-                    <div id="seuilT"><h1>séance de gimenez</h1></div>
-                    <button class="up" id="upGimenez"><p class="upT">augmenter la difficulté</p></button>
-                    <button class="down" id="downGimenez"><p class="downT">baisser la difficulté</p></button>
+                    <h1 class="exoT">séance de gimenez</h1>
                     <div class="progressBar">
-                        <div id="GimenezlvlProgressBar1" class="lvlProgressBar"></div>
-                        <div id="GimenezlvlProgressBar2" class="lvlProgressBar"></div>
-                        <div id="GimenezlvlProgressBar3" class="lvlProgressBar"></div>
-                        <div id="GimenezlvlProgressBar4" class="lvlProgressBar"></div>
+                        <span class="bar" id="gimenezBar"></span>
+                    </div>
+                    <div class="rowButton">
+                        <button class="up btnModifiy" id="upGimenez"><p class="upT btnModifiyT">augmenter la difficulté</p></button>
+                        <button class="down btnModifiy" id="downGimenez"><p class="downT btnModifiyT">baisser la difficulté</p></button>
                     </div>
                 </div>
-<!--
-                <div id="endurance" class="exo">
-                    <div id="enduranceT"><h1>séance d'endurance</h1></div>
-                    <div class="up" id="upEndurance"><p class="upT">augmenter la difficulté</p></div>
-                    <div class="down" id="downEndurance"><p class="downT">baisser la difficulté</p></div>
-                   <div class="progressBar">
-                        <div id="EndurancelvlProgressBar1" class="lvlProgressBar"></div>
-                        <div id="EndurancelvlProgressBar2" class="lvlProgressBar"></div>
-                        <div id="EndurancelvlProgressBar3" class="lvlProgressBar"></div>
-                        <div id="EndurancelvlProgressBar4" class="lvlProgressBar"></div>
-                    </div>
-                </div>
--->
-                <button id="sauvegarder">sauvegarder</button>
-                <button id="reinitialiser">réinitialiser</button>
-            </section>
+            </div>
+            
+            <div class="row" id="row3">
+                <button id="sauvegarder" class="btn">sauvegarder</button>
+                <button id="reinitialiser" class="btn">réinitialiser</button>
+            </div>
+            
         </section>
         <script src="../js/difficulte.js"></script>
         <script src="../js/language.js"></script>

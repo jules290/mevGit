@@ -57,6 +57,10 @@ body {
 .settingInputTitle {
     color: rgb(93, 93, 93);
     text-align: center;
+    letter-spacing: 3px;
+    word-spacing: 1px;
+    white-space: nowrap;
+    font-variant: small-caps;
 }
 
 .settingInputP {
