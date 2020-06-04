@@ -16,11 +16,13 @@ function reAuthorize() {
     .then((res) => res.json())
     .then(res => {
         localStorage.access_token = res.access_token;
-        getActivitiestempsDistance(res)
-        getActivitiesZoom(res)
-        getAthleteName(res)
-        getSpeedChart(res)
-        getElevationChart(res)
+        getAthlete(res);
+        getActivity(res);
+        // postActivitiestempsDistance(res)
+        // postActivitiesZoom(res)
+        // postAthleteName(res)
+        // postSpeedChart(res)
+        // postElevationChart(res)
     })
 }
 

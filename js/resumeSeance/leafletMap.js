@@ -14,30 +14,7 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
     accessToken: 'pk.eyJ1IjoiamVjb3JjaGFyZCIsImEiOiJja2FpODFqdG4wNDVoMnJxcjBkczBxY3d2In0.XfYne734PhjUYVAGmTwUsw'
 }).addTo(map);
 
-function getActivitiesZoom(res) {
-    let positionId = window.location.href.indexOf("id=") + 3;
-    
-    if (positionId != -1) {
-        let id = window.location.href.slice(positionId);
-        sessionStorage.id = id;
-    }
-
-    const activities_link = `https://www.strava.com/api/v3/activities/${sessionStorage.id}?access_token=${res.access_token}`
-    var settings = {
-        "async": true,
-        "crossDomain": true,
-        "url": activities_link,
-        "method": "GET",
-        "headers": {
-            "x-rapidapi-host": "35.188.171.173:8080",
-            "x-rapidapi-key": "SIGN-UP-FOR-KEY",
-            "content-type": "application/x-www-form-urlencoded"
-        },
-        "data": {
-            'includeAllEfforts': true
-        }
-    }
-    $.ajax(settings).done(function (response) {
+function postActivitiesZoom(response) {
         var coordonnés = L.Polyline.fromEncoded(response.map.summary_polyline).getLatLngs()    
 
         let color = new Array()
@@ -59,5 +36,4 @@ function getActivitiesZoom(res) {
         }).addTo(map);
 
         map.fitBounds(polyline.getBounds());
-    });
 }

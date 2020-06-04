@@ -20,7 +20,7 @@
         <link rel="stylesheet" href="../css/style.css" media="screen">
         <link rel="stylesheet" href="../css/menunav.css" media="screen">
         <link rel="stylesheet" href="../css/header.css" media="screen">
-        <link rel="stylesheet" href="../css/strava.css" media="screen">
+        <link rel="stylesheet" href="../css/activityMap.css" media="screen">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
         integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
         crossorigin=""/>
@@ -54,60 +54,20 @@
         </div>
         
         <div id="main">
-            <section id="activite">
-
-            </section>
-
-            <section id="resumeDeSeance">
-                <div id="mapid"></div>
-                <!-- <div id="distance" class="firstCase"></div>
-                <div id="vitesse"  class="firstCase"></div> -->
-                <div id="myGraph">
-                    <canvas id="graph1"></canvas>
-                </div>
-            </section>
-
-            <section id="segmentDeReference">
-                <p id="segmentDeReferenceT">Segments de réference pour vos séance</p>
-                <p id="segmentDeReferenceHelp">?</p>
-                <div id="segmentDeReferenceSprint" class="segmentDeReferenceDiv">
-                    <p class="segmentDeReferenceDivT">Séance de sprint</p>
-                    <div class="select">
-                        <select class="segment" id="segmentDeReferenceSprintSelect">
-                            <option value="" disabled selected>segment</option>
-                        </select>
-                    </div>
-                </div>
-                <div id="segmentDeReference30s/30s" class="segmentDeReferenceDiv">
-                    <p class="segmentDeReferenceDivT">Séance de PMA (30sec/30sec)</p>
-                    <div class="select">
-                        <select class="segment" id="segmentDeReference30s/30sSelect">
-                            <option value="" disabled selected>segment</option>
-                        </select>
-                    </div>
-                </div>
-                <div id="segmentDeReference1m/1m" class="segmentDeReferenceDiv">
-                    <p class="segmentDeReferenceDivT">Séance de PMA (1min/1min)</p>
-                    <div class="select">
-                        <select class="segment" id="segmentDeReference1m/1mSelect">
-                            <option value="" disabled selected>segment</option>
-                        </select>
-                    </div>
-                </div>
-                <div id="segmentDeReference2m/2m" class="segmentDeReferenceDiv">
-                    <p class="segmentDeReferenceDivT">Séance de PMA (2min/2min)</p>
-                    <div class="select">
-                        <select class="segment" id="segmentDeReference2m/2mSelect">
-                            <option value="" disabled selected>segment</option>      
-                        </select>
-                    </div>
-                </div>
-                <button id="save">sauvegarder</button>
-            </section>
+            <div id="mapid"></div>
         </div>
-        <script src="../js/strava_api.js"></script>
+
+        <script>
+            setInterval(function(){
+                var h = window.innerHeight
+                || document.documentElement.clientHeight
+                || document.body.clientHeight;
+                document.getElementById("mapid").style.height = h + "px";
+            }, 300);
+            
+        </script>
+        <script src="../js/activityMap.js"></script>
         <script src="../js/language.js"></script>
         <script src="../js/menunav_prg.js"></script>
     </body>
-
 </html>

@@ -16,8 +16,6 @@ if (positionCode != -1) {
                 document.getElementById("strava").innerText = "strava";
                 document.getElementById("strava").href = "../strava/strava.html";
                 getActivities(data)
-                getSegment(data);
-                getSegmentRef(data);
             });
     }
 }
@@ -48,6 +46,10 @@ if (localStorage.oauthStatus || localStorage.oauthStatus == "ok") {
     reAuthorize();
 }
 
+if (localStorage.oauthStatusMap || localStorage.oauthStatusMap == "ok") {
+    document.getElementById("activitieMapLink").href = "../strava/activityMap.html"
+}
+
 $(document).ajaxError(function() {
     alert("erreur de chargement des données, veuillez réessayer plus tard.")
 })
@@ -69,7 +71,6 @@ function getActivities(res) {
         }
     }
     $.ajax(settings).done(function (response) {
-        console.log(response)
         for (var i = 0; i < response.length; i++) {
             var activities = document.createElement("div");
             activities.id = i

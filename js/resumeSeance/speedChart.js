@@ -1,52 +1,7 @@
-function getSpeedChart(res) {
-    const acces = res;
-    let positionId = window.location.href.indexOf("id=") + 3;
-    
-    if (positionId != -1) {
-        let id = window.location.href.slice(positionId);
-        sessionStorage.id = id;
-    }
-
-    const activities_link = `https://www.strava.com/api/v3/activities/${sessionStorage.id}?access_token=${res.access_token}`
-    var settings = {
-        "async": true,
-        "crossDomain": true,
-        "url": activities_link,
-        "method": "GET",
-        "headers": {
-            "x-rapidapi-host": "35.188.171.173:8080",
-            "x-rapidapi-key": "SIGN-UP-FOR-KEY",
-            "content-type": "application/x-www-form-urlencoded"
-        },
-        "data": {
-            'includeAllEfforts': true
-        }
-    }
-    $.ajax(settings).done(function (response) {
-        getActivitiesStreamsSpeedChart(acces, sessionStorage.id, response)
-    });
-}
-
-function getActivitiesStreamsSpeedChart(res, id, activitie) {
-        const activitiesStreams = `https://www.strava.com/api/v3/activities/${id}/streams?access_token=${res.access_token}`
-        var settings = {
-            "async": true,
-            "crossDomain": true,
-            "url": activitiesStreams,
-            "method": "GET",
-            "headers": {
-                "x-rapidapi-host": "35.188.171.173:8080",
-                "x-rapidapi-key": "SIGN-UP-FOR-KEY",
-                "content-type": "application/x-www-form-urlencoded"
-            },
-            "data": {
-                
-            }
-        }
-        $.ajax(settings).done(function (response) {
+function postActivitiesStreamsSpeedChart(response, activitie) {
             let vitesse = new Array()
-            for (var i = 0; i < response[0].data.length; i++) {
-                vitesse[i] = (Math.round(((response[0].data[i + 1] -response[0].data[i]) * response[0].data.length / activitie.moving_time) * 36))/10
+            for (var i = 0; i < response.data.length; i++) {
+                vitesse[i] = (Math.round(((response.data[i + 1] -response.data[i]) * response.data.length / activitie.moving_time) * 36))/10
             }
             vitesse.splice(vitesse.length - 1, 1)
     
@@ -218,5 +173,4 @@ function getActivitiesStreamsSpeedChart(res, id, activitie) {
                     }
                 }
             })
-        })
     }
