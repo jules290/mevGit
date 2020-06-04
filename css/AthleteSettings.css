@@ -47,7 +47,6 @@ body {
     transition: 0.4s;
     width: 40%;
     color: rgb(32, 32, 32);
-    font-size: 18px;
 }
 
 .settingInput:focus{
@@ -59,23 +58,18 @@ body {
     text-align: center;
     letter-spacing: 3px;
     word-spacing: 1px;
-    white-space: nowrap;
+    white-space: wrap;
     font-variant: small-caps;
 }
 
 .settingInputP {
     color: rgb(66, 66, 66);
     text-align: center;
-    font-size: 17.5px;
-    margin-top: -25px;
 }
 
 .help {
-    font-size: 20px;
     background-color: rgb(124, 124, 124);
     border-radius: 100px;
-    width: 32px;
-    height: 32px;
     color: white;
     text-align: center;
     outline: none;
@@ -84,7 +78,6 @@ body {
 
 .settingInputLink {
     position: relative;
-    margin-top: -92px;
     margin-left: 70%;
 }
 
@@ -115,9 +108,87 @@ body {
     color: rgb(251, 251, 251);
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 300px) {
     #sauvegarder {
         font-size: 12px;
+    }
+
+    .settingInputTitle {
+        font-size: 16px;
+    }
+    .settingInputP {
+        font-size: 12px;
+        margin-top: -12px;
+    }
+
+    .help {
+        font-size: 14px;
+        width: 20px;
+        height: 20px;
+    }
+
+    .settingInputLink {
+        margin-top: -70%;
+    }
+
+    .settingInput {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (min-width: 300px) {
+    #sauvegarder {
+        font-size: 12px;
+    }
+
+    .settingInputTitle {
+        font-size: 20px;
+    }
+    .settingInputP {
+        font-size: 13px;
+        margin-top: -15px;
+    }
+
+    .help {
+        font-size: 15px;
+        width: 22px;
+        height: 22px;
+    }
+
+    .settingInputLink {
+        margin-top: -49%;
+    }
+
+    .settingInput {
+        font-size: 13px;
+    }
+}
+
+@media only screen and (min-width: 450px) {
+    #sauvegarder {
+        font-size: 12px;
+    }
+
+    .settingInputTitle {
+        font-size: 24px;
+    }
+    .settingInputP {
+        font-size: 14px;
+        margin-top: -18px;
+    }
+
+    .help {
+        font-size: 16px;
+        width: 23px;
+        height: 23px;
+    }
+
+    .settingInputLink {
+        margin-top: -39%;
+    }
+
+    .settingInput {
+        font-size: 14px;
     }
 }
 
@@ -125,10 +196,54 @@ body {
     #sauvegarder {
         font-size: 12px;
     }
+
+    .settingInputTitle {
+        font-size: 28px;
+    }
+    .settingInputP {
+        font-size: 15px;
+        margin-top: -22px;
+    }
+
+    .help {
+        font-size: 18px;
+        width: 25px;
+        height: 25px;
+    }
+
+    .settingInputLink {
+        margin-top: -32%;
+    }
+
+    .settingInput {
+        font-size: 15px;
+    }
 }
 
 @media only screen and (min-width: 768px) {
     #sauvegarder {
+        font-size: 16px;
+    }
+
+    .settingInputTitle {
+        font-size: 32px;
+    }
+    .settingInputP {
+        font-size: 16px;
+        margin-top: -25px;
+    }
+
+    .help {
+        font-size: 20px;
+        width: 32px;
+        height: 32px;
+    }
+
+    .settingInputLink {
+        margin-top: -28%;
+    }
+
+    .settingInput {
         font-size: 16px;
     }
 }
@@ -137,10 +252,54 @@ body {
     #sauvegarder {
         font-size: 19px;
     }
+
+    .settingInputTitle {
+        font-size: 36px;
+    }
+    .settingInputP {
+        font-size: 17.5px;
+        margin-top: -25px;
+    }
+
+    .help {
+        font-size: 20px;
+        width: 32px;
+        height: 32px;
+    }
+
+    .settingInputLink {
+        margin-top: -26%;
+    }
+
+    .settingInput {
+        font-size: 17px;
+    }
 }
 
 @media only screen and (min-width: 1200px) {
     #sauvegarder {
         font-size: 22px;
+    }
+
+    .settingInputTitle {
+        font-size: 40px;
+    }
+    .settingInputP {
+        font-size: 17.5px;
+        margin-top: -25px;
+    }
+
+    .help {
+        font-size: 20px;
+        width: 32px;
+        height: 32px;
+    }
+
+    .settingInputLink {
+        margin-top: -23%;
+    }
+
+    .settingInput {
+        font-size: 18px;
     }
 }
