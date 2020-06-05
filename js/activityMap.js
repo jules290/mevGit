@@ -12,7 +12,6 @@ if (positionCode != -1) {
 
         $.post(auth_link,
             function(data){
-                console.log(data)
                 localStorage.refresh_tokenMap = data.refresh_token;
                 localStorage.oauthStatusMap = "ok";
                 document.getElementById("strava").innerText = "strava";
@@ -105,10 +104,6 @@ function getActivities(res) {
                 opacity: 0.7,
                 lineJoin: 'round',
                 smoothFactor: 0.0,
-            }).addTo(map);
-
-            L.Polyline.mouseover(function () {
-                alert()
             }).addTo(map);
         
             map.fitBounds(polyline.getBounds());
