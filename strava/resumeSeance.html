@@ -79,15 +79,54 @@
                 </div>
                 <div id="mapid"></div>
                 <div id="elevationBox">
-                    <div id="elevationBoxLegend" class="boxLegend"></div>
+                    <div id="elevationBoxLegendLeft" class="boxLegendLeft boxLegend">
+                        <p class="title">élevation</p>
+                        <p class="max" id="elevationMax">élevation max:</p>
+                        <p class="moy" id="elevationMoy">élevation min:</p>
+                    </div>
                     <div id="elevationGraph">
-                        <canvas id="graphElevation"></canvas>
+                        <canvas id="graphElevation" class="graph"></canvas>
+                        <svg width="700" id="svgElevation" class="svg">
+                            <line x1="21" x2="21" y1="0" y2="0" class="" id="barElevation"></line>
+                        </svg>
+                    </div>
+                    <div id="elevationBoxLegendRight" class="boxLegendRight boxLegend">
+                        <p class="instantData" id="elevation">élévation:</p>
+                        <p class="instantData" id="grade">pente:</p>
                     </div>
                 </div>
 
                 <div id="speedBox">
+                    <div id="elevationBoxLegendLeft" class="boxLegendLeft boxLegend">
+                        <p class="title">vitesse</p>
+                        <p class="max" id="vitesseMax">vitesse max:</p>
+                        <p class="moy" id="vitesseMoy">vitesse moy:</p>
+                    </div>
                     <div id="speedGraph">
-                        <canvas id="graphSpeed"></canvas>
+                        <canvas id="graphSpeed" class="graph"></canvas>
+                        <svg width="700" id="svgSpeed" class="svg">
+                            <line x1="21" x2="21" y1="0" y2="0" class="" id="barSpeed"></line>
+                        </svg>
+                    </div>
+                    <div id="elevationBoxLegendRight" class="boxLegendRight boxLegend">
+                        <p class="instantData" id="vitesse">vitesse:</p>
+                    </div>
+                </div>
+
+                <div id="powerBox">
+                    <div id="elevationBoxLegendLeft" class="boxLegendLeft boxLegend">
+                        <p class="title">puissance</p>
+                        <p class="max" id="puissanceMax">puissance max:</p>
+                        <p class="moy" id="puissanceMoy">puissance moy:</p>
+                    </div>
+                    <div id="powerGraph">
+                        <canvas id="graphPower" class="graph"></canvas>
+                        <svg width="700" id="svgPower" class="svg">
+                            <line x1="21" x2="21" y1="0" y2="0" class="" id="barPower"></line>
+                        </svg>
+                    </div>
+                    <div id="elevationBoxLegendRight" class="boxLegendRight boxLegend">
+                        <p class="instantData" id="power">puissance:</p>
                     </div>
                 </div>
             </section>
@@ -98,6 +137,8 @@
         <script src="../js/resumeSeance/leafletMap.js"></script>
         <script src="../js/resumeSeance/speedChart.js"></script>
         <script src="../js/resumeSeance/elevationChart.js"></script>
+        <script src="../js/resumeSeance/watt.js"></script>
+        <script src="../js/resumeSeance/legend.js"></script>
         <script src="../js/language.js"></script>
         <script src="../js/menunav_prg.js"></script>
     </body>

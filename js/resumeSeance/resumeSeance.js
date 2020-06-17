@@ -18,11 +18,6 @@ function reAuthorize() {
         localStorage.access_token = res.access_token;
         getAthlete(res);
         getActivity(res);
-        // postActivitiestempsDistance(res)
-        // postActivitiesZoom(res)
-        // postAthleteName(res)
-        // postSpeedChart(res)
-        // postElevationChart(res)
     })
 }
 

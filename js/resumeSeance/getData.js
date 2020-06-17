@@ -69,8 +69,30 @@ function getActivityStream(res, id, activitie) {
         }
     }
     $.ajax(settings).done(function (response) {
-        postActivitiesStreams(response[1], activitie);
-        postActivitiesStreamsElevationChart(response[0], activitie);
-        postActivitiesStreamsSpeedChart(response[1], activitie)
+        postActivitiesStreams(response, activitie);
+        postActivitiesStreamsElevationChart(response, activitie);
+        postActivitiesStreamsSpeedChart(response, activitie)
+        getGear(res, response, activitie, activitie.gear.id)
+    })
+}
+
+function getGear(res, activityStream, activitie, id) {
+    const gear_link = `https://www.strava.com/api/v3//gear/${id}?access_token=${res.access_token}`
+    var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": gear_link,
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-host": "35.188.171.173:8080",
+            "x-rapidapi-key": "SIGN-UP-FOR-KEY",
+            "content-type": "application/x-www-form-urlencoded"
+        },
+        "data": {
+        }
+    }
+    $.ajax(settings).done(function (response) {
+        postWatt(activityStream, activitie, response)
+        postLegend(activityStream, activitie, response)
     })
 }

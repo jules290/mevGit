@@ -25,8 +25,8 @@ function postActivitiestempsDistance(response) {
 
 function postActivitiesStreams(response, activitie) {
         let vitesse = new Array()
-        for (var i = 0; i < response.data.length; i++) {
-            vitesse[i] = (Math.round(((response.data[i + 1] -response.data[i]) * response.data.length / activitie.moving_time) * 36))/10
+        for (var i = 0; i < response[0].data.length; i++) {
+            vitesse[i] = (Math.round(((response[0].data[i + 1] -response[0].data[i]) * response[0].data.length / activitie.moving_time) * 36))/10
         }
         vitesse.splice(vitesse.length - 1, 1)
 

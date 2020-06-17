@@ -85,28 +85,30 @@ function getActivities(res) {
     $.ajax(settings).done(function (response) {
         var pol = new Array()
         for (let i = 0; i < response.length; i++) {
-            pol[i] = response[i]
-            var coordonnés = L.Polyline.fromEncoded(pol[i].map.summary_polyline).getLatLngs()
-        
-            let color = new Array()
-            color[0] = "red"
-            color[1] = "green"
-            color[2] = "blue"
-            color[3] = "orange"
-            color[4] = "purple"
-            color[5] = "yellow"
-        
-            let pColor = color[Math.floor(Math.random() * color.length)]
-               
-            var polyline = L.polyline(coordonnés, {
-                color: pColor,
-                weight: 5,
-                opacity: 0.7,
-                lineJoin: 'round',
-                smoothFactor: 0.0,
-            }).addTo(map);
-        
-            map.fitBounds(polyline.getBounds());
+            if (response[i].max_speed > 0) {
+                pol[i] = response[i]
+                var coordonnés = L.Polyline.fromEncoded(pol[i].map.summary_polyline).getLatLngs()
+            
+                let color = new Array()
+                color[0] = "red"
+                color[1] = "green"
+                color[2] = "blue"
+                color[3] = "orange"
+                color[4] = "purple"
+                color[5] = "yellow"
+            
+                let pColor = color[Math.floor(Math.random() * color.length)]
+                   
+                var polyline = L.polyline(coordonnés, {
+                    color: pColor,
+                    weight: 5,
+                    opacity: 0.7,
+                    lineJoin: 'round',
+                    smoothFactor: 0.0,
+                }).addTo(map);
+            
+                map.fitBounds(polyline.getBounds());
+            }
         }
     })
 }

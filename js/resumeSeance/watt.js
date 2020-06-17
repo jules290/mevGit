@@ -1,5 +1,5 @@
-function postActivitiesStreamsElevationChart(response, activitie) {
-    let Elevation = new Array()
+function postWatt(response, activitie, gear) {
+	let Elevation = new Array()
     for (var i = 0; i < response[1].data.length; i++) {
         Elevation[i] = response[1].data[i]
     }
@@ -355,96 +355,94 @@ function postActivitiesStreamsElevationChart(response, activitie) {
 		watt[i] = Math.round(watt[i] * 10) / 10
 	}
 	watt.splice(vitesse.length - 1, 1)
-                
-    var ctx = document.getElementById('graphElevation');
-    var svg = document.getElementById("svgElevation");
-    var bar = document.getElementById("barElevation");
-    let height;
+				
+        var ctx = document.getElementById('graphPower');
+        var svg = document.getElementById("svgPower");
+        var bar = document.getElementById("barPower");
 
-    if (document.documentElement.clientWidth > 1200) {
-        height = 120;
-        svg.style.height = "120px";
-        svg.style.marginTop = "-120px";
-        svg.style.width = "70%";
-        bar.setAttribute('y1', 0);
-        bar.setAttribute('y2', 120);
-    }
-    else if (document.documentElement.clientWidth > 1000) {
-        height = 120;
-        svg.style.height = "120px";
-        svg.style.marginTop = "-120px";
-        svg.style.width = "70%";
-        bar.setAttribute('y1', 0);
-        bar.setAttribute('y2', 120);
-    }
-    else if (document.documentElement.clientWidth > 800) {
-        height = 120;
-        svg.style.height = "120px";
-        svg.style.marginTop = "-120px";
-        svg.style.width = "70%";
-        bar.setAttribute('y1', 0);
-        bar.setAttribute('y2', 120);
-    }
-    else if (document.documentElement.clientWidth > 600) {
-        height = 120;
-        svg.style.height = "120px";
-        svg.style.marginTop = "-120px";
-        svg.style.width = "70%";
-        bar.setAttribute('y1', 0);
-        bar.setAttribute('y2', 120);
-    }
-    else if (document.documentElement.clientWidth > 400) {
-        height = 120;
-        svg.style.height = "120px";
-        svg.style.marginTop = "-120px";
-        svg.style.width = "70%";
-        bar.setAttribute('y1', 0);
-        bar.setAttribute('y2', 120);
-    }
-    else if (document.documentElement.clientWidth > 300) {
-        height = 120;
-        svg.style.height = "120px";
-        svg.style.marginTop = "-120px";
-        svg.style.width = "70%";
-        bar.setAttribute('y1', 0);
-        bar.setAttribute('y2', 120);
-    }
-    else if (document.documentElement.clientWidth > 200) {
-        height = 120;
-        svg.style.height = "120px";
-        svg.style.marginTop = "-120px";
-        svg.style.width = "70%";
-        bar.setAttribute('y1', 0);
-        bar.setAttribute('y2', 120);
-    }
-    else {
-        height = 120;
-        svg.style.height = "120px";
-        svg.style.marginTop = "-120px";
-        svg.style.width = "70%";
-        bar.setAttribute('y1', 0);
-        bar.setAttribute('y2', 120);
-    }
-
-    ctx.height =  height;
-
+        if (document.documentElement.clientWidth > 1200) {
+            ctx.height = 120;
+            svg.style.height = "120px";
+            svg.style.marginTop = "-120px";
+            svg.style.width = "70%";
+            bar.setAttribute('y1', 0);
+            bar.setAttribute('y2', 120);
+        }
+        else if (document.documentElement.clientWidth > 1000) {
+            ctx.height = 120;
+            svg.style.height = "120px";
+            svg.style.marginTop = "-120px";
+            svg.style.width = "70%";
+            bar.setAttribute('y1', 0);
+            bar.setAttribute('y2', 120);
+        }
+        else if (document.documentElement.clientWidth > 800) {
+            ctx.height = 120;
+            svg.style.height = "120px";
+            svg.style.marginTop = "-120px";
+            svg.style.width = "70%";
+            bar.setAttribute('y1', 0);
+            bar.setAttribute('y2', 120);
+        }
+        else if (document.documentElement.clientWidth > 600) {
+            ctx.height = 120;
+            svg.style.height = "120px";
+            svg.style.marginTop = "-120px";
+            svg.style.width = "70%";
+            bar.setAttribute('y1', 0);
+            bar.setAttribute('y2', 120);
+        }
+        else if (document.documentElement.clientWidth > 400) {
+            ctx.height = 120;
+            svg.style.height = "120px";
+            svg.style.marginTop = "-120px";
+            svg.style.width = "70%";
+            bar.setAttribute('y1', 0);
+            bar.setAttribute('y2', 120);
+        }
+        else if (document.documentElement.clientWidth > 300) {
+            ctx.height = 120;
+            svg.style.height = "120px";
+            svg.style.marginTop = "-120px";
+            svg.style.width = "70%";
+            bar.setAttribute('y1', 0);
+            bar.setAttribute('y2', 120);
+        }
+        else if (document.documentElement.clientWidth > 200) {
+            ctx.height = 120;
+            svg.style.height = "120px";
+            svg.style.marginTop = "-120px";
+            svg.style.width = "70%";
+            bar.setAttribute('y1', 0);
+            bar.setAttribute('y2', 120);
+        }
+        else {
+            ctx.height = 120;
+            svg.style.height = "120px";
+            svg.style.marginTop = "-120px";
+            svg.style.width = "70%";
+            bar.setAttribute('y1', 0);
+            bar.setAttribute('y2', 120);
+        }
+    
     var kilometrage = new Array()
-    for (let i = 0; i < ZoomElevation.length; i++) {
+    for (let i = 0; i < watt.length; i++) {
         kilometrage[i] = "      "
     }
-    
+
     var data = {
         labels: kilometrage,
         datasets: [{
-            label: 'altitude (m)',
-            data: ZoomElevation,
+            label: 'puissance (w)',
+            data: watt,
             borderColor: [
-                'rgb(170, 170, 170)',
+                'rgb(60, 60, 60)',
             ],
             backgroundColor: [
-                'rgb(170, 170, 170)',
+                'rgb(6, 141, 251, 0.0)',
             ],
-            borderWidth: 1
+            borderWidth: 1,
+            showLine: true,
         }]
     }
                 
@@ -461,7 +459,7 @@ function postActivitiesStreamsElevationChart(response, activitie) {
             scales: {
                 yAxes: [{
                     ticks: {
-                        beginAtZero: false,
+                        beginAtZero: false
                     },
                     display: false,
                 }]
@@ -476,16 +474,16 @@ function postActivitiesStreamsElevationChart(response, activitie) {
     })
 
     let xClic;
-    let ctxWidth = document.getElementById("graphElevation").style.width;
+    let ctxWidth = document.getElementById("graphPower").style.width;
     sessionStorage.ctxWidth = (ctxWidth.slice(0, ctxWidth.length - 2));
     let fraction;
     let elevation;
 
     var barElevation = document.getElementById("barElevation");
 	var barSpeed = document.getElementById("barSpeed");
-	var barPower = document.getElementById("barPower");
+    var barPower = document.getElementById("barPower");
 
-    document.getElementById("svgElevation").onmousemove = function (event) {
+    document.getElementById("svgPower").onmousemove = function (event) {
 	    xClic = event.offsetX;
         xClic = event.offsetX;
 		if (xClic >= 21 && xClic <= sessionStorage.ctxWidth - 9) {
