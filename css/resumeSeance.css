@@ -4,9 +4,10 @@ body {
 
 #resumeDeSeance {
     position: absolute;
-    width: 90%;
+    width: auto;
     height: auto;
-    left: 5%;
+    left: 7px;
+    right: 7px;
     top: 57px;
     border: 1px solid rgb(155, 155, 155);
 }
@@ -14,6 +15,13 @@ body {
 #mapid {
     width: 100%;
     z-index: 5;
+}
+
+#mapFilter {
+    width: 100%;
+    z-index: 7;
+    background-color: rgba(0, 0, 0, 0);
+    position: relative;
 }
 
 .firstRow {
@@ -48,7 +56,7 @@ body {
 
 #resumeDeSeanceTitle {
     width: 100%;
-    height: 40px;
+    height: auto;
     background-color: rgb(238, 238, 238);
     border-bottom: 1px solid rgb(155, 155, 155);
 }
@@ -63,10 +71,13 @@ body {
     display: inline-block;
     font-size: 20px;
     padding-top: 4px;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .svg {
     position: absolute;
+    outline: none;
 }
 
 #elevationBox {
@@ -77,7 +88,7 @@ body {
 }
 
 #elevationGraph {
-    width: 70%;
+    
 }
 
 #speedBox {
@@ -87,7 +98,7 @@ body {
 }
 
 #speedGraph {
-    width: 70%;
+    
 }
 
 #powerBox {
@@ -97,7 +108,16 @@ body {
 }
 
 #powerGraph {
-    width: 70%;
+    
+}
+
+.box {
+    display: flex;
+    flex-direction: row;
+}
+
+.graphBox {
+    
 }
 
 .boxLegend {
@@ -105,14 +125,6 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-.boxLegendLeft {
-    width: 15%;
-}
-
-.boxLegendRight {
-    width: 15%;
 }
 
 .title {
@@ -124,8 +136,6 @@ body {
 .max {
     color: rgb(95, 95, 95);
     margin: 0px;
-    margin-top: 5%;
-    margin-bottom: 5%;
     margin-left: 2px;
 }
 
@@ -151,15 +161,147 @@ body {
     stroke: #333;
     stroke-width: 1px;
     pointer-events: none;
-    /* width: 1px;
-    height: 107px;
-    background-color: black;
-    position: absolute;
-    margin-top: -127px;
-    margin-left: 21px; */
-} 
+}
 
-@media only screen and (max-width: 600px) {
+.extent {
+    stroke: #fff;
+    fill-opacity: 0.125;
+    shape-rendering: crispEdges;
+}
+
+.resize {
+    
+}
+
+.resizeBar {
+    fill-opacity: 0.0;
+}
+
+@media only screen and (max-width: 300px) {
+    .firstCase {
+        height: 150px;
+    }
+
+    .firstCaseData {
+        color: rgb(56, 56, 56);
+        font-size: 14px;
+    }
+
+    .firstCaseTitle {
+        font-size: 10px;
+    }
+
+    .instantData {
+        font-size: 8px;
+    }
+
+    .resumeDeSeanceTitle {
+        font-size: 12px;
+    }
+
+    #mapid {
+        height: 200px;
+    }
+
+    #mapFilter {
+        height: 200px;
+        margin-top: -200px;
+    }
+    
+    .graphBox {
+        width: 80%
+    }
+    
+    .boxLegendLeft {
+        width: 20%;
+    }
+
+    .boxLegendRight {
+        width: 0%;
+    }
+
+    .title {
+        font-size: 11px;
+    }
+
+    .max {
+        font-size: 9px;
+        margin-top: 0%;
+        margin-bottom: 0%;
+    }
+    
+    .moy {
+        font-size: 9px;
+    }
+
+    .instantData {
+        font-size: 10px;
+    }
+}
+
+@media only screen and (min-width: 300px) {
+    .firstCase {
+        height: 175px;
+    }
+
+    .firstCaseData {
+        color: rgb(56, 56, 56);
+        font-size: 16px;
+    }
+
+    .firstCaseTitle {
+        font-size: 11px;
+    }
+
+    .instantData {
+        font-size: 11px;
+    }
+
+    .resumeDeSeanceTitle {
+        font-size: 14px;
+    }
+
+    #mapid {
+        height: 200px;
+    }
+
+    #mapFilter {
+        height: 200px;
+        margin-top: -200px;
+    }
+    
+    .graphBox {
+        width: 80%
+    }
+    
+    .boxLegendLeft {
+        width: 20%;
+    }
+
+    .boxLegendRight {
+        width: 0%;
+    }
+
+    .title {
+        font-size: 12px;
+    }
+
+    .max {
+        font-size: 10px;
+        margin-top: 0%;
+        margin-bottom: 0%;
+    }
+    
+    .moy {
+        font-size: 10px;
+    }
+
+    .instantData {
+        font-size: 11px;
+    }
+}
+
+@media only screen and (min-width: 450px) {
     .firstCase {
         height: 150px;
     }
@@ -177,16 +319,47 @@ body {
         font-size: 12px;
     }
 
+    .resumeDeSeanceTitle {
+        font-size: 16px;
+    }
+
     #mapid {
         height: 200px;
     }
 
+    #mapFilter {
+        height: 200px;
+        margin-top: -200px;
+    }
+    
+    .graphBox {
+        width: 80%
+    }
+    
+    .boxLegendLeft {
+        width: 20%;
+    }
+
+    .boxLegendRight {
+        width: 0%;
+    }
+
+    .title {
+        font-size: 13px;
+    }
+
     .max {
         font-size: 11px;
+        margin-top: 1%;
+        margin-bottom: 1%;
     }
     
     .moy {
         font-size: 11px;
+    }
+
+    .instantData {
+        font-size: 12px;
     }
 }
 
@@ -208,16 +381,47 @@ body {
         font-size: 13px;
     }
 
+    .resumeDeSeanceTitle {
+        font-size: 17px;
+    }
+
     #mapid {
         height: 225px;
     }
 
+    #mapFilter {
+        height: 225px;
+        margin-top: -225px;
+    }
+    
+    .graphBox {
+        width: 80%
+    }
+    
+    .boxLegendLeft {
+        width: 20%;
+    }
+
+    .boxLegendRight {
+        width: 0%;
+    }
+
+    .title {
+        font-size: 14px;
+    }
+
     .max {
         font-size: 12px;
+        margin-top: 2%;
+        margin-bottom: 2%;
     }
     
     .moy {
         font-size: 12px;
+    }
+
+    .instantData {
+        font-size: 13px;
     }
 }
 
@@ -239,16 +443,47 @@ body {
         font-size: 14px;
     }
 
+    .resumeDeSeanceTitle {
+        font-size: 18px;
+    }
+
     #mapid {
         height: 250px;
     }
 
+    #mapFilter {
+        height: 250px;
+        margin-top: -250px;
+    }
+    
+    .graphBox {
+        width: 70%
+    }
+    
+    .boxLegendLeft {
+        width: 15%;
+    }
+
+    .boxLegendRight {
+        width: 15%;
+    } 
+
+    .title {
+        font-size: 15px;
+    }
+
     .max {
         font-size: 13px;
+        margin-top: 3%;
+        margin-bottom: 3%;
     }
     
     .moy {
         font-size: 13px;
+    }
+
+    .instantData {
+        font-size: 14px;
     }
 }
 
@@ -270,16 +505,47 @@ body {
         font-size: 16px;
     }
 
+    .resumeDeSeanceTitle {
+        font-size: 20px;
+    }
+
     #mapid {
         height: 275px;
     }
 
+    #mapFilter {
+        height: 275px;
+        margin-top: -275px;
+    }
+    
+    .graphBox {
+        width: 70%
+    }
+    
+    .boxLegendLeft {
+        width: 15%;
+    }
+
+    .boxLegendRight {
+        width: 15%;
+    } 
+
+    .title {
+        font-size: 16px;
+    }
+
     .max {
         font-size: 14px;
+        margin-top: 4%;
+        margin-bottom: 4%;
     }
     
     .moy {
         font-size: 14px;
+    }
+
+    .instantData {
+        font-size: 15px;
     }
 }
 
@@ -301,15 +567,46 @@ body {
         font-size: 18px;
     }
 
+    .resumeDeSeanceTitle {
+        font-size: 22px;
+    }
+
     #mapid {
         height: 300px;
     }
 
+    #mapFilter {
+        height: 300px;
+        margin-top: -300px;
+    }
+    
+    .graphBox {
+        width: 70%
+    }
+    
+    .boxLegendLeft {
+        width: 15%;
+    }
+
+    .boxLegendRight {
+        width: 15%;
+    } 
+
+    .title {
+        font-size: 17px;
+    }
+
     .max {
         font-size: 15px;
+        margin-top: 5%;
+        margin-bottom: 5%;
     }
     
     .moy {
         font-size: 15px;
+    }
+
+    .instantData {
+        font-size: 16px;
     }
 }

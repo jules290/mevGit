@@ -78,16 +78,25 @@
                     </div>
                 </div>
                 <div id="mapid"></div>
-                <div id="elevationBox">
+                <div id="mapFilter"></div>
+                
+                <div id="elevationBox" class="box">
                     <div id="elevationBoxLegendLeft" class="boxLegendLeft boxLegend">
                         <p class="title">élevation</p>
-                        <p class="max" id="elevationMax">élevation max:</p>
-                        <p class="moy" id="elevationMoy">élevation min:</p>
+                        <p class="max" id="elevationMax">max:</p>
+                        <p class="moy" id="elevationMoy">min:</p>
                     </div>
-                    <div id="elevationGraph">
+                    <div id="elevationGraph" class="graphBox">
                         <canvas id="graphElevation" class="graph"></canvas>
                         <svg width="700" id="svgElevation" class="svg">
                             <line x1="21" x2="21" y1="0" y2="0" class="" id="barElevation"></line>
+                            <rect id="extent" class="extent" x="0" width="0" height="100" style="cursor: move;"></rect>
+                            <g id="resizeLeft" class="resize" style="cursor: ew-resize;">
+                                <rect class="resizeBar" x="-3" width="6" height="100"></rect>
+                            </g>
+                            <g id="resizeRight" class="resize" style="cursor: ew-resize;">
+                                <rect class="resizeBar" x="-3" width="6" height="100"></rect>
+                            </g>
                         </svg>
                     </div>
                     <div id="elevationBoxLegendRight" class="boxLegendRight boxLegend">
@@ -96,13 +105,13 @@
                     </div>
                 </div>
 
-                <div id="speedBox">
+                <div id="speedBox" class="box">
                     <div id="elevationBoxLegendLeft" class="boxLegendLeft boxLegend">
                         <p class="title">vitesse</p>
-                        <p class="max" id="vitesseMax">vitesse max:</p>
-                        <p class="moy" id="vitesseMoy">vitesse moy:</p>
+                        <p class="max" id="vitesseMax">max:</p>
+                        <p class="moy" id="vitesseMoy">moy:</p>
                     </div>
-                    <div id="speedGraph">
+                    <div id="speedGraph" class="graphBox">
                         <canvas id="graphSpeed" class="graph"></canvas>
                         <svg width="700" id="svgSpeed" class="svg">
                             <line x1="21" x2="21" y1="0" y2="0" class="" id="barSpeed"></line>
@@ -113,13 +122,13 @@
                     </div>
                 </div>
 
-                <div id="powerBox">
+                <div id="powerBox" class="box">
                     <div id="elevationBoxLegendLeft" class="boxLegendLeft boxLegend">
                         <p class="title">puissance</p>
-                        <p class="max" id="puissanceMax">puissance max:</p>
-                        <p class="moy" id="puissanceMoy">puissance moy:</p>
+                        <p class="max" id="puissanceMax">max:</p>
+                        <p class="moy" id="puissanceMoy">moy:</p>
                     </div>
-                    <div id="powerGraph">
+                    <div id="powerGraph" class="graphBox">
                         <canvas id="graphPower" class="graph"></canvas>
                         <svg width="700" id="svgPower" class="svg">
                             <line x1="21" x2="21" y1="0" y2="0" class="" id="barPower"></line>
@@ -131,6 +140,7 @@
                 </div>
             </section>
         </div>
+        <script src="../js/resumeSeance/resumeSeanceDisplay.js"></script>
         <script src="../js/resumeSeance/resumeSeance.js"></script>
         <script src="../js/resumeSeance/getData.js"></script>
         <script src="../js/resumeSeance/data.js"></script>

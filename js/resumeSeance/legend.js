@@ -14,9 +14,8 @@ function postLegend(response, activitie, gear) {
 	}
 	
 	let ZoomVitesse = new Array()
-	for (var i = 1; i <  (vitesse.length/9)-supprEnd; i++) {
-		ZoomVitesse[i-1] = Math.round((vitesse[i*9] + vitesse[i*9+1] + vitesse[i*9+2] + vitesse[i*9+3] + vitesse[i*9+4] + vitesse[i*9+5] 
-			+ vitesse[i*9+6] + vitesse[i*9+7] + vitesse[i*9+8])/0.9)/10
+	for (var i = 1; i <  (vitesse.length/5)-supprEnd; i++) {
+		ZoomVitesse[i-1] = Math.round((vitesse[i*5] + vitesse[i*5+1] + vitesse[i*5+2] + vitesse[i*5+3] + vitesse[i*5+4])/0.5)/10
 	}
 	
     for (var i = 0; i <  ZoomVitesse.length; i++) {			
@@ -24,7 +23,7 @@ function postLegend(response, activitie, gear) {
 			ZoomVitesse[i] = ZoomVitesse[i]
 		}
 		else if (ZoomVitesse[i - 1] > 10) {
-			ZoomVitesse[i] = ( ZoomVitesse[i] - ( ( ZoomVitesse[i] - ZoomVitesse[i - 1] ) * 0.01 ) ) * 0.99
+			ZoomVitesse[i] = ( ZoomVitesse[i] + ( ( ZoomVitesse[i] - ZoomVitesse[i - 1] ) * 0.1 ) ) * 0.99
 		}
 		else {
 			ZoomVitesse[i] = ZoomVitesse[i]
@@ -57,14 +56,13 @@ function postLegend(response, activitie, gear) {
 
 	let Grade = new Array()
     for (var i = 0; i < response[0].data.length; i++) {
-		Grade[i] = ((response[1].data[i + 1] - response[1].data[i])) / (response[1].data.length / activitie.distance)
+		Grade[i] = ((response[1].data[i + 1] - response[1].data[i]) / (response[1].data.length / activitie.distance)) * 0.5
 	}
 	Grade.splice(vitesse.length - 1, 1)
 
 	let ZoomGrade = new Array()
-	for (var i = 1; i <  (Grade.length/9)-supprEnd; i++) {
-		ZoomGrade[i-1] = Math.round((Grade[i*9] + Grade[i*9+1] + Grade[i*9+2] + Grade[i*9+3] + Grade[i*9+4] + Grade[i*9+5] 
-		+ Grade[i*9+6] + Grade[i*9+7] + Grade[i*9+8])/0.9)/10
+	for (var i = 1; i <  (Grade.length/5)-supprEnd; i++) {
+		ZoomGrade[i-1] = Math.round((Grade[i*5] + Grade[i*5+1] + Grade[i*5+2] + Grade[i*5+3] + Grade[i*5+4])/0.5)/10
 	}
 
     let elevationMax = 0;
@@ -139,7 +137,7 @@ function postLegend(response, activitie, gear) {
 	for (let i = 0; i < ZoomVitesse.length; i++) {
         wattAir[1] = 1.013 / 2 * 0.45 * aeroValues.bottom * Math.pow(((ZoomVitesse[i]) / 3.6), 3);
 	    wattRoulement[1] = frotement * 9.81 * 65 * (ZoomVitesse[i] / 3.6);
-		wattPente[1] = 65 * 9.81 * (ZoomVitesse[i] / 3.4) * ZoomGrade[i] / 100;
+		wattPente[1] = 65 * 9.81 * (ZoomVitesse[i] / 3.6) * ZoomGrade[i] / 100;
 		watt[i] = wattAir[1] + wattRoulement[1] + wattPente[1]
 		if (watt[i] < 0) {
 			watt[i] = 0

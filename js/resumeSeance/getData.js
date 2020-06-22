@@ -47,12 +47,34 @@ function getActivity(res) {
     $.ajax(settings).done(function (response) {
         postActivitiestempsDistance(response);
         postActivitiesZoom(response)
+        sessionStorage.polyline = response.map.summary_polyline;
 
-        getActivityStream(acces, sessionStorage.id, response);
+        getActivityStreamLatLng(acces, sessionStorage.id, response);
     })
 }
 
-function getActivityStream(res, id, activitie) {
+function getActivityStreamLatLng(res, id, activitie) {
+    const activitiesStreams = `https://www.strava.com/api/v3/activities/${id}/streams?access_token=${res.access_token}`
+    var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": activitiesStreams,
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-host": "35.188.171.173:8080",
+            "x-rapidapi-key": "SIGN-UP-FOR-KEY",
+            "content-type": "application/x-www-form-urlencoded"
+        },
+        "data": {
+            "keys": "latlng"
+        }
+    }
+    $.ajax(settings).done(function (response) {
+        getActivityStream(res, id, activitie, response);
+    })
+}
+
+function getActivityStream(res, id, activitie, latlng) {
     const activitiesStreams = `https://www.strava.com/api/v3/activities/${id}/streams?access_token=${res.access_token}`
     var settings = {
         "async": true,
@@ -70,13 +92,13 @@ function getActivityStream(res, id, activitie) {
     }
     $.ajax(settings).done(function (response) {
         postActivitiesStreams(response, activitie);
-        postActivitiesStreamsElevationChart(response, activitie);
-        postActivitiesStreamsSpeedChart(response, activitie)
-        getGear(res, response, activitie, activitie.gear.id)
+        postActivitiesStreamsElevationChart(response, activitie, latlng);
+        postActivitiesStreamsSpeedChart(response, activitie, latlng)
+        getGear(res, response, activitie, activitie.gear.id, latlng)
     })
 }
 
-function getGear(res, activityStream, activitie, id) {
+function getGear(res, activityStream, activitie, id, latlng) {
     const gear_link = `https://www.strava.com/api/v3//gear/${id}?access_token=${res.access_token}`
     var settings = {
         "async": true,
@@ -92,7 +114,7 @@ function getGear(res, activityStream, activitie, id) {
         }
     }
     $.ajax(settings).done(function (response) {
-        postWatt(activityStream, activitie, response)
         postLegend(activityStream, activitie, response)
+        postWatt(activityStream, activitie, response, latlng)
     })
 }
