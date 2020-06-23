@@ -14,6 +14,7 @@ body {
 
 #mapid {
     width: 100%;
+    transition: 0.2s;
     z-index: 5;
 }
 
@@ -22,6 +23,27 @@ body {
     z-index: 7;
     background-color: rgba(0, 0, 0, 0);
     position: relative;
+}
+
+#clearMap {
+    background-color: rgba(190, 190, 190, 0.835);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.185);
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+    z-index: 6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#clearMapP {
+    margin: 0px;
+    text-align: center;
+    color: rgb(251, 251, 251);
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .firstRow {
@@ -47,11 +69,17 @@ body {
 .firstCaseTitle {
     margin-top: 0px;
     color: rgb(44, 44, 44);
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .firstCaseData {
     color: rgb(56, 56, 56);
     font-size: 22px;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 #resumeDeSeanceTitle {
@@ -68,6 +96,9 @@ body {
 .resumeDeSeanceTitle {
     margin: 0px;
     color: rgb(44, 44, 44);
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     display: inline-block;
     font-size: 20px;
     padding-top: 4px;
@@ -131,18 +162,27 @@ body {
     color: rgb(65, 65, 65);
     margin: 0px;
     margin-top: -15%;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .max {
     color: rgb(95, 95, 95);
     margin: 0px;
     margin-left: 2px;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .moy {
     color: rgb(95, 95, 95);
     margin: 0px;
     margin-left: 2px;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .instantData {
@@ -151,6 +191,9 @@ body {
     margin-left: 2px;
     margin-top: -7px;
     margin-bottom: 23px;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .graph:hover {
@@ -206,6 +249,19 @@ body {
     #mapFilter {
         height: 200px;
         margin-top: -200px;
+    }
+
+    #clearMap {
+        width: 30px;
+        height: 30px;
+        margin-bottom: -40px;
+        margin-left: 80%;
+        margin-right: 20%;
+    }
+    
+    #clearMapP {
+        font-size: 30px;
+        margin-top: -3px;
     }
     
     .graphBox {
@@ -269,6 +325,19 @@ body {
         height: 200px;
         margin-top: -200px;
     }
+
+    #clearMap {
+        width: 35px;
+        height: 35px;
+        margin-bottom: -45px;
+        margin-left: 85%;
+        margin-right: 15%;
+    }
+    
+    #clearMapP {
+        font-size: 35px;
+        margin-top: -3.5px;
+    }
     
     .graphBox {
         width: 80%
@@ -330,6 +399,19 @@ body {
     #mapFilter {
         height: 200px;
         margin-top: -200px;
+    }
+
+    #clearMap {
+        width: 40px;
+        height: 40px;
+        margin-bottom: -50px;
+        margin-left: 88%;
+        margin-right: 12%;
+    }
+    
+    #clearMapP {
+        font-size: 40px;
+        margin-top: -4px;
     }
     
     .graphBox {
@@ -393,6 +475,19 @@ body {
         height: 225px;
         margin-top: -225px;
     }
+
+    #clearMap {
+        width: 45px;
+        height: 45px;
+        margin-bottom: -55px;
+        margin-left: 91%;
+        margin-right: 9%;
+    }
+    
+    #clearMapP {
+        font-size: 45px;
+        margin-top: -4.5px;
+    }
     
     .graphBox {
         width: 80%
@@ -454,6 +549,19 @@ body {
     #mapFilter {
         height: 250px;
         margin-top: -250px;
+    }
+
+    #clearMap {
+        width: 50px;
+        height: 50px;
+        margin-bottom: -60px;
+        margin-left: 91%;
+        margin-right: 9%;
+    }
+    
+    #clearMapP {
+        font-size: 50px;
+        margin-top: -5px;
     }
     
     .graphBox {
@@ -517,6 +625,19 @@ body {
         height: 275px;
         margin-top: -275px;
     }
+
+    #clearMap {
+        width: 50px;
+        height: 50px;
+        margin-bottom: -60px;
+        margin-left: 93%;
+        margin-right: 7%;
+    }
+    
+    #clearMapP {
+        font-size: 50px;
+        margin-top: -5px;
+    }
     
     .graphBox {
         width: 70%
@@ -578,6 +699,19 @@ body {
     #mapFilter {
         height: 300px;
         margin-top: -300px;
+    }
+
+    #clearMap {
+        width: 50px;
+        height: 50px;
+        margin-bottom: -60px;
+        margin-left: 95%;
+        margin-right: 5%;
+    }
+    
+    #clearMapP {
+        font-size: 50px;
+        margin-top: -5px;
     }
     
     .graphBox {

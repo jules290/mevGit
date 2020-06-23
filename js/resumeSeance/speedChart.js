@@ -521,5 +521,7 @@ function postActivitiesStreamsSpeedChart(response, activitie, latlng) {
         if (power != undefined) {
             document.getElementById("power").innerText = document.getElementById("power").innerText.slice(0, 10) + " " + power + "W"
         }
+        
+        setMarker(fraction, latlng)
     }
 }
