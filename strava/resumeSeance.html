@@ -17,6 +17,7 @@
         <meta name="robots" content="noindex, nofollow"/>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/png" href="../img/logo.png"/>
         <link rel="stylesheet" href="../css/style.css" media="screen">
         <link rel="stylesheet" href="../css/menunav.css" media="screen">
         <link rel="stylesheet" href="../css/header.css" media="screen">
@@ -84,16 +85,16 @@
                 <div id="mapid"></div>
                 <div id="mapFilter"></div>
                 
-                <div id="elevationBox" class="box">
-                    <div id="elevationBoxLegendLeft" class="boxLegendLeft boxLegend">
+                <div id="altitudeBox" class="box">
+                    <div id="altitudeBoxLegendLeft" class="boxLegendLeft boxLegend">
                         <p class="title">élevation</p>
-                        <p class="max" id="elevationMax">max:</p>
-                        <p class="moy" id="elevationMoy">min:</p>
+                        <p class="max" id="altitudeMax">max:</p>
+                        <p class="moy" id="altitudeMoy">min:</p>
                     </div>
-                    <div id="elevationGraph" class="graphBox">
-                        <canvas id="graphElevation" class="graph"></canvas>
-                        <svg width="700" id="svgElevation" class="svg">
-                            <line x1="21" x2="21" y1="0" y2="0" class="" id="barElevation"></line>
+                    <div id="altitudeGraph" class="graphBox">
+                        <canvas id="graphaltitude" class="graph"></canvas>
+                        <svg width="700" id="svgaltitude" class="svg">
+                            <line x1="21" x2="21" y1="0" y2="0" class="bar" id="baraltitude"></line>
                             <rect id="extent" class="extent" x="0" width="0" height="100" style="cursor: move;"></rect>
                             <g id="resizeLeft" class="resize" style="cursor: ew-resize;">
                                 <rect class="resizeBar" x="-3" width="6" height="100"></rect>
@@ -103,14 +104,14 @@
                             </g>
                         </svg>
                     </div>
-                    <div id="elevationBoxLegendRight" class="boxLegendRight boxLegend">
-                        <p class="instantData" id="elevation">élévation:</p>
+                    <div id="altitudeBoxLegendRight" class="boxLegendRight boxLegend">
+                        <p class="instantData" id="altitude">élévation:</p>
                         <p class="instantData" id="grade">pente:</p>
                     </div>
                 </div>
 
                 <div id="speedBox" class="box">
-                    <div id="elevationBoxLegendLeft" class="boxLegendLeft boxLegend">
+                    <div id="altitudeBoxLegendLeft" class="boxLegendLeft boxLegend">
                         <p class="title">vitesse</p>
                         <p class="max" id="vitesseMax">max:</p>
                         <p class="moy" id="vitesseMoy">moy:</p>
@@ -118,16 +119,16 @@
                     <div id="speedGraph" class="graphBox">
                         <canvas id="graphSpeed" class="graph"></canvas>
                         <svg width="700" id="svgSpeed" class="svg">
-                            <line x1="21" x2="21" y1="0" y2="0" class="" id="barSpeed"></line>
+                            <line x1="21" x2="21" y1="0" y2="0" class="bar" id="barSpeed"></line>
                         </svg>
                     </div>
-                    <div id="elevationBoxLegendRight" class="boxLegendRight boxLegend">
+                    <div id="altitudeBoxLegendRight" class="boxLegendRight boxLegend">
                         <p class="instantData" id="vitesse">vitesse:</p>
                     </div>
                 </div>
 
                 <div id="powerBox" class="box">
-                    <div id="elevationBoxLegendLeft" class="boxLegendLeft boxLegend">
+                    <div id="altitudeBoxLegendLeft" class="boxLegendLeft boxLegend">
                         <p class="title">puissance</p>
                         <p class="max" id="puissanceMax">max:</p>
                         <p class="moy" id="puissanceMoy">moy:</p>
@@ -135,10 +136,10 @@
                     <div id="powerGraph" class="graphBox">
                         <canvas id="graphPower" class="graph"></canvas>
                         <svg width="700" id="svgPower" class="svg">
-                            <line x1="21" x2="21" y1="0" y2="0" class="" id="barPower"></line>
+                            <line x1="21" x2="21" y1="0" y2="0" class="bar" id="barPower"></line>
                         </svg>
                     </div>
-                    <div id="elevationBoxLegendRight" class="boxLegendRight boxLegend">
+                    <div id="altitudeBoxLegendRight" class="boxLegendRight boxLegend">
                         <p class="instantData" id="power">puissance:</p>
                     </div>
                 </div>

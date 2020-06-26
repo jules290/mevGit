@@ -23,13 +23,7 @@ function postActivitiestempsDistance(response) {
         document.getElementById("firstCaseDataDistance").innerText =  (Math.round(response.distance / 10)) / 100 + "km"
 }
 
-function postActivitiesStreams(response, activitie) {
-        let vitesse = new Array()
-        for (var i = 0; i < response[0].data.length; i++) {
-            vitesse[i] = (Math.round(((response[0].data[i + 1] -response[0].data[i]) * response[0].data.length / activitie.moving_time) * 36))/10
-        }
-        vitesse.splice(vitesse.length - 1, 1)
-
+function postActivitiesStreams(activitie, gear, latlng , altitude, vitesse, distance, grade) {
         let totale = 0;
         for (var i = 0; i <  vitesse.length; i++) {
             totale += vitesse[i] / vitesse.length

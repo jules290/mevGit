@@ -53,10 +53,12 @@ function postActivitiesZoom(response) {
 };
 
 function setMarker(fraction, latlng) {
-    marker.setLatLng([
-        latlng[0].data[Math.round(fraction * latlng[0].data.length)][0], 
-        latlng[0].data[Math.round(fraction * latlng[0].data.length)][1]
-    ]);
+    if (fraction > 0 && fraction < 1) {
+        marker.setLatLng([
+            latlng[0].data[Math.round(fraction * latlng[0].data.length)][0], 
+            latlng[0].data[Math.round(fraction * latlng[0].data.length)][1]
+        ]);   
+    }
 };
 
 $(document).ready(function () {

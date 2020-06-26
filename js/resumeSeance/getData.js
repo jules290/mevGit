@@ -70,11 +70,11 @@ function getActivityStreamLatLng(res, id, activitie) {
         }
     }
     $.ajax(settings).done(function (response) {
-        getActivityStream(res, id, activitie, response);
+        getActivityStreamAltitude(res, id, activitie, response);
     })
 }
 
-function getActivityStream(res, id, activitie, latlng) {
+function getActivityStreamAltitude(res, id, activitie, latlng) {
     const activitiesStreams = `https://www.strava.com/api/v3/activities/${id}/streams?access_token=${res.access_token}`
     var settings = {
         "async": true,
@@ -87,19 +87,91 @@ function getActivityStream(res, id, activitie, latlng) {
             "content-type": "application/x-www-form-urlencoded"
         },
         "data": {
-            "keys": "altitude"
+            "keys": "altitude",
         }
     }
     $.ajax(settings).done(function (response) {
-        postActivitiesStreams(response, activitie);
-        postActivitiesStreamsElevationChart(response, activitie, latlng);
-        postActivitiesStreamsSpeedChart(response, activitie, latlng)
-        getGear(res, response, activitie, activitie.gear.id, latlng)
+        getActivityStreamVitesse(res, id, activitie, latlng, response[1].data)
     })
 }
 
-function getGear(res, activityStream, activitie, id, latlng) {
-    const gear_link = `https://www.strava.com/api/v3//gear/${id}?access_token=${res.access_token}`
+function getActivityStreamVitesse(res, id, activitie, latlng, altitude) {
+    const activitiesStreams = `https://www.strava.com/api/v3/activities/${id}/streams?access_token=${res.access_token}`
+    var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": activitiesStreams,
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-host": "35.188.171.173:8080",
+            "x-rapidapi-key": "SIGN-UP-FOR-KEY",
+            "content-type": "application/x-www-form-urlencoded"
+        },
+        "data": {
+            "keys": "velocity_smooth",
+           " keyByType": true
+        }
+    }
+    $.ajax(settings).done(function (response) {
+        getActivityStreamGrade(res, id, activitie, latlng , altitude, response[0].data)
+    })
+}
+
+function getActivityStreamGrade(res, id, activitie, latlng , altitude, vitesse) {
+    const activitiesStreams = `https://www.strava.com/api/v3/activities/${id}/streams?access_token=${res.access_token}`
+    var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": activitiesStreams,
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-host": "35.188.171.173:8080",
+            "x-rapidapi-key": "SIGN-UP-FOR-KEY",
+            "content-type": "application/x-www-form-urlencoded"
+        },
+        "data": {
+            "keys": "grade_smooth",
+           " keyByType": true
+        }
+    }
+    $.ajax(settings).done(function (response) {
+        getActivityStreamMoving(res, id, activitie, activitie.gear.id, latlng , altitude, vitesse, response[1].data, response[0].data)
+    })
+}
+
+function getActivityStreamMoving(res, id, activitie, gearId, latlng , altitude, vitesse, distance, grade) {
+    const activitiesStreams = `https://www.strava.com/api/v3/activities/${id}/streams?access_token=${res.access_token}`
+    var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": activitiesStreams,
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-host": "35.188.171.173:8080",
+            "x-rapidapi-key": "SIGN-UP-FOR-KEY",
+            "content-type": "application/x-www-form-urlencoded"
+        },
+        "data": {
+            "keys": "moving",
+           " keyByType": true
+        }
+    }
+    $.ajax(settings).done(function (response) {
+        for (let i = 0; i < distance.length; i++) {
+            if (response[0].data[i] == false) {
+                distance.splice(i, 1);
+                altitude.splice(i, 1);
+                vitesse.splice(i, 1);
+                grade.splice(i, 1);
+            }
+            
+        }
+        getGear(res, id, activitie, activitie.gear.id, latlng , altitude, vitesse, distance, grade)
+    })
+}
+
+function getGear(res, id, activitie, gearId, latlng , altitude, vitesse, distance, grade) {
+    const gear_link = `https://www.strava.com/api/v3//gear/${gearId}?access_token=${res.access_token}`
     var settings = {
         "async": true,
         "crossDomain": true,
@@ -111,10 +183,17 @@ function getGear(res, activityStream, activitie, id, latlng) {
             "content-type": "application/x-www-form-urlencoded"
         },
         "data": {
+
         }
     }
     $.ajax(settings).done(function (response) {
-        postLegend(activityStream, activitie, response)
-        postWatt(activityStream, activitie, response, latlng)
+        for (let i = 0; i < vitesse.length; i++) {
+            vitesse[i] = vitesse[i] * 3.6
+        }
+        postLegend(activitie, response, latlng , altitude, vitesse, distance, grade)
+        postWatt(activitie, response, latlng , altitude, vitesse, distance, grade)
+        postActivitiesStreams(activitie, response, latlng , altitude, vitesse, distance, grade)
+        postActivitiesStreamsaltitudeChart(activitie, response, latlng , altitude, vitesse, distance, grade)
+        postActivitiesStreamsSpeedChart(activitie, response, latlng , altitude, vitesse, distance, grade)
     })
 }

@@ -1,288 +1,244 @@
-function postActivitiesStreamsElevationChart(response, activitie, latlng) {
-    let Elevation = new Array()
-    for (var i = 0; i < response[1].data.length; i++) {
-        Elevation[i] = response[1].data[i]
-    }
-    Elevation.splice(Elevation.length - 1, 1)
-    
+function postActivitiesStreamsaltitudeChart(activitie, gear, latlng , altitude, vitesse, distance, grade) {
     let supprEnd;
-    if (Elevation.length.toString().charAt(Elevation.length.toString().length - 1) == "0") {
+    if (altitude.length.toString().charAt(altitude.length.toString().length - 1) == "0") {
         supprEnd = 0;
     }
     else {
         supprEnd = 1;
     }
             
-    let ZoomElevation = new Array()
+    let Zoomaltitude = new Array()
     if (Math.round(activitie.moving_time / 60) < 30) {
-        for (var i = 1; i <  (Elevation.length/3)-supprEnd; i++) {
-            ZoomElevation[i-1] = Math.round((Elevation[i*3] + Elevation[i*3+1] + Elevation[i*3+2])/0.3)/10
+        for (var i = 1; i <  (altitude.length/3)-supprEnd; i++) {
+            Zoomaltitude[i-1] = Math.round((altitude[i*3] + altitude[i*3+1] + altitude[i*3+2])/0.3)/10
             }
     }
     else if (Math.round(activitie.moving_time / 60) < 60) {
-        for (var i = 1; i <  (Elevation.length/6)-supprEnd; i++) {
-            ZoomElevation[i-1] = Math.round((Elevation[i*6] + Elevation[i*6+1] + Elevation[i*6+2] + Elevation[i*6+3] + Elevation[i*6+4] 
-                + Elevation[i*6+5])/0.6)/10
+        for (var i = 1; i <  (altitude.length/3)-supprEnd; i++) {
+            Zoomaltitude[i-1] = Math.round((altitude[i*3] + altitude[i*3+1] + altitude[i*3+2])/0.3)/10
         }
     }
     else if (Math.round(activitie.moving_time / 60) < 90) {
-        for (var i = 1; i <  (Elevation.length/8)-supprEnd; i++) {
-            ZoomElevation[i-1] = Math.round((Elevation[i*8] + Elevation[i*8+1] + Elevation[i*8+2] + Elevation[i*8+3] + Elevation[i*8+4] *
-                + Elevation[i*8+5] + Elevation[i*8+6] + Elevation[i*8+7])/0.8)/10
+        for (var i = 1; i <  (altitude.length/4)-supprEnd; i++) {
+            Zoomaltitude[i-1] = Math.round((altitude[i*4] + altitude[i*4+1] + altitude[i*4+2] + altitude[i*4+3])/0.4)/10
         }
     }
     else if (Math.round(activitie.moving_time / 60) < 120) {
-        for (var i = 1; i <  (Elevation.length/10)-supprEnd; i++) {
-            ZoomElevation[i-1] = Math.round((Elevation[i*10] + Elevation[i*10+1] + Elevation[i*10+2] + Elevation[i*10+3] + Elevation[i*10+4] 
-                + Elevation[i*10+5] + Elevation[i*10+6] + Elevation[i*10+7] + Elevation[i*10+8] + Elevation[i*10+9])/1.0)/10
+        for (var i = 1; i <  (altitude.length/5)-supprEnd; i++) {
+            Zoomaltitude[i-1] = Math.round((altitude[i*5] + altitude[i*5+1] + altitude[i*5+2] + altitude[i*5+3] + altitude[i*5+4])/0.5)/10
         }
     }
     else if (Math.round(activitie.moving_time / 60) < 150) {
-        for (var i = 1; i <  (Elevation.length/11)-supprEnd; i++) {
-            ZoomElevation[i-1] = Math.round((Elevation[i*11] + Elevation[i*11+1] + Elevation[i*11+2] + Elevation[i*11+3] 
-                + Elevation[i*11+4] + Elevation[i*11+5] + Elevation[i*11+6] + Elevation[i*11+7] + Elevation[i*11+8] 
-                + Elevation[i*11+9] + Elevation[i*11+10])/1.1)/10
+        for (var i = 1; i <  (altitude.length/6)-supprEnd; i++) {
+            Zoomaltitude[i-1] = Math.round((altitude[i*6] + altitude[i*6+1] + altitude[i*6+2] + altitude[i*6+3] 
+                + altitude[i*6+4] + altitude[i*6+5])/0.6)/10
         }
     }
     else if (Math.round(activitie.moving_time / 60) < 180) {
-        for (var i = 1; i <  (Elevation.length/13)-supprEnd; i++) {
-            ZoomElevation[i-1] = Math.round((Elevation[i*13] + Elevation[i*13+1] + Elevation[i*13+2] + Elevation[i*13+3] + Elevation[i*13+4] 
-                + Elevation[i*13+5] +  Elevation[i*13+6] + Elevation[i*13+7] + Elevation[i*13+8] + Elevation[i*13+9] + Elevation[i*13+10] 
-                + Elevation[i*13+11] + Elevation[i*13+12])/1.3)/10
+        for (var i = 1; i <  (altitude.length/8)-supprEnd; i++) {
+            Zoomaltitude[i-1] = Math.round((altitude[i*8] + altitude[i*8+1] + altitude[i*8+2] + altitude[i*8+3] + altitude[i*8+4] 
+                + altitude[i*8+5] +  altitude[i*8+6] + altitude[i*8+7])/0.8)/10
         }
     }
     else if (Math.round(activitie.moving_time / 60) < 210) {
-        for (var i = 1; i <  (Elevation.length/15)-supprEnd; i++) {
-            ZoomElevation[i-1] = Math.round((Elevation[i*15] + Elevation[i*15+1] + Elevation[i*15+2] + Elevation[i*15+3] 
-                + Elevation[i*15+4] + Elevation[i*15+5] + Elevation[i*15+6] + Elevation[i*15+7] + Elevation[i*15+8] 
-                + Elevation[i*15+9] + Elevation[i*15+10] + Elevation[i*15+11] + Elevation[i*2151+12] + Elevation[i*15+13] 
-                + Elevation[i*15+14])/1.5)/10
+        for (var i = 1; i <  (altitude.length/10)-supprEnd; i++) {
+            Zoomaltitude[i-1] = Math.round((altitude[i*10] + altitude[i*10+1] + altitude[i*10+2] + altitude[i*10+3] 
+                + altitude[i*10+4] + altitude[i*10+5] + altitude[i*10+6] + altitude[i*10+7] + altitude[i*10+8] 
+                + altitude[i*10+9])/1.0)/10
         }
     }
     else if (Math.round(activitie.moving_time / 60) < 240) {
-        for (var i = 1; i <  (Elevation.length/17)-supprEnd; i++) {
-            ZoomElevation[i-1] = Math.round((Elevation[i*17] + Elevation[i*17+1] + Elevation[i*17+2] + Elevation[i*17+3] 
-                + Elevation[i*17+4] + Elevation[i*17+5] + Elevation[i*17+6] + Elevation[i*17+7] + Elevation[i*17+8] + Elevation[i*17+9] 
-                + Elevation[i*17+10] + Elevation[i*17+11] + Elevation[i*17+12] + Elevation[i*17+13] + Elevation[i*17+14] 
-                + Elevation[i*17+15] + Elevation[i*17+16])/1.7)/10
+        for (var i = 1; i <  (altitude.length/12)-supprEnd; i++) {
+            Zoomaltitude[i-1] = Math.round((altitude[i*12] + altitude[i*12+1] + altitude[i*12+2] + altitude[i*12+3] 
+                + altitude[i*12+4] + altitude[i*12+5] + altitude[i*12+6] + altitude[i*12+7] + altitude[i*12+8] + altitude[i*12+9] 
+                + altitude[i*12+10] + altitude[i*12+11])/1.2)/10
         }
     }
     else if (Math.round(activitie.moving_time / 60) < 270) {
-        for (var i = 1; i <  (Elevation.length/20)-supprEnd; i++) {
-            ZoomElevation[i-1] = Math.round((Elevation[i*20] + Elevation[i*20+1] + Elevation[i*20+2] + Elevation[i*20+3] 
-                + Elevation[i*20+4] + Elevation[i*20+5] +  Elevation[i*20+6] + Elevation[i*20+7] + Elevation[i*20+8] + Elevation[i*20+9] 
-                + Elevation[i*20+10] + Elevation[i*20+11] + Elevation[i*20+12] + Elevation[i*20+13] + Elevation[i*20+14] 
-                + Elevation[i*20+15] + Elevation[i*20+16] + Elevation[i*20+17] + Elevation[i*20+18] + Elevation[i*20+19])/2.0)/10
+        for (var i = 1; i <  (altitude.length/14)-supprEnd; i++) {
+            Zoomaltitude[i-1] = Math.round((altitude[i*14] + altitude[i*14+1] + altitude[i*14+2] + altitude[i*14+3] 
+                + altitude[i*14+4] + altitude[i*14+5] +  altitude[i*14+6] + altitude[i*14+7] + altitude[i*14+8] + altitude[i*14+9] 
+                + altitude[i*14+10] + altitude[i*14+11] + altitude[i*14+12] + altitude[i*14+13])/1.4)/10
         }
     }
     else if (Math.round(activitie.moving_time / 60) < 300) {
-        for (var i = 1; i <  (Elevation.length/23)-supprEnd; i++) {
-            ZoomElevation[i-1] = Math.round((Elevation[i*23] + Elevation[i*23+1] + Elevation[i*23+2] + Elevation[i*23+3] 
-                + Elevation[i*23+4] + Elevation[i*23+5] +  Elevation[i*23+6] + Elevation[i*23+7] + Elevation[i*23+8] + Elevation[i*23+9] 
-                + Elevation[i*23+10] + Elevation[i*23+11] + Elevation[i*23+12] + Elevation[i*23+13] + Elevation[i*23+14] 
-                + Elevation[i*23+15] + Elevation[i*23+16] + Elevation[i*23+17] + Elevation[i*23+18] + Elevation[i*23+19] 
-                + Elevation[i*23+20] + Elevation[i*23+21] + Elevation[i*23+22])/2.3)/10
+        for (var i = 1; i <  (altitude.length/16)-supprEnd; i++) {
+            Zoomaltitude[i-1] = Math.round((altitude[i*16] + altitude[i*16+1] + altitude[i*16+2] + altitude[i*16+3] 
+                + altitude[i*16+4] + altitude[i*16+5] +  altitude[i*16+6] + altitude[i*16+7] + altitude[i*16+8] + altitude[i*16+9] 
+                + altitude[i*16+10] + altitude[i*16+11] + altitude[i*16+12] + altitude[i*16+13] + altitude[i*16+14] 
+                + altitude[i*16+15])/1.6)/10
         }
     }
     else if (Math.round(activitie.moving_time / 60) > 300) {
-        for (var i = 1; i <  (Elevation.length/26)-supprEnd; i++) {
-            ZoomElevation[i-1] = Math.round((Elevation[i*26] + Elevation[i*26+1] + Elevation[i*26+2] + Elevation[i*26+3] 
-                + Elevation[i*26+4] + Elevation[i*26+5] +  Elevation[i*26+6] + Elevation[i*26+7] + Elevation[i*26+8] + Elevation[i*26+9] 
-                + Elevation[i*26+10] + Elevation[i*26+11] + Elevation[i*26+12] + Elevation[i*26+13] + Elevation[i*26+14] 
-                + Elevation[i*26+15] + Elevation[i*26+16] + Elevation[i*26+17] + Elevation[i*26+18] + Elevation[i*26+19] 
-                + Elevation[i*26+20] + Elevation[i*26+21] + Elevation[i*26+22] + Elevation[i*26+23] + Elevation[i*26+24]
-                + Elevation[i*26+25])/2.6)/10
+        for (var i = 1; i <  (altitude.length/18)-supprEnd; i++) {
+            Zoomaltitude[i-1] = Math.round((altitude[i*18] + altitude[i*18+1] + altitude[i*18+2] + altitude[i*18+3] 
+                + altitude[i*18+4] + altitude[i*18+5] +  altitude[i*18+6] + altitude[i*18+7] + altitude[i*18+8] + altitude[i*18+9] 
+                + altitude[i*18+10] + altitude[i*18+11] + altitude[i*18+12] + altitude[i*18+13] + altitude[i*18+14] 
+                + altitude[i*18+15] + altitude[i*18+16] + altitude[i*18+17])/1.8)/10
         }
     }
 
-    let Vitesse = new Array()
-    for (var i = 0; i < response[0].data.length; i++) {
-        Vitesse[i] = (Math.round(((response[0].data[i + 1] -response[0].data[i]) * response[0].data.length / activitie.moving_time) * 36))/10
-    }
-    Vitesse.splice(Vitesse.length - 1, 1)
-
-    if (Vitesse.length.toString().charAt(Vitesse.length.toString().length - 1) == "0") {
+    if (vitesse.length.toString().charAt(altitude.length.toString().length - 1) == "0") {
         supprEnd = 0;
     }
     else {
         supprEnd = 1;
     }
 
-    let ZoomVitesse = new Array()
+    let Zoomvitesse = new Array()
     if (Math.round(activitie.moving_time / 60) < 30) {
-        for (var i = 1; i <  (Vitesse.length/3)-supprEnd; i++) {
-            ZoomVitesse[i-1] = Math.round((Vitesse[i*3] + Vitesse[i*3+1] + Vitesse[i*3+2])/0.3)/10
+        for (var i = 1; i <  (vitesse.length/3)-supprEnd; i++) {
+            Zoomvitesse[i-1] = Math.round((vitesse[i*3] + vitesse[i*3+1] + vitesse[i*3+2])/0.3)/10
             }
     }
     else if (Math.round(activitie.moving_time / 60) < 60) {
-        for (var i = 1; i <  (Vitesse.length/6)-supprEnd; i++) {
-            ZoomVitesse[i-1] = Math.round((Vitesse[i*6] + Vitesse[i*6+1] + Vitesse[i*6+2] + Vitesse[i*6+3] + Vitesse[i*6+4] + Vitesse[i*6+5])/0.6)/10
+        for (var i = 1; i <  (vitesse.length/3)-supprEnd; i++) {
+            Zoomvitesse[i-1] = Math.round((vitesse[i*3] + vitesse[i*3+1] + vitesse[i*3+2])/0.3)/10
         }
     }
     else if (Math.round(activitie.moving_time / 60) < 90) {
-        for (var i = 1; i <  (Vitesse.length/8)-supprEnd; i++) {
-            ZoomVitesse[i-1] = Math.round((Vitesse[i*8] + Vitesse[i*8+1] + Vitesse[i*8+2] + Vitesse[i*8+3] + Vitesse[i*8+4] + Vitesse[i*8+5] +  
-                Vitesse[i*8+6] + Vitesse[i*8+7])/0.8)/10
+        for (var i = 1; i <  (vitesse.length/4)-supprEnd; i++) {
+            Zoomvitesse[i-1] = Math.round((vitesse[i*4] + vitesse[i*4+1] + vitesse[i*4+2] + vitesse[i*4+3])/0.4)/10
         }
     }
     else if (Math.round(activitie.moving_time / 60) < 120) {
-        for (var i = 1; i <  (Vitesse.length/10)-supprEnd; i++) {
-            ZoomVitesse[i-1] = Math.round((Vitesse[i*10] + Vitesse[i*10+1] + Vitesse[i*10+2] + Vitesse[i*10+3] + Vitesse[i*10+4] + Vitesse[i*10+5] +  
-                Vitesse[i*10+6] + Vitesse[i*10+7] + Vitesse[i*10+8] + Vitesse[i*10+9])/1.0)/10
+        for (var i = 1; i <  (vitesse.length/5)-supprEnd; i++) {
+            Zoomvitesse[i-1] = Math.round((vitesse[i*5] + vitesse[i*5+1] + vitesse[i*5+2] + vitesse[i*5+3] + vitesse[i*5+4])/0.5)/10
         }
     }
     else if (Math.round(activitie.moving_time / 60) < 150) {
-        for (var i = 1; i <  (Vitesse.length/11)-supprEnd; i++) {
-            ZoomVitesse[i-1] = Math.round((Vitesse[i*11] + Vitesse[i*11+1] + Vitesse[i*11+2] + Vitesse[i*11+3] + Vitesse[i*11+4] + Vitesse[i*11+5] +  
-                Vitesse[i*11+6] + Vitesse[i*11+7] + Vitesse[i*11+8] + Vitesse[i*11+9] + Vitesse[i*11+10])/1.1)/10
+        for (var i = 1; i <  (vitesse.length/6)-supprEnd; i++) {
+            Zoomvitesse[i-1] = Math.round((vitesse[i*6] + vitesse[i*6+1] + vitesse[i*6+2] + vitesse[i*6+3] + vitesse[i*6+4] 
+                + vitesse[i*6+5])/0.6)/10
         }
     }
     else if (Math.round(activitie.moving_time / 60) < 180) {
-        for (var i = 1; i <  (Vitesse.length/13)-supprEnd; i++) {
-            ZoomVitesse[i-1] = Math.round((Vitesse[i*13] + Vitesse[i*13+1] + Vitesse[i*13+2] + Vitesse[i*13+3] + Vitesse[i*13+4] 
-                + Vitesse[i*13+5] +  Vitesse[i*13+6] + Vitesse[i*13+7] + Vitesse[i*13+8] + Vitesse[i*13+9] + Vitesse[i*13+10] 
-                + Vitesse[i*13+11] + Vitesse[i*13+12])/1.3)/10
+        for (var i = 1; i <  (vitesse.length/8)-supprEnd; i++) {
+            Zoomvitesse[i-1] = Math.round((vitesse[i*8] + vitesse[i*8+1] + vitesse[i*8+2] + vitesse[i*8+3] + vitesse[i*8+4] 
+                + vitesse[i*8+5] +  vitesse[i*8+6] + vitesse[i*8+7])/0.8)/10
         }
     }
     else if (Math.round(activitie.moving_time / 60) < 210) {
-        for (var i = 1; i <  (Vitesse.length/15)-supprEnd; i++) {
-            ZoomVitesse[i-1] = Math.round((Vitesse[i*15] + Vitesse[i*15+1] + Vitesse[i*15+2] + Vitesse[i*15+3] + Vitesse[i*15+4] + Vitesse[i*15+5] +  
-                Vitesse[i*15+6] + Vitesse[i*15+7] + Vitesse[i*15+8] + Vitesse[i*15+9] + Vitesse[i*15+10] + Vitesse[i*15+11] + Vitesse[i*15+12] + 
-                Vitesse[i*15+13] + Vitesse[i*15+14])/1.5)/10
+        for (var i = 1; i <  (vitesse.length/10)-supprEnd; i++) {
+            Zoomvitesse[i-1] = Math.round((vitesse[i*10] + vitesse[i*10+1] + vitesse[i*10+2] + vitesse[i*10+3] + vitesse[i*10+4] 
+                + vitesse[i*10+5] + vitesse[i*10+6] + vitesse[i*10+7] + vitesse[i*10+8] + vitesse[i*10+9])/1.0)/10
         }
     }
     else if (Math.round(activitie.moving_time / 60) < 240) {
-        for (var i = 1; i <  (Vitesse.length/17)-supprEnd; i++) {
-            ZoomVitesse[i-1] = Math.round((Vitesse[i*17] + Vitesse[i*17+1] + Vitesse[i*17+2] + Vitesse[i*17+3] + Vitesse[i*17+4] + Vitesse[i*17+5] +  
-                Vitesse[i*17+6] + Vitesse[i*17+7] + Vitesse[i*17+8] + Vitesse[i*17+9] + Vitesse[i*17+10] + Vitesse[i*17+11] + Vitesse[i*17+12] + 
-                Vitesse[i*17+13] + Vitesse[i*17+14] + Vitesse[i*17+15] + Vitesse[i*17+16])/1.7)/10
+        for (var i = 1; i <  (vitesse.length/12)-supprEnd; i++) {
+            Zoomvitesse[i-1] = Math.round((vitesse[i*12] + vitesse[i*12+1] + vitesse[i*12+2] + vitesse[i*12+3] 
+                + vitesse[i*12+4] + vitesse[i*12+5] + vitesse[i*12+6] + vitesse[i*12+7] + vitesse[i*12+8] 
+                + vitesse[i*12+9] + vitesse[i*12+10] + vitesse[i*12+11])/1.2)/10
         }
     }
     else if (Math.round(activitie.moving_time / 60) < 270) {
-        for (var i = 1; i <  (Vitesse.length/20)-supprEnd; i++) {
-            ZoomVitesse[i-1] = Math.round((Vitesse[i*20] + Vitesse[i*20+1] + Vitesse[i*20+2] + Vitesse[i*20+3] + Vitesse[i*20+4] + Vitesse[i*20+5] +  
-                Vitesse[i*20+6] + Vitesse[i*20+7] + Vitesse[i*20+8] + Vitesse[i*20+9] + Vitesse[i*20+10] + Vitesse[i*20+11] + Vitesse[i*20+12] + 
-                Vitesse[i*20+13] + Vitesse[i*20+14] + Vitesse[i*20+15] + Vitesse[i*20+16] + Vitesse[i*20+17] + Vitesse[i*20+18] + 
-                Vitesse[i*20+19])/2.0)/10
+        for (var i = 1; i <  (vitesse.length/14)-supprEnd; i++) {
+            Zoomvitesse[i-1] = Math.round((vitesse[i*14] + vitesse[i*14+1] + vitesse[i*14+2] + vitesse[i*14+3] + vitesse[i*14+4] 
+                + vitesse[i*14+5] + vitesse[i*14+6] + vitesse[i*14+7] + vitesse[i*14+8] + vitesse[i*14+9] + vitesse[i*14+10] 
+                + vitesse[i*14+11] + vitesse[i*14+12] + vitesse[i*14+13])/1.4)/10
         }
     }
     else if (Math.round(activitie.moving_time / 60) < 300) {
-        for (var i = 1; i <  (Vitesse.length/23)-supprEnd; i++) {
-            ZoomVitesse[i-1] = Math.round((Vitesse[i*23] + Vitesse[i*30+1] + Vitesse[i*23+2] + Vitesse[i*23+3] + Vitesse[i*23+4] + Vitesse[i*23+5] +  
-                Vitesse[i*23+6] + Vitesse[i*23+7] + Vitesse[i*23+23] + Vitesse[i*23+9] + Vitesse[i*23+10] + Vitesse[i*23+11] + Vitesse[i*23+12] + 
-                Vitesse[i*23+13] + Vitesse[i*23+14] + Vitesse[i*30+15] + Vitesse[i*23+16] + Vitesse[i*23+17] + Vitesse[i*23+18] + 
-                Vitesse[i*23+19] + Vitesse[i*23+20] + Vitesse[i*23+21] + Vitesse[i*23+22])/3.0)/10
+        for (var i = 1; i <  (vitesse.length/16)-supprEnd; i++) {
+            Zoomvitesse[i-1] = Math.round((vitesse[i*16] + vitesse[i*16+1] + vitesse[i*16+2] + vitesse[i*16+3] + vitesse[i*16+4] + vitesse[i*16+5] +  
+                vitesse[i*16+6] + vitesse[i*16+7] + vitesse[i*16+8] + vitesse[i*16+9] + vitesse[i*16+10] + vitesse[i*16+11] + vitesse[i*16+12] + 
+                vitesse[i*16+13] + vitesse[i*16+14] + vitesse[i*16+15])/1.6)/10
         }
     }
     else if (Math.round(activitie.moving_time / 60) > 300) {
-        for (var i = 1; i <  (Vitesse.length/26)-supprEnd; i++) {
-            ZoomVitesse[i-1] = Math.round((Vitesse[i*26] + Vitesse[i*26+1] + Vitesse[i*26+2] + Vitesse[i*26+3] + Vitesse[i*26+4] + Vitesse[i*26+5] +  
-                Vitesse[i*26+6] + Vitesse[i*26+7] + Vitesse[i*26+8] + Vitesse[i*26+9] + Vitesse[i*26+10] + Vitesse[i*26+11] + Vitesse[i*26+12] + 
-                Vitesse[i*26+13] + Vitesse[i*26+14] + Vitesse[i*26+15] + Vitesse[i*26+16] + Vitesse[i*26+17] + Vitesse[i*26+18] + 
-                Vitesse[i*26+19] + Vitesse[i*26+20] + Vitesse[i*26+21] + Vitesse[i*26+22] + Vitesse[i*26+23] + Vitesse[i*26+24]
-                + Vitesse[i*26+25])/2.6)/10
+        for (var i = 1; i <  (vitesse.length/18)-supprEnd; i++) {
+            Zoomvitesse[i-1] = Math.round((vitesse[i*18] + vitesse[i*18+1] + vitesse[i*18+2] + vitesse[i*18+3] + vitesse[i*18+4] 
+                + vitesse[i*18+5] +  vitesse[i*18+6] + vitesse[i*18+7] + vitesse[i*18+8] + vitesse[i*18+9] + vitesse[i*18+10] 
+                + vitesse[i*18+11] + vitesse[i*18+12] + vitesse[i*18+13] + vitesse[i*18+14] + vitesse[i*18+15] 
+                + vitesse[i*18+16] + vitesse[i*18+17])/1.8)/10
         }
     }
 
-    let ZoomVitesse2 = new Array();
-    for (var i = 0; i <  ZoomVitesse.length; i++) {			
+    let Zoomvitesse2 = new Array();
+    for (var i = 0; i <  Zoomvitesse.length; i++) {			
 		if (i == 0) {
-			ZoomVitesse2[i] = ZoomVitesse[i]
+			Zoomvitesse2[i] = Zoomvitesse[i]
 		}
-		else if (ZoomVitesse[i - 1] > 10) {
-			ZoomVitesse2[i] = ( ZoomVitesse[i] + ( ( ZoomVitesse[i] - ZoomVitesse[i - 1] ) * 0.1 ) ) * 0.99
+		else if (Zoomvitesse[i - 1] > 10) {
+			Zoomvitesse2[i] = ( Zoomvitesse[i] + ( ( Zoomvitesse[i] - Zoomvitesse[i - 1] ) * 0.1 ) ) * 0.99
 		}
 		else {
-			ZoomVitesse2[i] = ZoomVitesse[i]
+			Zoomvitesse2[i] = Zoomvitesse[i]
 		}
     }
 
-    let Grade = new Array()
-    for (var i = 0; i < response[1].data.length; i++) {
-        Grade[i] = ((response[1].data[i + 1] - response[1].data[i]) / (response[1].data.length / activitie.distance)) * 1
-	}
-    Grade.splice(ZoomVitesse.length - 1, 1)
-    
-    if (Vitesse.length.toString().charAt(Vitesse.length.toString().length - 1) == "0") {
+    if (grade.length.toString().charAt(altitude.length.toString().length - 1) == "0") {
         supprEnd = 0;
     }
     else {
         supprEnd = 1;
     }
 
-    let ZoomGrade = new Array()
+    let Zoomgrade = new Array()
     if (Math.round(activitie.moving_time / 60) < 30) {
-        for (var i = 1; i <  (Grade.length/3)-supprEnd; i++) {
-            ZoomGrade[i-1] = Math.round((Grade[i*3] + Grade[i*3+1] + Grade[i*3+2])/0.3)/10
+        for (var i = 1; i <  (grade.length/3)-supprEnd; i++) {
+            Zoomgrade[i-1] = Math.round((grade[i*3] + grade[i*3+1] + grade[i*3+2])/0.3)/10
             }
     }
     else if (Math.round(activitie.moving_time / 60) < 60) {
-        for (var i = 1; i <  (Grade.length/6)-supprEnd; i++) {
-            ZoomGrade[i-1] = Math.round((Grade[i*6] + Grade[i*6+1] + Grade[i*6+2] + Grade[i*6+3] + Grade[i*6+4] + Grade[i*6+5])/0.6)/10
+        for (var i = 1; i <  (grade.length/3)-supprEnd; i++) {
+            Zoomgrade[i-1] = Math.round((grade[i*3] + grade[i*3+1] + grade[i*3+2])/0.3)/10
         }
     }
     else if (Math.round(activitie.moving_time / 60) < 90) {
-        for (var i = 1; i <  (Grade.length/8)-supprEnd; i++) {
-            ZoomGrade[i-1] = Math.round((Grade[i*8] + Grade[i*8+1] + Grade[i*8+2] + Grade[i*8+3] + Grade[i*8+4] + Grade[i*8+5] +  
-                Grade[i*8+6] + Grade[i*8+7])/0.8)/10
+        for (var i = 1; i <  (grade.length/4)-supprEnd; i++) {
+            Zoomgrade[i-1] = Math.round((grade[i*4] + grade[i*4+1] + grade[i*4+2] + grade[i*4+3])/0.4)/10
         }
     }
     else if (Math.round(activitie.moving_time / 60) < 120) {
-        for (var i = 1; i <  (Grade.length/10)-supprEnd; i++) {
-            ZoomGrade[i-1] = Math.round((Grade[i*10] + Grade[i*10+1] + Grade[i*10+2] + Grade[i*10+3] + Grade[i*10+4] + Grade[i*10+5] +  
-                Grade[i*10+6] + Grade[i*10+7] + Grade[i*10+8] + Grade[i*10+9])/1.0)/10
+        for (var i = 1; i <  (grade.length/5)-supprEnd; i++) {
+            Zoomgrade[i-1] = Math.round((grade[i*5] + grade[i*5+1] + grade[i*5+2] + grade[i*5+3] + grade[i*5+4])/0.5)/10
         }
     }
     else if (Math.round(activitie.moving_time / 60) < 150) {
-        for (var i = 1; i <  (Grade.length/11)-supprEnd; i++) {
-            ZoomGrade[i-1] = Math.round((Grade[i*11] + Grade[i*11+1] + Grade[i*11+2] + Grade[i*11+3] + Grade[i*11+4] + Grade[i*11+5] +  
-                Grade[i*11+6] + Grade[i*11+7] + Grade[i*11+8] + Grade[i*11+9] + Grade[i*11+10])/1.1)/10
+        for (var i = 1; i <  (grade.length/6)-supprEnd; i++) {
+            Zoomgrade[i-1] = Math.round((grade[i*6] + grade[i*6+1] + grade[i*6+2] + grade[i*6+3] + grade[i*6+4] 
+                + grade[i*6+5])/0.6)/10
         }
     }
     else if (Math.round(activitie.moving_time / 60) < 180) {
-        for (var i = 1; i <  (Grade.length/13)-supprEnd; i++) {
-            ZoomGrade[i-1] = Math.round((Grade[i*13] + Grade[i*13+1] + Grade[i*13+2] + Grade[i*13+3] + Grade[i*13+4] 
-                + Grade[i*13+5] + Grade[i*13+6] + Grade[i*13+7] + Grade[i*13+8] + Grade[i*13+9] + Grade[i*13+10] 
-                + Grade[i*13+11] + Grade[i*13+12])/1.3)/10
+        for (var i = 1; i <  (grade.length/8)-supprEnd; i++) {
+            Zoomgrade[i-1] = Math.round((grade[i*8] + grade[i*8+1] + grade[i*8+2] + grade[i*8+3] + grade[i*8+4] 
+                + grade[i*8+5] + grade[i*8+6] + grade[i*8+7])/0.8)/10
         }
     }
     else if (Math.round(activitie.moving_time / 60) < 210) {
-        for (var i = 1; i <  (Grade.length/15)-supprEnd; i++) {
-            ZoomGrade[i-1] = Math.round((Grade[i*15] + Grade[i*15+1] + Grade[i*15+2] + Grade[i*15+3] + Grade[i*15+4] + Grade[i*15+5] +  
-                Grade[i*15+6] + Grade[i*15+7] + Grade[i*15+8] + Grade[i*15+9] + Grade[i*15+10] + Grade[i*15+11] + Grade[i*15+12] + 
-                Grade[i*15+13] + Grade[i*15+14])/1.5)/10
+        for (var i = 1; i <  (grade.length/10)-supprEnd; i++) {
+            Zoomgrade[i-1] = Math.round((grade[i*10] + grade[i*10+1] + grade[i*10+2] + grade[i*10+3] + grade[i*10+4] + grade[i*10+5] +  
+                grade[i*10+6] + grade[i*10+7] + grade[i*10+8] + grade[i*10+9])/1.0)/10
         }
     }
     else if (Math.round(activitie.moving_time / 60) < 240) {
-        for (var i = 1; i <  (Grade.length/17)-supprEnd; i++) {
-            ZoomGrade[i-1] = Math.round((Grade[i*17] + Grade[i*17+1] + Grade[i*17+2] + Grade[i*17+3] + Grade[i*17+4] + Grade[i*17+5] +  
-                Grade[i*17+6] + Grade[i*17+7] + Grade[i*17+8] + Grade[i*17+9] + Grade[i*17+10] + Grade[i*17+11] + Grade[i*17+12] + 
-                Grade[i*17+13] + Grade[i*17+14] + Grade[i*17+15] + Grade[i*17+16])/1.7)/10
+        for (var i = 1; i <  (grade.length/12)-supprEnd; i++) {
+            Zoomgrade[i-1] = Math.round((grade[i*12] + grade[i*12+1] + grade[i*12+2] + grade[i*12+3] 
+                + grade[i*12+4] + grade[i*12+5] + grade[i*12+6] + grade[i*12+7] + grade[i*12+8] + grade[i*12+9] 
+                + grade[i*12+10] + grade[i*12+11])/1.2)/10
         }
     }
     else if (Math.round(activitie.moving_time / 60) < 270) {
-        for (var i = 1; i <  (Grade.length/20)-supprEnd; i++) {
-            ZoomGrade[i-1] = Math.round((Grade[i*20] + Grade[i*20+1] + Grade[i*20+2] + Grade[i*20+3] + Grade[i*20+4] + Grade[i*20+5] +  
-                Grade[i*20+6] + Grade[i*20+7] + Grade[i*20+8] + Grade[i*20+9] + Grade[i*20+10] + Grade[i*20+11] + Grade[i*20+12] + 
-                Grade[i*20+13] + Grade[i*20+14] + Grade[i*20+15] + Grade[i*20+16] + Grade[i*20+17] + Grade[i*20+18] + 
-                Grade[i*20+19])/2.0)/10
+        for (var i = 1; i <  (grade.length/14)-supprEnd; i++) {
+            Zoomgrade[i-1] = Math.round((grade[i*14] + grade[i*14+1] + grade[i*14+2] + grade[i*14+3] + grade[i*14+4] + grade[i*14+5] +  
+                grade[i*14+6] + grade[i*14+7] + grade[i*14+8] + grade[i*14+9] + grade[i*14+10] + grade[i*14+11] + grade[i*14+12] + 
+                grade[i*14+13])/1.4)/10
         }
     }
     else if (Math.round(activitie.moving_time / 60) < 300) {
-        for (var i = 1; i <  (Grade.length/23)-supprEnd; i++) {
-            ZoomGrade[i-1] = Math.round((Grade[i*23] + Grade[i*23+1] + Grade[i*23+2] + Grade[i*23+3] + Grade[i*23+4] + Grade[i*23+5] +  
-                Grade[i*23+6] + Grade[i*23+7] + Grade[i*23+8] + Grade[i*23+9] + Grade[i*23+10] + Grade[i*23+11] + Grade[i*23+12] + 
-                Grade[i*23+13] + Grade[i*23+14] + Grade[i*23+15] + Grade[i*23+16] + Grade[i*23+17] + Grade[i*23+18] + 
-                Grade[i*23+19] + Grade[i*23+20] + Grade[i*23+21] + Grade[i*23+22])/2.3)/10
+        for (var i = 1; i <  (grade.length/16)-supprEnd; i++) {
+            Zoomgrade[i-1] = Math.round((grade[i*16] + grade[i*16+1] + grade[i*16+2] + grade[i*16+3] + grade[i*16+4] + grade[i*16+5] +  
+                grade[i*16+6] + grade[i*16+7] + grade[i*16+8] + grade[i*16+9] + grade[i*16+10] + grade[i*16+11] + grade[i*16+12] + 
+                grade[i*16+13] + grade[i*16+14] + grade[i*16+15])/1.6)/10
         }
     }
     else if (Math.round(activitie.moving_time / 60) > 300) {
-        for (var i = 1; i <  (Grade.length/26)-supprEnd; i++) {
-            ZoomGrade[i-1] = Math.round((Grade[i*26] + Grade[i*26+1] + Grade[i*26+2] + Grade[i*26+3] + Grade[i*26+4] + Grade[i*26+5] +  
-                Grade[i*26+6] + Grade[i*26+7] + Grade[i*26+8] + Grade[i*26+9] + Grade[i*26+10] + Grade[i*26+11] + Grade[i*26+12] + 
-                Grade[i*26+13] + Grade[i*26+14] + Grade[i*26+15] + Grade[i*26+16] + Grade[i*26+17] + Grade[i*26+18] + 
-                Grade[i*26+19] + Grade[i*26+20] + Grade[i*26+21] + Grade[i*26+22] + Grade[i*26+23] + Grade[i*26+24]
-                + Grade[i*26+25])/2.6)/10
+        for (var i = 1; i <  (grade.length/18)-supprEnd; i++) {
+            Zoomgrade[i-1] = Math.round((grade[i*18] + grade[i*18+1] + grade[i*18+2] + grade[i*18+3] + grade[i*18+4] + grade[i*18+5] +  
+                grade[i*18+6] + grade[i*18+7] + grade[i*18+8] + grade[i*18+9] + grade[i*18+10] + grade[i*18+11] + grade[i*18+12] + 
+                grade[i*18+13] + grade[i*18+14] + grade[i*18+15] + grade[i*18+16] + grade[i*18+17])/1.8)/10
         }
     }
 
@@ -333,26 +289,26 @@ function postActivitiesStreamsElevationChart(response, activitie, latlng) {
         poids = 75;
     }
 
-	for (let i = 0; i < ZoomVitesse2.length; i++) {
-        if (ZoomElevation[i] < 500) {
+	for (let i = 0; i < Zoomvitesse2.length; i++) {
+        if (Zoomaltitude[i] < 500) {
             pression = pressionValues.zero;
         }
-        else if(ZoomElevation[i] < 1000) {
+        else if(Zoomaltitude[i] < 1000) {
             pression = pressionValues.cinq_cent;
         }
-        else if(ZoomElevation[i] < 1500) {
+        else if(Zoomaltitude[i] < 1500) {
             pression = pressionValues.mille;
         }
-        else if(ZoomElevation[i] < 2000) {
+        else if(Zoomaltitude[i] < 2000) {
             pression = pressionValues.mille_cinq_cent;
         }
         else {
             pression = pressionValues.deux_mille;
         }
 
-        wattAir[1] = pression / 2 * 0.45 * aeroValues.bottom * Math.pow(((ZoomVitesse2[i]) / 3.6), 3);
-	    wattRoulement[1] = frotement * 9.81 * poids * (ZoomVitesse2[i] / 3.6);
-		wattPente[1] = poids * 9.81 * (ZoomVitesse2[i] / 3.6) * ZoomGrade[i] / 100;
+        wattAir[1] = pression / 2 * 0.45 * aeroValues.bottom * Math.pow(((Zoomvitesse2[i]) / 3.6), 3);
+	    wattRoulement[1] = frotement * 9.81 * poids * (Zoomvitesse2[i] / 3.6);
+		wattPente[1] = poids * 9.81 * (Zoomvitesse2[i] / 3.6) * Zoomgrade[i] / 100;
 		watt[i] = wattAir[1] + wattRoulement[1] + wattPente[1]
 		if (watt[i] < 0) {
 			watt[i] = 0
@@ -361,9 +317,9 @@ function postActivitiesStreamsElevationChart(response, activitie, latlng) {
 	}
     watt.splice(vitesse.length - 1, 1)
                 
-    var ctx = document.getElementById('graphElevation');
-    var svg = document.getElementById("svgElevation");
-    var bar = document.getElementById("barElevation");
+    var ctx = document.getElementById('graphaltitude');
+    var svg = document.getElementById("svgaltitude");
+    var bar = document.getElementById("baraltitude");
     let height;
 
     if (document.documentElement.clientWidth > 1200) {
@@ -434,7 +390,7 @@ function postActivitiesStreamsElevationChart(response, activitie, latlng) {
     ctx.height =  height;
 
     var kilometrage = new Array()
-    for (let i = 0; i < Elevation.length; i++) {
+    for (let i = 0; i < altitude.length; i++) {
         kilometrage[i] = "      "
     }
     
@@ -442,7 +398,7 @@ function postActivitiesStreamsElevationChart(response, activitie, latlng) {
         labels: kilometrage,
         datasets: [{
             label: 'altitude (m)',
-            data: Elevation,
+            data: altitude,
             borderColor: [
                 'rgb(170, 170, 170)',
             ],
@@ -481,23 +437,23 @@ function postActivitiesStreamsElevationChart(response, activitie, latlng) {
     })
 
     let xHover;
-    let ctxWidth = document.getElementById("graphElevation").style.width;
+    let ctxWidth = document.getElementById("graphaltitude").style.width;
     sessionStorage.ctxWidth = (ctxWidth.slice(0, ctxWidth.length - 2));
     let fraction;
-    let elevation;
+    let Altitude;
     let position
 
-    var barElevation = document.getElementById("barElevation");
+    var baraltitude = document.getElementById("baraltitude");
 	var barSpeed = document.getElementById("barSpeed");
 	var barPower = document.getElementById("barPower");
 
-    document.getElementById("svgElevation").onmousemove = function (event) {
+    document.getElementById("svgaltitude").onmousemove = function (event) {
         xHover = event.offsetX;
 		if (xHover >= 21 && xHover <= sessionStorage.ctxWidth - 9) {
 			barSpeed.setAttribute('x1', xHover);
 			barSpeed.setAttribute('x2', xHover);
-			barElevation.setAttribute('x1', xHover);
-			barElevation.setAttribute('x2', xHover);
+			baraltitude.setAttribute('x1', xHover);
+			baraltitude.setAttribute('x2', xHover);
 			barSpeed.setAttribute('x1', xHover);
 			barSpeed.setAttribute('x2', xHover);
 			barPower.setAttribute('x1', xHover);
@@ -505,17 +461,17 @@ function postActivitiesStreamsElevationChart(response, activitie, latlng) {
         }
         fraction = (xHover - 23) / (sessionStorage.ctxWidth - 30);
 
-        grade = ZoomGrade[ Math.round( fraction * ZoomGrade.length) ]
+        grade = Zoomgrade[ Math.round( fraction * Zoomgrade.length) ]
         if (grade != undefined) {
             document.getElementById("grade").innerText = document.getElementById("grade").innerText.slice(0, 6) + " " + grade + "%"
         }
 
-        elevation = ZoomElevation[ Math.round( fraction * ZoomElevation.length) ]
-        if (elevation != undefined) {
-            document.getElementById("elevation").innerText = document.getElementById("elevation").innerText.slice(0, 10) + " " + elevation + "m"
+        Altitude = Zoomaltitude[ Math.round( fraction * Zoomaltitude.length) ]
+        if (Altitude != undefined) {
+            document.getElementById("altitude").innerText = document.getElementById("altitude").innerText.slice(0, 10) + " " + Altitude + "m"
         }
 
-        vitesse = ZoomVitesse[ Math.round( fraction * ZoomVitesse.length) ]
+        vitesse = Zoomvitesse[ Math.round( fraction * Zoomvitesse.length) ]
         if (vitesse != undefined) {
             document.getElementById("vitesse").innerText = document.getElementById("vitesse").innerText.slice(0, 8) + " " + vitesse + "km/h"
         }
@@ -525,36 +481,90 @@ function postActivitiesStreamsElevationChart(response, activitie, latlng) {
             document.getElementById("power").innerText = document.getElementById("power").innerText.slice(0, 10) + " " + power + "W"
         }
 
-        setMarker(fraction, latlng)
+        setMarker(fraction, latlng);
     }
 
     let extent = document.getElementById("extent")
     let resizeLeft = document.getElementById("resizeLeft")
     let resizeRight = document.getElementById("resizeRight")
     let xClic;
+    let selection;
     
-    $("#svgElevation").mousedown(function(event) {
+    $("#svgaltitude").mousedown(function(event) {
         extent.setAttribute('width', 0);
-        resizeLeft.setAttribute('transform', `0, 0)`)
-        resizeRight.setAttribute('transform', `0, 0)`)
+        resizeLeft.setAttribute('transform', `translate(0, 0)`);
+        resizeRight.setAttribute('transform', `translate(0, 0)`);
         xClic = event.offsetX;
-        extent.setAttribute('x', xClic);
-        $("#svgElevation").mousemove(function (event2) {
+        sessionStorage.xClic = xClic;
+        if (xClic >= 21) {
+            extent.setAttribute('x', xClic);
+        }
+        else {
+            extent.setAttribute('x', 21);
+        }
+        $("#svgaltitude").mousemove(function (event2) {
             xClic2 = event2.offsetX;
             if (xClic2 - xClic > 0) {
-                extent.setAttribute('width', xClic2 - xClic);
-                resizeLeft.setAttribute('transform', `translate(${xClic},0)`)
-                resizeRight.setAttribute('transform', `translate(${xClic2},0)`)
+                if (xClic >= 21 && xClic2 <= sessionStorage.ctxWidth - 9) {
+                    extent.setAttribute('width', xClic2 - xClic);
+                    resizeLeft.setAttribute('transform', `translate(${xClic}, 0)`);
+                    resizeRight.setAttribute('transform', `translate(${xClic2}, 0)`);
+                }
+                else if (xClic >= 21) {
+                    extent.setAttribute('width', (sessionStorage.ctxWidth - 9) - xClic);
+                    resizeLeft.setAttribute('transform', `translate(${xClick}, 0)`);
+                    resizeRight.setAttribute('transform', `translate(${sessionStorage.ctxWidth - 9}, 0)`);
+                }
+                else if (xClic2 <= sessionStorage.ctxWidth - 9) {
+                    extent.setAttribute('width', xClic2 - xClic);
+                    resizeLeft.setAttribute('transform', `translate(21, 0)`);
+                    resizeRight.setAttribute('transform', `translate(${xClic2}, 0)`);
+                }
+                else {
+                    extent.setAttribute('width', (sessionStorage.ctxWidth - 9) - 21);
+                    resizeLeft.setAttribute('transform', `translate(21, 0)`);
+                    resizeRight.setAttribute('transform', `translate(${sessionStorage.ctxWidth - 9}, 0)`);
+                }
             }
             else {
-                extent.setAttribute('x', xClic2);
-                extent.setAttribute('width', Math.abs(xClic2 - xClic));
-                resizeLeft.setAttribute('transform', `translate(${xClic2},0)`)
-                resizeRight.setAttribute('transform', `translate(${xClic},0)`)
+                if (xClic <= sessionStorage.ctxWidth - 9 && xClic2 >= 21) {
+                    extent.setAttribute('x', xClic2);
+                    extent.setAttribute('width', Math.abs(xClic2 - xClic) );
+                    resizeLeft.setAttribute('transform', `translate(${xClic2}, 0)`);
+                    resizeRight.setAttribute('transform', `translate(${xClic}, 0)`);
+                }
+                else if (xClic <= sessionStorage.ctxWidth - 9) {
+                    extent.setAttribute('x', 21);
+                    extent.setAttribute('width', Math.abs(xClic - 21));
+                    resizeLeft.setAttribute('transform', `translate(21, 0)`);
+                    resizeRight.setAttribute('transform', `translate(${xClic}, 0)`);
+                }
+                else if (xClic2 >= 21) {
+                    extent.setAttribute('x', xClic2);
+                    extent.setAttribute('width', Math.abs((sessionStorage.ctxWidth - 9) - xClic2));
+                    resizeLeft.setAttribute('transform', `translate(${xClic2}, 0)`);
+                    resizeRight.setAttribute('transform', `translate(${sessionStorage.ctxWidth - 9}, 0)`);
+                }
+                else {
+                    extent.setAttribute('x', 21);
+                    extent.setAttribute('width', Math.abs((sessionStorage.ctxWidth - 9) - 21) );
+                    resizeLeft.setAttribute('transform', `translate(21, 0)`);
+                    resizeRight.setAttribute('transform', `translate(${sessionStorage.ctxWidth - 9}, 0)`);
+                }
             }
-        })
+        });
     })
     .mouseup(function() {
-        $("#svgElevation").off("mousemove");
+        $("#svgaltitude").off("mousemove");
+        selection = extent.width.animVal.value / sessionStorage.ctxWidth;
+        x = (extent.x.animVal.value - 21) / sessionStorage.ctxWidth;
+
+        let dataSpeed = new Array();
+        for (let i = Math.round(x * Zoomvitesse.length);( i - Math.round(x * Zoomvitesse.length)) <  Math.round(Zoomvitesse.length * selection); i++) {
+            console.log(i)
+            dataSpeed[i] = Zoomvitesse[i]
+        }
+        console.log(dataSpeed)
+        upsateSpeedChart(dataSpeed);
     });
 }

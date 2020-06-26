@@ -1,10 +1,4 @@
-function postLegend(response, activitie, gear) {
-    let vitesse = new Array()
-    for (var i = 0; i < response[0].data.length; i++) {
-        vitesse[i] = (Math.round(((response[0].data[i + 1] - response[0].data[i]) * response[0].data.length / activitie.moving_time) * 36))/10
-    }
-	vitesse.splice(vitesse.length - 1, 1)
-
+function postLegend(activitie, gear, latlng , altitude, vitesse, distance, grade) {
 	let supprEnd;
 	if (vitesse.length.toString().charAt(vitesse.length.toString().length - 1) == "0") {
 		supprEnd = 0;
@@ -54,34 +48,28 @@ function postLegend(response, activitie, gear) {
 	document.getElementById("vitesseMax").innerText += " " + Math.round(vitesseMax * 10) / 10 + "km/h"
 
 
-	let Grade = new Array()
-    for (var i = 0; i < response[0].data.length; i++) {
-		Grade[i] = ((response[1].data[i + 1] - response[1].data[i]) / (response[1].data.length / activitie.distance)) * 0.5
-	}
-	Grade.splice(vitesse.length - 1, 1)
-
 	let ZoomGrade = new Array()
-	for (var i = 1; i <  (Grade.length/5)-supprEnd; i++) {
-		ZoomGrade[i-1] = Math.round((Grade[i*5] + Grade[i*5+1] + Grade[i*5+2] + Grade[i*5+3] + Grade[i*5+4])/0.5)/10
+	for (var i = 1; i <  (grade.length/5)-supprEnd; i++) {
+		ZoomGrade[i-1] = Math.round((grade[i*5] + grade[i*5+1] + grade[i*5+2] + grade[i*5+3] + grade[i*5+4])/0.5)/10
 	}
 
-    let elevationMax = 0;
-    for (var i = 0; i <  response[0].data.length - 1; i++) {
-        if (response[1].data[i] > elevationMax) {
-			elevationMax = response[1].data[i];
+    let altitudeMax = 0;
+    for (var i = 0; i <  altitude.length - 1; i++) {
+        if (altitude[i] > altitudeMax) {
+			altitudeMax = altitude[i];
 		}
 	}
 
-	document.getElementById("elevationMax").innerText += " " + Math.round(elevationMax * 10) / 10 + "m"
+	document.getElementById("altitudeMax").innerText += " " + Math.round(altitudeMax * 10) / 10 + "m"
 
-	let elevationMin = 10000;
-    for (var i = 0; i <  response[0].data.length - 1; i++) {
-        if (response[1].data[i] < elevationMin) {
-			elevationMin = response[1].data[i];
+	let altitudeMin = 10000;
+    for (var i = 0; i <  altitude.length - 1; i++) {
+        if (altitude[i] < altitudeMin) {
+			altitudeMin = altitude[i];
 		}
 	}
 
-	document.getElementById("elevationMoy").innerText += " " + Math.round(elevationMin * 10) / 10 + "m"
+	document.getElementById("altitudeMoy").innerText += " " + Math.round(altitudeMin * 10) / 10 + "m"
 
 
     let pressionValues = {
@@ -164,46 +152,40 @@ function postLegend(response, activitie, gear) {
 
 
 	let xClic;
-	let ctxWidth = document.getElementById("graphElevation").style.width;
+	let ctxWidth = document.getElementById("graphaltitude").style.width;
 	ctxWidth = (ctxWidth.slice(0, ctxWidth.length - 2));
 	let fraction;
 
-	var barElevation = document.getElementById("barElevation");
+	var baraltitude = document.getElementById("baraltitude");
 	var barSpeed = document.getElementById("barSpeed");
 	var barPower = document.getElementById("barPower");
 
-	$("#graphElevation").click(function(event) {
-		xClic = event.offsetX - 21;
-		fraction = xClic / ctxWidth;
-		console.log(fraction)
-	});
-
-	$("#svgElevation").hover(function () {
-		document.getElementById("barElevation").classList.add("bar")
+	$("#svgaltitude").hover(function () {
+		document.getElementById("baraltitude").classList.add("bar")
 		document.getElementById("barSpeed").classList.add("bar")
 		document.getElementById("barPower").classList.add("bar")
 	}, function () {
-		document.getElementById("barElevation").classList.remove("bar")
+		document.getElementById("baraltitude").classList.remove("bar")
 		document.getElementById("barSpeed").classList.remove("bar")
 		document.getElementById("barPower").classList.remove("bar")
 	})
 
 	$("#svgSpeed").hover(function () {
-		document.getElementById("barElevation").classList.add("bar")
+		document.getElementById("baraltitude").classList.add("bar")
 		document.getElementById("barSpeed").classList.add("bar")
 		document.getElementById("barPower").classList.add("bar")
 	}, function () {
-		document.getElementById("barElevation").classList.remove("bar")
+		document.getElementById("baraltitude").classList.remove("bar")
 		document.getElementById("barSpeed").classList.remove("bar")
 		document.getElementById("barPower").classList.remove("bar")
 	})
 
 	$("#svgPower").hover(function () {
-		document.getElementById("barElevation").classList.add("bar")
+		document.getElementById("baraltitude").classList.add("bar")
 		document.getElementById("barSpeed").classList.add("bar")
 		document.getElementById("barPower").classList.add("bar")
 	}, function () {
-		document.getElementById("barElevation").classList.remove("bar")
+		document.getElementById("baraltitude").classList.remove("bar")
 		document.getElementById("barSpeed").classList.remove("bar")
 		document.getElementById("barPower").classList.remove("bar")
 	})
