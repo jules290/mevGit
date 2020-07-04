@@ -96,7 +96,7 @@ function getActivities() {
             Date[i] = response[i].start_date_local;
             Time[i] = response[i].moving_time;
             Dst[i] = response[i].distance;
-            Moyenne[i] = response[i].average_speed;
+            Moyenne[i] = response[i].average_speed * 3.6;
             Polyline[i] = response[i].map.summary_polyline;
         }
 
@@ -114,7 +114,6 @@ function getActivities() {
 }
 
 function postListActivité() {
-    console.log(localStorage.activitiesName)
     let Name = JSON.parse(localStorage.activitiesName);
     let Date = JSON.parse(localStorage.activitiesDate);
     let Time = JSON.parse(localStorage.activitiesTime);

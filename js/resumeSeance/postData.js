@@ -6,7 +6,7 @@ function postData() {
 }
 
 function getActivityStreams() {
-    let Id = JSON.parse(localStorage.activityId)[sessionStorage.activityIndex];
+    let Id = JSON.parse(localStorage.activitiesId)[sessionStorage.activityIndex];
 
     let moving;
     let latlng;
@@ -39,7 +39,6 @@ function getActivityStreams() {
             }
         }
         $.ajax(settings).done(function (response) {
-            alert()
             // localStorage.activityStream = "true";
             console.log(response)
             let activitiesMoving;
@@ -76,20 +75,20 @@ function getActivityStreams() {
                 }
             }
 
-            for (let i = 0; i < distance.length; i++) {
+            for (let i = 0; i < moving.length; i++) {
                 if (moving[i] == false) {
-                    distance[i].splice(i, 1);
-                    altitude[i].splice(i, 1);
-                    vitesse[i].splice(i, 1);
-                    grade[i].splice(i, 1);
+                    distance.splice(i, 1);
+                    altitude.splice(i, 1);
+                    vitesse.splice(i, 1);
+                    grade.splice(i, 1);
                 }   
             }
 
-            postLegend(activitie, response, latlng , altitude, vitesse, distance, grade)
-            postWatt(activitie, response, latlng , altitude, vitesse, distance, grade)
-            postActivitiesStreams(activitie, response, latlng , altitude, vitesse, distance, grade)
-            postActivitiesStreamsaltitudeChart(activitie, response, latlng , altitude, vitesse, distance, grade)
-            postActivitiesStreamsSpeedChart(activitie, response, latlng , altitude, vitesse, distance, grade)
+            // postLegend(activitie, response, latlng , altitude, vitesse, distance, grade)
+            // postWatt(activitie, response, latlng , altitude, vitesse, distance, grade)
+            // postActivitiesStreams(activitie, response, latlng , altitude, vitesse, distance, grade)
+            // postActivitiesStreamsaltitudeChart(activitie, response, latlng , altitude, vitesse, distance, grade)
+            // postActivitiesStreamsSpeedChart(activitie, response, latlng , altitude, vitesse, distance, grade)
         })
     }
 }

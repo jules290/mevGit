@@ -28,7 +28,7 @@ var marker = L.marker([0, 0], {
 }).addTo(map);
 
 function postActivitiesZoom() {
-    let Polyline = JSON.parse(localStorage.activityPolyline)[sessionStorage.activityIndex];
+    let Polyline = JSON.parse(localStorage.activitiesPolyline)[sessionStorage.activityIndex];
 
     var coordonnés = L.Polyline.fromEncoded(Polyline).getLatLngs();
     
