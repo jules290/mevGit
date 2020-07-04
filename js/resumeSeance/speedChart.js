@@ -251,12 +251,12 @@ function postActivitiesStreamsSpeedChart(activitie, gear, latlng , altitude, vit
 	}
 
 	let frotementValues = {
-		vtt: 0.035,
+		vtt: 0.038,
 		route: 0.004
 	}
 
 	let frotement
-	switch(activitie.gear.frame_type) {
+	switch(gear.frame_type) {
 		case 1:
 			frotement = frotementValues.vtt;
 		  break;

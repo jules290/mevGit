@@ -16,8 +16,6 @@ function reAuthorize() {
     .then((res) => res.json())
     .then(res => {
         localStorage.access_token = res.access_token;
-        getAthlete(res);
-        getActivity(res);
     })
 }
 

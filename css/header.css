@@ -3,6 +3,10 @@
     height: 50px;
     background-color: rgb(230, 230, 230);
     position: static;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 #open {
@@ -12,122 +16,64 @@
     padding-left: 10px;
     width: 50px;
     transition: 0.4s;
-    position: relative;
+    position: absolute;
     z-index: 5;
+    left: 0px;
 }
 
 #open:hover {
     background-color: rgba(0, 0, 0, 0.17);
 }
 
-@media only screen and (max-width: 280px) {
-    #titre {
-        position: relative;
-        margin-top: -58px;
-        text-align: center;
-        width: 26.79%;
-        left: 36.6%;
-    }
+#titre {
+    text-align: center;
+}
 
+#mev {
+    letter-spacing: 3px;
+    font-variant: small-caps;
+    color: rgb(141, 58, 58);
+    display: inline-block;
+}
+
+@media only screen and (max-width: 280px) {
     #mev {
-        color: rgb(141, 58, 58);
         font-size: 12.5px;
-        display: inline-block;
     }
 }
 
 @media only screen and (min-width: 280px) {
-    #titre {
-        position: relative;
-        margin-top: -50px;
-        text-align: center;
-        width: 72%;
-        left: 15%;
-    }
-
     #mev {
-        color: rgb(141, 58, 58);
         font-size: 16.5px;
-        display: inline-block;
     }
 }
 
 @media only screen and (min-width: 440px) {
-    #titre {
-        position: relative;
-        margin-top: -58px;
-        text-align: center;
-        width: 60%;
-        left: 20%;
-    }
-
     #mev {
-        color: rgb(141, 58, 58);
         font-size: 22px;
-        display: inline-block;
     }
 }
 
 @media only screen and (min-width: 600px) {
-    #titre {
-        position: relative;
-        margin-top: -61px;
-        text-align: center;
-        width: 50%;
-        left: 30%;
-    }
-
     #mev {
-        color: rgb(141, 58, 58);
         font-size: 24px;
-        display: inline-block;
     }
 }
 
 @media only screen and (min-width: 768px) {
-    #titre {
-        position: relative;
-        margin-top: -62px;
-        text-align: center;
-        width: 40%;
-        left: 30%;
-    } 
-
     #mev {
-        color: rgb(141, 58, 58);
         font-size: 25px;
-        display: inline-block;
     }
 }
 
 @media only screen and (min-width: 992px) {
-    #titre {
-        position: relative;
-        margin-top: -66px;
-        text-align: center;
-        width: 32%;
-        left: 34%;
-    }
-
     #mev {
-        color: rgb(141, 58, 58);
         font-size: 27px;
-        display: inline-block;
     }
 }
 
 @media only screen and (min-width: 1200px) {
-    #titre {
-        position: relative;
-        margin-top: -69px;
-        text-align: center;
-        width: 26.79%;
-        left: 36.6%;
-    }
-
     #mev {
-        color: rgb(141, 58, 58);
         font-size: 28px;
-        display: inline-block;
     }
 } 

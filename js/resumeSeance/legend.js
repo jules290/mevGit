@@ -1,4 +1,4 @@
-function postLegend(activitie, gear, latlng , altitude, vitesse, distance, grade) {
+function postLegend(activitie, latlng , altitude, vitesse, distance, grade) {
 	let supprEnd;
 	if (vitesse.length.toString().charAt(vitesse.length.toString().length - 1) == "0") {
 		supprEnd = 0;
@@ -109,7 +109,7 @@ function postLegend(activitie, gear, latlng , altitude, vitesse, distance, grade
 
 		default:
 			frotement = frotementValues.route;
-    }
+	}
 
 	let aeroValues = {
 		top: 0.445 * 3.6,
@@ -118,10 +118,19 @@ function postLegend(activitie, gear, latlng , altitude, vitesse, distance, grade
 		prolongateur: 0.200 * 3.6
 	}
 
-    let watt = new Array();
+	let watt = new Array();
 	let wattAir = new Array();
 	let wattRoulement = new Array();
-	let wattPente = new Array();
+    let wattPente = new Array();
+    let pression;
+    let poids;
+    if (sessionStorage.poids && sessionStorage.poids > 0) {
+        poids = sessionStorage.poids + 7.5;
+    }
+    else {
+        poids = 80;
+	}
+	
 	for (let i = 0; i < ZoomVitesse.length; i++) {
         wattAir[1] = 1.013 / 2 * 0.45 * aeroValues.bottom * Math.pow(((ZoomVitesse[i]) / 3.6), 3);
 	    wattRoulement[1] = frotement * 9.81 * 65 * (ZoomVitesse[i] / 3.6);

@@ -27,9 +27,11 @@ var marker = L.marker([0, 0], {
     icon: myIcon,    
 }).addTo(map);
 
-function postActivitiesZoom(response) {
-    sessionStorage.polyline = response.map.summary_polyline;
-    var coordonnés = L.Polyline.fromEncoded(sessionStorage.polyline).getLatLngs();
+function postActivitiesZoom() {
+    let Polyline = JSON.parse(localStorage.activityPolyline)[sessionStorage.activityIndex];
+
+    var coordonnés = L.Polyline.fromEncoded(Polyline).getLatLngs();
+    
 
     let color = new Array();
         color[0] = "red";

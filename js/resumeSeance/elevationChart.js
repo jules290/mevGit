@@ -6,6 +6,30 @@ function postActivitiesStreamsaltitudeChart(activitie, gear, latlng , altitude, 
     else {
         supprEnd = 1;
     }
+    
+    let ZoomVitesse2Hover = new Array()
+	for (var i = 1; i <  (vitesse.length/5)-supprEnd; i++) {
+		ZoomVitesse2Hover[i-1] = Math.round((vitesse[i*5] + vitesse[i*5+1] + vitesse[i*5+2] + vitesse[i*5+3] + vitesse[i*5+4])/0.5)/10
+    }
+
+    for (var i = 0; i <  ZoomVitesse2Hover.length; i++) {			
+		if (i == 0) {
+			ZoomVitesse2Hover[i] = ZoomVitesse2Hover[i]
+		}
+		else if (ZoomVitesse2Hover[i - 1] > 10) {
+			ZoomVitesse2Hover[i] = ( ZoomVitesse2Hover[i] + ( ( ZoomVitesse2Hover[i] - ZoomVitesse2Hover[i - 1] ) * 0.1 ) ) * 0.99
+		}
+		else {
+			ZoomVitesse2Hover[i] = ZoomVitesse2Hover[i]
+		}
+	}
+    
+    if (altitude.length.toString().charAt(altitude.length.toString().length - 1) == "0") {
+        supprEnd = 0;
+    }
+    else {
+        supprEnd = 1;
+    }
             
     let Zoomaltitude = new Array()
     if (Math.round(activitie.moving_time / 60) < 30) {
@@ -154,19 +178,6 @@ function postActivitiesStreamsaltitudeChart(activitie, gear, latlng , altitude, 
         }
     }
 
-    let Zoomvitesse2 = new Array();
-    for (var i = 0; i <  Zoomvitesse.length; i++) {			
-		if (i == 0) {
-			Zoomvitesse2[i] = Zoomvitesse[i]
-		}
-		else if (Zoomvitesse[i - 1] > 10) {
-			Zoomvitesse2[i] = ( Zoomvitesse[i] + ( ( Zoomvitesse[i] - Zoomvitesse[i - 1] ) * 0.1 ) ) * 0.99
-		}
-		else {
-			Zoomvitesse2[i] = Zoomvitesse[i]
-		}
-    }
-
     if (grade.length.toString().charAt(altitude.length.toString().length - 1) == "0") {
         supprEnd = 0;
     }
@@ -251,12 +262,12 @@ function postActivitiesStreamsaltitudeChart(activitie, gear, latlng , altitude, 
 	}
 
 	let frotementValues = {
-		vtt: 0.035,
+		vtt: 0.038,
 		route: 0.004
 	}
 
 	let frotement
-	switch(activitie.gear.frame_type) {
+	switch(gear.frame_type) {
 		case 1:
 			frotement = frotementValues.vtt;
 		  break;
@@ -283,13 +294,13 @@ function postActivitiesStreamsaltitudeChart(activitie, gear, latlng , altitude, 
     let pression;
     let poids;
     if (sessionStorage.poids && sessionStorage.poids > 0) {
-        poids = sessionStorage.poids;
+        poids = sessionStorage.poids + 7.5;
     }
     else {
-        poids = 75;
+        poids = 80;
     }
 
-	for (let i = 0; i < Zoomvitesse2.length; i++) {
+	for (let i = 0; i < ZoomVitesse2Hover.length; i++) {
         if (Zoomaltitude[i] < 500) {
             pression = pressionValues.zero;
         }
@@ -306,9 +317,9 @@ function postActivitiesStreamsaltitudeChart(activitie, gear, latlng , altitude, 
             pression = pressionValues.deux_mille;
         }
 
-        wattAir[1] = pression / 2 * 0.45 * aeroValues.bottom * Math.pow(((Zoomvitesse2[i]) / 3.6), 3);
-	    wattRoulement[1] = frotement * 9.81 * poids * (Zoomvitesse2[i] / 3.6);
-		wattPente[1] = poids * 9.81 * (Zoomvitesse2[i] / 3.6) * Zoomgrade[i] / 100;
+        wattAir[1] = pression / 2 * 0.45 * aeroValues.bottom * Math.pow(((ZoomVitesse2Hover[i]) / 3.6), 3);
+	    wattRoulement[1] = frotement * 9.81 * poids * (ZoomVitesse2Hover[i] / 3.6);
+		wattPente[1] = poids * 9.81 * (ZoomVitesse2Hover[i] / 3.6) * Zoomgrade[i] / 100;
 		watt[i] = wattAir[1] + wattRoulement[1] + wattPente[1]
 		if (watt[i] < 0) {
 			watt[i] = 0
@@ -390,10 +401,10 @@ function postActivitiesStreamsaltitudeChart(activitie, gear, latlng , altitude, 
     ctx.height =  height;
 
     var kilometrage = new Array()
-    for (let i = 0; i < altitude.length; i++) {
+    for (let i = 0; i < Zoomaltitude.length; i++) {
         kilometrage[i] = "      "
     }
-    
+
     var data = {
         labels: kilometrage,
         datasets: [{
@@ -471,9 +482,9 @@ function postActivitiesStreamsaltitudeChart(activitie, gear, latlng , altitude, 
             document.getElementById("altitude").innerText = document.getElementById("altitude").innerText.slice(0, 10) + " " + Altitude + "m"
         }
 
-        vitesse = Zoomvitesse[ Math.round( fraction * Zoomvitesse.length) ]
-        if (vitesse != undefined) {
-            document.getElementById("vitesse").innerText = document.getElementById("vitesse").innerText.slice(0, 8) + " " + vitesse + "km/h"
+        Vitesse = Zoomvitesse[ Math.round( fraction * Zoomvitesse.length) ]
+        if (Vitesse != undefined) {
+            document.getElementById("vitesse").innerText = document.getElementById("vitesse").innerText.slice(0, 8) + " " + Vitesse + "km/h"
         }
 
         power = watt[ Math.round( fraction * watt.length) ]
@@ -552,17 +563,34 @@ function postActivitiesStreamsaltitudeChart(activitie, gear, latlng , altitude, 
                     resizeRight.setAttribute('transform', `translate(${sessionStorage.ctxWidth - 9}, 0)`);
                 }
             }
+
+            selection = extent.width.animVal.value / (sessionStorage.ctxWidth - 30);
+            x = (extent.x.animVal.value - 21) / sessionStorage.ctxWidth;
+            
+            console.log(selection)
+    
+            let dataSpeed = new Array();
+            for (let i = Math.round(x * vitesse.length);( i - Math.round(x * vitesse.length)) <  Math.round(vitesse.length * selection); i++) {
+                dataSpeed[i - Math.round(x * vitesse.length)] = vitesse[i]
+            }
+            console.log(dataSpeed)
+            upsateSpeedChart(dataSpeed);
         });
     })
     .mouseup(function() {
         $("#svgaltitude").off("mousemove");
-        selection = extent.width.animVal.value / sessionStorage.ctxWidth;
+        selection = extent.width.animVal.value / (sessionStorage.ctxWidth - 30);
         x = (extent.x.animVal.value - 21) / sessionStorage.ctxWidth;
+        
+        console.log(selection)
 
+        if (selection == 0) {
+            selection = 1
+            x = 0
+        }
         let dataSpeed = new Array();
-        for (let i = Math.round(x * Zoomvitesse.length);( i - Math.round(x * Zoomvitesse.length)) <  Math.round(Zoomvitesse.length * selection); i++) {
-            console.log(i)
-            dataSpeed[i] = Zoomvitesse[i]
+        for (let i = Math.round(x * vitesse.length);( i - Math.round(x * vitesse.length)) <  Math.round(vitesse.length * selection); i++) {
+            dataSpeed[i - Math.round(x * vitesse.length)] = vitesse[i]
         }
         console.log(dataSpeed)
         upsateSpeedChart(dataSpeed);

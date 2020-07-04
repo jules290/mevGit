@@ -32,9 +32,16 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
         <script src="../js/count-visits.js"></script>
         <script src="../js/polylineDecoder.js"></script>
+
+        <link rel="stylesheet" href="../css/resumeSeance.css" media="screen">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+        integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+        crossorigin=""></script>
     </head>
     <body>
-        
         <nav id="mySidenav" class="sidenav">
             <a class="a_accueil" id="accueil" href="../index.html">accueil</a>
             <a class="a_programme" id="prg">programmes<br>d'entrainement</a><p id="arrowDownPrg"></p>
@@ -50,14 +57,25 @@
         <div id="header">
             <div id="open">&#9776</div>
             <div id="titre">
-                <h1 id="mev">mon entrainement vélo</h1>
+                <h1 id="mev">m.e.v</h1>
+            </div>
+
+            <div id="sync">
+                <img src="../img/sync.png" id="syncImg">
+                <img src="../img/closeSyncIcon.png" id="syncClose">
+                <div id="syncBtnContenair">
+                    <div class="syncBtn">
+                        <p class="syncBtnT" id="syncBtnTAthlete">synchroniser les données d'athlete</p>
+                    </div>
+                    <div class="syncLineHorizontal"></div>
+                    <div class="syncBtn">
+                        <p class="syncBtnT" id="syncBtnTActivities">synchroniser les activités</p>
+                    </div>
+                </div>
             </div>
         </div>
         
-        <div id="main">
-            <div id="activitieMapLinkDiv">
-                <a id="activitieMapLink" href="http://www.strava.com/oauth/authorize?client_id=49195&response_type=code&redirect_uri=https://mon-entrainement-velo.netlify.app/strava/activityMap.html&scope=activity:read_all,activity:write,profile:read_all,read_all&state=OK">voir la carte de vos 30 dernière activitées</a>
-            </div>
+        <div id="main1" class="main">
 
             <section id="activite">
                 <div id="tableHeader">
@@ -67,10 +85,122 @@
                     <p id="activitiesDst">distance</p>
                 </div>
             </section>
+
+            <div id="activitieMapLinkDiv">
+                <a id="activitieMapLink" href="http://www.strava.com/oauth/authorize?client_id=49195&response_type=code&redirect_uri=https://mon-entrainement-velo.netlify.app/strava/activityMap.html&scope=activity:read_all,activity:write,profile:read_all,read_all&state=OK">voir la carte de vos 30 dernière activitées</a>
+            </div>
         </div>
+
+        <div id="main2" class="main">
+            <section id="resumeDeSeance">
+                <div id="resumeDeSeanceTitle">
+                    <div id="back">
+                        <button id="backArrow">◀</button>
+                    </div>
+                    <p id="resumeDeSeanceTitleName" class="resumeDeSeanceTitle"></p>
+                    <p class="resumeDeSeanceTitle" id="resumeDeSeanceTitleSpace">-</p>
+                    <p id="resumeDeSeanceTitleActivite" class="resumeDeSeanceTitle"></p>
+                </div>
+                <div class="firstRow">
+                    <div class="firstCase">
+                        <img class="resumeSeanceIcon" id="speedIcon" src="../img/speed.png">
+                        <p class="firstCaseTitle">VITESSE</p>
+                        <h1 class="firstCaseData" id="firstCaseDataSpeed"></h1>
+                    </div>
+                    <div class="firstCase">
+                        <img class="resumeSeanceIcon" id="distanceIcon" src="../img/distance.png">
+                        <p class="firstCaseTitle">DISTANCE</p>
+                        <h1 class="firstCaseData" id="firstCaseDataDistance"></h1>
+                    </div>
+                    <div class="firstCase">
+                        <img class="resumeSeanceIcon" id="tempsIcon" src="../img/temps.png">
+                        <p class="firstCaseTitle">TEMPS</p>
+                        <h1 class="firstCaseData" id="firstCaseDataTemps"></h1>
+                    </div>
+                </div>
+
+                <div id="clearMap">
+                    <p id="clearMapP">✖</p
+                ></div>
+                <div id="mapid"></div>
+                <div id="mapFilter"></div>
+                
+                <div id="altitudeBox" class="box">
+                    <div id="altitudeBoxLegendLeft" class="boxLegendLeft boxLegend">
+                        <p class="title">élevation</p>
+                        <p class="max" id="altitudeMax">max:</p>
+                        <p class="moy" id="altitudeMoy">min:</p>
+                    </div>
+                    <div id="altitudeGraph" class="graphBox">
+                        <canvas id="graphaltitude" class="graph"></canvas>
+                        <svg width="700" id="svgaltitude" class="svg">
+                            <line x1="21" x2="21" y1="0" y2="0" class="bar" id="baraltitude"></line>
+                            <rect id="extent" class="extent" x="0" width="0" height="100" style="cursor: move;"></rect>
+                            <g id="resizeLeft" class="resize" style="cursor: ew-resize;">
+                                <rect class="resizeBar" x="-3" width="6" height="100"></rect>
+                            </g>
+                            <g id="resizeRight" class="resize" style="cursor: ew-resize;">
+                                <rect class="resizeBar" x="-3" width="6" height="100"></rect>
+                            </g>
+                        </svg>
+                    </div>
+                    <div id="altitudeBoxLegendRight" class="boxLegendRight boxLegend">
+                        <p class="instantData" id="altitude">élévation:</p>
+                        <p class="instantData" id="grade">pente:</p>
+                    </div>
+                </div>
+
+                <div id="speedBox" class="box">
+                    <div id="altitudeBoxLegendLeft" class="boxLegendLeft boxLegend">
+                        <p class="title">vitesse</p>
+                        <p class="max" id="vitesseMax">max:</p>
+                        <p class="moy" id="vitesseMoy">moy:</p>
+                    </div>
+                    <div id="speedGraph" class="graphBox">
+                        <canvas id="graphSpeed" class="graph"></canvas>
+                        <svg width="700" id="svgSpeed" class="svg">
+                            <line x1="21" x2="21" y1="0" y2="0" class="bar" id="barSpeed"></line>
+                        </svg>
+                    </div>
+                    <div id="altitudeBoxLegendRight" class="boxLegendRight boxLegend">
+                        <p class="instantData" id="vitesse">vitesse:</p>
+                    </div>
+                </div>
+
+                <div id="powerBox" class="box">
+                    <div id="altitudeBoxLegendLeft" class="boxLegendLeft boxLegend">
+                        <p class="title">puissance</p>
+                        <p class="max" id="puissanceMax">max:</p>
+                        <p class="moy" id="puissanceMoy">moy:</p>
+                    </div>
+                    <div id="powerGraph" class="graphBox">
+                        <canvas id="graphPower" class="graph"></canvas>
+                        <svg width="700" id="svgPower" class="svg">
+                            <line x1="21" x2="21" y1="0" y2="0" class="bar" id="barPower"></line>
+                        </svg>
+                    </div>
+                    <div id="altitudeBoxLegendRight" class="boxLegendRight boxLegend">
+                        <p class="instantData" id="power">puissance:</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <script src="../js/stravaFront.js"></script>
         <script src="../js/activite.js"></script>
         <script src="../js/language.js"></script>
         <script src="../js/menunav_prg.js"></script>
+
+        <script src="../js/resumeSeance/postData.js"></script>
+        <script src="../js/resumeSeance/data.js"></script>
+        <script src="../js/resumeSeance/leafletMap.js"></script>
+        <script src="../js/polylineDecoder.js"></script>
+        <script src="../js/resumeSeance/resumeSeanceDisplay.js"></script>
+        <script src="../js/resumeSeance/resumeSeance.js"></script>
+        <script src="../js/resumeSeance/speedChart.js"></script>
+        <script src="../js/resumeSeance/elevationChart.js"></script>
+        <script src="../js/resumeSeance/watt.js"></script>
+        <script src="../js/resumeSeance/legend.js"></script>
     </body>
 
 </html>
