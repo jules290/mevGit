@@ -83,43 +83,22 @@ function getActivities() {
         }
     }
     $.ajax(settings).done(function (response) {
-        let Name = new Array();
-        let Id = new Array();
-        let Date = new Array();
-        let Time = new Array();
-        let Dst = new Array();
-        let Moyenne = new Array();
-        let Polyline = new Array();
+        let Activities = new Array();
         for (var i = 0; i < response.length; i++) {
-            Name[i] = response[i].name;
-            Id[i] = response[i].id;
-            Date[i] = response[i].start_date_local;
-            Time[i] = response[i].moving_time;
-            Dst[i] = response[i].distance;
-            Moyenne[i] = response[i].average_speed * 3.6;
-            Polyline[i] = response[i].map.summary_polyline;
+            Activities[i] = response[i];
         }
 
-        localStorage.activitiesName = JSON.stringify(Name);
-        localStorage.activitiesId = JSON.stringify(Id);
-        localStorage.activitiesDate = JSON.stringify(Date);
-        localStorage.activitiesTime = JSON.stringify(Time);
-        localStorage.activitiesDst = JSON.stringify(Dst);
-        localStorage.activitiesMoyenne = JSON.stringify(Moyenne);
-        localStorage.activitiesPolyline = JSON.stringify(Polyline);
-        localStorage.activitiesLength = response.length;
+        localStorage.Activities = JSON.stringify(Activities);
 
         postListActivité()
     });
 }
 
 function postListActivité() {
-    let Name = JSON.parse(localStorage.activitiesName);
-    let Date = JSON.parse(localStorage.activitiesDate);
-    let Time = JSON.parse(localStorage.activitiesTime);
-    let Dst = JSON.parse(localStorage.activitiesDst);
+    let Activities = JSON.parse(localStorage.Activities);
+    console.log(Activities)
 
-    for (var i = 0; i < localStorage.activitiesLength; i++) {
+    for (var i = 0; i < Activities.length; i++) {
         var activities = document.createElement("div");
         activities.id = i
         activities.className = "activities";
@@ -127,12 +106,12 @@ function postListActivité() {
 
         var activitiesD = document.createElement("p");
         activitiesD.className = "activitiesD";
-        activitiesD.innerText = Date[i].slice(0, 10) + " " + Date[i].slice(11, 16)
+        activitiesD.innerText = Activities[i].start_date_local.slice(0, 10) + " " + Activities[i].start_date_local.slice(11, 16)
         activities.appendChild(activitiesD);
 
         var activitiesT = document.createElement("a");
-        if (Name[i].length > 25) {activitiesT.innerText = Name[i].substr(0, 21) + "..."}
-        else {activitiesT.innerText = Name[i].substr(0, 25)}
+        if (Activities[i].name.length > 25) {activitiesT.innerText = Activities[i].name.substr(0, 21) + "..."}
+        else {activitiesT.innerText = Activities[i].name.substr(0, 25)}
         
         let index = i;
         activitiesT.className = "activitiesT";
@@ -147,27 +126,27 @@ function postListActivité() {
 
         var activitiesTps = document.createElement("p");
         activitiesTps.className = "activitiesTps";
-        if (Time[i] / 60 >= 60) {
+        if (Activities[i].moving_time / 60 >= 60) {
             let heure;
             let minute;
-            if (Time[i] / 3600 >= 10) {
-                heure = (Time[i] / 3600).toString().substr(0, 2);
-                minute = (Math.round(Time[i] / 60)) % 60
+            if (Activities[i].moving_time / 3600 >= 10) {
+                heure = (Activities[i].moving_time / 3600).toString().substr(0, 2);
+                minute = (Math.round(Activities[i].moving_time / 60)) % 60
             } else {
-                heure = (Time[i] / 3600).toString().substr(0, 1);
-                minute = (Math.round(Time[i] / 60)) % 60
+                heure = (Activities[i].moving_time / 3600).toString().substr(0, 1);
+                minute = (Math.round(Activities[i].moving_time / 60)) % 60
             }
             activitiesTps.innerText = heure + "h " + minute + "min"
         }
         else {
-            activitiesTps.innerText = (Math.round(Time[i] / 60)) + "min"
+            activitiesTps.innerText = (Math.round(Activities[i].moving_time / 60)) + "min"
         }
-        Time[i].toString().slice(11, 16)
+        Activities[i].toString().slice(11, 16)
         activities.appendChild(activitiesTps);
 
         var activitiesDst = document.createElement("p");
         activitiesDst.className = "activitiesDst";
-        activitiesDst.innerText =  (Math.round(Dst[i] / 10)) / 100 + "km"
+        activitiesDst.innerText =  (Math.round(Activities[i].distance / 10)) / 100 + "km"
         activities.appendChild(activitiesDst);
     }
 }

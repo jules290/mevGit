@@ -3,10 +3,10 @@ function postAthleteName() {
 }
 
 function postActivitiestempsDistance() {
-    let Moyenne = JSON.parse(localStorage.activitiesMoyenne)[sessionStorage.activityIndex];
-    let Name = JSON.parse(localStorage.activitiesName)[sessionStorage.activityIndex];
-    let Time = JSON.parse(localStorage.activitiesTime)[sessionStorage.activityIndex];
-    let Dst = JSON.parse(localStorage.activitiesDst)[sessionStorage.activityIndex];
+    let Moyenne = JSON.parse(localStorage.Activities)[sessionStorage.activityIndex].average_speed * 3.6;
+    let Name = JSON.parse(localStorage.Activities)[sessionStorage.activityIndex].name;
+    let Time = JSON.parse(localStorage.Activities)[sessionStorage.activityIndex].moving_time;
+    let Dst = JSON.parse(localStorage.Activities)[sessionStorage.activityIndex].distance;
 
     document.getElementById("resumeDeSeanceTitleActivite").innerText = Name;
 

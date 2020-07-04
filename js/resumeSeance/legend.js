@@ -36,7 +36,7 @@ function postLegend(activitie, latlng , altitude, vitesse, distance, grade) {
         vitesseMoy += vitesse[i] / vitesse.length
 	}
 	
-	document.getElementById("vitesseMoy").innerText += " " + Math.round(vitesseMoy * 10) / 10 + "km/h"
+	document.getElementById("vitesseMoy").innerText += " " + Math.round(vitesseMoy * 100) / 100 + "km/h"
 
 	let vitesseMax = 0;
     for (var i = 0; i <  ZoomVitesse2.length; i++) {
@@ -45,7 +45,7 @@ function postLegend(activitie, latlng , altitude, vitesse, distance, grade) {
         }
 	}
 	
-	document.getElementById("vitesseMax").innerText += " " + Math.round(vitesseMax * 10) / 10 + "km/h"
+	document.getElementById("vitesseMax").innerText += " " + Math.round(vitesseMax * 100) / 100 + "km/h"
 
 
 	let ZoomGrade = new Array()
@@ -97,19 +97,19 @@ function postLegend(activitie, latlng , altitude, vitesse, distance, grade) {
 		route: 0.004
 	}
 
-	let frotement
-	switch(gear.frame_type) {
-		case 1:
-			frotement = frotementValues.vtt;
-		  break;
+	let frotement = frotementValues.route
+	// switch(gear.frame_type) {
+	// 	case 1:
+	// 		frotement = frotementValues.vtt;
+	// 	  break;
 		
-		case 3:
-			frotement = frotementValues.route;
-		  break;
+	// 	case 3:
+	// 		frotement = frotementValues.route;
+	// 	  break;
 
-		default:
-			frotement = frotementValues.route;
-	}
+	// 	default:
+	// 		frotement = frotementValues.route;
+	// }
 
 	let aeroValues = {
 		top: 0.445 * 3.6,

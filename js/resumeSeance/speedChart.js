@@ -1,4 +1,4 @@
-function postActivitiesStreamsSpeedChart(activitie, gear, latlng , altitude, vitesse, distance, grade) {
+function postActivitiesStreamsSpeedChart(activitie, latlng , altitude, vitesse, distance, grade) {
     let supprEnd;
     if (altitude.length.toString().charAt(altitude.length.toString().length - 1) == "0") {
         supprEnd = 0;
@@ -255,19 +255,19 @@ function postActivitiesStreamsSpeedChart(activitie, gear, latlng , altitude, vit
 		route: 0.004
 	}
 
-	let frotement
-	switch(gear.frame_type) {
-		case 1:
-			frotement = frotementValues.vtt;
-		  break;
+	let frotement = frotementValues.route
+	// switch(gear.frame_type) {
+	// 	case 1:
+	// 		frotement = frotementValues.vtt;
+	// 	  break;
 		
-		case 3:
-			frotement = frotementValues.route;
-		  break;
+	// 	case 3:
+	// 		frotement = frotementValues.route;
+	// 	  break;
 
-		default:
-			frotement = frotementValues.route;
-    }
+	// 	default:
+	// 		frotement = frotementValues.route;
+	// }
 
 	let aeroValues = {
 		top: 0.445 * 3.6,

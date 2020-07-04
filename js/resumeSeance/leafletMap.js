@@ -28,7 +28,7 @@ var marker = L.marker([0, 0], {
 }).addTo(map);
 
 function postActivitiesZoom() {
-    let Polyline = JSON.parse(localStorage.activitiesPolyline)[sessionStorage.activityIndex];
+    let Polyline = JSON.parse(localStorage.Activities)[sessionStorage.activityIndex].map.summary_polyline;
 
     var coordonnés = L.Polyline.fromEncoded(Polyline).getLatLngs();
     
@@ -57,8 +57,8 @@ function postActivitiesZoom() {
 function setMarker(fraction, latlng) {
     if (fraction > 0 && fraction < 1) {
         marker.setLatLng([
-            latlng[0].data[Math.round(fraction * latlng[0].data.length)][0], 
-            latlng[0].data[Math.round(fraction * latlng[0].data.length)][1]
+            latlng[Math.round(fraction * latlng.length)][0], 
+            latlng[Math.round(fraction * latlng.length)][1]
         ]);   
     }
 };
