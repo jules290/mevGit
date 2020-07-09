@@ -2,8 +2,6 @@ var map = L.map('mapid', {
     center: [48.85, 2.35],
     zoom: 12.5,
     zoomSnap: 0.1,
-    attributionControl: false,
-    zoomControl: false,
 });
 
 var myIcon = L.icon({
@@ -13,14 +11,17 @@ var myIcon = L.icon({
     popupAnchor: [-3, -76],
 });
 
+var mapbox = 'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}';
 
-L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+L.tileLayer(mapbox, {
+    format: 'jpg70',
     attribution: '',
     maxZoom: 18,
     id: 'mapbox/streets-v11',
     tileSize: 512,
     zoomOffset: -1,
-    accessToken: 'pk.eyJ1IjoiamVjb3JjaGFyZCIsImEiOiJja2FpODFqdG4wNDVoMnJxcjBkczBxY3d2In0.XfYne734PhjUYVAGmTwUsw'
+    accessToken: 'pk.eyJ1IjoiamVjb3JjaGFyZCIsImEiOiJja2FpODFqdG4wNDVoMnJxcjBkczBxY3d2In0.XfYne734PhjUYVAGmTwUsw',
+    style: 'mapbox://styles/mapbox/satellite-v9'
 }).addTo(map);
 
 var marker = L.marker([0, 0], {

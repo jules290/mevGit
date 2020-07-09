@@ -63,7 +63,6 @@ $("#syncBtnTActivities").click(function () {
     setTimeout(() => {
         document.getElementById("syncImg").style.transform = "rotate(360deg)";
     }, 800);
-    postListActivité();
 })
 
 function getActivities() {
@@ -83,6 +82,7 @@ function getActivities() {
         }
     }
     $.ajax(settings).done(function (response) {
+        console.log(response)
         let Activities = new Array();
         for (var i = 0; i < response.length; i++) {
             Activities[i] = response[i];
@@ -91,12 +91,12 @@ function getActivities() {
         localStorage.Activities = JSON.stringify(Activities);
 
         postListActivité()
+        window.location.reload();
     });
 }
 
 function postListActivité() {
     let Activities = JSON.parse(localStorage.Activities);
-    console.log(Activities)
 
     for (var i = 0; i < Activities.length; i++) {
         var activities = document.createElement("div");
@@ -157,6 +157,7 @@ $("#syncBtnTAthlete").click(function () {
     setTimeout(() => {
         document.getElementById("syncImg").style.transform = "rotate(360deg)";
     }, 800);
+    window.location.reload();
 })
 
 function getAthlete() {

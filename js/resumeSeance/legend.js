@@ -8,8 +8,8 @@ function postLegend(activitie, latlng , altitude, vitesse, distance, grade) {
 	}
 	
 	let ZoomVitesse = new Array()
-	for (var i = 1; i <  (vitesse.length/5)-supprEnd; i++) {
-		ZoomVitesse[i-1] = Math.round((vitesse[i*5] + vitesse[i*5+1] + vitesse[i*5+2] + vitesse[i*5+3] + vitesse[i*5+4])/0.5)/10
+	for (var i = 0; i <  (vitesse.length/5)-supprEnd; i++) {
+		ZoomVitesse[i] = Math.round((vitesse[i*5] + vitesse[i*5+1] + vitesse[i*5+2] + vitesse[i*5+3] + vitesse[i*5+4])/0.5)/10
 	}
 	
     for (var i = 0; i <  ZoomVitesse.length; i++) {			
@@ -17,7 +17,7 @@ function postLegend(activitie, latlng , altitude, vitesse, distance, grade) {
 			ZoomVitesse[i] = ZoomVitesse[i]
 		}
 		else if (ZoomVitesse[i - 1] > 10) {
-			ZoomVitesse[i] = ( ZoomVitesse[i] + ( ( ZoomVitesse[i] - ZoomVitesse[i - 1] ) * 0.1 ) ) * 0.99
+			ZoomVitesse[i] = ( ZoomVitesse[i] + ( ( ZoomVitesse[i] - ZoomVitesse[i - 1] ) * 0.05 ) ) * 0.99
 		}
 		else {
 			ZoomVitesse[i] = ZoomVitesse[i]
@@ -132,10 +132,10 @@ function postLegend(activitie, latlng , altitude, vitesse, distance, grade) {
 	}
 	
 	for (let i = 0; i < ZoomVitesse.length; i++) {
-        wattAir[1] = 1.013 / 2 * 0.45 * aeroValues.bottom * Math.pow(((ZoomVitesse[i]) / 3.6), 3);
-	    wattRoulement[1] = frotement * 9.81 * 65 * (ZoomVitesse[i] / 3.6);
-		wattPente[1] = 65 * 9.81 * (ZoomVitesse[i] / 3.6) * ZoomGrade[i] / 100;
-		watt[i] = wattAir[1] + wattRoulement[1] + wattPente[1]
+        wattAir[i] = 1.013 / 2 * 0.45 * aeroValues.bottom * Math.pow(((ZoomVitesse[i]) / 3.6), 3);
+	    wattRoulement[i] = frotement * 9.81 * 65 * (ZoomVitesse[i] / 3.6);
+		wattPente[i] = 65 * 9.81 * (ZoomVitesse[i] / 3.6) * ZoomGrade[i] / 100;
+		watt[i] = wattAir[i] + wattRoulement[i] + wattPente[i]
 		if (watt[i] < 0) {
 			watt[i] = 0
 		}

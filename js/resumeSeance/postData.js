@@ -19,7 +19,7 @@ function getActivityStreams() {
     let bpm;
     let watts;
 
-    if (localStorage.activityStream == "true") {
+    if (localStorage.activityStream == "") {
         
     }
     else {
@@ -39,50 +39,86 @@ function getActivityStreams() {
             }
         }
         $.ajax(settings).done(function (response) {
-            // localStorage.activityStream = "true";
-            console.log(response)
-            let activitiesMoving;
+            let array = new Array();
+
+            if (!localStorage.activityStream) {localStorage.activityStream = JSON.stringify(array)}
+            if (!localStorage.activitiesMoving) {localStorage.activitiesMoving = JSON.stringify(array)}
+            if (!localStorage.activitiesLatlng) {localStorage.activitiesLatlng = JSON.stringify(array)}
+            if (!localStorage.activitiesDistance) {localStorage.activitiesDistance = JSON.stringify(array)}
+            if (!localStorage.activitiesVitesse) {localStorage.activitiesVitesse = JSON.stringify(array)}
+            if (!localStorage.activitiesTime) {localStorage.activitiesTime = JSON.stringify(array)}
+            if (!localStorage.activitiesAltitude) {localStorage.activitiesAltitude = JSON.stringify(array)}
+            if (!localStorage.activitiesGrade) {localStorage.activitiesGrade = JSON.stringify(array)}
+            if (!localStorage.activitiesCadence) {localStorage.activitiesCadence = JSON.stringify(array)}
+            if (!localStorage.activitiesBpm) {localStorage.activitiesBpm = JSON.stringify(array)}
+            if (!localStorage.activitiesWatts) {localStorage.activitiesWatts = JSON.stringify(array)}
+
+            let activityStream = JSON.parse(localStorage.activityStream);
+            let activitiesMoving = JSON.parse(localStorage.activitiesMoving);
+            let activitiesLatlng = JSON.parse(localStorage.activitiesLatlng);
+            let activitiesDistance = JSON.parse(localStorage.activitiesDistance);
+            let activitiesVitesse = JSON.parse(localStorage.activitiesVitesse);
+            let activitiesTime = JSON.parse(localStorage.activitiesTime);
+            let activitiesAltitude = JSON.parse(localStorage.activitiesAltitude);
+            let activitiesGrade = JSON.parse(localStorage.activitiesGrade);
+            let activitiesCadence = JSON.parse(localStorage.activitiesCadence);
+            let activitiesBpm = JSON.parse(localStorage.activitiesBpm);
+            let activitiesWatts = JSON.parse(localStorage.activitiesWatts);
+
+            activityStream[sessionStorage.activityIndex] = "true";
             for (let i = 0; i < response.length; i++) {
                 if (response[i].type == "moving") {
                     moving = response[i].data;
+                    activitiesMoving[sessionStorage.activityIndex] = moving;
                 }
                 else if (response[i].type == "latlng") {
                     latlng = response[i].data;
+                    activitiesLatlng[sessionStorage.activityIndex] = latlng;
                 }
                 else if (response[i].type == "distance") {
                     distance = response[i].data;
+                    activitiesDistance[sessionStorage.activityIndex] = distance;
                 }
                 else if (response[i].type == "velocity_smooth") {
                     vitesse = response[i].data;
+                    activitiesVitesse[sessionStorage.activityIndex] = vitesse;
                 }
                 else if (response[i].type == "time") {
                     time = response[i].data;
+                    activitiesTime[sessionStorage.activityIndex] = time;
                 }
                 else if (response[i].type == "altitude") {
                     altitude = response[i].data;
+                    activitiesAltitude[sessionStorage.activityIndex] = altitude;
                 }
                 else if (response[i].type == "grade_smooth") {
                     grade = response[i].data;
+                    activitiesGrade[sessionStorage.activityIndex] = grade;
                 }
                 else if (response[i].type == "cadence") {
                     cadence = response[i].data;
+                    activitiesCadence[sessionStorage.activityIndex] = cadence;
                 }
                 else if (response[i].type == "heartrate") {
                     bpm = response[i].data;
+                    activitiesBpm[sessionStorage.activityIndex] = bpm;
                 }
                 else if (response[i].type == "watts") {
                     watts = response[i].data;
+                    activitiesWatts[sessionStorage.activityIndex] = watts;
                 }
             }
 
-            // for (let i = 0; i < moving.length; i++) {
-            //     if (moving[i] == false) {
-            //         distance.splice(i, 1);
-            //         altitude.splice(i, 1);
-            //         vitesse.splice(i, 1);
-            //         grade.splice(i, 1);
-            //     }   
-            // }
+            localStorage.activityStream = JSON.stringify(activityStream);
+            localStorage.activitiesMoving = JSON.stringify(activitiesMoving);
+            localStorage.activitiesLatlng = JSON.stringify(activitiesLatlng);
+            localStorage.activitiesDistance = JSON.stringify(activitiesDistance);
+            localStorage.activitiesVitesse = JSON.stringify(activitiesVitesse);
+            localStorage.activitiesTime = JSON.stringify(activitiesTime);
+            localStorage.activitiesAltitude = JSON.stringify(activitiesAltitude);
+            localStorage.activitiesGrade = JSON.stringify(activitiesGrade);
+            localStorage.activitiesCadence = JSON.stringify(activitiesCadence);
+            localStorage.activitiesWatts = JSON.stringify(activitiesWatts);
 
             for (let i = 0; i < vitesse.length; i++) {
                 vitesse[i] = vitesse[i] * 3.6
