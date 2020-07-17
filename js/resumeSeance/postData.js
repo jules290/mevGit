@@ -5,6 +5,172 @@ function postData() {
     getActivityStreams()
 }
 
+function postSegmentEndEffort(state) {
+    let Id = JSON.parse(localStorage.Activities)[sessionStorage.activityIndex].id;
+    const activitiesStreams = `https://www.strava.com/api/v3/activities/${Id}?access_token=${localStorage.access_token}`
+    var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": activitiesStreams,
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-host": "35.188.171.173:8080",
+            "x-rapidapi-key": "SIGN-UP-FOR-KEY",
+            "content-type": "application/x-www-form-urlencoded"
+        },
+        "data": {
+            'includeAllEfforts': true
+        }
+    }
+    $.ajax(settings).done(function (response) {
+        if (state == "segment") {
+            $("#segmentEffortContainer").empty();
+            segmentsDataPower = new Array();
+            segmentsDataVitesse = new Array();
+            for (let i = 0; i < response.segment_efforts.length; i++) {
+                var segment = document.createElement("div");
+                segment.className = "segment";
+                document.getElementById("segmentEffortContainer").appendChild(segment);
+
+                var segmentKOM = document.createElement("div");
+                segmentKOM.className = "segmentKOM";
+                segmentKOM.innerText = response.segment_efforts[i].pr_rank;
+                segment.appendChild(segmentKOM);
+
+                var segmentInfo = document.createElement("div");
+                segmentInfo.className = "segmentInfo";
+                segment.appendChild(segmentInfo);
+                
+                var segmentT = document.createElement("div");
+                segmentT.className = "segmentT";
+                segmentT.innerText = response.segment_efforts[i].name;
+                segmentInfo.appendChild(segmentT);
+
+                var segmentInfo2ND = document.createElement("div");
+                segmentInfo2ND.className = "segmentInfo2ND";
+                segmentInfo.appendChild(segmentInfo2ND);
+                
+                var segmentDst = document.createElement("div");
+                segmentDst.className = "segmentDst";
+                segmentDst.innerText = Math.round(response.segment_efforts[i].distance / 10) /100 + "km";
+                segmentInfo2ND.appendChild(segmentDst);
+
+                var segmentD4 = document.createElement("div");
+                segmentD4.className = "segmentD4";
+                segmentD4.innerText = Math.round(response.segment_efforts[i].distance * response.segment_efforts[i].segment.average_grade) / 100 + "m";
+                segmentInfo2ND.appendChild(segmentD4);
+
+                var segmentGrade = document.createElement("div");
+                segmentGrade.className = "segmentGrade";
+                segmentGrade.innerText = response.segment_efforts[i].segment.average_grade + "%";
+                segmentInfo2ND.appendChild(segmentGrade);
+
+                var segmentTps = document.createElement("div");
+                segmentTps.className = "segmentTps";
+                segment.appendChild(segmentTps);
+                if (response.segment_efforts[i].elapsed_time >= 60) {
+                    let heure;
+                    let minute;
+                    let seconde;
+                    if (response.segment_efforts[i].elapsed_time >= 3600) {
+                        heure = (response.segment_efforts[i].elapsed_time / 3600).toString().substr(0, 2);
+                        minute = (Math.round(response.segment_efforts[i].elapsed_time / 60)) % 60
+                    } 
+                    else {
+                        seconde = (Math.round(response.segment_efforts[i].elapsed_time)) % 60
+                        minute = (response.segment_efforts[i].elapsed_time - seconde) / 60;
+                        if (seconde < 10) {
+                            seconde = "0" + seconde;
+                        }
+                    }
+                    segmentTps.innerText = minute + ":" + seconde
+                }
+                else {
+                    segmentTps.innerText = Math.round(response.segment_efforts[i].elapsed_time ) + "s"
+                }
+
+                var segmentVitesse = document.createElement("div");
+                segmentVitesse.className = "segmentVst";
+                segmentVitesse.innerText = 
+                Math.round(((response.segment_efforts[i].distance / 1000) / (response.segment_efforts[i].elapsed_time / 3600)) * 10) / 10
+                + "km/h";
+                segment.appendChild(segmentVitesse);
+
+                let watts = wattEstimation(
+                    JSON.parse(localStorage.activitiesAltitude)[sessionStorage.activityIndex], 
+                    JSON.parse(localStorage.activitiesVitesse)[sessionStorage.activityIndex], 
+                    JSON.parse(localStorage.activitiesGrade)[sessionStorage.activityIndex]
+                );
+                var segmentPower = document.createElement("div");
+                segmentPower.className = "segmentP";
+                segmentDataPower = new Array();
+                for (let y = 0; y < response.segment_efforts[i].end_index - response.segment_efforts[i].start_index; y++) {
+                    segmentDataPower[y] = watts[y + response.segment_efforts[i].start_index];
+                }
+                let wattMoy = 0;
+                for (var u = 0; u <  segmentDataPower.length; u++) {
+                    wattMoy += segmentDataPower[u] / segmentDataPower.length
+                }
+                wattMoy = Math.round(wattMoy * 10) / 10
+                segmentPower.innerText = wattMoy + "w";
+                segmentsDataPower[i] = segmentDataPower;
+
+                segmentDataVitesse = new Array();
+                let vitesse =  JSON.parse(localStorage.activitiesVitesse)[sessionStorage.activityIndex];
+                for (let y = 0; y < response.segment_efforts[i].end_index - response.segment_efforts[i].start_index; y++) {
+                    segmentDataVitesse[y] = vitesse[y + response.segment_efforts[i].start_index];
+                }
+                segmentsDataVitesse[i] = segmentDataVitesse;
+
+                latlng = JSON.parse(localStorage.activitiesLatlng)[sessionStorage.activityIndex];
+                let latSegment;
+                let lngSegment;
+
+                segment.onclick = function () {
+                    let extent = document.getElementById("extent")
+                    let resizeLeft = document.getElementById("resizeLeft")
+                    let resizeRight = document.getElementById("resizeRight")
+                    let ctxWidth = document.getElementById("graphaltitude").style.width;
+                    let absLat = new Array();
+
+                    ctxWidth = (ctxWidth.slice(0, ctxWidth.length - 2));
+                    fraction = (response.segment_efforts[i].end_index - response.segment_efforts[i].start_index) / vitesse.length;
+                    for (let u = 0; u < latlng.length; u++) {
+                        absLat[u] = latlng[u][0]
+                    }
+                    // 461
+
+                    console.log(JSON.parse(localStorage.activitiesDistance)[sessionStorage.activityIndex][response.segment_efforts[i].start_index])
+
+                    // extent.setAttribute(
+                    //     'width', 
+                    //     fraction * (ctxWidth)
+                    // );
+                    // extent.setAttribute(
+                    //     'x', 
+                    //     fractionStart * (ctxWidth)
+                    // );
+                    // resizeLeft.setAttribute(
+                    //     'transform', 
+                    //     `translate(${fractionStart * (ctxWidth)}, 0)`
+                    // );
+                    // resizeRight.setAttribute(
+                    //     'transform', 
+                    //     `translate(${fractionEnd * (ctxWidth)}, 0)`
+                    // );
+
+                    updatePowerChart(segmentsDataPower[i])
+                    updateSpeedChart(segmentsDataVitesse[i])
+                }
+                segment.appendChild(segmentPower);
+            }
+        }
+        else if (state == "effort") {
+            $("#segmentEffortContainer").empty();
+        }
+    })
+}
+
 function getActivityStreams() {
     let Id = JSON.parse(localStorage.Activities)[sessionStorage.activityIndex].id;
 
@@ -19,8 +185,42 @@ function getActivityStreams() {
     let bpm;
     let watts;
 
-    if (localStorage.activityStream == "") {
-        
+    let array = new Array();
+    if (!localStorage.activityStream) {localStorage.activityStream = JSON.stringify(array)}
+
+    if (JSON.parse(localStorage.activityStream)[sessionStorage.activityIndex] == "true") {
+        postLegend(
+            JSON.parse(localStorage.Activities)[sessionStorage.activityIndex], 
+            JSON.parse(localStorage.activitiesLatlng)[sessionStorage.activityIndex], 
+            JSON.parse(localStorage.activitiesAltitude)[sessionStorage.activityIndex], 
+            JSON.parse(localStorage.activitiesVitesse)[sessionStorage.activityIndex], 
+            JSON.parse(localStorage.activitiesDistance)[sessionStorage.activityIndex], 
+            JSON.parse(localStorage.activitiesGrade)[sessionStorage.activityIndex]
+        );
+        postWatt( 
+            JSON.parse(localStorage.Activities)[sessionStorage.activityIndex], 
+            JSON.parse(localStorage.activitiesLatlng)[sessionStorage.activityIndex], 
+            JSON.parse(localStorage.activitiesAltitude)[sessionStorage.activityIndex], 
+            JSON.parse(localStorage.activitiesVitesse)[sessionStorage.activityIndex], 
+            JSON.parse(localStorage.activitiesDistance)[sessionStorage.activityIndex], 
+            JSON.parse(localStorage.activitiesGrade)[sessionStorage.activityIndex]
+        );
+        postActivitiesStreamsaltitudeChart(
+            JSON.parse(localStorage.Activities)[sessionStorage.activityIndex], 
+            JSON.parse(localStorage.activitiesLatlng)[sessionStorage.activityIndex], 
+            JSON.parse(localStorage.activitiesAltitude)[sessionStorage.activityIndex], 
+            JSON.parse(localStorage.activitiesVitesse)[sessionStorage.activityIndex], 
+            JSON.parse(localStorage.activitiesDistance)[sessionStorage.activityIndex], 
+            JSON.parse(localStorage.activitiesGrade)[sessionStorage.activityIndex]
+        );
+        postActivitiesStreamsSpeedChart(
+            JSON.parse(localStorage.Activities)[sessionStorage.activityIndex], 
+            JSON.parse(localStorage.activitiesLatlng)[sessionStorage.activityIndex], 
+            JSON.parse(localStorage.activitiesAltitude)[sessionStorage.activityIndex], 
+            JSON.parse(localStorage.activitiesVitesse)[sessionStorage.activityIndex], 
+            JSON.parse(localStorage.activitiesDistance)[sessionStorage.activityIndex], 
+            JSON.parse(localStorage.activitiesGrade)[sessionStorage.activityIndex]
+        );
     }
     else {
         const activitiesStreams = `https://www.strava.com/api/v3/activities/${Id}/streams?access_token=${localStorage.access_token}`
@@ -35,12 +235,10 @@ function getActivityStreams() {
                 "content-type": "application/x-www-form-urlencoded"
             },
             "data": {
-                "keys": "time,latlng,distance,altitude,velocity_smooth,heartrate,cadence,watts,temp,moving,grade_smooth"
+                "keys": "time,latlng,distance,altitude,velocity_smooth,heartrate,cadence,watts,temp,moving,grade_smooth",
             }
         }
         $.ajax(settings).done(function (response) {
-            let array = new Array();
-
             if (!localStorage.activityStream) {localStorage.activityStream = JSON.stringify(array)}
             if (!localStorage.activitiesMoving) {localStorage.activitiesMoving = JSON.stringify(array)}
             if (!localStorage.activitiesLatlng) {localStorage.activitiesLatlng = JSON.stringify(array)}
@@ -81,6 +279,9 @@ function getActivityStreams() {
                 }
                 else if (response[i].type == "velocity_smooth") {
                     vitesse = response[i].data;
+                    for (let i = 0; i < vitesse.length; i++) {
+                        vitesse[i] = vitesse[i] * 3.6
+                    }        
                     activitiesVitesse[sessionStorage.activityIndex] = vitesse;
                 }
                 else if (response[i].type == "time") {
@@ -105,7 +306,7 @@ function getActivityStreams() {
                 }
                 else if (response[i].type == "watts") {
                     watts = response[i].data;
-                    activitiesWatts[sessionStorage.activityIndex] = watts;
+                    activitiesWatts[sessionStorage.activityIndex] = watts; 
                 }
             }
 
@@ -119,10 +320,6 @@ function getActivityStreams() {
             localStorage.activitiesGrade = JSON.stringify(activitiesGrade);
             localStorage.activitiesCadence = JSON.stringify(activitiesCadence);
             localStorage.activitiesWatts = JSON.stringify(activitiesWatts);
-
-            for (let i = 0; i < vitesse.length; i++) {
-                vitesse[i] = vitesse[i] * 3.6
-            }
 
             postLegend(JSON.parse(localStorage.Activities)[sessionStorage.activityIndex], latlng , altitude, vitesse, distance, grade);
             postWatt(JSON.parse(localStorage.Activities)[sessionStorage.activityIndex], latlng , altitude, vitesse, distance, grade);

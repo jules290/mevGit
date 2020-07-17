@@ -10,40 +10,13 @@ body {
     right: 7px;
     top: 57px;
     border: 1px solid rgb(155, 155, 155);
+    margin-bottom: 10px;
 }
 
 #mapid {
     width: 100%;
     transition: 0.2s;
     z-index: 5;
-}
-
-#mapFilter {
-    width: 100%;
-    z-index: 7;
-    background-color: rgba(0, 0, 0, 0);
-    position: relative;
-}
-
-#clearMap {
-    background-color: rgba(190, 190, 190, 0.835);
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.185);
-    border-radius: 10px;
-    position: relative;
-    cursor: pointer;
-    z-index: 6;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#clearMapP {
-    margin: 0px;
-    text-align: center;
-    color: rgb(251, 251, 251);
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
 }
 
 .firstRow {
@@ -103,6 +76,10 @@ body {
 
 #resumeDeSeanceTitleName {
     margin-left: 5px;
+}
+
+#resumeDeSeanceTitleActivite {
+    margin-right: 10px;
 }
 
 .resumeDeSeanceTitle {
@@ -233,6 +210,155 @@ body {
 
 .resizeBar {
     fill-opacity: 0.0;
+}
+
+#segmentEffort {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#view {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.view {
+    z-index: 5;
+    width: 10%;
+    height: 30px;
+    margin-left: 0px;
+    margin-right: 0px;
+    border: 1px solid rgb(126, 126, 126);
+    background-color: rgba(251, 251, 251, 0);
+    border-radius: 5px;
+    outline: none;
+    transition: 0.3s;
+}
+
+#viewEffort {
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 0px;
+    border-right: none;
+    color: rgb(255, 255, 255);
+}
+
+#viewSegment {
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 0px;
+    border-left: none;
+    color: rgb(41, 41, 41);
+}
+
+#viewSwitch {
+    z-index: 4;
+    width: 10%;
+    height: 30px;
+    background-color: rgba(0, 137, 234, 1);
+    border-radius: 5px;
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 0px;
+    margin-top: -30px;
+    margin-left: -10%;
+    margin-bottom: 10px;
+    transition: 0.3s;
+}
+
+#segmentList {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+#SegmentTableHeader {
+    width: 100%;
+    height: 50px;
+    background-color: rgb(226, 226, 226);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: center;
+    color: rgb(53, 53, 53);
+}
+
+.segmentKOM {
+    width: 8%;
+    text-align: center;
+}
+
+.segmentInfo {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+}
+
+.segmentT {
+
+}
+
+.segmentInfo2ND {
+    color: rgb(156, 156, 156);
+    display: flex;
+    flex-direction: row;
+    font-size: 12px;
+}
+
+.segmentDst {
+    margin-right: 4%;
+}
+
+.segmentD4 {
+    margin-right: 4%;
+}
+
+.segmentGrade {
+    margin-right: 4%;
+}
+
+.segmentTps {
+    width: 10%;
+}
+
+.segmentVst {
+    width: 10%;
+}
+
+.segmentP {
+    width: 10%;
+}
+
+.segmentFC {
+    width: 10%;
+}
+
+#segmentEffortContainer {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: rgb(53, 53, 53);
+}
+
+.segment {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    color: rgb(53, 53, 53);
+    border-bottom: 1px solid rgb(228, 228, 228);
+    font-size: 14px;
+    justify-content: start;
+    align-items: center;
 }
 
 @media only screen and (max-width: 300px) {
@@ -404,7 +530,7 @@ body {
     }
 
     .resumeDeSeanceTitle {
-        font-size: 16px;
+        font-size: 12px;
     }
 
     #mapid {
@@ -479,7 +605,7 @@ body {
     }
 
     .resumeDeSeanceTitle {
-        font-size: 17px;
+        font-size: 12px;
     }
 
     #mapid {
@@ -554,7 +680,7 @@ body {
     }
 
     .resumeDeSeanceTitle {
-        font-size: 18px;
+        font-size: 15px;
     }
 
     #mapid {
@@ -629,7 +755,7 @@ body {
     }
 
     .resumeDeSeanceTitle {
-        font-size: 20px;
+        font-size: 17px;
     }
 
     #mapid {
@@ -704,7 +830,7 @@ body {
     }
 
     .resumeDeSeanceTitle {
-        font-size: 22px;
+        font-size: 18px;
     }
 
     #mapid {

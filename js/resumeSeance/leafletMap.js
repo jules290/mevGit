@@ -4,6 +4,11 @@ var map = L.map('mapid', {
     zoomSnap: 0.1,
 });
 
+map.touchZoom.disable();
+map.scrollWheelZoom.disable();
+map.boxZoom.disable();
+map.keyboard.disable();
+
 var myIcon = L.icon({
     iconUrl: './img/markerIcon.png',
     iconSize: [12, 12],
@@ -23,6 +28,9 @@ L.tileLayer(mapbox, {
     accessToken: 'pk.eyJ1IjoiamVjb3JjaGFyZCIsImEiOiJja2FpODFqdG4wNDVoMnJxcjBkczBxY3d2In0.XfYne734PhjUYVAGmTwUsw',
     style: 'mapbox://styles/mapbox/satellite-v9'
 }).addTo(map);
+
+var scale = L.control.scale();
+scale.addTo(map);
 
 var marker = L.marker([0, 0], {
     icon: myIcon,    
@@ -81,31 +89,4 @@ $("#mapFilter").click(function () {
     || document.body.clientHeight;
 
     document.getElementById("mapid").style.height = (h) + "px";
-});
-
-$("#clearMap").click(function () {
-    $("#mapFilter").show();
-    $("#clearMap").hide();
-
-    if (document.documentElement.clientWidth > 1200) {
-        document.getElementById("mapid").style.height = "300px";
-    }
-    else if (document.documentElement.clientWidth > 992) {
-        document.getElementById("mapid").style.height = "275px";
-    }
-    else if (document.documentElement.clientWidth > 768) {
-        document.getElementById("mapid").style.height = "250px";
-    }
-    else if (document.documentElement.clientWidth > 600) {
-        document.getElementById("mapid").style.height = "225px";
-    }
-    else if (document.documentElement.clientWidth > 450) {
-        document.getElementById("mapid").style.height = "200px";
-    }
-    else if (document.documentElement.clientWidth > 300) {
-        document.getElementById("mapid").style.height = "200px";
-    }
-    else {
-        document.getElementById("mapid").style.height = "200px";
-    }
 });

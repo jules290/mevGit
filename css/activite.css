@@ -18,14 +18,16 @@ body {
     position: absolute;
     top: 5px;
     right: 3%;
-    background-color: rgb(230, 230, 230);
+    background-color: rgb(252, 252, 252);
     align-items: center;
     z-index: 7;
     overflow: hidden;
+    transition: 0.2s;
+    cursor: pointer;
 }
 
 #sync:hover {
-    border: 1px solid rgb(255, 255, 255);
+    border: 1px solid rgba(0, 137, 234, 0.191);
 }
 
 #syncImg {
@@ -73,7 +75,7 @@ body {
 }
 
 .syncBtnT:hover {
-    color: rgb(184, 57, 57);
+    color: rgb(0, 138, 234);
     background-color: rgba(0, 0, 0, 0.041);
     padding: 5px;
 }
@@ -89,10 +91,10 @@ body {
 }
 
 .syncLineHorizontal {
-    width: 90%;
+    width: 80%;
     height: 1.3px;
-    margin-left: 5%;
-    margin-right: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
     background-color: rgb(179, 179, 179);
 }
 
@@ -122,7 +124,10 @@ body {
 }
 
 #activite {
-    width: 100%;
+    margin-top: 20px;
+    width: 96%;
+    margin-left: 2%;
+    margin-right: 2%;
     display: flex;
     flex-direction: column;
     justify-content: center;

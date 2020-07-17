@@ -148,51 +148,7 @@ function postActivitiesStreamsaltitudeChart(activitie, latlng , altitude, vitess
     let selection;
 
     document.getElementById("svgaltitude").addEventListener("mousemove", function (event) {
-        xHover = event.offsetX;
-        xHoverData = event.offsetX;
-        selection = (extent.width.animVal.value) / (sessionStorage.ctxWidth - 29);
-        selectionWidth = (extent.width.animVal.value)
-        x = (extent.x.animVal.value);
-        if (selection > 0) {
-            xHoverData = (((xHover) - x) / selection) + 21;
-            if (xHoverData < 21) {
-                xHoverData = 21;
-            }
-            if (xHoverData > (sessionStorage.ctxWidth - 9)) {
-                xHoverData = (sessionStorage.ctxWidth - 9);
-            }
-        }
-		if (xHover >= 21 && xHover <= sessionStorage.ctxWidth - 9) {
-			baraltitude.setAttribute('x1', xHover);
-			baraltitude.setAttribute('x2', xHover);
-			barSpeed.setAttribute('x1', xHoverData);
-			barSpeed.setAttribute('x2', xHoverData);
-			barPower.setAttribute('x1', xHoverData);
-			barPower.setAttribute('x2', xHoverData);
-        }
-        fraction = (xHover - 21) / (sessionStorage.ctxWidth - 30);
-
-        grade = Zoomgrade[ Math.round( fraction * Zoomgrade.length) ]
-        if (grade != undefined) {
-            document.getElementById("grade").innerText = document.getElementById("grade").innerText.slice(0, 6) + " " + grade + "%"
-        }
-
-        Altitude = Zoomaltitude[ Math.round( fraction * Zoomaltitude.length) ]
-        if (Altitude != undefined) {
-            document.getElementById("altitude").innerText = document.getElementById("altitude").innerText.slice(0, 10) + " " + Altitude + "m"
-        }
-
-        Vitesse = Zoomvitesse[ Math.round( fraction * Zoomvitesse.length) ]
-        if (Vitesse != undefined) {
-            document.getElementById("vitesse").innerText = document.getElementById("vitesse").innerText.slice(0, 8) + " " + Vitesse + "km/h"
-        }
-
-        power = watt[ Math.round( fraction * watt.length) ]
-        if (power != undefined) {
-            document.getElementById("power").innerText = document.getElementById("power").innerText.slice(0, 10) + " " + power + "W"
-        }
-
-        setMarker(fraction, latlng);
+        chartLineHoverElevation(event, Zoomgrade, Zoomaltitude, Zoomvitesse, watt, latlng) 
     })
 
     extent = document.getElementById("extent")
@@ -201,7 +157,7 @@ function postActivitiesStreamsaltitudeChart(activitie, latlng , altitude, vitess
     
     $("#svgaltitude").mousedown(function(event) {
         xClic = event.offsetX;
-        if (xClic < extent.x.animVal.value || xClic > (extent.width.animVal.value + extent.x.animVal.value)) {
+        if (xClic < extent.x.animVal.value - 5 || xClic > (extent.width.animVal.value + extent.x.animVal.value + 5)) {
             extent.setAttribute('width', 0);
             resizeLeft.setAttribute('transform', `translate(0, 0)`);
             resizeRight.setAttribute('transform', `translate(0, 0)`);
@@ -214,21 +170,22 @@ function postActivitiesStreamsaltitudeChart(activitie, latlng , altitude, vitess
             }
             $("#svgaltitude").mousemove(function (event2) {
                 xClic2 = event2.offsetX;
+                sessionStorage.xClic2 = xClic2;
                 if (xClic2 - xClic > 0) {
                     if (xClic >= 21 && xClic2 <= sessionStorage.ctxWidth - 9) {
                         extent.setAttribute('width', xClic2 - xClic);
-                        resizeLeft.setAttribute('transform', `translate(${xClic}, 0)`);
-                        resizeRight.setAttribute('transform', `translate(${xClic2}, 0)`);
+                        resizeLeft.setAttribute('transform', `translate(${xClic - 3}, 0)`);
+                        resizeRight.setAttribute('transform', `translate(${xClic2 - 3}, 0)`);
                     }
                     else if (xClic >= 21) {
                         extent.setAttribute('width', (sessionStorage.ctxWidth - 9) - xClic);
-                        resizeLeft.setAttribute('transform', `translate(${xClick}, 0)`);
+                        resizeLeft.setAttribute('transform', `translate(${xClick - 5}, 0)`);
                         resizeRight.setAttribute('transform', `translate(${sessionStorage.ctxWidth - 9}, 0)`);
                     }
                     else if (xClic2 <= sessionStorage.ctxWidth - 9) {
                         extent.setAttribute('width', xClic2 - xClic);
                         resizeLeft.setAttribute('transform', `translate(21, 0)`);
-                        resizeRight.setAttribute('transform', `translate(${xClic2}, 0)`);
+                        resizeRight.setAttribute('transform', `translate(${xClic2 - 5}, 0)`);
                     }
                     else {
                         extent.setAttribute('width', (sessionStorage.ctxWidth - 9) - 21);
@@ -236,32 +193,32 @@ function postActivitiesStreamsaltitudeChart(activitie, latlng , altitude, vitess
                         resizeRight.setAttribute('transform', `translate(${sessionStorage.ctxWidth - 9}, 0)`);
                     }
                 }
-                // else {
-                //     if (xClic <= sessionStorage.ctxWidth - 9 && xClic2 >= 21) {
-                //         extent.setAttribute('x', xClic2);
-                //         extent.setAttribute('width', Math.abs(xClic2 - xClic) );
-                //         resizeLeft.setAttribute('transform', `translate(${xClic2}, 0)`);
-                //         resizeRight.setAttribute('transform', `translate(${xClic}, 0)`);
-                //     }
-                //     else if (xClic <= sessionStorage.ctxWidth - 9) {
-                //         extent.setAttribute('x', 21);
-                //         extent.setAttribute('width', Math.abs(xClic - 21));
-                //         resizeLeft.setAttribute('transform', `translate(21, 0)`);
-                //         resizeRight.setAttribute('transform', `translate(${xClic}, 0)`);
-                //     }
-                //     else if (xClic2 >= 21) {
-                //         extent.setAttribute('x', xClic2);
-                //         extent.setAttribute('width', Math.abs((sessionStorage.ctxWidth - 9) - xClic2));
-                //         resizeLeft.setAttribute('transform', `translate(${xClic2}, 0)`);
-                //         resizeRight.setAttribute('transform', `translate(${sessionStorage.ctxWidth - 9}, 0)`);
-                //     }
-                //     else {
-                //         extent.setAttribute('x', 21);
-                //         extent.setAttribute('width', Math.abs((sessionStorage.ctxWidth - 9) - 21) );
-                //         resizeLeft.setAttribute('transform', `translate(21, 0)`);
-                //         resizeRight.setAttribute('transform', `translate(${sessionStorage.ctxWidth - 9}, 0)`);
-                //     }
-                // }
+                else {
+                    if (xClic <= sessionStorage.ctxWidth - 9 && xClic2 >= 21) {
+                        extent.setAttribute('x', xClic2);
+                        extent.setAttribute('width', Math.abs(xClic2 - xClic) );
+                        resizeLeft.setAttribute('transform', `translate(${xClic2 - 5}, 0)`);
+                        resizeRight.setAttribute('transform', `translate(${xClic - 5}, 0)`);
+                    }
+                    else if (xClic <= sessionStorage.ctxWidth - 9) {
+                        extent.setAttribute('x', 21);
+                        extent.setAttribute('width', Math.abs(xClic - 21));
+                        resizeLeft.setAttribute('transform', `translate(21, 0)`);
+                        resizeRight.setAttribute('transform', `translate(${xClic - 5}, 0)`);
+                    }
+                    else if (xClic2 >= 21) {
+                        extent.setAttribute('x', xClic2);
+                        extent.setAttribute('width', Math.abs((sessionStorage.ctxWidth - 9) - xClic2));
+                        resizeLeft.setAttribute('transform', `translate(${xClic2 - 5}, 0)`);
+                        resizeRight.setAttribute('transform', `translate(${sessionStorage.ctxWidth - 9}, 0)`);
+                    }
+                    else {
+                        extent.setAttribute('x', 21);
+                        extent.setAttribute('width', Math.abs((sessionStorage.ctxWidth - 9) - 21) );
+                        resizeLeft.setAttribute('transform', `translate(21, 0)`);
+                        resizeRight.setAttribute('transform', `translate(${sessionStorage.ctxWidth - 9}, 0)`);
+                    }
+                }
     
                 selection = extent.width.animVal.value / (sessionStorage.ctxWidth - 30);
                 x = (extent.x.animVal.value - 21) / (sessionStorage.ctxWidth - 30);
@@ -286,10 +243,6 @@ function postActivitiesStreamsaltitudeChart(activitie, latlng , altitude, vitess
         $("#svgaltitude").off("mousemove");
         selection = extent.width.animVal.value / (sessionStorage.ctxWidth - 30);
         x = (extent.x.animVal.value - 21) / (sessionStorage.ctxWidth - 30);
-        
-        document.getElementById("svgaltitude").removeEventListener("mousemove", function (event) {
-            alert()
-        });
 
         if (selection == 0) {
             selection = 1
@@ -301,63 +254,104 @@ function postActivitiesStreamsaltitudeChart(activitie, latlng , altitude, vitess
     });
 
     $("#resizeLeft").mousedown(function () {
-        $("#svgaltitude").mousemove(function (event2) {
-            xClic2 = event2.offsetX;
-            if (xClic2 - xClic > 0) {
-                if (xClic >= 21 && xClic2 <= sessionStorage.ctxWidth - 9) {
-                    extent.setAttribute('width', xClic2 - xClic);
-                    resizeLeft.setAttribute('transform', `translate(${xClic}, 0)`);
-                    resizeRight.setAttribute('transform', `translate(${xClic2}, 0)`);
-                }
-                else if (xClic >= 21) {
-                    extent.setAttribute('width', (sessionStorage.ctxWidth - 9) - xClic);
-                    resizeLeft.setAttribute('transform', `translate(${xClick}, 0)`);
-                    resizeRight.setAttribute('transform', `translate(${sessionStorage.ctxWidth - 9}, 0)`);
-                }
-                else if (xClic2 <= sessionStorage.ctxWidth - 9) {
-                    extent.setAttribute('width', xClic2 - xClic);
-                    resizeLeft.setAttribute('transform', `translate(21, 0)`);
-                    resizeRight.setAttribute('transform', `translate(${xClic2}, 0)`);
-                }
-                else {
-                    extent.setAttribute('width', (sessionStorage.ctxWidth - 9) - 21);
-                    resizeLeft.setAttribute('transform', `translate(21, 0)`);
-                    resizeRight.setAttribute('transform', `translate(${sessionStorage.ctxWidth - 9}, 0)`);
-                }
+        $("#svgaltitude").mousemove(function (event) {
+            xClic = event.offsetX;
+            sessionStorage.xClic = xClic;
+            if(sessionStorage.xClic2 - xClic > 0) {
+                extent.setAttribute('width', sessionStorage.xClic2 - xClic);
+                extent.setAttribute('x', xClic);
+                resizeLeft.setAttribute('transform', `translate(${xClic - 5}, 0)`);
             }
+            else {
+                extent.setAttribute('width', xClic - sessionStorage.xClic2);
+                extent.setAttribute('x', sessionStorage.xClic2);
+                resizeLeft.setAttribute('transform', `translate(${xClic - 5}, 0)`);
+            }
+
+            selection = extent.width.animVal.value / (sessionStorage.ctxWidth - 30);
+            x = (extent.x.animVal.value - 21) / (sessionStorage.ctxWidth - 30);
+        
+            Vitesse = ZoomVitesse(vitesse, vitesse.length)
+            let dataSpeed = new Array();
+            for (let i = Math.round(x * Vitesse.length);( i - Math.round(x * Vitesse.length)) <  Math.round(Vitesse.length * selection); i++) {
+                dataSpeed[i - Math.round(x * Vitesse.length)] = Vitesse[i]
+            }
+
+            let dataPower = new Array();
+            for (let i = Math.round(x * watt.length);( i - Math.round(x * watt.length)) <  Math.round(watt.length * selection); i++) {
+                dataPower[i - Math.round(x * watt.length)] = watt[i]
+            }
+
+            updateSpeedChart(dataSpeed);
+            updatePowerChart(dataPower);
         })
     })
 
-    extentWidth = selection * (sessionStorage.ctxWidth - 30);
-
     $("#resizeRight").mousedown(function () {
+        $("#svgaltitude").mousemove(function (event2) {
+            xClic2 = event2.offsetX;
+            sessionStorage.xClic2 = xClic2;
+            if(xClic2 - sessionStorage.xClic > 0) {
+                extent.setAttribute('width', xClic2 - sessionStorage.xClic);
+                extent.setAttribute('x', sessionStorage.xClic);
+                resizeRight.setAttribute('transform', `translate(${xClic2 - 5}, 0)`);
+            }
+            else {
+                extent.setAttribute('width', sessionStorage.xClic - xClic2);
+                extent.setAttribute('x', xClic2);
+                resizeRight.setAttribute('transform', `translate(${xClic2 - 5}, 0)`);
+            }
+
+            selection = extent.width.animVal.value / (sessionStorage.ctxWidth - 30);
+            x = (extent.x.animVal.value - 21) / (sessionStorage.ctxWidth - 30);
         
-        document.getElementById("svgaltitude").removeEventListener("click", function () {
-            $("#svgaltitude").mousemove(function (event2) {
-                xClic2 = event2.offsetX;
-                if (xClic2 - xClic > 0) {
-                    if (xClic >= 21 && xClic2 <= sessionStorage.ctxWidth - 9) {
-                        extent.setAttribute('width', extentWidth);
-                        resizeLeft.setAttribute('transform', `translate(${xClic}, 0)`);
-                        resizeRight.setAttribute('transform', `translate(${xClic2}, 0)`);
-                    }
-                    else if (xClic >= 21) {
-                        extent.setAttribute('width', extentWidth);
-                        resizeLeft.setAttribute('transform', `translate(${xClick}, 0)`);
-                        resizeRight.setAttribute('transform', `translate(${sessionStorage.ctxWidth - 9}, 0)`);
-                    }
-                    else if (xClic2 <= sessionStorage.ctxWidth - 9) {
-                        extent.setAttribute('width', extentWidth);
-                        resizeLeft.setAttribute('transform', `translate(21, 0)`);
-                        resizeRight.setAttribute('transform', `translate(${xClic2}, 0)`);
-                    }
-                    else {
-                        extent.setAttribute('width', extentWidth);
-                        resizeLeft.setAttribute('transform', `translate(21, 0)`);
-                        resizeRight.setAttribute('transform', `translate(${sessionStorage.ctxWidth - 9}, 0)`);
-                    }
-                }
-            })
+            Vitesse = ZoomVitesse(vitesse, vitesse.length)
+            let dataSpeed = new Array();
+            for (let i = Math.round(x * Vitesse.length);( i - Math.round(x * Vitesse.length)) <  Math.round(Vitesse.length * selection); i++) {
+                dataSpeed[i - Math.round(x * Vitesse.length)] = Vitesse[i]
+            }
+
+            let dataPower = new Array();
+            for (let i = Math.round(x * watt.length);( i - Math.round(x * watt.length)) <  Math.round(watt.length * selection); i++) {
+                dataPower[i - Math.round(x * watt.length)] = watt[i]
+            }
+
+            updateSpeedChart(dataSpeed);
+            updatePowerChart(dataPower);
+        })
+    })
+
+    resizeLeft = document.getElementById("resizeLeft")
+
+    $("#extent").mousedown(function (clickEvent) {
+        $("#svgaltitude").mousemove(function (event) {
+            xClic = event.offsetX;
+            x =  xClic - (extent.width.animVal.value / 2);
+            extentWidth = extent.width.animVal.value;
+
+            sessionStorage.xClic = x;
+            sessionStorage.xClic2 = x + extentWidth;
+
+            extent.setAttribute('x', x);
+            resizeLeft.setAttribute('transform', `translate(${x - 3}, 0)`);
+            resizeRight.setAttribute('transform', `translate(${(x - 3) + extentWidth}, 0)`);
+
+            selection = extent.width.animVal.value / (sessionStorage.ctxWidth - 30);
+            x = (extent.x.animVal.value - 21) / (sessionStorage.ctxWidth - 30);
+        
+            Vitesse = ZoomVitesse(vitesse, vitesse.length)
+            let dataSpeed = new Array();
+            for (let i = Math.round(x * Vitesse.length);( i - Math.round(x * Vitesse.length)) <  Math.round(Vitesse.length * selection); i++) {
+                dataSpeed[i - Math.round(x * Vitesse.length)] = Vitesse[i]
+            }
+
+            let dataPower = new Array();
+            for (let i = Math.round(x * watt.length);( i - Math.round(x * watt.length)) <  Math.round(watt.length * selection); i++) {
+                dataPower[i - Math.round(x * watt.length)] = watt[i]
+            }
+
+            updateSpeedChart(dataSpeed);
+            updatePowerChart(dataPower);
         })
     })
 }

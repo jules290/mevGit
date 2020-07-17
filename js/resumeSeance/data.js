@@ -1,5 +1,11 @@
 function postAthleteName() {
-    document.getElementById("resumeDeSeanceTitleName").innerText = localStorage.athleteName;
+    if (localStorage.athleteName && localStorage.athleteName != undefined) {
+        document.getElementById("resumeDeSeanceTitleName").innerText = localStorage.athleteName;
+    }
+    else {
+        document.getElementById("resumeDeSeanceTitleName").innerText = "";
+        document.getElementById("resumeDeSeanceTitleSpace").innerText = "";
+    }
 }
 
 function postActivitiestempsDistance() {

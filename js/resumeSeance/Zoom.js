@@ -4,7 +4,7 @@ function ZoomAltitude(altitude, ArrayLength) {
     let Zoomaltitude = new Array()
     if (ArrayLength < 500) {
         for (var i = 0; i <  (altitude.length)-supprEnd; i++) {
-            Zoomaltitude[i] = Math.round(altitude[i]);
+            Zoomaltitude = altitude
         }
     }
     else if (ArrayLength < 1000) {
@@ -84,7 +84,7 @@ function ZoomVitesse(vitesse, ArrayLength) {
     let Zoomvitesse = new Array()
     if (ArrayLength < 500) {
         for (var i = 0; i <  (vitesse.length)-supprEnd; i++) {
-            Zoomvitesse[i] = Math.round((vitesse[i])/0.1)/10
+            Zoomvitesse = vitesse
         }
     }
     else if (ArrayLength < 1000) {
@@ -162,7 +162,7 @@ function ZoomGrade(grade, ArrayLength) {
     let Zoomgrade = new Array()
     if (ArrayLength < 1000) {
         for (var i = 0; i <  (grade.length)-supprEnd; i++) {
-            Zoomgrade[i] = Math.round((grade[i])/0.1)/10
+            Zoomgrade = grade
         }
     }
     else if (ArrayLength < 1000) {

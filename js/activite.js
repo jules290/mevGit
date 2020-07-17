@@ -78,14 +78,64 @@ function getActivities() {
             "content-type": "application/x-www-form-urlencoded"
         },
         "data": {
-
+            'includeAllEfforts': true,
         }
     }
     $.ajax(settings).done(function (response) {
-        console.log(response)
-        let Activities = new Array();
+        if (!localStorage.Activities) {
+            array = new Array();
+            localStorage.Activities = JSON.stringify(array)
+        }
+        let Activities
+        let ancienne;
+        let newActivities = new Array();
         for (var i = 0; i < response.length; i++) {
-            Activities[i] = response[i];
+            newActivities[i] = response[i];
+        }
+        let finalNewActivities = new Array();
+        sessionStorage.nbAncienne = 0;
+        sessionStorage.nbNew = 0;
+        if (JSON.parse(localStorage.Activities).length > 0) {
+            for (var i = 0; i < response.length; i++) {
+                ancienne = 0;
+                for (let y = 0; y < JSON.parse(localStorage.Activities).length; y++) {
+                    if (response[i].id == JSON.parse(localStorage.Activities)[y].id) {
+                        ancienne = 1;
+                    }
+                }
+                if (ancienne == 1) {
+                    newActivities = newActivities.splice(i +  sessionStorage.nbAncienne, 1);
+                    sessionStorage.nbAncienne++;
+                }
+                else {
+                    finalNewActivities[sessionStorage.nbNew] = response[i];
+                    sessionStorage.nbNew++;
+                }
+            }
+            let uptadeAll = new Array();
+            for (let i = 0; i < newActivities.length; i++) {
+                uptadeAll[i] = NaN;
+            }
+    
+            if (localStorage.activityStream) {
+                uptadeAll.concat(JSON.parse(localStorage.activityStream))
+                uptadeAll.concat(JSON.parse(localStorage.activitiesMoving))
+                uptadeAll.concat(JSON.parse(localStorage.activitiesLatlng))
+                uptadeAll.concat(JSON.parse(localStorage.activitiesDistance))
+                uptadeAll.concat(JSON.parse(localStorage.activitiesVitesse))
+                uptadeAll.concat(JSON.parse(localStorage.activitiesTime))
+                uptadeAll.concat(JSON.parse(localStorage.activitiesAltitude))
+                uptadeAll.concat(JSON.parse(localStorage.activitiesGrade))
+                uptadeAll.concat(JSON.parse(localStorage.activitiesCadence))
+                uptadeAll.concat(JSON.parse(localStorage.activitiesBpm))
+                uptadeAll.concat(JSON.parse(localStorage.activitiesWatts))
+            }
+    
+            var lCActivities = JSON.parse(localStorage.Activities)
+            Activities = finalNewActivities.concat(lCActivities);
+        }
+        else {
+            Activities = response;
         }
 
         localStorage.Activities = JSON.stringify(Activities);
@@ -96,6 +146,10 @@ function getActivities() {
 }
 
 function postListActivité() {
+    if (!localStorage.Activities) {
+        array = new Array();
+        localStorage.Activities = JSON.stringify(array)
+    }
     let Activities = JSON.parse(localStorage.Activities);
 
     for (var i = 0; i < Activities.length; i++) {
@@ -157,7 +211,6 @@ $("#syncBtnTAthlete").click(function () {
     setTimeout(() => {
         document.getElementById("syncImg").style.transform = "rotate(360deg)";
     }, 800);
-    window.location.reload();
 })
 
 function getAthlete() {

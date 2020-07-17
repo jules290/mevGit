@@ -88,6 +88,14 @@ function postWatt(activitie, latlng , altitude, vitesse, distance, grade) {
         wattMoyData[i] = wattMoy;
     }
 
+    let wattMax = 0;
+    for (var i = 0; i <  watt.length; i++) {
+        if (watt[i] > wattMax) {
+            wattMax = watt[i]
+        }
+    }
+    sessionStorage.wattMax = wattMax;
+
     var data = {
         labels: kilometrage,
         datasets: [{
@@ -131,7 +139,8 @@ function postWatt(activitie, latlng , altitude, vitesse, distance, grade) {
             scales: {
                 yAxes: [{
                     ticks: {
-                        beginAtZero: false
+                        min: 0,
+                        max: Number(sessionStorage.wattMax)
                     },
                     display: false,
                 }]
@@ -164,67 +173,7 @@ function postWatt(activitie, latlng , altitude, vitesse, distance, grade) {
     var barPower = document.getElementById("barPower");
 
     document.getElementById("svgPower").onmousemove = function (event) {
-        xHover = event.offsetX;
-        xHoverData = event.offsetX;
-
-        if (xHover < 21) {
-            xHover = 21;
-        }
-        if (xHover > (sessionStorage.ctxWidth - 9)) {
-            xHover = (sessionStorage.ctxWidth - 9);
-        }
-
-        if (xHoverData < 21) {
-            xHoverData = 21;
-        }
-
-        if (xHoverData > (sessionStorage.ctxWidth - 9)) {
-            xHoverData = (sessionStorage.ctxWidth - 9);
-        }
-
-        selection = (extent.width.animVal.value) / (sessionStorage.ctxWidth - 30);
-        selectionWidth = (extent.width.animVal.value)
-        x = (extent.x.animVal.value);
-        if (selection > 0) {
-            xHover = ((xHoverData - 21) * selection) + x;
-            if (xHover < 21) {
-                xHover = 21;
-            }
-            if (xHover > (sessionStorage.ctxWidth - 9)) {
-                xHover = (sessionStorage.ctxWidth - 9);
-            }
-        }
-
-		baraltitude.setAttribute('x1', xHover);
-		baraltitude.setAttribute('x2', xHover);
-		barSpeed.setAttribute('x1', xHoverData);
-		barSpeed.setAttribute('x2', xHoverData);
-		barPower.setAttribute('x1', xHoverData);
-        barPower.setAttribute('x2', xHoverData);
-        
-        fraction = (xHover - 21) / (sessionStorage.ctxWidth - 30);
-
-        grade = Zoomgrade[ Math.round( fraction * Zoomgrade.length) ]
-        if (grade != undefined) {
-            document.getElementById("grade").innerText = document.getElementById("grade").innerText.slice(0, 6) + " " + grade + "%"
-        }
-
-        Altitude = Zoomaltitude[ Math.round( fraction * Zoomaltitude.length) ]
-        if (Altitude != undefined) {
-            document.getElementById("altitude").innerText = document.getElementById("altitude").innerText.slice(0, 10) + " " + Altitude + "m"
-        }
-
-        vitesse = Zoomvitesse[ Math.round( fraction * Zoomvitesse.length) ]
-        if (vitesse != undefined) {
-            document.getElementById("vitesse").innerText = document.getElementById("vitesse").innerText.slice(0, 8) + " " + vitesse + "km/h"
-        }
-
-        power = watt[ Math.round( fraction * watt.length) ]
-        if (power != undefined) {
-            document.getElementById("power").innerText = document.getElementById("power").innerText.slice(0, 10) + " " + power + "W"
-        }
-
-        setMarker(fraction, latlng)
+        chartLineHoverData(event, Zoomgrade, Zoomaltitude, Zoomvitesse, watt, latlng) 
     }
 }
 
@@ -244,10 +193,24 @@ function updatePowerChart(dataPower) {
         wattMoy += dataPower[i] / dataPower.length
     }
 
+    document.getElementById("puissanceMoy").innerText = "moy:";
+    document.getElementById("puissanceMoy").innerText += " " + Math.round(wattMoy * 10) / 10 + "w"
+
     let wattMoyData = new Array();
     for (var i = 0; i <  dataPower.length; i++) {
         wattMoyData[i] = wattMoy;
     }
+
+    let wattMax = 0;
+    for (var i = 0; i <  dataPower.length; i++) {
+        if (dataPower[i] > wattMax) {
+            wattMax = dataPower[i]
+        }
+    }
+    sessionStorage.wattMax = wattMax;
+    
+	document.getElementById("puissanceMax").innerText = "max:";
+	document.getElementById("puissanceMax").innerText += " " + Math.round(wattMax * 10) / 10 + "w"
 
     var data = {
         labels: kilometrage,
@@ -292,7 +255,8 @@ function updatePowerChart(dataPower) {
             scales: {
                 yAxes: [{
                     ticks: {
-                        beginAtZero: false
+                        min: 0,
+                        max: Number(sessionStorage.wattMax)
                     },
                     display: false,
                 }]

@@ -80,10 +80,10 @@
 
             <section id="activite">
                 <div id="tableHeader">
-                    <p id="activitiesD">date</p>
-                    <p id="activitiesT">titre</p>
-                    <p id="activitiesTps">temps</p>
-                    <p id="activitiesDst">distance</p>
+                    <p id="activitiesD">Date</p>
+                    <p id="activitiesT">Titre</p>
+                    <p id="activitiesTps">Temps</p>
+                    <p id="activitiesDst">Distance</p>
                 </div>
             </section>
 
@@ -120,11 +120,7 @@
                     </div>
                 </div>
 
-                <div id="clearMap">
-                    <p id="clearMapP">✖</p
-                ></div>
                 <div id="mapid"></div>
-                <div id="mapFilter"></div>
                 
                 <div id="altitudeBox" class="box">
                     <div id="altitudeBoxLegendLeft" class="boxLegendLeft boxLegend">
@@ -138,10 +134,10 @@
                             <line x1="21" x2="21" y1="0" y2="0" class="bar" id="baraltitude"></line>
                             <rect id="extent" class="extent" x="0" width="0" height="100" style="cursor: move;"></rect>
                             <g id="resizeLeft" class="resize" style="cursor: ew-resize;">
-                                <rect class="resizeBar" x="-3" width="6" height="100"></rect>
+                                <rect class="resizeBar" x="-3" width="10" height="100"></rect>
                             </g>
                             <g id="resizeRight" class="resize" style="cursor: ew-resize;">
-                                <rect class="resizeBar" x="-3" width="6" height="100"></rect>
+                                <rect class="resizeBar" x="-3" width="10" height="100"></rect>
                             </g>
                         </svg>
                     </div>
@@ -184,6 +180,28 @@
                         <p class="instantData" id="power">puissance:</p>
                     </div>
                 </div>
+
+                <div id="segmentEffort">
+                    <div id="view">
+                        <button id="viewEffort" class="view">Efforts</button>
+                        <button id="viewSegment" class="view">Segments</button>
+                    </div>
+                    <div id="viewSwitch"></div>
+                    <div id="segmentList">
+                        <div id="SegmentTableHeader">
+                            <p class="segmentKOM">PR</p>
+                            <p class="segmentInfo">Nom</p>
+                            <p class="segmentTps">Temps</p>
+                            <p class="segmentVst">vitesse</p>
+                            <p class="segmentP">Puissance</p>
+                            <p class="segmentFC">FC</p>
+                        </div>
+
+                        <div id="segmentEffortContainer">
+
+                        </div>
+                    </div>
+                </div>
             </section>
         </div>
 
@@ -203,6 +221,8 @@
         <script src="../js/resumeSeance/elevationChart.js"></script>
         <script src="../js/resumeSeance/watt.js"></script>
         <script src="../js/resumeSeance/legend.js"></script>
+        <script src="../js/resumeSeance/segment.js"></script>
+        <script src="../js/resumeSeance/chartLineHover.js"></script>
     </body>
 
 </html>
