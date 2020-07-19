@@ -4,7 +4,7 @@ function postData() {
     postActivitiesZoom();
     getActivityStreams()
 }
-
+postSegmentEndEffort("state")
 function postSegmentEndEffort(state) {
     let Id = JSON.parse(localStorage.Activities)[sessionStorage.activityIndex].id;
     const activitiesStreams = `https://www.strava.com/api/v3/activities/${Id}?access_token=${localStorage.access_token}`
@@ -23,10 +23,15 @@ function postSegmentEndEffort(state) {
         }
     }
     $.ajax(settings).done(function (response) {
+        console.log(response)
         if (state == "segment") {
             $("#segmentEffortContainer").empty();
             segmentsDataPower = new Array();
             segmentsDataVitesse = new Array();
+            segmentsDataLatLng = new Array();
+            segmentsDataAltitude = new Array();
+            segmentsDataGrade = new Array();
+
             for (let i = 0; i < response.segment_efforts.length; i++) {
                 var segment = document.createElement("div");
                 segment.className = "segment";
@@ -114,6 +119,22 @@ function postSegmentEndEffort(state) {
                 wattMoy = Math.round(wattMoy * 10) / 10
                 segmentPower.innerText = wattMoy + "w";
                 segmentsDataPower[i] = segmentDataPower;
+                segment.appendChild(segmentPower);
+
+                let segmentFC = document.createElement("div");
+                segmentFC.className = "segmentFC";
+                if (JSON.parse(localStorage.activitiesBpm).length > 0) {
+                    FC = JSON.parse(localStorage.activitiesBpm);
+                    let FCMoy = 0;
+                    for (var u = 0; u <  FC.length; u++) {
+                        FCMoy += FC[u] / FC.length
+                    }
+                    segmentFC.innerText = FC + "bpm";
+                }
+                else {
+                    segmentFC.innerText = "-";
+                }
+                segment.appendChild(segmentFC);
 
                 segmentDataVitesse = new Array();
                 let vitesse =  JSON.parse(localStorage.activitiesVitesse)[sessionStorage.activityIndex];
@@ -123,8 +144,31 @@ function postSegmentEndEffort(state) {
                 segmentsDataVitesse[i] = segmentDataVitesse;
 
                 latlng = JSON.parse(localStorage.activitiesLatlng)[sessionStorage.activityIndex];
-                let latSegment;
-                let lngSegment;
+                segmentDataLatLng = new Array();
+                for (let u = 0; u < latlng.length; u++) {
+                    for (let y = 0; y < response.segment_efforts[i].end_index - response.segment_efforts[i].start_index; y++) {
+                        segmentDataLatLng[y] = latlng[y + response.segment_efforts[i].start_index];
+                    }
+                }
+                segmentsDataLatLng[i] = segmentDataLatLng;
+
+                altitude = JSON.parse(localStorage.activitiesAltitude)[sessionStorage.activityIndex];
+                segmentDataAltitude = new Array();
+                for (let u = 0; u < latlng.length; u++) {
+                    for (let y = 0; y < response.segment_efforts[i].end_index - response.segment_efforts[i].start_index; y++) {
+                        segmentDataAltitude[y] = altitude[y + response.segment_efforts[i].start_index];
+                    }
+                }
+                segmentsDataAltitude[i] = segmentDataAltitude;
+
+                grade = JSON.parse(localStorage.activitiesGrade)[sessionStorage.activityIndex];
+                segmentDataGrade = new Array();
+                for (let u = 0; u < latlng.length; u++) {
+                    for (let y = 0; y < response.segment_efforts[i].end_index - response.segment_efforts[i].start_index; y++) {
+                        segmentDataGrade[y] = grade[y + response.segment_efforts[i].start_index];
+                    }
+                }
+                segmentsDataGrade[i] = segmentDataGrade;
 
                 segment.onclick = function () {
                     let extent = document.getElementById("extent")
@@ -134,39 +178,72 @@ function postSegmentEndEffort(state) {
                     let absLat = new Array();
 
                     ctxWidth = (ctxWidth.slice(0, ctxWidth.length - 2));
-                    fraction = (response.segment_efforts[i].end_index - response.segment_efforts[i].start_index) / vitesse.length;
-                    for (let u = 0; u < latlng.length; u++) {
-                        absLat[u] = latlng[u][0]
-                    }
-                    // 461
+                    fraction = (response.segment_efforts[i].end_index - response.segment_efforts[i].start_index) * (ctxWidth - 30) ;
+                    fractionStart = response.segment_efforts[i].start_index * (ctxWidth - 30);
+                    fractionEnd = response.segment_efforts[i].end_index * (ctxWidth - 30);
 
-                    console.log(JSON.parse(localStorage.activitiesDistance)[sessionStorage.activityIndex][response.segment_efforts[i].start_index])
-
-                    // extent.setAttribute(
-                    //     'width', 
-                    //     fraction * (ctxWidth)
-                    // );
-                    // extent.setAttribute(
-                    //     'x', 
-                    //     fractionStart * (ctxWidth)
-                    // );
-                    // resizeLeft.setAttribute(
-                    //     'transform', 
-                    //     `translate(${fractionStart * (ctxWidth)}, 0)`
-                    // );
-                    // resizeRight.setAttribute(
-                    //     'transform', 
-                    //     `translate(${fractionEnd * (ctxWidth)}, 0)`
-                    // );
+                    extent.setAttribute(
+                        'width', 
+                        (fraction / (latlng.length))
+                    );
+                    extent.setAttribute(
+                        'x', 
+                        (fractionStart / (latlng.length)) + 21
+                    );
+                    resizeLeft.setAttribute(
+                        'transform', 
+                        `translate(${(fractionStart / (latlng.length)) + 21}, 0)`
+                    );
+                    resizeRight.setAttribute(
+                        'transform', 
+                        `translate(${fractionEnd / (latlng.length)}, 0)`
+                    );
 
                     updatePowerChart(segmentsDataPower[i])
                     updateSpeedChart(segmentsDataVitesse[i])
+
+                    document.getElementById("svgSpeed").onmousemove = function (event) {
+                        chartLineHoverData(
+                            event, 
+                            grade, 
+                            altitude, 
+                            vitesse, 
+                            watts, 
+                            latlng
+                        )
+                    }
+
+                    document.getElementById("svgPower").onmousemove = function (event) {
+                        chartLineHoverData(
+                            event, 
+                            grade, 
+                            altitude, 
+                            vitesse, 
+                            watts, 
+                            latlng
+                        )
+                    }
+
+                    document.getElementById("svgaltitude").onmousemove = function (event) {
+                        chartLineHoverData(
+                            event, 
+                            grade, 
+                            altitude, 
+                            vitesse, 
+                            watts, 
+                            latlng
+                        )
+                    }
                 }
-                segment.appendChild(segmentPower);
             }
         }
         else if (state == "effort") {
             $("#segmentEffortContainer").empty();
+            latlng = JSON.parse(localStorage.activitiesLatlng)[sessionStorage.activityIndex];
+            bpm = JSON.parse(localStorage.activitiesBpm)[sessionStorage.activityIndex];
+            // for (let i = 0; i < response.length; i++) {
+                
+            // }
         }
     })
 }

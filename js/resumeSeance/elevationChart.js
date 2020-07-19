@@ -223,12 +223,15 @@ function postActivitiesStreamsaltitudeChart(activitie, latlng , altitude, vitess
                 selection = extent.width.animVal.value / (sessionStorage.ctxWidth - 30);
                 x = (extent.x.animVal.value - 21) / (sessionStorage.ctxWidth - 30);
         
-                Vitesse = ZoomVitesse(vitesse, vitesse.length)
+                Vitesse = ZoomVitesse(vitesse, x * vitesse.length)
+                Altitude = ZoomAltitude(altitude, x * altitude.length);
+                Grade = ZoomGrade(grade, x * grade.length);
                 let dataSpeed = new Array();
                 for (let i = Math.round(x * Vitesse.length);( i - Math.round(x * Vitesse.length)) <  Math.round(Vitesse.length * selection); i++) {
                     dataSpeed[i - Math.round(x * Vitesse.length)] = Vitesse[i]
                 }
     
+                watt = wattEstimation(Altitude, Vitesse, Grade);
                 let dataPower = new Array();
                 for (let i = Math.round(x * watt.length);( i - Math.round(x * watt.length)) <  Math.round(watt.length * selection); i++) {
                     dataPower[i - Math.round(x * watt.length)] = watt[i]
@@ -271,12 +274,15 @@ function postActivitiesStreamsaltitudeChart(activitie, latlng , altitude, vitess
             selection = extent.width.animVal.value / (sessionStorage.ctxWidth - 30);
             x = (extent.x.animVal.value - 21) / (sessionStorage.ctxWidth - 30);
         
-            Vitesse = ZoomVitesse(vitesse, vitesse.length)
+            Vitesse = ZoomVitesse(vitesse, x * vitesse.length)
+            Altitude = ZoomAltitude(altitude, x * altitude.length);
+            Grade = ZoomGrade(grade, x * grade.length);
             let dataSpeed = new Array();
             for (let i = Math.round(x * Vitesse.length);( i - Math.round(x * Vitesse.length)) <  Math.round(Vitesse.length * selection); i++) {
                 dataSpeed[i - Math.round(x * Vitesse.length)] = Vitesse[i]
             }
 
+            watt = wattEstimation(Altitude, Vitesse, Grade);
             let dataPower = new Array();
             for (let i = Math.round(x * watt.length);( i - Math.round(x * watt.length)) <  Math.round(watt.length * selection); i++) {
                 dataPower[i - Math.round(x * watt.length)] = watt[i]
@@ -305,12 +311,15 @@ function postActivitiesStreamsaltitudeChart(activitie, latlng , altitude, vitess
             selection = extent.width.animVal.value / (sessionStorage.ctxWidth - 30);
             x = (extent.x.animVal.value - 21) / (sessionStorage.ctxWidth - 30);
         
-            Vitesse = ZoomVitesse(vitesse, vitesse.length)
+            Vitesse = ZoomVitesse(vitesse, x * vitesse.length)
+            Altitude = ZoomAltitude(altitude, x * altitude.length);
+            Grade = ZoomGrade(grade, x * grade.length);
             let dataSpeed = new Array();
             for (let i = Math.round(x * Vitesse.length);( i - Math.round(x * Vitesse.length)) <  Math.round(Vitesse.length * selection); i++) {
                 dataSpeed[i - Math.round(x * Vitesse.length)] = Vitesse[i]
             }
 
+            watt = wattEstimation(Altitude, Vitesse, Grade);
             let dataPower = new Array();
             for (let i = Math.round(x * watt.length);( i - Math.round(x * watt.length)) <  Math.round(watt.length * selection); i++) {
                 dataPower[i - Math.round(x * watt.length)] = watt[i]
@@ -339,12 +348,15 @@ function postActivitiesStreamsaltitudeChart(activitie, latlng , altitude, vitess
             selection = extent.width.animVal.value / (sessionStorage.ctxWidth - 30);
             x = (extent.x.animVal.value - 21) / (sessionStorage.ctxWidth - 30);
         
-            Vitesse = ZoomVitesse(vitesse, vitesse.length)
+            Vitesse = ZoomVitesse(vitesse, x * vitesse.length)
+            Altitude = ZoomAltitude(altitude, x * altitude.length);
+            Grade = ZoomGrade(grade, x * grade.length);
             let dataSpeed = new Array();
             for (let i = Math.round(x * Vitesse.length);( i - Math.round(x * Vitesse.length)) <  Math.round(Vitesse.length * selection); i++) {
                 dataSpeed[i - Math.round(x * Vitesse.length)] = Vitesse[i]
             }
 
+            watt = wattEstimation(Altitude, Vitesse, Grade);
             let dataPower = new Array();
             for (let i = Math.round(x * watt.length);( i - Math.round(x * watt.length)) <  Math.round(watt.length * selection); i++) {
                 dataPower[i - Math.round(x * watt.length)] = watt[i]

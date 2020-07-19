@@ -118,6 +118,7 @@ function getActivities() {
             }
     
             if (localStorage.activityStream) {
+                console.log(uptadeAll)
                 uptadeAll.concat(JSON.parse(localStorage.activityStream))
                 uptadeAll.concat(JSON.parse(localStorage.activitiesMoving))
                 uptadeAll.concat(JSON.parse(localStorage.activitiesLatlng))
@@ -141,7 +142,7 @@ function getActivities() {
         localStorage.Activities = JSON.stringify(Activities);
 
         postListActivité()
-        window.location.reload();
+        // window.location.reload();
     });
 }
 

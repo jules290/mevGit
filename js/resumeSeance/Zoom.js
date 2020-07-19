@@ -86,6 +86,8 @@ function ZoomVitesse(vitesse, ArrayLength) {
         for (var i = 0; i <  (vitesse.length)-supprEnd; i++) {
             Zoomvitesse = vitesse
         }
+        console.log(vitesse.length)
+        console.log(Zoomvitesse.length)
     }
     else if (ArrayLength < 1000) {
         for (var i = 0; i <  (vitesse.length/2)-supprEnd; i++) {
@@ -243,7 +245,7 @@ function wattEstimation(Zoomaltitude, Zoomvitesse, Zoomgrade) {
 			Zoomvitesse2[i] = Zoomvitesse[i]
 		}
 		else if (Zoomvitesse[i - 1] > 10) {
-			Zoomvitesse2[i] = ( Zoomvitesse[i] + ( ( Zoomvitesse[i] - Zoomvitesse[i - 1] ) * 0.05 ) ) * 0.99
+			Zoomvitesse2[i] = ( Zoomvitesse[i] + ( ( Zoomvitesse[i] - Zoomvitesse[i - 1] ) * 0.05 ) ) * 0.98
 		}
 		else {
 			Zoomvitesse2[i] = Zoomvitesse[i]

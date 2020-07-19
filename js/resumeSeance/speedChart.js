@@ -211,7 +211,7 @@ function updateSpeedChart(dataSpeed) {
     }
     
 	document.getElementById("vitesseMax").innerText = "max:";
-	document.getElementById("vitesseMax").innerText += " " + Math.round(vitesseMax * 10) / 10 + "km/h"
+    document.getElementById("vitesseMax").innerText += " " + Math.round(vitesseMax * 10) / 10 + "km/h"
 
     var data = {
         labels: kilometrage,
