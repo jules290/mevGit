@@ -3,8 +3,8 @@ function postData() {
     postActivitiestempsDistance();
     postActivitiesZoom();
     getActivityStreams()
+    postSegmentEndEffort("effort")
 }
-postSegmentEndEffort("state")
 function postSegmentEndEffort(state) {
     let Id = JSON.parse(localStorage.Activities)[sessionStorage.activityIndex].id;
     const activitiesStreams = `https://www.strava.com/api/v3/activities/${Id}?access_token=${localStorage.access_token}`

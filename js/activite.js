@@ -12,10 +12,11 @@ if (positionCode != -1) {
         $.post(auth_link,
             function(data){
                 localStorage.refresh_token = data.refresh_token;
+                localStorage.access_token = data.access_token;
                 localStorage.oauthStatus = "ok";
                 document.getElementById("strava").innerText = "strava";
                 document.getElementById("strava").href = "../strava/strava.html";
-                getActivities(data)
+                getActivities()
             });
     }
 }
@@ -43,6 +44,7 @@ function reAuthorize() {
 
 $(document).ready(function () {
     postListActivité()
+    sessionStorage.ActivitiesState = "list";
 })
 
 if (localStorage.oauthStatus || localStorage.oauthStatus == "ok") {
@@ -176,6 +178,7 @@ function postListActivité() {
             $("#sync").hide();
             sessionStorage.activityIndex = index;
             postData();
+            sessionStorage.ActivitiesState = "resumeSeance";
         }
         activities.appendChild(activitiesT);
 
