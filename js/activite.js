@@ -104,6 +104,7 @@ function getActivities() {
                         ancienne = 1;
                     }
                 }
+                console.log(ancienne)
                 if (ancienne == 1) {
                     newActivities = newActivities.splice(i +  sessionStorage.nbAncienne, 1);
                     sessionStorage.nbAncienne++;
@@ -120,17 +121,29 @@ function getActivities() {
     
             if (localStorage.activityStream) {
                 console.log(uptadeAll)
-                uptadeAll.concat(JSON.parse(localStorage.activityStream))
-                uptadeAll.concat(JSON.parse(localStorage.activitiesMoving))
-                uptadeAll.concat(JSON.parse(localStorage.activitiesLatlng))
-                uptadeAll.concat(JSON.parse(localStorage.activitiesDistance))
-                uptadeAll.concat(JSON.parse(localStorage.activitiesVitesse))
-                uptadeAll.concat(JSON.parse(localStorage.activitiesTime))
-                uptadeAll.concat(JSON.parse(localStorage.activitiesAltitude))
-                uptadeAll.concat(JSON.parse(localStorage.activitiesGrade))
-                uptadeAll.concat(JSON.parse(localStorage.activitiesCadence))
-                uptadeAll.concat(JSON.parse(localStorage.activitiesBpm))
-                uptadeAll.concat(JSON.parse(localStorage.activitiesWatts))
+                activityStream = uptadeAll.concat(JSON.parse(localStorage.activityStream))
+                activitiesMoving = uptadeAll.concat(JSON.parse(localStorage.activitiesMoving))
+                activitiesLatlng = uptadeAll.concat(JSON.parse(localStorage.activitiesLatlng))
+                activitiesDistance = uptadeAll.concat(JSON.parse(localStorage.activitiesDistance))
+                activitiesVitesse = uptadeAll.concat(JSON.parse(localStorage.activitiesVitesse))
+                activitiesTime = uptadeAll.concat(JSON.parse(localStorage.activitiesTime))
+                activitiesAltitude = uptadeAll.concat(JSON.parse(localStorage.activitiesAltitude))
+                activitiesGrade = uptadeAll.concat(JSON.parse(localStorage.activitiesGrade))
+                activitiesCadence = uptadeAll.concat(JSON.parse(localStorage.activitiesCadence))
+                activitiesBpm = uptadeAll.concat(JSON.parse(localStorage.activitiesBpm))
+                activitiesWatts = uptadeAll.concat(JSON.parse(localStorage.activitiesWatts))
+
+                localStorage.activityStream = JSON.stringify(activityStream);
+                localStorage.activitiesMoving = JSON.stringify(activitiesMoving);
+                localStorage.activitiesLatlng = JSON.stringify(activitiesLatlng);
+                localStorage.activitiesDistance = JSON.stringify(activitiesDistance);
+                localStorage.activitiesVitesse = JSON.stringify(activitiesVitesse);
+                localStorage.activitiesTime = JSON.stringify(activitiesTime);
+                localStorage.activitiesAltitude = JSON.stringify(activitiesAltitude);
+                localStorage.activitiesGrade = JSON.stringify(activitiesGrade);
+                localStorage.activitiesCadence = JSON.stringify(activitiesCadence);
+                localStorage.activitiesBpm = JSON.stringify(activitiesBpm);
+                localStorage.activitiesWatts = JSON.stringify(activitiesWatts);
             }
     
             var lCActivities = JSON.parse(localStorage.Activities)
