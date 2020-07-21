@@ -5,6 +5,7 @@ function postData() {
     getActivityStreams()
     postSegmentEndEffort("effort")
 }
+
 function postSegmentEndEffort(state) {
     let Id = JSON.parse(localStorage.Activities)[sessionStorage.activityIndex].id;
     const activitiesStreams = `https://www.strava.com/api/v3/activities/${Id}?access_token=${localStorage.access_token}`
@@ -225,7 +226,7 @@ function postSegmentEndEffort(state) {
                     }
 
                     document.getElementById("svgaltitude").onmousemove = function (event) {
-                        chartLineHoverData(
+                        chartLineHoverElevation(
                             event, 
                             grade, 
                             altitude, 

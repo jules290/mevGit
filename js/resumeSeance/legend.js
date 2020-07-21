@@ -166,36 +166,29 @@ function postLegend(activitie, latlng , altitude, vitesse, distance, grade) {
 	let fraction;
 
 	var baraltitude = document.getElementById("baraltitude");
-	var barSpeed = document.getElementById("barSpeed");
-	var barPower = document.getElementById("barPower");
+	var barData = document.getElementById("barData");
 
 	$("#svgaltitude").hover(function () {
-		document.getElementById("baraltitude").classList.add("bar")
-		document.getElementById("barSpeed").classList.add("bar")
-		document.getElementById("barPower").classList.add("bar")
+		document.getElementById("baraltitude").classList.add("bar");
+		document.getElementById("barData").classList.add("bar");
 	}, function () {
-		document.getElementById("baraltitude").classList.remove("bar")
-		document.getElementById("barSpeed").classList.remove("bar")
-		document.getElementById("barPower").classList.remove("bar")
+		document.getElementById("baraltitude").classList.remove("bar");
+		document.getElementById("barData").classList.remove("bar");
 	})
 
 	$("#svgSpeed").hover(function () {
-		document.getElementById("baraltitude").classList.add("bar")
-		document.getElementById("barSpeed").classList.add("bar")
-		document.getElementById("barPower").classList.add("bar")
+		document.getElementById("baraltitude").classList.add("bar");
+		document.getElementById("barData").classList.add("bar");
 	}, function () {
-		document.getElementById("baraltitude").classList.remove("bar")
-		document.getElementById("barSpeed").classList.remove("bar")
-		document.getElementById("barPower").classList.remove("bar")
+		document.getElementById("baraltitude").classList.remove("bar");
+		document.getElementById("barData").classList.remove("bar");
 	})
 
 	$("#svgPower").hover(function () {
-		document.getElementById("baraltitude").classList.add("bar")
-		document.getElementById("barSpeed").classList.add("bar")
-		document.getElementById("barPower").classList.add("bar")
+		document.getElementById("baraltitude").classList.add("bar");
+		document.getElementById("barData").classList.add("bar");
 	}, function () {
-		document.getElementById("baraltitude").classList.remove("bar")
-		document.getElementById("barSpeed").classList.remove("bar")
-		document.getElementById("barPower").classList.remove("bar")
+		document.getElementById("baraltitude").classList.remove("bar");
+		document.getElementById("barData").classList.remove("bar");
 	})
 }

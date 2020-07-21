@@ -7,8 +7,7 @@ let Altitude;
 let position
 
 var baraltitude = document.getElementById("baraltitude");
-var barSpeed = document.getElementById("barSpeed");
-var barPower = document.getElementById("barPower");
+var barData = document.getElementById("barData");
 let extent = document.getElementById("extent")
 let xClic;
 let selection;
@@ -31,10 +30,8 @@ function chartLineHoverElevation(event, grade, altitude, vitesse, watt, latlng) 
     if (xHover >= 21 && xHover <= sessionStorage.ctxWidth - 9) {
         baraltitude.setAttribute('x1', xHover);
         baraltitude.setAttribute('x2', xHover);
-        barSpeed.setAttribute('x1', xHoverData);
-        barSpeed.setAttribute('x2', xHoverData);
-        barPower.setAttribute('x1', xHoverData);
-        barPower.setAttribute('x2', xHoverData);
+        barData.setAttribute('x1', xHoverData);
+        barData.setAttribute('x2', xHoverData);
     }
     fraction = (xHover - 21) / (sessionStorage.ctxWidth - 30);
 
@@ -95,10 +92,8 @@ function chartLineHoverData(event, grade, altitude, vitesse, watt, latlng) {
 
     baraltitude.setAttribute('x1', xHover);
     baraltitude.setAttribute('x2', xHover);
-    barSpeed.setAttribute('x1', xHoverData);
-    barSpeed.setAttribute('x2', xHoverData);
-    barPower.setAttribute('x1', xHoverData);
-    barPower.setAttribute('x2', xHoverData);
+    barData.setAttribute('x1', xHoverData);
+    barData.setAttribute('x2', xHoverData);
 
     fraction = (xHover - 21) / (sessionStorage.ctxWidth - 30);
 

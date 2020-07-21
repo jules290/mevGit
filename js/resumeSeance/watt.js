@@ -5,72 +5,30 @@ function postWatt(activitie, latlng , altitude, vitesse, distance, grade) {
     let watt = wattEstimation(Zoomaltitude, Zoomvitesse, Zoomgrade);
 				
     var ctx = document.getElementById('graphPower');
-    var svg = document.getElementById("svgPower");
-    var bar = document.getElementById("barPower");
 
     if (document.documentElement.clientWidth > 1200) {
         ctx.height = 130;
-        svg.style.height = "130px";
-        svg.style.marginTop = "-130px";
-        svg.style.width = "70%";
-        bar.setAttribute('y1', 0);
-        bar.setAttribute('y2', 130);
     }
     else if (document.documentElement.clientWidth > 1000) {
         ctx.height = 130;
-        svg.style.height = "130px";
-        svg.style.marginTop = "-130px";
-        svg.style.width = "70%";
-        bar.setAttribute('y1', 0);
-        bar.setAttribute('y2', 130);
     }
     else if (document.documentElement.clientWidth > 800) {
         ctx.height = 120;
-        svg.style.height = "120px";
-        svg.style.marginTop = "-120px";
-        svg.style.width = "70%";
-        bar.setAttribute('y1', 0);
-        bar.setAttribute('y2', 120);
     }
     else if (document.documentElement.clientWidth > 600) {
         ctx.height = 100;
-        svg.style.height = "100px";
-        svg.style.marginTop = "-100px";
-        svg.style.width = "70%";
-        bar.setAttribute('y1', 0);
-        bar.setAttribute('y2', 100);
     }
     else if (document.documentElement.clientWidth > 400) {
         ctx.height = 90;
-        svg.style.height = "90px";
-        svg.style.marginTop = "-90px";
-        svg.style.width = "70%";
-        bar.setAttribute('y1', 0);
-        bar.setAttribute('y2', 90);
     }
     else if (document.documentElement.clientWidth > 300) {
         ctx.height = 80;
-        svg.style.height = "80px";
-        svg.style.marginTop = "-80px";
-        svg.style.width = "70%";
-        bar.setAttribute('y1', 0);
-        bar.setAttribute('y2', 80);
     }
     else if (document.documentElement.clientWidth > 200) {
         ctx.height = 80;
-        svg.style.height = "80px";
-        svg.style.marginTop = "-80px";
-        svg.style.width = "70%";
-        bar.setAttribute('y1', 0);
-        bar.setAttribute('y2', 80);
     }
     else {
         ctx.height = 80;
-        svg.style.height = "80px";
-        svg.style.marginTop = "-80px";
-        svg.style.width = "70%";
-        bar.setAttribute('y1', 0);
-        bar.setAttribute('y2', 80);
     }
     
     var kilometrage = new Array()
@@ -161,20 +119,6 @@ function postWatt(activitie, latlng , altitude, vitesse, distance, grade) {
             }
         }
     })
-
-    let xClic;
-    let ctxWidth = document.getElementById("graphPower").style.width;
-    sessionStorage.ctxWidth = (ctxWidth.slice(0, ctxWidth.length - 2));
-    let fraction;
-    let Altitude;
-
-    var baraltitude = document.getElementById("baraltitude");
-	var barSpeed = document.getElementById("barSpeed");
-    var barPower = document.getElementById("barPower");
-
-    document.getElementById("svgPower").onmousemove = function (event) {
-        chartLineHoverData(event, Zoomgrade, Zoomaltitude, Zoomvitesse, watt, latlng) 
-    }
 }
 
 function updatePowerChart(dataPower) {

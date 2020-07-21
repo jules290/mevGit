@@ -8,6 +8,7 @@ function postActivitiesStreamsaltitudeChart(activitie, latlng , altitude, vitess
     var svg = document.getElementById("svgaltitude");
     var bar = document.getElementById("baraltitude");
     let height;
+    let extent = document.getElementById("extent");
 
     if (document.documentElement.clientWidth > 1200) {
         height = 120;
@@ -16,6 +17,7 @@ function postActivitiesStreamsaltitudeChart(activitie, latlng , altitude, vitess
         svg.style.width = "70%";
         bar.setAttribute('y1', 0);
         bar.setAttribute('y2', 120);
+        extent.setAttribute('height', 100);
     }
     else if (document.documentElement.clientWidth > 1000) {
         height = 120;
@@ -24,6 +26,7 @@ function postActivitiesStreamsaltitudeChart(activitie, latlng , altitude, vitess
         svg.style.width = "70%";
         bar.setAttribute('y1', 0);
         bar.setAttribute('y2', 120);
+        extent.setAttribute('height', 100);
     }
     else if (document.documentElement.clientWidth > 800) {
         height = 120;
@@ -32,6 +35,7 @@ function postActivitiesStreamsaltitudeChart(activitie, latlng , altitude, vitess
         svg.style.width = "70%";
         bar.setAttribute('y1', 0);
         bar.setAttribute('y2', 120);
+        extent.setAttribute('height', 100);
     }
     else if (document.documentElement.clientWidth > 600) {
         height = 100;
@@ -40,6 +44,7 @@ function postActivitiesStreamsaltitudeChart(activitie, latlng , altitude, vitess
         svg.style.width = "70%";
         bar.setAttribute('y1', 0);
         bar.setAttribute('y2', 100);
+        extent.setAttribute('height', 80);
     }
     else if (document.documentElement.clientWidth > 400) {
         height = 90;
@@ -48,6 +53,7 @@ function postActivitiesStreamsaltitudeChart(activitie, latlng , altitude, vitess
         svg.style.width = "70%";
         bar.setAttribute('y1', 0);
         bar.setAttribute('y2', 90);
+        extent.setAttribute('height', 70);
     }
     else if (document.documentElement.clientWidth > 300) {
         height = 80;
@@ -56,6 +62,7 @@ function postActivitiesStreamsaltitudeChart(activitie, latlng , altitude, vitess
         svg.style.width = "70%";
         bar.setAttribute('y1', 0);
         bar.setAttribute('y2', 80);
+        extent.setAttribute('height', 60);
     }
     else if (document.documentElement.clientWidth > 200) {
         height = 80;
@@ -64,6 +71,7 @@ function postActivitiesStreamsaltitudeChart(activitie, latlng , altitude, vitess
         svg.style.width = "70%";
         bar.setAttribute('y1', 0);
         bar.setAttribute('y2', 80);
+        extent.setAttribute('height', 60);
     }
     else {
         height = 80;
@@ -72,6 +80,7 @@ function postActivitiesStreamsaltitudeChart(activitie, latlng , altitude, vitess
         svg.style.width = "70%";
         bar.setAttribute('y1', 0);
         bar.setAttribute('y2', 80);
+        extent.setAttribute('height', 60);
     }
 
     ctx.height =  height;
@@ -143,7 +152,7 @@ function postActivitiesStreamsaltitudeChart(activitie, latlng , altitude, vitess
     var baraltitude = document.getElementById("baraltitude");
 	var barSpeed = document.getElementById("barSpeed");
     var barPower = document.getElementById("barPower");
-    let extent = document.getElementById("extent")
+    extent = document.getElementById("extent")
     let xClic;
     let selection;
 
@@ -222,23 +231,45 @@ function postActivitiesStreamsaltitudeChart(activitie, latlng , altitude, vitess
     
                 selection = extent.width.animVal.value / (sessionStorage.ctxWidth - 30);
                 x = (extent.x.animVal.value - 21) / (sessionStorage.ctxWidth - 30);
-        
-                Vitesse = ZoomVitesse(vitesse, x * vitesse.length)
-                Altitude = ZoomAltitude(altitude, x * altitude.length);
-                Grade = ZoomGrade(grade, x * grade.length);
+
+                Vitesse = JSON.parse(localStorage.activitiesVitesse)[sessionStorage.activityIndex];
+                Altitude = JSON.parse(localStorage.activitiesAltitude)[sessionStorage.activityIndex];
+                Grade = JSON.parse(localStorage.activitiesGrade)[sessionStorage.activityIndex];
                 let dataSpeed = new Array();
                 for (let i = Math.round(x * Vitesse.length);( i - Math.round(x * Vitesse.length)) <  Math.round(Vitesse.length * selection); i++) {
                     dataSpeed[i - Math.round(x * Vitesse.length)] = Vitesse[i]
                 }
     
-                watt = wattEstimation(Altitude, Vitesse, Grade);
+                Watt = wattEstimation(Altitude, Vitesse, Grade);
                 let dataPower = new Array();
-                for (let i = Math.round(x * watt.length);( i - Math.round(x * watt.length)) <  Math.round(watt.length * selection); i++) {
-                    dataPower[i - Math.round(x * watt.length)] = watt[i]
+                for (let i = Math.round(x * Watt.length);( i - Math.round(x * Watt.length)) <  Math.round(Watt.length * selection); i++) {
+                    dataPower[i - Math.round(x * Watt.length)] = Watt[i]
                 }
     
                 updateSpeedChart(dataSpeed);
                 updatePowerChart(dataPower);
+                
+                document.getElementById("svgSpeed").onmousemove = function (event) {
+                    chartLineHoverData(
+                        event, 
+                        Grade, 
+                        Altitude, 
+                        JSON.parse(localStorage.activitiesVitesse)[sessionStorage.activityIndex], 
+                        Watt, 
+                        latlng
+                    )
+                }
+    
+                document.getElementById("svgData").onmousemove = function (event) {
+                    chartLineHoverData(
+                        event, 
+                        Grade, 
+                        Altitude, 
+                        JSON.parse(localStorage.activitiesVitesse)[sessionStorage.activityIndex], 
+                        Watt, 
+                        latlng
+                    )
+                }
             });
         }
     })
@@ -274,19 +305,19 @@ function postActivitiesStreamsaltitudeChart(activitie, latlng , altitude, vitess
             selection = extent.width.animVal.value / (sessionStorage.ctxWidth - 30);
             x = (extent.x.animVal.value - 21) / (sessionStorage.ctxWidth - 30);
         
-            Vitesse = ZoomVitesse(vitesse, x * vitesse.length)
-            Altitude = ZoomAltitude(altitude, x * altitude.length);
-            Grade = ZoomGrade(grade, x * grade.length);
-            let dataSpeed = new Array();
-            for (let i = Math.round(x * Vitesse.length);( i - Math.round(x * Vitesse.length)) <  Math.round(Vitesse.length * selection); i++) {
-                dataSpeed[i - Math.round(x * Vitesse.length)] = Vitesse[i]
-            }
-
-            watt = wattEstimation(Altitude, Vitesse, Grade);
-            let dataPower = new Array();
-            for (let i = Math.round(x * watt.length);( i - Math.round(x * watt.length)) <  Math.round(watt.length * selection); i++) {
-                dataPower[i - Math.round(x * watt.length)] = watt[i]
-            }
+            Vitesse = JSON.parse(localStorage.activitiesVitesse)[sessionStorage.activityIndex];
+                Altitude = JSON.parse(localStorage.activitiesAltitude)[sessionStorage.activityIndex];
+                Grade = JSON.parse(localStorage.activitiesGrade)[sessionStorage.activityIndex];
+                let dataSpeed = new Array();
+                for (let i = Math.round(x * Vitesse.length);( i - Math.round(x * Vitesse.length)) <  Math.round(Vitesse.length * selection); i++) {
+                    dataSpeed[i - Math.round(x * Vitesse.length)] = Vitesse[i]
+                }
+    
+                Watt = wattEstimation(Altitude, Vitesse, Grade);
+                let dataPower = new Array();
+                for (let i = Math.round(x * Watt.length);( i - Math.round(x * Watt.length)) <  Math.round(Watt.length * selection); i++) {
+                    dataPower[i - Math.round(x * Watt.length)] = Watt[i]
+                } 
 
             updateSpeedChart(dataSpeed);
             updatePowerChart(dataPower);
@@ -311,19 +342,19 @@ function postActivitiesStreamsaltitudeChart(activitie, latlng , altitude, vitess
             selection = extent.width.animVal.value / (sessionStorage.ctxWidth - 30);
             x = (extent.x.animVal.value - 21) / (sessionStorage.ctxWidth - 30);
         
-            Vitesse = ZoomVitesse(vitesse, x * vitesse.length)
-            Altitude = ZoomAltitude(altitude, x * altitude.length);
-            Grade = ZoomGrade(grade, x * grade.length);
+            Vitesse = JSON.parse(localStorage.activitiesVitesse)[sessionStorage.activityIndex];
+            Altitude = JSON.parse(localStorage.activitiesAltitude)[sessionStorage.activityIndex];
+            Grade = JSON.parse(localStorage.activitiesGrade)[sessionStorage.activityIndex];
             let dataSpeed = new Array();
             for (let i = Math.round(x * Vitesse.length);( i - Math.round(x * Vitesse.length)) <  Math.round(Vitesse.length * selection); i++) {
                 dataSpeed[i - Math.round(x * Vitesse.length)] = Vitesse[i]
             }
 
-            watt = wattEstimation(Altitude, Vitesse, Grade);
+            Watt = wattEstimation(Altitude, Vitesse, Grade);
             let dataPower = new Array();
-            for (let i = Math.round(x * watt.length);( i - Math.round(x * watt.length)) <  Math.round(watt.length * selection); i++) {
-                dataPower[i - Math.round(x * watt.length)] = watt[i]
-            }
+            for (let i = Math.round(x * Watt.length);( i - Math.round(x * Watt.length)) <  Math.round(Watt.length * selection); i++) {
+                dataPower[i - Math.round(x * Watt.length)] = Watt[i]
+            }   
 
             updateSpeedChart(dataSpeed);
             updatePowerChart(dataPower);
@@ -348,18 +379,18 @@ function postActivitiesStreamsaltitudeChart(activitie, latlng , altitude, vitess
             selection = extent.width.animVal.value / (sessionStorage.ctxWidth - 30);
             x = (extent.x.animVal.value - 21) / (sessionStorage.ctxWidth - 30);
         
-            Vitesse = ZoomVitesse(vitesse, x * vitesse.length)
-            Altitude = ZoomAltitude(altitude, x * altitude.length);
-            Grade = ZoomGrade(grade, x * grade.length);
+            Vitesse = JSON.parse(localStorage.activitiesVitesse)[sessionStorage.activityIndex];
+            Altitude = JSON.parse(localStorage.activitiesAltitude)[sessionStorage.activityIndex];
+            Grade = JSON.parse(localStorage.activitiesGrade)[sessionStorage.activityIndex];
             let dataSpeed = new Array();
             for (let i = Math.round(x * Vitesse.length);( i - Math.round(x * Vitesse.length)) <  Math.round(Vitesse.length * selection); i++) {
                 dataSpeed[i - Math.round(x * Vitesse.length)] = Vitesse[i]
             }
 
-            watt = wattEstimation(Altitude, Vitesse, Grade);
+            Watt = wattEstimation(Altitude, Vitesse, Grade);
             let dataPower = new Array();
-            for (let i = Math.round(x * watt.length);( i - Math.round(x * watt.length)) <  Math.round(watt.length * selection); i++) {
-                dataPower[i - Math.round(x * watt.length)] = watt[i]
+            for (let i = Math.round(x * Watt.length);( i - Math.round(x * Watt.length)) <  Math.round(Watt.length * selection); i++) {
+                dataPower[i - Math.round(x * Watt.length)] = Watt[i]
             }
 
             updateSpeedChart(dataSpeed);

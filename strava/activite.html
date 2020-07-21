@@ -155,9 +155,6 @@
                     </div>
                     <div id="speedGraph" class="graphBox">
                         <canvas id="graphSpeed" class="graph"></canvas>
-                        <svg width="700" id="svgSpeed" class="svg">
-                            <line x1="21" x2="21" y1="0" y2="0" class="bar" id="barSpeed"></line>
-                        </svg>
                     </div>
                     <div id="altitudeBoxLegendRight" class="boxLegendRight boxLegend">
                         <p class="instantData" id="vitesse">vitesse:</p>
@@ -172,14 +169,22 @@
                     </div>
                     <div id="powerGraph" class="graphBox">
                         <canvas id="graphPower" class="graph"></canvas>
-                        <svg width="700" id="svgPower" class="svg">
-                            <line x1="21" x2="21" y1="0" y2="0" class="bar" id="barPower"></line>
-                        </svg>
                     </div>
                     <div id="altitudeBoxLegendRight" class="boxLegendRight boxLegend">
                         <p class="instantData" id="power">puissance:</p>
                     </div>
                 </div>
+
+                <svg width="700" id="svgData" class="svg">
+                    <line x1="21" x2="21" y1="0" y2="0" class="bar" id="barData"></line>
+                    <rect id="extentData" class="extent" x="21" style="cursor: move;"></rect>
+                    <g id="resizeLeftData" class="resize" style="cursor: ew-resize;">
+                        <rect class="resizeBar" x="-3" width="10" height="100"></rect>
+                    </g>
+                    <g id="resizeRightData" class="resize" style="cursor: ew-resize;">
+                        <rect class="resizeBar" x="-3" width="10" height="100"></rect>
+                    </g>
+                </svg>
 
                 <div id="segmentEffort">
                     <div id="view">
@@ -223,6 +228,7 @@
         <script src="../js/resumeSeance/legend.js"></script>
         <script src="../js/resumeSeance/segment.js"></script>
         <script src="../js/resumeSeance/chartLineHover.js"></script>
+        <script src="../js/resumeSeance/svg.js"></script>
     </body>
 
 </html>

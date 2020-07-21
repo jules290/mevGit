@@ -44,7 +44,6 @@ function reAuthorize() {
 
 $(document).ready(function () {
     postListActivité()
-    sessionStorage.ActivitiesState = "list";
 })
 
 if (localStorage.oauthStatus || localStorage.oauthStatus == "ok") {
@@ -115,7 +114,7 @@ function getActivities() {
                 }
             }
             let uptadeAll = new Array();
-            for (let i = 0; i < newActivities.length; i++) {
+            for (let i = 0; i < finalNewActivities.length; i++) {
                 uptadeAll[i] = NaN;
             }
     
@@ -173,12 +172,10 @@ function postListActivité() {
         let index = i;
         activitiesT.className = "activitiesT";
         activitiesT.onclick = function () {
-            $("#main1").hide();
-            $("#main2").show();
-            $("#sync").hide();
             sessionStorage.activityIndex = index;
-            postData();
             sessionStorage.ActivitiesState = "resumeSeance";
+            sessionStorage.postData = 1;
+            activitiesState()
         }
         activities.appendChild(activitiesT);
 
