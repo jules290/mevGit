@@ -249,10 +249,10 @@ function postActivitiesStreamsaltitudeChart(activitie, latlng , altitude, vitess
                 updateSpeedChart(dataSpeed);
                 updatePowerChart(dataPower);
                 
-                document.getElementById("svgSpeed").onmousemove = function (event) {
-                    chartLineHoverData(
+                document.getElementById("svgaltitude").onmousemove = function (event) {
+                    chartLineHoverElevation(
                         event, 
-                        Grade, 
+                        JSON.parse(localStorage.activitiesGrade)[sessionStorage.activityIndex], 
                         Altitude, 
                         JSON.parse(localStorage.activitiesVitesse)[sessionStorage.activityIndex], 
                         Watt, 
@@ -263,7 +263,7 @@ function postActivitiesStreamsaltitudeChart(activitie, latlng , altitude, vitess
                 document.getElementById("svgData").onmousemove = function (event) {
                     chartLineHoverData(
                         event, 
-                        Grade, 
+                        JSON.parse(localStorage.activitiesGrade)[sessionStorage.activityIndex], 
                         Altitude, 
                         JSON.parse(localStorage.activitiesVitesse)[sessionStorage.activityIndex], 
                         Watt, 

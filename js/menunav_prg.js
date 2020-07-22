@@ -23,11 +23,13 @@ $("#open").click(function() {
 
 $("#strava").click(function() {
     $("#stravaActivite").toggle(300);
+    $("#stravaMap").toggle(300);
 })
 
 $("#prgmy").hide();
 $("#prgchc").hide();
 $("#stravaActivite").hide();
+$("#stravaMap").hide();
 
 $("#prg").click(function() {
     $("#prgmy").toggle(300);

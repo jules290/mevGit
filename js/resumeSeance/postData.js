@@ -2,7 +2,7 @@ function postData() {
     postAthleteName()
     postActivitiestempsDistance();
     postActivitiesZoom();
-    getActivityStreams()
+    getActivityStreams();
     postSegmentEndEffort("effort")
 }
 
@@ -299,6 +299,7 @@ function getActivityStreams() {
             JSON.parse(localStorage.activitiesDistance)[sessionStorage.activityIndex], 
             JSON.parse(localStorage.activitiesGrade)[sessionStorage.activityIndex]
         );
+        svg();
     }
     else {
         const activitiesStreams = `https://www.strava.com/api/v3/activities/${Id}/streams?access_token=${localStorage.access_token}`

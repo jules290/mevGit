@@ -79,10 +79,12 @@ function getActivities() {
             "content-type": "application/x-www-form-urlencoded"
         },
         "data": {
-            'includeAllEfforts': true,
+            // 'page': 3,
+            "per_page": 200,
         }
     }
     $.ajax(settings).done(function (response) {
+        console.log(response)
         if (!localStorage.Activities) {
             array = new Array();
             localStorage.Activities = JSON.stringify(array)
@@ -104,7 +106,6 @@ function getActivities() {
                         ancienne = 1;
                     }
                 }
-                console.log(ancienne)
                 if (ancienne == 1) {
                     newActivities = newActivities.splice(i +  sessionStorage.nbAncienne, 1);
                     sessionStorage.nbAncienne++;

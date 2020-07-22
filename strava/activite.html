@@ -45,13 +45,18 @@
     <body>
         <nav id="mySidenav" class="sidenav">
             <a class="a_accueil" id="accueil" href="../index.html">accueil</a>
+
             <a class="a_programme" id="prg">programmes<br>d'entrainement</a><p id="arrowDownPrg"></p>
             <a id="prgmy" href="../programme/prgmy.html">mon programme</a>
             <a id="prgchc" href="../programme/prgchc.html">choisir un programme</a>
+
             <a id="stravaConnect" class="a_strava" href="stravaConnect.html">se connecter à strava</a>
             <a id="strava" class="a_strava">strava</a>
             <a id="stravaActivite" class="a_strava_menu" href="activite.html">activités</a>
+            <a id="stravaMap" class="a_strava_menu" href="./activityMap.html">carte des activités</a>
+
             <a class="a_parametre" href="../setting/AthleteSettings.html">paramètres de l'athlète</a>
+            
             <a class="a_parametre" href="../support/aide.html">aide</a>
         </nav>
         
@@ -86,10 +91,6 @@
                     <p id="activitiesDst">Distance</p>
                 </div>
             </section>
-
-            <div id="activitieMapLinkDiv">
-                <a id="activitieMapLink" href="http://www.strava.com/oauth/authorize?client_id=49195&response_type=code&redirect_uri=https://mon-entrainement-velo.netlify.app/strava/activityMap.html&scope=activity:read_all,activity:write,profile:read_all,read_all&state=OK">voir la carte de vos 30 dernière activitées</a>
-            </div>
         </div>
 
         <div id="main2" class="main">
@@ -212,7 +213,6 @@
 
         <script src="../js/stravaFront.js"></script>
         <script src="../js/activite.js"></script>
-        <script src="../js/language.js"></script>
         <script src="../js/menunav_prg.js"></script>
 
         <script src="../js/resumeSeance/postData.js"></script>

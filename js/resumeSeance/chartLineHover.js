@@ -15,9 +15,9 @@ let selection;
 function chartLineHoverElevation(event, grade, altitude, vitesse, watt, latlng) {
     xHover = event.offsetX;
     xHoverData = event.offsetX;
-    selection = (extent.width.animVal.value) / (sessionStorage.ctxWidth - 30);
-    selectionWidth = (extent.width.animVal.value)
-    x = (extent.x.animVal.value);
+    selection = (document.getElementById("extent").width.animVal.value) / (sessionStorage.ctxWidth - 30);
+    selectionWidth = (document.getElementById("extent").width.animVal.value)
+    x = (document.getElementById("extent").x.animVal.value);
     if (selection > 0) {
         xHoverData = (((xHover) - x) / selection) + 21;
         if (xHoverData < 21) {
@@ -77,9 +77,9 @@ function chartLineHoverData(event, grade, altitude, vitesse, watt, latlng) {
         xHoverData = (sessionStorage.ctxWidth - 9);
     }
 
-    selection = (extent.width.animVal.value) / (sessionStorage.ctxWidth - 30);
-    selectionWidth = (extent.width.animVal.value)
-    x = (extent.x.animVal.value);
+    selection = (document.getElementById("extent").width.animVal.value) / (sessionStorage.ctxWidth - 30);
+    selectionWidth = (document.getElementById("extent").width.animVal.value)
+    x = (document.getElementById("extent").x.animVal.value);
     if (selection > 0) {
         xHover = ((xHoverData - 21) * selection) + x;
         if (xHover < 21) {
@@ -97,9 +97,9 @@ function chartLineHoverData(event, grade, altitude, vitesse, watt, latlng) {
 
     fraction = (xHover - 21) / (sessionStorage.ctxWidth - 30);
 
-    grade = grade[ Math.round( fraction * grade.length) ]
-    if (grade != undefined) {
-        document.getElementById("grade").innerText = document.getElementById("grade").innerText.slice(0, 6) + " " + grade + "%"
+    Grade = grade[ Math.round( fraction * grade.length) ]
+    if (Grade != undefined) {
+        document.getElementById("grade").innerText = document.getElementById("grade").innerText.slice(0, 6) + " " + Grade + "%"
     }
 
     Altitude = altitude[ Math.round( fraction * altitude.length) ]
