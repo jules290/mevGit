@@ -17,7 +17,7 @@ function postLegend(activitie, latlng , altitude, vitesse, distance, grade) {
 			ZoomVitesse[i] = ZoomVitesse[i]
 		}
 		else if (ZoomVitesse[i - 1] > 10) {
-			ZoomVitesse[i] = ( ZoomVitesse[i] + ( ( ZoomVitesse[i] - ZoomVitesse[i - 1] ) * 0.05 ) ) * 0.99
+			ZoomVitesse[i] = ( ZoomVitesse[i] + ( ( ZoomVitesse[i] - ZoomVitesse[i - 1] ) * 0.15 ) ) * 0.977
 		}
 		else {
 			ZoomVitesse[i] = ZoomVitesse[i]

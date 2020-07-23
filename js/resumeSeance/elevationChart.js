@@ -177,21 +177,23 @@ function postActivitiesStreamsaltitudeChart(activitie, latlng , altitude, vitess
             else {
                 extent.setAttribute('x', 21);
             }
+
             $("#svgaltitude").mousemove(function (event2) {
                 xClic2 = event2.offsetX;
                 sessionStorage.xClic2 = xClic2;
                 if (xClic2 - xClic > 0) {
-                    if (xClic >= 21 && xClic2 <= sessionStorage.ctxWidth - 9) {
+                    if (xClic >= 21) {
                         extent.setAttribute('width', xClic2 - xClic);
                         resizeLeft.setAttribute('transform', `translate(${xClic - 3}, 0)`);
                         resizeRight.setAttribute('transform', `translate(${xClic2 - 3}, 0)`);
                     }
-                    else if (xClic >= 21) {
+                    else {
                         extent.setAttribute('width', (sessionStorage.ctxWidth - 9) - xClic);
                         resizeLeft.setAttribute('transform', `translate(${xClick - 5}, 0)`);
                         resizeRight.setAttribute('transform', `translate(${sessionStorage.ctxWidth - 9}, 0)`);
                     }
-                    else if (xClic2 <= sessionStorage.ctxWidth - 9) {
+
+                    if (xClic2 <= sessionStorage.ctxWidth - 9) {
                         extent.setAttribute('width', xClic2 - xClic);
                         resizeLeft.setAttribute('transform', `translate(21, 0)`);
                         resizeRight.setAttribute('transform', `translate(${xClic2 - 5}, 0)`);

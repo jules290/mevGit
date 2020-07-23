@@ -1,7 +1,3 @@
-$(document).ready(function () {
-    postSegmentEndEffort("effort");
-})
-
 $(".view").click(function () {
     if (document.getElementById("viewSwitch").style.marginLeft == "10%") {
 

@@ -1,9 +1,9 @@
 function postData() {
-    postAthleteName()
+    postAthleteName();
     postActivitiestempsDistance();
     postActivitiesZoom();
     getActivityStreams();
-    postSegmentEndEffort("effort")
+    postSegmentEndEffort("effort");
 }
 
 function postSegmentEndEffort(state) {
@@ -203,18 +203,7 @@ function postSegmentEndEffort(state) {
                     updatePowerChart(segmentsDataPower[i])
                     updateSpeedChart(segmentsDataVitesse[i])
 
-                    document.getElementById("svgSpeed").onmousemove = function (event) {
-                        chartLineHoverData(
-                            event, 
-                            grade, 
-                            altitude, 
-                            vitesse, 
-                            watts, 
-                            latlng
-                        )
-                    }
-
-                    document.getElementById("svgPower").onmousemove = function (event) {
+                    document.getElementById("svgData").onmousemove = function (event) {
                         chartLineHoverData(
                             event, 
                             grade, 
@@ -299,7 +288,14 @@ function getActivityStreams() {
             JSON.parse(localStorage.activitiesDistance)[sessionStorage.activityIndex], 
             JSON.parse(localStorage.activitiesGrade)[sessionStorage.activityIndex]
         );
-        svg();
+        svg(
+            JSON.parse(localStorage.Activities)[sessionStorage.activityIndex], 
+            JSON.parse(localStorage.activitiesLatlng)[sessionStorage.activityIndex], 
+            JSON.parse(localStorage.activitiesAltitude)[sessionStorage.activityIndex], 
+            JSON.parse(localStorage.activitiesVitesse)[sessionStorage.activityIndex], 
+            JSON.parse(localStorage.activitiesDistance)[sessionStorage.activityIndex], 
+            JSON.parse(localStorage.activitiesGrade)[sessionStorage.activityIndex]
+        );
     }
     else {
         const activitiesStreams = `https://www.strava.com/api/v3/activities/${Id}/streams?access_token=${localStorage.access_token}`
@@ -404,6 +400,7 @@ function getActivityStreams() {
             postWatt(JSON.parse(localStorage.Activities)[sessionStorage.activityIndex], latlng , altitude, vitesse, distance, grade);
             postActivitiesStreamsaltitudeChart(JSON.parse(localStorage.Activities)[sessionStorage.activityIndex], latlng , altitude, vitesse, distance, grade);
             postActivitiesStreamsSpeedChart(JSON.parse(localStorage.Activities)[sessionStorage.activityIndex], latlng , altitude, vitesse, distance, grade);
+            svg(JSON.parse(localStorage.Activities)[sessionStorage.activityIndex], latlng , altitude, vitesse, distance, grade);
         })
     }
 }
