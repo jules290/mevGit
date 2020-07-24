@@ -16,7 +16,7 @@ if (positionCode != -1) {
                 localStorage.oauthStatus = "ok";
                 document.getElementById("strava").innerText = "strava";
                 document.getElementById("strava").href = "../strava/strava.html";
-                getActivities()
+                getActivities(200)
             });
     }
 }
@@ -59,14 +59,14 @@ $(document).ajaxError(function() {
 })
 
 $("#syncBtnTActivities").click(function () {
-    getActivities();
+    getActivities(30);
     document.getElementById("syncImg").style.transform = "rotate(-360deg)";
     setTimeout(() => {
         document.getElementById("syncImg").style.transform = "rotate(360deg)";
     }, 800);
 })
 
-function getActivities() {
+function getActivities(length) {
     const activities_link = `https://www.strava.com/api/v3/athlete/activities?access_token=${localStorage.access_token}`
     var settings = {
         "async": true,
@@ -80,85 +80,93 @@ function getActivities() {
         },
         "data": {
             // 'page': 3,
-            "per_page": 200,
+            "per_page": length,
         }
     }
     $.ajax(settings).done(function (response) {
         console.log(response)
-        if (!localStorage.Activities) {
-            array = new Array();
-            localStorage.Activities = JSON.stringify(array)
-        }
-        let Activities
-        let ancienne;
-        let newActivities = new Array();
-        for (var i = 0; i < response.length; i++) {
-            newActivities[i] = response[i];
-        }
-        let finalNewActivities = new Array();
-        sessionStorage.nbAncienne = 0;
-        sessionStorage.nbNew = 0;
-        if (JSON.parse(localStorage.Activities).length > 0) {
-            for (var i = 0; i < response.length; i++) {
-                ancienne = 0;
-                for (let y = 0; y < JSON.parse(localStorage.Activities).length; y++) {
-                    if (response[i].id == JSON.parse(localStorage.Activities)[y].id) {
-                        ancienne = 1;
-                    }
-                }
-                if (ancienne == 1) {
-                    newActivities = newActivities.splice(i +  sessionStorage.nbAncienne, 1);
-                    sessionStorage.nbAncienne++;
-                }
-                else {
-                    finalNewActivities[sessionStorage.nbNew] = response[i];
-                    sessionStorage.nbNew++;
-                }
-            }
-            let uptadeAll = new Array();
-            for (let i = 0; i < finalNewActivities.length; i++) {
-                uptadeAll[i] = NaN;
-            }
-    
-            if (localStorage.activityStream) {
-                console.log(uptadeAll)
-                activityStream = uptadeAll.concat(JSON.parse(localStorage.activityStream))
-                activitiesMoving = uptadeAll.concat(JSON.parse(localStorage.activitiesMoving))
-                activitiesLatlng = uptadeAll.concat(JSON.parse(localStorage.activitiesLatlng))
-                activitiesDistance = uptadeAll.concat(JSON.parse(localStorage.activitiesDistance))
-                activitiesVitesse = uptadeAll.concat(JSON.parse(localStorage.activitiesVitesse))
-                activitiesTime = uptadeAll.concat(JSON.parse(localStorage.activitiesTime))
-                activitiesAltitude = uptadeAll.concat(JSON.parse(localStorage.activitiesAltitude))
-                activitiesGrade = uptadeAll.concat(JSON.parse(localStorage.activitiesGrade))
-                activitiesCadence = uptadeAll.concat(JSON.parse(localStorage.activitiesCadence))
-                activitiesBpm = uptadeAll.concat(JSON.parse(localStorage.activitiesBpm))
-                activitiesWatts = uptadeAll.concat(JSON.parse(localStorage.activitiesWatts))
 
-                localStorage.activityStream = JSON.stringify(activityStream);
-                localStorage.activitiesMoving = JSON.stringify(activitiesMoving);
-                localStorage.activitiesLatlng = JSON.stringify(activitiesLatlng);
-                localStorage.activitiesDistance = JSON.stringify(activitiesDistance);
-                localStorage.activitiesVitesse = JSON.stringify(activitiesVitesse);
-                localStorage.activitiesTime = JSON.stringify(activitiesTime);
-                localStorage.activitiesAltitude = JSON.stringify(activitiesAltitude);
-                localStorage.activitiesGrade = JSON.stringify(activitiesGrade);
-                localStorage.activitiesCadence = JSON.stringify(activitiesCadence);
-                localStorage.activitiesBpm = JSON.stringify(activitiesBpm);
-                localStorage.activitiesWatts = JSON.stringify(activitiesWatts);
-            }
-    
-            var lCActivities = JSON.parse(localStorage.Activities)
-            Activities = finalNewActivities.concat(lCActivities);
-        }
-        else {
-            Activities = response;
-        }
-
-        localStorage.Activities = JSON.stringify(Activities);
-
+        locastorageActivities(response)
         postListActivité()
         // window.location.reload();
     });
+}
+
+function locastorageActivities(response) {
+    rL = response.length;
+    lCActivities = JSON.parse(localStorage.Activities)
+    lCActivitiesL = lCActivities.length
+    if (!localStorage.Activities) {
+        array = new Array();
+        localStorage.Activities = JSON.stringify(array)
+    }
+    let Activities
+    let ancienne;
+    let newActivities = new Array();
+    for (var i = 0; i < rL; i++) {
+        newActivities[i] = response[i];
+    }
+    let finalNewActivities = new Array();
+    sessionStorage.nbAncienne = 0;
+    sessionStorage.nbNew = 0;
+    if (lCActivitiesL > 0) {
+        for (var i = 0; i < rL; i++) {
+            ancienne = 0;
+            for (let y = 0; y < lCActivitiesL; y++) {
+                if (response[i].id == lCActivities[y].id) {
+                    ancienne = 1;
+                }
+            }
+            if (ancienne == 1) {
+                newActivities = newActivities.splice(i +  sessionStorage.nbAncienne, 1);
+                sessionStorage.nbAncienne++;
+            }
+            else {
+                finalNewActivities[sessionStorage.nbNew] = response[i];
+                sessionStorage.nbNew++;
+            }
+        }
+        let uptadeAll = new Array();
+        fL = finalNewActivities.length;
+        for (let i = 0; i < fL; i++) {
+            uptadeAll[i] = NaN;
+        }
+
+        if (localStorage.activityStream) {
+            console.log(uptadeAll)
+            activityStream = uptadeAll.concat(JSON.parse(localStorage.activityStream))
+            activitiesMoving = uptadeAll.concat(JSON.parse(localStorage.activitiesMoving))
+            activitiesLatlng = uptadeAll.concat(JSON.parse(localStorage.activitiesLatlng))
+            activitiesDistance = uptadeAll.concat(JSON.parse(localStorage.activitiesDistance))
+            activitiesVitesse = uptadeAll.concat(JSON.parse(localStorage.activitiesVitesse))
+            activitiesTime = uptadeAll.concat(JSON.parse(localStorage.activitiesTime))
+            activitiesAltitude = uptadeAll.concat(JSON.parse(localStorage.activitiesAltitude))
+            activitiesGrade = uptadeAll.concat(JSON.parse(localStorage.activitiesGrade))
+            activitiesCadence = uptadeAll.concat(JSON.parse(localStorage.activitiesCadence))
+            activitiesBpm = uptadeAll.concat(JSON.parse(localStorage.activitiesBpm))
+            activitiesWatts = uptadeAll.concat(JSON.parse(localStorage.activitiesWatts))
+
+            localStorage.activityStream = JSON.stringify(activityStream);
+            localStorage.activitiesMoving = JSON.stringify(activitiesMoving);
+            localStorage.activitiesLatlng = JSON.stringify(activitiesLatlng);
+            localStorage.activitiesDistance = JSON.stringify(activitiesDistance);
+            localStorage.activitiesVitesse = JSON.stringify(activitiesVitesse);
+            localStorage.activitiesTime = JSON.stringify(activitiesTime);
+            localStorage.activitiesAltitude = JSON.stringify(activitiesAltitude);
+            localStorage.activitiesGrade = JSON.stringify(activitiesGrade);
+            localStorage.activitiesCadence = JSON.stringify(activitiesCadence);
+            localStorage.activitiesBpm = JSON.stringify(activitiesBpm);
+            localStorage.activitiesWatts = JSON.stringify(activitiesWatts);
+        }
+
+        lCActivities = JSON.parse(localStorage.Activities)
+        Activities = finalNewActivities.concat(lCActivities);
+    }
+    else {
+        Activities = response;
+    }
+
+    localStorage.Activities = JSON.stringify(Activities);
 }
 
 function postListActivité() {
