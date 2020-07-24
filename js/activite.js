@@ -88,7 +88,7 @@ function getActivities(length) {
 
         locastorageActivities(response)
         postListActivité()
-        // window.location.reload();
+        window.location.reload();
     });
 }
 
