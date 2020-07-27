@@ -126,35 +126,38 @@ function updatePowerChart(dataPower) {
     var ctx = c.getContext("2d");
     c.classList.remove("chartjs-render-monitor")
     ctx.clearRect(0, 0, c.width, c.height);
+    dataPowerLength = dataPower.length;
 
     var kilometrage = new Array()
-    for (let i = 0; i < dataPower.length; i++) {
+    for (let i = 0; i < dataPowerLength; i++) {
         kilometrage[i] = "      "
     }
 
     let wattMoy = 0;
-    for (var i = 0; i <  dataPower.length; i++) {
-        wattMoy += dataPower[i] / dataPower.length
+    for (var i = 0; i < dataPowerLength; i++) {
+        wattMoy += dataPower[i] / dataPowerLength;
     }
 
-    document.getElementById("puissanceMoy").innerText = "moy:";
-    document.getElementById("puissanceMoy").innerText += " " + Math.round(wattMoy * 10) / 10 + "w"
+    puissanceMoyCase = document.getElementById("puissanceMoy");
+    puissanceMoyCase.innerText = "moy:";
+    puissanceMoyCase.innerText += " " + Math.round(wattMoy * 10) / 10 + "w"
 
     let wattMoyData = new Array();
-    for (var i = 0; i <  dataPower.length; i++) {
+    for (var i = 0; i <  dataPowerLength; i++) {
         wattMoyData[i] = wattMoy;
     }
 
     let wattMax = 0;
-    for (var i = 0; i <  dataPower.length; i++) {
+    for (var i = 0; i < dataPowerLength; i++) {
         if (dataPower[i] > wattMax) {
             wattMax = dataPower[i]
         }
     }
     sessionStorage.wattMax = wattMax;
     
-	document.getElementById("puissanceMax").innerText = "max:";
-	document.getElementById("puissanceMax").innerText += " " + Math.round(wattMax * 10) / 10 + "w"
+    puissanceMaxCase = document.getElementById("puissanceMax");
+	puissanceMaxCase.innerText = "max:";
+	puissanceMaxCase.innerText += " " + Math.round(wattMax * 10) / 10 + "w"
 
     var data = {
         labels: kilometrage,

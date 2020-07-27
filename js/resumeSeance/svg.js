@@ -7,7 +7,7 @@ function svg(activitie, latlng , altitude, vitesse, distance, grade) {
     let Zoomaltitude = ZoomAltitude(altitude, altitude.length);
     let Zoomvitesse = ZoomVitesse(vitesse, vitesse.length);
     let Zoomgrade = ZoomGrade(grade, grade.length);
-    let watt = wattEstimation(Zoomaltitude, Zoomvitesse, Zoomgrade);
+    let watt = wattEstimation(altitude, vitesse, grade);
     
     if (document.documentElement.clientWidth > 1200) {
         svg.style.height = "260px";

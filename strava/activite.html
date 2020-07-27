@@ -30,7 +30,6 @@
         crossorigin=""></script>     
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
-        <script src="../js/count-visits.js"></script>
         <script src="../js/polylineDecoder.js"></script>
         <script src='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.js'></script>
 
@@ -41,6 +40,7 @@
         <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
         integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
         crossorigin=""></script>
+        <script src="../js/stravaFront.js"></script>
     </head>
     <body>
         <nav id="mySidenav" class="sidenav">
@@ -125,10 +125,10 @@
                 
                 <div id="selection">
                     <p class="selectionT">Sélection</p>
-                    <p class="selectionData">-km</p>
+                    <p class="selectionData" id="distanceData">-km</p>
                     <p class="selectionData">-m</p>
                     <p class="selectionData">-%</p>
-                    <p class="selectionData">-s</p>
+                    <p class="selectionData" id="timeData">-s</p>
                 </div>
 
                 <div id="altitudeBox" class="box">
@@ -219,7 +219,6 @@
             </section>
         </div>
 
-        <script src="../js/stravaFront.js"></script>
         <script src="../js/activite.js"></script>
         <script src="../js/menunav_prg.js"></script>
 
@@ -237,6 +236,7 @@
         <script src="../js/resumeSeance/segment.js"></script>
         <script src="../js/resumeSeance/chartLineHover.js"></script>
         <script src="../js/resumeSeance/svg.js"></script>
+        <script src="../js/resumeSeance/selectionData.js"></script>
     </body>
 
 </html>

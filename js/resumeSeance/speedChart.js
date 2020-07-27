@@ -126,34 +126,38 @@ function updateSpeedChart(dataSpeed) {
     var ctx = c.getContext("2d");
     c.classList.remove("chartjs-render-monitor")
     ctx.clearRect(0, 0, c.width, c.height);
+    dataSpeedLength = dataSpeed.length
 
     var kilometrage = new Array()
-    for (let i = 0; i < dataSpeed.length; i++) {
+    for (let i = 0; i < dataSpeedLength; i++) {
         kilometrage[i] = "      "
     }
 
     let vitesseMoy = 0;
-    for (var i = 0; i <  dataSpeed.length; i++) {
-        vitesseMoy += dataSpeed[i] / dataSpeed.length
+    for (var i = 0; i <  dataSpeedLength; i++) {
+        vitesseMoy += dataSpeed[i] / dataSpeedLength
     }
 
     let vitesseMoyData = new Array();
-    for (var i = 0; i <  dataSpeed.length; i++) {
+    for (var i = 0; i <  dataSpeedLength; i++) {
         vitesseMoyData[i] = vitesseMoy;
     }
 
-    document.getElementById("vitesseMoy").innerText = "moy:";
-    document.getElementById("vitesseMoy").innerText += " " + Math.round(vitesseMoy * 10) / 10 + "km/h"
+
+    vitesseMoyCase = document.getElementById("vitesseMoy");
+    vitesseMoyCase.innerText = "moy:";
+    vitesseMoyCase.innerText += " " + Math.round(vitesseMoy * 10) / 10 + "km/h"
 
     let vitesseMax = 0;
-    for (var i = 0; i <  dataSpeed.length; i++) {
+    for (var i = 0; i < dataSpeedLength; i++) {
         if (dataSpeed[i] > vitesseMax) {
             vitesseMax = dataSpeed[i]
         }
     }
     
-	document.getElementById("vitesseMax").innerText = "max:";
-    document.getElementById("vitesseMax").innerText += " " + Math.round(vitesseMax * 10) / 10 + "km/h"
+    vitesseMaxCase = document.getElementById("vitesseMax");
+	vitesseMaxCase.innerText = "max:";
+    vitesseMaxCase.innerText += " " + Math.round(vitesseMax * 10) / 10 + "km/h"
 
     var data = {
         labels: kilometrage,

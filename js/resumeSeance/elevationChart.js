@@ -192,7 +192,7 @@ function postActivitiesStreamsaltitudeChart(activitie, latlng , altitude, vitess
                         resizeLeft.setAttribute('transform', `translate(${xClick - 5}, 0)`);
                         resizeRight.setAttribute('transform', `translate(${sessionStorage.ctxWidth - 9}, 0)`);
                     }
-
+        
                     if (xClic2 <= sessionStorage.ctxWidth - 9) {
                         extent.setAttribute('width', xClic2 - xClic);
                         resizeLeft.setAttribute('transform', `translate(21, 0)`);
@@ -229,35 +229,21 @@ function postActivitiesStreamsaltitudeChart(activitie, latlng , altitude, vitess
                         resizeLeft.setAttribute('transform', `translate(21, 0)`);
                         resizeRight.setAttribute('transform', `translate(${sessionStorage.ctxWidth - 9}, 0)`);
                     }
-                }
-    
+                }        
                 selection = extent.width.animVal.value / (sessionStorage.ctxWidth - 30);
                 x = (extent.x.animVal.value - 21) / (sessionStorage.ctxWidth - 30);
-
-                Vitesse = JSON.parse(localStorage.activitiesVitesse)[sessionStorage.activityIndex];
-                Altitude = JSON.parse(localStorage.activitiesAltitude)[sessionStorage.activityIndex];
-                Grade = JSON.parse(localStorage.activitiesGrade)[sessionStorage.activityIndex];
-                let dataSpeed = new Array();
-                for (let i = Math.round(x * Vitesse.length);( i - Math.round(x * Vitesse.length)) <  Math.round(Vitesse.length * selection); i++) {
-                    dataSpeed[i - Math.round(x * Vitesse.length)] = Vitesse[i]
-                }
-    
-                Watt = wattEstimation(Altitude, Vitesse, Grade);
-                let dataPower = new Array();
-                for (let i = Math.round(x * Watt.length);( i - Math.round(x * Watt.length)) <  Math.round(Watt.length * selection); i++) {
-                    dataPower[i - Math.round(x * Watt.length)] = Watt[i]
-                }
-    
-                updateSpeedChart(dataSpeed);
-                updatePowerChart(dataPower);
+                startIndex = Math.round(x * vitesse.length);
+                widthIndex =  Math.round(vitesse.length * selection);
+                
+                setSelectionData(startIndex, widthIndex)
                 
                 document.getElementById("svgaltitude").onmousemove = function (event) {
                     chartLineHoverElevation(
                         event, 
-                        JSON.parse(localStorage.activitiesGrade)[sessionStorage.activityIndex], 
-                        Altitude, 
-                        JSON.parse(localStorage.activitiesVitesse)[sessionStorage.activityIndex], 
-                        Watt, 
+                        grade, 
+                        altitude, 
+                        vitesse, 
+                        watt, 
                         latlng
                     )
                 }
@@ -265,10 +251,10 @@ function postActivitiesStreamsaltitudeChart(activitie, latlng , altitude, vitess
                 document.getElementById("svgData").onmousemove = function (event) {
                     chartLineHoverData(
                         event, 
-                        JSON.parse(localStorage.activitiesGrade)[sessionStorage.activityIndex], 
-                        Altitude, 
-                        JSON.parse(localStorage.activitiesVitesse)[sessionStorage.activityIndex], 
-                        Watt, 
+                        grade, 
+                        altitude, 
+                        vitesse, 
+                        watt, 
                         latlng
                     )
                 }
@@ -276,6 +262,24 @@ function postActivitiesStreamsaltitudeChart(activitie, latlng , altitude, vitess
         }
     })
     .mouseup(function() {
+        selection = extent.width.animVal.value / (sessionStorage.ctxWidth - 30);
+        x = (extent.x.animVal.value - 21) / (sessionStorage.ctxWidth - 30);
+
+        startIndex = Math.round(x * vitesse.length);
+        widthIndex =  Math.round(vitesse.length * selection);
+        let dataSpeed = new Array();
+        for (let i = startIndex;( i - startIndex) < widthIndex; i++) {
+            dataSpeed[i - startIndex] = vitesse[i]
+        }
+
+        Watt = wattEstimation(altitude, vitesse, grade);
+        let dataPower = new Array();
+        for (let i = startIndex;( i - startIndex) < widthIndex; i++) {
+            dataPower[i - startIndex] = Watt[i]
+        }
+
+        updateSpeedChart(dataSpeed);
+        updatePowerChart(dataPower);
         $("#svgaltitude").off("mousemove");
         selection = extent.width.animVal.value / (sessionStorage.ctxWidth - 30);
         x = (extent.x.animVal.value - 21) / (sessionStorage.ctxWidth - 30);
