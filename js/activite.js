@@ -50,13 +50,14 @@ if (localStorage.oauthStatus || localStorage.oauthStatus == "ok") {
     reAuthorize();
 }
 
-if (localStorage.oauthStatusMap || localStorage.oauthStatusMap == "ok") {
-    document.getElementById("activitieMapLink").href = "../strava/activityMap.html"
-}
-
 $(document).ajaxError(function() {
     alert("erreur de chargement des données, veuillez réessayer plus tard.")
 })
+
+$("#backArrow").click(function () {
+    sessionStorage.ActivitiesState = "list"
+    window.location.reload();
+});
 
 $("#syncBtnTActivities").click(function () {
     getActivities(30);
@@ -64,6 +65,24 @@ $("#syncBtnTActivities").click(function () {
     setTimeout(() => {
         document.getElementById("syncImg").style.transform = "rotate(360deg)";
     }, 800);
+})
+
+$("#syncImg").click(function () {
+    document.getElementById("syncImg").style.transform = "rotate(360deg)";
+    $("#sync").animate({height: "152px"}, 280)
+    $("#sync").animate({width: "200px"}, 280)
+    setTimeout(() => {
+        $("#syncClose").show();
+        $("#syncBtnContenair").show();
+    }, 560);
+})
+
+$("#syncClose").click(function () {
+    document.getElementById("syncImg").style.transform = "rotate(0deg)";
+    $("#sync").animate({width: "40px"}, 280)
+    $("#sync").animate({height: "40px"}, 280)
+    $("#syncClose").hide();
+    $("#syncBtnContenair").hide();
 })
 
 function getActivities(length) {

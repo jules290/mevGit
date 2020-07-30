@@ -1,35 +1,98 @@
+var ctxWatt = document.getElementById('graphPower');
+
+if (document.documentElement.clientWidth > 1200) {
+    ctxWatt.height = 130;
+}
+else if (document.documentElement.clientWidth > 1000) {
+    ctxWatt.height = 130;
+}
+else if (document.documentElement.clientWidth > 800) {
+    ctxWatt.height = 120;
+}
+else if (document.documentElement.clientWidth > 600) {
+    ctxWatt.height = 100;
+}
+else if (document.documentElement.clientWidth > 400) {
+    ctxWatt.height = 90;
+}
+else if (document.documentElement.clientWidth > 300) {
+    ctxWatt.height = 80;
+}
+else if (document.documentElement.clientWidth > 200) {
+    ctxWatt.height = 80;
+}
+else {
+    ctxWatt.height = 80;
+}
+
+var data = {
+    labels: [],
+    datasets: [{
+        label: 'puissance (w)',
+        data: [],
+        borderColor: [
+            'rgb(60, 60, 60)',
+        ],
+        backgroundColor: [
+            'rgb(6, 141, 251, 0.0)',
+        ],
+        borderWidth: 1,
+        showLine: true,
+        lineTension: 0.0,
+    },
+    {
+        label: 'watt moyen (w)',
+        data: [],
+        borderDash: [5, 3],
+        borderColor: [
+            'rgba(0, 0, 0, 0.3)',
+        ],
+        backgroundColor: [
+            'rgba(170, 170, 170, 0.0)',
+        ],
+        borderWidth: 1,
+        lineTension: 0.0,
+    }]
+}
+            
+var ChartWatt = new Chart(ctxWatt, {
+    type: 'line',
+    data: data,
+    options: {
+        maintainAspectRatio: false,
+        elements: {
+            point:{
+                radius: 0
+            }
+        },
+        scales: {
+            yAxes: [{
+                ticks: {
+                    min: 0,
+                    max: 1200
+                },
+                display: false,
+            }]
+        },
+        legend: {
+            display: false,
+        },
+        layout: {
+            padding: {
+                left: 21,
+                right: 9,
+                top: 0,
+                bottom: 0
+            }
+        }
+    }
+})
+
 function postWatt(activitie, latlng , altitude, vitesse, distance, grade) {
     let Zoomaltitude = ZoomAltitude(altitude, altitude.length);
     let Zoomvitesse = ZoomVitesse(vitesse, vitesse.length);
     let Zoomgrade = ZoomGrade(grade, grade.length);
     let watt = wattEstimation(Zoomaltitude, Zoomvitesse, Zoomgrade);
-				
-    var ctx = document.getElementById('graphPower');
-
-    if (document.documentElement.clientWidth > 1200) {
-        ctx.height = 130;
-    }
-    else if (document.documentElement.clientWidth > 1000) {
-        ctx.height = 130;
-    }
-    else if (document.documentElement.clientWidth > 800) {
-        ctx.height = 120;
-    }
-    else if (document.documentElement.clientWidth > 600) {
-        ctx.height = 100;
-    }
-    else if (document.documentElement.clientWidth > 400) {
-        ctx.height = 90;
-    }
-    else if (document.documentElement.clientWidth > 300) {
-        ctx.height = 80;
-    }
-    else if (document.documentElement.clientWidth > 200) {
-        ctx.height = 80;
-    }
-    else {
-        ctx.height = 80;
-    }
     
     var kilometrage = new Array()
     for (let i = 0; i < Zoomaltitude.length; i++) {
@@ -54,71 +117,31 @@ function postWatt(activitie, latlng , altitude, vitesse, distance, grade) {
     }
     sessionStorage.wattMax = wattMax;
 
-    var data = {
-        labels: kilometrage,
-        datasets: [{
-            label: 'puissance (w)',
-            data: watt,
-            borderColor: [
-                'rgb(60, 60, 60)',
-            ],
-            backgroundColor: [
-                'rgb(6, 141, 251, 0.0)',
-            ],
-            borderWidth: 1,
-            showLine: true,
-            lineTension: 0.0,
-        },
-        {
-            label: 'watt moyen (w)',
-            data: wattMoyData,
-            borderDash: [5, 3],
-            borderColor: [
-                'rgba(0, 0, 0, 0.3)',
-            ],
-            backgroundColor: [
-                'rgba(170, 170, 170, 0.0)',
-            ],
-            borderWidth: 1,
-            lineTension: 0.0,
-        }]
-    }
-                
-    var myChart = new Chart(ctx, {
-        type: 'line',
-        data: data,
-        options: {
-            maintainAspectRatio: false,
-            elements: {
-                point:{
-                    radius: 0
-                }
-            },
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        min: 0,
-                        max: Number(sessionStorage.wattMax)
-                    },
-                    display: false,
-                }]
-            },
-            legend: {
-                labels: {
-                    fontColor: 'black'
-                },
-                display: false,
-            },
-            layout: {
-                padding: {
-                    left: 21,
-                    right: 9,
-                    top: 0,
-                    bottom: 0
-                }
-            }
-        }
-    })
+    ChartWatt.data.datasets = [{
+        data: watt,
+        borderColor: [
+            'rgb(60, 60, 60)',
+        ],
+        backgroundColor: [
+            'rgb(6, 141, 251, 0.0)',
+        ],
+        borderWidth: 1,
+        lineTension: 0.0,
+    },
+    {
+        data: wattMoyData,
+        borderDash: [5, 3],
+        borderColor: [
+            'rgba(0, 0, 0, 0.3)',
+        ],
+        backgroundColor: [
+            'rgba(170, 170, 170, 0.0)',
+        ],
+        borderWidth: 1,
+        lineTension: 0.0,
+    }];
+    ChartWatt.data.labels = kilometrage;
+    ChartWatt.update();
 }
 
 function updatePowerChart(dataPower) {
@@ -142,11 +165,6 @@ function updatePowerChart(dataPower) {
     puissanceMoyCase.innerText = "moy:";
     puissanceMoyCase.innerText += " " + Math.round(wattMoy * 10) / 10 + "w"
 
-    let wattMoyData = new Array();
-    for (var i = 0; i <  dataPowerLength; i++) {
-        wattMoyData[i] = wattMoy;
-    }
-
     let wattMax = 0;
     for (var i = 0; i < dataPowerLength; i++) {
         if (dataPower[i] > wattMax) {
@@ -159,69 +177,17 @@ function updatePowerChart(dataPower) {
 	puissanceMaxCase.innerText = "max:";
 	puissanceMaxCase.innerText += " " + Math.round(wattMax * 10) / 10 + "w"
 
-    var data = {
-        labels: kilometrage,
-        datasets: [{
-            label: 'puissance (w)',
-            data: dataPower,
-            borderColor: [
-                'rgb(60, 60, 60)',
-            ],
-            backgroundColor: [
-                'rgb(6, 141, 251, 0.0)',
-            ],
-            borderWidth: 1,
-            showLine: true,
-            lineTension: 0.0,
-        },
-        {
-            label: 'watt moyen (w)',
-            data: wattMoyData,
-            borderDash: [5, 3],
-            borderColor: [
-                'rgba(0, 0, 0, 0.3)',
-            ],
-            backgroundColor: [
-                'rgba(170, 170, 170, 0.0)',
-            ],
-            borderWidth: 1,
-            lineTension: 0.0,
-        }]
-    }
-        
-    var myChart = new Chart(ctx, {
-        type: 'line',
-        data: data,
-        options: {
-            maintainAspectRatio: false,
-            elements: {
-                point:{
-                    radius: 0
-                }
-            },
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        min: 0,
-                        max: Number(sessionStorage.wattMax)
-                    },
-                    display: false,
-                }]
-            },
-            legend: {
-                labels: {
-                    fontColor: 'black'
-                },
-                display: false,
-            },
-            layout: {
-                padding: {
-                    left: 21,
-                    right: 9,
-                    top: 0,
-                    bottom: 0
-                }
-            }
-        }
-    })
+    ChartWatt.data.datasets = [{
+        data: dataPower,
+        borderColor: [
+            'rgb(60, 60, 60)',
+        ],
+        backgroundColor: [
+            'rgba(170, 170, 170, 0.0)',
+        ],
+        borderWidth: 1,
+        lineTension: 0.0,
+    }];
+    ChartWatt.data.labels = kilometrage;
+    ChartWatt.update();
 }

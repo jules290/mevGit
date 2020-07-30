@@ -1,35 +1,98 @@
+var ctx = document.getElementById('graphSpeed');
+
+if (document.documentElement.clientWidth > 1200) {
+    ctx.height = 130;
+}
+else if (document.documentElement.clientWidth > 1000) {
+    ctx.height = 130;
+}
+else if (document.documentElement.clientWidth > 800) {
+    ctx.height = 120;
+}
+else if (document.documentElement.clientWidth > 600) {
+    ctx.height = 100;
+}
+else if (document.documentElement.clientWidth > 400) {
+    ctx.height = 90;
+}
+else if (document.documentElement.clientWidth > 300) {
+    ctx.height = 80;
+}
+else if (document.documentElement.clientWidth > 200) {
+    ctx.height = 80;
+}
+else {
+    ctx.height = 80;
+}
+
+var data = {
+    labels: [],
+    datasets: [{
+        label: 'vitesse (km/h)',
+        data: [],
+        borderColor: [
+            'rgb(6, 141, 251)',
+        ],
+        backgroundColor: [
+            'rgb(6, 141, 251, 0.1)',
+        ],
+        borderWidth: 1,
+        showLine: true,
+        lineTension: 0.0,
+    },
+    {
+        label: 'vitesse (km/h)',
+        data: [],
+        borderDash: [5, 3],
+        borderColor: [
+            'rgba(6, 141, 251, 0.3)',
+        ],
+        backgroundColor: [
+            'rgba(170, 170, 170, 0.0)',
+        ],
+        borderWidth: 1,
+        lineTension: 0.0,
+    }]
+}
+    
+var myChart = new Chart(ctx, {
+    type: 'line',
+    data: data,
+    options: {
+        maintainAspectRatio: false,
+        elements: {
+            point:{
+                radius: 0
+            }
+        },
+        scales: {
+            yAxes: [{
+                ticks: {
+                    min: 0,
+                    max: Number(sessionStorage.vitesseMax)
+                },
+                display: false,
+            }]
+        },
+        legend: {
+            display: false,
+        },
+        layout: {
+            padding: {
+                left: 21,
+                right: 9,
+                top: 0,
+                bottom: 0
+            }
+        }
+    }
+})
+
 function postActivitiesStreamsSpeedChart(activitie, latlng , altitude, vitesse, distance, grade) {
     let Zoomaltitude = ZoomAltitude(altitude, altitude.length);
     let Zoomvitesse = ZoomVitesse(vitesse, vitesse.length);
     let Zoomgrade = ZoomGrade(grade, grade.length);
     let watt = wattEstimation(Zoomaltitude, Zoomvitesse, Zoomgrade);
-
-    var ctx = document.getElementById('graphSpeed');
-
-    if (document.documentElement.clientWidth > 1200) {
-        ctx.height = 130;
-    }
-    else if (document.documentElement.clientWidth > 1000) {
-        ctx.height = 130;
-    }
-    else if (document.documentElement.clientWidth > 800) {
-        ctx.height = 120;
-    }
-    else if (document.documentElement.clientWidth > 600) {
-        ctx.height = 100;
-    }
-    else if (document.documentElement.clientWidth > 400) {
-        ctx.height = 90;
-    }
-    else if (document.documentElement.clientWidth > 300) {
-        ctx.height = 80;
-    }
-    else if (document.documentElement.clientWidth > 200) {
-        ctx.height = 80;
-    }
-    else {
-        ctx.height = 80;
-    }
 
     var kilometrage = new Array()
     for (let i = 0; i < Zoomaltitude.length; i++) {
@@ -54,71 +117,31 @@ function postActivitiesStreamsSpeedChart(activitie, latlng , altitude, vitesse, 
     }
     sessionStorage.vitesseMax = vitesseMax;
 
-    var data = {
-        labels: kilometrage,
-        datasets: [{
-            label: 'vitesse (km/h)',
-            data: Zoomvitesse,
-            borderColor: [
-                'rgb(6, 141, 251)',
-            ],
-            backgroundColor: [
-                'rgb(6, 141, 251, 0.1)',
-            ],
-            borderWidth: 1,
-            showLine: true,
-            lineTension: 0.0,
-        },
-        {
-            label: 'vitesse (km/h)',
-            data: vitesseMoyData,
-            borderDash: [5, 3],
-            borderColor: [
-                'rgba(6, 141, 251, 0.3)',
-            ],
-            backgroundColor: [
-                'rgba(170, 170, 170, 0.0)',
-            ],
-            borderWidth: 1,
-            lineTension: 0.0,
-        }]
-    }
-        
-    var myChart = new Chart(ctx, {
-        type: 'line',
-        data: data,
-        options: {
-            maintainAspectRatio: false,
-            elements: {
-                point:{
-                    radius: 0
-                }
-            },
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        min: 0,
-                        max: Number(sessionStorage.vitesseMax)
-                    },
-                    display: false,
-                }]
-            },
-            legend: {
-                labels: {
-                    fontColor: 'black'
-                },
-                display: false,
-            },
-            layout: {
-                padding: {
-                    left: 21,
-                    right: 9,
-                    top: 0,
-                    bottom: 0
-                }
-            }
-        }
-    })
+    myChart.data.datasets = [{
+        data: Zoomvitesse,
+        borderColor: [
+            'rgb(6, 141, 251)',
+        ],
+        backgroundColor: [
+            'rgb(6, 141, 251, 0.1)',
+        ],
+        borderWidth: 1,
+        lineTension: 0.0,
+    },
+    {
+        data: vitesseMoyData,
+        borderDash: [5, 3],
+        borderColor: [
+            'rgba(6, 141, 251, 0.3)',
+        ],
+        backgroundColor: [
+            'rgba(170, 170, 170, 0.0)',
+        ],
+        borderWidth: 1,
+        lineTension: 0.0,
+    }];
+    myChart.data.labels = kilometrage;
+    myChart.update();
 }
 
 function updateSpeedChart(dataSpeed) {
@@ -138,12 +161,6 @@ function updateSpeedChart(dataSpeed) {
         vitesseMoy += dataSpeed[i] / dataSpeedLength
     }
 
-    let vitesseMoyData = new Array();
-    for (var i = 0; i <  dataSpeedLength; i++) {
-        vitesseMoyData[i] = vitesseMoy;
-    }
-
-
     vitesseMoyCase = document.getElementById("vitesseMoy");
     vitesseMoyCase.innerText = "moy:";
     vitesseMoyCase.innerText += " " + Math.round(vitesseMoy * 10) / 10 + "km/h"
@@ -159,69 +176,30 @@ function updateSpeedChart(dataSpeed) {
 	vitesseMaxCase.innerText = "max:";
     vitesseMaxCase.innerText += " " + Math.round(vitesseMax * 10) / 10 + "km/h"
 
-    var data = {
-        labels: kilometrage,
-        datasets: [{
-            label: 'vitesse (km/h)',
-            data: dataSpeed,
-            borderColor: [
-                'rgb(6, 141, 251)',
-            ],
-            backgroundColor: [
-                'rgb(6, 141, 251, 0.1)',
-            ],
-            borderWidth: 1,
-            showLine: true,
-            lineTension: 0.0,
-        },
-        {
-            label: 'watt moyen (w)',
-            data: vitesseMoyData,
-            borderDash: [5, 3],
-            borderColor: [
-                'rgba(6, 141, 251, 0.8)',
-            ],
-            backgroundColor: [
-                'rgba(170, 170, 170, 0.0)',
-            ],
-            borderWidth: 1,
-            lineTension: 0.0,
-        }]
-    }
-        
-    var myChart = new Chart(ctx, {
-        type: 'line',
-        data: data,
-        options: {
-            maintainAspectRatio: false,
-            elements: {
-                point:{
-                    radius: 0
-                }
-            },
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        min: 0,
-                        max: Number(sessionStorage.vitesseMax)
-                    },
-                    display: false,
-                }]
-            },
-            legend: {
-                labels: {
-                    fontColor: 'black'
-                },
-                display: false,
-            },
-            layout: {
-                padding: {
-                    left: 21,
-                    right: 9,
-                    top: 0,
-                    bottom: 0
-                }
-            }
-        }
-    })
+    myChart.data.datasets = [{
+        data: dataSpeed,
+        borderColor: [
+            'rgb(6, 141, 251)',
+        ],
+        backgroundColor: [
+            'rgb(6, 141, 251, 0.1)',
+        ],
+        borderWidth: 1,
+        lineTension: 0.0,
+    }];
+    // {
+    //     label: 'vitesse (km/h)',
+    //     data: vitesseMoyData,
+    //     borderDash: [5, 3],
+    //     borderColor: [
+    //         'rgba(6, 141, 251, 0.3)',
+    //     ],
+    //     backgroundColor: [
+    //         'rgba(170, 170, 170, 0.0)',
+    //     ],
+    //     borderWidth: 1,
+    //     lineTension: 0.0,
+    // }
+    myChart.data.labels = kilometrage;
+    myChart.update();
 }
