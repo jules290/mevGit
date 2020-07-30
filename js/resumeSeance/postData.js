@@ -124,7 +124,8 @@ function postSegmentEndEffort(state) {
 
                 let segmentFC = document.createElement("div");
                 segmentFC.className = "segmentFC";
-                if (JSON.parse(localStorage.activitiesBpm).length > 0) {
+                console.log(JSON.parse(localStorage.activitiesBpm)[sessionStorage.activityIndex])
+                if (JSON.parse(localStorage.activitiesBpm)[sessionStorage.activityIndex] != null) {
                     FC = JSON.parse(localStorage.activitiesBpm);
                     let FCMoy = 0;
                     for (var u = 0; u <  FC.length; u++) {
