@@ -17,7 +17,7 @@ function postLegend(activitie, latlng , altitude, vitesse, distance, grade) {
 			ZoomVitesse[i] = ZoomVitesse[i]
 		}
 		else if (ZoomVitesse[i - 1] > 10) {
-			ZoomVitesse[i] = ( ZoomVitesse[i] + ( ( ZoomVitesse[i] - ZoomVitesse[i - 1] ) * 0.15 ) ) * 0.977
+			ZoomVitesse[i] = ( ZoomVitesse[i] + ( ( ZoomVitesse[i] - ZoomVitesse[i - 1] ) * 0.15 ) ) * 0.99
 		}
 		else {
 			ZoomVitesse[i] = ZoomVitesse[i]
@@ -124,12 +124,12 @@ function postLegend(activitie, latlng , altitude, vitesse, distance, grade) {
     let wattPente = new Array();
     let pression;
     let poids;
-    if (sessionStorage.poids && sessionStorage.poids > 0) {
-        poids = sessionStorage.poids + 7.5;
+    if (localStorage.poids && localStorage.poids > 0) {
+        poids = Number(localStorage.poids) + 7.5;
     }
     else {
-        poids = 80;
-	}
+        poids = 75;
+    }
 	
 	for (let i = 0; i < ZoomVitesse.length; i++) {
         wattAir[i] = 1.013 / 2 * 0.45 * aeroValues.bottom * Math.pow(((ZoomVitesse[i]) / 3.6), 3);

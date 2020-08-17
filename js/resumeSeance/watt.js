@@ -69,7 +69,7 @@ var ChartWatt = new Chart(ctxWatt, {
             yAxes: [{
                 ticks: {
                     min: 0,
-                    max: 1200
+                    max: 0
                 },
                 display: false,
             }]
@@ -93,6 +93,11 @@ function postWatt(activitie, latlng , altitude, vitesse, distance, grade) {
     let Zoomvitesse = ZoomVitesse(vitesse, vitesse.length);
     let Zoomgrade = ZoomGrade(grade, grade.length);
     let watt = wattEstimation(Zoomaltitude, Zoomvitesse, Zoomgrade);
+    let Watt = wattEstimation(
+        JSON.parse(sessionStorage.activitiesAltitude), 
+        JSON.parse(sessionStorage.activitiesVitesse), 
+        JSON.parse(sessionStorage.activitiesGrade)
+    );
     
     var kilometrage = new Array()
     for (let i = 0; i < Zoomaltitude.length; i++) {
@@ -110,12 +115,12 @@ function postWatt(activitie, latlng , altitude, vitesse, distance, grade) {
     }
 
     let wattMax = 0;
-    for (var i = 0; i <  watt.length; i++) {
-        if (watt[i] > wattMax) {
-            wattMax = watt[i]
+    for (var i = 0; i <  Watt.length; i++) {
+        if (Watt[i] > wattMax) {
+            wattMax = Watt[i]
         }
     }
-    sessionStorage.wattMax = wattMax;
+    ChartWatt.options.scales.yAxes[0].ticks.max = wattMax;
 
     ChartWatt.data.datasets = [{
         data: watt,
@@ -171,7 +176,6 @@ function updatePowerChart(dataPower) {
             wattMax = dataPower[i]
         }
     }
-    sessionStorage.wattMax = wattMax;
     
     puissanceMaxCase = document.getElementById("puissanceMax");
 	puissanceMaxCase.innerText = "max:";

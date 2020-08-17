@@ -3,7 +3,11 @@ function postActivitiesStreamsaltitudeChart(activitie, latlng , altitude, vitess
     let Zoomvitesse = ZoomVitesse(vitesse, vitesse.length);
     let Zoomgrade = ZoomGrade(grade, grade.length);
     let watt = wattEstimation(Zoomaltitude, Zoomvitesse, Zoomgrade);
-    let Watt = wattEstimation(altitude, vitesse, grade);
+    let Watt = wattEstimation(
+        JSON.parse(sessionStorage.activitiesAltitude), 
+        JSON.parse(sessionStorage.activitiesVitesse), 
+        JSON.parse(sessionStorage.activitiesGrade)
+    );
                 
     var ctx = document.getElementById('graphaltitude');
     var svg = document.getElementById("svgaltitude");
@@ -258,8 +262,8 @@ function postActivitiesStreamsaltitudeChart(activitie, latlng , altitude, vitess
                         event, 
                         grade, 
                         altitude, 
-                        vitesse, 
-                        watt, 
+                        JSON.parse(sessionStorage.activitiesVitesse), 
+                        Watt, 
                         latlng
                     )
                 }
@@ -269,8 +273,8 @@ function postActivitiesStreamsaltitudeChart(activitie, latlng , altitude, vitess
                         event, 
                         grade, 
                         altitude, 
-                        vitesse, 
-                        watt, 
+                        JSON.parse(sessionStorage.activitiesVitesse), 
+                        Watt, 
                         latlng
                     )
                 }
@@ -413,9 +417,9 @@ function postActivitiesStreamsaltitudeChart(activitie, latlng , altitude, vitess
             selection = extent.width.animVal.value / (sessionStorage.ctxWidth - 30);
             x = (extent.x.animVal.value - 21) / (sessionStorage.ctxWidth - 30);
         
-            Vitesse = JSON.parse(localStorage.activitiesVitesse)[sessionStorage.activityIndex];
-            Altitude = JSON.parse(localStorage.activitiesAltitude)[sessionStorage.activityIndex];
-            Grade = JSON.parse(localStorage.activitiesGrade)[sessionStorage.activityIndex];
+            Vitesse = JSON.parse(sessionStorage.activitiesVitesse);
+            Altitude = JSON.parse(sessionStorage.activitiesAltitude);
+            Grade = JSON.parse(sessionStorage.activitiesGrade);
             let dataSpeed = new Array();
             for (let i = Math.round(x * Vitesse.length);( i - Math.round(x * Vitesse.length)) <  Math.round(Vitesse.length * selection); i++) {
                 dataSpeed[i - Math.round(x * Vitesse.length)] = Vitesse[i]
@@ -425,6 +429,11 @@ function postActivitiesStreamsaltitudeChart(activitie, latlng , altitude, vitess
             let dataPower = new Array();
             for (let i = Math.round(x * Watt.length);( i - Math.round(x * Watt.length)) <  Math.round(Watt.length * selection); i++) {
                 dataPower[i - Math.round(x * Watt.length)] = Watt[i]
+            }
+
+            let dataAltitude
+            for (let i = Math.round(x * Vitesse.length);( i - Math.round(x * Vitesse.length)) <  Math.round(Vitesse.length * selection); i++) {
+                dataAltitude[i - Math.round(x * Vitesse.length)] = Vitesse[i]
             }
 
             updateSpeedChart(dataSpeed);

@@ -151,31 +151,30 @@ function locastorageActivities(response) {
             uptadeAll[i] = NaN;
         }
 
-        if (localStorage.activityStream) {
-            console.log(uptadeAll)
-            activityStream = uptadeAll.concat(JSON.parse(localStorage.activityStream))
-            activitiesMoving = uptadeAll.concat(JSON.parse(localStorage.activitiesMoving))
-            activitiesLatlng = uptadeAll.concat(JSON.parse(localStorage.activitiesLatlng))
-            activitiesDistance = uptadeAll.concat(JSON.parse(localStorage.activitiesDistance))
-            activitiesVitesse = uptadeAll.concat(JSON.parse(localStorage.activitiesVitesse))
-            activitiesTime = uptadeAll.concat(JSON.parse(localStorage.activitiesTime))
-            activitiesAltitude = uptadeAll.concat(JSON.parse(localStorage.activitiesAltitude))
-            activitiesGrade = uptadeAll.concat(JSON.parse(localStorage.activitiesGrade))
-            activitiesCadence = uptadeAll.concat(JSON.parse(localStorage.activitiesCadence))
-            activitiesBpm = uptadeAll.concat(JSON.parse(localStorage.activitiesBpm))
-            activitiesWatts = uptadeAll.concat(JSON.parse(localStorage.activitiesWatts))
+        if (sessionStorage.activityStream) {
+            activityStream = uptadeAll.concat(JSON.parse(sessionStorage.activityStream))
+            activitiesMoving = uptadeAll.concat(JSON.parse(sessionStorage.activitiesMoving))
+            activitiesLatlng = uptadeAll.concat(JSON.parse(sessionStorage.activitiesLatlng))
+            activitiesDistance = uptadeAll.concat(JSON.parse(sessionStorage.activitiesDistance))
+            activitiesVitesse = uptadeAll.concat(JSON.parse(sessionStorage.activitiesVitesse))
+            activitiesTime = uptadeAll.concat(JSON.parse(sessionStorage.activitiesTime))
+            activitiesAltitude = uptadeAll.concat(JSON.parse(sessionStorage.activitiesAltitude))
+            activitiesGrade = uptadeAll.concat(JSON.parse(sessionStorage.activitiesGrade))
+            activitiesCadence = uptadeAll.concat(JSON.parse(sessionStorage.activitiesCadence))
+            activitiesBpm = uptadeAll.concat(JSON.parse(sessionStorage.activitiesBpm))
+            activitiesWatts = uptadeAll.concat(JSON.parse(sessionStorage.activitiesWatts))
 
-            localStorage.activityStream = JSON.stringify(activityStream);
-            localStorage.activitiesMoving = JSON.stringify(activitiesMoving);
-            localStorage.activitiesLatlng = JSON.stringify(activitiesLatlng);
-            localStorage.activitiesDistance = JSON.stringify(activitiesDistance);
-            localStorage.activitiesVitesse = JSON.stringify(activitiesVitesse);
-            localStorage.activitiesTime = JSON.stringify(activitiesTime);
-            localStorage.activitiesAltitude = JSON.stringify(activitiesAltitude);
-            localStorage.activitiesGrade = JSON.stringify(activitiesGrade);
-            localStorage.activitiesCadence = JSON.stringify(activitiesCadence);
-            localStorage.activitiesBpm = JSON.stringify(activitiesBpm);
-            localStorage.activitiesWatts = JSON.stringify(activitiesWatts);
+            sessionStorage.activityStream = JSON.stringify(activityStream);
+            sessionStorage.activitiesMoving = JSON.stringify(activitiesMoving);
+            sessionStorage.activitiesLatlng = JSON.stringify(activitiesLatlng);
+            sessionStorage.activitiesDistance = JSON.stringify(activitiesDistance);
+            sessionStorage.activitiesVitesse = JSON.stringify(activitiesVitesse);
+            sessionStorage.activitiesTime = JSON.stringify(activitiesTime);
+            sessionStorage.activitiesAltitude = JSON.stringify(activitiesAltitude);
+            sessionStorage.activitiesGrade = JSON.stringify(activitiesGrade);
+            sessionStorage.activitiesCadence = JSON.stringify(activitiesCadence);
+            sessionStorage.activitiesBpm = JSON.stringify(activitiesBpm);
+            sessionStorage.activitiesWatts = JSON.stringify(activitiesWatts);
         }
 
         lCActivities = JSON.parse(localStorage.Activities)
@@ -216,7 +215,7 @@ function postListActivité() {
             sessionStorage.activityIndex = index;
             sessionStorage.ActivitiesState = "resumeSeance";
             sessionStorage.postData = 1;
-            activitiesState()
+            window.location.reload();
         }
         activities.appendChild(activitiesT);
 

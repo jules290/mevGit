@@ -1,8 +1,10 @@
 function svg(activitie, latlng , altitude, vitesse, distance, grade) {
     let svg = document.getElementById("svgData");
     let bar = document.getElementById("barData");
-    extent = document.getElementById("extentData");
-    extentAltitude = document.getElementById("extent");
+    let extent = document.getElementById("extentData");
+    let extentAltitude = document.getElementById("extent");
+    let resizeLeft = document.getElementById("resizeLeft")
+    let resizeRight = document.getElementById("resizeRight")
     
     let Zoomaltitude = ZoomAltitude(altitude, altitude.length);
     let Zoomvitesse = ZoomVitesse(vitesse, vitesse.length);
@@ -124,49 +126,33 @@ function svg(activitie, latlng , altitude, vitesse, distance, grade) {
                 if (xClic2 - xClic > 0) {
                     if (xClic >= 21 && xClic2 <= sessionStorage.ctxWidth - 9) {
                         extent.setAttribute('width', xClic2 - xClic);
-                        resizeLeft.setAttribute('transform', `translate(${xClic - 3}, 0)`);
-                        resizeRight.setAttribute('transform', `translate(${xClic2 - 3}, 0)`);
                     }
                     else if (xClic >= 21) {
                         extent.setAttribute('width', (sessionStorage.ctxWidth - 9) - xClic);
-                        resizeLeft.setAttribute('transform', `translate(${xClick - 5}, 0)`);
-                        resizeRight.setAttribute('transform', `translate(${sessionStorage.ctxWidth - 9}, 0)`);
                     }
                     else if (xClic2 <= sessionStorage.ctxWidth - 9) {
                         extent.setAttribute('width', xClic2 - xClic);
-                        resizeLeft.setAttribute('transform', `translate(21, 0)`);
-                        resizeRight.setAttribute('transform', `translate(${xClic2 - 5}, 0)`);
                     }
                     else {
                         extent.setAttribute('width', (sessionStorage.ctxWidth - 9) - 21);
-                        resizeLeft.setAttribute('transform', `translate(21, 0)`);
-                        resizeRight.setAttribute('transform', `translate(${sessionStorage.ctxWidth - 9}, 0)`);
                     }
                 }
                 else {
                     if (xClic <= sessionStorage.ctxWidth - 9 && xClic2 >= 21) {
                         extent.setAttribute('x', xClic2);
                         extent.setAttribute('width', Math.abs(xClic2 - xClic) );
-                        resizeLeft.setAttribute('transform', `translate(${xClic2 - 5}, 0)`);
-                        resizeRight.setAttribute('transform', `translate(${xClic - 5}, 0)`);
                     }
                     else if (xClic <= sessionStorage.ctxWidth - 9) {
                         extent.setAttribute('x', 21);
                         extent.setAttribute('width', Math.abs(xClic - 21));
-                        resizeLeft.setAttribute('transform', `translate(21, 0)`);
-                        resizeRight.setAttribute('transform', `translate(${xClic - 5}, 0)`);
                     }
                     else if (xClic2 >= 21) {
                         extent.setAttribute('x', xClic2);
                         extent.setAttribute('width', Math.abs((sessionStorage.ctxWidth - 9) - xClic2));
-                        resizeLeft.setAttribute('transform', `translate(${xClic2 - 5}, 0)`);
-                        resizeRight.setAttribute('transform', `translate(${sessionStorage.ctxWidth - 9}, 0)`);
                     }
                     else {
                         extent.setAttribute('x', 21);
                         extent.setAttribute('width', Math.abs((sessionStorage.ctxWidth - 9) - 21) );
-                        resizeLeft.setAttribute('transform', `translate(21, 0)`);
-                        resizeRight.setAttribute('transform', `translate(${sessionStorage.ctxWidth - 9}, 0)`);
                     }
                 }
     
@@ -212,6 +198,8 @@ function svg(activitie, latlng , altitude, vitesse, distance, grade) {
         if (extentAltitude.width.animVal.value == 0) {
             extentAltitude.setAttribute('width', width)
             extentAltitude.setAttribute('x', xClick);
+            resizeLeft.setAttribute('transform', `translate(${xClick - 3}, 0)`);
+            resizeRight.setAttribute('transform', `translate(${(xClick + width) - 3}, 0)`);
 
             let dataSpeed = new Array();
             for (let i = Math.round(x * vitesse.length);( i - Math.round(x * vitesse.length)) <  Math.round(vitesse.length * selection); i++) {
@@ -222,7 +210,10 @@ function svg(activitie, latlng , altitude, vitesse, distance, grade) {
             for (let i = Math.round(x * watt.length);( i - Math.round(x * watt.length)) <  Math.round(watt.length * selection); i++) {
                 dataPower[i - Math.round(x * watt.length)] = watt[i]
             }
+            startIndex = Math.round(x * vitesse.length);
+            widthIndex =  Math.round((vitesse.length - 1) * selection);
 
+            setSelectionData(startIndex, widthIndex)
             updateSpeedChart(dataSpeed);
             updatePowerChart(dataPower);
         }
@@ -231,6 +222,8 @@ function svg(activitie, latlng , altitude, vitesse, distance, grade) {
             x = (((xClic - 21) * selection) + extentAltitude.x.animVal.value);
             extentAltitude.setAttribute('width', (width / (sessionStorage.ctxWidth - 30)) * extentAltitude.width.animVal.value)
             extentAltitude.setAttribute('x', x);
+            resizeLeft.setAttribute('transform', `translate(${extentAltitude.x.animVal.value - 3}, 0)`);
+            resizeRight.setAttribute('transform', `translate(${(extentAltitude.x.animVal.value + extentAltitude.width.animVal.value) - 3}, 0)`);
 
             selection = extentAltitude.width.animVal.value / (sessionStorage.ctxWidth - 30);
             xData = (extentAltitude.x.animVal.value - 21) / (sessionStorage.ctxWidth - 30);
@@ -260,6 +253,10 @@ function svg(activitie, latlng , altitude, vitesse, distance, grade) {
                 dataLatlng[i - Math.round(xData * latlng.length)] = latlng[i]
             }
 
+            startIndex = Math.round(xData * vitesse.length);
+            widthIndex =  Math.round((vitesse.length - 1) * selection);
+
+            setSelectionData(startIndex, widthIndex)
             updateSpeedChart(dataSpeed);
             updatePowerChart(dataPower);
 

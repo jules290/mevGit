@@ -8,6 +8,10 @@ $(document).ready(function() {
         $("#stravaConnect").show();
         $("#strava").hide();
     }
+    $("#prgmy").hide();
+    $("#prgchc").hide();
+    $("#stravaActiviteCarte").hide();
+    $("#stravaActiviteListe").hide();
 })
 
 $("#open").click(function() {
@@ -21,15 +25,10 @@ $("#open").click(function() {
     }
 })
 
-$("#strava").click(function() {
-    $("#stravaActivite").toggle(300);
-    $("#stravaMap").toggle(300);
+$("#stravaActivite").click(function() {
+    $("#stravaActiviteListe").toggle(300);
+    $("#stravaActiviteCarte").toggle(300);
 })
-
-$("#prgmy").hide();
-$("#prgchc").hide();
-$("#stravaActivite").hide();
-$("#stravaMap").hide();
 
 $("#prg").click(function() {
     $("#prgmy").toggle(300);

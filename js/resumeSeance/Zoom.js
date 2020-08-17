@@ -86,8 +86,6 @@ function ZoomVitesse(vitesse, ArrayLength) {
         for (var i = 0; i <  (vitesse.length)-supprEnd; i++) {
             Zoomvitesse = vitesse
         }
-        console.log(vitesse.length)
-        console.log(Zoomvitesse.length)
     }
     else if (ArrayLength < 1000) {
         for (var i = 0; i <  (vitesse.length/2)-supprEnd; i++) {
@@ -245,7 +243,7 @@ function wattEstimation(Zoomaltitude, Zoomvitesse, Zoomgrade) {
 			Zoomvitesse2[i] = Zoomvitesse[i]
 		}
 		else if (Zoomvitesse[i - 1] > 10) {
-			Zoomvitesse2[i] = ( Zoomvitesse[i] + ( ( Zoomvitesse[i] - Zoomvitesse[i - 1] ) * 0.15 ) ) * 0.977
+			Zoomvitesse2[i] = ( Zoomvitesse[i] + ( ( Zoomvitesse[i] - Zoomvitesse[i - 1] ) * 0.15 ) ) * 0.99
 		}
 		else {
 			Zoomvitesse2[i] = Zoomvitesse[i]
@@ -293,7 +291,7 @@ function wattEstimation(Zoomaltitude, Zoomvitesse, Zoomgrade) {
     let pression;
     let poids;
     if (localStorage.poids && localStorage.poids > 0) {
-        poids = localStorage.poids;
+        poids = Number(localStorage.poids) + 7.5;
     }
     else {
         poids = 75;

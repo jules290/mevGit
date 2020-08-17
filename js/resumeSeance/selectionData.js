@@ -1,7 +1,3 @@
-time = JSON.parse(localStorage.activitiesTime)[sessionStorage.activityIndex];
-distance = JSON.parse(localStorage.activitiesDistance)[sessionStorage.activityIndex];
-elevation = JSON.parse(localStorage.activitiesAltitude)[sessionStorage.activityIndex];
-
 timeDataCase = document.getElementById("timeData");
 distanceDataCase = document.getElementById("distanceData");
 elevationDataCase = document.getElementById("elevationData");
@@ -10,6 +6,10 @@ gradeDataCase = document.getElementById("gradeData");
 $("#selection").hide();
 
 function setSelectionData(startIndex, widthIndex) {
+    time = JSON.parse(sessionStorage.activitiesTime);
+    distance = JSON.parse(sessionStorage.activitiesDistance);
+    elevation = JSON.parse(sessionStorage.activitiesAltitude);
+    
     $("#selection").show(100);
 
     distanceData = Math.round( ( distance[startIndex + widthIndex] - distance[startIndex]) / 10 ) / 100;

@@ -96,14 +96,19 @@
     background-color: #2B2B2B;
 }
 
-#strava::after {
+#stravaActivite::after {
     content: '\276F';
     position: absolute;
+    margin-top: 2px;
     right: 5px;
     pointer-events: none;
     transform: rotate(90deg);
-    font-size: 15px;
+    font-size: 13px;
     color: rgb(138, 138, 138);
+}
+
+#stravaActivite:hover::after {
+    color: rgb(216, 216, 216);
 }
 
 .a_strava_menu {
@@ -119,18 +124,17 @@
     background-color: #2F2F2F;
 }
 
-#arrowDownPrg {
-    position: absolute;
-    left: 123px;
-    top: 54px;
+#prg:hover::after {
+    color: rgb(216, 216, 216);
 }
 
-#arrowDownPrg::after {
+#prg::after {
     content: '\276F';
     position: absolute;
-    right: 0;
+    margin-top: -8px;
+    right: 5px;
     pointer-events: none;
     transform: rotate(90deg);
-    font-size: 15px;
+    font-size: 13px;
     color: rgb(138, 138, 138);
 }

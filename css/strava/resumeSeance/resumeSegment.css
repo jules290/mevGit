@@ -1,0 +1,256 @@
+#segmentEffort {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#view {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.view {
+    z-index: 5;
+    width: 10%;
+    height: 30px;
+    margin-left: 0px;
+    margin-right: 0px;
+    border: 1px solid rgb(126, 126, 126);
+    background-color: rgba(251, 251, 251, 0);
+    border-radius: 5px;
+    outline: none;
+    transition: 0.3s;
+}
+
+#viewEffort {
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 0px;
+    border-right: none;
+    color: rgb(255, 255, 255);
+}
+
+#viewSegment {
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 0px;
+    border-left: none;
+    color: rgb(41, 41, 41);
+}
+
+#viewSwitch {
+    z-index: 4;
+    width: 10%;
+    height: 30px;
+    background-color: rgba(0, 137, 234, 1);
+    border-radius: 5px;
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 0px;
+    margin-top: -30px;
+    margin-left: -10%;
+    margin-bottom: 10px;
+    transition: 0.3s;
+}
+
+#segmentList {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+#SegmentTableHeader {
+    width: 100%;
+    height: 50px;
+    background-color: rgb(226, 226, 226);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: center;
+    color: rgb(53, 53, 53);
+}
+
+.segmentKOM {
+    width: 8%;
+    text-align: center;
+}
+
+.segmentInfo {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+}
+
+.segmentT {
+
+}
+
+.segmentInfo2ND {
+    color: rgb(156, 156, 156);
+    display: flex;
+    flex-direction: row;
+    font-size: 12px;
+}
+
+.segmentDst {
+    margin-right: 4%;
+}
+
+.segmentD4 {
+    margin-right: 4%;
+}
+
+.segmentGrade {
+    margin-right: 4%;
+}
+
+.segmentTps {
+    width: 10%;
+}
+
+.segmentVst {
+    width: 10%;
+}
+
+.segmentP {
+    width: 10%;
+}
+
+.segmentFC {
+    width: 7%;
+}
+
+.segmentCadence {
+    width: 10%;
+}
+
+#segmentEffortContainer {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: rgb(53, 53, 53);
+}
+
+.segment {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    color: rgb(53, 53, 53);
+    border-bottom: 1px solid rgb(226, 226, 226);
+    font-size: 14px;
+    justify-content: start;
+    flex-wrap: wrap;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.segmentStats {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.segmentAnalyse {
+    width: 96%;
+    margin-left: 2%;
+    margin-right: 2%;
+    height: 200px;
+    border-top: 1px solid rgb(216, 216, 216);
+    display: flex;
+    flex-direction: row;
+}
+
+.segmentAnalyseElevationContenair {
+    width: 50%;
+    height: 190px;
+    margin-top: 10px;
+    margin-left: -18px;
+}
+
+.segmentAnalyseStats {
+    width: 26%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.segmentAnalyseStatsTContenair {
+    width: 66%;
+    margin-top: 30px;
+    margin-left: 33%;
+    display: flex;
+    flex-direction: row;
+}
+
+.segmentAnalyseStatsT {
+    width: 50%;
+    text-align: center;
+}
+
+.segmentAnalyseStatsContenair {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.segmentAnalyseStatsContenairRow {
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+}
+
+.segmentAnalyseStatsTitle {
+    text-align: end;
+    margin-right: 10%;
+}
+
+.segmentAnalyseStatsData {
+    text-align: center;
+}
+
+.segmentAnalyseButtonContenair {
+    width: 24%;
+    height: auto;
+    margin-left: 0%;
+    margin-top: 27px;
+    display: flex;
+    flex-direction: column;
+}
+
+.segmentAnalyseButton {
+    width: 96%;
+    height: 35px;
+    margin-left: 4%;
+    margin-right: 0%;
+    margin-bottom: 14px;
+    border: 1px solid rgb(187, 187, 187);
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.segmentAnalyseButton:hover {
+    background-color: rgba(0, 0, 0, 0.04);
+}
+
+.segmentAnalyseButtonT {
+    font-size: 14px;
+    color: rgb(80, 80, 80);
+    font-weight: bold;
+    text-align: center;
+}

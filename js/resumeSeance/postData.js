@@ -33,19 +33,25 @@ function postSegmentEndEffort(state) {
             segmentsDataAltitude = new Array();
             segmentsDataGrade = new Array();
 
+            let segmentAnalyseIndex;
             for (let i = 0; i < response.segment_efforts.length; i++) {
                 var segment = document.createElement("div");
                 segment.className = "segment";
+                segment.id = "10000" + i;
                 document.getElementById("segmentEffortContainer").appendChild(segment);
+
+                let segmentStats = document.createElement("div");
+                segmentStats.className = "segmentStats";
+                segment.appendChild(segmentStats);
 
                 var segmentKOM = document.createElement("div");
                 segmentKOM.className = "segmentKOM";
                 segmentKOM.innerText = response.segment_efforts[i].pr_rank;
-                segment.appendChild(segmentKOM);
+                segmentStats.appendChild(segmentKOM);
 
                 var segmentInfo = document.createElement("div");
                 segmentInfo.className = "segmentInfo";
-                segment.appendChild(segmentInfo);
+                segmentStats.appendChild(segmentInfo);
                 
                 var segmentT = document.createElement("div");
                 segmentT.className = "segmentT";
@@ -73,7 +79,7 @@ function postSegmentEndEffort(state) {
 
                 var segmentTps = document.createElement("div");
                 segmentTps.className = "segmentTps";
-                segment.appendChild(segmentTps);
+                segmentStats.appendChild(segmentTps);
                 if (response.segment_efforts[i].elapsed_time >= 60) {
                     let heure;
                     let minute;
@@ -100,12 +106,12 @@ function postSegmentEndEffort(state) {
                 segmentVitesse.innerText = 
                 Math.round(((response.segment_efforts[i].distance / 1000) / (response.segment_efforts[i].elapsed_time / 3600)) * 10) / 10
                 + "km/h";
-                segment.appendChild(segmentVitesse);
+                segmentStats.appendChild(segmentVitesse);
 
                 let watts = wattEstimation(
-                    JSON.parse(localStorage.activitiesAltitude)[sessionStorage.activityIndex], 
-                    JSON.parse(localStorage.activitiesVitesse)[sessionStorage.activityIndex], 
-                    JSON.parse(localStorage.activitiesGrade)[sessionStorage.activityIndex]
+                    JSON.parse(sessionStorage.activitiesAltitude), 
+                    JSON.parse(sessionStorage.activitiesVitesse), 
+                    JSON.parse(sessionStorage.activitiesGrade)
                 );
                 var segmentPower = document.createElement("div");
                 segmentPower.className = "segmentP";
@@ -120,32 +126,56 @@ function postSegmentEndEffort(state) {
                 wattMoy = Math.round(wattMoy * 10) / 10
                 segmentPower.innerText = wattMoy + "w";
                 segmentsDataPower[i] = segmentDataPower;
-                segment.appendChild(segmentPower);
+                segmentStats.appendChild(segmentPower);
 
                 let segmentFC = document.createElement("div");
                 segmentFC.className = "segmentFC";
-                console.log(JSON.parse(localStorage.activitiesBpm)[sessionStorage.activityIndex])
-                if (JSON.parse(localStorage.activitiesBpm)[sessionStorage.activityIndex] != null) {
-                    FC = JSON.parse(localStorage.activitiesBpm);
-                    let FCMoy = 0;
-                    for (var u = 0; u <  FC.length; u++) {
-                        FCMoy += FC[u] / FC.length
+                if (JSON.parse(sessionStorage.activitiesBpm).length > 0) {
+                    FC = JSON.parse(sessionStorage.activitiesBpm);
+                    for (let y = 0; y < response.segment_efforts[i].end_index - response.segment_efforts[i].start_index; y++) {
+                        segmentDataFC[y] = FC[y + response.segment_efforts[i].start_index];
                     }
-                    segmentFC.innerText = FC + "bpm";
+                    segmentsDataFC[i] = segmentDataFC;
+
+                    let FCMoy = 0;
+                    for (var u = 0; u <  segmentDataFC.length; u++) {
+                        FCMoy += segmentDataFC[u] / segmentDataFC.length
+                    }
+                    segmentFC.innerText = FCMoy + "bpm";
                 }
                 else {
                     segmentFC.innerText = "-";
                 }
-                segment.appendChild(segmentFC);
+                segmentStats.appendChild(segmentFC);
+
+                let segmentCadence = document.createElement("div");
+                segmentCadence.className = "segmentCadence";
+                if (JSON.parse(sessionStorage.activitiesCadence).length > 0) {
+                    Cadence = JSON.parse(sessionStorage.activitiesCadence);
+                    for (let y = 0; y < response.segment_efforts[i].end_index - response.segment_efforts[i].start_index; y++) {
+                        segmentDataCadence[y] = Cadence[y + response.segment_efforts[i].start_index];
+                    }
+                    segmentsDataCadence[i] = segmentDataCadence;
+
+                    let RpmMoy = 0;
+                    for (var u = 0; u <  segmentDataCadence.length; u++) {
+                        RpmMoy += segmentDataCadence[u] / segmentDataCadence.length
+                    }
+                    segmentCadence.innerText = RpmMoy + "rpm";
+                }
+                else {
+                    segmentCadence.innerText = "-";
+                }
+                segmentStats.appendChild(segmentCadence);
 
                 segmentDataVitesse = new Array();
-                let vitesse =  JSON.parse(localStorage.activitiesVitesse)[sessionStorage.activityIndex];
+                let vitesse =  JSON.parse(sessionStorage.activitiesVitesse);
                 for (let y = 0; y < response.segment_efforts[i].end_index - response.segment_efforts[i].start_index; y++) {
                     segmentDataVitesse[y] = vitesse[y + response.segment_efforts[i].start_index];
                 }
                 segmentsDataVitesse[i] = segmentDataVitesse;
 
-                latlng = JSON.parse(localStorage.activitiesLatlng)[sessionStorage.activityIndex];
+                latlng = JSON.parse(sessionStorage.activitiesLatlng);
                 segmentDataLatLng = new Array();
                 for (let u = 0; u < latlng.length; u++) {
                     for (let y = 0; y < response.segment_efforts[i].end_index - response.segment_efforts[i].start_index; y++) {
@@ -154,7 +184,7 @@ function postSegmentEndEffort(state) {
                 }
                 segmentsDataLatLng[i] = segmentDataLatLng;
 
-                altitude = JSON.parse(localStorage.activitiesAltitude)[sessionStorage.activityIndex];
+                altitude = JSON.parse(sessionStorage.activitiesAltitude);
                 segmentDataAltitude = new Array();
                 for (let u = 0; u < latlng.length; u++) {
                     for (let y = 0; y < response.segment_efforts[i].end_index - response.segment_efforts[i].start_index; y++) {
@@ -163,7 +193,7 @@ function postSegmentEndEffort(state) {
                 }
                 segmentsDataAltitude[i] = segmentDataAltitude;
 
-                grade = JSON.parse(localStorage.activitiesGrade)[sessionStorage.activityIndex];
+                grade = JSON.parse(sessionStorage.activitiesGrade);
                 segmentDataGrade = new Array();
                 for (let u = 0; u < latlng.length; u++) {
                     for (let y = 0; y < response.segment_efforts[i].end_index - response.segment_efforts[i].start_index; y++) {
@@ -172,7 +202,7 @@ function postSegmentEndEffort(state) {
                 }
                 segmentsDataGrade[i] = segmentDataGrade;
 
-                segment.onclick = function () {
+                segmentStats.onclick = function () {
                     let extent = document.getElementById("extent")
                     let resizeLeft = document.getElementById("resizeLeft")
                     let resizeRight = document.getElementById("resizeRight")
@@ -225,13 +255,274 @@ function postSegmentEndEffort(state) {
                             latlng
                         )
                     }
+
+                    if (segmentAnalyseIndex != Number("10000" + i)) {
+                        segmentAnalyseIndex = Number("10000" + i)
+                        segmentAnalyseArray = document.getElementsByClassName("segmentAnalyse");
+                        segmentArray = document.getElementsByClassName("segment");
+                        if (segmentAnalyseArray.length > 0) {
+                            for (let i = 0; i < segmentAnalyseArray.length; i++) {
+                                segmentAnalyseArray[i].remove();
+                            }
+                            for (let i = 0; i < segmentArray.length; i++) {
+                                segmentArray[i].style.height = "50px";
+                            }
+                        }
+                        document.getElementById("10000" + i).style.height = "250px";
+    
+                        let segmentAnalyse = document.createElement("div");
+                        segmentAnalyse.classList = "segmentAnalyse";
+                        document.getElementById("10000" + i).appendChild(segmentAnalyse);
+    
+                        let segmentAnalyseElevationContenair = document.createElement("div");
+                        segmentAnalyseElevationContenair.classList = "segmentAnalyseElevationContenair";
+                        segmentAnalyse.appendChild(segmentAnalyseElevationContenair);
+    
+                        let segmentAnalyseElevation = document.createElement("canvas");
+                        segmentAnalyseElevation.classList = "segmentAnalyseElevation";
+                        segmentAnalyseElevation.id = "segmentAnalyseElevation";
+                        segmentAnalyseElevationChart(segmentsDataAltitude[i], segmentsDataGrade[i], segmentAnalyseElevation)
+                        segmentAnalyseElevationContenair.appendChild(segmentAnalyseElevation);
+    
+    
+                        let segmentAnalyseStats = document.createElement("div");
+                        segmentAnalyseStats.classList = "segmentAnalyseStats";
+                        segmentAnalyse.appendChild(segmentAnalyseStats);
+
+
+                        let segmentAnalyseStatsTContenair = document.createElement("div");
+                        segmentAnalyseStatsTContenair.classList = "segmentAnalyseStatsTContenair";
+                        segmentAnalyseStats.appendChild(segmentAnalyseStatsTContenair);
+
+                        let segmentAnalyseStatsMoyT = document.createElement("div");
+                        segmentAnalyseStatsMoyT.classList = "segmentAnalyseStatsT";
+                        segmentAnalyseStatsTContenair.appendChild(segmentAnalyseStatsMoyT);
+                        segmentAnalyseStatsMoyT.innerText = "Stats Moy";
+                        
+                        let segmentAnalyseStatsMaxT = document.createElement("div");
+                        segmentAnalyseStatsMaxT.classList = "segmentAnalyseStatsT";
+                        segmentAnalyseStatsTContenair.appendChild(segmentAnalyseStatsMaxT);
+                        segmentAnalyseStatsMaxT.innerText = "Stats Max";
+    
+    
+                        let segmentAnalyseStatsContenair = document.createElement("div");
+                        segmentAnalyseStatsContenair.classList = "segmentAnalyseStatsContenair";
+                        segmentAnalyseStats.appendChild(segmentAnalyseStatsContenair);
+                        
+    
+                        let segmentAnalyseStatsContenairTitleRow = document.createElement("div");
+                        segmentAnalyseStatsContenairTitleRow.classList = "segmentAnalyseStatsContenairRow";
+                        segmentAnalyseStatsContenair.appendChild(segmentAnalyseStatsContenairTitleRow);
+    
+                        let segmentAnalyseStatsPenteTitle = document.createElement("div");
+                        segmentAnalyseStatsPenteTitle.classList = "segmentAnalyseStatsTitle";
+                        segmentAnalyseStatsContenairTitleRow.appendChild(segmentAnalyseStatsPenteTitle);
+                        segmentAnalyseStatsPenteTitle.innerText = "pente";
+    
+                        let segmentAnalyseStatsVitesseTitle = document.createElement("div");
+                        segmentAnalyseStatsVitesseTitle.classList = "segmentAnalyseStatsTitle";
+                        segmentAnalyseStatsContenairTitleRow.appendChild(segmentAnalyseStatsVitesseTitle);
+                        segmentAnalyseStatsVitesseTitle.innerText = "vitesse";
+    
+                        let segmentAnalyseStatsPowerTitle = document.createElement("div");
+                        segmentAnalyseStatsPowerTitle.classList = "segmentAnalyseStatsTitle";
+                        segmentAnalyseStatsContenairTitleRow.appendChild(segmentAnalyseStatsPowerTitle);
+                        segmentAnalyseStatsPowerTitle.innerText = "puissance";
+    
+                        let segmentAnalyseStatsFCTitle = document.createElement("div");
+                        segmentAnalyseStatsFCTitle.classList = "segmentAnalyseStatsTitle";
+                        segmentAnalyseStatsContenairTitleRow.appendChild(segmentAnalyseStatsFCTitle);
+                        segmentAnalyseStatsFCTitle.innerText = "FC";
+    
+                        let segmentAnalyseStatsCadenceTitle = document.createElement("div");
+                        segmentAnalyseStatsCadenceTitle.classList = "segmentAnalyseStatsTitle";
+                        segmentAnalyseStatsContenairTitleRow.appendChild(segmentAnalyseStatsCadenceTitle);
+                        segmentAnalyseStatsCadenceTitle.innerText = "cadence";
+
+
+                        let segmentAnalyseStatsContenairDataMoyRow = document.createElement("div");
+                        segmentAnalyseStatsContenairDataMoyRow.classList = "segmentAnalyseStatsContenairRow";
+                        segmentAnalyseStatsContenair.appendChild(segmentAnalyseStatsContenairDataMoyRow);
+    
+                        let segmentAnalyseStatsPenteDataMoy = document.createElement("div");
+                        segmentAnalyseStatsPenteDataMoy.classList = "segmentAnalyseStatsData";
+                        segmentAnalyseStatsContenairDataMoyRow.appendChild(segmentAnalyseStatsPenteDataMoy);
+                        gradeMoy = response.segment_efforts[i].segment.average_grade;
+                        segmentAnalyseStatsPenteDataMoy.innerText = `${gradeMoy}%`;
+    
+                        let segmentAnalyseStatsVitesseDataMoy = document.createElement("div");
+                        segmentAnalyseStatsVitesseDataMoy.classList = "segmentAnalyseStatsData";
+                        segmentAnalyseStatsContenairDataMoyRow.appendChild(segmentAnalyseStatsVitesseDataMoy);
+                        vitesseMoy = 
+                        Math.round(((response.segment_efforts[i].distance / 1000) / (response.segment_efforts[i].elapsed_time / 3600)) * 10) / 10;
+                        segmentAnalyseStatsVitesseDataMoy.innerText = `${vitesseMoy}km/h`;
+    
+                        let segmentAnalyseStatsWattDataMoy = document.createElement("div");
+                        segmentAnalyseStatsWattDataMoy.classList = "segmentAnalyseStatsData";
+                        segmentAnalyseStatsContenairDataMoyRow.appendChild(segmentAnalyseStatsWattDataMoy);
+                        let wattMoy = 0;
+                        for (var u = 0; u <  segmentsDataPower[i].length; u++) {
+                            wattMoy += segmentsDataPower[i][u] / segmentsDataPower[i].length
+                        }
+                        wattMoy = Math.round(wattMoy * 10) / 10
+                        segmentAnalyseStatsWattDataMoy.innerText = `${wattMoy}W`;
+    
+                        let segmentAnalyseStatsFcDataMoy = document.createElement("div");
+                        segmentAnalyseStatsFcDataMoy.classList = "segmentAnalyseStatsData";
+                        segmentAnalyseStatsContenairDataMoyRow.appendChild(segmentAnalyseStatsFcDataMoy);
+                        if (JSON.parse(sessionStorage.activitiesBpm).length > 0) {
+                            let FCMoy = 0;
+                            for (var u = 0; u <  segmentsDataFC[i].length; u++) {
+                                FCMoy += segmentsDataFC[i][u] / segmentsDataFC[i].length
+                            }
+                            segmentAnalyseStatsFcDataMoy.innerText = `${FCMoy}BPM`;
+                        }
+                        else {
+                            segmentAnalyseStatsFcDataMoy.innerText = "-";
+                        }
+    
+                        let segmentAnalyseStatsCadenceDataMoy = document.createElement("div");
+                        segmentAnalyseStatsCadenceDataMoy.classList = "segmentAnalyseStatsData";
+                        segmentAnalyseStatsContenairDataMoyRow.appendChild(segmentAnalyseStatsCadenceDataMoy);
+                        if (JSON.parse(sessionStorage.activitiesCadence).length > 0) {
+                            let RpmMoy = 0;
+                            for (var u = 0; u <  segmentsDataCadence[i].length; u++) {
+                                RpmMoy += segmentsDataCadence[i][u] / segmentsDataCadence[i].length
+                            }
+                            segmentAnalyseStatsCadenceDataMoy.innerText = `${CadenceMoy}RPM`;
+                        }
+                        else {
+                            segmentAnalyseStatsCadenceDataMoy.innerText = "-";
+                        }
+    
+    
+                        let segmentAnalyseStatsContenairDataMaxRow = document.createElement("div");
+                        segmentAnalyseStatsContenairDataMaxRow.classList = "segmentAnalyseStatsContenairRow";
+                        segmentAnalyseStatsContenair.appendChild(segmentAnalyseStatsContenairDataMaxRow);
+    
+                        let segmentAnalyseStatsPenteDataMax = document.createElement("div");
+                        segmentAnalyseStatsPenteDataMax.classList = "segmentAnalyseStatsData";
+                        segmentAnalyseStatsContenairDataMaxRow.appendChild(segmentAnalyseStatsPenteDataMax);
+                        gradeMax = 0;
+                        for (var u = 0; u <  segmentsDataGrade[i].length; u++) {
+                            if (segmentsDataGrade[i][u] > gradeMax) {
+                                gradeMax = Math.round(segmentsDataGrade[i][u] * 10) / 10
+                            }
+                        }
+                        segmentAnalyseStatsPenteDataMax.innerText = `${gradeMax}%`;
+    
+                        let segmentAnalyseStatsVitesseDataMax = document.createElement("div");
+                        segmentAnalyseStatsVitesseDataMax.classList = "segmentAnalyseStatsData";
+                        segmentAnalyseStatsContenairDataMaxRow.appendChild(segmentAnalyseStatsVitesseDataMax);
+                        vitesseMax = 0;
+                        for (var u = 0; u <  segmentsDataVitesse[i].length; u++) {
+                            if (segmentsDataVitesse[i][u] > vitesseMax) {
+                                vitesseMax = Math.round(segmentsDataVitesse[i][u] * 10) / 10
+                            }
+                        }
+                        segmentAnalyseStatsVitesseDataMax.innerText = `${vitesseMax}km/h`;
+    
+                        let segmentAnalyseStatsWattDataMax = document.createElement("div");
+                        segmentAnalyseStatsWattDataMax.classList = "segmentAnalyseStatsData";
+                        segmentAnalyseStatsContenairDataMaxRow.appendChild(segmentAnalyseStatsWattDataMax);
+                        wattMax = 0;
+                        for (var u = 0; u <  segmentsDataPower[i].length; u++) {
+                            if (segmentsDataPower[i][u] > wattMax) {
+                                wattMax = Math.round(segmentsDataPower[i][u] * 10) / 10
+                            }
+                        }
+                        segmentAnalyseStatsWattDataMax.innerText = `${wattMax}W`;
+    
+                        let segmentAnalyseStatsFcDataMax = document.createElement("div");
+                        segmentAnalyseStatsFcDataMax.classList = "segmentAnalyseStatsData";
+                        segmentAnalyseStatsContenairDataMaxRow.appendChild(segmentAnalyseStatsFcDataMax);
+                        if (JSON.parse(sessionStorage.activitiesBpm).length > 0) {
+                            let FCMax = 0;
+                            for (var u = 0; u <  segmentsDataFC[i].length; u++) {
+                                if (segmentsDataFC[i][u] > FCMax) {
+                                    FCMax = Math.round(segmentsDataFC[i][u])
+                                }
+                            }
+                            segmentAnalyseStatsFcDataMax.innerText = `${FCMax}BPM`;
+                        }
+                        else {
+                            segmentAnalyseStatsFcDataMax.innerText = "-";
+                        }
+    
+                        let segmentAnalyseStatsCadenceDataMax = document.createElement("div");
+                        segmentAnalyseStatsCadenceDataMax.classList = "segmentAnalyseStatsData";
+                        segmentAnalyseStatsContenairDataMaxRow.appendChild(segmentAnalyseStatsCadenceDataMax);
+                        if (JSON.parse(sessionStorage.activitiesBpm).length > 0) {
+                            let CadenceMax = 0;
+                            for (var u = 0; u <  segmentsDataCadence[i].length; u++) {
+                                if (segmentsDataCadence[i][u] > CadenceMax) {
+                                    CadenceMax = Math.round(segmentsDataCadence[i][u])
+                                }
+                            }
+                            segmentAnalyseStatsCadenceDataMax.innerText = `${CadenceMax}BPM`;
+                        }
+                        else {
+                            segmentAnalyseStatsCadenceDataMax.innerText = "-";
+                        }
+    
+    
+                        let segmentAnalyseButtonContenair = document.createElement("div");
+                        segmentAnalyseButtonContenair.classList = "segmentAnalyseButtonContenair";
+                        segmentAnalyse.appendChild(segmentAnalyseButtonContenair);
+
+    
+                        let segmentAnalyseButtonAnalyse = document.createElement("div");
+                        segmentAnalyseButtonAnalyse.classList = "segmentAnalyseButton";
+                        segmentAnalyseButtonContenair.appendChild(segmentAnalyseButtonAnalyse);
+                        segmentAnalyseButtonAnalyse.onclick = function () {
+                            window.location.href = "#selection";
+                        }
+
+                        let segmentAnalyseButtonAnalyseT = document.createElement("div");
+                        segmentAnalyseButtonAnalyseT.classList = "segmentAnalyseButtonT";
+                        segmentAnalyseButtonAnalyseT.innerText = "Analyser";
+                        segmentAnalyseButtonAnalyse.appendChild(segmentAnalyseButtonAnalyseT);
+
+
+                        let segmentAnalyseButtonGoal = document.createElement("div");
+                        segmentAnalyseButtonGoal.classList = "segmentAnalyseButton";
+                        segmentAnalyseButtonContenair.appendChild(segmentAnalyseButtonGoal);
+                        segmentAnalyseButtonGoal.onclick = function () {
+                            window.location.href = "objectif.html";
+                        }
+
+                        let segmentAnalyseButtonGoalT = document.createElement("div");
+                        segmentAnalyseButtonGoalT.classList = "segmentAnalyseButtonT";
+                        segmentAnalyseButtonGoalT.innerText = "Définir l'objectif";
+                        segmentAnalyseButtonGoal.appendChild(segmentAnalyseButtonGoalT);
+
+
+                        let segmentAnalyseButtonUp = document.createElement("div");
+                        segmentAnalyseButtonUp.classList = "segmentAnalyseButton";
+                        segmentAnalyseButtonContenair.appendChild(segmentAnalyseButtonUp);
+
+
+                        let segmentAnalyseButtonUpT = document.createElement("div");
+                        segmentAnalyseButtonUpT.classList = "segmentAnalyseButtonT";
+                        segmentAnalyseButtonUpT.innerText = "Améliorer votre temps";
+                        segmentAnalyseButtonUp.appendChild(segmentAnalyseButtonUpT);
+                    }
+                    else {
+                        segmentAnaliseIndex = "";
+                        for (let i = 0; i < segmentAnaliseArray.length; i++) {
+                            segmentAnaliseArray[i].remove();
+                        }
+                        for (let i = 0; i < segmentArray.length; i++) {
+                            segmentArray[i].style.height = "50px";
+                        }
+                    }
                 }
             }
         }
         else if (state == "effort") {
             $("#segmentEffortContainer").empty();
-            latlng = JSON.parse(localStorage.activitiesLatlng)[sessionStorage.activityIndex];
-            bpm = JSON.parse(localStorage.activitiesBpm)[sessionStorage.activityIndex];
+            latlng = JSON.parse(sessionStorage.activitiesLatlng)
+            bpm = JSON.parse(sessionStorage.activitiesBpm);
             // for (let i = 0; i < response.length; i++) {
                 
             // }
@@ -256,46 +547,46 @@ function getActivityStreams() {
     let array = new Array();
     if (!localStorage.activityStream) {localStorage.activityStream = JSON.stringify(array)}
 
-    if (JSON.parse(localStorage.activityStream)[sessionStorage.activityIndex] == "true") {
+    if (sessionStorage.activityStream == sessionStorage.activityIndex) {
         postLegend(
-            JSON.parse(localStorage.Activities)[sessionStorage.activityIndex], 
-            JSON.parse(localStorage.activitiesLatlng)[sessionStorage.activityIndex], 
-            JSON.parse(localStorage.activitiesAltitude)[sessionStorage.activityIndex], 
-            JSON.parse(localStorage.activitiesVitesse)[sessionStorage.activityIndex], 
-            JSON.parse(localStorage.activitiesDistance)[sessionStorage.activityIndex], 
-            JSON.parse(localStorage.activitiesGrade)[sessionStorage.activityIndex]
+            JSON.parse(sessionStorage.Activities), 
+            JSON.parse(sessionStorage.activitiesLatlng), 
+            JSON.parse(sessionStorage.activitiesAltitude), 
+            JSON.parse(sessionStorage.activitiesVitesse), 
+            JSON.parse(sessionStorage.activitiesDistance), 
+            JSON.parse(sessionStorage.activitiesGrade)
         );
         postWatt( 
-            JSON.parse(localStorage.Activities)[sessionStorage.activityIndex], 
-            JSON.parse(localStorage.activitiesLatlng)[sessionStorage.activityIndex], 
-            JSON.parse(localStorage.activitiesAltitude)[sessionStorage.activityIndex], 
-            JSON.parse(localStorage.activitiesVitesse)[sessionStorage.activityIndex], 
-            JSON.parse(localStorage.activitiesDistance)[sessionStorage.activityIndex], 
-            JSON.parse(localStorage.activitiesGrade)[sessionStorage.activityIndex]
+            JSON.parse(sessionStorage.Activities), 
+            JSON.parse(sessionStorage.activitiesLatlng), 
+            JSON.parse(sessionStorage.activitiesAltitude), 
+            JSON.parse(sessionStorage.activitiesVitesse), 
+            JSON.parse(sessionStorage.activitiesDistance), 
+            JSON.parse(sessionStorage.activitiesGrade)
         );
         postActivitiesStreamsaltitudeChart(
-            JSON.parse(localStorage.Activities)[sessionStorage.activityIndex], 
-            JSON.parse(localStorage.activitiesLatlng)[sessionStorage.activityIndex], 
-            JSON.parse(localStorage.activitiesAltitude)[sessionStorage.activityIndex], 
-            JSON.parse(localStorage.activitiesVitesse)[sessionStorage.activityIndex], 
-            JSON.parse(localStorage.activitiesDistance)[sessionStorage.activityIndex], 
-            JSON.parse(localStorage.activitiesGrade)[sessionStorage.activityIndex]
+            JSON.parse(sessionStorage.Activities), 
+            JSON.parse(sessionStorage.activitiesLatlng), 
+            JSON.parse(sessionStorage.activitiesAltitude), 
+            JSON.parse(sessionStorage.activitiesVitesse), 
+            JSON.parse(sessionStorage.activitiesDistance), 
+            JSON.parse(sessionStorage.activitiesGrade)
         );
         postActivitiesStreamsSpeedChart(
-            JSON.parse(localStorage.Activities)[sessionStorage.activityIndex], 
-            JSON.parse(localStorage.activitiesLatlng)[sessionStorage.activityIndex], 
-            JSON.parse(localStorage.activitiesAltitude)[sessionStorage.activityIndex], 
-            JSON.parse(localStorage.activitiesVitesse)[sessionStorage.activityIndex], 
-            JSON.parse(localStorage.activitiesDistance)[sessionStorage.activityIndex], 
-            JSON.parse(localStorage.activitiesGrade)[sessionStorage.activityIndex]
+            JSON.parse(sessionStorage.Activities), 
+            JSON.parse(sessionStorage.activitiesLatlng), 
+            JSON.parse(sessionStorage.activitiesAltitude), 
+            JSON.parse(sessionStorage.activitiesVitesse), 
+            JSON.parse(sessionStorage.activitiesDistance), 
+            JSON.parse(sessionStorage.activitiesGrade)
         );
         svg(
-            JSON.parse(localStorage.Activities)[sessionStorage.activityIndex], 
-            JSON.parse(localStorage.activitiesLatlng)[sessionStorage.activityIndex], 
-            JSON.parse(localStorage.activitiesAltitude)[sessionStorage.activityIndex], 
-            JSON.parse(localStorage.activitiesVitesse)[sessionStorage.activityIndex], 
-            JSON.parse(localStorage.activitiesDistance)[sessionStorage.activityIndex], 
-            JSON.parse(localStorage.activitiesGrade)[sessionStorage.activityIndex]
+            JSON.parse(sessionStorage.Activities), 
+            JSON.parse(sessionStorage.activitiesLatlng), 
+            JSON.parse(sessionStorage.activitiesAltitude), 
+            JSON.parse(sessionStorage.activitiesVitesse), 
+            JSON.parse(sessionStorage.activitiesDistance), 
+            JSON.parse(sessionStorage.activitiesGrade)
         );
     }
     else {
@@ -315,87 +606,87 @@ function getActivityStreams() {
             }
         }
         $.ajax(settings).done(function (response) {
-            if (!localStorage.activityStream) {localStorage.activityStream = JSON.stringify(array)}
-            if (!localStorage.activitiesMoving) {localStorage.activitiesMoving = JSON.stringify(array)}
-            if (!localStorage.activitiesLatlng) {localStorage.activitiesLatlng = JSON.stringify(array)}
-            if (!localStorage.activitiesDistance) {localStorage.activitiesDistance = JSON.stringify(array)}
-            if (!localStorage.activitiesVitesse) {localStorage.activitiesVitesse = JSON.stringify(array)}
-            if (!localStorage.activitiesTime) {localStorage.activitiesTime = JSON.stringify(array)}
-            if (!localStorage.activitiesAltitude) {localStorage.activitiesAltitude = JSON.stringify(array)}
-            if (!localStorage.activitiesGrade) {localStorage.activitiesGrade = JSON.stringify(array)}
-            if (!localStorage.activitiesCadence) {localStorage.activitiesCadence = JSON.stringify(array)}
-            if (!localStorage.activitiesBpm) {localStorage.activitiesBpm = JSON.stringify(array)}
-            if (!localStorage.activitiesWatts) {localStorage.activitiesWatts = JSON.stringify(array)}
+            if (!sessionStorage.activityStream) {sessionStorage.activityStream = JSON.stringify(array)}
+            if (!sessionStorage.activitiesMoving) {sessionStorage.activitiesMoving = JSON.stringify(array)}
+            if (!sessionStorage.activitiesLatlng) {sessionStorage.activitiesLatlng = JSON.stringify(array)}
+            if (!sessionStorage.activitiesDistance) {sessionStorage.activitiesDistance = JSON.stringify(array)}
+            if (!sessionStorage.activitiesVitesse) {sessionStorage.activitiesVitesse = JSON.stringify(array)}
+            if (!sessionStorage.activitiesTime) {sessionStorage.activitiesTime = JSON.stringify(array)}
+            if (!sessionStorage.activitiesAltitude) {sessionStorage.activitiesAltitude = JSON.stringify(array)}
+            if (!sessionStorage.activitiesGrade) {sessionStorage.activitiesGrade = JSON.stringify(array)}
+            if (!sessionStorage.activitiesCadence) {sessionStorage.activitiesCadence = JSON.stringify(array)}
+            if (!sessionStorage.activitiesBpm) {sessionStorage.activitiesBpm = JSON.stringify(array)}
+            if (!sessionStorage.activitiesWatts) {sessionStorage.activitiesWatts = JSON.stringify(array)}
 
-            let activityStream = JSON.parse(localStorage.activityStream);
-            let activitiesMoving = JSON.parse(localStorage.activitiesMoving);
-            let activitiesLatlng = JSON.parse(localStorage.activitiesLatlng);
-            let activitiesDistance = JSON.parse(localStorage.activitiesDistance);
-            let activitiesVitesse = JSON.parse(localStorage.activitiesVitesse);
-            let activitiesTime = JSON.parse(localStorage.activitiesTime);
-            let activitiesAltitude = JSON.parse(localStorage.activitiesAltitude);
-            let activitiesGrade = JSON.parse(localStorage.activitiesGrade);
-            let activitiesCadence = JSON.parse(localStorage.activitiesCadence);
-            let activitiesBpm = JSON.parse(localStorage.activitiesBpm);
-            let activitiesWatts = JSON.parse(localStorage.activitiesWatts);
+            let activityStream = JSON.parse(sessionStorage.activityStream);
+            let activitiesMoving = JSON.parse(sessionStorage.activitiesMoving);
+            let activitiesLatlng = JSON.parse(sessionStorage.activitiesLatlng);
+            let activitiesDistance = JSON.parse(sessionStorage.activitiesDistance);
+            let activitiesVitesse = JSON.parse(sessionStorage.activitiesVitesse);
+            let activitiesTime = JSON.parse(sessionStorage.activitiesTime);
+            let activitiesAltitude = JSON.parse(sessionStorage.activitiesAltitude);
+            let activitiesGrade = JSON.parse(sessionStorage.activitiesGrade);
+            let activitiesCadence = JSON.parse(sessionStorage.activitiesCadence);
+            let activitiesBpm = JSON.parse(sessionStorage.activitiesBpm);
+            let activitiesWatts = JSON.parse(sessionStorage.activitiesWatts);
 
-            activityStream[sessionStorage.activityIndex] = "true";
+            activityStream = sessionStorage.activityIndex;
             for (let i = 0; i < response.length; i++) {
                 if (response[i].type == "moving") {
                     moving = response[i].data;
-                    activitiesMoving[sessionStorage.activityIndex] = moving;
+                    activitiesMoving = moving;
                 }
                 else if (response[i].type == "latlng") {
                     latlng = response[i].data;
-                    activitiesLatlng[sessionStorage.activityIndex] = latlng;
+                    activitiesLatlng = latlng;
                 }
                 else if (response[i].type == "distance") {
                     distance = response[i].data;
-                    activitiesDistance[sessionStorage.activityIndex] = distance;
+                    activitiesDistance = distance;
                 }
                 else if (response[i].type == "velocity_smooth") {
                     vitesse = response[i].data;
                     for (let i = 0; i < vitesse.length; i++) {
                         vitesse[i] = vitesse[i] * 3.6
                     }        
-                    activitiesVitesse[sessionStorage.activityIndex] = vitesse;
+                    activitiesVitesse = vitesse;
                 }
                 else if (response[i].type == "time") {
                     time = response[i].data;
-                    activitiesTime[sessionStorage.activityIndex] = time;
+                    activitiesTime = time;
                 }
                 else if (response[i].type == "altitude") {
                     altitude = response[i].data;
-                    activitiesAltitude[sessionStorage.activityIndex] = altitude;
+                    activitiesAltitude = altitude;
                 }
                 else if (response[i].type == "grade_smooth") {
                     grade = response[i].data;
-                    activitiesGrade[sessionStorage.activityIndex] = grade;
+                    activitiesGrade = grade;
                 }
                 else if (response[i].type == "cadence") {
                     cadence = response[i].data;
-                    activitiesCadence[sessionStorage.activityIndex] = cadence;
+                    activitiesCadence = cadence;
                 }
                 else if (response[i].type == "heartrate") {
                     bpm = response[i].data;
-                    activitiesBpm[sessionStorage.activityIndex] = bpm;
+                    activitiesBpm = bpm;
                 }
                 else if (response[i].type == "watts") {
                     watts = response[i].data;
-                    activitiesWatts[sessionStorage.activityIndex] = watts; 
+                    activitiesWatts = watts; 
                 }
             }
 
-            localStorage.activityStream = JSON.stringify(activityStream);
-            localStorage.activitiesMoving = JSON.stringify(activitiesMoving);
-            localStorage.activitiesLatlng = JSON.stringify(activitiesLatlng);
-            localStorage.activitiesDistance = JSON.stringify(activitiesDistance);
-            localStorage.activitiesVitesse = JSON.stringify(activitiesVitesse);
-            localStorage.activitiesTime = JSON.stringify(activitiesTime);
-            localStorage.activitiesAltitude = JSON.stringify(activitiesAltitude);
-            localStorage.activitiesGrade = JSON.stringify(activitiesGrade);
-            localStorage.activitiesCadence = JSON.stringify(activitiesCadence);
-            localStorage.activitiesWatts = JSON.stringify(activitiesWatts);
+            sessionStorage.activityStream = JSON.stringify(activityStream);
+            sessionStorage.activitiesMoving = JSON.stringify(activitiesMoving);
+            sessionStorage.activitiesLatlng = JSON.stringify(activitiesLatlng);
+            sessionStorage.activitiesDistance = JSON.stringify(activitiesDistance);
+            sessionStorage.activitiesVitesse = JSON.stringify(activitiesVitesse);
+            sessionStorage.activitiesTime = JSON.stringify(activitiesTime);
+            sessionStorage.activitiesAltitude = JSON.stringify(activitiesAltitude);
+            sessionStorage.activitiesGrade = JSON.stringify(activitiesGrade);
+            sessionStorage.activitiesCadence = JSON.stringify(activitiesCadence);
+            sessionStorage.activitiesWatts = JSON.stringify(activitiesWatts);
 
             postLegend(JSON.parse(localStorage.Activities)[sessionStorage.activityIndex], latlng , altitude, vitesse, distance, grade);
             postWatt(JSON.parse(localStorage.Activities)[sessionStorage.activityIndex], latlng , altitude, vitesse, distance, grade);

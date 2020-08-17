@@ -69,7 +69,7 @@ var myChart = new Chart(ctx, {
             yAxes: [{
                 ticks: {
                     min: 0,
-                    max: Number(sessionStorage.vitesseMax)
+                    max: 0
                 },
                 display: false,
             }]
@@ -115,7 +115,7 @@ function postActivitiesStreamsSpeedChart(activitie, latlng , altitude, vitesse, 
             vitesseMax = vitesse[i]
         }
     }
-    sessionStorage.vitesseMax = vitesseMax;
+    myChart.options.scales.yAxes[0].ticks.max = vitesseMax;
 
     myChart.data.datasets = [{
         data: Zoomvitesse,
@@ -187,19 +187,7 @@ function updateSpeedChart(dataSpeed) {
         borderWidth: 1,
         lineTension: 0.0,
     }];
-    // {
-    //     label: 'vitesse (km/h)',
-    //     data: vitesseMoyData,
-    //     borderDash: [5, 3],
-    //     borderColor: [
-    //         'rgba(6, 141, 251, 0.3)',
-    //     ],
-    //     backgroundColor: [
-    //         'rgba(170, 170, 170, 0.0)',
-    //     ],
-    //     borderWidth: 1,
-    //     lineTension: 0.0,
-    // }
+    
     myChart.data.labels = kilometrage;
     myChart.update();
 }
