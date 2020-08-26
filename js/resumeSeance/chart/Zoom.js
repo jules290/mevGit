@@ -160,7 +160,7 @@ function ZoomVitesse(vitesse, ArrayLength) {
 
 function ZoomGrade(grade, ArrayLength) {
     let Zoomgrade = new Array()
-    if (ArrayLength < 1000) {
+    if (ArrayLength < 500) {
         for (var i = 0; i <  (grade.length)-supprEnd; i++) {
             Zoomgrade = grade
         }
@@ -187,20 +187,21 @@ function ZoomGrade(grade, ArrayLength) {
     }
     else if (ArrayLength < 5000) {
         for (var i = 0; i <  (grade.length/6)-supprEnd; i++) {
-            Zoomgrade[i] = Math.round((grade[i*6] + grade[i*6+1] + grade[i*6+2] + grade[i*6+3] + grade[i*6+4] 
-                + grade[i*6+5])/0.6)/10
+            Zoomgrade[i] = Math.round((grade[i*6] + grade[i*6+1] + grade[i*6+2] + grade[i*6+3] 
+                + grade[i*6+4] + grade[i*6+5])/0.6)/10
         }
     }
     else if (ArrayLength < 6000) {
         for (var i = 0; i <  (grade.length/8)-supprEnd; i++) {
             Zoomgrade[i] = Math.round((grade[i*8] + grade[i*8+1] + grade[i*8+2] + grade[i*8+3] + grade[i*8+4] 
-                + grade[i*8+5] + grade[i*8+6] + grade[i*8+7])/0.8)/10
+                + grade[i*8+5] +  grade[i*8+6] + grade[i*8+7])/0.8)/10
         }
     }
     else if (ArrayLength < 7000) {
         for (var i = 0; i <  (grade.length/10)-supprEnd; i++) {
-            Zoomgrade[i-1] = Math.round((grade[i*10] + grade[i*10+1] + grade[i*10+2] + grade[i*10+3] + grade[i*10+4] + grade[i*10+5] +  
-                grade[i*10+6] + grade[i*10+7] + grade[i*10+8] + grade[i*10+9])/1.0)/10
+            Zoomgrade[i] = Math.round((grade[i*10] + grade[i*10+1] + grade[i*10+2] + grade[i*10+3] 
+                + grade[i*10+4] + grade[i*10+5] + grade[i*10+6] + grade[i*10+7] + grade[i*10+8] 
+                + grade[i*10+9])/1.0)/10
         }
     }
     else if (ArrayLength < 8000) {
@@ -212,23 +213,25 @@ function ZoomGrade(grade, ArrayLength) {
     }
     else if (ArrayLength < 9000) {
         for (var i = 0; i <  (grade.length/14)-supprEnd; i++) {
-            Zoomgrade[i] = Math.round((grade[i*14] + grade[i*14+1] + grade[i*14+2] + grade[i*14+3] + grade[i*14+4] + grade[i*14+5] +  
-                grade[i*14+6] + grade[i*14+7] + grade[i*14+8] + grade[i*14+9] + grade[i*14+10] + grade[i*14+11] + grade[i*14+12] + 
-                grade[i*14+13])/1.4)/10
+            Zoomgrade[i] = Math.round((grade[i*14] + grade[i*14+1] + grade[i*14+2] + grade[i*14+3] 
+                + grade[i*14+4] + grade[i*14+5] +  grade[i*14+6] + grade[i*14+7] + grade[i*14+8] + grade[i*14+9] 
+                + grade[i*14+10] + grade[i*14+11] + grade[i*14+12] + grade[i*14+13])/1.4)/10
         }
     }
     else if (ArrayLength < 10000) {
         for (var i = 0; i <  (grade.length/16)-supprEnd; i++) {
-            Zoomgrade[i] = Math.round((grade[i*16] + grade[i*16+1] + grade[i*16+2] + grade[i*16+3] + grade[i*16+4] + grade[i*16+5] +  
-                grade[i*16+6] + grade[i*16+7] + grade[i*16+8] + grade[i*16+9] + grade[i*16+10] + grade[i*16+11] + grade[i*16+12] + 
-                grade[i*16+13] + grade[i*16+14] + grade[i*16+15])/1.6)/10
+            Zoomgrade[i] = Math.round((grade[i*16] + grade[i*16+1] + grade[i*16+2] + grade[i*16+3] 
+                + grade[i*16+4] + grade[i*16+5] +  grade[i*16+6] + grade[i*16+7] + grade[i*16+8] + grade[i*16+9] 
+                + grade[i*16+10] + grade[i*16+11] + grade[i*16+12] + grade[i*16+13] + grade[i*16+14] 
+                + grade[i*16+15])/1.6)/10
         }
     }
     else if (ArrayLength > 10000) {
         for (var i = 0; i <  (grade.length/18)-supprEnd; i++) {
-            Zoomgrade[i] = Math.round((grade[i*18] + grade[i*18+1] + grade[i*18+2] + grade[i*18+3] + grade[i*18+4] + grade[i*18+5] +  
-                grade[i*18+6] + grade[i*18+7] + grade[i*18+8] + grade[i*18+9] + grade[i*18+10] + grade[i*18+11] + grade[i*18+12] + 
-                grade[i*18+13] + grade[i*18+14] + grade[i*18+15] + grade[i*18+16] + grade[i*18+17])/1.8)/10
+            Zoomgrade[i] = Math.round((grade[i*18] + grade[i*18+1] + grade[i*18+2] + grade[i*18+3] 
+                + grade[i*18+4] + grade[i*18+5] +  grade[i*18+6] + grade[i*18+7] + grade[i*18+8] + grade[i*18+9] 
+                + grade[i*18+10] + grade[i*18+11] + grade[i*18+12] + grade[i*18+13] + grade[i*18+14] 
+                + grade[i*18+15] + grade[i*18+16] + grade[i*18+17])/1.8)/10
         }
     }
 

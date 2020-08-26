@@ -39,6 +39,7 @@ function objectifState(state) {
     if (state == "list") {
         $("#list").show();
         $("#add").hide();
+        postListObjectifs()
     }
     else if (state == "add") {
         $("#add").show();
@@ -52,11 +53,6 @@ function objectifState(state) {
         $("#typeTempsSelectBoxContenair").hide();
         $("#typeVitesseSelectBoxContenair").hide();
         $("#typePuissanceSelectBoxContenair").hide();
-
-        $("#DateInputBox").hide();
-        $("#dateCloseBox").hide();
-
-        setMinData();
     }
 }
 
@@ -65,21 +61,30 @@ $("#SegmentSelect").change(function () {
     $("#SegmentDistanceSelectBoxContenair").hide()
 
     $("#TypeOptVitesse").show();
-    $("#TypOptPuissance").show();
+    $("#TypeOptPuissance").show();
+    $("#TypeOptTemps").show();
+    $("#TypeOptDistance").show();
+
     let valeur = document.getElementById("SegmentSelect").value;
 
-    if (valeur == "Annuelle") {
-        $("#TypeOptVitesse").hide();
-        $("#TypOptPuissance").hide();
-    }
-    else if (valeur == "Activité") {
-        
-    }
-    else if (valeur == "Temps") {
-        $("#SegmentTempsSelectBoxContenair").show();
-    }
-    else if (valeur == "Distance") {
-        $("#SegmentDistanceSelectBoxContenair").show();
+    switch (valeur) {
+        case "Annuelle":
+            $("#TypeOptVitesse").hide();
+            $("#TypeOptPuissance").hide();
+            break;
+
+        case "Activité":
+            break;
+
+        case "Temps":
+            $("#SegmentTempsSelectBoxContenair").show();
+            $("#TypeOptTemps").hide();
+            break;
+            
+        case "Distance":
+            $("#SegmentDistanceSelectBoxContenair").show();
+            $("#TypeOptDistance").hide();
+            break;
     }
 })
 
@@ -93,80 +98,32 @@ $("#typeSelect").change(function () {
     $("#typePuissanceSelectBoxContenair").hide();
 
     $("#SegmentOptAnnuelle").show();
+    $("#SegmentOptTemps").show();
+    $("#SegmentOptDistance").show();
 
-    if (valeur == "Distance") {
-        $("#typeDistanceSelectBoxContenair").show();
-    }
-    else if (valeur == "Dénivelé") {
-        $("#typeDeniveleSelectBoxContenair").show();
-    }
-    else if (valeur == "Temps") {
-        $("#typeTempsSelectBoxContenair").show();
-    }
-    else if (valeur == "Vitesse") {
-        $("#typeVitesseSelectBoxContenair").show();
-        $("#SegmentOptAnnuelle").hide();
-    }
-    else if (valeur == "Puissance") {
-        $("#typePuissanceSelectBoxContenair").show();
-    }
-})
+    switch (valeur) {
+        case "Distance":
+            $("#typeDistanceSelectBoxContenair").show();
+            $("#SegmentOptDistance").hide();
+            break;
 
-$("#showDateInput").click(function () {
-    $("#showDateInput").hide(300);
-    setTimeout(() => {
-        $("#DateInputBox").show(300);
-        $("#dateCloseBox").show(300);
-    }, 300);
-})
+        case "Dénivelé":
+            $("#typeDeniveleSelectBoxContenair").show();
+            break;
 
-$("#dateCloseBox").click(function () {
-    $("#DateInputBox").hide(300);
-    $("#dateCloseBox").hide(300);
-    setTimeout(() => {
-        $("#showDateInput").show(300);
-    }, 300);
-})
+        case "Temps":
+            $("#typeTempsSelectBoxContenair").show();
+            $("#SegmentOptTemps").hide();
+            break;
 
-function getAujourdHui() {
-    d = new Date();
-    annee = d.getFullYear();
-    mois = d.getMonth() + 1;
-    date = d.getDate();
-    if(annee == 2020) {
-        if(mois == 1) { return 1 + date - 1 }
-        else if(mois == 2) { return 32 + date - 1 }
-        else if(mois == 3) { return 61 + date - 1 }
-        else if(mois == 4) { return 92 + date - 1 }
-        else if(mois == 5) { return 122 + date - 1 }
-        else if(mois == 6) { return 153 + date - 1 }
-        else if(mois == 7) { return 183 + date - 1 }
-        else if(mois == 8) { return 214 + date - 1 }
-        else if(mois == 9) { return 245 + date - 1 }
-        else if(mois == 10) { return 275 + date - 1 }
-        else if(mois == 11) { return 306 + date - 1 }
-        else if (mois == 12) { return 336 + date - 1 }  
-    }
-}
+        case "Vitesse":
+            $("#typeVitesseSelectBoxContenair").show();
+            $("#SegmentOptAnnuelle").hide();
+            break;
 
-function addZero(number) {
-    if (number < 10) {
-        return "0" + number;
-    }
-    else {
-        return number;
-    }
-}
-
-function setMinData() {
-    document.getElementById("DateInput").value = annee + "-" + addZero(mois) + "-" + addZero(date);
-    document.getElementById("DateInput").min = annee + "-" + addZero(mois) + "-" + addZero(date);
-}
-
-$("#addValidation").click(function () {
-    let SegmentSelectValue = document.getElementById("SegmentSelect").value;
-    let typeSelectValue = document.getElementById("typeSelect").value;
-    if (SegmentSelectValue && typeSelect) {
-        alert()
+        case "Puissance":
+            $("#typePuissanceSelectBoxContenair").show();
+            $("#SegmentOptAnnuelle").hide();
+            break;
     }
 })

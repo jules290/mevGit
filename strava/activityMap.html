@@ -31,26 +31,32 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
         <script src="../js/polylineDecoder.js"></script>
+        
+        <script src="../js/backgroundScript/backgroundFunction.js"></script>
+        <script src="../js/backgroundScript/backgroundScript.js"></script>
     </head>
     <body>
         
         <nav id="mySidenav" class="sidenav">
-            <a class="a_accueil" id="accueil" href="/index.html">accueil</a>
-
-            <a class="a_programme" id="prg">Programmes<br>D'Entrainement</a><p id="arrowDownPrg"></p>
-            <a id="prgmy" href="/programme/prgmy.html">Mon Programme</a>
-            <a id="prgchc" href="/programme/prgchc.html">Choisir Un Programme</a>
-
-            <a id="objectif" href="/strava/objectif.html" class="a_parametre">Objectif</a>
-
-            <a id="stravaConnect" class="a_strava" href="/strava/stravaConnect.html">Se Connecter à Strava</a>
-            <a id="strava" class="a_strava">strava</a>
-            <a id="stravaActivite" class="a_strava_menu" href="/strava/activite.html">Activités</a>
-            <a id="stravaMap" class="a_strava_menu" href="/strava/activityMap.html">Carte Des Activités</a>
-
-            <a class="a_parametre" href="/setting/AthleteSettings.html">Paramètres De L'Athlète</a>
+            <a class="a_accueil" id="accueil" href="../index.html">accueil</a>
             
-            <a class="a_parametre" href="/support/aide.html">Aide</a>
+            <a class="a_programme" id="prg">Programmes<br>Entrainement</a>
+            <a id="prgmy" href="../programme/prgmy.html">Mon Programme</a>
+            <a id="prgchc" href="../programme/prgchc.html">Choisir Programme</a>
+            
+            <a id="stravaConnect" class="a_strava" href="stravaConnect.html">Connection Strava</a>
+            
+            <div id="strava">
+                <a id="stravaActivite" class="a_strava">Activités</a>
+                <a id="stravaActiviteListe" class="a_strava_menu" href="activite.html?list">Liste Activités</a>
+                <a id="stravaActiviteCarte" class="a_strava_menu" href="activityMap.html">Carte Activités</a>
+                
+                <a id="stravaObjectifs" class="a_strava" href="objectif.html">Objectifs</a>
+            </div>
+            
+            <a class="a_parametre" href="../setting/AthleteSettings.html">Paramètres Athlète</a>
+            
+            <a class="a_parametre" href="../support/aide.html">Aide</a>
         </nav>
         
         <div id="header">

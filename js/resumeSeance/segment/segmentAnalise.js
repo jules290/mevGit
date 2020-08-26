@@ -71,7 +71,6 @@ function segmentAnalyseElevationChart(segmentDataAltitude, segmentDataGrade, ctx
                 backgroundColor: "rgba(0, 0, 0, 0.6)",
                 callbacks: {
                     label: function(tooltipItems, data) { 
-                        console.log(tooltipItems)
                         return "pente: " + segmentDataGrade[tooltipItems.index] + "%";
                     }
                 }

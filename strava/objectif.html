@@ -21,28 +21,35 @@
         <link rel="stylesheet" href="../css/style.css" media="screen">
         <link rel="stylesheet" href="../css/menunav.css" media="screen">
         <link rel="stylesheet" href="../css/header.css" media="screen">
-        <link rel="stylesheet" href="../css//strava/objectif.css" media="screen">
+        <link rel="stylesheet" href="../css/objectif/objectif.css" media="screen">
+        <link rel="stylesheet" href="../css/objectif/list.css" media="screen">
+        <link rel="stylesheet" href="../css/objectif/add.css" media="screen">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
-        <script src="../js/dayStockage.js"></script>
+        
+        <script src="../js/backgroundScript/backgroundFunction.js"></script>
+        <script src="../js/backgroundScript/backgroundScript.js"></script>
     </head>
     <body>
         
         <nav id="mySidenav" class="sidenav">
             <a class="a_accueil" id="accueil" href="../index.html">accueil</a>
-
-            <a class="a_programme" id="prg">Programmes<br>D'Entrainement</a><p id="arrowDownPrg"></p>
+            
+            <a class="a_programme" id="prg">Programmes<br>Entrainement</a>
             <a id="prgmy" href="../programme/prgmy.html">Mon Programme</a>
-            <a id="prgchc" href="../programme/prgchc.html">Choisir Un Programme</a>
-
-            <a id="objectif" href="./strava/objectif.html" class="a_parametre">Objectif</a>
-
-            <a id="stravaConnect" class="a_strava" href="./stravaConnect.html">Se Connecter à Strava</a>
-            <a id="strava" class="a_strava" >strava</a>
-            <a id="stravaActivite" class="a_strava_menu" href="./activite.html">Activités</a>
-            <a id="stravaMap" class="a_strava_menu" href="./activityMap.html">Carte Des Activités</a>
-
-            <a class="a_parametre" href="../setting/AthleteSettings.html">Paramètres De L'Athlète</a>
+            <a id="prgchc" href="../programme/prgchc.html">Choisir Programme</a>
+            
+            <a id="stravaConnect" class="a_strava" href="stravaConnect.html">Connection Strava</a>
+            
+            <div id="strava">
+                <a id="stravaActivite" class="a_strava">Activités</a>
+                <a id="stravaActiviteListe" class="a_strava_menu" href="activite.html?list">Liste Activités</a>
+                <a id="stravaActiviteCarte" class="a_strava_menu" href="activityMap.html">Carte Activités</a>
+                
+                <a id="stravaObjectifs" class="a_strava" href="objectif.html">Objectifs</a>
+            </div>
+            
+            <a class="a_parametre" href="../setting/AthleteSettings.html">Paramètres Athlète</a>
             
             <a class="a_parametre" href="../support/aide.html">Aide</a>
         </nav>
@@ -71,16 +78,12 @@
                         <p id="typeT" class="listHeaderT">Type</p>
                     </div>
 
-                    <div id="temps" class="listHeaderTContenair">
-                        <p id="tempsT" class="listHeaderT">Temps</p>
-                    </div>
-
                     <div id="valeur" class="listHeaderTContenair">
                         <p id="valeurT" class="listHeaderT">Valeur</p>
                     </div>
 
-                    <div id="date" class="listHeaderTContenair">
-                        <p id="dateT" class="listHeaderT">Date</p>
+                    <div id="complete" class="listHeaderTContenair">
+                        <p id="completeT" class="listHeaderT">Completé</p>
                     </div>
                 </div>
                 
@@ -99,9 +102,9 @@
                         <select class="" id="SegmentSelect">
                             <option value="" disabled selected>Segment</option>
                             <option value="Annuelle" id="SegmentOptAnnuelle">Annuelle</option>
-                            <option value="Activité">Activité</option>
-                            <option value="Temps">Temps</option>
-                            <option value="Distance">Distance</option>
+                            <option value="Activité" id="SegmentOptActivité">Activité</option>
+                            <option value="Temps" id="SegmentOptTemps">Temps</option>
+                            <option value="Distance" id="SegmentOptDistance">Distance</option>
                         </select>
                     </div>
                 </div>
@@ -111,8 +114,8 @@
                         <input type="number" id="SegmentDistance" class="inputNumber" placeholder="Distance">
                         <div class="selectType" id="">
                             <select class="" id="SegmentDistanceSelect">
-                                <option value="">km</option>
-                                <option value="">m</option>
+                                <option value="km">km</option>
+                                <option value="m">m</option>
                             </select>
                         </div>
                     </div>
@@ -121,9 +124,9 @@
                         <input type="number" id="SegmentTemps" class="inputNumber" min="0" max="60" placeholder="temps">
                         <div class="selectType" id="">
                             <select class="" id="SegmentTempsSelect">
-                                <option value="">sec</option>
-                                <option value="">min</option>
-                                <option value="">h</option>
+                                <option value="sec">sec</option>
+                                <option value="min">min</option>
+                                <option value="h">h</option>
                             </select>
                         </div>
                     </div>
@@ -133,30 +136,30 @@
                     <div class="select" id="typeSelectBox">
                         <select class="" id="typeSelect">
                             <option value="" disabled selected>Type</option>
-                            <option value="Distance">Distance</option>
-                            <option value="Dénivelé">Dénivelé</option>
-                            <option value="Temps">Temps</option>
+                            <option value="Distance" id="TypeOptDistance">Distance</option>
+                            <option value="Dénivelé" id="TypeOptDénivelé">Dénivelé</option>
+                            <option value="Temps" id="TypeOptTemps">Temps</option>
                             <option value="Vitesse" id="TypeOptVitesse">Vitesse</option>
-                            <option value="Puissance" id="TypOptPuissance">Puissance</option>
+                            <option value="Puissance" id="TypeOptPuissance">Puissance</option>
                         </select>
                     </div>
                 </div>
 
-               <div id="typeSwitch">
-                   <div id="typeDistanceSelectBoxContenair" class="selectContenair">
-                        <input type="number" id="SegmentDistance" class="inputNumber" min="0" placeholder="Distance">
+                <div id="typeSwitch">
+                    <div id="typeDistanceSelectBoxContenair" class="selectContenair">
+                        <input type="number" id="typeDistance" class="inputNumber" min="0" placeholder="Distance">
                         <div class="selectType" id="">
-                            <select class="" id="SegmentDistanceSelect">
-                                <option value="">km</option>
-                                <option value="">m</option>
+                            <select class="" id="typeDistanceSelect">
+                                <option value="km">km</option>
+                                <option value="m">m</option>
                             </select>
                         </div>
                     </div>
 
                     <div id="typeDeniveleSelectBoxContenair" class="selectContenair">
-                        <input type="number" id="SegmentDenivele" class="inputNumber" min="0" placeholder="Dénivelé">
+                        <input type="number" id="typeDenivele" class="inputNumber" min="0" placeholder="Dénivelé">
                         <div class="selectType" id="">
-                            <select class="" id="SegmentDeniveleSelect">
+                            <select class="" id="typeDeniveleSelect">
                                 <option value="">m</option>
                             </select>
                         </div>
@@ -166,9 +169,9 @@
                         <input type="number" id="typeTemps" class="inputNumber" min="0" max="60" placeholder="Temps">
                         <div class="selectType" id="">
                             <select class="" id="typeTempsSelect">
-                                <option value="">sec</option>
-                                <option value="">min</option>
-                                <option value="">h</option>
+                                <option value="sec">sec</option>
+                                <option value="min">min</option>
+                                <option value="h">h</option>
                             </select>
                         </div>
                     </div>
@@ -178,7 +181,6 @@
                         <div class="selectType" id="">
                             <select class="" id="typeVitesseSelect">
                                 <option value="">km/h</option>
-                                <option value="">m/s</option>
                             </select>
                         </div>
                     </div>
@@ -187,33 +189,23 @@
                         <input type="number" id="typePuissance" class="inputNumber" min="0" placeholder="Puissance">
                         <div class="selectType" id="">
                             <select class="" id="typePuissanceSelect">
-                                <option value="">w</option>
+                                <option value="w">w</option>
                             </select>
                         </div>
                     </div>
                 </div>
 
-                    <div id="DateInputBoxContenair" class="selectContenair">
-                        <div id="showDateInput">
-                            <p id="showDateInputT">Définir Date D'Echeance</p>
-                        </div>
-
-                        <div class="Input" id="DateInputBox">
-                            <input type="date" value="2020-08-10" min="2020-08-10" id="DateInput">
-                        </div>
-                        <div id="dateCloseBox">
-                            <img src="../img/closeSyncIcon.png" id="dateClose">
-                        </div>
-                    </div>
-
-                    <div id="addValidation">
-                        <p id="addValidationT">Ajouter Objectif</p>
-                    </div>
+                <div id="addValidation">
+                    <p id="addValidationT">Ajouter Objectif</p>
+                </div>
             </section>
         </section>
 
         <script src="../js/menunav_prg.js"></script>
         <script src="../js/objectif/objectifFront.js"></script>
+        <script src="../js/objectif/objectifFormCheck.js"></script>
+        <script src="../js/objectif/objectifAdd.js"></script>
+        <script src="../js/objectif/objectifPostList.js"></script>
     </body>
 
 </html>

@@ -3,10 +3,17 @@ $(document).ready(function () {
 });
 
 function activitiesState() {
-    if (sessionStorage.ActivitiesState != "resumeSeance") {
-        sessionStorage.ActivitiesState = "list"
+    var url = window.location.href;
+    var list = url.search("list");
+    if (list != -1) {
+        main("list");
     }
-    main(sessionStorage.ActivitiesState)
+    else {
+        if (sessionStorage.ActivitiesState != "resumeSeance") {
+            sessionStorage.ActivitiesState = "list"
+        }
+        main(sessionStorage.ActivitiesState)
+    }
 }
 
 function main(state) {
@@ -22,5 +29,6 @@ function main(state) {
         $("#main2").show();
         $("#sync").hide();
         postData()
+        segmentStorage()
     }
 }

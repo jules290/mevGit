@@ -103,8 +103,6 @@ function getActivities(length) {
         }
     }
     $.ajax(settings).done(function (response) {
-        console.log(response)
-
         locastorageActivities(response)
         postListActivité()
         window.location.reload();
@@ -152,17 +150,18 @@ function locastorageActivities(response) {
         }
 
         if (sessionStorage.activityStream) {
-            activityStream = uptadeAll.concat(JSON.parse(sessionStorage.activityStream))
-            activitiesMoving = uptadeAll.concat(JSON.parse(sessionStorage.activitiesMoving))
-            activitiesLatlng = uptadeAll.concat(JSON.parse(sessionStorage.activitiesLatlng))
-            activitiesDistance = uptadeAll.concat(JSON.parse(sessionStorage.activitiesDistance))
-            activitiesVitesse = uptadeAll.concat(JSON.parse(sessionStorage.activitiesVitesse))
-            activitiesTime = uptadeAll.concat(JSON.parse(sessionStorage.activitiesTime))
-            activitiesAltitude = uptadeAll.concat(JSON.parse(sessionStorage.activitiesAltitude))
-            activitiesGrade = uptadeAll.concat(JSON.parse(sessionStorage.activitiesGrade))
-            activitiesCadence = uptadeAll.concat(JSON.parse(sessionStorage.activitiesCadence))
-            activitiesBpm = uptadeAll.concat(JSON.parse(sessionStorage.activitiesBpm))
-            activitiesWatts = uptadeAll.concat(JSON.parse(sessionStorage.activitiesWatts))
+            activityStream = uptadeAll.concat(JSON.parse(sessionStorage.activityStream));
+            activitiesMoving = uptadeAll.concat(JSON.parse(sessionStorage.activitiesMoving));
+            activitiesLatlng = uptadeAll.concat(JSON.parse(sessionStorage.activitiesLatlng));
+            activitiesDistance = uptadeAll.concat(JSON.parse(sessionStorage.activitiesDistance));
+            activitiesVitesse = uptadeAll.concat(JSON.parse(sessionStorage.activitiesVitesse));
+            activitiesTime = uptadeAll.concat(JSON.parse(sessionStorage.activitiesTime));
+            activitiesAltitude = uptadeAll.concat(JSON.parse(sessionStorage.activitiesAltitude));
+            activitiesGrade = uptadeAll.concat(JSON.parse(sessionStorage.activitiesGrade));
+            activitiesCadence = uptadeAll.concat(JSON.parse(sessionStorage.activitiesCadence));
+            activitiesBpm = uptadeAll.concat(JSON.parse(sessionStorage.activitiesBpm));
+            activitiesWatts = uptadeAll.concat(JSON.parse(sessionStorage.activitiesWatts));
+            efforts = uptadeAll.concat(JSON.parse(localStorage.efforts));
 
             sessionStorage.activityStream = JSON.stringify(activityStream);
             sessionStorage.activitiesMoving = JSON.stringify(activitiesMoving);
@@ -175,6 +174,7 @@ function locastorageActivities(response) {
             sessionStorage.activitiesCadence = JSON.stringify(activitiesCadence);
             sessionStorage.activitiesBpm = JSON.stringify(activitiesBpm);
             sessionStorage.activitiesWatts = JSON.stringify(activitiesWatts);
+            localStorage.efforts = JSON.stringify(efforts);
         }
 
         lCActivities = JSON.parse(localStorage.Activities)
@@ -215,7 +215,7 @@ function postListActivité() {
             sessionStorage.activityIndex = index;
             sessionStorage.ActivitiesState = "resumeSeance";
             sessionStorage.postData = 1;
-            window.location.reload();
+            window.location.href ="activite.html"
         }
         activities.appendChild(activitiesT);
 

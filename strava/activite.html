@@ -30,7 +30,6 @@
         crossorigin=""></script>     
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
-        <script src="../js/polylineDecoder.js"></script>
         <script src='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.js'></script>
 
         <link rel="stylesheet" href="../css/strava/resumeSeance/resumeSeance.css" media="screen">
@@ -41,26 +40,32 @@
         <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
         integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
         crossorigin=""></script>
-        <script src="../js/resumeSeance/resumeSeanceFront.js"></script>
+        <script src="../js/resumeSeance/front/resumeSeanceFront.js"></script>
+
+        <script src="../js/backgroundScript/backgroundFunction.js"></script>
+        <script src="../js/backgroundScript/backgroundScript.js"></script>
     </head>
     <body>
         <nav id="mySidenav" class="sidenav">
-            <a class="a_accueil" id="accueil" href="/index.html">accueil</a>
-
-            <a class="a_programme" id="prg">Programmes<br>D'Entrainement</a><p id="arrowDownPrg"></p>
-            <a id="prgmy" href="/programme/prgmy.html">Mon Programme</a>
-            <a id="prgchc" href="/programme/prgchc.html">Choisir Un Programme</a>
-
-            <a id="objectif" href="/strava/objectif.html" class="a_parametre">Objectif</a>
-
-            <a id="stravaConnect" class="a_strava" href="/strava/stravaConnect.html">Se Connecter à Strava</a>
-            <a id="strava" class="a_strava">strava</a>
-            <a id="stravaActivite" class="a_strava_menu" href="/strava/activite.html">Activités</a>
-            <a id="stravaMap" class="a_strava_menu" href="/strava/activityMap.html">Carte Des Activités</a>
-
-            <a class="a_parametre" href="/setting/AthleteSettings.html">Paramètres De L'Athlète</a>
+            <a class="a_accueil" id="accueil" href="../index.html">accueil</a>
             
-            <a class="a_parametre" href="/support/aide.html">Aide</a>
+            <a class="a_programme" id="prg">Programmes<br>Entrainement</a>
+            <a id="prgmy" href="../programme/prgmy.html">Mon Programme</a>
+            <a id="prgchc" href="../programme/prgchc.html">Choisir Programme</a>
+            
+            <a id="stravaConnect" class="a_strava" href="stravaConnect.html">Connection Strava</a>
+            
+            <div id="strava">
+                <a id="stravaActivite" class="a_strava">Activités</a>
+                <a id="stravaActiviteListe" class="a_strava_menu" href="activite.html?list">Liste Activités</a>
+                <a id="stravaActiviteCarte" class="a_strava_menu" href="activityMap.html">Carte Activités</a>
+                
+                <a id="stravaObjectifs" class="a_strava" href="objectif.html">Objectifs</a>
+            </div>
+            
+            <a class="a_parametre" href="../setting/AthleteSettings.html">Paramètres Athlète</a>
+            
+            <a class="a_parametre" href="../support/aide.html">Aide</a>
         </nav>
         
         <div id="header">
@@ -199,11 +204,6 @@
                 </svg>
 
                 <div id="segmentEffort">
-                    <div id="view">
-                        <button id="viewEffort" class="view">Efforts</button>
-                        <button id="viewSegment" class="view">Segments</button>
-                    </div>
-                    <div id="viewSwitch"></div>
                     <div id="segmentList">
                         <div id="SegmentTableHeader">
                             <p class="segmentKOM">PR</p>
@@ -223,25 +223,32 @@
             </section>
         </div>
 
-        <script src="../js/activite.js"></script>
         <script src="../js/menunav_prg.js"></script>
-
-        <script src="../js/resumeSeance/postData.js"></script>
-        <script src="../js/resumeSeance/data.js"></script>
-        <script src="../js/resumeSeance/leafletMap.js"></script>
         <script src="../js/polylineDecoder.js"></script>
-        <script src="../js/resumeSeance/resumeSeanceDisplay.js"></script>
-        <script src="../js/resumeSeance/resumeSeance.js"></script>
-        <script src="../js/resumeSeance/Zoom.js"></script>
-        <script src="../js/resumeSeance/speedChart.js"></script>
-        <script src="../js/resumeSeance/elevationChart.js"></script>
-        <script src="../js/resumeSeance/watt.js"></script>
-        <script src="../js/resumeSeance/legend.js"></script>
-        <script src="../js/resumeSeance/segment.js"></script>
-        <script src="../js/resumeSeance/chartLineHover.js"></script>
-        <script src="../js/resumeSeance/svg.js"></script>
-        <script src="../js/resumeSeance/selectionData.js"></script>
-        <script src="../js/resumeSeance/segmentAnalise.js"></script>
+        <script src="../js/activite.js"></script>
+        <script src="../js/resumeSeance/reAuthResumeSeance.js"></script>
+
+        <script src="../js/resumeSeance/data/postData.js"></script>
+        <script src="../js/resumeSeance/data/baseData.js"></script>
+
+        <script src="../js/resumeSeance/map/leafletMap.js"></script>
+
+        <script src="../js/resumeSeance/front/resumeSeanceDisplay.js"></script>
+
+        <script src="../js/resumeSeance/chart/Zoom.js"></script>
+        <script src="../js/resumeSeance/chart/speedChart.js"></script>
+        <script src="../js/resumeSeance/chart/elevationChart.js"></script>
+        <script src="../js/resumeSeance/chart/watt.js"></script>
+        <script src="../js/resumeSeance/chart/legend.js"></script>
+        <script src="../js/resumeSeance/chart/chartLineHover.js"></script>
+        <script src="../js/resumeSeance/chart/svg.js"></script>
+        <script src="../js/resumeSeance/chart/selectionData.js"></script>
+
+        <script src="../js/resumeSeance/segment/segmentStockage.js"></script>
+        <script src="../js/resumeSeance/segment/segment.js"></script>
+        <script src="../js/resumeSeance/segment/segmentAnalise.js"></script>
+        <script src="../js/resumeSeance/segment/effortList.js"></script>
+        <script src="../js/resumeSeance/segment/getBestIntervale.js"></script>
     </body>
 
 </html>
