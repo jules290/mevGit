@@ -404,40 +404,57 @@ function postActivitiesStreamsaltitudeChart(activitie, latlng , altitude, vitess
     $("#extent").mousedown(function (clickEvent) {
         $("#svgaltitude").mousemove(function (event) {
             xClic = event.offsetX;
-            x =  xClic - (extent.width.animVal.value / 2);
+            xFirst = xClic - (extent.width.animVal.value / 2);
             extentWidth = extent.width.animVal.value;
+
+            if (xFirst > 21) {
+                x = xClic - (extent.width.animVal.value / 2);
+            }
+            else if (xFirst < 21) {
+                x = 21
+            }
+
+            if (xFirst + extent.width.animVal.value < sessionStorage.ctxWidth - 9) {
+                x2 = xClic - (extent.width.animVal.value / 2);
+            }
+            else if (xFirst + extent.width.animVal.value > sessionStorage.ctxWidth - 9) {
+                x2 = sessionStorage.ctxWidth - 9;
+            }
 
             sessionStorage.xClic = x;
             sessionStorage.xClic2 = x + extentWidth;
 
-            extent.setAttribute('x', x);
+            if (xFirst + extent.width.animVal.value < sessionStorage.ctxWidth - 9) extent.setAttribute('x', x);
+            else extent.setAttribute('x', (sessionStorage.ctxWidth - 9) - extent.width.animVal.value);
             resizeLeft.setAttribute('transform', `translate(${x - 3}, 0)`);
-            resizeRight.setAttribute('transform', `translate(${(x - 3) + extentWidth}, 0)`);
+            resizeRight.setAttribute('transform', `translate(${(x2 - 3)}, 0)`);
 
             selection = extent.width.animVal.value / (sessionStorage.ctxWidth - 30);
             x = (extent.x.animVal.value - 21) / (sessionStorage.ctxWidth - 30);
         
             Vitesse = JSON.parse(sessionStorage.activitiesVitesse);
             Altitude = JSON.parse(sessionStorage.activitiesAltitude);
+
             Grade = JSON.parse(sessionStorage.activitiesGrade);
+            Watt = JSON.parse(sessionStorage.activitiesWatts);
             let dataSpeed = new Array();
             for (let i = Math.round(x * Vitesse.length);( i - Math.round(x * Vitesse.length)) <  Math.round(Vitesse.length * selection); i++) {
                 dataSpeed[i - Math.round(x * Vitesse.length)] = Vitesse[i]
             }
 
-            Watt = wattEstimation(Altitude, Vitesse, Grade);
             let dataPower = new Array();
             for (let i = Math.round(x * Watt.length);( i - Math.round(x * Watt.length)) <  Math.round(Watt.length * selection); i++) {
                 dataPower[i - Math.round(x * Watt.length)] = Watt[i]
             }
 
-            let dataAltitude
-            for (let i = Math.round(x * Vitesse.length);( i - Math.round(x * Vitesse.length)) <  Math.round(Vitesse.length * selection); i++) {
-                dataAltitude[i - Math.round(x * Vitesse.length)] = Vitesse[i]
+            let dataAltitude = new Array();
+            for (let i = Math.round(x * Altitude.length);( i - Math.round(x * Altitude.length)) <  Math.round(Altitude.length * selection); i++) {
+                dataAltitude[i - Math.round(x * Altitude.length)] = Altitude[i]
             }
 
             updateSpeedChart(dataSpeed);
             updatePowerChart(dataPower);
+            setSelectionData( Math.round(x * Altitude.length), Math.round(Altitude.length * selection) )
         })
     })
 }
