@@ -301,7 +301,8 @@ function postActivitiesStreamsaltitudeChart(activitie, latlng , altitude, vitess
         ctxWidth = sessionStorage.ctxWidth;
         $("#svgaltitude").mousemove(function (event) {
             xClic = event.offsetX;
-            if(xClic2 - xClic> 0) {
+            sessionStorage.xClic = xClic;
+            if(xClic2 - xClic > 0) {
                 if (xClic >= 21) {
                     extent.setAttribute('width', xClic2 - xClic);
                     extent.setAttribute('x', xClic);
@@ -314,15 +315,21 @@ function postActivitiesStreamsaltitudeChart(activitie, latlng , altitude, vitess
                 }
             }
             else {
-                if (xClic <= ctxWidth - 9) {
+                if (xClic < ctxWidth - 9) {
                     extent.setAttribute('width', xClic - xClic2);
                     extent.setAttribute('x', xClic2);
-                    resizeLeft.setAttribute('transform', `translate(${xClic2 - 3}, 0)`);
+                    resizeLeft.setAttribute('transform', `translate(${xClic2 - 3}, 0)`);   
+                    resizeRight.setAttribute('transform', `translate(${xClic - 3}, 0)`);
+                    sessionStorage.xClic = xClic2;
+                    sessionStorage.xClic2 = xClic;
                 }
                 else {
                     extent.setAttribute('width', (ctxWidth - 9) - xClic2);
                     extent.setAttribute('x', xClic2);
-                    resizeLeft.setAttribute('transform', `translate(${(ctxWidth - 9)}, 0)`);
+                    resizeLeft.setAttribute('transform', `translate(${xClic2 - 3}, 0)`);   
+                    resizeRight.setAttribute('transform', `translate(${(ctxWidth - 9)}, 0)`);
+                    sessionStorage.xClic = xClic2;
+                    sessionStorage.xClic2 = ctxWidth - 9;
                 }
             }
 
@@ -343,9 +350,6 @@ function postActivitiesStreamsaltitudeChart(activitie, latlng , altitude, vitess
             updateSpeedChart(dataSpeed);
             updatePowerChart(dataPower);
             setSelectionData(startIndex, widthIndex)
-        })
-        $("#svgaltitude").mouseup(function() {
-            sessionStorage.xClic = xClic;
         })
     })
 
@@ -415,7 +419,7 @@ function postActivitiesStreamsaltitudeChart(activitie, latlng , altitude, vitess
             }
 
             if (xFirst + extent.width.animVal.value < sessionStorage.ctxWidth - 9) {
-                x2 = xClic - (extent.width.animVal.value / 2);
+                x2 = x + extent.width.animVal.value;
             }
             else if (xFirst + extent.width.animVal.value > sessionStorage.ctxWidth - 9) {
                 x2 = sessionStorage.ctxWidth - 9;
