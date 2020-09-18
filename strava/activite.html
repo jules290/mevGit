@@ -40,7 +40,6 @@
         <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
         integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
         crossorigin=""></script>
-        <script src="../js/resumeSeance/front/resumeSeanceFront.js"></script>
 
         <script src="../js/backgroundScript/backgroundFunction.js"></script>
         <script src="../js/backgroundScript/backgroundScript.js"></script>
@@ -61,6 +60,7 @@
                 <a id="stravaActiviteCarte" class="a_strava_menu" href="activityMap.html">Carte Activités</a>
                 
                 <a id="stravaObjectifs" class="a_strava" href="objectif.html">Objectifs</a>
+                <a id="stravaAthleteStats" class="a_strava" href="statistique.html">Statistiques Athlète</a>
             </div>
             
             <a class="a_parametre" href="../setting/AthleteSettings.html">Paramètres Athlète</a>
@@ -216,7 +216,7 @@
                         </div>
 
                         <div id="segmentEffortContainer">
-
+                            <div class="lds-dual-ring"></div>
                         </div>
                     </div>
                 </div>
@@ -225,7 +225,7 @@
 
         <script src="../js/menunav_prg.js"></script>
         <script src="../js/polylineDecoder.js"></script>
-        <script src="../js/activite.js"></script>
+        <script src="../js/activity/activite.js"></script>
         <script src="../js/resumeSeance/reAuthResumeSeance.js"></script>
 
         <script src="../js/resumeSeance/data/postData.js"></script>
@@ -233,6 +233,7 @@
 
         <script src="../js/resumeSeance/map/leafletMap.js"></script>
 
+        <script src="../js/resumeSeance/front/resumeSeanceFront.js"></script>
         <script src="../js/resumeSeance/front/resumeSeanceDisplay.js"></script>
 
         <script src="../js/resumeSeance/chart/Zoom.js"></script>
@@ -245,10 +246,11 @@
         <script src="../js/resumeSeance/chart/selectionData.js"></script>
 
         <script src="../js/resumeSeance/segment/segmentStockage.js"></script>
-        <script src="../js/resumeSeance/segment/segment.js"></script>
         <script src="../js/resumeSeance/segment/segmentAnalise.js"></script>
         <script src="../js/resumeSeance/segment/effortList.js"></script>
         <script src="../js/resumeSeance/segment/getBestIntervale.js"></script>
+        <script src="../js/resumeSeance/segment/getPr.js"></script>
+        <script src="../js/resumeSeance/segment/PRIntervalList.js"></script>
     </body>
 
 </html>

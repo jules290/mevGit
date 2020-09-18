@@ -27,12 +27,12 @@
 }
 
 .segmentKOM {
-    width: 8%;
+    width: 7%;
     text-align: center;
 }
 
 .segmentInfo {
-    width: 35%;
+    width: 33%;
     display: flex;
     flex-direction: column;
 }
@@ -62,23 +62,23 @@
 }
 
 .segmentTps {
-    width: 10%;
+    width: 12%;
 }
 
 .segmentVst {
-    width: 10%;
+    width: 12%;
 }
 
 .segmentP {
-    width: 10%;
+    width: 12%;
 }
 
 .segmentFC {
-    width: 7%;
+    width: 12%;
 }
 
 .segmentCadence {
-    width: 10%;
+    width: 12%;
 }
 
 #segmentEffortContainer {
@@ -218,3 +218,160 @@
     color: rgb(246, 246, 246);
     transition: 0.3s;
 }
+
+
+.intervalKOM {
+    width: 7%;
+    text-align: center;
+}
+
+.PR {
+    width: 48px;
+    height: 48px;
+    padding: 1px;
+    transition: 0.2s;
+}
+
+.PR:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 100px;
+}
+
+.PRIntervalList {
+    width: 50%;
+    height: 400px;
+    background-color: rgb(251, 251, 251);
+    position: fixed;
+    z-index: 10;
+    top: 100px;
+    border: 1px solid rgb(192, 192, 192);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.589);
+}
+
+.listClose {
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    color: rgb(97, 97, 97);
+    background-color: rgb(251, 251, 251);
+    position: absolute;
+    right: -50px;
+    padding-bottom: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 1px solid rgb(168, 168, 168);
+    border-radius: 3px;
+}
+
+.listClose:hover {
+    color: rgb(30, 138, 234);
+}
+
+.listContenair {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.border {
+    width: 0px;
+    height: 160px;
+    border-right: 1px solid rgb(170, 170, 170);
+    margin-left: -1px;
+    margin-top: 20px;
+    margin-top: 20px;
+}
+
+.PRBox {
+    width: 50%;
+    height: 200px;
+    border-top-left-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.vitessePR {
+    border-top-left-radius: 10px;
+    border-bottom: 1px solid rgb(170, 170, 170);
+}
+
+.puissancePR {
+    border-top-right-radius: 10px;
+    border-bottom: 1px solid rgb(170, 170, 170);
+}
+
+.FCPR {
+    border-bottom-left-radius: 10px;
+}
+
+.cadencePR {
+    border-bottom-right-radius: 10px;
+}
+
+.PRTitle {
+    color: rgb(82, 82, 82);
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    font-variant: small-caps;
+    letter-spacing: 2px;
+    margin-top: 15px;
+}
+
+.PRMedaille {
+    width: 100px;
+    height: 100px;
+}
+
+.PRValue {
+    color: rgb(51, 51, 51);
+    font-size: 24px;
+    font-weight: lighter;
+    letter-spacing: 1.5px;
+}
+
+.filter {
+    width: 100%;
+    height: 300%;
+    background-color: rgba(0, 0, 0, 0.328);
+    position: fixed;
+    z-index: 9;
+}
+
+.intervalT {
+    width: 33%;
+    text-align: start;
+}
+
+.intervalTps {
+    width: 12%;
+    text-align: start;
+}
+
+.intervalVst {
+    width: 12%;
+    text-align: start;
+}
+
+.intervalP {
+    width: 12%;
+    text-align: start;
+}
+
+.intervalFC {
+    width: 12%;
+    text-align: start;
+}
+
+.intervalCadence {
+    width: 12%;
+    text-align: start;
+}
+

@@ -24,60 +24,9 @@ $(document).ready(function() {
 
 function getAujourdHui() {
     document.getElementById("dateSeanceDuJour").innerText = date + " " + monthA[mois] + " " + annee
+    let dayNB = getDayNB365(date, mois, annee);
     
-    //2020
-    if(annee == 2020) {
-        //janvier 01
-        if(mois == 1) {
-            localStorage.aujourdHui = 1 + date - 1;
-        }
-        //fevrier 02
-        else if(mois == 2) {
-            localStorage.aujourdHui = 32 + date - 1;
-        } 
-        //mars 03
-        else if(mois == 3) {
-            localStorage.aujourdHui = 61 + date - 1;
-        }
-        //avril 04
-        else if(mois == 4) {
-            localStorage.aujourdHui = 92 + date - 1;
-        }
-        //mai 05
-        else if(mois == 5) {
-            localStorage.aujourdHui = 122 + date - 1;
-        }
-        //juin 06
-        else if(mois == 6) {
-            localStorage.aujourdHui = 153 + date - 1;
-        }
-        //juillet 07
-        else if(mois == 7) {
-            localStorage.aujourdHui = 183 + date - 1;
-        }
-        //aout 08
-        else if(mois == 8) {
-            localStorage.aujourdHui = 214 + date - 1;
-        }
-        //septembre 09
-        else if(mois == 9) {
-            localStorage.aujourdHui = 245 + date - 1;
-        }
-        //octobre 10
-        else if(mois == 10) {
-            localStorage.aujourdHui = 275 + date - 1;
-        }
-        //novembre 11
-        else if(mois == 11) {
-            localStorage.aujourdHui = 306 + date - 1;
-        }
-        //decembre 12
-        else if (mois == 12) {
-            localStorage.aujourdHui = 336 + date - 1;
-        }  
-    }
-    
-    let nbExo = nbObjectif - Number(localStorage.aujourdHui);
+    let nbExo = nbObjectif - dayNB;
 
     if (nbPrgT == 4) {
         if(nbExo == 1) {

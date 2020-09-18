@@ -27,10 +27,12 @@ function segmentStorage() {
                 effort: ""
             }
             localStorage.efforts = JSON.stringify(efforts);
-            segmentList()
+            segmentList();
+            intervalList();
         })
     }
     else {
-        segmentList()
+        segmentList();
+        intervalList();
     }
 }

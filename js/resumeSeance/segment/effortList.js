@@ -1,11 +1,20 @@
 function segmentList() {
     let segmentAnalyseIndex;
+    let segmentAnalyseArray = new Array();
     let efforts = JSON.parse(localStorage.efforts)[sessionStorage.activityIndex];
+    let watts = JSON.parse(sessionStorage.activitiesWatts);
+    let Cadence = JSON.parse(sessionStorage.activitiesCadence);
+    let FC = JSON.parse(sessionStorage.activitiesBpm);
+    let latlng = JSON.parse(sessionStorage.activitiesLatlng);
+    let altitude = JSON.parse(sessionStorage.activitiesAltitude);
+    let grade = JSON.parse(sessionStorage.activitiesGrade);
     let Segment = efforts.segment;
     let SegmentLenght = Segment.length;
 
     $("#segmentEffortContainer").empty();
     segmentsDataPower = new Array();
+    segmentsDataFC = new Array();
+    segmentsDataCadence = new Array();
     segmentsDataVitesse = new Array();
     segmentsDataLatLng = new Array();
     segmentsDataAltitude = new Array();
@@ -74,19 +83,25 @@ function segmentList() {
             let seconde;
             if (elapsedTime >= 3600) {
                 heure = (elapsedTime / 3600).toString().substr(0, 2);
-                minute = (Math.round(elapsedTime / 60)) % 60
+                if (heure < 10) heure = "0" + heure;
+                minute = (Math.round(elapsedTime / 60)) % 60;
+                if (minute < 10) minute = "0" + minute;
+                seconde = (Math.round(elapsedTime)) % 60;
+                if (seconde < 10) seconde = "0" + seconde;
+                segmentTps.innerText = heure + ":" + minute + ":" + seconde;
             } 
             else {
+                minute = (Math.round(elapsedTime / 60)) % 60;
+                if (minute < 10) minute = "0" + minute;
                 seconde = (Math.round(elapsedTime)) % 60
-                minute = (elapsedTime - seconde) / 60;
-                if (seconde < 10) {
-                    seconde = "0" + seconde;
-                }
+                if (seconde < 10) seconde = "0" + seconde;
+                segmentTps.innerText = "00:" + minute + ":" + seconde;
             }
-            segmentTps.innerText = minute + ":" + seconde
         }
         else {
-            segmentTps.innerText = Math.round(elapsedTime ) + "s"
+            seconde = elapsedTime;
+            if (seconde < 10) seconde = "0" + seconde;
+            segmentTps.innerText = "00:00:" + seconde;
         }
     
         var segmentVitesse = document.createElement("div");
@@ -95,8 +110,6 @@ function segmentList() {
         Math.round(((distance / 1000) / (elapsedTime / 3600)) * 10) / 10
         + "km/h";
         segmentStats.appendChild(segmentVitesse);
-    
-        let watts = JSON.parse(sessionStorage.activitiesWatts);
 
         var segmentPower = document.createElement("div");
         segmentPower.className = "segmentP";
@@ -116,8 +129,8 @@ function segmentList() {
     
         let segmentFC = document.createElement("div");
         segmentFC.className = "segmentFC";
+        let segmentDataFC = new Array();
         if (JSON.parse(sessionStorage.activitiesBpm) != "false") {
-            FC = JSON.parse(sessionStorage.activitiesBpm);
             for (let y = 0; y < endIndex - startIndex; y++) {
                 segmentDataFC[y] = FC[y + startIndex];
             }
@@ -128,7 +141,7 @@ function segmentList() {
             for (var u = 0; u <  segmentDataFCLength; u++) {
                 FCMoy += segmentDataFC[u] / segmentDataFCLength;
             }
-            segmentFC.innerText = FCMoy + "bpm";
+            segmentFC.innerText = Math.round(FCMoy) + "bpm";
         }
         else {
             segmentFC.innerText = "-";
@@ -137,8 +150,8 @@ function segmentList() {
     
         let segmentCadence = document.createElement("div");
         segmentCadence.className = "segmentCadence";
+        let segmentDataCadence = new Array();
         if (JSON.parse(sessionStorage.activitiesCadence) != "false") {
-            Cadence = JSON.parse(sessionStorage.activitiesCadence);
             for (let y = 0; y < endIndex - startIndex; y++) {
                 segmentDataCadence[y] = Cadence[y + startIndex];
             }
@@ -149,7 +162,7 @@ function segmentList() {
             for (var u = 0; u <  segmentDataCadenceLength; u++) {
                 RpmMoy += segmentDataCadence[u] / segmentDataCadenceLength;
             }
-            segmentCadence.innerText = RpmMoy + "rpm";
+            segmentCadence.innerText = Math.round(RpmMoy) + "rpm";
         }
         else {
             segmentCadence.innerText = "-";
@@ -173,7 +186,6 @@ function segmentList() {
         }
         segmentsDataLatLng[i] = segmentDataLatLng;
     
-        altitude = JSON.parse(sessionStorage.activitiesAltitude);
         segmentDataAltitude = new Array();
         for (let u = 0; u < latlngLength; u++) {
             for (let y = 0; y < endIndex - startIndex; y++) {
@@ -182,7 +194,6 @@ function segmentList() {
         }
         segmentsDataAltitude[i] = segmentDataAltitude;
     
-        grade = JSON.parse(sessionStorage.activitiesGrade);
         segmentDataGrade = new Array();
         for (let u = 0; u < latlngLength; u++) {
             for (let y = 0; y < endIndex - startIndex; y++) {
@@ -357,7 +368,7 @@ function segmentList() {
                     wattMoy += segmentsDataPower[i][u] / segmentsDataPowerILength;
                 }
                 wattMoy = Math.round(wattMoy * 10) / 10
-                segmentAnalyseStatsWattDataMoy.innerText = `${wattMoy}W`;
+                segmentAnalyseStatsWattDataMoy.innerText = `${wattMoy}w`;
     
                 let segmentAnalyseStatsFcDataMoy = document.createElement("div");
                 segmentAnalyseStatsFcDataMoy.classList = "segmentAnalyseStatsData";
@@ -368,7 +379,7 @@ function segmentList() {
                     for (var u = 0; u <  segmentsDataFCILength; u++) {
                         FCMoy += segmentsDataFC[i][u] / segmentsDataFCILength;
                     }
-                    segmentAnalyseStatsFcDataMoy.innerText = `${FCMoy}BPM`;
+                    segmentAnalyseStatsFcDataMoy.innerText = `${Math.round(FCMoy)}bpm`;
                 }
                 else {
                     segmentAnalyseStatsFcDataMoy.innerText = "-";
@@ -383,7 +394,7 @@ function segmentList() {
                     for (var u = 0; u <  segmentsDataCadenceLength; u++) {
                         RpmMoy += segmentsDataCadence[i][u] / segmentsDataCadenceLength;
                     }
-                    segmentAnalyseStatsCadenceDataMoy.innerText = `${CadenceMoy}RPM`;
+                    segmentAnalyseStatsCadenceDataMoy.innerText = `${Math.round(RpmMoy)}rpm`;
                 }
                 else {
                     segmentAnalyseStatsCadenceDataMoy.innerText = "-";
@@ -428,7 +439,7 @@ function segmentList() {
                         wattMax = Math.round(segmentsDataPower[i][u] * 10) / 10
                     }
                 }
-                segmentAnalyseStatsWattDataMax.innerText = `${wattMax}W`;
+                segmentAnalyseStatsWattDataMax.innerText = `${wattMax}w`;
     
                 let segmentAnalyseStatsFcDataMax = document.createElement("div");
                 segmentAnalyseStatsFcDataMax.classList = "segmentAnalyseStatsData";
@@ -441,7 +452,7 @@ function segmentList() {
                             FCMax = Math.round(segmentsDataFC[i][u])
                         }
                     }
-                    segmentAnalyseStatsFcDataMax.innerText = `${FCMax}BPM`;
+                    segmentAnalyseStatsFcDataMax.innerText = `${Math.round(FCMax)}bpm`;
                 }
                 else {
                     segmentAnalyseStatsFcDataMax.innerText = "-";
@@ -450,7 +461,8 @@ function segmentList() {
                 let segmentAnalyseStatsCadenceDataMax = document.createElement("div");
                 segmentAnalyseStatsCadenceDataMax.classList = "segmentAnalyseStatsData";
                 segmentAnalyseStatsContenairDataMaxRow.appendChild(segmentAnalyseStatsCadenceDataMax);
-                if (JSON.parse(sessionStorage.activitiesBpm) != "false") {
+                if (JSON.parse(sessionStorage.activitiesCadence) != "false") {
+
                     let CadenceMax = 0;
                     segmentsDataCadenceILength = segmentsDataCadence[i].length;
                     for (var u = 0; u <  segmentsDataCadenceILength; u++) {
@@ -458,7 +470,7 @@ function segmentList() {
                             CadenceMax = Math.round(segmentsDataCadence[i][u])
                         }
                     }
-                    segmentAnalyseStatsCadenceDataMax.innerText = `${CadenceMax}BPM`;
+                    segmentAnalyseStatsCadenceDataMax.innerText = `${CadenceMax}rpm`;
                 }
                 else {
                     segmentAnalyseStatsCadenceDataMax.innerText = "-";
@@ -474,7 +486,7 @@ function segmentList() {
                 segmentAnalyseButtonAnalyse.classList = "segmentAnalyseButton";
                 segmentAnalyseButtonContenair.appendChild(segmentAnalyseButtonAnalyse);
                 segmentAnalyseButtonAnalyse.onclick = function () {
-                    window.location.href = "#selection";
+                    window.location.href = "#altitudeBox";
                 }
     
                 let segmentAnalyseButtonAnalyseT = document.createElement("div");
@@ -518,5 +530,93 @@ function segmentList() {
                 }
             }
         }
+    }
+}
+
+function intervalList() {
+    Interval = getBestInterval();
+    IntervalLenght = Interval.length;
+    PR = JSON.parse(localStorage.prInterval);
+
+    for (let i = 0; i < IntervalLenght; i++) {
+        let itrI = Interval[i];
+        let PRI = PR[i];
+        var interval = document.createElement("div");
+        interval.className = "segment";
+        document.getElementById("segmentEffortContainer").appendChild(interval);
+    
+        let intervalStats = document.createElement("div");
+        intervalStats.className = "segmentStats";
+        interval.appendChild(intervalStats);
+    
+        var intervalKOM = document.createElement("div");
+        intervalKOM.className = "intervalKOM";
+        if (itrI.bestVitesse.pr == true || itrI.bestPuissance.pr == true || itrI.bestBpm.pr == true || itrI.bestCadence.pr == true) {
+            PRIntervalList(intervalKOM, Interval[i])
+        }
+        else if (PRI.bestVitesse.activityIndex === sessionStorage.activityIndex || PRI.bestPuissance.activityIndex === sessionStorage.activityIndex ||
+        PRI.bestBpm.activityIndex === sessionStorage.activityIndex || PRI.bestCadence.activityIndex === sessionStorage.activityIndex) {
+            PRIntervalList(intervalKOM, Interval[i])
+        }
+        intervalStats.appendChild(intervalKOM);
+        
+        var intervalT = document.createElement("div");
+        intervalT.className = "intervalT";
+        let intervalName;
+        if (Interval[i].interval.value >= 60) {
+            let heure;
+            let minute;
+            let seconde;
+            if (Interval[i].interval.value >= 3600) {
+                heure = (Interval[i].interval.value / 3600).toString().substr(0, 2);
+                if (heure < 10) heure = "0" + heure;
+                minute = (Math.round(Interval[i].interval.value / 60)) % 60;
+                if (minute < 10) minute = "0" + minute;
+                seconde = (Math.round(Interval[i].interval.value)) % 60;
+                if (seconde < 10) seconde = "0" + seconde;
+                intervalName = heure + ":" + minute + ":" + seconde;
+            } 
+            else {
+                minute = (Math.round(Interval[i].interval.value / 60)) % 60;
+                if (minute < 10) minute = "0" + minute;
+                seconde = (Math.round(Interval[i].interval.value)) % 60
+                if (seconde < 10) seconde = "0" + seconde;
+                intervalName = "00:" + minute + ":" + seconde;
+            }
+        }
+        else {
+            seconde = Interval[i].interval.value;
+            if (seconde < 10) seconde = "0" + seconde;
+            intervalName = "00:00:" + seconde;
+        }
+        intervalT.innerText = intervalName;
+        intervalStats.appendChild(intervalT);
+    
+        var intervalTps = document.createElement("div");
+        intervalTps.className = "intervalTps";
+        intervalTps.innerText = "-";
+        intervalStats.appendChild(intervalTps);
+    
+        var intervalVitesse = document.createElement("div");
+        intervalVitesse.className = "intervalVst";
+        intervalVitesse.innerText = Interval[i].bestVitesse.value+ "km/h";
+        intervalStats.appendChild(intervalVitesse);
+
+        var intervalPower = document.createElement("div");
+        intervalPower.className = "intervalP";
+        intervalPower.innerText = Interval[i].bestPuissance.value + "w";
+        intervalStats.appendChild(intervalPower);
+    
+        let intervalFC = document.createElement("div");
+        intervalFC.className = "intervalFC";
+        if (Interval[i].bestBpm.value != 0) intervalFC.innerText = Interval[i].bestBpm.value + "bpm"
+        else intervalFC.innerText = "-";
+        intervalStats.appendChild(intervalFC);
+    
+        let intervalCadence = document.createElement("div");
+        intervalCadence.className = "intervalCadence";
+        if (Interval[i].bestCadence.value != 0) intervalCadence.innerText = Interval[i].bestCadence.value + "rpm"
+        else intervalCadence.innerText = "-";
+        intervalStats.appendChild(intervalCadence);
     }
 }

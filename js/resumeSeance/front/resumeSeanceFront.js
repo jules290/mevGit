@@ -29,6 +29,5 @@ function main(state) {
         $("#main2").show();
         $("#sync").hide();
         postData()
-        segmentStorage()
     }
 }

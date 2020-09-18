@@ -3,7 +3,6 @@ function postData() {
     postActivitiestempsDistance();
     postActivitiesZoom();
     getActivityStreams();
-    segmentStorage();
 }
 
 function getActivityStreams() {
@@ -24,46 +23,55 @@ function getActivityStreams() {
     if (!localStorage.activityStream) {localStorage.activityStream = JSON.stringify(array)}
 
     if (sessionStorage.activityStream == sessionStorage.activityIndex) {
+        let storage = sessionStorage;
+        let Activities = JSON.parse(localStorage.Activities);
+        let LatLng = JSON.parse(storage.activitiesLatlng);
+        let Altitude = JSON.parse(storage.activitiesAltitude);
+        let Vitesse = JSON.parse(storage.activitiesVitesse);
+        let Distance = JSON.parse(storage.activitiesDistance);
+        let Grade = JSON.parse(storage.activitiesGrade);
+
         postLegend(
-            JSON.parse(sessionStorage.Activities), 
-            JSON.parse(sessionStorage.activitiesLatlng), 
-            JSON.parse(sessionStorage.activitiesAltitude), 
-            JSON.parse(sessionStorage.activitiesVitesse), 
-            JSON.parse(sessionStorage.activitiesDistance), 
-            JSON.parse(sessionStorage.activitiesGrade)
+            Activities, 
+            LatLng, 
+            Altitude, 
+            Vitesse, 
+            Distance, 
+            Grade
         );
         postWatt( 
-            JSON.parse(sessionStorage.Activities), 
-            JSON.parse(sessionStorage.activitiesLatlng), 
-            JSON.parse(sessionStorage.activitiesAltitude), 
-            JSON.parse(sessionStorage.activitiesVitesse), 
-            JSON.parse(sessionStorage.activitiesDistance), 
-            JSON.parse(sessionStorage.activitiesGrade)
+            Activities, 
+            LatLng, 
+            Altitude, 
+            Vitesse, 
+            Distance, 
+            Grade
         );
         postActivitiesStreamsaltitudeChart(
-            JSON.parse(sessionStorage.Activities), 
-            JSON.parse(sessionStorage.activitiesLatlng), 
-            JSON.parse(sessionStorage.activitiesAltitude), 
-            JSON.parse(sessionStorage.activitiesVitesse), 
-            JSON.parse(sessionStorage.activitiesDistance), 
-            JSON.parse(sessionStorage.activitiesGrade)
+            Activities, 
+            LatLng, 
+            Altitude, 
+            Vitesse, 
+            Distance, 
+            Grade
         );
         postActivitiesStreamsSpeedChart(
-            JSON.parse(sessionStorage.Activities), 
-            JSON.parse(sessionStorage.activitiesLatlng), 
-            JSON.parse(sessionStorage.activitiesAltitude), 
-            JSON.parse(sessionStorage.activitiesVitesse), 
-            JSON.parse(sessionStorage.activitiesDistance), 
-            JSON.parse(sessionStorage.activitiesGrade)
+            Activities, 
+            LatLng, 
+            Altitude, 
+            Vitesse, 
+            Distance, 
+            Grade
         );
         svg(
-            JSON.parse(sessionStorage.Activities), 
-            JSON.parse(sessionStorage.activitiesLatlng), 
-            JSON.parse(sessionStorage.activitiesAltitude), 
-            JSON.parse(sessionStorage.activitiesVitesse), 
-            JSON.parse(sessionStorage.activitiesDistance), 
-            JSON.parse(sessionStorage.activitiesGrade)
+            Activities, 
+            LatLng, 
+            Altitude, 
+            Vitesse, 
+            Distance, 
+            Grade
         );
+        segmentStorage();
     }
     else {
         const activitiesStreams = `https://www.strava.com/api/v3/activities/${Id}/streams?access_token=${localStorage.access_token}`
@@ -107,7 +115,8 @@ function getActivityStreams() {
             let activitiesWatts = JSON.parse(sessionStorage.activitiesWatts);
 
             activityStream = sessionStorage.activityIndex;
-            for (let i = 0; i < response.length; i++) {
+            let responseLength = response.length;
+            for (let i = 0; i < responseLength; i++) {
                 if (response[i].type == "moving") {
                     moving = response[i].data;
                     activitiesMoving = moving;
@@ -188,6 +197,7 @@ function getActivityStreams() {
             postActivitiesStreamsaltitudeChart(JSON.parse(localStorage.Activities)[sessionStorage.activityIndex], latlng , altitude, vitesse, distance, grade);
             postActivitiesStreamsSpeedChart(JSON.parse(localStorage.Activities)[sessionStorage.activityIndex], latlng , altitude, vitesse, distance, grade);
             svg(JSON.parse(localStorage.Activities)[sessionStorage.activityIndex], latlng , altitude, vitesse, distance, grade);
+            segmentStorage();
         })
     }
 }

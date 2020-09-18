@@ -1,0 +1,116 @@
+body {
+    background-color: rgb(251, 251, 251);
+}
+
+.yearStats {
+    width: 97%;
+    margin: 15px 1.5%;
+    height: 350px;
+    border-radius: 10px;
+    background-color: rgb(245, 245, 245);
+    border: 1px solid rgb(211, 211, 211);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.weekStats {
+    width: 97%;
+    margin: 15px 1.5%;
+    height: 350px;
+    border-radius: 10px;
+    background-color: rgb(245, 245, 245);
+    border: 1px solid rgb(211, 211, 211);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.yearStatsT {
+    width: 100%;
+    text-align: center;
+    color: rgb(59, 59, 59);
+    font-size: 26px;
+    margin: 0px;
+    margin-top: 10px;
+}
+
+.yearStatsData {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    margin-top: 10px;
+}
+
+.yearStatsDataCase {
+    width: 25%;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.yearStatsDataCaseT {
+    text-align: center;
+    color: rgb(59, 59, 59);
+    font-size: 22px;
+    margin: 0px;
+}
+
+.yearStatsDataCaseValue {
+    text-align: center;
+    color: rgb(59, 59, 59);
+    font-size: 19px;
+}
+
+.graphWeekContenair {
+    width: 70%;
+    margin-top: 60px;
+}
+
+.dataBestContenair {
+    width: 97%;
+    margin: 15px 1.5%;
+    height: 300px;
+    border-radius: 10px;
+    background-color: rgb(245, 245, 245);
+    border: 1px solid rgb(211, 211, 211);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+    transition: 0.3s;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.dataBest {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dataBestT {
+    font-size: 22px;
+    color: rgb(31, 31, 31);
+}
+
+#dataBestVitesse {
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.graphContenair {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+sdo {
+    background-color: rgb(0, 156, 224);
+    background-color: rgb(0, 111, 158);
+
+    background-color: rgb(0, 134, 191);
+}
