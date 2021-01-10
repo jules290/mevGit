@@ -71,6 +71,6 @@
     position: absolute;
 }
 
-@media only screen and (min-width: 300px) {.a_menuNav {font-size: 10px}}
-@media only screen and (min-width: 692px) {.a_menuNav {font-size: 14px}}
+@media only screen and (min-width: 0px) {.a_menuNav {font-size: 7px}}
+@media only screen and (min-width: 600px) {.a_menuNav {font-size: 14px}}
 @media only screen and (min-width: 992px) {.a_menuNav {font-size: 18px}}
