@@ -7,27 +7,27 @@ function nav() {
     
     switch (page) {
         case "accueil":
-            document.getElementById("thisPage").style.marginLeft = 0 * 100 / 6 + "%";
+            document.getElementById("thisPage").style.marginLeft = 0 * 100 / 5 + "%";
             break;
 
         case "programme":
-            document.getElementById("thisPage").style.marginLeft = 1 * 100 / 6 + "%";
+            document.getElementById("thisPage").style.marginLeft = 1 * 100 / 5 + "%";
             break;
 
         case "calendrier":
-            document.getElementById("thisPage").style.marginLeft = 2 * 100 / 6 + "%";
+            document.getElementById("thisPage").style.marginLeft = 2 * 100 / 5 + "%";
             break;
 
         case "seance":
-            document.getElementById("thisPage").style.marginLeft = 3 * 100 / 6 + "%";
+            document.getElementById("thisPage").style.marginLeft = 3 * 100 / 5 + "%";
             break;
 
         case "statistique":
-            document.getElementById("thisPage").style.marginLeft = 4 * 100 / 6 + "%";
+            document.getElementById("thisPage").style.marginLeft = 4 * 100 / 5 + "%";
             break;
 
         case "parametre":
-            document.getElementById("thisPage").style.marginLeft = 5 * 100 / 6 + "%";
+            document.getElementById("thisPage").style.marginLeft = 4 * 100 / 5 + "%";
             break;
 
         case "tablBrdPrg":
