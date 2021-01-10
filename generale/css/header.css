@@ -60,13 +60,16 @@
 #thisPage {
     z-index: 1;
     background-color: rgb(0, 234, 170);
-    width: 16.6667%;
+    width: 20%;
 }
 
 #hoverPage {
     z-index: 0;
     background-color: rgb(0, 0, 0);
-    width: 16.6667%;
+    width: 20%;
     transition: 0.15s;
     position: absolute;
 }
+
+@media only screen and (min-width: 300px) {.a_menuNav {font-size: 12px}}
+@media only screen and (min-width: 992px) {.a_menuNav {font-size: 18px}}
