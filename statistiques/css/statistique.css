@@ -1,0 +1,13 @@
+#main {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.PROCHAINEMENT {
+    margin: 0px;
+    margin-top: 30px;
+    font-size: 34px;
+    color: rgb(25, 25, 25);
+    font-weight: lighter;
+}

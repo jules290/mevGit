@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161645631-2"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-161645631-2');
+        </script>
+
+        <title>cyclisme - mon entrainement vélo - plans d'entrainements personnalisé gratuit</title>
+        <meta name="description" content="programmes d'entrainement cyclistes gratuits et personnalisés de tout niveau (débutant à compétition)"/>
+        <meta name="keywords" content="cyclisme, entrainement vélo"/>
+        <meta name="robots" content="noindex, nofollow">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/png" href="/img/logo.png"/>
+        
+        <link rel="stylesheet" href="../generale/css/body.css" media="screen">
+        <link rel="stylesheet" href="../generale/css/header.css" media="screen">
+        
+        <link rel="stylesheet" href="../parametre/css/parametre.css" media="screen">
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+    
+        <script src="/generale/js/backgroundScript.js"></script>
+        <script src="/generale/js/backgroundFunction.js"></script>
+    </head>
+    <body>
+        <div id="header">
+            <div id="titre">
+               <h1 id="mev">m.e.v</h1>
+            </div>
+
+            <nav id="menuNav">
+                <a id="aNav0" class="a_menuNav" href="/accueil/accueil.html">ACCUEIL</a>
+                <a id="aNav1" class="a_menuNav" href="/programme/programme.html">PROGRAMMES</a>
+                <a id="aNav2" class="a_menuNav" href="/calendrier/calendrier.html">CALENDRIER</a>
+                <a id="aNav3" class="a_menuNav" href="/seances/seance.html">SEANCES</a>
+                <a id="aNav4" class="a_menuNav" href="/statistiques/statistique.html">STATS</a>
+                <a id="aNav5" class="a_menuNav" href="/parametre/parametre.html">PARAMÈTRES</a>
+            </nav>
+
+            <div id="navSlideBar">
+                <div id="thisPage" class="navSlideBar"></div>
+                <div id="hoverPage" class="navSlideBar" style="visibility: hidden;"></div>
+            </div>
+        </div>
+        
+        <div id="AthleteSettings">
+            <div id="row1" class="row">
+                <div class="settingInputDiv">
+                    <div class="settingInputTitleDiv">
+                        <h1 class="settingInputTitle">poids</h1>
+                        <p class="settingInputP">(en kg)</p>
+                    </div>
+                    <input type="number" class="settingInput" id="settingInputPoids">
+                </div>
+    
+                <div class="settingInputDiv settingInputDivCenter">
+                    <div class="settingInputTitleDiv">
+                        <h1 class="settingInputTitle">fc max</h1>
+                        <p class="settingInputP">(en bpm)</p>
+                    </div>
+                    <input type="number" class="settingInput" id="settingInputFcMax">
+                </div>
+    
+                <div class="settingInputDiv">
+                    <div class="settingInputTitleDiv">
+                        <h1 class="settingInputTitle">fc repos</h1>
+                        <p class="settingInputP">(en bpm)</p>
+                    </div>
+                    <input type="number" class="settingInput" id="settingInputFcRepos">
+                </div>
+            </div>
+
+            <div id="row2" class="row">
+                <div class="settingInputDiv">
+                    <div class="settingInputTitleDiv">
+                        <h1 class="settingInputTitle">pma</h1>
+                        <p class="settingInputP">(en W)</p>
+                    </div>
+                    <input type="number" class="settingInput" id="settingInputPMA">
+                    <a class="help settingInputLink" href="../support/PMA.html">i</a>
+                </div>
+    
+                <div class="settingInputDiv settingInputDivCenter">
+                    <div class="settingInputTitleDiv">
+                        <h1 class="settingInputTitle">seuil</h1>
+                        <p class="settingInputP">(en W)</p>
+                    </div>
+                    <input type="number" class="settingInput" id="settingInputSeuil">
+                    <a class="help settingInputLink" href="../support/seuil.html">i</a>
+                </div>
+    
+                <div class="settingInputDiv">
+                    <div class="settingInputTitleDiv">
+                        <h1 class="settingInputTitle">ftp</h1>
+                        <p class="settingInputP">(en W)</p>
+                    </div>
+                    <input type="number" class="settingInput" id="settingInputFtp">
+                    <a class="help settingInputLink" href="../support/ftp.html">i</a>
+                </div>
+            </div>
+
+            <div id="sauvegarderDiv">
+                <button id="sauvegarder">sauvegarder</button>
+            </div>
+        </div>
+        
+        <script src="/parametre/js/parametre.js"></script>
+        <script src="/generale/js/nav.js"></script>
+    </body>
+
+</html>

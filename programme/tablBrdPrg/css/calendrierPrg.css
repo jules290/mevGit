@@ -1,0 +1,81 @@
+#weekHeader {
+    width: 100%;
+    height: 25px;
+    margin-top: 10px;
+    border-bottom: 1px solid rgb(209, 209, 209);
+    display: flex;
+}
+
+#weekEtape {
+    margin: 0px;
+    margin-left: 36%;
+    font-size: 18px;
+    font-weight: lighter;
+    color: rgb(87, 87, 87);
+    text-align: center;
+}
+
+#week {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.day {
+    width: 90%;
+    height: 45px;
+    border-bottom: 1px solid rgb(209, 209, 209);
+    display: flex;
+}
+
+#dimanche {
+    border: none;
+}
+
+.dayTitle {
+    width: 10%;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dayT {
+    color: rgb(70, 70, 70);
+    font-size: 16px;
+    font-weight: lighter;
+}
+
+.seanceTitle {
+    width: 58%;
+    margin-left: 5%;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.seanceT {
+    color: rgb(70, 70, 70);
+    font-size: 17px;
+    font-weight: 400;
+}
+
+.plusTitle {
+    width: 20%;
+    margin-left: 5%;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.plusT {
+    color: rgb(120, 20, 179);
+    text-decoration: underline rgb(120, 20, 179);
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 400;
+}

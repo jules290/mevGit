@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161645631-2"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments)}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-161645631-2');
+        </script>
+
+        <title>cyclisme - mon entrainement vélo - plans d'entrainements personnalisé gratuit</title>
+        <meta name="description" content="programmes d'entrainement cyclistes gratuits et personnalisés de tout niveau (débutant à compétition)"/>
+        <meta name="keywords" content="cyclisme, entrainement vélo"/>
+        <meta name="robots" content="index, follow"/>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/png" href="/img/logo.png"/>
+
+        <link rel="stylesheet" href="/generale/css/body.css" media="screen">
+        <link rel="stylesheet" href="/generale/css/header.css" media="screen">
+
+        <link rel="stylesheet" href="./css/tablBrdPrg.css" media="screen">
+        <link rel="stylesheet" href="./css/avancementPrg.css" media="screen">
+        <link rel="stylesheet" href="./css/calendrierPrg.css" media="screen">
+        <link rel="stylesheet" href="./css/prochaineSeancePrg.css" media="screen">
+        <link rel="stylesheet" href="./css/tempsPRG.css" media="screen">
+        <link rel="stylesheet" href="./css/viewSeance.css" media="screen">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+
+        <script src="/generale/js/backgroundScript.js"></script>
+        <script src="/generale/js/backgroundFunction.js"></script>
+    </head>
+
+    <body id="body">
+        <div id="header">
+            <div id="titre">
+               <h1 id="mev">m.e.v</h1>
+            </div>
+
+            <nav id="menuNav">
+                <a id="aNav0" class="a_menuNav" href="/accueil/accueil.html">ACCUEIL</a>
+                <a id="aNav1" class="a_menuNav" href="/programme/programme.html">PROGRAMMES</a>
+                <a id="aNav2" class="a_menuNav" href="/calendrier/calendrier.html">CALENDRIER</a>
+                <a id="aNav3" class="a_menuNav" href="/seances/seance.html">SEANCES</a>
+                <a id="aNav4" class="a_menuNav" href="/statistiques/statistique.html">STATS</a>
+                <a id="aNav5" class="a_menuNav" href="/parametre/parametre.html">PARAMÈTRES</a>
+            </nav>
+
+            <div id="navSlideBar">
+                <div id="thisPage" class="navSlideBar"></div>
+                <div id="hoverPage" class="navSlideBar" style="visibility: hidden;"></div>
+            </div>
+        </div>
+
+        <div id="filter" style="visibility: hidden;"></div>
+
+        <div id="viewSeance" style="visibility: hidden;">
+            <div class="prgCaseHeader">
+                <p class="prgCaseT" id="viewSeanceT">Seance</p>
+
+                <div class="rightIcon">
+                    <img class="modifierCloseIcon" src="/img/closeIcon.png" id="viewSeanceCloseIcon">
+                </div>
+            </div>
+
+            <div id="viewSeanceEtape">
+
+            </div>
+
+            <div id="seanceMeta">
+                <div id="serieBox"></div>
+
+                <div id="addDownSerieBox">
+                    <img id="downSerie" class="addDownSerie" src="/img/downSerie.png" style="visibility: hidden;">
+                    <img id="addSerie" class="addDownSerie" src="/img/addSerie.png" style="visibility: hidden;">
+                </div>
+            </div>
+
+            <div id="seanceGraphBox">
+                <canvas id="seanceGraph" width="100" height="100"></canvas>
+
+                <div id="newSeanceBox">
+                    <input class="chrtModSub" type="submit" value="sauvegarder" id="submitSaveNewSeance" style="visibility: hidden;">
+                </div>
+            </div>
+        </div>
+
+        <div id="modifierTpsPrg" style="visibility: hidden;" class="modifierPrg">
+            <div class="prgCaseHeader">
+                <p class="prgCaseT">MODIFIER LE TEMPS PAR SEMAINE</p>
+
+                <div class="rightIcon">
+                    <img class="modifierCloseIcon" src="/img/closeIcon.png" id="modifierCloseIcon0">
+                </div>
+            </div>
+
+            <div class="main_modifier">
+                <div class="list">
+                    <div class="listSemaineHeader">
+                        <p class="listSemaineIndex">Semaine</p>
+                        
+                        <div class="listSemaineTpsBox">
+                            <p class="listSemaineTps">Temps(min)</p>
+                        </div>
+                    </div>
+                    <div id="listSemaineTps" class="listSemaine"></div>
+                </div>
+
+                <div class="myChart_modifierBox">
+                    <canvas id="myChart2_modifier" width="200" height="50" style="padding-left: 20px; padding-right: 20px; margin-top: 20px;"></canvas>
+
+                    <div style="display: flex;">
+                        <input class="chrtModSub" type="submit" value="réinitialiser" id="submitReInt0">
+                        <input class="chrtModSub" type="submit" value="sauvegarder" id="submit0">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="modifierISemPrg" style="visibility: hidden;" class="modifierPrg">
+            <div class="prgCaseHeader">
+                <p class="prgCaseT">MODIFIER LE NOMBRE DE SEANCE PAR SEMAINE</p>
+
+                <div class="rightIcon">
+                    <img class="modifierCloseIcon" src="/img/closeIcon.png" id="modifierCloseIcon1">
+                </div>
+            </div>
+
+            <div class="main_modifier">
+                <div class="list">
+                    <div class="listSemaineHeader">
+                        <p class="listSemaineIndex">Semaine</p>
+                        
+                        <div class="listSemaineTpsBox">
+                            <p class="listSemaineTps">Temps(min)</p>
+                        </div>
+                    </div>
+                    <div id="listSemaineISem" class="listSemaine"></div>
+                </div>
+
+                <div class="myChart_modifierBox">
+                    <canvas id="myChart3_modifier" width="200" height="50" style="padding-left: 20px; padding-right: 20px; margin-top: 20px;"></canvas>
+
+                    <div style="display: flex;">
+                        <input class="chrtModSub" type="submit" value="réinitialiser" id="submitReInt1">
+                        <input class="chrtModSub" type="submit" value="sauvegarder" id="submit1">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section id="main">
+            <h1 id="prgT"></h1>
+
+            <div id="prgCase">
+                <div id="avancementPrg" class="prgCase">
+                    <div class="prgCaseHeader">
+                        <p class="prgCaseT">ETAPE</p>
+                    </div>
+
+                    <div id="avancementBar"></div>
+
+                    <div id="avancementDescription">
+                        <p id="avancementDescriptionT"></p>
+                        <p id="avancementDescriptionP"></p>
+                    </div>
+
+                    <div id="avancementLongueur">
+                        <p id="avancementLongueurT">Longueur</p>
+                        <p id="avancementLongueurP"></p>
+                    </div>
+                </div>
+
+                <div id="calendrierPrg" class="prgCase">
+                    <div class="prgCaseHeader">
+                        <p class="prgCaseT">SEMAINE</p>
+                    </div>
+
+                    <div id="weekHeader">
+                        <p id="weekEtape"></p>
+                    </div>
+
+                    <div id="week">
+                        <div class="day" id="lundi">
+                            <div class="dayTitle">
+                                <p class="dayT">lun</p>
+                            </div>
+
+                            <div class="seanceTitle">
+                                <p class="seanceT"></p>
+                            </div>
+
+                            <div class="plusTitle">
+                                <p class="plusT" id="viewMoreLundi">voir plus</p>
+                            </div>
+                        </div>
+
+                        <div class="day" id="mardi">
+                            <div class="dayTitle">
+                                <p class="dayT">mar</p>
+                            </div>
+
+                            <div class="seanceTitle">
+                                <p class="seanceT"></p>
+                            </div>
+
+                            <div class="plusTitle">
+                                <p class="plusT" id="viewMoreMardi">voir plus</p>
+                            </div>
+                        </div>
+                        
+                        <div class="day" id="mercredi">
+                            <div class="dayTitle">
+                                <p class="dayT">mer</p>
+                            </div>
+
+                            <div class="seanceTitle">
+                                <p class="seanceT"></p>
+                            </div>
+
+                            <div class="plusTitle">
+                                <p class="plusT" id="viewMoreMercredi">voir plus</p>
+                            </div>
+                        </div>
+
+                        <div class="day" id="jeudi">
+                            <div class="dayTitle">
+                                <p class="dayT">jeu</p>
+                            </div>
+
+                            <div class="seanceTitle">
+                                <p class="seanceT"></p>
+                            </div>
+
+                            <div class="plusTitle">
+                                <p class="plusT" id="viewMoreJeudi">voir plus</p>
+                            </div>
+                        </div>
+
+                        <div class="day" id="vendredi">
+                            <div class="dayTitle">
+                                <p class="dayT">ven</p>
+                            </div>
+
+                            <div class="seanceTitle">
+                                <p class="seanceT"></p>
+                            </div>
+
+                            <div class="plusTitle">
+                                <p class="plusT" id="viewMoreVendredi">voir plus</p>
+                            </div>
+                        </div>
+
+                        <div class="day" id="samedi">
+                            <div class="dayTitle">
+                                <p class="dayT">sam</p>
+                            </div>
+
+                            <div class="seanceTitle">
+                                <p class="seanceT"></p>
+                            </div>
+
+                            <div class="plusTitle">
+                                <p class="plusT" id="viewMoreSamedi">voir plus</p>
+                            </div>
+                        </div>
+
+                        <div class="day" id="dimanche">
+                            <div class="dayTitle">
+                                <p class="dayT">dim</p>
+                            </div>
+
+                            <div class="seanceTitle">
+                                <p class="seanceT"></p>
+                            </div>
+
+                            <div class="plusTitle">
+                                <p class="plusT" id="viewMoreDimanche">voir plus</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="prochaineSeancePrg" class="prgCase">
+                    <div class="prgCaseHeader">
+                        <p class="prgCaseT">PROCHAINE SEANCE</p>
+                    </div>
+
+                    <div id="prochaineSeance">
+                        <div id="prochaineSeanceFirstRow">
+                            <p id="prochaineSeanceDate"></p>
+                            <p id="prochaineSeanceT"></p>
+                        </div>
+
+                        <div id="prochaineSeance2Row" class="prochaineSeanceContentRow" style="margin-top: 5px;">
+                            <div class="prochaineSeanceContent">
+                                <p class="prochaineSeanceDataT">Intensité</p>
+                                <p class="prochaineSeanceData" id="Intensite">0%</p>
+                            </div>
+
+                            <div class="prochaineSeanceContent">
+                                <p class="prochaineSeanceDataT">Durée</p>
+                                <p class="prochaineSeanceData" id="duree">00:00:00</p>
+                            </div>
+
+                            <div class="prochaineSeanceContent">
+                                <p class="prochaineSeanceDataT">stress</p>
+                                <p class="prochaineSeanceData" id="stress">0</p>
+                            </div>
+                        </div>
+
+                        <div id="prochaineSeanceEtape"></div>
+                    </div>
+                </div>
+
+                <div id="repartitionPrg" class="prgCase">
+                    <div class="prgCaseHeader" style="margin-bottom: 10px;">
+                        <p class="prgCaseT">REPARTITION INTENSITE</p>
+                    </div>
+
+                    <canvas id="myChart" width="400" height="400"></canvas>
+                </div>
+
+                <div id="tempsPrg" class="prgCase2">
+                    <div class="prgCaseHeader" style="margin-bottom: 10px;">
+                        <p class="prgCaseT">TEMPS PAR SEMAINES</p>
+
+                        <div id="iconModifierBox" class="rightIcon">
+                            <img src="/img/iconModifier.png" class="iconModifier" id="iconModifier0">
+                        </div>
+                    </div>
+
+                    <canvas id="myChart2" width="400" height="195" style="padding-left: 20px; padding-right: 20px;"></canvas>
+                </div>
+
+                <div id="iSemPrg" class="prgCase2">
+                    <div class="prgCaseHeader" style="margin-bottom: 10px;">
+                        <p class="prgCaseT">SEANCES INTENSES PAR SEMAINES</p>
+
+                        <div id="iconModifierBox" class="rightIcon">
+                            <img src="/img/iconModifier.png" class="iconModifier" id="iconModifier1">
+                        </div>
+                    </div>
+
+                    <canvas id="myChart3" width="400" height="195" style="padding-left: 20px; padding-right: 20px;"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <script src="/generale/js/nav.js"></script>
+
+        <script src="./js/function.js"></script>
+
+        <script src="../newPrg/js/makePrg/makeAddLvl.js"></script>
+
+        <script src="../newPrg/js/makePrg/seance/test.js"></script>
+        <script src="../newPrg/js/makePrg/seance/intensite.js"></script>
+        <script src="../newPrg/js/makePrg/seance/Z1.js"></script>
+        <script src="../newPrg/js/makePrg/seance/Z2.js"></script>
+        <script src="../newPrg/js/makePrg/seance/Z3.js"></script>
+        <script src="../newPrg/js/makePrg/seance/Z4.js"></script>
+        <script src="../newPrg/js/makePrg/seance/Z5.js"></script>
+        <script src="../newPrg/js/makePrg/seance/Z6-7.js"></script>
+
+        <script src="./js/avancementPrg/avancementBar.js"></script>
+        <script src="./js/avancementPrg/element.js"></script>
+
+        <script src="./js/calendrier/calendrier.js"></script>
+
+        <script src="./js/calendrier/viewSeance/viewSeance.js"></script>
+        <script src="./js/calendrier/viewSeance/listEtape.js"></script>
+        <script src="./js/calendrier/viewSeance/seanceMeta.js"></script>
+        
+        <script src="./js/calendrier/viewSeance/graphSeance/getLevel.js"></script>
+        <script src="./js/calendrier/viewSeance/graphSeance/graphSeance.js"></script>
+        <script src="./js/calendrier/viewSeance/graphSeance/refreshSeance.js"></script>
+        <script src="./js/calendrier/viewSeance/graphSeance/saveNewSeance.js"></script>
+
+        <script src="./js/prochaineSeance/getPrchS.js"></script>
+
+        <script src="./js/repartitionPrg/repartitionChart.js"></script>
+
+        <script src="./js/modifierPRG/tps_sem.js"></script>
+        <script src="./js/modifierPRG/iSem.js"></script>
+        <script src="./js/modifierPRG/updatePRG.js"></script>
+
+        <script src="./js/tablBrdPrg.js"></script>
+    </body>
+</html>

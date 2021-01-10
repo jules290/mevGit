@@ -1,0 +1,110 @@
+.newPrgA {
+    text-decoration: none;
+}
+
+.newPrgCase {
+    width: 340px;
+    height: 400px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(216, 216, 216);
+    transition: 0.2s;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.newPrgCase:hover {
+    margin-left: 0px;
+    margin-right: 0px;
+    width: 360px;
+}
+
+.newPrgCaseHeader {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+}
+
+.newPrgCaseT {
+    margin: 0px;
+    margin-top: 10px;
+    font-size: 25px;
+    color: rgb(58, 58, 58);
+    font-variant: small-caps;
+    font-weight: lighter;
+    letter-spacing: 1.4px;
+}
+
+.newPrgCaseCitation {
+    margin: 0px;
+    margin-top: 10px;
+    font-size: 15px;
+    color: rgb(120, 120, 120);
+    font-weight: lighter;
+    letter-spacing: 1.4px;
+}
+
+.newPrgCaseDescription {
+    display: flex;
+    justify-content: center;
+    height: 70px;
+    margin-top: 20px;
+}
+
+.newPrgCaseDescriptionT {
+    width: 290px;
+    text-align: center;
+    font-size: 16px;
+    color: rgb(94, 94, 94);
+    letter-spacing: 1.4px;
+    word-wrap: break-word;
+    margin: 0px;
+}
+
+.newPrgCaseInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.newPrgCaseInfoCaseContenair {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.newPrgCaseInfoCase {
+    background-color: rgb(221, 221, 221);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0px 10px;
+}
+
+.newPrgCaseInfoCaseT {
+    margin: 0px;
+    text-align: center;
+    font-size: 13px;
+    color: rgb(48, 48, 48);
+    padding: 5px 10px;
+}
+
+.newPrgCaseRequis {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.newPrgCaseRequisT {
+    width: 300px;
+    color: rgb(107, 107, 107);
+    text-align: center;
+    font-weight: lighter;
+    font-size: 14px;
+}

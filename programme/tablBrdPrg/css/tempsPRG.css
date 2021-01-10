@@ -1,0 +1,133 @@
+.iconModifier {
+    border-radius: 100px;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    margin: 6px;
+}
+
+.iconModifier:hover {
+    background-color: rgba(0, 0, 0, 0.213);
+}
+
+#filter {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 10;
+    top: 0px;
+    background-color: rgba(0, 0, 0, 0.289);
+}
+
+.modifierPrg {
+    width: 90%;
+    height: 90%;
+    position: fixed;
+    z-index: 11;
+    top: 0px;
+    margin: 2.5% 5%;
+    background-color: rgb(255, 255, 255);
+}
+
+.modifierCloseIcon {
+    border-radius: 100px;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    padding: 6px;
+    margin: 6px;
+}
+
+.modifierCloseIcon:hover {
+    background-color: rgba(0, 0, 0, 0.213);
+}
+
+.main_modifier {
+    display: flex;
+    flex-direction: row;
+}
+
+.list {
+    width: 35%;
+}
+
+.listSemaineHeader {
+    height: 40px;
+    margin-top: 10px;
+    margin-left: 1%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.listSemaineIndex {
+    width: 30%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(33, 33, 33);
+}
+
+.listSemaineBox {
+    width: 70%;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.listSemaineTps {
+    color: rgb(33, 33, 33);
+}
+
+.listSemaineInput {
+    width: 80%;
+    height: 36px;
+    outline: none;
+    border: 1px solid rgb(170, 170, 170);
+    color: rgb(94, 94, 94);
+    border-radius: 5px;
+    box-shadow: inset 0px 6px 10px rgba(0, 0, 0, 0.042);
+}
+
+.listSemaine {
+    height: 489px;
+    margin-left: 1%;
+    overflow-y: scroll;
+}
+
+.semaine {
+    width: 100%;
+    height: 40px;
+    border-top: 1px solid rgb(151, 151, 151);
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.myChart_modifierBox {
+    width: 70%;
+    max-height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.chrtModSub {
+    margin-top: 30px;
+    padding: 10px 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    background-color: rgba(0, 234, 170, 0.761);
+    color: rgb(240, 240, 240);
+    border: none;
+    border-radius: 5px;
+    outline: none;
+}
+
+.chrtModSub:hover {
+    color: rgb(0, 234, 172);
+    background-color: rgb(244, 244, 244);
+}

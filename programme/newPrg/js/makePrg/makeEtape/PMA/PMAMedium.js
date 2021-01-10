@@ -1,0 +1,101 @@
+function PMAMedium(nbSem, typePrg) {
+    let jourDispo = JSON.parse(sessionStorage.jourDispo);
+    let entrainementPrg = Number(sessionStorage.entrainementProgramme);
+    let entrainementActuel = sessionStorage.entrainementActuel;
+    let entrainementActuelNb = sessionStorage.entrainementActuelNb;
+    let semainesPMAMedium = new Array();
+    let TpsMax = Number(sessionStorage.tpsSemaine);
+    TpsSem = getTpsSem(TpsMax * 0.85, entrainementActuelNb, entrainementPrg, nbSem);
+    let ISem = getIsem(nbSem, typePrg);
+
+    for (let i = 0; i < TpsSem.length; i++) {
+        TpsSem[i] = TpsSem[i] * ( ( entrainementPrg - ISem ) / entrainementPrg )
+    }
+
+    let addLevel = getAddLevel(nbSem, ISem, "PMA1_1");
+
+    for (let i = 0; i < nbSem; i++) {
+        tpsSem = TpsSem[i];
+        semainesPMAMedium[i] = {lundi: "", mardi: "", mercredi: "", jeudi: "", vendredi: "", samedi: "", dimanche: ""};
+        repartionIntensite = getBestRepartionIntensite(ISem, jourDispo);
+        levelIndex = 0;
+
+        if (repartionIntensite.lundi == true) {
+            semainesPMAMedium[i].lundi = PMA1_1( levelsPMA1_1[addLevel[i][levelIndex]] );
+            levelIndex++;
+        }
+        if (repartionIntensite.mardi == true) {
+            semainesPMAMedium[i].mardi = PMA1_1( levelsPMA1_1[addLevel[i][levelIndex]] );
+            levelIndex++;
+        }
+        if (repartionIntensite.mercredi == true) {
+            semainesPMAMedium[i].mercredi = PMA1_1( levelsPMA1_1[addLevel[i][levelIndex]] );
+            levelIndex++;
+        }
+        if (repartionIntensite.jeudi == true) {
+            semainesPMAMedium[i].jeudi = PMA1_1( levelsPMA1_1[addLevel[i][levelIndex]] );
+            levelIndex++;
+        }
+        if (repartionIntensite.vendredi == true) {
+            semainesPMAMedium[i].vendredi = PMA1_1( levelsPMA1_1[addLevel[i][levelIndex]] );
+            levelIndex++;
+        }
+        if (repartionIntensite.samedi == true) {
+            semainesPMAMedium[i].samedi = PMA1_1( levelsPMA1_1[addLevel[i][levelIndex]] );
+            levelIndex++;
+        }
+        if (repartionIntensite.dimanche == true) {
+            semainesPMAMedium[i].dimanche = PMA1_1( levelsPMA1_1[addLevel[i][levelIndex]] );
+            levelIndex++;
+        }
+
+        End = new Array();
+        for (let y = 0; y < entrainementPrg - ISem; y++) {
+            End[y] = 0;
+        }
+
+        while (tpsSem > End.reduce(reducer)) {
+            for (let y = 0; y < entrainementPrg - ISem; y++) {
+                End[y] += Math.floor(Math.random() * (tpsSem / 40));
+            }
+        }
+
+        endIndex = 0;
+        if (jourDispo.samedi == true && semainesPMAMedium[i].samedi == "" && endIndex < entrainementPrg - ISem) {
+            semainesPMAMedium[i].samedi = enduranceFondamentale(End[endIndex]);
+            endIndex++;
+        }
+
+        if (jourDispo.dimanche == true && semainesPMAMedium[i].dimanche == "" && endIndex < entrainementPrg - ISem) {
+            semainesPMAMedium[i].dimanche = enduranceFondamentale(End[endIndex]);
+            endIndex++;
+        }
+
+        if (jourDispo.mercredi == true && semainesPMAMedium[i].mercredi == "" && endIndex < entrainementPrg - ISem) {
+            semainesPMAMedium[i].mercredi = enduranceFondamentale(End[endIndex]);
+            endIndex++;
+        }
+
+        if (jourDispo.jeudi == true && semainesPMAMedium[i].jeudi == "" && endIndex < entrainementPrg - ISem) {
+            semainesPMAMedium[i].jeudi = enduranceFondamentale(End[endIndex]);
+            endIndex++;
+        }
+
+        if (jourDispo.vendredi == true && semainesPMAMedium[i].vendredi == "" && endIndex < entrainementPrg - ISem) {
+            semainesPMAMedium[i].vendredi = enduranceFondamentale(End[endIndex]);
+            endIndex++;
+        }
+
+        if (jourDispo.lundi == true && semainesPMAMedium[i].lundi == "" && endIndex < entrainementPrg - ISem) {
+            semainesPMAMedium[i].lundi = enduranceFondamentale(End[endIndex])
+            endIndex++;
+        }
+
+        if (jourDispo.mardi == true && semainesPMAMedium[i].mardi == "" && endIndex < entrainementPrg - ISem) {
+            semainesPMAMedium[i].mardi = enduranceFondamentale(End[endIndex]);
+            endIndex++;
+        }
+    }
+    
+    return semainesPMAMedium;
+}

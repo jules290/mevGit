@@ -1,0 +1,39 @@
+body {
+    background-color: rgb(242, 242, 242);
+}
+
+#main {
+    width: 96%;
+    margin-top: 20px;
+    margin-left: 2%;
+    margin-right: 2%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.case1 {
+    width: 340px;
+    margin: 10px;
+}
+
+.case2 {
+    width: 680px;
+    margin: 10px;
+}
+
+.content {
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(209, 209, 209);
+    height: 465px;
+}
+
+.contentT {
+    margin: 0px;
+    margin-left: 15px;
+    margin-top: 6px;
+    color: rgb(85, 85, 85);
+    font-weight: lighter;
+    letter-spacing: 2px;
+    font-size: 16px;
+}

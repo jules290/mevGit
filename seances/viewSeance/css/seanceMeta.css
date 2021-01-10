@@ -1,0 +1,62 @@
+#seanceMeta {
+    width: 100%;
+    height: 15%;
+    display: flex;
+}
+
+#serieBox {
+    width: 98%;
+    height: 100%;
+    margin: 0% 1%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.serie {
+    width: 180px;
+    margin: 0px 6px;
+    display: flex;
+    flex-direction: row;
+    padding: 6px 2px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgb(84, 84, 84);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.serieT {
+    color: rgb(58, 58, 58);
+    margin: 0px;
+}
+
+.inputS {
+    width: 45px;
+    border-radius: 5px;
+    border: 1px solid rgb(170, 170, 170);
+    outline: none;
+    height: 20px;
+    font-size: 15px;
+    margin: 0px;
+    margin-left: 8px;
+    margin-bottom: -4px;
+    color: rgb(58, 58, 58);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.repBox {
+    margin: 4px 6px;
+    display: flex;
+    flex-direction: row;
+    padding: 8px 2px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgb(84, 84, 84);
+    border-radius: 5px;
+}

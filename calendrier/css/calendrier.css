@@ -1,0 +1,64 @@
+html, 
+body {
+    height: 100%;
+}
+
+#main {
+    width: 96%;
+    margin: 2% 2%;
+    display: flex;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+@media only screen and (max-width: 600px) {
+    #main {
+        flex-direction: column;
+        height: 80%;
+    }
+
+    #cld {
+        width: 100%;
+        height: 50%;
+    }
+
+    #viewDay {
+        width: 100%;
+        height: 50%;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    #main {
+        width: 90%;
+        margin: 2% 5%;
+        flex-direction: column;
+        height: 140%;
+    }
+
+    #cld {
+        width: 100%;
+        height: 50%;
+    }
+
+    #viewDay {
+        width: 100%;
+        height: 50%;
+    }
+}
+
+@media only screen and (min-width: 880px) {
+    #main {
+        flex-direction: row;
+        height: 75%;
+    }
+
+    #cld {
+        width: 44%;
+        height: 100%;
+    }
+
+    #viewDay {
+        width: 56%;
+        height: 100%;
+    }
+}

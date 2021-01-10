@@ -1,0 +1,70 @@
+body {
+    background-color: rgb(242, 242, 242);
+}
+
+#main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#prgT {
+    color: rgb(102, 102, 102);
+    font-size: 24px;
+    font-weight: lighter;
+    letter-spacing: 2.6px;
+    margin: 0px;
+    margin-top: 20px;
+}
+
+#prgCase {
+    width: 96%;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.prgCase {
+    width: 340px;
+    height: 400px;
+    margin: 10px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid rgb(209, 209, 209);
+}
+
+.prgCase2 {
+    width: 700px;
+    height: 400px;
+    margin: 10px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid rgb(209, 209, 209);
+}
+
+.prgCaseHeader {
+    width: 100%;
+    display: flex;
+}
+
+.prgCaseT {
+    width: 50%;
+    margin: 0px;
+    margin-left: 15px;
+    margin-top: 6px;
+    color: rgb(85, 85, 85);
+    font-weight: lighter;
+    letter-spacing: 2px;
+    font-size: 17px;
+}
+
+.rightIcon {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+}

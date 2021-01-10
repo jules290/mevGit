@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161645631-2"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments)}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-161645631-2');
+        </script>
+
+        <title>MEV - seances</title>
+        <meta name="description" content="programmes d'entrainement cyclistes gratuits et personnalisés de tout niveau (débutant à compétition)"/>
+        <meta name="keywords" content="cyclisme, entrainement vélo"/>
+        <meta name="robots" content="index, follow"/>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/png" href="/img/logo.png"/>
+
+        <link rel="stylesheet" href="/generale/css/body.css" media="screen">
+        <link rel="stylesheet" href="/generale/css/header.css" media="screen">
+
+        <link rel="stylesheet" href="/seances/viewSeance/css/viewSeance.css" media="screen">
+        <link rel="stylesheet" href="/seances/viewSeance/css/seanceMeta.css" media="screen">
+        <link rel="stylesheet" href="/seances/viewSeance/css/seanceListEtape.css" media="screen">
+        <link rel="stylesheet" href="/seances/viewSeance/css/seanceGraph.css" media="screen">
+
+        <script src="/generale/js/backgroundScript.js"></script>
+        <script src="/generale/js/backgroundFunction.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <div id="header">
+            <div id="titre">
+               <h1 id="mev">m.e.v</h1>
+            </div>
+
+            <nav id="menuNav">
+                <a id="aNav0" class="a_menuNav" href="/accueil/accueil.html">ACCUEIL</a>
+                <a id="aNav1" class="a_menuNav" href="/programme/programme.html">PROGRAMMES</a>
+                <a id="aNav2" class="a_menuNav" href="/calendrier/calendrier.html">CALENDRIER</a>
+                <a id="aNav3" class="a_menuNav" href="/seances/seance.html">SEANCES</a>
+                <a id="aNav4" class="a_menuNav" href="/statistiques/statistique.html">STATS</a>
+                <a id="aNav5" class="a_menuNav" href="/parametre/parametre.html">PARAMÈTRES</a>
+            </nav>
+
+            <div id="navSlideBar">
+                <div id="thisPage" class="navSlideBar"></div>
+                <div id="hoverPage" class="navSlideBar" style="visibility: hidden;"></div>
+            </div>
+        </div>
+
+       <section id="main">
+            <section id="seanceHeader">
+                <div id="seanceHeaderTBox">
+                    <h1 id="seanceHeaderT">TROUVEZ LA SEANCE QUI VOUS FERRA PROGRESSEZ AUJOURD'HUI</h1>
+                </div>
+            </section>
+
+            <div id="seanceMeta">
+                <div id="serieBox"></div>
+            </div>
+
+            <section id="seanceContent">
+                <section id="listEtape">
+                    <section id="listEtapeHeader">
+                        <button id="listEtapeHeaderBtn1" class="listEtapeHeaderBtn">ZONE</button>
+                        <button id="listEtapeHeaderBtn2" class="listEtapeHeaderBtn">PMA %</button>
+                    </section>
+
+                    <section id="viewSeanceEtape">
+
+                    </section>
+                </section>
+
+                <section id="graphSeanceBox">
+                    <canvas id="graphSeance"></canvas>
+                </section>
+            </section>
+
+            <section id="seanceSuivant">
+                <button id="suivant" class="suivantSaveBtn">SUIVANT</button>
+            </section>
+       </section>
+        
+        <script src="/generale/js/nav.js"></script>
+
+        <script src="/seances/js/allSeances.js"></script>
+
+        <script src="/seances/viewSeance/js/viewSeance.js"></script>
+        <script src="/seances/viewSeance/js/seanceMeta.js"></script>
+        <script src="/seances/viewSeance/js/seanceListEtape.js"></script>
+        <script src="/seances/viewSeance/js/seanceGetLevel.js"></script>
+        <script src="/seances/viewSeance/js/seanceGraph.js"></script>
+
+        <script src="/programme/newPrg/js/makePrg/seance/intensite.js"></script>
+        <script src="/programme/newPrg/js/makePrg/seance/test.js"></script>
+        <script src="/programme/newPrg/js/makePrg/seance/Z1.js"></script>
+        <script src="/programme/newPrg/js/makePrg/seance/Z2.js"></script>
+        <script src="/programme/newPrg/js/makePrg/seance/Z3.js"></script>
+        <script src="/programme/newPrg/js/makePrg/seance/Z4.js"></script>
+        <script src="/programme/newPrg/js/makePrg/seance/Z5.js"></script>
+        <script src="/programme/newPrg/js/makePrg/seance/Z6-7.js"></script>
+    </body>
+
+</html>

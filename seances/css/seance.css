@@ -1,0 +1,176 @@
+#seanceHeader {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#topNav {
+    width: 70%;
+    height: 45px;
+    margin: 25px 15%;
+    border-bottom: 1px solid rgb(221, 221, 221);
+    color: rgb(145, 145, 145);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.optionBox {
+    width: 100%;
+}
+
+.option {
+    height: 45px;
+    margin: 0px;
+    padding-left: 14px;
+    padding-right: 14px;
+    transition: 0.07s;
+    color: rgb(68, 68, 68);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.option:hover {
+    border-bottom: 2px solid rgb(118, 118, 118);
+}
+
+.optionT {
+    margin: 0px;
+    color: rgb(60, 60, 60);
+}
+
+.main {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#seanceSearch {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.seanceSearchParametre {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0% 1%;
+}
+
+.seanceSearchParametreT {
+    color: rgb(80, 80, 80);
+}
+
+.seanceSearchParametreInput {
+    width: 190px;
+    height: 30px;
+    background-color: rgb(235, 235, 235);
+    border: 1px solid rgb(194, 194, 194);
+    border-radius: 3px;
+    margin: 0px;
+    margin-top: 2px;
+    margin-left: 2px;
+    outline: none;
+    padding-left: 1px;
+    cursor: pointer;
+}
+
+.seanceSearchParametreInputOption {
+    margin: 0px;
+}
+
+#seanceSearchSubmit {
+    width: 34px;
+    height: 34px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(235, 235, 235);
+    border: 1px solid rgb(194, 194, 194);
+    border-radius: 3px;
+    font-size: 16px;
+    outline: none;
+    cursor: pointer;
+}
+
+#seanceSearchSubmit:hover {
+    background-color: rgb(214, 214, 214);
+}
+
+#seance {
+    width: 100%;
+    margin: 50px 0%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.seanceBase {
+    width: 240px;
+    height: 300px;
+    margin: 10px 10px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(160, 160, 160);
+    transition: 0.1s;
+    cursor: pointer;
+}
+
+.seanceBase:hover {
+    border: 1px solid rgb(100, 100, 100);
+}
+
+.seanceBaseT {
+    width: 90%;
+    height: 20%;
+    margin: 0% 5%;
+    margin-top: 10px;
+    color: rgb(43, 43, 43);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: center;
+    font-weight: lighter;
+    font-size: 17px;
+}
+
+.seanceSearch {
+    width: 100%;
+    height: 100px;
+    border-top: 1px solid rgb(160, 160, 160);
+}
+
+.seanceIMGBox {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.seanceIMG {
+    width: 90%;
+}
+
+.seanceZoneBox {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.seanceZone {
+    color: rgb(43, 43, 43);
+    font-variant: small-caps;
+}

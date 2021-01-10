@@ -1,0 +1,71 @@
+#avancementBar {
+    margin-top: 20px;
+    width: 90%;
+    height: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    background-color: rgb(226, 226, 226);
+    border-radius: 2px;
+}
+
+.avancementBar {
+    width: 100%;
+    height: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.avancementRound {
+    width: 20px;
+    height: 20px;
+    border-radius: 100px;
+    background-color: rgb(170, 170, 170);
+    transition: 0.1s;
+}
+
+#avancementDescription {
+    width: 100%;
+    margin-top: 30px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#avancementDescriptionT {
+    margin: 0px;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: rgb(70, 70, 70);
+    text-align: center;
+}
+
+#avancementDescriptionP {
+    width: 90%;
+    color: rgb(43, 43, 43);
+    white-space: pre-line;
+    text-align: center;
+}
+
+#avancementLongueur {
+    position: absolute;
+    margin-top: 270px;
+    width: 50%;
+}
+
+#avancementLongueurT {
+    font-size: 22px;
+    font-weight: lighter;
+    letter-spacing: 2px;
+    color: rgb(70, 70, 70);
+    text-align: center;
+}
+
+#avancementLongueurP {
+    color: rgb(43, 43, 43);
+    white-space: pre-line;
+    text-align: center;
+}

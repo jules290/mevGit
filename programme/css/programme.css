@@ -1,0 +1,67 @@
+#topNav {
+    width: 70%;
+    height: 45px;
+    margin-top: 30px;
+    margin-left: 15%;
+    margin-right: 15%;
+    border-bottom: 1px solid rgb(221, 221, 221);
+    color: rgb(145, 145, 145);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.optionBox {
+    width: 100%;
+}
+
+.option {
+    height: 45px;
+    margin: 0px;
+    padding-left: 14px;
+    padding-right: 14px;
+    transition: 0.07s;
+    color: rgb(68, 68, 68);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.option:hover {
+    border-bottom: 2px solid rgb(118, 118, 118);
+}
+
+.optionT {
+    margin: 0px;
+    color: rgb(60, 60, 60);
+}
+
+.main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#main {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.PROCHAINEMENT {
+    margin: 0px;
+    margin-top: 30px;
+    font-size: 34px;
+    color: rgb(25, 25, 25);
+    font-weight: lighter;
+}
+
+#Nouveau {
+    width: 86%;
+    margin-left: 7%;
+    margin-right: 7%;
+    margin-top: 20px;
+}

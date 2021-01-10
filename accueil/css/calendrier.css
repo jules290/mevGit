@@ -1,0 +1,137 @@
+#cld {
+    height: 340px;
+    background-color: rgb(118, 118, 118);
+}
+
+#header_cld {
+    width: 100%;
+    height: 18%;
+    background-color: rgb(124, 124, 124);
+    display: flex;
+    flex-direction: column;
+}
+
+#cldT {
+    width: 100%;
+    height: 66.666%;
+    color: rgb(255, 255, 255);
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#up_down {
+    width: 100%;
+    height: 33.333%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cldBtn {
+    width: 40%;
+    height: 100%;
+    border: none;
+    background-color: rgb(90, 90, 90);
+    color: white;
+    outline: none;
+    transition: 0.2s;
+}
+
+.cldBtn:hover {
+    background-color: rgb(75, 75, 75);
+}
+
+#middleCldBtn {
+    width: 20%;
+    height: 100%;
+    background-color: rgb(60, 60, 60);
+}
+
+
+#cld_box {
+    width: 100%;
+    height: 82%;
+    background-color: rgb(143, 143, 143);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#jour {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.semaine {
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.jr_box{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.jr_nb {
+    color: rgb(255, 255, 255);
+    margin: 0px;
+    font-size: 18px;
+}
+
+.dt_box {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.1s;
+}
+
+.dt {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.dt_nb {
+    width: 100%;
+    height: 90%;
+    color: rgb(255, 255, 255);
+    margin: 0px;
+    font-size: 19px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.1s;
+}
+
+.dt_seanceDayBox {
+    position: relative;
+    width: 100%;
+    height: 7%;
+    margin-bottom: 3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dt_seanceDay {
+    width: 5px;
+    height: 5px;
+    border-radius: 100px;
+}

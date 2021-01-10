@@ -1,0 +1,41 @@
+#SEANCES_BOX {
+    width: 509.84px;
+    height: 340px;
+    background-image: url("../img/remcoEntrainement.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+#suggestionSeance {
+    width: 90%;
+    height: 60px;
+    margin: 0px;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-size: 22px;
+    border-radius: 100px;
+    background-color: rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+}
+
+#suggestionSeanceBtn {
+    width: 220px;
+    height: 50px;
+    margin-top: 180px;
+    margin-left: 40px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    transition: 0.15s;
+    cursor: pointer;
+}
+
+#suggestionSeanceBtn:hover {
+    color: rgb(0, 234, 170);
+}
