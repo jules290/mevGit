@@ -76,11 +76,6 @@ body {
     text-decoration: none;
 }
 
-.settingInputLink {
-    position: relative;
-    margin-left: 70%;
-}
-
 #sauvegarderDiv {
     margin-top: 20px;
     width: 100%;
@@ -127,10 +122,6 @@ body {
         height: 20px;
     }
 
-    .settingInputLink {
-        margin-top: -70%;
-    }
-
     .settingInput {
         font-size: 12px;
     }
@@ -153,10 +144,6 @@ body {
         font-size: 15px;
         width: 22px;
         height: 22px;
-    }
-
-    .settingInputLink {
-        margin-top: -49%;
     }
 
     .settingInput {
@@ -183,10 +170,6 @@ body {
         height: 23px;
     }
 
-    .settingInputLink {
-        margin-top: -39%;
-    }
-
     .settingInput {
         font-size: 14px;
     }
@@ -209,10 +192,6 @@ body {
         font-size: 18px;
         width: 25px;
         height: 25px;
-    }
-
-    .settingInputLink {
-        margin-top: -32%;
     }
 
     .settingInput {
@@ -239,10 +218,6 @@ body {
         height: 32px;
     }
 
-    .settingInputLink {
-        margin-top: -28%;
-    }
-
     .settingInput {
         font-size: 16px;
     }
@@ -267,10 +242,6 @@ body {
         height: 32px;
     }
 
-    .settingInputLink {
-        margin-top: -26%;
-    }
-
     .settingInput {
         font-size: 17px;
     }
@@ -293,10 +264,6 @@ body {
         font-size: 20px;
         width: 32px;
         height: 32px;
-    }
-
-    .settingInputLink {
-        margin-top: -23%;
     }
 
     .settingInput {
