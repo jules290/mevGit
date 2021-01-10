@@ -9,6 +9,6 @@ function postSeance() {
         document.getElementById("SEANCES_BOX").innerHTML = 
             "<h2 id='suggestionSeance'>TROUVEZ LA SEANCE QUI VOUS FERRA PROGRESSER AUJOURD'HUI</h2>"+
             '<button id="suggestionSeanceBtn">TROUVER UNE SEANCE</button>'
-        $("#suggestionSeanceBtn").click(function () {window.location.href = '../programme/programme.html'})
+        $("#suggestionSeanceBtn").click(function () {window.location.href = '/seances/seance.html'})
     }
 }
