@@ -65,3 +65,10 @@
     margin-right: 2px;
     white-space: wrap;
 }
+
+@media only screen and (max-width: 499px) {
+    .viewSeanceEtapeT {font-size: 8px}
+}
+@media only screen and (min-width: 500px) {
+    .viewSeanceEtapeT {font-size: 14px}
+}

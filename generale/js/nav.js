@@ -31,15 +31,15 @@ function nav() {
             break;
 
         case "tablBrdPrg":
-            document.getElementById("thisPage").style.marginLeft = 1 * 100 / 6 + "%";
+            document.getElementById("thisPage").style.marginLeft = 1 * 100 / 5 + "%";
             break;
 
         case "newPrg":
-            document.getElementById("thisPage").style.marginLeft = 1 * 100 / 6 + "%";
+            document.getElementById("thisPage").style.marginLeft = 1 * 100 / 5 + "%";
             break;
         
         case "viewSeance":
-            document.getElementById("thisPage").style.marginLeft = 3 * 100 / 6 + "%";
+            document.getElementById("thisPage").style.marginLeft = 3 * 100 / 5 + "%";
             break;
     }
 }
