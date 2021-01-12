@@ -1,14 +1,22 @@
 #SEANCES_BOX {
     width: 509.84px;
-    height: 340px;
     background-image: url("../img/remcoEntrainement.jpg");
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
 
+@media only screen and (min-width: 280px) {#SEANCES_BOX {height: 173.4px}}
+@media only screen and (min-width: 320px) {#SEANCES_BOX {height: 191.4px}}
+@media only screen and (min-width: 360px) {#SEANCES_BOX {height: 217px}}
+@media only screen and (min-width: 400px) {#SEANCES_BOX {height: 240.1px}}
+@media only screen and (min-width: 440px) {#SEANCES_BOX {height: 268.35px}}
+@media only screen and (min-width: 480px) {#SEANCES_BOX {height: 293px}}
+@media only screen and (min-width: 520px) {#SEANCES_BOX {height: 310.56px}}
+@media only screen and (min-width: 560px) {#SEANCES_BOX {height: 340px}}
+
 #suggestionSeance {
     width: 90%;
-    height: 60px;
+    /* height: 60px; */
     margin: 0px;
     margin-left: 5%;
     margin-right: 5%;
@@ -24,17 +32,66 @@
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
 }
 
+@media only screen and (min-width: 280px) {#suggestionSeance {font-size: 10px}}
+@media only screen and (min-width: 320px) {#suggestionSeance {font-size: 11px}}
+@media only screen and (min-width: 360px) {#suggestionSeance {font-size: 12px}}
+@media only screen and (min-width: 400px) {#suggestionSeance {font-size: 14px}}
+@media only screen and (min-width: 440px) {#suggestionSeance {font-size: 16px}}
+@media only screen and (min-width: 480px) {#suggestionSeance {font-size: 18px}}
+@media only screen and (min-width: 520px) {#suggestionSeance {font-size: 20px}}
+@media only screen and (min-width: 560px) {#suggestionSeance {font-size: 22px}}
+
 #suggestionSeanceBtn {
-    width: 220px;
+    width: 40%;
     height: 50px;
     margin-top: 180px;
-    margin-left: 40px;
+    margin-left: 10%;
     border: none;
     border-radius: 5px;
     outline: none;
     transition: 0.15s;
     cursor: pointer;
 }
+
+@media only screen and (min-width: 280px) {#suggestionSeanceBtn {
+    font-size: 10px;
+    margin-top: 40px;
+}}
+
+@media only screen and (min-width: 320px) {#suggestionSeanceBtn {
+    font-size: 11px;
+    margin-top: 60px;
+}}
+
+@media only screen and (min-width: 360px) {#suggestionSeanceBtn {
+    font-size: 12px;
+    margin-top: 80px;
+}}
+
+@media only screen and (min-width: 400px) {#suggestionSeanceBtn {
+    font-size: 12px;
+    margin-top: 100px;
+}}
+
+@media only screen and (min-width: 440px) {#suggestionSeanceBtn {
+    font-size: 13px;
+    margin-top: 120px;
+}}
+
+@media only screen and (min-width: 480px) {#suggestionSeanceBtn {
+    font-size: 13px;
+    margin-top: 140px;
+}}
+
+@media only screen and (min-width: 520px) {#suggestionSeanceBtn {
+    font-size: 14px;
+    margin-top: 160px;
+}}
+
+@media only screen and (min-width: 560px) {#suggestionSeanceBtn {
+    font-size: 14px;
+    margin-top: 180px;
+}}
 
 #suggestionSeanceBtn:hover {
     color: rgb(0, 234, 170);
