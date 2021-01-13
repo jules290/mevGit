@@ -31,11 +31,6 @@ function postSerieAndRep(seance) {
     serieInputS.value = seance.serie;
     serie.appendChild(serieInputS);
 
-    let serieT2 = document.createElement("div");
-    serieT2.className = "serieT";
-    serieT2.innerText = "serie(s)";
-    serie.appendChild(serieT2);
-
 
     let rep = document.createElement("div");
     rep.className = "serie";
@@ -43,18 +38,13 @@ function postSerieAndRep(seance) {
 
     let repT1 = document.createElement("div");
     repT1.className = "serieT";
-    repT1.innerText = "répétition:";
+    repT1.innerText = "répétitions:";
     rep.appendChild(repT1);
 
     let repInputS = document.createElement("input");
     repInputS.className = "inputS";
     repInputS.value = seance.rep;
     rep.appendChild(repInputS);
-
-    let repT2 = document.createElement("div");
-    repT2.className = "serieT";
-    repT2.innerText = "rep(s)";
-    rep.appendChild(repT2);
 }
 
 function postSerieAndTime(seance) {

@@ -36,6 +36,13 @@
     align-items: center;
 }
 
+@media only screen and (min-width: 280px) {.option {font-size: 12px;}}
+@media only screen and (min-width: 400px) {.option {font-size: 13px;}}
+@media only screen and (min-width: 500px) {.option {font-size: 14px;}}
+@media only screen and (min-width: 600px) {.option {font-size: 15px;}}
+@media only screen and (min-width: 700px) {.option {font-size: 16px;}}
+@media only screen and (min-width: 800px) {.option {font-size: 17px;}}
+
 .option:hover {
     border-bottom: 2px solid rgb(118, 118, 118);
 }

@@ -1,6 +1,8 @@
 #graphSeanceBox {
-    width: 70%;
+    width: 68%;
+    margin: 0% 1%;
     height: 100%;
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;

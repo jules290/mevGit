@@ -55,7 +55,7 @@ function postSeancesActifList() {
         
             seanceTitre = document.createElement("div");
             seanceTitre.className = "seanceTitre seanceContent";
-            if (Seance[i].titre.length >= 27) seanceTitre.innerText = Seance[i].titre.slice(0, 26) + "..."
+            if (Seance[i].titre.length >= 21) seanceTitre.innerText = Seance[i].titre.slice(0, 20) + "..."
             else seanceTitre.innerText = Seance[i].titre
             seance.appendChild(seanceTitre);
         

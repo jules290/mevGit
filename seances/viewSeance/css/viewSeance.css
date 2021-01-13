@@ -56,17 +56,9 @@ body {
     align-items: flex-start;
 }
 
-@media only screen and (max-width: 836px) {
-    #seanceContent {height: 50%;}
-    #seanceSuivant {height: 12%;}
-}
-@media only screen and (min-width: 836px) {
-    #seanceContent {height: 60%;}
-    #seanceSuivant {height: 15%;}
-}
-
 #seanceSuivant {
     width: 100%;
+    height: 15%;
     display: flex;
     flex-direction: column-reverse;
     justify-content: center;

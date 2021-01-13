@@ -1,7 +1,7 @@
 #seanceHeaderList {
-    width: 90%;
+    width: 94%;
     height: 40px;
-    margin-top: 20px;
+    margin-top: 0px;
     display: flex;
     flex-direction: row;
     border-bottom: 1px solid rgb(202, 202, 202);
@@ -17,6 +17,13 @@
     font-size: 16px;
 }
 
+@media only screen and (min-width: 280px) {.seanceHeaderContent {font-size: 10px;}}
+@media only screen and (min-width: 400px) {.seanceHeaderContent {font-size: 12px;}}
+@media only screen and (min-width: 500px) {.seanceHeaderContent {font-size: 13px;}}
+@media only screen and (min-width: 600px) {.seanceHeaderContent {font-size: 14px;}}
+@media only screen and (min-width: 700px) {.seanceHeaderContent {font-size: 15px;}}
+@media only screen and (min-width: 800px) {.seanceHeaderContent {font-size: 16px;}}
+
 .seanceContent {
     width: 100%;
     height: 40px;
@@ -24,11 +31,17 @@
     align-items: center;
     justify-content: center;
     color: rgb(73, 73, 73);
-    font-size: 16px;
 }
 
+@media only screen and (min-width: 280px) {.seanceContent {font-size: 10px;}}
+@media only screen and (min-width: 400px) {.seanceContent {font-size: 12px;}}
+@media only screen and (min-width: 500px) {.seanceContent {font-size: 13px;}}
+@media only screen and (min-width: 600px) {.seanceContent {font-size: 14px;}}
+@media only screen and (min-width: 700px) {.seanceContent {font-size: 15px;}}
+@media only screen and (min-width: 800px) {.seanceContent {font-size: 16px;}}
+
 .seance {
-    width: 90%;
+    width: 94%;
     height: 40px;
     display: flex;
     flex-direction: row;

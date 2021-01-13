@@ -23,6 +23,8 @@ function postSeanceGraph(index) {
     canvas.height = window.innerHeight * 0.96 * 0.40;
     totalWidth = 0;
 
+    window.onresize = function () {postSeanceGraph(index)}
+
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     if (seance.seance) {

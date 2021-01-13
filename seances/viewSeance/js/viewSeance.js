@@ -13,6 +13,7 @@ function postViewSeance(index) {
 
 $("#suivant").click(function () {
     if (this.id == "suivant") {
+        let sousTypeSeance = "";
         index = getAfterUrl();
         level = getSeanceLevel(seances[index].type);
 
@@ -73,7 +74,7 @@ $("#suivant").click(function () {
             zone: seances[index].zone
         }
 
-        if (sousTypeSeance) seance.sousTypeSeance = sousTypeSeance;
+        if (sousTypeSeance.length > 0) seance.sousTypeSeance = sousTypeSeance;
         let d = new Date();
 
         document.getElementById("seanceMeta").remove();
