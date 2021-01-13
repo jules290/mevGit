@@ -30,6 +30,9 @@ function postSerieAndRep(seance) {
     serieInputS.className = "inputS";
     serieInputS.value = seance.serie;
     serie.appendChild(serieInputS);
+    $(".inputS").focusout(function () {
+        if (Number(this.value) > 5) this.value = 5
+    })
 
 
     let rep = document.createElement("div");

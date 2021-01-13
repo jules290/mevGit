@@ -69,7 +69,7 @@ function postListDaySeances(day, month, year) {
     }
     addSeanceMsg = document.createElement("div");
     addSeanceMsg.className = "addSeanceMsg";
-    addSeanceMsg.onclick = function () {window.location.href = "/seances/seance.html"}
+    addSeanceMsg.onclick = function () {window.location.href = "/seances/seance.html?nouveau"}
     document.getElementById("viewSeance").appendChild(addSeanceMsg);
 
     addSeanceMsgLogo = document.createElement("img");

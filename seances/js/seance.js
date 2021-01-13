@@ -54,12 +54,19 @@ function postTopNav() {
     NouveauNav = document.getElementById("NouveauNav");
     
     $(document).ready(function () {
-        for (let i = 0; i < main.length; i++) {
-            $(`#${main[i].id}`).hide();
+        afterUrl = getAfterUrl();
+        if (afterUrl = "nouveau") {
+            $("#Nouveau").show();
+            document.getElementById("NouveauNav").style.borderBottom = "2px solid rgb(0, 234, 170)";
         }
-    
-        if (localStorage.seance && localStorage.seance.length > 2) mainState("ActifNav");
-        else mainState("NouveauNav");
+        else {
+            for (let i = 0; i < main.length; i++) {
+                $(`#${main[i].id}`).hide();
+            }
+        
+            if (localStorage.seance && localStorage.seance.length > 2) mainState("ActifNav");
+            else mainState("NouveauNav");
+        }
     })
     
     $(".option").click(function () {
