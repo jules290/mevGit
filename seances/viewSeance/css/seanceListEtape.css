@@ -13,11 +13,19 @@
 .listEtapeHeaderBtn {
     width: 44%;
     height: 80%;
+    font-size: 12px;
     border: none;
     outline: none;
     color: white;
     transition: 0.1s;
 }
+
+@media only screen and (min-width: 280px) {.listEtapeHeaderBtn {font-size: 7px;}}
+@media only screen and (min-width: 400px) {.listEtapeHeaderBtn {font-size: 8px;}}
+@media only screen and (min-width: 500px) {.listEtapeHeaderBtn {font-size: 9px;}}
+@media only screen and (min-width: 600px) {.listEtapeHeaderBtn {font-size: 10px;}}
+@media only screen and (min-width: 700px) {.listEtapeHeaderBtn {font-size: 11px;}}
+@media only screen and (min-width: 800px) {.listEtapeHeaderBtn {font-size: 12px;}}
 
 .listEtapeHeaderBtn:hover {
     color: rgb(0, 255, 187);

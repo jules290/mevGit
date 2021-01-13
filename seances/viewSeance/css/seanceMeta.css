@@ -4,10 +4,13 @@
     display: flex;
 }
 
-@media only screen and (max-width: 415px) {
-    #seanceMeta {height: 22%;}
+@media only screen and (max-width: 834px) {
+    #seanceMeta {
+        height: 26%;
+        margin-bottom: 2%;
+    }
 }
-@media only screen and (min-width: 415px) {
+@media only screen and (min-width: 834px) {
     #seanceMeta {height: 15%;}
 }
 
@@ -16,23 +19,19 @@
     height: 100%;
     margin: 0% 1%;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     flex-direction: row;
     align-items: center;
     justify-content: center;
 }
 
 .serie {
-    width: 180px;
-    margin: 0px 6px;
     display: flex;
     flex-direction: row;
-    padding: 6px 2px;
     align-items: center;
     justify-content: center;
     border: 1px solid rgb(84, 84, 84);
     border-radius: 5px;
-    overflow: hidden;
 }
 
 .serieT {
@@ -40,21 +39,112 @@
     margin: 0px;
 }
 
+@media only screen and (min-width: 280px) {
+    .serieT {font-size: 9px;}
+    .serie {
+        width: 110px;
+        margin: 0px 1px;
+        padding: 3px 1px;
+    }
+}
+@media only screen and (min-width: 400px) {
+    .serieT {font-size: 11px;}
+    .serie {
+        width: 120px;
+        margin: 0px 2px;
+        padding: 4px 1px;
+    }
+}
+@media only screen and (min-width: 500px) {
+    .serieT {font-size: 12px;}
+    .serie {
+        width: 130px;
+        margin: 0px 3px;
+        padding: 5px 2px;
+    }
+}
+@media only screen and (min-width: 600px) {
+    .serieT {font-size: 13px;}
+    .serie {
+        width: 140px;
+        margin: 0px 4px;
+        padding: 5px 2px;
+    }
+}
+@media only screen and (min-width: 700px) {
+    .serieT {font-size: 15px;}
+    .serie {
+        width: 160px;
+        margin: 0px 5px;
+        padding: 6px 2px;
+    }
+}
+@media only screen and (min-width: 800px) {
+    .serieT {font-size: 16px;}
+    .serie {
+        width: 180px;
+        margin: 0px 6px;
+        padding: 6px 2px;
+    }
+}
+
 .inputS {
     width: 45px;
+    height: 20px;
     border-radius: 5px;
     border: 1px solid rgb(170, 170, 170);
     outline: none;
-    height: 20px;
     font-size: 15px;
     margin: 0px;
-    margin-left: 8px;
-    margin-bottom: -4px;
+    margin-bottom: -2px;
     color: rgb(58, 58, 58);
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@media only screen and (min-width: 280px) {
+    .inputS {
+        width: 25px;
+        font-size: 10px;
+        margin-left: 0px;
+    }
+}
+@media only screen and (min-width: 400px) {
+    .inputS {
+        width: 32px;
+        font-size: 11px;
+        margin-left: 4px;
+    }
+}
+@media only screen and (min-width: 500px) {
+    .inputS {
+        width: 36px;
+        font-size: 12px;
+        margin-left: 5px;
+    }
+}
+@media only screen and (min-width: 600px) {
+    .inputS {
+        width: 39px;
+        font-size: 13px;
+        margin-left: 6px;
+    }
+}
+@media only screen and (min-width: 700px) {
+    .inputS {
+        width: 42px;
+        font-size: 15px;
+        margin-left: 7px;
+    }
+}
+@media only screen and (min-width: 800px) {
+    .inputS {
+        width: 45px;
+        font-size: 16px;
+        margin-left: 8px;
+    }
 }
 
 .repBox {
@@ -66,4 +156,12 @@
     justify-content: center;
     border: 1px solid rgb(84, 84, 84);
     border-radius: 5px;
+}
+
+@media only screen and (max-width: 836px) {
+    .repBox {
+        overflow: hidden;
+        flex-wrap: nowrap;
+        padding: 4px 4px;
+    }
 }

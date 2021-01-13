@@ -1,18 +1,26 @@
 #PARAMETRE_BOX {
     width: 604.5px;
-    height: 340px;
     background-image: url("../img/parametre.jpg");
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
 
+@media only screen and (min-width: 280px) {#PARAMETRE_BOX {height: 173.4px}}
+@media only screen and (min-width: 320px) {#PARAMETRE_BOX {height: 191.4px}}
+@media only screen and (min-width: 360px) {#PARAMETRE_BOX {height: 217px}}
+@media only screen and (min-width: 400px) {#PARAMETRE_BOX {height: 240.1px}}
+@media only screen and (min-width: 440px) {#PARAMETRE_BOX {height: 268.35px}}
+@media only screen and (min-width: 480px) {#PARAMETRE_BOX {height: 293px}}
+@media only screen and (min-width: 520px) {#PARAMETRE_BOX {height: 310.56px}}
+@media only screen and (min-width: 560px) {#PARAMETRE_BOX {height: 340px}}
+
 #PARAMETRE_BOXT {
     width: 40%;
-    height: 100px;
+    height: 50px;
     margin: 0px;
     margin-left: 30%;
     margin-right: 30%;
-    margin-top: 50px;
+    margin-top: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,22 +28,68 @@
     color: rgb(255, 255, 255);
     font-size: 22px;
     border-radius: 100px;
-    background-image: radial-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+    background-image: radial-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0));
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
 }
+
+@media only screen and (min-width: 280px) {#PARAMETRE_BOXT {font-size: 14px}}
+@media only screen and (min-width: 320px) {#PARAMETRE_BOXT {font-size: 15px}}
+@media only screen and (min-width: 360px) {#PARAMETRE_BOXT {font-size: 17px}}
+@media only screen and (min-width: 400px) {#PARAMETRE_BOXT {font-size: 19px}}
+@media only screen and (min-width: 440px) {#PARAMETRE_BOXT {font-size: 20px}}
+@media only screen and (min-width: 480px) {#PARAMETRE_BOXT {font-size: 22px}}
 
 #PARAMETRE_BOXBtn {
     width: 40%;
-    height: 50px;
     margin-left: 30%;
     margin-right: 30%;
-    margin-top: 50px;
     border: none;
     border-radius: 5px;
     outline: none;
     transition: 0.15s;
     cursor: pointer;
 }
+
+@media only screen and (min-width: 280px) {#PARAMETRE_BOXBtn {
+    height: 40px;
+    margin-top: 10px;
+    font-size: 10px;
+}}
+@media only screen and (min-width: 320px) {#PARAMETRE_BOXBtn {
+    height: 40px;
+    margin-top: 20px;
+    font-size: 10px;
+}}
+@media only screen and (min-width: 360px) {#PARAMETRE_BOXBtn {
+    height: 40px;
+    margin-top: 30px;
+    font-size: 10px;
+}}
+@media only screen and (min-width: 400px) {#PARAMETRE_BOXBtn {
+    height: 40px;
+    margin-top: 40px;
+    font-size: 10px;
+}}
+@media only screen and (min-width: 440px) {#PARAMETRE_BOXBtn {
+    height: 45px;
+    margin-top: 50px;
+    font-size: 11px;
+}}
+@media only screen and (min-width: 480px) {#PARAMETRE_BOXBtn {
+    height: 50px;
+    margin-top: 70px;
+    font-size: 11px;
+}}
+@media only screen and (min-width: 520px) {#PARAMETRE_BOXBtn {
+    height: 50px;
+    margin-top: 80px;
+    font-size: 12px;
+}}
+@media only screen and (min-width: 560px) {#PARAMETRE_BOXBtn {
+    height: 50px;
+    margin-top: 100px;
+    font-size: 14px;
+}}
 
 #PARAMETRE_BOXBtn:hover {
     color: rgb(0, 234, 170);
