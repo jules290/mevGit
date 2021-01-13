@@ -8,41 +8,35 @@ function PostBaseSeances() {
     document.getElementById("seance").style.flexDirection = "row";
 
     for (let i = 0; i < seances.length; i++) {
-        if (seances[i].titre == "FRACTIONNÉ PMA 30SEC/30SEC" || seances[i].titre == "FRACTIONNÉ PMA 1MIN/1MIN" ||
-        seances[i].titre == "FRACTIONNÉ PMA 3MIN/3MIN" || seances[i].titre == "FRACTIONNÉ SEUIL 5MIN/5MIN" ||
-        seances[i].titre == "GIMENEZ" || seances[i].titre == "SWEET SPOT" || seances[i].titre == "ENDURANCE HAUTE" || 
-        seances[i].titre == "ENDURANCE FONDAMENTALE" || seances[i].titre == "DÉBLOQUAGE" ||
-        seances[i].titre == "TEST FC MAX" || seances[i].titre == "TEST PMA") {
-            var seance = document.createElement("div");
-            seance.className = "seanceBase";
-            document.getElementById("seance").appendChild(seance);
+        var seance = document.createElement("div");
+        seance.className = "seanceBase";
+        document.getElementById("seance").appendChild(seance);
 
-            var seanceT = document.createElement("div");
-            seanceT.className = "seanceBaseT";
-            seanceT.innerText = seances[i].titre;
-            seance.appendChild(seanceT);
+        var seanceT = document.createElement("div");
+        seanceT.className = "seanceBaseT";
+        seanceT.innerText = seances[i].titre;
+        seance.appendChild(seanceT);
 
-            var seanceIMGBox = document.createElement("div");
-            seanceIMGBox.className = "seanceIMGBox";
-            seance.appendChild(seanceIMGBox);
+        var seanceIMGBox = document.createElement("div");
+        seanceIMGBox.className = "seanceIMGBox";
+        seance.appendChild(seanceIMGBox);
 
-            var seanceIMG = document.createElement("img");
-            seanceIMG.className = "seanceIMG";
-            seanceIMG.src = seances[i].imgHref;
-            seanceIMGBox.appendChild(seanceIMG);
+        var seanceIMG = document.createElement("img");
+        seanceIMG.className = "seanceIMG";
+        seanceIMG.src = seances[i].imgHref;
+        seanceIMGBox.appendChild(seanceIMG);
 
-            var seanceZoneBox = document.createElement("div");
-            seanceZoneBox.className = "seanceZoneBox";
-            seance.appendChild(seanceZoneBox);
+        var seanceZoneBox = document.createElement("div");
+        seanceZoneBox.className = "seanceZoneBox";
+        seance.appendChild(seanceZoneBox);
 
-            var seanceZone = document.createElement("div");
-            seanceZone.className = "seanceZone";
-            seanceZone.innerText = "ZONE " + seances[i].zone;
-            seanceZoneBox.appendChild(seanceZone);
+        var seanceZone = document.createElement("div");
+        seanceZone.className = "seanceZone";
+        seanceZone.innerText = "ZONE " + seances[i].zone;
+        seanceZoneBox.appendChild(seanceZone);
 
-            seance.onclick = function () {
-                window.location.href = `/seances/viewSeance/viewSeance.html?${i}`;
-            }
+        seance.onclick = function () {
+            window.location.href = `/seances/viewSeance/viewSeance.html?${i}`;
         }
     }
 }

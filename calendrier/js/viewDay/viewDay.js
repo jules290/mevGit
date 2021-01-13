@@ -60,6 +60,7 @@ function postListDaySeances(day, month, year) {
                     else if (daySeances[i].typeSeance == "Gimenez") viewSeanceT.innerText = "SEANCE DE GIMENEZ"
                     else if (daySeances[i].typeSeance == "Seuil") viewSeanceT.innerText = "SEANCE DE SEUIL"
                     else if (daySeances[i].typeSeance == "PMA") viewSeanceT.innerText = "SEANCE DE PMA"
+                    else if (daySeances[i].typeSeance == "Sprint") viewSeanceT.innerText = "SEANCE DE SPRINT"
                 }
                 else viewSeanceT.innerText = "COURSE";
                 seanceBasicInfo.appendChild(viewSeanceT);

@@ -36,6 +36,10 @@ $("#suivant").click(function () {
             seanceSeance = seuil5_5(level).seance;
             typeSeance = "Seuil";
         }
+        else if (seances[index].titre == "SPRINT") {
+            seanceSeance = sprint(level).seance;
+            typeSeance = "Sprint";
+        }
         else if (seances[index].titre == "GIMENEZ") {
             seanceSeance = gimenez(level).seance;
             typeSeance = "Gimenez";

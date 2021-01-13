@@ -7,6 +7,7 @@ function postSeanceListEtape(index) {
     else if (seanceData.titre == "FRACTIONNÉ PMA 1MIN/1MIN") seance = PMA1_1(level)
     else if (seanceData.titre == "FRACTIONNÉ PMA 3MIN/3MIN") seance = PMA3_3(level)
     else if (seanceData.titre == "FRACTIONNÉ SEUIL 5MIN/5MIN") seance = seuil5_5(level)
+    else if (seanceData.titre == "SPRINT") seance = sprint(level)
     else if (seanceData.titre == "GIMENEZ") seance = gimenez(level)
     else if (seanceData.titre == "SWEET SPOT") seance = sweetspot(level)
     else if (seanceData.titre == "ENDURANCE HAUTE") seance = enduranceHaute(level)

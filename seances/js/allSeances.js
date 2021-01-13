@@ -32,6 +32,14 @@ var seances = [
         imgHref: "/img/seuil5_5Graph.PNG"
     },
     {
+        titre: "SPRINT",
+        zone: 7,
+        type: "serieAndRep",
+        serie: 1,
+        rep: 8,
+        imgHref: "/img/sprintGraph.PNG"
+    },
+    {
         titre: "GIMENEZ",
         zone: 4,
         type: "serieAndTime",
