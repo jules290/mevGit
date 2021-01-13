@@ -1,5 +1,6 @@
 function postListDaySeances(day, month, year) {
     daySeances = getDaySeances(Number(day), month.toLowerCase(), year);
+    
 
     $("#viewSeance").empty();
     if (daySeances.length > 0) {
@@ -33,7 +34,12 @@ function postListDaySeances(day, month, year) {
                         seanceOtherInfo = document.createElement("div");
                         seanceOtherInfo.className = "viewSeanceOtherInfo";
                         this.parentNode.parentNode.appendChild(seanceOtherInfo);
-                        postOtherInfo(daySeances[i]);
+                        if (daySeances[i] != undefined) postOtherInfo(daySeances[i])
+                        else if (sessionStorage.viewSeance) {
+                            if (JSON.parse(sessionStorage.viewSeance)) {
+                                postOtherInfo(JSON.parse(sessionStorage.viewSeance)[i]);
+                            }
+                        }
                     }
                 }
                 seanceBasicInfo.appendChild(seanceArrowBox);

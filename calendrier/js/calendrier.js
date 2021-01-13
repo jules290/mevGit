@@ -100,6 +100,7 @@ function postViewDay(day, month, year) {
     }
     document.getElementById("viewDayT").innerText = day + " " + month.toString().toLocaleUpperCase() + " " + year; 
 
+    sessionStorage.viewSeance = JSON.stringify(getDaySeances(Number(day), month.toLowerCase(), year));
     postListDaySeances(day, month, year);
 }
 
