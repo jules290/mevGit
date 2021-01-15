@@ -3,6 +3,10 @@ $(document).ready(function () {
     postTopNav();
 })
 
+$("#seanceSearchSubmit").click(function () {
+    PostSearchSeances();
+})
+
 function PostBaseSeances() {
     $("#seance").empty();
     document.getElementById("seance").style.flexDirection = "row";
@@ -32,18 +36,65 @@ function PostBaseSeances() {
 
         var seanceZone = document.createElement("div");
         seanceZone.className = "seanceZone";
-        seanceZone.innerText = "ZONE " + seances[i].zone;
+        seanceZone.innerText = "ZONE " + seances[i].Z;
         seanceZoneBox.appendChild(seanceZone);
 
         seance.onclick = function () {
-            window.location.href = `/seances/viewSeance/viewSeance.html?${i}`;
+            window.location.href = `/seances/viewNewSeance/viewNewSeance.html?${i}`;
         }
     }
 }
 
 function PostSearchSeances() {
     $("#seance").empty();
-    document.getElementById("seance").style.flexDirection = "column";
+    document.getElementById("seance").style.flexDirection = "row";
+
+    inputs = document.getElementsByClassName("seanceSearchParametreInput");
+    typeValue = ['', 'ENTRAÎNEMENT', 'TEST', 'PRÉ-COMPÉTION'];
+    zone = inputs[0].value;
+    type = typeValue[Number(inputs[1].value)];
+
+    for (let i = 0; i < seances.length; i++) {
+        check = false
+    
+        if (seances[i].Z == zone && seances[i].TYPE == type) check = true
+        else if (seances[i].Z == zone) check = true 
+        else if (seances[i].TYPE == type) check = true
+        else if (zone == '0' && type == '') check = true
+
+        if (check == true) {
+            var seance = document.createElement("div");
+            seance.className = "seanceBase";
+            document.getElementById("seance").appendChild(seance);
+    
+            var seanceT = document.createElement("div");
+            seanceT.className = "seanceBaseT";
+            seanceT.innerText = seances[i].titre;
+            seance.appendChild(seanceT);
+    
+            var seanceIMGBox = document.createElement("div");
+            seanceIMGBox.className = "seanceIMGBox";
+            seance.appendChild(seanceIMGBox);
+    
+            var seanceIMG = document.createElement("img");
+            seanceIMG.className = "seanceIMG";
+            seanceIMG.src = seances[i].imgHref;
+            seanceIMGBox.appendChild(seanceIMG);
+    
+            var seanceZoneBox = document.createElement("div");
+            seanceZoneBox.className = "seanceZoneBox";
+            seance.appendChild(seanceZoneBox);
+    
+            var seanceZone = document.createElement("div");
+            seanceZone.className = "seanceZone";
+            seanceZone.innerText = "ZONE " + seances[i].Z;
+            seanceZoneBox.appendChild(seanceZone);
+    
+            seance.onclick = function () {
+                window.location.href = `/seances/viewNewSeance/viewNewSeance.html?${i}`;
+            }
+        }
+    }
 }
 
 function postTopNav() {
@@ -55,7 +106,7 @@ function postTopNav() {
     
     $(document).ready(function () {
         afterUrl = getAfterUrl();
-        if (afterUrl = "nouveau") {
+        if (afterUrl == "nouveau") {
             $("#Nouveau").show();
             document.getElementById("NouveauNav").style.borderBottom = "2px solid rgb(0, 234, 170)";
         }

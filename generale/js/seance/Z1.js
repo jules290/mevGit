@@ -11,5 +11,5 @@ function debloquage() {
     seance[7] = {typeValue: "time", value: 8, intensité: intensite({b: 180, h: 400}, {b: 92, h: 100}, 7), Z: 7, WPrct: 300};
     seance[8] = {typeValue: "time", value: 1000, intensité: intensite({b: 47, h: 53}, {b: 65, h: 75}, 1), Z: 1, WPrct: 50};
 
-    return {seance: seance, typeSeance: "Débloquage", Z: 1};
+    return {titre: "DÉBLOQUAGE", seance: seance, type: "normal", typeSeance: "Débloquage", Z: 1};
 }

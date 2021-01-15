@@ -22,9 +22,10 @@
         <link rel="stylesheet" href="/generale/css/body.css" media="screen">
         <link rel="stylesheet" href="/generale/css/header.css" media="screen">
 
-        <link rel="stylesheet" href="/seances/viewSeance/css/viewSeance.css" media="screen">
-        <link rel="stylesheet" href="/seances/viewSeance/css/viewSeanceGraph.css" media="screen">
-        <link rel="stylesheet" href="/seances/viewSeance/css/viewSeanceListEtape.css" media="screen">
+        <link rel="stylesheet" href="/seances/viewNewSeance/css/viewSeance.css" media="screen">
+        <link rel="stylesheet" href="/seances/viewNewSeance/css/seanceMeta.css" media="screen">
+        <link rel="stylesheet" href="/seances/viewNewSeance/css/seanceListEtape.css" media="screen">
+        <link rel="stylesheet" href="/seances/viewNewSeance/css/seanceGraph.css" media="screen">
 
         <script src="/generale/js/background/backgroundScript.js"></script>
         <script src="/generale/js/background/backgroundFunction.js"></script>
@@ -59,6 +60,10 @@
                 </div>
             </section>
 
+            <div id="seanceMeta">
+                <div id="serieBox"></div>
+            </div>
+
             <section id="seanceContent">
                 <section id="listEtape">
                     <section id="listEtapeHeader">
@@ -75,17 +80,22 @@
                     <canvas id="graphSeance"></canvas>
                 </section>
             </section>
+
+            <section id="seanceSuivant">
+                <button id="suivant" class="suivantSaveBtn">SUIVANT</button>
+            </section>
        </section>
         
         <script src="/generale/js/nav.js"></script>
 
-        <script src="/generale/js/seance/allSeances.js"></script>
+        <script src="/seances/viewNewSeance/js/viewSeance.js"></script>
+        <script src="/seances/viewNewSeance/js/seanceGetLevel.js"></script>
 
-        <script src="/seances/viewSeance/js/viewSeance.js"></script>
-
+        <script src="/generale/js/viewSeance/seanceMeta.js"></script>
         <script src="/generale/js/viewSeance/seanceListEtape.js"></script>
         <script src="/generale/js/viewSeance/seanceGraph.js"></script>
 
+        <script src="/generale/js/seance/allSeances.js"></script>
         <script src="/generale/js/seance/intensite.js"></script>
         <script src="/generale/js/seance/test.js"></script>
         <script src="/generale/js/seance/Z1.js"></script>

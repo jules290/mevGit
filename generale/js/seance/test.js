@@ -13,7 +13,7 @@ function testFcMax() {
 
     seance[9] = {typeValue: "time", value: 180, intensité: intensite({b: 100, h: 109}, {b: 98, h: 100}, 5), Z: 5, WPrct: 105};
 
-    return {seance: seance, typeSeance: "Test FC MAX", Z: 5};
+    return {titre: "TEST FC MAX", seance: seance, type: "normal", typeSeance: "Test FC MAX", Z: 5};
 }
 
 function testPMA() {
@@ -60,5 +60,5 @@ function testPMA() {
     seance[37] = {typeValue: "time", value: 60, intensité: "585W", Z: 5, WPrct: 195};
     seance[38] = {typeValue: "time", value: 60, intensité: "600W", Z: 5, WPrct: 200};
 
-    return {seance: seance, typeSeance: "Test PMA", Z: 5};
+    return {titre: "Test PMA",seance: seance, type: "normal", typeSeance: "Test PMA", Z: 5};
 }

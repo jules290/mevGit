@@ -41,6 +41,7 @@
     color: white;
     outline: none;
     transition: 0.2s;
+    cursor: pointer;
 }
 
 .cldBtn:hover {
@@ -101,6 +102,7 @@
     justify-content: center;
     align-items: center;
     transition: 0.1s;
+    cursor: pointer;
 }
 
 .dt {

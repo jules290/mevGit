@@ -34,6 +34,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
 @media only screen and (min-width: 280px) {.option {font-size: 12px;}}

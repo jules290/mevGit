@@ -1,11 +1,10 @@
 function postGraphSeance(seance, seanceOtherInfo) {
-    let ZColor = ["rgb(140, 140, 140)", "rgb(41, 48, 255)", "rgb(15, 179, 238)", "rgb(62, 232, 28)", "rgb(220, 220, 0)",
-    "rgb(255, 150, 12)", "rgb(255, 12, 12)"];
-
+    console.log(seance)
     let detailSeanceBox = document.createElement("div");
     detailSeanceBox.className = "detailSeanceBox";
     seanceOtherInfo.appendChild(detailSeanceBox);
 
+    console.log(seance.typeSeance)
     let metaSeance  = document.createElement("div");
     metaSeance.className = "metaSeance";
     if (seance.typeSeance == "PMA") {
@@ -48,6 +47,17 @@ function postGraphSeance(seance, seanceOtherInfo) {
         for (let i = 0; i < 2; i++) {
             if (i == 0) metaSeance.innerText += (seance.meta.series + " série(s)").toLocaleUpperCase()
             else if (i == 1) metaSeance.innerText += (" de " + seance.meta.SwtSpt + "min sweet spot").toLocaleUpperCase()
+        }
+        metaSeance.innerText += " )";
+    }
+    else if (seance.typeSeance == "Sprint") {
+        metaSeance.innerText = ("Sprint ( ").toLocaleUpperCase();
+        for (let i = 0; i < seance.meta.series; i++) {
+            if (i == 0) metaSeance.innerText += (seance.meta.repS1 + " rép(s)").toLocaleUpperCase()
+            else if (i == 1) metaSeance.innerText += (" + " + seance.meta.repS2 + " rep(s)").toLocaleUpperCase()
+            else if (i == 2) metaSeance.innerText += (" + " + seance.meta.repS3 + " rep(s)").toLocaleUpperCase()
+            else if (i == 3) metaSeance.innerText += (" + " + seance.meta.repS4 + " rep(s)").toLocaleUpperCase()
+            else if (i == 4) metaSeance.innerText += (" + " + seance.meta.repS5 + " rep(s)").toLocaleUpperCase()
         }
         metaSeance.innerText += " )";
     }

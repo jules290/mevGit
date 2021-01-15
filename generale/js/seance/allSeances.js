@@ -1,7 +1,8 @@
 var seances = [
     {
         titre: "FRACTIONNÉ PMA 30SEC/30SEC",
-        zone: 5,
+        TYPE: "ENTRAÎNEMENT",
+        Z: 5,
         type: "serieAndRep",
         serie: 2,
         rep: 10,
@@ -9,7 +10,8 @@ var seances = [
     },
     {
         titre: "FRACTIONNÉ PMA 1MIN/1MIN",
-        zone: 5,
+        TYPE: "ENTRAÎNEMENT",
+        Z: 5,
         type: "serieAndRep",
         serie: 2,
         rep: 4,
@@ -17,7 +19,8 @@ var seances = [
     },
     {
         titre: "FRACTIONNÉ PMA 3MIN/3MIN",
-        zone: 5,
+        TYPE: "ENTRAÎNEMENT",
+        Z: 5,
         type: "serieAndRep",
         serie: 1,
         rep: 3,
@@ -25,7 +28,8 @@ var seances = [
     },
     {
         titre: "FRACTIONNÉ SEUIL 5MIN/5MIN",
-        zone: 4,
+        TYPE: "ENTRAÎNEMENT",
+        Z: 4,
         type: "serieAndRep",
         serie: 1,
         rep: 5,
@@ -33,7 +37,8 @@ var seances = [
     },
     {
         titre: "SPRINT",
-        zone: 7,
+        TYPE: "ENTRAÎNEMENT",
+        Z: 7,
         type: "serieAndRep",
         serie: 1,
         rep: 8,
@@ -41,7 +46,8 @@ var seances = [
     },
     {
         titre: "GIMENEZ",
-        zone: 4,
+        TYPE: "ENTRAÎNEMENT",
+        Z: 4,
         type: "serieAndTime",
         serie: 9,
         rep: [{type: "PMA", time: 60}, {type: "Z3", time: 180}, {type: "RECUP", time: 60}],
@@ -49,7 +55,8 @@ var seances = [
     },
     {
         titre: "SWEET SPOT",
-        zone: 3,
+        TYPE: "ENTRAÎNEMENT",
+        Z: 3,
         type: "serieAndTime",
         serie: 2,
         rep: [{type: "SWEET SPOT", time: 1200}, {type: "RECUP", time: 600}],
@@ -57,35 +64,40 @@ var seances = [
     },
     {
         titre: "ENDURANCE HAUTE",
+        TYPE: "ENTRAÎNEMENT",
         seanceType: "ENDURANCE",
-        zone: 2,
+        Z: 2,
         type: "time",
         time: 90,
         imgHref: "/img/enduranceHauteGraph.PNG"
     },
     {
         titre: "ENDURANCE FONDAMENTALE",
+        TYPE: "ENTRAÎNEMENT",
         seanceType: "ENDURANCE",
-        zone: 1,
+        Z: 1,
         type: "time",
         time: 120,
         imgHref: "/img/enduranceBasseGraph.PNG"
     },
     {
         titre: "DÉBLOQUAGE",
-        zone: 1,
+        TYPE: "PRÉ-COMPÉTION",
+        Z: 1,
         type: "normal",
         imgHref: "/img/debloquageGraph.PNG"
     },
     {
         titre: "TEST FC MAX",
-        zone: 5,
+        TYPE: "TEST",
+        Z: 5,
         type: "normal",
         imgHref: "/img/testFcmaxGraph.PNG"
     },
     {
         titre: "TEST PMA",
-        zone: 5,
+        TYPE: "TEST",
+        Z: 5,
         type: "normal",
         imgHref: "/img/testPMAGraph.PNG"
     },

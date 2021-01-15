@@ -1,12 +1,3 @@
-const jour = new Array();
-jour[1] = "lundi";
-jour[2] = "lundi";
-jour[3] = "lundi";
-jour[4] = "lundi";
-jour[5] = "lundi";
-jour[6] = "lundi";
-jour[7] = "lundi";
-
 const reducer = (accumulator, currentValue) => accumulator + currentValue;
 
 function hideAllByClassName(className) { $(`.${className}`).hide() }
@@ -510,5 +501,5 @@ function getPage() {
     else if (url.slice(htmlIndex - 9, htmlIndex) == "parametre") return "parametre"
     else if (url.slice(htmlIndex - 10, htmlIndex) == "tablBrdPrg") return "tablBrdPrg"
     else if (url.slice(htmlIndex - 6, htmlIndex) == "newPrg") return "newPrg"
-    else if (url.slice(htmlIndex - 10, htmlIndex) == "viewSeance") return "viewSeance"
+    else if (url.slice(htmlIndex - 13, htmlIndex) == "viewNewSeance") return "viewNewSeance"
 }

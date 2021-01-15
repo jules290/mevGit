@@ -38,7 +38,7 @@ function nav() {
             document.getElementById("thisPage").style.marginLeft = 1 * 100 / 5 + "%";
             break;
         
-        case "viewSeance":
+        case "viewNewSeance":
             document.getElementById("thisPage").style.marginLeft = 3 * 100 / 5 + "%";
             break;
     }

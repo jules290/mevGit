@@ -25,8 +25,9 @@
         <link rel="stylesheet" href="/seances/css/seance.css" media="screen">
         <link rel="stylesheet" href="/seances/css/listSeance.css" media="screen">
 
-        <script src="/generale/js/backgroundScript.js"></script>
-        <script src="/generale/js/backgroundFunction.js"></script>
+        <script src="/generale/js/background/backgroundScript.js"></script>
+        <script src="/generale/js/background/backgroundFunction.js"></script>
+        <script src="/generale/js/background/backgroundVar.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     </head>
     <body>
@@ -82,7 +83,7 @@
 
         <section id="Nouveau" class="main">
             <div id="seanceSearch">
-                <!-- <div class="seanceSearchParametre">
+                <div class="seanceSearchParametre">
                     <p class="seanceSearchParametreT">ZONE:</p>
                     <select class="seanceSearchParametreInput">
                         <option value="0" selected>TOUTES LES ZONES</option>
@@ -106,18 +107,19 @@
                     </select>
                 </div>
 
-                <button id="seanceSearchSubmit">🔍</button> -->
+                <button id="seanceSearchSubmit">🔍</button>
             </div>
 
             <section id="seance"></section>
         </section>
 
         <script src="/generale/js/nav.js"></script>
-        
-        <script src="/seances/js/allSeances.js"></script>
+    
         <script src="/seances/js/seance.js"></script>
         <script src="/seances/js/seancesActif.js"></script>
         <script src="/seances/js/seancesHistorique.js"></script>
+
+        <script src="/generale/js/seance/allSeances.js"></script>
     </body>
 
 </html>

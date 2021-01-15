@@ -24,7 +24,7 @@ function sweetspot(level) {
     
     seance[seance.length] = {typeValue: "time", value: 600, intensité: intensite({b: 47, h: 53}, {b: 65, h: 75}, 1), Z: 1, WPrct: 50};
 
-    return {seance: seance, typeSeance: "Sweet Spot", Z: 3, meta: level};
+    return {titre: "SWEET SPOT", seance: seance, type: "serieAndTime", typeSeance: "Sweet Spot", Z: 3, meta: level};
 }
 
 const levelsSweetSpot = [

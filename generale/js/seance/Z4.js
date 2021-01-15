@@ -69,7 +69,7 @@ function seuil5_5(level) {
         seance[seance.length] = {typeValue: "time", value: 600, intensité: intensite({b: 47, h: 53}, {b: 65, h: 75}, 1), Z: 1, WPrct: 50};
     }
 
-    return {seance: seance, typeSeance: "Seuil", Z: 4, meta: level};
+    return {titre: "FRACTIONNÉ SEUIL 5MIN/5MIN", seance: seance, type: "serieAndRep", typeSeance: "Seuil", Z: 4, meta: level};
 }
 
 const levelsSeuil5_5 = [
@@ -124,7 +124,7 @@ function gimenez(level) {
     seance[ seance.length ] = {typeValue: "endSerie"};
     seance[seance.length] = {typeValue: "time", value: 600, intensité: intensite({b: 47, h: 53}, {b: 65, h: 75}, 1), Z: 1, WPrct: 50};
 
-    return {seance: seance, typeSeance: "Gimenez", Z: 4, meta: level};
+    return {titre: "GIMENEZ", seance: seance, typeSeance: "serieAndTime", Z: 4, meta: level};
 }
 
 const levelsGimenez = [

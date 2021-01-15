@@ -77,7 +77,6 @@ function postSeancesActifList() {
     }
 
     $(".seanceContent").hover(function () {
-        console
         if (this.className != "seanceSupprimer seanceContent") {
             this.parentNode.style.backgroundColor = "rgba(0, 0, 0, 0.076)";
         }
@@ -92,7 +91,7 @@ function postSeancesActifList() {
     $(".seanceContent").click(function () {
         index = Number(this.parentNode.className.slice(13, 14));
         if (this.className != "seanceSupprimer seanceContent") {
-            // window.location.href = `/programme/tablBrdPrg/tablBrdPrg.html?${index}`;
+            window.location.href = `/seances/viewSeance/viewSeance.html?${index}`;
         }
         else {
             if (confirm("voulez-vous supprimer ce programme")) {

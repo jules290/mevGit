@@ -37,7 +37,7 @@ function sprint(level) {
         seance[seance.length] = {typeValue: "time", value: 600, intensité: intensite({b: 47, h: 53}, {b: 65, h: 75}, 1), Z: 1, WPrct: 50};
     }
 
-    return {seance: seance, typeSeance: "sprint", Z: 7, meta: level, sousTypeSeance: "sprint"};
+    return {titre: "SPRINT", seance: seance, type: "serieAndRep", typeSeance: "sprint", Z: 7, meta: level, sousTypeSeance: "sprint"};
 }
 
 const levelsSprint = [

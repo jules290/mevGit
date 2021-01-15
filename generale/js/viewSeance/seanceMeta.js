@@ -1,5 +1,4 @@
-function postMetaSeance(index) {
-    seance = seances[index];
+function postMetaSeance(seance, canvas) {
     typeMeta = seances[index].type;
 
     if (typeMeta != "normal") {
@@ -8,8 +7,11 @@ function postMetaSeance(index) {
         else postTime(seance)
 
         $(".inputS").focusout(function () {
-            postSeanceListEtape(index);
-            postSeanceGraph(index);
+            if (seance.type != "normal") level = getSeanceLevel(seance.type);
+            let seanceEtapes = getSeanceEtapes(seance, level);
+
+            postSeanceListEtape(seanceEtapes);
+            postSeanceGraph(seanceEtapes, canvas);
         })
     }
 }
@@ -114,4 +116,19 @@ function postTime(seance) {
     seriesT2.className = "serieT";
     seriesT2.innerText = "min";
     series.appendChild(seriesT2);
+}
+
+function getSeanceEtapes(seance, level) {
+    if (seance.titre == "FRACTIONNÉ PMA 30SEC/30SEC") return PMA30_30(level).seance
+    else if (seance.titre == "FRACTIONNÉ PMA 1MIN/1MIN") return PMA1_1(level).seance
+    else if (seance.titre == "FRACTIONNÉ PMA 3MIN/3MIN") return PMA3_3(level).seance
+    else if (seance.titre == "FRACTIONNÉ SEUIL 5MIN/5MIN") return seuil5_5(level).seance
+    else if (seance.titre == "SPRINT") return sprint(level).seance
+    else if (seance.titre == "GIMENEZ") return gimenez(level).seance
+    else if (seance.titre == "SWEET SPOT") return sweetspot(level).seance
+    else if (seance.titre == "ENDURANCE HAUTE") return enduranceHaute(level).seance
+    else if (seance.titre == "ENDURANCE FONDAMENTALE") return enduranceFondamentale(level).seance
+    else if (seance.titre == "DÉBLOQUAGE") return debloquage().seance
+    else if (seance.titre == "TEST FC MAX") return testFcMax().seance
+    else if (seance.titre == "TEST PMA") return testPMA().seance
 }

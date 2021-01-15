@@ -70,7 +70,7 @@ function PMA30_30(level) {
     }
 
 
-    return {seance: seance, typeSeance: "PMA", Z: 5, meta: level, sousTypeSeance: "PMA30_30"};
+    return {titre: "FRACTIONNÉ PMA 30SEC/30SEC", seance: seance, type: "serieAndRep", typeSeance: "PMA", Z: 5, meta: level, sousTypeSeance: "PMA30_30"};
 }
 
 const levelsPMA30_30 = [
@@ -200,7 +200,7 @@ function PMA1_1(level) {
         seance[seance.length] = {typeValue: "time", value: 600, intensité: intensite({b: 47, h: 53}, {b: 65, h: 75}, 1), Z: 1, WPrct: 50};
     }
 
-    return {seance: seance, typeSeance: "PMA", Z: 5, meta: level, sousTypeSeance: "PMA1_1"};
+    return {titre: "FRACTIONNÉ PMA 1MIN/1MIN", seance: seance, type: "serieAndRep", typeSeance: "PMA", Z: 5, meta: level, sousTypeSeance: "PMA1_1"};
 }
 
 const levelsPMA1_1 = [
@@ -309,7 +309,7 @@ function PMA3_3(level) {
         seance[seance.length] = {typeValue: "time", value: 600, intensité: intensite({b: 47, h: 53}, {b: 65, h: 75}, 1), Z: 1, WPrct: 50};
     }
 
-    return {seance: seance, typeSeance: "PMA", Z: 5, meta: level, sousTypeSeance: "PMA3_3"};
+    return {titre: "FRACTIONNÉ PMA 3MIN/3MIN", seance: seance, type: "serieAndRep", typeSeance: "PMA", Z: 5, meta: level, sousTypeSeance: "PMA3_3"};
 }
 
 const levelsPMA3_3 = [
