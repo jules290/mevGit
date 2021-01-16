@@ -75,12 +75,12 @@ function postListProgramme() {
         
             prgLongueurProgramme = document.createElement("div");
             prgLongueurProgramme.className = "prgLongueurProgramme prgProgramme";
-            prgLongueurProgramme.innerText = Programme[i].longueurProgramme + " semaines";
+            prgLongueurProgramme.innerText = Programme[i].longueurProgramme + " sem";
             programme.appendChild(prgLongueurProgramme);
         
             prgEntrainementProgramme = document.createElement("div");
             prgEntrainementProgramme.className = "prgEntrainementProgramme prgProgramme";
-            prgEntrainementProgramme.innerText = Programme[i].entrainementProgramme + "/semaine";
+            prgEntrainementProgramme.innerText = Programme[i].entrainementProgramme + "/sem";
             programme.appendChild(prgEntrainementProgramme);
         
             prgDebutProgramme = document.createElement("div");

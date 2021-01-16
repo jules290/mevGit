@@ -502,4 +502,5 @@ function getPage() {
     else if (url.slice(htmlIndex - 10, htmlIndex) == "tablBrdPrg") return "tablBrdPrg"
     else if (url.slice(htmlIndex - 6, htmlIndex) == "newPrg") return "newPrg"
     else if (url.slice(htmlIndex - 13, htmlIndex) == "viewNewSeance") return "viewNewSeance"
+    else if (url.slice(htmlIndex - 10, htmlIndex) == "viewSeance") return "viewSeance"
 }

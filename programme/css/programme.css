@@ -29,6 +29,13 @@
     align-items: center;
 }
 
+@media only screen and (min-width: 280px) {.option {font-size: 13px;}}
+@media only screen and (min-width: 400px) {.option {font-size: 14px;}}
+@media only screen and (min-width: 500px) {.option {font-size: 15px;}}
+@media only screen and (min-width: 600px) {.option {font-size: 16px;}}
+@media only screen and (min-width: 700px) {.option {font-size: 17px;}}
+@media only screen and (min-width: 800px) {.option {font-size: 18px;}}
+
 .option:hover {
     border-bottom: 2px solid rgb(118, 118, 118);
 }
@@ -51,12 +58,14 @@
     align-items: flex-start;
 }
 
-.PROCHAINEMENT {
-    margin: 0px;
-    margin-top: 30px;
-    font-size: 34px;
-    color: rgb(25, 25, 25);
-    font-weight: lighter;
+#Historique {
+    width: 86%;
+    margin-left: 7%;
+    margin-right: 7%;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 #Nouveau {
@@ -64,4 +73,7 @@
     margin-left: 7%;
     margin-right: 7%;
     margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }

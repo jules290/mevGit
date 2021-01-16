@@ -6,7 +6,7 @@
 
 #listEtapeHeader {
     width: 100%;
-    height: 12%;
+    height: 6%;
     display: flex;
 }
 
@@ -46,7 +46,7 @@
 
 #viewSeanceEtape {
     width: 100%;
-    height: 88%;
+    height: 94%;
     overflow-y: scroll;
     display: flex;
     flex-direction: column;

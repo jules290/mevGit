@@ -478,10 +478,10 @@ const mainParametreGeneraux = [
             '<p class="finaleValue" id="finaleValueEntrainementActuel"></p>'+
         '</div>'+
 
-        '<div class="finale" id="finaleTypeCycliste">'+
-            '<p class="finaleT">type cycliste</p>'+
-            '<p class="finaleValue" id="finaleValueTypeCycliste"></p>'+
-        '</div>'+
+        // '<div class="finale" id="finaleTypeCycliste">'+
+        //     '<p class="finaleT">type cycliste</p>'+
+        //     '<p class="finaleValue" id="finaleValueTypeCycliste"></p>'+
+        // '</div>'+
 
         '<div class="finale" id="finaleEntrainementProgramme">'+
             '<p class="finaleT">entrainement programme</p>'+

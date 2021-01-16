@@ -1,10 +1,8 @@
 function postGraphSeance(seance, seanceOtherInfo) {
-    console.log(seance)
     let detailSeanceBox = document.createElement("div");
     detailSeanceBox.className = "detailSeanceBox";
     seanceOtherInfo.appendChild(detailSeanceBox);
 
-    console.log(seance.typeSeance)
     let metaSeance  = document.createElement("div");
     metaSeance.className = "metaSeance";
     if (seance.typeSeance == "PMA") {
@@ -96,94 +94,14 @@ function postGraphSeance(seance, seanceOtherInfo) {
     listEtapeHeaderBtn2.innerText = "PMA %";
     listEtapeHeader.appendChild(listEtapeHeaderBtn2);
 
-    listEtapeHeaderBtn1.onclick = function () {
-        listEtapeHeaderBtn1.style.backgroundColor = "rgb(60, 60, 60)";
-        listEtapeHeaderBtn2.style.backgroundColor = "rgb(90, 90, 90)";
-        sessionStorage.listEtapeState = "ZONE";
-        postListEtape(sessionStorage.listEtapeState);
-    }
-
-    listEtapeHeaderBtn2.onclick = function () {
-        listEtapeHeaderBtn1.style.backgroundColor = "rgb(90, 90, 90)";
-        listEtapeHeaderBtn2.style.backgroundColor = "rgb(60, 60, 60)";
-        sessionStorage.listEtapeState = "PMA %";
-        postListEtape(sessionStorage.listEtapeState);
-    }
-
     let listEtapeContent = document.createElement("div");
-    listEtapeContent.className = "listEtapeContent";
+    listEtapeContent.id = "viewSeanceEtape";
     listEtape.appendChild(listEtapeContent);
-    if (!sessionStorage.listEtapeState) sessionStorage.listEtapeState = "ZONE";
-    postListEtape(sessionStorage.listEtapeState);
-
-    function postListEtape(state) {
-        if (state == "ZONE") {
-            document.getElementById("listEtapeHeaderBtn1").style.backgroundColor = "rgb(60, 60, 60)";
-            document.getElementById("listEtapeHeaderBtn2").style.backgroundColor = "rgb(90, 90, 90)";
-        }
-        else {
-            document.getElementById("listEtapeHeaderBtn1").style.backgroundColor = "rgb(90, 90, 90)";
-            document.getElementById("listEtapeHeaderBtn2").style.backgroundColor = "rgb(60, 60, 60)";
-        }
-
-        $(".listEtapeContent").empty();
-        for (let i = 0; i < seance.seance.length; i++) {
-            if (seance.seance[i].typeValue != "startSerie" && seance.seance[i].typeValue != "endSerie") {
-                let viewSeanceEtape = document.createElement("div");
-                viewSeanceEtape.className = "viewSeanceEtape";
-                listEtapeContent.appendChild(viewSeanceEtape);
-                viewSeanceEtape.style.backgroundColor = ZColor[seance.seance[i].Z - 1];
-            
-                let viewSeanceEtapeT = document.createElement("div");
-                viewSeanceEtapeT.className = "viewSeanceEtapeT";
-                if (state == "ZONE") {
-                    if (localStorage.PMA > 0) document.getElementById("listEtapeHeaderBtn1").innerText = "WATT"
-                    else if (localStorage.fcMax > 0) document.getElementById("listEtapeHeaderBtn1").innerText = "FC"
-                    else document.getElementById("listEtapeHeaderBtn1").innerText = "ZONE"
-                    viewSeanceEtapeT.innerText = get00i00i00(seance.seance[i].value) + "  @" + seance.seance[i].intensité;
-                }
-                else {
-                    viewSeanceEtapeT.innerText = get00i00i00(seance.seance[i].value) + "  @" + seance.seance[i].WPrct + "% PMA"; 
-                }
-                viewSeanceEtape.appendChild(viewSeanceEtapeT);
-            }
-        }
-    }
+    postSeanceListEtape(seance.seance);
 
     let canvas = document.createElement("canvas");
     canvas.className = "graphSeance";
     etape.appendChild(canvas);
 
-    let allEtape = seance.seance;
-    let ctx = canvas.getContext("2d");
-    canvas.width = window.innerWidth * 0.60;
-    canvas.height = window.innerHeight * 0.96 * 0.40;
-    totalWidth = 0;
-
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    if (seance.seance) {
-        let timeTotalSeance = getTimeTotalSeance(allEtape);
-        for (let i = 0; i < allEtape.length; i++) {
-            if (allEtape[i].typeValue != "startSerie" && allEtape[i].typeValue != "endSerie") {
-                widthBar = ( allEtape[i].value * canvas.width ) / timeTotalSeance;
-                heightBar = ( allEtape[i].WPrct * canvas.height ) / 200;
-    
-                ctx.fillStyle = ZColor[allEtape[i].Z - 1];
-                ctx.fillRect(totalWidth, canvas.height - heightBar, widthBar, heightBar);
-        
-                totalWidth += widthBar;
-            }
-        }
-    }
-}
-
-function getTimeTotalSeance(allEtape) {
-    total = 0;
-    for (let i = 0; i < allEtape.length; i++) {
-        if (allEtape[i].typeValue != "startSerie" && allEtape[i].typeValue != "endSerie") {
-            total += allEtape[i].value;
-        }
-    }
-    return total;
+    postSeanceGraph(seance.seance, canvas);
 }

@@ -14,6 +14,13 @@ body {
     align-items: center;
 }
 
+@media only screen and (min-width: 280px) {#main {width: 100%;}}
+@media only screen and (min-width: 400px) {#main {width: 100%;}}
+@media only screen and (min-width: 500px) {#main {width: 95%;}}
+@media only screen and (min-width: 600px) {#main {width: 90%;}}
+@media only screen and (min-width: 700px) {#main {width: 85%;}}
+@media only screen and (min-width: 800px) {#main {width: 80%;}}
+
 .page {
     width: 100%;
     display: flex;
@@ -36,12 +43,26 @@ body {
     letter-spacing: 1.4px;
 }
 
+@media only screen and (min-width: 280px) {.pageT {font-size: 30px;}}
+@media only screen and (min-width: 400px) {.pageT {font-size: 31px;}}
+@media only screen and (min-width: 500px) {.pageT {font-size: 32px;}}
+@media only screen and (min-width: 600px) {.pageT {font-size: 33px;}}
+@media only screen and (min-width: 700px) {.pageT {font-size: 33px;}}
+@media only screen and (min-width: 800px) {.pageT {font-size: 34px;}}
+
 .pageInstruction {
     margin: 0px;
     margin-top: 30px;
     font-size: 24px;
     color: rgb(19, 19, 19);
 }
+
+@media only screen and (min-width: 280px) {.pageInstruction {font-size: 20px;}}
+@media only screen and (min-width: 400px) {.pageInstruction {font-size: 21px;}}
+@media only screen and (min-width: 500px) {.pageInstruction {font-size: 22px;}}
+@media only screen and (min-width: 600px) {.pageInstruction {font-size: 23px;}}
+@media only screen and (min-width: 700px) {.pageInstruction {font-size: 23px;}}
+@media only screen and (min-width: 800px) {.pageInstruction {font-size: 24px;}}
 
 .pageInstructionP {
     margin: 0px;
@@ -52,6 +73,13 @@ body {
     text-align: center;
     color: rgb(100, 100, 100);
 }
+
+@media only screen and (min-width: 280px) {.pageInstructionP {font-size: 13px;}}
+@media only screen and (min-width: 400px) {.pageInstructionP {font-size: 13px;}}
+@media only screen and (min-width: 500px) {.pageInstructionP {font-size: 14px;}}
+@media only screen and (min-width: 600px) {.pageInstructionP {font-size: 14px;}}
+@media only screen and (min-width: 700px) {.pageInstructionP {font-size: 15px;}}
+@media only screen and (min-width: 800px) {.pageInstructionP {font-size: 16px;}}
 
 .pageInput {
     margin-top: 20px;
@@ -64,6 +92,13 @@ body {
     width: 200px;
 }
 
+@media only screen and (min-width: 280px) {.pageInstructionP {font-size: 13px;}}
+@media only screen and (min-width: 400px) {.pageInstructionP {font-size: 13px;}}
+@media only screen and (min-width: 500px) {.pageInstructionP {font-size: 14px;}}
+@media only screen and (min-width: 600px) {.pageInstructionP {font-size: 14px;}}
+@media only screen and (min-width: 700px) {.pageInstructionP {font-size: 15px;}}
+@media only screen and (min-width: 800px) {.pageInstructionP {font-size: 16px;}}
+
 .pageInputCheckContenair {
     width: 16px;
     height: 16px;
@@ -74,6 +109,31 @@ body {
     width: 16px;
     height: 16px;
 }
+
+@media only screen and (min-width: 280px) {.pageInputCheckBox {
+    width: 13px;
+    height: 13px;
+}}
+@media only screen and (min-width: 400px) {.pageInputCheckBox {
+    width: 14px;
+    height: 14px;
+}}
+@media only screen and (min-width: 500px) {.pageInputCheckBox {
+    width: 14px;
+    height: 14px;
+}}
+@media only screen and (min-width: 600px) {.pageInputCheckBox {
+    width: 15px;
+    height: 15px;
+}}
+@media only screen and (min-width: 700px) {.pageInputCheckBox {
+    width: 15px;
+    height: 15px;
+}}
+@media only screen and (min-width: 800px) {.pageInputCheckBox {
+    width: 16px;
+    height: 16px;
+}}
 
 .pageInputCheckT {
     color: black;
@@ -104,8 +164,10 @@ body {
 .selectDateBox {
     display: flex;
     flex-direction: row;
-    margin-top: 30px;
-    margin-bottom: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 25px;
+    margin-bottom: 15px;
 }
 
 .select {
@@ -116,7 +178,7 @@ body {
     border: 1px solid #e2eded;
     border-color: #eaf1f1 #e4eded #dbe7e7;
     border-radius: 3px;
-    margin: 0px 15px;
+    margin: 5px 15px;
     outline: none;
     padding-left: 10px;
 }
@@ -136,12 +198,28 @@ body {
     font-size: 16px;
 }
 
+@media only screen and (min-width: 280px) {.finaleT {font-size: 13px;}}
+@media only screen and (min-width: 400px) {.finaleT {font-size: 13px;}}
+@media only screen and (min-width: 500px) {.finaleT {font-size: 14px;}}
+@media only screen and (min-width: 600px) {.finaleT {font-size: 14px;}}
+@media only screen and (min-width: 700px) {.finaleT {font-size: 15px;}}
+@media only screen and (min-width: 800px) {.finaleT {font-size: 16px;}}
+
 .finaleValue {
+    max-width: 95%;
     margin: 0px;
     margin-top: 15px;
     color: rgb(0, 0, 0);
     font-size: 18px;
+    text-align: center;
 }
+
+@media only screen and (min-width: 280px) {.finaleValue {font-size: 13px;}}
+@media only screen and (min-width: 400px) {.finaleValue {font-size: 14px;}}
+@media only screen and (min-width: 500px) {.finaleValue {font-size: 15px;}}
+@media only screen and (min-width: 600px) {.finaleValue {font-size: 16px;}}
+@media only screen and (min-width: 700px) {.finaleValue {font-size: 17px;}}
+@media only screen and (min-width: 800px) {.finaleValue {font-size: 18px;}}
 
 .prgNomInput {
     width: 200px;

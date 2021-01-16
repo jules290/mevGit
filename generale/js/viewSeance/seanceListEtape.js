@@ -25,7 +25,6 @@ function postSeanceListEtape(seance) {
         }
         
         $("#viewSeanceEtape").empty();
-
         for (let i = 0; i < seance.length; i++) {
             if (seance[i].typeValue != "startSerie") {
                 let viewSeanceEtape = document.createElement("div");
@@ -66,7 +65,6 @@ function postSeanceListEtape(seance) {
                 viewSeanceEtapeSerie.className = "viewSeanceEtapeSerie";
                 viewSeanceEtapeSerie.style.backgroundImage = `linear-gradient(${backgroundColor})`;
                 viewSeanceEtapeSerie.style.height = 20 * rep.length + "px";
-                console.log(viewSeanceEtapeSerie.style.height)
                 document.getElementById("viewSeanceEtape").appendChild(viewSeanceEtapeSerie);
 
                 let viewSeanceEtapeSerieT = document.createElement("p");
