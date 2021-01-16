@@ -1,6 +1,20 @@
 #PROGRAMMES_BOX {
+    width: 680px;
     height: 340px;
 }
+
+@media only screen and (min-width: 280px) {#PROGRAMMES_BOX {height: 132.2px}}
+@media only screen and (min-width: 320px) {#PROGRAMMES_BOX {height: 151.1px}}
+@media only screen and (min-width: 360px) {#PROGRAMMES_BOX {height: 170px}}
+@media only screen and (min-width: 400px) {#PROGRAMMES_BOX {height: 188.9px}}
+@media only screen and (min-width: 440px) {#PROGRAMMES_BOX {height: 207.8px}}
+@media only screen and (min-width: 480px) {#PROGRAMMES_BOX {height: 226.6px}}
+@media only screen and (min-width: 520px) {#PROGRAMMES_BOX {height: 245.5px}}
+@media only screen and (min-width: 560px) {#PROGRAMMES_BOX {height: 264.4px}}
+@media only screen and (min-width: 600px) {#PROGRAMMES_BOX {height: 283.3px}}
+@media only screen and (min-width: 640px) {#PROGRAMMES_BOX {height: 302.2px}}
+@media only screen and (min-width: 680px) {#PROGRAMMES_BOX {height: 321.1px}}
+@media only screen and (min-width: 720px) {#PROGRAMMES_BOX {height: 340px}}
 
 .PROGRAMMES_BOX1 {
     background-color: rgb(255, 255, 255);
@@ -128,11 +142,20 @@
     font-size: 22px;
 }
 
+@media only screen and (min-width: 280px) {#suggestionPRGT {font-size: 12px}}
+@media only screen and (min-width: 320px) {#suggestionPRGT {font-size: 13px}}
+@media only screen and (min-width: 360px) {#suggestionPRGT {font-size: 14px}}
+@media only screen and (min-width: 400px) {#suggestionPRGT {font-size: 15px}}
+@media only screen and (min-width: 440px) {#suggestionPRGT {font-size: 16px}}
+@media only screen and (min-width: 480px) {#suggestionPRGT {font-size: 18px}}
+@media only screen and (min-width: 520px) {#suggestionPRGT {font-size: 20px}}
+@media only screen and (min-width: 560px) {#suggestionPRGT {font-size: 22px}}
+
 #suggestionPRGBtn {
-    width: 220px;
+    width: 40%;
     height: 50px;
     margin-top: 180px;
-    margin-left: 40px;
+    margin-left: 10%;
     border: none;
     border-radius: 5px;
     outline: none;
@@ -143,3 +166,63 @@
 #suggestionPRGBtn:hover {
     color: rgb(0, 234, 170);
 }
+
+@media only screen and (min-width: 280px) {#suggestionPRGBtn {
+    font-size: 10px;
+    margin-top: 10px;
+}}
+
+@media only screen and (min-width: 320px) {#suggestionPRGBtn {
+    font-size: 11px;
+    margin-top: 20px;
+}}
+
+@media only screen and (min-width: 360px) {#suggestionPRGBtn {
+    font-size: 12px;
+    margin-top: 30px;
+}}
+
+@media only screen and (min-width: 400px) {#suggestionPRGBtn {
+    font-size: 12px;
+    margin-top: 50px;
+}}
+
+@media only screen and (min-width: 440px) {#suggestionPRGBtn {
+    font-size: 13px;
+    margin-top: 70px;
+}}
+
+@media only screen and (min-width: 480px) {#suggestionPRGBtn {
+    font-size: 13px;
+    margin-top: 90px;
+}}
+
+@media only screen and (min-width: 520px) {#suggestionPRGBtn {
+    font-size: 14px;
+    margin-top: 110px;
+}}
+
+@media only screen and (min-width: 560px) {#suggestionPRGBtn {
+    font-size: 14px;
+    margin-top: 130px;
+}}
+
+@media only screen and (min-width: 600px) {#suggestionPRGBtn {
+    font-size: 14px;
+    margin-top: 145px;
+}}
+
+@media only screen and (min-width: 640px) {#suggestionPRGBtn {
+    font-size: 14px;
+    margin-top: 160px;
+}}
+
+@media only screen and (min-width: 680px) {#suggestionPRGBtn {
+    font-size: 14px;
+    margin-top: 170px;
+}}
+
+@media only screen and (min-width: 720px) {#suggestionPRGBtn {
+    font-size: 14px;
+    margin-top: 180px;
+}}
