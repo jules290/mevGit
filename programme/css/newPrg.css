@@ -13,12 +13,26 @@
     margin-bottom: 20px;
     cursor: pointer;
 }
+@media only screen and (min-width: 280px) {
+    .newPrgCase {
+        width: 240px;
+        height: 260px;
+    }
+}
+@media only screen and (min-width: 400px) {
+    .newPrgCase {
+        width: 340px;
+        height: 400px;
+    }
+}
 
 .newPrgCase:hover {
     margin-left: 0px;
     margin-right: 0px;
     width: 360px;
 }
+@media only screen and (min-width: 280px) {.newPrgCase:hover {width: 260px;}}
+@media only screen and (min-width: 400px) {.newPrgCase:hover {width: 360px;}}
 
 .newPrgCaseHeader {
     display: flex;
@@ -37,6 +51,20 @@
     font-weight: lighter;
     letter-spacing: 1.4px;
 }
+@media only screen and (min-width: 280px) {
+    .newPrgCaseT {
+        font-size: 18px;
+        letter-spacing: 1.2px;
+        margin-top: 2px;
+    }
+}
+@media only screen and (min-width: 400px) {
+    .newPrgCaseT {
+        font-size: 25px;
+        letter-spacing: 1.4px;
+        margin-top: 10px;
+    }
+}
 
 .newPrgCaseCitation {
     margin: 0px;
@@ -46,6 +74,20 @@
     font-weight: lighter;
     letter-spacing: 1.4px;
 }
+@media only screen and (min-width: 280px) {
+    .newPrgCaseCitation {
+        font-size: 10px;
+        letter-spacing: 1.2px;
+        margin-top: 2px;
+    }
+}
+@media only screen and (min-width: 400px) {
+    .newPrgCaseCitation {
+        font-size: 15px;
+        letter-spacing: 1.4px;
+        margin-top: 10px;
+    }
+}
 
 .newPrgCaseDescription {
     display: flex;
@@ -53,15 +95,39 @@
     height: 70px;
     margin-top: 20px;
 }
+@media only screen and (min-width: 280px) {
+    .newPrgCaseDescription {
+        height: 40px;
+        margin-top: 10px;
+    }
+}
+@media only screen and (min-width: 400px) {
+    .newPrgCaseDescription {
+        height: 70px;
+        margin-top: 20px;
+    }
+}
 
 .newPrgCaseDescriptionT {
-    width: 290px;
+    width: 300px;
     text-align: center;
     font-size: 16px;
     color: rgb(94, 94, 94);
-    letter-spacing: 1.4px;
+    letter-spacing: 1.2px;
     word-wrap: break-word;
     margin: 0px;
+}
+@media only screen and (min-width: 280px) {
+    .newPrgCaseDescriptionT {
+        width: 200px;
+        font-size: 10px;
+    }
+}
+@media only screen and (min-width: 400px) {
+    .newPrgCaseDescriptionT {
+        width: 300px;
+        font-size: 16px;
+    }
 }
 
 .newPrgCaseInfo {
@@ -77,6 +143,8 @@
     justify-content: center;
     margin-bottom: 20px;
 }
+@media only screen and (min-width: 280px) {.newPrgCaseInfoCaseContenair {margin-bottom: 10px;}}
+@media only screen and (min-width: 400px) {.newPrgCaseInfoCaseContenair {margin-bottom: 20px;}}
 
 .newPrgCaseInfoCase {
     background-color: rgb(221, 221, 221);
@@ -94,6 +162,18 @@
     color: rgb(48, 48, 48);
     padding: 5px 10px;
 }
+@media only screen and (min-width: 280px) {
+    .newPrgCaseInfoCaseT {
+        font-size: 10px;
+        padding: 3px 5px;
+    }
+}
+@media only screen and (min-width: 400px) {
+    .newPrgCaseInfoCaseT {
+        font-size: 13px;
+        padding: 5px 10px;
+    }
+}
 
 .newPrgCasePrice {
     width: 100%;
@@ -108,6 +188,8 @@
     color: rgb(0, 234, 170);
     margin: 0px 5px;
 }
+@media only screen and (min-width: 280px) {.newPrgCasePriceT {font-size: 17px;}}
+@media only screen and (min-width: 400px) {.newPrgCasePriceT {font-size: 24px;}}
 
 .newPrgCasePriceTBarré {
     font-size: 20px;
@@ -115,6 +197,8 @@
     color: rgb(31, 31, 31);
     margin: 0px 5px;
 }
+@media only screen and (min-width: 280px) {.newPrgCasePriceTBarré {font-size: 14px;}}
+@media only screen and (min-width: 400px) {.newPrgCasePriceTBarré {font-size: 20px;}}
 
 .newPrgCaseRequis {
     display: flex;
@@ -128,4 +212,16 @@
     text-align: center;
     font-weight: lighter;
     font-size: 14px;
+}
+@media only screen and (min-width: 280px) {
+    .newPrgCaseRequisT {
+        width: 200px;
+        font-size: 10px;
+    }
+}
+@media only screen and (min-width: 400px) {
+    .newPrgCaseRequisT {
+        width: 300px;
+        font-size: 14px;
+    }
 }

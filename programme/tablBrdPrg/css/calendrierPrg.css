@@ -14,6 +14,11 @@
     color: rgb(87, 87, 87);
     text-align: center;
 }
+@media only screen and (min-width: 280px) {#weekEtape {font-size: 14px;}}
+@media only screen and (min-width: 400px) {#weekEtape {font-size: 15px;}}
+@media only screen and (min-width: 500px) {#weekEtape {font-size: 16px;}}
+@media only screen and (min-width: 600px) {#weekEtape {font-size: 17px;}}
+@media only screen and (min-width: 700px) {#weekEtape {font-size: 18px;}}
 
 #week {
     width: 100%;
@@ -47,6 +52,11 @@
     font-size: 16px;
     font-weight: lighter;
 }
+@media only screen and (min-width: 280px) {.seanceT {font-size: 12px;}}
+@media only screen and (min-width: 400px) {.seanceT {font-size: 13px;}}
+@media only screen and (min-width: 500px) {.seanceT {font-size: 14px;}}
+@media only screen and (min-width: 600px) {.seanceT {font-size: 15px;}}
+@media only screen and (min-width: 700px) {.seanceT {font-size: 16px;}}
 
 .seanceTitle {
     width: 58%;
@@ -62,6 +72,11 @@
     font-size: 17px;
     font-weight: 400;
 }
+@media only screen and (min-width: 280px) {.seanceT {font-size: 13px;}}
+@media only screen and (min-width: 400px) {.seanceT {font-size: 14px;}}
+@media only screen and (min-width: 500px) {.seanceT {font-size: 15px;}}
+@media only screen and (min-width: 600px) {.seanceT {font-size: 16px;}}
+@media only screen and (min-width: 700px) {.seanceT {font-size: 17px;}}
 
 .plusTitle {
     width: 20%;
@@ -79,3 +94,8 @@
     font-size: 16px;
     font-weight: 400;
 }
+@media only screen and (min-width: 280px) {.plusT {font-size: 12px;}}
+@media only screen and (min-width: 400px) {.plusT {font-size: 13px;}}
+@media only screen and (min-width: 500px) {.plusT {font-size: 14px;}}
+@media only screen and (min-width: 600px) {.plusT {font-size: 15px;}}
+@media only screen and (min-width: 700px) {.plusT {font-size: 16px;}}
