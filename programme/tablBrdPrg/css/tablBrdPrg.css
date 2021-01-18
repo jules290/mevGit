@@ -36,6 +36,8 @@ body {
     align-items: center;
     border: 1px solid rgb(209, 209, 209);
 }
+@media only screen and (min-width: 280px) {.prgCase {width: 90%;}}
+@media only screen and (min-width: 400px) {.prgCase {width: 340px;}}
 
 .prgCase2 {
     width: 700px;
@@ -48,9 +50,29 @@ body {
     border: 1px solid rgb(209, 209, 209);
 }
 
-@media only screen and (max-width: 750px) {.prgCase2 {
-    width: 340px;
-    height: 250px;
+@media only screen and (min-width: 280px) {.prgCase2 {
+    width: 90%;
+    height: 225px;
+}}
+@media only screen and (min-width: 340px) {.prgCase2 {
+    width: 90%;
+    height: 240px;
+}}
+@media only screen and (min-width: 400px) {.prgCase2 {
+    width: 90%;
+    height: 270px;
+}}
+@media only screen and (min-width: 500px) {.prgCase2 {
+    width: 90%;
+    height: 315px;
+}}
+@media only screen and (min-width: 600px) {.prgCase2 {
+    width: 90%;
+    height: 355px;
+}}
+@media only screen and (min-width: 700px) {.prgCase2 {
+    width: 90%;
+    height: 380px;
 }}
 @media only screen and (min-width: 750px) {.prgCase2 {
     width: 700px;

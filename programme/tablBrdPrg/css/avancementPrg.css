@@ -8,6 +8,9 @@
     background-color: rgb(226, 226, 226);
     border-radius: 2px;
 }
+@media only screen and (min-width: 280px) {#avancementBar {height: 8px;}}
+@media only screen and (min-width: 500px) {#avancementBar {height: 9px;}}
+@media only screen and (min-width: 700px) {#avancementBar {height: 10px;}}
 
 .avancementBar {
     width: 100%;
@@ -16,6 +19,9 @@
     align-items: center;
     justify-content: center;
 }
+@media only screen and (min-width: 280px) {.avancementBar {height: 8px;}}
+@media only screen and (min-width: 500px) {.avancementBar {height: 9px;}}
+@media only screen and (min-width: 700px) {.avancementBar {height: 10px;}}
 
 .avancementRound {
     width: 20px;
@@ -24,6 +30,26 @@
     background-color: rgb(170, 170, 170);
     transition: 0.1s;
 }
+@media only screen and (min-width: 280px) {.avancementRound {
+    width: 16px;
+    height: 16px;
+}}
+@media only screen and (min-width: 400px) {.avancementRound {
+    width: 17px;
+    height: 17px;
+}}
+@media only screen and (min-width: 500px) {.avancementRound {
+    width: 18px;
+    height: 18px;
+}}
+@media only screen and (min-width: 600px) {.avancementRound {
+    width: 19px;
+    height: 19px;
+}}
+@media only screen and (min-width: 700px) {.avancementRound {
+    width: 20px;
+    height: 20px;
+}}
 
 #avancementDescription {
     width: 100%;
